@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{684B7F2D-DEF9-4D95-A700-AD513EC7ACA7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SNW</RootNamespace>
+    <AssemblyName>SNW</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.8.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.8.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="forms\BandejaDocumentacion.aspx" />
+    <Content Include="forms\BandejaTarea.aspx" />
+    <Content Include="forms\CargaMasiva.aspx" />
+    <Content Include="forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx" />
+    <Content Include="forms\DocumentoActaInstalacionPTP.aspx" />
+    <Content Include="forms\DocumentoActaProtocolo.aspx" />
+    <Content Include="forms\DocumentoActaPruebasInterferencia.aspx" />
+    <Content Include="forms\DocumentoActaSeguridad.aspx" />
+    <Content Include="forms\DocumentoInstalacionPozoTierra.aspx" />
+    <Content Include="forms\DocumentoInventarioPMP.aspx" />
+    <Content Include="forms\DocumentoInventarioPTP.aspx" />
+    <Content Include="forms\DocumentoProtocoloInstalacion.aspx" />
+    <Content Include="forms\DocumentoPruebasServicioDITGPMP.aspx" />
+    <Content Include="forms\DocumentoPruebasServicioDITGPTP.aspx" />
+    <Content Include="forms\DocumentoReporteFotograficoCMM4.aspx" />
+    <Content Include="forms\ObtenerBytesArchivo.aspx" />
+    <Content Include="forms\Upload.aspx" />
+    <Content Include="js\forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.js" />
+    <Content Include="js\forms\DocumentoActaInstalacionPTP.js" />
+    <Content Include="js\forms\DocumentoActaProtocolo.js" />
+    <Content Include="js\forms\BandejaDocumentacion.js" />
+    <Content Include="js\forms\BandejaTarea.js" />
+    <Content Include="js\forms\CargaMasiva.js" />
+    <Content Include="js\forms\DocumentoActaPruebasInterferencia.js" />
+    <Content Include="js\forms\DocumentoActaSeguridad.js" />
+    <Content Include="js\forms\DocumentoInstalacionPozoTierra.js" />
+    <Content Include="js\forms\DocumentoInventarioPTP.js" />
+    <Content Include="js\forms\DocumentoInventarioPMP.js" />
+    <Content Include="js\forms\DocumentoProtocoloInstalacion.js" />
+    <Content Include="js\forms\DocumentoPruebasServicioDITGPMP.js" />
+    <Content Include="js\forms\DocumentoPruebasServicioDITGPTP.js" />
+    <Content Include="js\forms\DocumentoReporteFotograficoCMM4.js" />
+    <Content Include="packages.config" />
+    <Content Include="master\MasterPage.Master" />
+    <Content Include="WebForm1.aspx" />
+    <None Include="Properties\PublishProfiles\CARLOS.pubxml" />
+    <Content Include="Reportes\PruebaInterferencia.xlsx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="forms\Inicio.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\BandejaDocumentacion.aspx.cs">
+      <DependentUpon>BandejaDocumentacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\BandejaDocumentacion.aspx.designer.cs">
+      <DependentUpon>BandejaDocumentacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\BandejaTarea.aspx.cs">
+      <DependentUpon>BandejaTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\BandejaTarea.aspx.designer.cs">
+      <DependentUpon>BandejaTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CargaMasiva.aspx.cs">
+      <DependentUpon>CargaMasiva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\CargaMasiva.aspx.designer.cs">
+      <DependentUpon>CargaMasiva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx.cs">
+      <DependentUpon>DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx.designer.cs">
+      <DependentUpon>DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoActaInstalacionPTP.aspx.cs">
+      <DependentUpon>DocumentoActaInstalacionPTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoActaInstalacionPTP.aspx.designer.cs">
+      <DependentUpon>DocumentoActaInstalacionPTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoActaProtocolo.aspx.cs">
+      <DependentUpon>DocumentoActaProtocolo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoActaProtocolo.aspx.designer.cs">
+      <DependentUpon>DocumentoActaProtocolo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoActaPruebasInterferencia.aspx.cs">
+      <DependentUpon>DocumentoActaPruebasInterferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoActaPruebasInterferencia.aspx.designer.cs">
+      <DependentUpon>DocumentoActaPruebasInterferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoActaSeguridad.aspx.cs">
+      <DependentUpon>DocumentoActaSeguridad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoActaSeguridad.aspx.designer.cs">
+      <DependentUpon>DocumentoActaSeguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoInstalacionPozoTierra.aspx.cs">
+      <DependentUpon>DocumentoInstalacionPozoTierra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoInstalacionPozoTierra.aspx.designer.cs">
+      <DependentUpon>DocumentoInstalacionPozoTierra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoInventarioPMP.aspx.cs">
+      <DependentUpon>DocumentoInventarioPMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoInventarioPMP.aspx.designer.cs">
+      <DependentUpon>DocumentoInventarioPMP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoInventarioPTP.aspx.cs">
+      <DependentUpon>DocumentoInventarioPTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoInventarioPTP.aspx.designer.cs">
+      <DependentUpon>DocumentoInventarioPTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoProtocoloInstalacion.aspx.cs">
+      <DependentUpon>DocumentoProtocoloInstalacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoProtocoloInstalacion.aspx.designer.cs">
+      <DependentUpon>DocumentoProtocoloInstalacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoPruebasServicioDITGPMP.aspx.cs">
+      <DependentUpon>DocumentoPruebasServicioDITGPMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoPruebasServicioDITGPMP.aspx.designer.cs">
+      <DependentUpon>DocumentoPruebasServicioDITGPMP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoPruebasServicioDITGPTP.aspx.cs">
+      <DependentUpon>DocumentoPruebasServicioDITGPTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoPruebasServicioDITGPTP.aspx.designer.cs">
+      <DependentUpon>DocumentoPruebasServicioDITGPTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoReporteFotograficoCMM4.aspx.cs">
+      <DependentUpon>DocumentoReporteFotograficoCMM4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoReporteFotograficoCMM4.aspx.designer.cs">
+      <DependentUpon>DocumentoReporteFotograficoCMM4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ObtenerBytesArchivo.aspx.cs">
+      <DependentUpon>ObtenerBytesArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\ObtenerBytesArchivo.aspx.designer.cs">
+      <DependentUpon>ObtenerBytesArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="master\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\InstalacionPozoTierraTipoA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstalacionPozoTierraTipoA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\InventarioPMP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioPMP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\ProtocoloInstalacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProtocoloInstalacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\PruebaInterferencia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PruebaInterferencia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\PruebaServicioDITG_PMP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PruebaServicioDITG_PMP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntity\BusinessEntity.csproj">
+      <Project>{68e6f765-9bcf-4e1d-87c2-336b75db3d92}</Project>
+      <Name>BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{0482140b-db4d-4c12-9132-42cc099f15f0}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{E12CFA3A-5CC0-46D8-98EE-44B7F8081113}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reportes\InstalacionPozoTierraTipoA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InstalacionPozoTierraTipoA.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\InventarioPMP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventarioPMP.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reportes\ProtocoloInstalacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProtocoloInstalacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PruebaInterferencia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PruebaInterferencia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PruebaServicioDITG_PMP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PruebaServicioDITG_PMP.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10875</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1510/SNW</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
