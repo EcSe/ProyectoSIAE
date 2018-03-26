@@ -16,6 +16,10 @@ using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 
+using SNW.OpenXML;
+using System.Windows.Forms;
+using SNW.OpenXML;
+
 namespace SNW.forms
 {
     public partial class BandejaDocumentacion : System.Web.UI.Page
@@ -176,98 +180,60 @@ namespace SNW.forms
 
             #region COdigoOpenXML
 
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("USP_R_PRUEBAINTERFERENCIA", con);
-            con.Open();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@CH_ID_TAREA", documento.Tarea.IdTarea);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
+            /*   try
+               {
+                   SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
+                   SqlCommand cmd = new SqlCommand("USP_R_PRUEBAINTERFERENCIA", con);
+                   cmd.CommandType = CommandType.StoredProcedure;
+                   cmd.Parameters.AddWithValue("@CH_ID_TAREA", documento.Tarea.IdTarea);
+                   SqlDataAdapter da = new SqlDataAdapter(cmd);
+                   DataSet ds = new DataSet();
+                   da.Fill(ds);
 
-            //DataTable dt = ds.Tables[0];
 
-            String codNodo = ds.Tables[0].Rows[0]["COD_NODO"].ToString();
+                   String codNodo = ds.Tables[0].Rows[0]["COD_NODO"].ToString();
 
-          /*  foreach (DataRow row in dt.Rows)
-            {
-                String codNodo = Convert.ToString(row["COD_NODO"]);
-                
-            }
-            */
-            String usuarioWindows = Environment.UserName;
-            String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + documento.Documento.ValorCadena1 + " " + documento.Tarea.IdTarea + ".xls";
-            String templateName = "~/Reportes/PruebaInterferencia.rpt";
 
-            WorksheetPart wsPart = null;
-            WorkbookPart wbPart = null;
-            SpreadsheetDocument document = null;
-            SheetData sheetData = null;
-            //sobreescribe archivos existentes
-            File.Copy(Server.MapPath(templateName), excelGenerado, true);
-            //abrimos el excel copiado de la planilla
-           // document = SpreadsheetDocument.Open(excelGenerado, true);
+                   String usuarioWindows = Environment.UserName;
+                   String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + documento.Documento.ValorCadena1 + " " + documento.Tarea.IdTarea + ".xlsx";
+                   String templateName = "~/Reportes/PruebaInterferencia.xlsx";
 
-            UpdateCell(excelGenerado,codNodo,12,"E");
 
-          
+
+                   File.Copy(Server.MapPath(templateName), excelGenerado, true);
+
+
+                   ExcelTools.UpdateCell(excelGenerado, "Selección de Frecuencia", codNodo, 12, "E");
+
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show(ex.Message);
+               }*/
             #endregion
-        }
 
-
-        public static void UpdateCell(String docName,String text,uint rowIndex,String columName)
-        {
-            
-            using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
+            String rutaPlantilla = "";
+            ReportesDocumentos report = new ReportesDocumentos();
+            switch (documento.Documento.IdValor)
             {
-                WorksheetPart worksheetPart = GetWorkSheetPartByName(spreadSheet, "Seleccion de Frecuencia");
+                
+                case "000003":
+                     rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
+                   
+                    report.PruebaInterferencia(documento.Tarea.NodoIIBBA.IdNodo,documento.Tarea.IdTarea,documento.Documento.ValorCadena1,rutaPlantilla);
+                    break;
 
-                if(worksheetPart != null)
-                {
-
-                    Cell cell = GetCell(worksheetPart.Worksheet, columName, rowIndex);
-                    cell.CellValue = new CellValue(text);
-                    cell.DataType = new EnumValue<CellValues>(CellValues.Number);
-
-                    //guardarel workSheet
-                    worksheetPart.Worksheet.Save();
-                }
-
+                case "000011":  rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPMP.xlsx");
+                    report.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                    break;
             }
 
-        }
-        private static WorksheetPart GetWorkSheetPartByName(SpreadsheetDocument document, String sheetName)
-        {
-
-            IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook.GetFirstChild<Sheets>().Elements<Sheet>().Where(s => s.Name == sheetName);
-
-            if(sheets.Count() == 0)
-            {
-                //the worksheet especificado no existe
-                return null;
-            }
-            String relationShipId = sheets.First().Id.Value;
-            WorksheetPart worksheetPart = (WorksheetPart)
-                        document.WorkbookPart.GetPartById(relationShipId);
-            return worksheetPart;
 
         }
 
-        private static Cell GetCell(Worksheet worksheet,String columName,uint rowIndex)
-        {
-            Row row = GetRow(worksheet, rowIndex);
-            if (row == null) return null;
 
-            return row.Elements<Cell>().Where(c => String.Compare
-                    (c.CellReference.Value, columName + rowIndex, true) == 0).First();
+        
 
-        }
 
-        private static Row GetRow(Worksheet worksheet, uint rowIndex)
-        {
-            return worksheet.GetFirstChild<SheetData>().
-                Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
-
-        }
     }
 }
