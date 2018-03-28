@@ -149,7 +149,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1330</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1510/LOG</IISUrl>
+          <IISUrl>http://localhost:1530/LOG</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -226,6 +226,11 @@ namespace SNW.forms
                 case "000011":  rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPMP.xlsx");
                     report.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
                     break;
+
+                case "000004": rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPMP.xlsx");
+                    report.Anexo2InventarioPMP
+                      (documento.Tarea.NodoIIBBA.IdNodo,documento.Tarea.IdTarea,documento.Documento.ValorCadena1,rutaPlantilla);
+                    break;
             }
 
 
