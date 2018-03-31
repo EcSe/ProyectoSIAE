@@ -231,6 +231,11 @@ namespace SNW.forms
                     report.Anexo2InventarioPMP
                       (documento.Tarea.NodoIIBBA.IdNodo,documento.Tarea.IdTarea,documento.Documento.ValorCadena1,rutaPlantilla);
                     break;
+
+                case "000017":  rutaPlantilla = Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoA.xlsx");
+                    report.InstalacionPozoTierra(documento.Tarea.NodoIIBBA.IdNodo,documento.Tarea.IdTarea,documento.Documento.ValorCadena1,rutaPlantilla);
+
+                    break;
             }
 
 

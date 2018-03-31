@@ -180,7 +180,7 @@ namespace SNW.OpenXML
             try
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-                SqlCommand cmd = new SqlCommand("USP_R_PRUEBAINTERFERENCIA", con);
+                SqlCommand cmd = new SqlCommand("[USP_R_INSTALACION_POZO_TIERRA_A]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CH_ID_TAREA", IdTarea);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -188,11 +188,13 @@ namespace SNW.OpenXML
                 da.Fill(ds);
                 con.Close();
 
-                #region CAMPOS
+                #region valores String
                 String INSTITUCION = ds.Tables[0].Rows[0]["INSTITUCION"].ToString();
                 String CODIGO_IIBB = ds.Tables[0].Rows[0]["CODIGO_IIBB"].ToString();
                 String NOMBRE_IIBB = ds.Tables[0].Rows[0]["NOMBRE_IIBB"].ToString();
+                #endregion
 
+                #region valores binarios
                 byte[] CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBB = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBB"];
                 MemoryStream CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBBm = new MemoryStream(CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBB);
                 byte[] CINCO_OHM_UBICACION_POZO_ANTES_INSTALAR = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_UBICACION_POZO_ANTES_INSTALAR"];
@@ -259,13 +261,85 @@ namespace SNW.OpenXML
                 String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
+                #region Agregando los datos 
+                ExcelTools.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", INSTITUCION,7,"G");
+                ExcelTools.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", CODIGO_IIBB, 7, "O");
+                ExcelTools.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", NOMBRE_IIBB, 8, "K");
 
+                ExcelTools.AddImageDocument(false,excelGenerado, "POZO A TIERRA 10 Ohm",DIEZ_OHM_FRONTAL_IIBBm,"",13,3,1317,340);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_UBIC_POZO_ANTES_INSTALACIONm, "", 49, 3, 1317, 340);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_ZANJA_ABIERTAm, "", 83, 3, 540, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_VERITDO_TIERRA_EN_ZANJAm, "", 83, 14, 540, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_VERTIDO_SAL_GRANULADA_ZANJAm, "", 102, 3, 540, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VESTIDO_DIS_CEMENTOm, "", 102, 14, 540, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_REJE_COBRE_01m, "", 123, 3, 232, 335);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_REJE_COBRE_02m, "", 123, 8, 302, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm",DIEZ_OHM_VESTIDO_DIS_CEMENTOm, "", 123, 14, 675, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm",DIEZ_OHM_PAN_VERTIDO_sAL_GRANULADAm, "", 142, 3, 533, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VERTIDO_RESTO_TIERRAm, "", 142, 14, 718, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VERTIDO_RELLENADO_TIERRAm, "", 160,3, 534, 334);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION1m, "", 181, 7, 863, 274);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION2m, "", 181, 7, 863, 274);
+                ExcelTools.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION3m, "", 181, 7, 863, 274);
+                #endregion
 
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public void ActaSeguridadDistribucion(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
+                SqlCommand cmd = new SqlCommand("[USP_R_ACTA_SEGURIDAD_DISTRIBUCION]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CH_ID_TAREA", IdTarea);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                con.Close();
+
+                #region valores_String
+                String NOMBRE_NODO = ds.Tables[0].Rows[0]["NOMBRE_NODO"].ToString();
+                String CODIGO_NODO = ds.Tables[0].Rows[0]["CODIGO_NODO"].ToString();
+                String TIPO_NODO = ds.Tables[0].Rows[0]["TIPO_NODO"].ToString();
+                String FECHA = ds.Tables[0].Rows[0]["FECHA"].ToString();
+                String POWER_CABLE_3X14AWG = ds.Tables[0].Rows[0]["POWER_CABLE_3X14AWG"].ToString();
+                String OUTDOOR_CABLE_2X0_22SQMM_RED_BLACK = ds.Tables[0].Rows[0]["OUTDOOR_CABLE_2X0_22SQMM_RED_BLACK"].ToString();
+                String OUTDOOR_CABLE_4X0_22SQMM = ds.Tables[0].Rows[0]["OUTDOOR_CABLE_4X0_22SQMM"].ToString();
+                String SILICONA_TRANSPARENTE_200ML = ds.Tables[0].Rows[0]["SILICONA_TRANSPARENTE_200ML"].ToString();
+                String TUBO_CORRUGADO_PLEGABLE_PVC_20MM = ds.Tables[0].Rows[0]["TUBO_CORRUGADO_PLEGABLE_PVC_20MM"].ToString();
+                String SPIRAL_WRAP_12MM_WHITE = ds.Tables[0].Rows[0]["SPIRAL_WRAP_12MM_WHITE"].ToString();
+                String STEEL_FLEXIBLE_CONDUIT_34_DFX_LT = ds.Tables[0].Rows[0]["STEEL_FLEXIBLE_CONDUIT_34_DFX_LT"].ToString();
+                String GROUND_CABLE_AWG_10_YELLOWGREEN = ds.Tables[0].Rows[0]["GROUND_CABLE_AWG_10_YELLOWGREEN"].ToString();
+                String DATA_CABLE_CAT5E_FOR_OUTDOOR = ds.Tables[0].Rows[0]["DATA_CABLE_CAT5E_FOR_OUTDOOR"].ToString();
+                String LAN_CABLE_CAT5E_UTP_24AWG_LSZH_GREY = ds.Tables[0].Rows[0]["LAN_CABLE_CAT5E_UTP_24AWG_LSZH_GREY"].ToString();
+                String PVC_TAPE_25M_X_19MM_BLACK = ds.Tables[0].Rows[0]["PVC_TAPE_25M_X_19MM_BLACK"].ToString();
+                #endregion
+
+                byte[] FACHADA_DEL_NODO = (byte[])ds.Tables[0].Rows[0]["FACHADA_DEL_NODO"];
+                MemoryStream mFACHADA_DEL_NODO = new MemoryStream(FACHADA_DEL_NODO);
+                byte[] SALA_EQUIPOS_PANORAMICA_RACK = (byte[])ds.Tables[0].Rows[0]["SALA_EQUIPOS_PANORAMICA_RACK"];
+                MemoryStream SALA_EQUIPOS_PANORAMICA_RACKm = new MemoryStream(SALA_EQUIPOS_PANORAMICA_RACK);
+                byte[] PANORAMICA_INTERIOR_01 = (byte[])ds.Tables[0].Rows[0]["PANORAMICA_INTERIOR_01"];
+                MemoryStream mPANORAMICA_INTERIOR_01 = new MemoryStream(PANORAMICA_INTERIOR_01);
+                byte[] PANORAMICA_INTERIOR_02 = (byte[])ds.Tables[0].Rows[0]["PANORAMICA_INTERIOR_02"];
+                MemoryStream mPANORAMICA_INTERIOR_02 = new MemoryStream(PANORAMICA_INTERIOR_02);
+                byte[] PANORAMICA_EQUIPOS_PATIO = (byte[])ds.Tables[0].Rows[0]["PANORAMICA_EQUIPOS_PATIO"];
+                MemoryStream mPANORAMICA_EQUIPOS_PATIO = new MemoryStream(PANORAMICA_EQUIPOS_PATIO);
+                byte[] PANORAMICA_EQUIPOS_PATIO = (byte[])ds.Tables[0].Rows[0]["PANORAMICA_EQUIPOS_PATIO"];
+                MemoryStream mPANORAMICA_EQUIPOS_PATIO = new MemoryStream(PANORAMICA_EQUIPOS_PATIO);
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
         }
