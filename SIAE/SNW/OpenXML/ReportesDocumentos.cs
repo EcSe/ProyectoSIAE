@@ -306,7 +306,7 @@ namespace SNW.OpenXML
                 con.Close();
 
                 #region valores_String
-                String NOMBRE_NODO = ds.Tables[0].Rows[0]["NOMBRE_NODO"].ToString();
+                String NOMBRE_NODO = "NODO " +ds.Tables[0].Rows[0]["NOMBRE_NODO"].ToString();
                 String CODIGO_NODO = ds.Tables[0].Rows[0]["CODIGO_NODO"].ToString();
                 String TIPO_NODO = ds.Tables[0].Rows[0]["TIPO_NODO"].ToString();
                 String FECHA = ds.Tables[0].Rows[0]["FECHA"].ToString();
@@ -321,12 +321,15 @@ namespace SNW.OpenXML
                 String DATA_CABLE_CAT5E_FOR_OUTDOOR = ds.Tables[0].Rows[0]["DATA_CABLE_CAT5E_FOR_OUTDOOR"].ToString();
                 String LAN_CABLE_CAT5E_UTP_24AWG_LSZH_GREY = ds.Tables[0].Rows[0]["LAN_CABLE_CAT5E_UTP_24AWG_LSZH_GREY"].ToString();
                 String PVC_TAPE_25M_X_19MM_BLACK = ds.Tables[0].Rows[0]["PVC_TAPE_25M_X_19MM_BLACK"].ToString();
+                String EXTINGUIDOR_EXT_FECHA_EXPIRACION = ds.Tables[0].Rows[0]["EXTINGUIDOR_EXT_FECHA_EXPIRACION"].ToString();
+                String EXTINGUIDOR_INT_FECHA_EXPIRACION = ds.Tables[0].Rows[0]["EXTINGUIDOR_INT_FECHA_EXPIRACION"].ToString();
                 #endregion
 
+                #region valores binarios
                 byte[] FACHADA_DEL_NODO = (byte[])ds.Tables[0].Rows[0]["FACHADA_DEL_NODO"];
                 MemoryStream mFACHADA_DEL_NODO = new MemoryStream(FACHADA_DEL_NODO);
                 byte[] SALA_EQUIPOS_PANORAMICA_RACK = (byte[])ds.Tables[0].Rows[0]["SALA_EQUIPOS_PANORAMICA_RACK"];
-                MemoryStream SALA_EQUIPOS_PANORAMICA_RACKm = new MemoryStream(SALA_EQUIPOS_PANORAMICA_RACK);
+                MemoryStream mSALA_EQUIPOS_PANORAMICA_RACK = new MemoryStream(SALA_EQUIPOS_PANORAMICA_RACK);
                 byte[] PANORAMICA_INTERIOR_01 = (byte[])ds.Tables[0].Rows[0]["PANORAMICA_INTERIOR_01"];
                 MemoryStream mPANORAMICA_INTERIOR_01 = new MemoryStream(PANORAMICA_INTERIOR_01);
                 byte[] PANORAMICA_INTERIOR_02 = (byte[])ds.Tables[0].Rows[0]["PANORAMICA_INTERIOR_02"];
@@ -397,8 +400,95 @@ namespace SNW.OpenXML
                 MemoryStream mSERIAL_NUMBER_SWITCH_POE_NVR_2 = new MemoryStream(SERIAL_NUMBER_SWITCH_POE_NVR_2);
                 byte[] SERIAL_NUMBER_CONTROLADOR = (byte[])ds.Tables[0].Rows[0]["SERIAL_NUMBER_CONTROLADOR"];
                 MemoryStream mSERIAL_NUMBER_CONTROLADOR = new MemoryStream(SERIAL_NUMBER_CONTROLADOR);
-                byte[] SERIAL_NUMBER_CONTROLADOR = (byte[])ds.Tables[0].Rows[0]["SERIAL_NUMBER_CONTROLADOR"];
-                MemoryStream mSERIAL_NUMBER_CONTROLADOR = new MemoryStream(SERIAL_NUMBER_CONTROLADOR);
+                byte[] ETIQUETADOS_EQUIPOS_CONTROLADOR = (byte[])ds.Tables[0].Rows[0]["ETIQUETADOS_EQUIPOS_CONTROLADOR"];
+                MemoryStream mETIQUETADOS_EQUIPOS_CONTROLADOR = new MemoryStream(ETIQUETADOS_EQUIPOS_CONTROLADOR);
+                byte[] ETIQUETADOS_EQUIPOS_NVR = (byte[])ds.Tables[0].Rows[0]["ETIQUETADOS_EQUIPOS_NVR"];
+                MemoryStream mETIQUETADOS_EQUIPOS_NVR = new MemoryStream(ETIQUETADOS_EQUIPOS_NVR);
+                byte[] CHECKLIST = (byte[])ds.Tables[0].Rows[0]["CHECKLIST"];
+                MemoryStream mCHECKLIST = new MemoryStream(CHECKLIST);
+                byte[] CAMARA_EXTERIOR_MODO_NORMAL_POS1 = (byte[])ds.Tables[0].Rows[0]["CAMARA_EXTERIOR_MODO_NORMAL_POS1"];
+                MemoryStream mCAMARA_EXTERIOR_MODO_NORMAL_POS1 = new MemoryStream(CAMARA_EXTERIOR_MODO_NORMAL_POS1);
+                byte[] CAMARA_EXTERIOR_MODO_NORMAL_POS2 = (byte[])ds.Tables[0].Rows[0]["CAMARA_EXTERIOR_MODO_NORMAL_POS2"];
+                MemoryStream mCAMARA_EXTERIOR_MODO_NORMAL_POS2 = new MemoryStream(CAMARA_EXTERIOR_MODO_NORMAL_POS2);
+                byte[] CAMARA_INTERIOR_MODO_NORMAL = (byte[])ds.Tables[0].Rows[0]["CAMARA_INTERIOR_MODO_NORMAL"];
+                MemoryStream mCAMARA_INTERIOR_MODO_NORMAL = new MemoryStream(CAMARA_INTERIOR_MODO_NORMAL);
+                byte[] CAMARA_INTERIOR_MODO_INFRARROJO = (byte[])ds.Tables[0].Rows[0]["CAMARA_INTERIOR_MODO_INFRARROJO"];
+                MemoryStream mCAMARA_INTERIOR_MODO_INFRARROJO = new MemoryStream(CAMARA_INTERIOR_MODO_INFRARROJO);
+                byte[] TPA_PUERTA_PRINCIPAL_ABIERTA = (byte[])ds.Tables[0].Rows[0]["TPA_PUERTA_PRINCIPAL_ABIERTA"];
+                MemoryStream mTPA_PUERTA_PRINCIPAL_ABIERTA = new MemoryStream(TPA_PUERTA_PRINCIPAL_ABIERTA);
+                byte[] TPA_PUERTA_SALAS_EQUIPOS_ABIERTA = (byte[])ds.Tables[0].Rows[0]["TPA_PUERTA_SALAS_EQUIPOS_ABIERTA"];
+                MemoryStream mTPA_PUERTA_SALAS_EQUIPOS_ABIERTA = new MemoryStream(TPA_PUERTA_SALAS_EQUIPOS_ABIERTA);
+                byte[] TPA_CAMARA_INTERNA = (byte[])ds.Tables[0].Rows[0]["TPA_CAMARA_INTERNA"];
+                MemoryStream mTPA_CAMARA_INTERNA = new MemoryStream(TPA_CAMARA_INTERNA);
+                byte[] TPA_CAMARA_EXTERNA = (byte[])ds.Tables[0].Rows[0]["TPA_CAMARA_EXTERNA"];
+                MemoryStream mTPA_CAMARA_EXTERNA = new MemoryStream(TPA_CAMARA_EXTERNA);
+                byte[] TPA_SENSOR_DE_ANIEGO = (byte[])ds.Tables[0].Rows[0]["TPA_SENSOR_DE_ANIEGO"];
+                MemoryStream mTPA_SENSOR_DE_ANIEGO = new MemoryStream(TPA_SENSOR_DE_ANIEGO);
+                byte[] TPA_SENSOR_DE_HUMO = (byte[])ds.Tables[0].Rows[0]["TPA_SENSOR_DE_HUMO"];
+                MemoryStream mTPA_SENSOR_DE_HUMO = new MemoryStream(TPA_SENSOR_DE_HUMO);
+                byte[] TPA_TAMPER_SENSOR_90_1 = (byte[])ds.Tables[0].Rows[0]["TPA_TAMPER_SENSOR_90_1"];
+                MemoryStream mTPA_TAMPER_SENSOR_90_1 = new MemoryStream(TPA_TAMPER_SENSOR_90_1);
+                byte[] TPA_MOVIMIENTO_SENSOR_90_1 = (byte[])ds.Tables[0].Rows[0]["TPA_MOVIMIENTO_SENSOR_90_1"];
+                MemoryStream mTPA_MOVIMIENTO_SENSOR_90_1 = new MemoryStream(TPA_MOVIMIENTO_SENSOR_90_1);
+                byte[] TPA_MASKING_SENSOR_90_1 = (byte[])ds.Tables[0].Rows[0]["TPA_MASKING_SENSOR_90_1"];
+                MemoryStream mTPA_MASKING_SENSOR_90_1 = new MemoryStream(TPA_MASKING_SENSOR_90_1);
+                byte[] TPA_TAMPER_SENSOR_90_2 = (byte[])ds.Tables[0].Rows[0]["TPA_TAMPER_SENSOR_90_2"];
+                MemoryStream mTPA_TAMPER_SENSOR_90_2 = new MemoryStream(TPA_TAMPER_SENSOR_90_2);
+                byte[] TPA_MOVIMIENTO_SENSOR_90_2 = (byte[])ds.Tables[0].Rows[0]["TPA_MOVIMIENTO_SENSOR_90_2"];
+                MemoryStream mTPA_MOVIMIENTO_SENSOR_90_2 = new MemoryStream(TPA_MOVIMIENTO_SENSOR_90_2);
+                byte[] TPA_MASKING_SENSOR_90_2 = (byte[])ds.Tables[0].Rows[0]["TPA_MASKING_SENSOR_90_2"];
+                MemoryStream mTPA_MASKING_SENSOR_90_2 = new MemoryStream(TPA_MASKING_SENSOR_90_2);
+                byte[] TPA_ALARMA_TAMPER_SENSOR_360 = (byte[])ds.Tables[0].Rows[0]["TPA_ALARMA_TAMPER_SENSOR_360"];
+                MemoryStream mTPA_ALARMA_TAMPER_SENSOR_360 = new MemoryStream(TPA_ALARMA_TAMPER_SENSOR_360);
+                byte[] TPA_ALARMA_MOVIMIENTO_SENSOR_360 = (byte[])ds.Tables[0].Rows[0]["TPA_ALARMA_MOVIMIENTO_SENSOR_360"];
+                MemoryStream mTPA_ALARMA_MOVIMIENTO_SENSOR_360 = new MemoryStream(TPA_ALARMA_MOVIMIENTO_SENSOR_360);
+                byte[] PING_CAMARA_1_INDOOR = (byte[])ds.Tables[0].Rows[0]["PING_CAMARA_1_INDOOR"];
+                MemoryStream mPING_CAMARA_1_INDOOR = new MemoryStream(PING_CAMARA_1_INDOOR);
+                byte[] PING_CAMARA_2_OUTDOOR = (byte[])ds.Tables[0].Rows[0]["PING_CAMARA_2_OUTDOOR"];
+                MemoryStream mPING_CAMARA_2_OUTDOOR = new MemoryStream(PING_CAMARA_2_OUTDOOR);
+                byte[] PING_CONTROLADOR = (byte[])ds.Tables[0].Rows[0]["PING_CONTROLADOR"];
+                MemoryStream mPING_CONTROLADOR = new MemoryStream(PING_CONTROLADOR);
+                byte[] PING_GATEWAY = (byte[])ds.Tables[0].Rows[0]["PING_GATEWAY"];
+                MemoryStream mPING_GATEWAY = new MemoryStream(PING_GATEWAY);
+                byte[] PING_NVR = (byte[])ds.Tables[0].Rows[0]["PING_NVR"];
+                MemoryStream mPING_NVR = new MemoryStream(PING_NVR);
+                byte[] PING_BIOMETRICO = (byte[])ds.Tables[0].Rows[0]["PING_BIOMETRICO"];
+                MemoryStream mPING_BIOMETRICO = new MemoryStream(PING_BIOMETRICO);
+                #endregion
+
+                String usuarioWindows = Environment.UserName;
+                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                File.Copy(rutaPlantilla, excelGenerado, true);
+
+                #region Agregando datos
+                ExcelTools.UpdateCell(excelGenerado, "Carátula",NOMBRE_NODO,15,"D");
+                ExcelTools.UpdateCell(excelGenerado, "Carátula",NOMBRE_NODO,17,"D");
+                ExcelTools.UpdateCell(excelGenerado, "Carátula", TIPO_NODO, 22, "D");
+                ExcelTools.UpdateCell(excelGenerado, "Carátula",CODIGO_NODO,24,"D");
+                ExcelTools.UpdateCell(excelGenerado, "Carátula", FECHA, 26, "D");
+
+                ExcelTools.AddImageDocument(false,excelGenerado, "Reporte fotográfico",mFACHADA_DEL_NODO,"",10,4,237,192);
+                ExcelTools.AddImageDocument(false,excelGenerado, "Reporte fotográfico",mSALA_EQUIPOS_PANORAMICA_RACK,"",10,16,152,194);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPANORAMICA_INTERIOR_01, "",26,3,271,194);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPANORAMICA_INTERIOR_02, "", 26, 16, 151, 195);
+                ExcelTools.AddImageDocument(false,excelGenerado, "Reporte fotográfico",mPANORAMICA_EQUIPOS_PATIO,"",42,3,164,195);
+                ExcelTools.AddImageDocument(false,excelGenerado, "Reporte fotográfico",mBREAKER_ASIGNADO_PARA_SEGURIDAD,"",42,16,195,191);
+                ExcelTools.AddImageDocument(false,excelGenerado, "Reporte fotográfico",mCERRADURA_ELECTROMAGNETICA_EXTERNA,"",59,3,157,175);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCERRADURA_ELECTROMAGNETICA_EXTERNA2, "", 59, 7, 146, 175);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MAGNETICO_EXTERMO, "", 59, 14, 162, 175);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MAGNETICO_EXTERNO2, "", 59, 19, 164, 175);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCERRADURA_ELECTRICA_EXTERNA, "", 78, 5, 169,221);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MOVIMIENTO_90_EXTERNO_N1, "", 78, 14, 297, 220);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MOVIMIENTO_90_EXTERNO_N2, "", 96, 3, 254, 189);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSIRENA_ESTROBOSCOPICA, "", 96, 16, 146, 193);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mLECTOR_BIOMETRICO, "", 116, 5, 175, 217);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mLECTOR_TARJETA, "", 116, 16, 164, 217);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCAMARA_EXTERIOR_PTZ, "", 135, 3, 296, 220);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mEXTINTOR_EXTERIOR, "", 135, 14, 302, 227);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MAGNETICO_INTERNO, "", 156, 3, 148, 205);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MAGNETICO_INTERNO_2, "", 156, 7, 153, 205);
+                #endregion
+
             }
             catch (Exception)
             {
