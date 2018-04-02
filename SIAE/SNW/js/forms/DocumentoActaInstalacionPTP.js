@@ -3039,6 +3039,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionA').val(fileNames);
@@ -3065,6 +3067,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionB').val(fileNames);
@@ -3091,6 +3095,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionVLANEstacionA').val(fileNames);
@@ -3117,6 +3123,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionVLANEstacionB').val(fileNames);
@@ -3143,6 +3151,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionA01').val(fileNames);
@@ -3169,6 +3179,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionA02').val(fileNames);
@@ -3195,6 +3207,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionB').val(fileNames);
@@ -3221,6 +3235,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionA').val(fileNames);
@@ -3247,6 +3263,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionB').val(fileNames);
@@ -3273,6 +3291,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfIngenieria').val(fileNames);
@@ -3299,6 +3319,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPerfil').val(fileNames);
@@ -3325,6 +3347,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionA').val(fileNames);
@@ -3351,6 +3375,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionB').val(fileNames);
@@ -3377,6 +3403,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerieAntenaEstacionA').val(fileNames);
@@ -3403,6 +3431,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerieODUEstacionA').val(fileNames);
@@ -3429,6 +3459,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSeriePOEEstacionA').val(fileNames);
@@ -3456,6 +3488,8 @@
             autoStart: true,
             allowedExtensions: ['png', 'jpg'],
             isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfSerieCMM4EstacionA').val(fileNames);
@@ -3482,6 +3516,8 @@
             autoStart: true,
             allowedExtensions: ['png', 'jpg'],
             isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfSerieUGPSEstacionA').val(fileNames);
@@ -3508,6 +3544,8 @@
             autoStart: true,
             allowedExtensions: ['png', 'jpg'],
             isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfSerieConversorEstacionA').val(fileNames);
@@ -3535,6 +3573,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerieAntenaEstacionB').val(fileNames);
@@ -3561,6 +3601,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerieODUEstacionB').val(fileNames);
@@ -3587,6 +3629,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSeriePOEEstacionB').val(fileNames);
@@ -3614,6 +3658,8 @@
             autoStart: true,
             allowedExtensions: ['png', 'jpg'],
             isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfSerieCMM4EstacionB').val(fileNames);
@@ -3640,6 +3686,8 @@
             autoStart: true,
             allowedExtensions: ['png', 'jpg'],
             isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfSerieUGPSEstacionB').val(fileNames);
@@ -3666,6 +3714,8 @@
             autoStart: true,
             allowedExtensions: ['png', 'jpg'],
             isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfSerieConversorEstacionB').val(fileNames);
@@ -3693,6 +3743,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPanoramicaEstacionA').val(fileNames);
@@ -3719,6 +3771,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPosicionIdentificacionEstacionA').val(fileNames);
@@ -3745,6 +3799,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAntenaPTP450iEstacionA').val(fileNames);
@@ -3771,6 +3827,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEtiquetadoPuertoAntenaEstacionA').val(fileNames);
@@ -3797,6 +3855,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEngrasadoPernosEstacionA').val(fileNames);
@@ -3823,6 +3883,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSiliconeadoConectorEstacionA').val(fileNames);
@@ -3849,6 +3911,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoODUEstacionA').val(fileNames);
@@ -3875,6 +3939,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfRecorridoCableSFTPEstacionA').val(fileNames);
@@ -3901,6 +3967,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTP01EstacionA').val(fileNames);
@@ -3927,6 +3995,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTP02EstacionA').val(fileNames);
@@ -3953,6 +4023,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSALANOutdoorEtiquetadoEstacionA').val(fileNames);
@@ -3979,6 +4051,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoSALANOutdoorEstacionA').val(fileNames);
@@ -4005,6 +4079,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionA').val(fileNames);
@@ -4031,6 +4107,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionA').val(fileNames);
@@ -4057,6 +4135,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPanoramicaRackEstacionA').val(fileNames);
@@ -4083,6 +4163,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoPOE01EstacionA').val(fileNames);
@@ -4109,6 +4191,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoPOE02EstacionA').val(fileNames);
@@ -4135,6 +4219,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEnergiaPOEEtiqueta01EstacionA').val(fileNames);
@@ -4161,6 +4247,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEnergiaPOEEtiqueta02EstacionA').val(fileNames);
@@ -4187,6 +4275,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPatchCorePOESwitch01EstacionA').val(fileNames);
@@ -4213,6 +4303,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPatchCorePOESwitch02EstacionA').val(fileNames);
@@ -4239,6 +4331,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPanoramicaEstacionB').val(fileNames);
@@ -4265,6 +4359,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPosicionIdentificacionEstacionB').val(fileNames);
@@ -4291,6 +4387,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAntenaPTP450iEstacionB').val(fileNames);
@@ -4317,6 +4415,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEtiquetadoPuertoAntenaEstacionB').val(fileNames);
@@ -4343,6 +4443,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEngrasadoPernosEstacionB').val(fileNames);
@@ -4369,6 +4471,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSiliconeadoConectorEstacionB').val(fileNames);
@@ -4395,6 +4499,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoODUEstacionB').val(fileNames);
@@ -4421,6 +4527,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfRecorridoCableSFTPEstacionB').val(fileNames);
@@ -4447,6 +4555,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTP01EstacionB').val(fileNames);
@@ -4473,6 +4583,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTP02EstacionB').val(fileNames);
@@ -4499,6 +4611,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSALANOutdoorEtiquetadoEstacionB').val(fileNames);
@@ -4525,6 +4639,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoSALANOutdoorEstacionB').val(fileNames);
@@ -4551,6 +4667,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionB').val(fileNames);
@@ -4577,6 +4695,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionB').val(fileNames);
@@ -4603,6 +4723,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPanoramicaRackEstacionB').val(fileNames);
@@ -4629,6 +4751,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoPOE01EstacionB').val(fileNames);
@@ -4655,6 +4779,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoPOE02EstacionB').val(fileNames);
@@ -4681,6 +4807,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEnergiaPOEEtiqueta01EstacionB').val(fileNames);
@@ -4707,6 +4835,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEnergiaPOEEtiqueta02EstacionB').val(fileNames);
@@ -4733,6 +4863,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPatchCorePOESwitch01EstacionB').val(fileNames);
@@ -4759,6 +4891,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPatchCorePOESwitch02EstacionB').val(fileNames);

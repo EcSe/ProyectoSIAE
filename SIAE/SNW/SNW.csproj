@@ -43,33 +43,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine">
-      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource">
-      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared">
-      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="DocumentFormat.OpenXml, Version=2.8.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocumentFormat.OpenXml.2.8.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -79,7 +57,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -87,7 +64,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="forms\BandejaDocumentacion.aspx" />
@@ -98,12 +74,12 @@
     <Content Include="forms\DocumentoActaProtocolo.aspx" />
     <Content Include="forms\DocumentoActaPruebasInterferencia.aspx" />
     <Content Include="forms\DocumentoActaSeguridad.aspx" />
+    <Content Include="forms\DocumentoEstudioCampo.aspx" />
     <Content Include="forms\DocumentoInstalacionPozoTierra.aspx" />
     <Content Include="forms\DocumentoInventarioPMP.aspx" />
     <Content Include="forms\DocumentoInventarioPTP.aspx" />
     <Content Include="forms\DocumentoProtocoloInstalacion.aspx" />
-    <Content Include="forms\DocumentoPruebasServicioDITGPMP.aspx" />
-    <Content Include="forms\DocumentoPruebasServicioDITGPTP.aspx" />
+    <Content Include="forms\DocumentoPruebasServicioDITG.aspx" />
     <Content Include="forms\DocumentoReporteFotograficoCMM4.aspx" />
     <Content Include="forms\ObtenerBytesArchivo.aspx" />
     <Content Include="forms\Upload.aspx" />
@@ -115,18 +91,17 @@
     <Content Include="js\forms\CargaMasiva.js" />
     <Content Include="js\forms\DocumentoActaPruebasInterferencia.js" />
     <Content Include="js\forms\DocumentoActaSeguridad.js" />
+    <Content Include="js\forms\DocumentoEstudioCampo.js" />
     <Content Include="js\forms\DocumentoInstalacionPozoTierra.js" />
     <Content Include="js\forms\DocumentoInventarioPTP.js" />
     <Content Include="js\forms\DocumentoInventarioPMP.js" />
     <Content Include="js\forms\DocumentoProtocoloInstalacion.js" />
-    <Content Include="js\forms\DocumentoPruebasServicioDITGPMP.js" />
-    <Content Include="js\forms\DocumentoPruebasServicioDITGPTP.js" />
+    <Content Include="js\forms\DocumentoPruebasServicioDITG.js" />
     <Content Include="js\forms\DocumentoReporteFotograficoCMM4.js" />
     <Content Include="packages.config" />
     <Content Include="master\MasterPage.Master" />
     <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\CARLOS.pubxml" />
-    <Content Include="Reportes\PruebaInterferencia.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,9 +113,7 @@
     <Content Include="Default.aspx" />
     <Content Include="forms\Inicio.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -150,7 +123,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OpenXML\ReportesDocumentos.cs" />
     <Compile Include="forms\BandejaDocumentacion.aspx.cs">
       <DependentUpon>BandejaDocumentacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +179,13 @@
     <Compile Include="forms\DocumentoActaSeguridad.aspx.designer.cs">
       <DependentUpon>DocumentoActaSeguridad.aspx</DependentUpon>
     </Compile>
+    <Compile Include="forms\DocumentoEstudioCampo.aspx.cs">
+      <DependentUpon>DocumentoEstudioCampo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoEstudioCampo.aspx.designer.cs">
+      <DependentUpon>DocumentoEstudioCampo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\DocumentoInstalacionPozoTierra.aspx.cs">
       <DependentUpon>DocumentoInstalacionPozoTierra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,19 +214,12 @@
     <Compile Include="forms\DocumentoProtocoloInstalacion.aspx.designer.cs">
       <DependentUpon>DocumentoProtocoloInstalacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\DocumentoPruebasServicioDITGPMP.aspx.cs">
-      <DependentUpon>DocumentoPruebasServicioDITGPMP.aspx</DependentUpon>
+    <Compile Include="forms\DocumentoPruebasServicioDITG.aspx.cs">
+      <DependentUpon>DocumentoPruebasServicioDITG.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\DocumentoPruebasServicioDITGPMP.aspx.designer.cs">
-      <DependentUpon>DocumentoPruebasServicioDITGPMP.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="forms\DocumentoPruebasServicioDITGPTP.aspx.cs">
-      <DependentUpon>DocumentoPruebasServicioDITGPTP.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="forms\DocumentoPruebasServicioDITGPTP.aspx.designer.cs">
-      <DependentUpon>DocumentoPruebasServicioDITGPTP.aspx</DependentUpon>
+    <Compile Include="forms\DocumentoPruebasServicioDITG.aspx.designer.cs">
+      <DependentUpon>DocumentoPruebasServicioDITG.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\DocumentoReporteFotograficoCMM4.aspx.cs">
       <DependentUpon>DocumentoReporteFotograficoCMM4.aspx</DependentUpon>
@@ -286,40 +258,7 @@
     <Compile Include="master\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="OpenXML\ExcelTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\InstalacionPozoTierraTipoA.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InstalacionPozoTierraTipoA.rpt</DependentUpon>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Reportes\InventarioPMP.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InventarioPMP.rpt</DependentUpon>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Reportes\ProtocoloInstalacion.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProtocoloInstalacion.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\PruebaInterferencia.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PruebaInterferencia.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\PruebaServicioDITG_PMP.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PruebaServicioDITG_PMP.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,66 +280,6 @@
       <Project>{0482140b-db4d-4c12-9132-42cc099f15f0}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{E12CFA3A-5CC0-46D8-98EE-44B7F8081113}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Reportes\InstalacionPozoTierraTipoA.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>InstalacionPozoTierraTipoA.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Reportes\InventarioPMP.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>InventarioPMP.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <EmbeddedResource Include="Reportes\ProtocoloInstalacion.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ProtocoloInstalacion.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PruebaInterferencia.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PruebaInterferencia.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PruebaServicioDITG_PMP.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PruebaServicioDITG_PMP.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>8</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>9</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -417,7 +296,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>10875</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1530/SNW</IISUrl>
+          <IISUrl>http://localhost:1544/SNW</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

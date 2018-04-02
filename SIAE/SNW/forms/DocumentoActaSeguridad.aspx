@@ -1310,7 +1310,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerialNumberSensorMovimiento9001" class="">
                                             </div>
-                                            <label for="divSerialNumberSensorMovimiento9001">Foto 29: Serial Number Sensor Movimiento 90° N° 1</label>
+                                            <label for="divSerialNumberSensorMovimiento9001" id="lblSerialNumberSensorMovimiento9001" runat="server">Foto 29: S/N Sensor Movimiento 90° N° 1</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerialNumberSensorMovimiento9001" runat="server" />
@@ -1348,7 +1348,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerialNumberSensorMovimiento9002" class="">
                                             </div>
-                                            <label for="divSerialNumberSensorMovimiento9002">Foto 30: Serial Number Sensor Movimiento 90° N° 2</label>
+                                            <label for="divSerialNumberSensorMovimiento9002" id="lblSerialNumberSensorMovimiento9002" runat="server">Foto 30: S/N Sensor Movimiento 90° N° 2</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerialNumberSensorMovimiento9002" runat="server" />
@@ -1386,7 +1386,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerialNumberSwitchPOENVR01" class="">
                                             </div>
-                                            <label for="divSerialNumberSwitchPOENVR01">Foto 31.01: Serial Number Switch POE y NVR</label>
+                                            <label for="divSerialNumberSwitchPOENVR01" id="lblSerialNumberSwitchPOENVR01" runat="server">Foto 31.01: Serial Number Switch POE y NVR</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerialNumberSwitchPOENVR01" runat="server" />
@@ -1424,7 +1424,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerialNumberSwitchPOENVR02" class="">
                                             </div>
-                                            <label for="divSerialNumberSwitchPOENVR02">Foto 31.02: Serial Number Switch POE y NVR</label>
+                                            <label for="divSerialNumberSwitchPOENVR02" id="lblSerialNumberSwitchPOENVR02" runat="server">Foto 31.02: Serial Number Switch POE y NVR</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerialNumberSwitchPOENVR02" runat="server" />
@@ -1462,7 +1462,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerialNumberControlador" class="">
                                             </div>
-                                            <label for="divSerialNumberControlador">Foto 32: Serial Number Controlador</label>
+                                            <label for="divSerialNumberControlador" id="lblSerialNumberControlador" runat="server">Foto 32: Serial Number Controlador</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerialNumberControlador" runat="server" />
@@ -2695,6 +2695,8 @@
     </asp:UpdatePanel>
     <br />
     <br />
+    <input type="hidden" id="hfIdPerfil" runat="server"/>
+    <input type="hidden" id="hfRutaVirtualTemporal" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPie" runat="server">
     <script src="../js/forms/DocumentoActaSeguridad.js"></script>

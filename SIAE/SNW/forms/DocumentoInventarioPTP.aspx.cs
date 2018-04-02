@@ -21,6 +21,7 @@ namespace SNW.forms
                     EntidadDetalleBE entidadDetalleSecundarioBE = new EntidadDetalleBE();
                     DocumentoBE Documento = new DocumentoBE();
                     TareaBE Tarea = new TareaBE();
+                    UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
                     //EntidadDetalleBE entidadDefecto = new EntidadDetalleBE();
 
                     #region Inicializamos el formulario
@@ -42,6 +43,26 @@ namespace SNW.forms
                     this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
                     #endregion
 
+                    #region Equipamiento A
+                    List<DocumentoEquipamientoBE> lstDocumentoEquipamientoA = new List<DocumentoEquipamientoBE>();
+
+                    DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
+                    DocumentoEquipamiento.Documento = Documento;
+                    lstDocumentoEquipamientoA = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
+                    //Session["EquipamientosA"] = lstDocumentoEquipamientoA;
+
+                    #endregion
+
+                    #region Equipamiento B
+                    List<DocumentoEquipamientoBE> lstDocumentoEquipamientoB = new List<DocumentoEquipamientoBE>();
+
+                    DocumentoEquipamiento = new DocumentoEquipamientoBE();
+                    DocumentoEquipamiento.Documento.Documento.IdValor = Documento.Documento.IdValor;
+                    DocumentoEquipamiento.Documento.Tarea.IdTarea = Documento.Tarea.IdTarea;
+                    DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo = Documento.Tarea.NodoB.IdNodo;
+                    lstDocumentoEquipamientoB = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
+                    #endregion
+
                     #region 11 Serie logística
 
                     #region Estacion A
@@ -51,14 +72,32 @@ namespace SNW.forms
                         imgSerieAntenaEstacionAEjemplo);
                     #endregion
 
+                    #region Serie Antena
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBUBGG00S;UBUCGG00S", 1,
+                        lblSerieAntenaEstacionA);
+                    #endregion
+
                     #region Serie ODU (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000151",
                         imgSerieODUEstacionAEjemplo);
                     #endregion
 
+                    #region Serie ODU
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "GB9612;GB9613;GB9614;GB9615;GB9616;GB9617;GB9726;GB9727", 1,
+                        lblSerieODUEstacionA);
+                    #endregion
+
                     #region Serie POE (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000152",
                         imgSeriePOEEstacionAEjemplo);
+                    #endregion
+
+                    #region Serie POE
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "D60077;D60078", 1,
+                        lblSeriePOEEstacionA);
                     #endregion
 
                     #region Verificamos si Estacion A tiene CMM4
@@ -76,6 +115,12 @@ namespace SNW.forms
                         imgSerieCMM4EstacionAEjemplo);
                         #endregion
 
+                        #region Serie CMM4
+                        UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                            "ICA0071", 1,
+                            lblSerieCMM4EstacionA);
+                        #endregion
+
                         #region Serie UGPS (Ejemplo)
                         UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000154",
                             imgSerieUGPSEstacionAEjemplo);
@@ -85,6 +130,13 @@ namespace SNW.forms
                         UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000155",
                             imgSerieConversorEstacionAEjemplo);
                         #endregion
+
+                        #region Serie Conversor
+                        UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                            "ICD001539", 1,
+                            lblSerieConversorEstacionA);
+                        #endregion
+
                     }
                     #endregion
 
@@ -95,14 +147,32 @@ namespace SNW.forms
                         imgSerieAntenaEstacionBEjemplo);
                     #endregion
 
+                    #region Serie Antena
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBUBGG00S;UBUCGG00S", 1,
+                        lblSerieAntenaEstacionB);
+                    #endregion
+
                     #region Serie ODU (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000157",
                         imgSerieODUEstacionBEjemplo);
                     #endregion
 
+                    #region Serie ODU
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "GB9612;GB9613;GB9614;GB9615;GB9616;GB9617;GB9726;GB9727", 1,
+                        lblSerieODUEstacionB);
+                    #endregion
+
                     #region Serie POE (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000158",
                         imgSeriePOEEstacionBEjemplo);
+                    #endregion
+
+                    #region Serie POE
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "D60077;D60078", 1,
+                        lblSeriePOEEstacionB);
                     #endregion
 
                     #region Verificamos si Estacion B tiene CMM4
@@ -121,6 +191,12 @@ namespace SNW.forms
                         imgSerieCMM4EstacionBEjemplo);
                         #endregion
 
+                        #region Serie CMM4
+                        UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                            "ICA0071", 1,
+                            lblSerieCMM4EstacionB);
+                        #endregion
+
                         #region Serie UGPS (Ejemplo)
                         UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000160",
                             imgSerieUGPSEstacionBEjemplo);
@@ -130,6 +206,13 @@ namespace SNW.forms
                         UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000161",
                             imgSerieConversorEstacionBEjemplo);
                         #endregion
+
+                        #region Serie Conversor
+                        UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                            "ICD001539", 1,
+                            lblSerieConversorEstacionA);
+                        #endregion
+
                     }
                     #endregion
 
@@ -139,17 +222,163 @@ namespace SNW.forms
                     Session["Documento"] = Documento;
                     #endregion
 
+                    #region Asignamos el metodo
+                    Session["metodo"] = "I";//Insert
+                    #endregion
+
+                    #region Asignacion Perfil
+                    hfIdPerfil.Value = Usuario.Perfil.IdValor;
+                    #endregion
+
                     #endregion
 
                     #region Verificamos si existe la documentacion
-                    //DocumentoActaProtocoloSectorialBE documentoActaProtocoloSectorial = new DocumentoActaProtocoloSectorialBE();
-                    //List<DocumentoActaProtocoloSectorialBE> lstDocumentoActaProtocoloSectorial = new List<DocumentoActaProtocoloSectorialBE>();
-                    //documentoActaProtocoloSectorial.Documento.Tarea.IdTarea = Request.QueryString["IdTarea"].ToString();
-                    //lstDocumentoActaProtocoloSectorial = DocumentoActaProtocoloSectorialBL.ListarActasProtocoloSectorial(documentoActaProtocoloSectorial);
-                    //if (lstDocumentoActaProtocoloSectorial.Count.Equals(1))
-                    //{
+                    DocumentoDetalleBE DocumentoDetalle = new DocumentoDetalleBE();
+                    List<DocumentoDetalleBE> lstDetalles = new List<DocumentoDetalleBE>();
+                    DocumentoDetalle.Documento = Documento;
+                    lstDetalles = DocumentoDetalleBL.ListarDocumentoDetalle(DocumentoDetalle);
+                    if (lstDetalles.Count > 0)
+                    {
+                        String strRutaFisicaTemporal = "";
 
-                    //}
+                        #region Ruta Fisica Temporal
+                        entidadDetalleBE = new EntidadDetalleBE();
+                        entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                        entidadDetalleBE.IdValor = "RUTA_TEMP";
+                        entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                        strRutaFisicaTemporal = entidadDetalleBE.ValorCadena1;
+                        #endregion
+
+                        #region Ruta Virtual Temporal
+                        entidadDetalleBE = new EntidadDetalleBE();
+                        entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                        entidadDetalleBE.IdValor = "RUTA_VIRT_TEMP";
+                        entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                        hfRutaVirtualTemporal.Value = entidadDetalleBE.ValorCadena1;
+                        #endregion
+
+                        #region 11 Serie logística
+
+                        #region Estación A
+
+                        #region Serie Antena
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000125").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieAntenaEstacionA,
+                            hfSerieAntenaEstacionAComentario, null, null,
+                            hfSerieAntenaEstacionA, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Serie ODU
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000126").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieODUEstacionA,
+                            hfSerieODUEstacionAComentario, null, null,
+                            hfSerieODUEstacionA, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Serie POE
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000127").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSeriePOEEstacionA,
+                            hfSeriePOEEstacionAComentario, null, null,
+                            hfSeriePOEEstacionA, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        if (!hfCMM4A.Value.Equals("0"))
+                        {
+                            #region Serie CMM4
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000128").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieCMM4EstacionA,
+                                hfSerieCMM4EstacionAComentario, null, null,
+                                hfSerieCMM4EstacionA, strRutaFisicaTemporal,
+                                Type.GetType("System.Byte[]"));
+                            #endregion
+
+                            #region Serie UGPS
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000129").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieUGPSEstacionA,
+                                hfSerieUGPSEstacionAComentario, null, null,
+                                hfSerieUGPSEstacionA, strRutaFisicaTemporal,
+                                Type.GetType("System.Byte[]"));
+                            #endregion
+
+                            #region Serie Conversor
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000130").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieConversorEstacionA,
+                                hfSerieConversorEstacionAComentario, null, null,
+                                hfSerieConversorEstacionA, strRutaFisicaTemporal,
+                                Type.GetType("System.Byte[]"));
+                            #endregion
+
+                        }
+
+                        #endregion
+
+                        #region Estación B
+
+                        #region Serie Antena
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000131").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieAntenaEstacionB,
+                            hfSerieAntenaEstacionBComentario, null, null,
+                            hfSerieAntenaEstacionB, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Serie ODU
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000132").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieODUEstacionB,
+                            hfSerieODUEstacionBComentario, null, null,
+                            hfSerieODUEstacionB, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Serie POE
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000133").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSeriePOEEstacionB,
+                            hfSeriePOEEstacionBComentario, null, null,
+                            hfSeriePOEEstacionB, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        if (!hfCMM4B.Value.Equals("0"))
+                        {
+                            #region Serie CMM4
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000134").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieCMM4EstacionB,
+                                hfSerieCMM4EstacionBComentario, null, null,
+                                hfSerieCMM4EstacionB, strRutaFisicaTemporal,
+                                Type.GetType("System.Byte[]"));
+                            #endregion
+
+                            #region Serie UGPS
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000135").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieUGPSEstacionB,
+                                hfSerieUGPSEstacionBComentario, null, null,
+                                hfSerieUGPSEstacionB, strRutaFisicaTemporal,
+                                Type.GetType("System.Byte[]"));
+                            #endregion
+
+                            #region Serie Conversor
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000136").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieConversorEstacionB,
+                                hfSerieConversorEstacionBComentario, null, null,
+                                hfSerieConversorEstacionB, strRutaFisicaTemporal,
+                                Type.GetType("System.Byte[]"));
+                            #endregion
+
+                        }
+
+                        #endregion
+
+
+                        #endregion
+
+                        #region Asignamos el metodo
+                        Session["metodo"] = "U";//Update
+                        #endregion
+
+                    }
                     #endregion
 
                 }
@@ -292,13 +521,39 @@ namespace SNW.forms
 
                 #endregion
 
-                #region Usuario Creacion
-                UsuarioBE UsuarioCreacion = (UsuarioBE)Session["Usuario"];
-                Documento.Detalles.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
+                #region Usuario Creacion y modificacion
+                UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
+                Documento.Detalles.ForEach(i =>
+                {
+                    i.UsuarioCreacion = Usuario;
+                    i.UsuarioModificacion = Usuario;
+                });
+                //Documento.Equipamientos.ForEach(i =>
+                //{
+                //    i.UsuarioCreacion = Usuario;
+                //    i.UsuarioModificacion = Usuario;
+                //});
+                //Documento.Materiales.ForEach(i =>
+                //{
+                //    i.UsuarioCreacion = Usuario;
+                //    i.UsuarioModificacion = Usuario;
+                //});
+                //Documento.MedicionesEnlacePropagacion.ForEach(i =>
+                //{
+                //    i.UsuarioCreacion = Usuario;
+                //    i.UsuarioModificacion = Usuario;
+                //});
                 #endregion
 
                 #region Guardar documento
-                DocumentoBL.InsertarDocumento(Documento);
+                if (Session["metodo"].Equals("I"))
+                    DocumentoBL.InsertarDocumento(Documento);
+                else if (Session["metodo"].Equals("U"))
+                    DocumentoBL.ActualizarDocumento(Documento);
+                #endregion
+
+                #region Asignamos el metodo
+                Session["metodo"] = "U";//Update
                 #endregion
 
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openAlert('#divAlert','#divAlertHeader','modal-header-success','#lblAlertTitle','Completado','#lblAlertBody','El documento se ha guardado correctamente.',true,true);", true);

@@ -1,5 +1,9 @@
 ﻿$(document).ready(function () {
 
+    // #region Carátula
+
+    // #region Fecha
+
     //No se debe poner el control readonly en el formulario, este metodo se encarga da hacerlo
     var pckFecha = $("#cphContenido_txtFecha").pickadate({
         firstDay: true,
@@ -37,6 +41,18 @@
             //console.log($(this).val());
         });
     });
+
+    $("#cphContenido_chkFecha").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region Reporte fotográfico
+
+    // #region 01.- REPORTE FOTOGRÁFICO
+
+    // #region Foto 1: Fachada del Nodo
 
     $('#cphContenido_chkFachadaNodo').change(function () {
         var blnActivo = $("#cphContenido_chkFachadaNodo").prop("checked");
@@ -77,6 +93,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfFachadaNodo').val(fileNames);
@@ -92,6 +110,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfFachadaNodo').val() != "") {
+        divFachadaNodo.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfFachadaNodo').val(), $('#cphContenido_hfFachadaNodo').val());
+    }
+
+    $("#cphContenido_chkFachadaNodo").trigger("change");
+
+    // #endregion      
+
+    // #region Foto 2: Sala Equipos Panorámica Rack
 
     $('#cphContenido_chkSalaEquiposPanoramicaRack').change(function () {
         var blnActivo = $("#cphContenido_chkSalaEquiposPanoramicaRack").prop("checked");
@@ -132,6 +160,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSalaEquiposPanoramicaRack').val(fileNames);
@@ -147,6 +177,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSalaEquiposPanoramicaRack').val() != "") {
+        divSalaEquiposPanoramicaRack.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSalaEquiposPanoramicaRack').val(), $('#cphContenido_hfSalaEquiposPanoramicaRack').val());
+    }
+
+    $("#cphContenido_chkSalaEquiposPanoramicaRack").trigger("change");
+
+    // #endregion
+
+    // #region Foto 3: Panorámica Interior 01
 
     $('#cphContenido_chkPanoramicaInterior01').change(function () {
         var blnActivo = $("#cphContenido_chkPanoramicaInterior01").prop("checked");
@@ -187,6 +227,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPanoramicaInterior01').val(fileNames);
@@ -202,6 +244,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPanoramicaInterior01').val() != "") {
+        divPanoramicaInterior01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPanoramicaInterior01').val(), $('#cphContenido_hfPanoramicaInterior01').val());
+    }
+
+    $("#cphContenido_chkPanoramicaInterior01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 4: Panorámica Interior 02
 
     $('#cphContenido_chkPanoramicaInterior02').change(function () {
         var blnActivo = $("#cphContenido_chkPanoramicaInterior02").prop("checked");
@@ -242,6 +294,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPanoramicaInterior02').val(fileNames);
@@ -257,6 +311,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPanoramicaInterior02').val() != "") {
+        divPanoramicaInterior02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPanoramicaInterior02').val(), $('#cphContenido_hfPanoramicaInterior02').val());
+    }
+
+    $("#cphContenido_chkPanoramicaInterior02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 5: Panorámica de Equipos en Patio
 
     $('#cphContenido_chkPanoramicaEquiposPatio').change(function () {
         var blnActivo = $("#cphContenido_chkPanoramicaEquiposPatio").prop("checked");
@@ -297,6 +361,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPanoramicaEquiposPatio').val(fileNames);
@@ -312,6 +378,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPanoramicaEquiposPatio').val() != "") {
+        divPanoramicaEquiposPatio.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPanoramicaEquiposPatio').val(), $('#cphContenido_hfPanoramicaEquiposPatio').val());
+    }
+
+    $("#cphContenido_chkPanoramicaEquiposPatio").trigger("change");
+
+    // #endregion
+
+    // #region Foto 6: Breaker Asignado para Seguridad
 
     $('#cphContenido_chkBreakerAsignadoSeguridad').change(function () {
         var blnActivo = $("#cphContenido_chkBreakerAsignadoSeguridad").prop("checked");
@@ -352,6 +428,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfBreakerAsignadoSeguridad').val(fileNames);
@@ -367,6 +445,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfBreakerAsignadoSeguridad').val() != "") {
+        divBreakerAsignadoSeguridad.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfBreakerAsignadoSeguridad').val(), $('#cphContenido_hfBreakerAsignadoSeguridad').val());
+    }
+
+    $("#cphContenido_chkBreakerAsignadoSeguridad").trigger("change");
+
+    // #endregion
+
+    // #region Foto 7.01: Cerradura Electromagnética Externa
 
     $('#cphContenido_chkCerraduraElectromagneticaExterna01').change(function () {
         var blnActivo = $("#cphContenido_chkCerraduraElectromagneticaExterna01").prop("checked");
@@ -407,6 +495,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCerraduraElectromagneticaExterna01').val(fileNames);
@@ -422,6 +512,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCerraduraElectromagneticaExterna01').val() != "") {
+        divCerraduraElectromagneticaExterna01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCerraduraElectromagneticaExterna01').val(), $('#cphContenido_hfCerraduraElectromagneticaExterna01').val());
+    }
+
+    $("#cphContenido_chkCerraduraElectromagneticaExterna01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 7.02: Cerradura Electromagnética Externa
 
     $('#cphContenido_chkCerraduraElectromagneticaExterna02').change(function () {
         var blnActivo = $("#cphContenido_chkCerraduraElectromagneticaExterna02").prop("checked");
@@ -462,6 +562,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCerraduraElectromagneticaExterna02').val(fileNames);
@@ -477,6 +579,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCerraduraElectromagneticaExterna02').val() != "") {
+        divCerraduraElectromagneticaExterna02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCerraduraElectromagneticaExterna02').val(), $('#cphContenido_hfCerraduraElectromagneticaExterna02').val());
+    }
+
+    $("#cphContenido_chkCerraduraElectromagneticaExterna02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 8.01: Sensor Magnético Externo
 
     $('#cphContenido_chkSensorMagneticoExterno01').change(function () {
         var blnActivo = $("#cphContenido_chkSensorMagneticoExterno01").prop("checked");
@@ -517,6 +629,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorMagneticoExterno01').val(fileNames);
@@ -532,6 +646,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorMagneticoExterno01').val() != "") {
+        divSensorMagneticoExterno01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorMagneticoExterno01').val(), $('#cphContenido_hfSensorMagneticoExterno01').val());
+    }
+
+    $("#cphContenido_chkSensorMagneticoExterno01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 8.02: Sensor Magnético Externo
 
     $('#cphContenido_chkSensorMagneticoExterno02').change(function () {
         var blnActivo = $("#cphContenido_chkSensorMagneticoExterno02").prop("checked");
@@ -572,6 +696,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorMagneticoExterno02').val(fileNames);
@@ -587,6 +713,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorMagneticoExterno02').val() != "") {
+        divSensorMagneticoExterno02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorMagneticoExterno02').val(), $('#cphContenido_hfSensorMagneticoExterno02').val());
+    }
+
+    $("#cphContenido_chkSensorMagneticoExterno02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 9: Cerradura Eléctrica Externa
 
     $('#cphContenido_chkCerraduraElectricaExterna').change(function () {
         var blnActivo = $("#cphContenido_chkCerraduraElectricaExterna").prop("checked");
@@ -627,6 +763,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCerraduraElectricaExterna').val(fileNames);
@@ -642,6 +780,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCerraduraElectricaExterna').val() != "") {
+        divCerraduraElectricaExterna.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCerraduraElectricaExterna').val(), $('#cphContenido_hfCerraduraElectricaExterna').val());
+    }
+
+    $("#cphContenido_chkCerraduraElectricaExterna").trigger("change");
+
+    // #endregion
+
+    // #region Foto 10: Sensor Movimiento 90° Externo N°1
 
     $('#cphContenido_chkSensorMovimiento90Externo01').change(function () {
         var blnActivo = $("#cphContenido_chkSensorMovimiento90Externo01").prop("checked");
@@ -682,6 +830,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorMovimiento90Externo01').val(fileNames);
@@ -697,6 +847,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorMovimiento90Externo01').val() != "") {
+        divSensorMovimiento90Externo01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorMovimiento90Externo01').val(), $('#cphContenido_hfSensorMovimiento90Externo01').val());
+    }
+
+    $("#cphContenido_chkSensorMovimiento90Externo01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 11: Sensor Movimiento 90° Externo N°2
 
     $('#cphContenido_chkSensorMovimiento90Externo02').change(function () {
         var blnActivo = $("#cphContenido_chkSensorMovimiento90Externo02").prop("checked");
@@ -737,6 +897,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorMovimiento90Externo02').val(fileNames);
@@ -752,6 +914,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorMovimiento90Externo02').val() != "") {
+        divSensorMovimiento90Externo02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorMovimiento90Externo02').val(), $('#cphContenido_hfSensorMovimiento90Externo02').val());
+    }
+
+    $("#cphContenido_chkSensorMovimiento90Externo02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 12: Sirena Estroboscópica
 
     $('#cphContenido_chkSirenaEstroboscopica').change(function () {
         var blnActivo = $("#cphContenido_chkSirenaEstroboscopica").prop("checked");
@@ -792,6 +964,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSirenaEstroboscopica').val(fileNames);
@@ -807,6 +981,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSirenaEstroboscopica').val() != "") {
+        divSirenaEstroboscopica.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSirenaEstroboscopica').val(), $('#cphContenido_hfSirenaEstroboscopica').val());
+    }
+
+    $("#cphContenido_chkSirenaEstroboscopica").trigger("change");
+
+    // #endregion
+
+    // #region Foto 13: Lector Biométrico
 
     $('#cphContenido_chkLectorBiometrico').change(function () {
         var blnActivo = $("#cphContenido_chkLectorBiometrico").prop("checked");
@@ -847,6 +1031,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfLectorBiometrico').val(fileNames);
@@ -862,6 +1048,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfLectorBiometrico').val() != "") {
+        divLectorBiometrico.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfLectorBiometrico').val(), $('#cphContenido_hfLectorBiometrico').val());
+    }
+
+    $("#cphContenido_chkLectorBiometrico").trigger("change");
+
+    // #endregion
+
+    // #region Foto 14: Lector Tarjeta
 
     $('#cphContenido_chkLectorTarjeta').change(function () {
         var blnActivo = $("#cphContenido_chkLectorTarjeta").prop("checked");
@@ -902,6 +1098,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfLectorTarjeta').val(fileNames);
@@ -917,6 +1115,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfLectorTarjeta').val() != "") {
+        divLectorTarjeta.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfLectorTarjeta').val(), $('#cphContenido_hfLectorTarjeta').val());
+    }
+
+    $("#cphContenido_chkLectorTarjeta").trigger("change");
+
+    // #endregion
+
+    // #region Foto 15: Cámara Exterior PTZ
 
     $('#cphContenido_chkCamaraExteriorPTZ').change(function () {
         var blnActivo = $("#cphContenido_chkCamaraExteriorPTZ").prop("checked");
@@ -957,6 +1165,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorPTZ').val(fileNames);
@@ -972,6 +1182,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCamaraExteriorPTZ').val() != "") {
+        divCamaraExteriorPTZ.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCamaraExteriorPTZ').val(), $('#cphContenido_hfCamaraExteriorPTZ').val());
+    }
+
+    $("#cphContenido_chkCamaraExteriorPTZ").trigger("change");
+
+    // #endregion
+
+    // #region Foto 16: Extintor Exterior
 
     $('#cphContenido_chkExtintorExterior').change(function () {
         var blnActivo = $("#cphContenido_chkExtintorExterior").prop("checked");
@@ -1012,6 +1232,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfExtintorExterior').val(fileNames);
@@ -1027,6 +1249,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfExtintorExterior').val() != "") {
+        divExtintorExterior.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfExtintorExterior').val(), $('#cphContenido_hfExtintorExterior').val());
+    }
+
+    $("#cphContenido_chkExtintorExterior").trigger("change");
+
+    // #endregion
+
+    // #region Foto 17.01: Sensor Magnético Interno
 
     $('#cphContenido_chkSensorMagneticoInterno01').change(function () {
         var blnActivo = $("#cphContenido_chkSensorMagneticoInterno01").prop("checked");
@@ -1067,6 +1299,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorMagneticoInterno01').val(fileNames);
@@ -1082,6 +1316,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorMagneticoInterno01').val() != "") {
+        divSensorMagneticoInterno01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorMagneticoInterno01').val(), $('#cphContenido_hfSensorMagneticoInterno01').val());
+    }
+
+    $("#cphContenido_chkSensorMagneticoInterno01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 17.02: Sensor Magnético Interno
 
     $('#cphContenido_chkSensorMagneticoInterno02').change(function () {
         var blnActivo = $("#cphContenido_chkSensorMagneticoInterno02").prop("checked");
@@ -1122,6 +1366,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorMagneticoInterno02').val(fileNames);
@@ -1137,6 +1383,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorMagneticoInterno02').val() != "") {
+        divSensorMagneticoInterno02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorMagneticoInterno02').val(), $('#cphContenido_hfSensorMagneticoInterno02').val());
+    }
+
+    $("#cphContenido_chkSensorMagneticoInterno02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 18: Sensor Ocupacional
 
     $('#cphContenido_chkSensorOcupacional').change(function () {
         var blnActivo = $("#cphContenido_chkSensorOcupacional").prop("checked");
@@ -1177,6 +1433,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorOcupacional').val(fileNames);
@@ -1192,6 +1450,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorOcupacional').val() != "") {
+        divSensorOcupacional.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorOcupacional').val(), $('#cphContenido_hfSensorOcupacional').val());
+    }
+
+    $("#cphContenido_chkSensorOcupacional").trigger("change");
+
+    // #endregion
+
+    // #region Foto 19: Sensor de Humo
 
     $('#cphContenido_chkSensorHumo').change(function () {
         var blnActivo = $("#cphContenido_chkSensorHumo").prop("checked");
@@ -1232,6 +1500,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorHumo').val(fileNames);
@@ -1247,6 +1517,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorHumo').val() != "") {
+        divSensorHumo.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorHumo').val(), $('#cphContenido_hfSensorHumo').val());
+    }
+
+    $("#cphContenido_chkSensorHumo").trigger("change");
+
+    // #endregion
+
+    // #region Foto 20: Sensor Movimiento 360
 
     $('#cphContenido_chkSensorMovimiento360').change(function () {
         var blnActivo = $("#cphContenido_chkSensorMovimiento360").prop("checked");
@@ -1287,6 +1567,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorMovimiento360').val(fileNames);
@@ -1302,6 +1584,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorMovimiento360').val() != "") {
+        divSensorMovimiento360.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorMovimiento360').val(), $('#cphContenido_hfSensorMovimiento360').val());
+    }
+
+    $("#cphContenido_chkSensorMovimiento360").trigger("change");
+
+    // #endregion
+
+    // #region Foto 21: Sensor de Inundación
 
     $('#cphContenido_chkSensorInundacion').change(function () {
         var blnActivo = $("#cphContenido_chkSensorInundacion").prop("checked");
@@ -1342,6 +1634,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSensorInundacion').val(fileNames);
@@ -1357,6 +1651,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSensorInundacion').val() != "") {
+        divSensorInundacion.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSensorInundacion').val(), $('#cphContenido_hfSensorInundacion').val());
+    }
+
+    $("#cphContenido_chkSensorInundacion").trigger("change");
+
+    // #endregion
+
+    // #region Foto 22: Cámara PTZ Interior
 
     $('#cphContenido_chkCamaraPTZInterior').change(function () {
         var blnActivo = $("#cphContenido_chkCamaraPTZInterior").prop("checked");
@@ -1397,6 +1701,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraPTZInterior').val(fileNames);
@@ -1412,6 +1718,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCamaraPTZInterior').val() != "") {
+        divCamaraPTZInterior.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCamaraPTZInterior').val(), $('#cphContenido_hfCamaraPTZInterior').val());
+    }
+
+    $("#cphContenido_chkCamaraPTZInterior").trigger("change");
+
+    // #endregion
+
+    // #region Foto 23: Extintor Interior
 
     $('#cphContenido_chkExtintorInterior').change(function () {
         var blnActivo = $("#cphContenido_chkExtintorInterior").prop("checked");
@@ -1452,6 +1768,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfExtintorInterior').val(fileNames);
@@ -1467,6 +1785,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfExtintorInterior').val() != "") {
+        divExtintorInterior.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfExtintorInterior').val(), $('#cphContenido_hfExtintorInterior').val());
+    }
+
+    $("#cphContenido_chkExtintorInterior").trigger("change");
+
+    // #endregion
+
+    // #region Foto 24: Rele (Equipo Interno)
 
     $('#cphContenido_chkReleEquipoInterno').change(function () {
         var blnActivo = $("#cphContenido_chkReleEquipoInterno").prop("checked");
@@ -1507,6 +1835,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfReleEquipoInterno').val(fileNames);
@@ -1522,6 +1852,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfReleEquipoInterno').val() != "") {
+        divReleEquipoInterno.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfReleEquipoInterno').val(), $('#cphContenido_hfReleEquipoInterno').val());
+    }
+
+    $("#cphContenido_chkReleEquipoInterno").trigger("change");
+
+    // #endregion
+
+    // #region Foto 25: Controlador, NVR y Switch POE
 
     $('#cphContenido_chkControladorNVRSwitchPOE').change(function () {
         var blnActivo = $("#cphContenido_chkControladorNVRSwitchPOE").prop("checked");
@@ -1562,6 +1902,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfControladorNVRSwitchPOE').val(fileNames);
@@ -1577,6 +1919,20 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfControladorNVRSwitchPOE').val() != "") {
+        divControladorNVRSwitchPOE.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfControladorNVRSwitchPOE').val(), $('#cphContenido_hfControladorNVRSwitchPOE').val());
+    }
+
+    $("#cphContenido_chkControladorNVRSwitchPOE").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region 02.- ATERRAMIENTO
+
+    // #region Foto 26: Aterramiento Controlador
 
     $('#cphContenido_chkAterramientoControlador').change(function () {
         var blnActivo = $("#cphContenido_chkAterramientoControlador").prop("checked");
@@ -1617,6 +1973,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoControlador').val(fileNames);
@@ -1632,6 +1990,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoControlador').val() != "") {
+        divAterramientoControlador.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoControlador').val(), $('#cphContenido_hfAterramientoControlador').val());
+    }
+
+    $("#cphContenido_chkAterramientoControlador").trigger("change");
+
+    // #endregion
+
+    // #region Foto 27.01: Aterramiento NVR y POE
 
     $('#cphContenido_chkAterramientoNVRPOE01').change(function () {
         var blnActivo = $("#cphContenido_chkAterramientoNVRPOE01").prop("checked");
@@ -1672,6 +2040,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoNVRPOE01').val(fileNames);
@@ -1687,6 +2057,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoNVRPOE01').val() != "") {
+        divAterramientoNVRPOE01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoNVRPOE01').val(), $('#cphContenido_hfAterramientoNVRPOE01').val());
+    }
+
+    $("#cphContenido_chkAterramientoNVRPOE01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 27.02: Aterramiento NVR y POE
 
     $('#cphContenido_chkAterramientoNVRPOE02').change(function () {
         var blnActivo = $("#cphContenido_chkAterramientoNVRPOE02").prop("checked");
@@ -1727,6 +2107,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoNVRPOE02').val(fileNames);
@@ -1742,6 +2124,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoNVRPOE02').val() != "") {
+        divAterramientoNVRPOE02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoNVRPOE02').val(), $('#cphContenido_hfAterramientoNVRPOE02').val());
+    }
+
+    $("#cphContenido_chkAterramientoNVRPOE02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 28: Aterramiento a Barra
 
     $('#cphContenido_chkAterramientoBarra').change(function () {
         var blnActivo = $("#cphContenido_chkAterramientoBarra").prop("checked");
@@ -1782,6 +2174,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfAterramientoBarra').val(fileNames);
@@ -1797,6 +2191,20 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoBarra').val() != "") {
+        divAterramientoBarra.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoBarra').val(), $('#cphContenido_hfAterramientoBarra').val());
+    }
+
+    $("#cphContenido_chkAterramientoBarra").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region 03.- SERIE DE EQUIPOS
+
+    // #region Foto 29: Serial Number Sensor Movimiento 90° N° 1
 
     $('#cphContenido_chkSerialNumberSensorMovimiento9001').change(function () {
         var blnActivo = $("#cphContenido_chkSerialNumberSensorMovimiento9001").prop("checked");
@@ -1837,6 +2245,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerialNumberSensorMovimiento9001').val(fileNames);
@@ -1852,6 +2262,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSerialNumberSensorMovimiento9001').val() != "") {
+        divSerialNumberSensorMovimiento9001.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerialNumberSensorMovimiento9001').val(), $('#cphContenido_hfSerialNumberSensorMovimiento9001').val());
+    }
+
+    $("#cphContenido_chkSerialNumberSensorMovimiento9001").trigger("change");
+
+    // #endregion
+
+    // #region Foto 30: Serial Number Sensor Movimiento 90° N° 2
 
     $('#cphContenido_chkSerialNumberSensorMovimiento9002').change(function () {
         var blnActivo = $("#cphContenido_chkSerialNumberSensorMovimiento9002").prop("checked");
@@ -1892,6 +2312,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerialNumberSensorMovimiento9002').val(fileNames);
@@ -1907,6 +2329,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSerialNumberSensorMovimiento9002').val() != "") {
+        divSerialNumberSensorMovimiento9002.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerialNumberSensorMovimiento9002').val(), $('#cphContenido_hfSerialNumberSensorMovimiento9002').val());
+    }
+
+    $("#cphContenido_chkSerialNumberSensorMovimiento9002").trigger("change");
+
+    // #endregion
+
+    // #region Foto 31.01: Serial Number Switch POE y NVR
 
     $('#cphContenido_chkSerialNumberSwitchPOENVR01').change(function () {
         var blnActivo = $("#cphContenido_chkSerialNumberSwitchPOENVR01").prop("checked");
@@ -1947,6 +2379,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerialNumberSwitchPOENVR01').val(fileNames);
@@ -1962,6 +2396,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSerialNumberSwitchPOENVR01').val() != "") {
+        divSerialNumberSwitchPOENVR01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerialNumberSwitchPOENVR01').val(), $('#cphContenido_hfSerialNumberSwitchPOENVR01').val());
+    }
+
+    $("#cphContenido_chkSerialNumberSwitchPOENVR01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 31.02: Serial Number Switch POE y NVR
 
     $('#cphContenido_chkSerialNumberSwitchPOENVR02').change(function () {
         var blnActivo = $("#cphContenido_chkSerialNumberSwitchPOENVR02").prop("checked");
@@ -2002,6 +2446,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerialNumberSwitchPOENVR02').val(fileNames);
@@ -2017,6 +2463,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSerialNumberSwitchPOENVR02').val() != "") {
+        divSerialNumberSwitchPOENVR02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerialNumberSwitchPOENVR02').val(), $('#cphContenido_hfSerialNumberSwitchPOENVR02').val());
+    }
+
+    $("#cphContenido_chkSerialNumberSwitchPOENVR02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 32: Serial Number Controlador
 
     $('#cphContenido_chkSerialNumberControlador').change(function () {
         var blnActivo = $("#cphContenido_chkSerialNumberControlador").prop("checked");
@@ -2057,6 +2513,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfSerialNumberControlador').val(fileNames);
@@ -2072,6 +2530,20 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSerialNumberControlador').val() != "") {
+        divSerialNumberControlador.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerialNumberControlador').val(), $('#cphContenido_hfSerialNumberControlador').val());
+    }
+
+    $("#cphContenido_chkSerialNumberControlador").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region 04.- ETIQUETADO
+
+    // #region Foto 33: Etiquetado de Equipos en Controlador
 
     $('#cphContenido_chkEtiquetadoEquiposControlador').change(function () {
         var blnActivo = $("#cphContenido_chkEtiquetadoEquiposControlador").prop("checked");
@@ -2112,6 +2584,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEtiquetadoEquiposControlador').val(fileNames);
@@ -2127,6 +2601,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfEtiquetadoEquiposControlador').val() != "") {
+        divEtiquetadoEquiposControlador.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEtiquetadoEquiposControlador').val(), $('#cphContenido_hfEtiquetadoEquiposControlador').val());
+    }
+
+    $("#cphContenido_chkEtiquetadoEquiposControlador").trigger("change");
+
+    // #endregion
+
+    // #region Foto 34: Etiquetado de Equipos en NVR
 
     $('#cphContenido_chkEtiquetadoEquiposNVR').change(function () {
         var blnActivo = $("#cphContenido_chkEtiquetadoEquiposNVR").prop("checked");
@@ -2167,6 +2651,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfEtiquetadoEquiposNVR').val(fileNames);
@@ -2182,6 +2668,20 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfEtiquetadoEquiposNVR').val() != "") {
+        divEtiquetadoEquiposNVR.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEtiquetadoEquiposNVR').val(), $('#cphContenido_hfEtiquetadoEquiposNVR').val());
+    }
+
+    $("#cphContenido_chkEtiquetadoEquiposNVR").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region 05.- CHECKLIST
+
+    // #region Foto: Checklist
 
     $('#cphContenido_chkChecklist').change(function () {
         var blnActivo = $("#cphContenido_chkChecklist").prop("checked");
@@ -2222,6 +2722,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfChecklist').val(fileNames);
@@ -2237,6 +2739,20 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfChecklist').val() != "") {
+        divChecklist.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfChecklist').val(), $('#cphContenido_hfChecklist').val());
+    }
+
+    $("#cphContenido_chkChecklist").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region 06.- CAPTURAS DE PANTALLA
+
+    // #region Foto 35: Cámara Exterior Modo Normal Posición 1
 
     $('#cphContenido_chkCamaraExteriorModoNormalPosicion01').change(function () {
         var blnActivo = $("#cphContenido_chkCamaraExteriorModoNormalPosicion01").prop("checked");
@@ -2277,6 +2793,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion01').val(fileNames);
@@ -2292,6 +2810,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCamaraExteriorModoNormalPosicion01').val() != "") {
+        divCamaraExteriorModoNormalPosicion01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCamaraExteriorModoNormalPosicion01').val(), $('#cphContenido_hfCamaraExteriorModoNormalPosicion01').val());
+    }
+
+    $("#cphContenido_chkCamaraExteriorModoNormalPosicion01").trigger("change");
+
+    // #endregion
+
+    // #region Foto 36: Cámara Exterior Modo Normal Posición 2
 
     $('#cphContenido_chkCamaraExteriorModoNormalPosicion02').change(function () {
         var blnActivo = $("#cphContenido_chkCamaraExteriorModoNormalPosicion02").prop("checked");
@@ -2332,6 +2860,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion02').val(fileNames);
@@ -2347,6 +2877,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCamaraExteriorModoNormalPosicion02').val() != "") {
+        divCamaraExteriorModoNormalPosicion02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCamaraExteriorModoNormalPosicion02').val(), $('#cphContenido_hfCamaraExteriorModoNormalPosicion02').val());
+    }
+
+    $("#cphContenido_chkCamaraExteriorModoNormalPosicion02").trigger("change");
+
+    // #endregion
+
+    // #region Foto 37: Cámara Interior Modo Normal
 
     $('#cphContenido_chkCamaraInteriorModoNormal').change(function () {
         var blnActivo = $("#cphContenido_chkCamaraInteriorModoNormal").prop("checked");
@@ -2387,6 +2927,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoNormal').val(fileNames);
@@ -2402,6 +2944,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCamaraInteriorModoNormal').val() != "") {
+        divCamaraInteriorModoNormal.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCamaraInteriorModoNormal').val(), $('#cphContenido_hfCamaraInteriorModoNormal').val());
+    }
+
+    $("#cphContenido_chkCamaraInteriorModoNormal").trigger("change");
+
+    // #endregion
+
+    // #region Foto 38: Cámara Interior Modo Infrarojo
 
     $('#cphContenido_chkCamaraInteriorModoInfrarojo').change(function () {
         var blnActivo = $("#cphContenido_chkCamaraInteriorModoInfrarojo").prop("checked");
@@ -2442,6 +2994,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoInfrarojo').val(fileNames);
@@ -2457,6 +3011,20 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfCamaraInteriorModoInfrarojo').val() != "") {
+        divCamaraInteriorModoInfrarojo.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfCamaraInteriorModoInfrarojo').val(), $('#cphContenido_hfCamaraInteriorModoInfrarojo').val());
+    }
+
+    $("#cphContenido_chkCamaraInteriorModoInfrarojo").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region 07.- CAPTURAS DE PANTALLA TECHNICIAN GUI
+
+    // #region Foto 39: Technician Program Alarma Puerta Principal Abierta
 
     $('#cphContenido_chkTechnicianProgramAlarmaPuertaPrincipalAbierta').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaPuertaPrincipalAbierta").prop("checked");
@@ -2497,6 +3065,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaPrincipalAbierta').val(fileNames);
@@ -2512,6 +3082,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaPuertaPrincipalAbierta').val() != "") {
+        divTechnicianProgramAlarmaPuertaPrincipalAbierta.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaPuertaPrincipalAbierta').val(), $('#cphContenido_hfTechnicianProgramAlarmaPuertaPrincipalAbierta').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaPuertaPrincipalAbierta").trigger("change");
+
+    // #endregion
+
+    // #region Foto 40: Technician Program Alarma Puerta Sala de Equipos Abierta
 
     $('#cphContenido_chkTechnicianProgramAlarmaPuertaSalaEquiposAbierta').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaPuertaSalaEquiposAbierta").prop("checked");
@@ -2552,6 +3132,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaSalaEquiposAbierta').val(fileNames);
@@ -2567,6 +3149,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaPuertaSalaEquiposAbierta').val() != "") {
+        divTechnicianProgramAlarmaPuertaSalaEquiposAbierta.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaPuertaSalaEquiposAbierta').val(), $('#cphContenido_hfTechnicianProgramAlarmaPuertaSalaEquiposAbierta').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaPuertaSalaEquiposAbierta").trigger("change");
+
+    // #endregion
+
+    // #region Foto 41: Technician Program Alarma de Cámara Interna
 
     $('#cphContenido_chkTechnicianProgramAlarmaCamaraInterna').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaCamaraInterna").prop("checked");
@@ -2607,6 +3199,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraInterna').val(fileNames);
@@ -2622,6 +3216,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaCamaraInterna').val() != "") {
+        divTechnicianProgramAlarmaCamaraInterna.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaCamaraInterna').val(), $('#cphContenido_hfTechnicianProgramAlarmaCamaraInterna').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaCamaraInterna").trigger("change");
+
+    // #endregion
+
+    // #region Foto 42: Technician Program Alarma de Cámara Externa
 
     $('#cphContenido_chkTechnicianProgramAlarmaCamaraExterna').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaCamaraExterna").prop("checked");
@@ -2662,6 +3266,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraExterna').val(fileNames);
@@ -2677,6 +3283,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaCamaraExterna').val() != "") {
+        divTechnicianProgramAlarmaCamaraExterna.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaCamaraExterna').val(), $('#cphContenido_hfTechnicianProgramAlarmaCamaraExterna').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaCamaraExterna").trigger("change");
+
+    // #endregion
+
+    // #region Foto 43: Technician Program Alarma de Sensor de Aniego
 
     $('#cphContenido_chkTechnicianProgramAlarmaSensorAniego').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaSensorAniego").prop("checked");
@@ -2717,6 +3333,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorAniego').val(fileNames);
@@ -2732,6 +3350,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaSensorAniego').val() != "") {
+        divTechnicianProgramAlarmaSensorAniego.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaSensorAniego').val(), $('#cphContenido_hfTechnicianProgramAlarmaSensorAniego').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaSensorAniego").trigger("change");
+
+    // #endregion
+
+    // #region Foto 44: Technician Program Alarma de Sensor de Humo
 
     $('#cphContenido_chkTechnicianProgramAlarmaSensorHumo').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaSensorHumo").prop("checked");
@@ -2772,6 +3400,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorHumo').val(fileNames);
@@ -2787,6 +3417,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaSensorHumo').val() != "") {
+        divTechnicianProgramAlarmaSensorHumo.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaSensorHumo').val(), $('#cphContenido_hfTechnicianProgramAlarmaSensorHumo').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaSensorHumo").trigger("change");
+
+    // #endregion
+
+    // #region Foto 45: Technician Program Alarma Tamper Sensor de 90°-1
 
     $('#cphContenido_chkTechnicianProgramAlarmaTamperSensor9001').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaTamperSensor9001").prop("checked");
@@ -2827,6 +3467,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9001').val(fileNames);
@@ -2842,6 +3484,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9001').val() != "") {
+        divTechnicianProgramAlarmaTamperSensor9001.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9001').val(), $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9001').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaTamperSensor9001").trigger("change");
+
+    // #endregion
+
+    // #region Foto 46: Technician Program Alarma Movimiento Sensor de 90°-1
 
     $('#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9001').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9001").prop("checked");
@@ -2882,6 +3534,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9001').val(fileNames);
@@ -2897,6 +3551,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9001').val() != "") {
+        divTechnicianProgramAlarmaMovimientoSensor9001.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9001').val(), $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9001').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9001").trigger("change");
+
+    // #endregion
+
+    // #region Foto 47: Technician Program Alarma Masking Sensor de 90°-1
 
     $('#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9001').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9001").prop("checked");
@@ -2937,6 +3601,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9001').val(fileNames);
@@ -2952,6 +3618,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9001').val() != "") {
+        divTechnicianProgramAlarmaMaskingSensor9001.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9001').val(), $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9001').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9001").trigger("change");
+
+    // #endregion
+
+    // #region Foto 48: Technician Program Alarma Tamper Sensor de 90°-2
 
     $('#cphContenido_chkTechnicianProgramAlarmaTamperSensor9002').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaTamperSensor9002").prop("checked");
@@ -2992,6 +3668,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9002').val(fileNames);
@@ -3007,6 +3685,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9002').val() != "") {
+        divTechnicianProgramAlarmaTamperSensor9002.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9002').val(), $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9002').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaTamperSensor9002").trigger("change");
+
+    // #endregion
+
+    // #region Foto 49: Technician Program Alarma Movimiento Sensor de 90°-2
 
     $('#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9002').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9002").prop("checked");
@@ -3047,6 +3735,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9002').val(fileNames);
@@ -3062,6 +3752,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9002').val() != "") {
+        divTechnicianProgramAlarmaMovimientoSensor9002.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9002').val(), $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9002').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9002").trigger("change");
+
+    // #endregion
+
+    // #region Foto 50: Technician Program Alarma Masking Sensor de 90°-2
 
     $('#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9002').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9002").prop("checked");
@@ -3102,6 +3802,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9002').val(fileNames);
@@ -3117,6 +3819,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9002').val() != "") {
+        divTechnicianProgramAlarmaMaskingSensor9002.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9002').val(), $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9002').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9002").trigger("change");
+
+    // #endregion
+
+    // #region Foto 51: Technician Program Alarma Tamper Sensor de 360°
 
     $('#cphContenido_chkTechnicianProgramAlarmaTamperSensor360').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaTamperSensor360").prop("checked");
@@ -3157,6 +3869,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor360').val(fileNames);
@@ -3172,6 +3886,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaTamperSensor360').val() != "") {
+        divTechnicianProgramAlarmaTamperSensor360.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor360').val(), $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor360').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaTamperSensor360").trigger("change");
+
+    // #endregion
+
+    // #region Foto 52: Technician Program Alarma Movimiento Sensor de 360°
 
     $('#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor360').change(function () {
         var blnActivo = $("#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor360").prop("checked");
@@ -3212,6 +3936,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor360').val(fileNames);
@@ -3227,6 +3953,20 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor360').val() != "") {
+        divTechnicianProgramAlarmaMovimientoSensor360.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor360').val(), $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor360').val());
+    }
+
+    $("#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor360").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region 08.- CAPTURAS DE PING
+
+    // #region Foto 53: Ping a la Cámara 1 - Indoor
 
     $('#cphContenido_chkPingCamara01Indoor').change(function () {
         var blnActivo = $("#cphContenido_chkPingCamara01Indoor").prop("checked");
@@ -3267,6 +4007,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara01Indoor').val(fileNames);
@@ -3282,6 +4024,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPingCamara01Indoor').val() != "") {
+        divPingCamara01Indoor.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPingCamara01Indoor').val(), $('#cphContenido_hfPingCamara01Indoor').val());
+    }
+
+    $("#cphContenido_chkPingCamara01Indoor").trigger("change");
+
+    // #endregion
+
+    // #region Foto 54: Ping a la Cámara 2 - Outdoor
 
     $('#cphContenido_chkPingCamara02Outdoor').change(function () {
         var blnActivo = $("#cphContenido_chkPingCamara02Outdoor").prop("checked");
@@ -3322,6 +4074,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara02Outdoor').val(fileNames);
@@ -3337,6 +4091,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPingCamara02Outdoor').val() != "") {
+        divPingCamara02Outdoor.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPingCamara02Outdoor').val(), $('#cphContenido_hfPingCamara02Outdoor').val());
+    }
+
+    $("#cphContenido_chkPingCamara02Outdoor").trigger("change");
+
+    // #endregion
+
+    // #region Foto 55: Ping al Controlador
 
     $('#cphContenido_chkPingControlador').change(function () {
         var blnActivo = $("#cphContenido_chkPingControlador").prop("checked");
@@ -3377,6 +4141,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingControlador').val(fileNames);
@@ -3392,6 +4158,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPingControlador').val() != "") {
+        divPingControlador.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPingControlador').val(), $('#cphContenido_hfPingControlador').val());
+    }
+
+    $("#cphContenido_chkPingControlador").trigger("change");
+
+    // #endregion
+
+    // #region Foto 56: Ping al Gateway
 
     $('#cphContenido_chkPingGateway').change(function () {
         var blnActivo = $("#cphContenido_chkPingGateway").prop("checked");
@@ -3432,6 +4208,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingGateway').val(fileNames);
@@ -3447,6 +4225,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPingGateway').val() != "") {
+        divPingGateway.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPingGateway').val(), $('#cphContenido_hfPingGateway').val());
+    }
+
+    $("#cphContenido_chkPingGateway").trigger("change");
+
+    // #endregion
+
+    // #region Foto 57: Ping al NVR
 
     $('#cphContenido_chkPingNVR').change(function () {
         var blnActivo = $("#cphContenido_chkPingNVR").prop("checked");
@@ -3487,6 +4275,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingNVR').val(fileNames);
@@ -3502,6 +4292,16 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPingNVR').val() != "") {
+        divPingNVR.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPingNVR').val(), $('#cphContenido_hfPingNVR').val());
+    }
+
+    $("#cphContenido_chkPingNVR").trigger("change");
+
+    // #endregion
+
+    // #region Foto 58: Ping al Biométrico
 
     $('#cphContenido_chkPingBiometrico').change(function () {
         var blnActivo = $("#cphContenido_chkPingBiometrico").prop("checked");
@@ -3542,6 +4342,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingBiometrico').val(fileNames);
@@ -3558,19 +4360,21 @@
         }
     });
 
-    //$('#cphContenido_chkEquipamientos').change(function () {
-    //    var blnActivo = $("#cphContenido_chkEquipamientos").prop("checked");
-    //    if (blnActivo) {
-    //        $("#cphContenido_gvEquipamientos input[id^=cphContenido_gvEquipamientos_txtSerieEquipamiento]").each(function () {
-    //            $(this).prop('disabled', true);
-    //        })
-    //    }
-    //    else {
-    //        $("#cphContenido_gvEquipamientos input[id^=cphContenido_gvEquipamientos_txtSerieEquipamiento]").each(function () {
-    //            $(this).prop('disabled', false);
-    //        })
-    //    }
-    //});
+    if ($('#cphContenido_hfPingBiometrico').val() != "") {
+        divPingBiometrico.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPingBiometrico').val(), $('#cphContenido_hfPingBiometrico').val());
+    }
+
+    $("#cphContenido_chkPingBiometrico").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #endregion
+    
+    // #region Materiales
+
+    // #region Equipamientos
 
     poEquipamientosComentario = $("#spEquipamientosComentario").popover({
         html: true,
@@ -3592,6 +4396,10 @@
             $("#cphContenido_hfEquipamientosComentario").val($(this).val());
         });
     });
+
+    // #endregion
+
+    // #region Materiales
 
     $('#cphContenido_chkMateriales').change(function () {
         var blnActivo = $("#cphContenido_chkMateriales").prop("checked");
@@ -3627,6 +4435,16 @@
             $("#cphContenido_hfMaterialesComentario").val($(this).val());
         });
     });
+
+    $("#cphContenido_chkMateriales").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region ATP
+
+    // #region E. E. Fecha Expiración
 
     var pckExtinguidorExternoFechaExpiracion = $("#cphContenido_txtExtinguidorExternoFechaExpiracion").pickadate({
         firstDay: true,
@@ -3665,6 +4483,12 @@
         });
     });
 
+    $("#cphContenido_chkExtinguidorExternoFechaExpiracion").trigger("change");
+
+    // #endregion  
+
+    // #region E. I. Fecha Expiración
+
     var pckExtinguidorInternoFechaExpiracion = $("#cphContenido_txtExtinguidorInternoFechaExpiracion").pickadate({
         firstDay: true,
         format: 'dd/mm/yyyy',
@@ -3702,7 +4526,14 @@
         });
     });
 
-    //Cerrar todos los popovers cuando se da click fuera de uno
+    $("#cphContenido_chkExtinguidorInternoFechaExpiracion").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
+    // #region Cerrar todos los popovers cuando se da click fuera de uno
+
     $("body").on('click', function (e) {
         $('[data-toggle=popover]').each(function () {
             // hide any open popovers when the anywhere else in the body is clicked
@@ -3712,9 +4543,163 @@
         });
     });
 
-    //Al momento de llamar el metodo hide del popover no necesite un segundo clic para mostrarse nuevamente
+    // #endregion
+
+    // #region Al momento de llamar el metodo hide del popover no necesite un segundo clic para mostrarse nuevamente
+
     $('body').on('hidden.bs.popover', function (e) {
         $(e.target).data("bs.popover").inState.click = false;
     });
+
+    // #endregion
+
+    // #region Bloqueamos los check de aprobacion
+
+    if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
+        //Check aprobacion
+        $('#cphContenido_chkFecha').prop('disabled', true);
+        $('#cphContenido_chkFachadaNodo').prop('disabled', true);
+        $('#cphContenido_chkSalaEquiposPanoramicaRack').prop('disabled', true);
+        $('#cphContenido_chkPanoramicaInterior01').prop('disabled', true);
+        $('#cphContenido_chkPanoramicaInterior02').prop('disabled', true);
+        $('#cphContenido_chkPanoramicaEquiposPatio').prop('disabled', true);
+        $('#cphContenido_chkBreakerAsignadoSeguridad').prop('disabled', true);
+        $('#cphContenido_chkCerraduraElectromagneticaExterna01').prop('disabled', true);
+        $('#cphContenido_chkCerraduraElectromagneticaExterna02').prop('disabled', true);
+        $('#cphContenido_chkSensorMagneticoExterno01').prop('disabled', true);
+        $('#cphContenido_chkSensorMagneticoExterno02').prop('disabled', true);
+        $('#cphContenido_chkCerraduraElectricaExterna').prop('disabled', true);
+        $('#cphContenido_chkSensorMovimiento90Externo01').prop('disabled', true);
+        $('#cphContenido_chkSensorMovimiento90Externo02').prop('disabled', true);
+        $('#cphContenido_chkSirenaEstroboscopica').prop('disabled', true);
+        $('#cphContenido_chkLectorBiometrico').prop('disabled', true);
+        $('#cphContenido_chkLectorTarjeta').prop('disabled', true);
+        $('#cphContenido_chkCamaraExteriorPTZ').prop('disabled', true);
+        $('#cphContenido_chkExtintorExterior').prop('disabled', true);
+        $('#cphContenido_chkSensorMagneticoInterno01').prop('disabled', true);
+        $('#cphContenido_chkSensorMagneticoInterno02').prop('disabled', true);
+        $('#cphContenido_chkSensorOcupacional').prop('disabled', true);
+        $('#cphContenido_chkSensorHumo').prop('disabled', true);
+        $('#cphContenido_chkSensorMovimiento360').prop('disabled', true);
+        $('#cphContenido_chkSensorInundacion').prop('disabled', true);
+        $('#cphContenido_chkCamaraPTZInterior').prop('disabled', true);
+        $('#cphContenido_chkExtintorInterior').prop('disabled', true);
+        $('#cphContenido_chkReleEquipoInterno').prop('disabled', true);
+        $('#cphContenido_chkControladorNVRSwitchPOE').prop('disabled', true);
+        $('#cphContenido_chkAterramientoControlador').prop('disabled', true);
+        $('#cphContenido_chkAterramientoNVRPOE01').prop('disabled', true);
+        $('#cphContenido_chkAterramientoNVRPOE02').prop('disabled', true);
+        $('#cphContenido_chkAterramientoBarra').prop('disabled', true);
+        $('#cphContenido_chkSerialNumberSensorMovimiento9001').prop('disabled', true);
+        $('#cphContenido_chkSerialNumberSensorMovimiento9002').prop('disabled', true);
+        $('#cphContenido_chkSerialNumberSwitchPOENVR01').prop('disabled', true);
+        $('#cphContenido_chkSerialNumberSwitchPOENVR02').prop('disabled', true);
+        $('#cphContenido_chkSerialNumberControlador').prop('disabled', true);
+        $('#cphContenido_chkEtiquetadoEquiposControlador').prop('disabled', true);
+        $('#cphContenido_chkEtiquetadoEquiposNVR').prop('disabled', true);
+        $('#cphContenido_chkChecklist').prop('disabled', true);
+        $('#cphContenido_chkCamaraExteriorModoNormalPosicion01').prop('disabled', true);
+        $('#cphContenido_chkCamaraExteriorModoNormalPosicion02').prop('disabled', true);
+        $('#cphContenido_chkCamaraInteriorModoNormal').prop('disabled', true);
+        $('#cphContenido_chkCamaraInteriorModoInfrarojo').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaPuertaPrincipalAbierta').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaPuertaSalaEquiposAbierta').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaCamaraInterna').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaCamaraExterna').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaSensorAniego').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaSensorHumo').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaTamperSensor9001').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9001').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9001').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaTamperSensor9002').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor9002').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaMaskingSensor9002').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaTamperSensor360').prop('disabled', true);
+        $('#cphContenido_chkTechnicianProgramAlarmaMovimientoSensor360').prop('disabled', true);
+        $('#cphContenido_chkPingCamara01Indoor').prop('disabled', true);
+        $('#cphContenido_chkPingCamara02Outdoor').prop('disabled', true);
+        $('#cphContenido_chkPingControlador').prop('disabled', true);
+        $('#cphContenido_chkPingGateway').prop('disabled', true);
+        $('#cphContenido_chkPingNVR').prop('disabled', true);
+        $('#cphContenido_chkchkPingBiometrico').prop('disabled', true);
+        $('#cphContenido_chkEquipamientos').prop('disabled', true);
+        $('#cphContenido_chkMateriales').prop('disabled', true);
+        $('#cphContenido_chkExtinguidorExternoFechaExpiracion').prop('disabled', true);
+        $('#cphContenido_chkExtinguidorInternoFechaExpiracion').prop('disabled', true);
+
+        //Comentarios
+        $('#txtFechaComentario').prop('disabled', true);
+        $('#txtFachadaNodoComentario').prop('disabled', true);
+        $('#txtSalaEquiposPanoramicaRackComentario').prop('disabled', true);
+        $('#txtPanoramicaInterior01Comentario').prop('disabled', true);
+        $('#txtPanoramicaInterior02Comentario').prop('disabled', true);
+        $('#txtPanoramicaEquiposPatioComentario').prop('disabled', true);
+        $('#txtBreakerAsignadoSeguridadComentario').prop('disabled', true);
+        $('#txtCerraduraElectromagneticaExterna01Comentario').prop('disabled', true);
+        $('#txtCerraduraElectromagneticaExterna02Comentario').prop('disabled', true);
+        $('#txtSensorMagneticoExterno01Comentario').prop('disabled', true);
+        $('#txtSensorMagneticoExterno02Comentario').prop('disabled', true);
+        $('#txtCerraduraElectricaExternaComentario').prop('disabled', true);
+        $('#txtSensorMovimiento90Externo01Comentario').prop('disabled', true);
+        $('#txtSensorMovimiento90Externo02Comentario').prop('disabled', true);
+        $('#txtSirenaEstroboscopicaComentario').prop('disabled', true);
+        $('#txtLectorBiometricoComentario').prop('disabled', true);
+        $('#txtLectorTarjetaComentario').prop('disabled', true);
+        $('#txtCamaraExteriorPTZComentario').prop('disabled', true);
+        $('#txtExtintorExteriorComentario').prop('disabled', true);
+        $('#txtSensorMagneticoInterno01Comentario').prop('disabled', true);
+        $('#txtSensorMagneticoInterno02Comentario').prop('disabled', true);
+        $('#txtSensorOcupacionalComentario').prop('disabled', true);
+        $('#txtSensorHumoComentario').prop('disabled', true);
+        $('#txtSensorMovimiento360Comentario').prop('disabled', true);
+        $('#txtSensorInundacionComentario').prop('disabled', true);
+        $('#txtCamaraPTZInteriorComentario').prop('disabled', true);
+        $('#txtExtintorInteriorComentario').prop('disabled', true);
+        $('#txtReleEquipoInternoComentario').prop('disabled', true);
+        $('#txtControladorNVRSwitchPOEComentario').prop('disabled', true);
+        $('#txtAterramientoControladorComentario').prop('disabled', true);
+        $('#txtAterramientoNVRPOE01Comentario').prop('disabled', true);
+        $('#txtAterramientoNVRPOE02Comentario').prop('disabled', true);
+        $('#txtAterramientoBarraComentario').prop('disabled', true);
+        $('#txtSerialNumberSensorMovimiento9001Comentario').prop('disabled', true);
+        $('#txtSerialNumberSensorMovimiento9002Comentario').prop('disabled', true);
+        $('#txtSerialNumberSwitchPOENVR01Comentario').prop('disabled', true);
+        $('#txtSerialNumberSwitchPOENVR02Comentario').prop('disabled', true);
+        $('#txtSerialNumberControladorComentario').prop('disabled', true);
+        $('#txtEtiquetadoEquiposControladorComentario').prop('disabled', true);
+        $('#txtEtiquetadoEquiposNVRComentario').prop('disabled', true);
+        $('#txtChecklistComentario').prop('disabled', true);
+        $('#txtCamaraExteriorModoNormalPosicion01Comentario').prop('disabled', true);
+        $('#txtCamaraExteriorModoNormalPosicion02Comentario').prop('disabled', true);
+        $('#txtCamaraInteriorModoNormalComentario').prop('disabled', true);
+        $('#txtCamaraInteriorModoInfrarojoComentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaPuertaPrincipalAbiertaComentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaPuertaSalaEquiposAbiertaComentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaCamaraInternaComentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaCamaraExternaComentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaSensorAniegoComentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaSensorHumoComentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaTamperSensor9001Comentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaMovimientoSensor9001Comentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaMaskingSensor9001Comentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaTamperSensor9002Comentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaMovimientoSensor9002Comentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaMaskingSensor9002Comentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaTamperSensor360Comentario').prop('disabled', true);
+        $('#txtTechnicianProgramAlarmaMovimientoSensor360Comentario').prop('disabled', true);
+        $('#txtPingCamara01IndoorComentario').prop('disabled', true);
+        $('#txtPingCamara02OutdoorComentario').prop('disabled', true);
+        $('#txtPingControladorComentario').prop('disabled', true);
+        $('#txtPingGatewayComentario').prop('disabled', true);
+        $('#txtPingNVRComentario').prop('disabled', true);
+        $('#txtchkPingBiometricoComentario').prop('disabled', true);
+        $('#txtEquipamientosComentario').prop('disabled', true);
+        $('#txtMaterialesComentario').prop('disabled', true);
+        $('#txtExtinguidorExternoFechaExpiracionComentario').prop('disabled', true);
+        $('#txtExtinguidorInternoFechaExpiracionComentario').prop('disabled', true);
+
+    }
+
+    // #endregion
 
 });

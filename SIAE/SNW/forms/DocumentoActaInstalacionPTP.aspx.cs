@@ -115,11 +115,11 @@ namespace SNW.forms
                     //    lstDocumentoEquipamientoA.Add(DocumentoEquipamiento);
                     //}
 
-                    //#region Verificamos si tiene CMM4
-                    //CMM4BE CMM4A = new CMM4BE();
-                    //List<CMM4BE> lstCMM4A = new List<CMM4BE>();
-                    //CMM4A.Nodo.IdNodo = Tarea.NodoIIBBA.IdNodo;
-                    //lstCMM4A = CMM4BL.ListarCMM4(CMM4A);
+                    #region Verificamos si tiene CMM4
+                    CMM4BE CMM4A = new CMM4BE();
+                    List<CMM4BE> lstCMM4A = new List<CMM4BE>();
+                    CMM4A.Nodo.IdNodo = Tarea.NodoIIBBA.IdNodo;
+                    lstCMM4A = CMM4BL.ListarCMM4(CMM4A);
                     //if (lstCMM4A.Count.Equals(0))//Si no tiene CMM4 le quitamos los equipamientos del CMM4
                     //{
                     //    //Quitar elementos de una lista
@@ -130,7 +130,7 @@ namespace SNW.forms
                     //                                            || de.Equipamiento.IdValor.Equals("0000000012")
                     //                                            || de.Equipamiento.IdValor.Equals("0000000013"));
                     //}
-                    //#endregion
+                    #endregion
 
                     //Session["EquipamientosA"] = lstDocumentoEquipamientoA;
                     ////gvMateriales.DataSource = lstMaterial;
@@ -200,11 +200,11 @@ namespace SNW.forms
                     //    lstDocumentoEquipamientoB.Add(DocumentoEquipamiento);
                     //}
 
-                    //#region Verificamos si tiene CMM4
-                    //CMM4BE CMM4B = new CMM4BE();
-                    //List<CMM4BE> lstCMM4B = new List<CMM4BE>();
-                    //CMM4B.Nodo.IdNodo = Tarea.NodoB.IdNodo;
-                    //lstCMM4B = CMM4BL.ListarCMM4(CMM4B);
+                    #region Verificamos si tiene CMM4
+                    CMM4BE CMM4B = new CMM4BE();
+                    List<CMM4BE> lstCMM4B = new List<CMM4BE>();
+                    CMM4B.Nodo.IdNodo = Tarea.NodoB.IdNodo;
+                    lstCMM4B = CMM4BL.ListarCMM4(CMM4B);
                     //if (lstCMM4B.Count.Equals(0))//Si no tiene CMM4 le quitamos los equipamientos del CMM4
                     //{
                     //    //Quitar elementos de una lista
@@ -215,7 +215,7 @@ namespace SNW.forms
                     //                                            || de.Equipamiento.IdValor.Equals("0000000012")
                     //                                            || de.Equipamiento.IdValor.Equals("0000000013"));
                     //}
-                    //#endregion
+                    #endregion
 
                     //Session["EquipamientosB"] = lstDocumentoEquipamientoB;
                     ////gvMateriales.DataSource = lstMaterial;
@@ -223,8 +223,11 @@ namespace SNW.forms
                     //gvEquipamientosB.DataBind();
 
                     DocumentoEquipamiento = new DocumentoEquipamientoBE();
-                    DocumentoEquipamiento.Documento = Documento;
-                    DocumentoEquipamiento.Documento.Tarea.NodoIIBBA = Tarea.NodoB;
+                    //DocumentoEquipamiento.Documento = Documento.Clone();
+                    //DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo = Tarea.NodoB.IdNodo;
+                    DocumentoEquipamiento.Documento.Documento.IdValor = Documento.Documento.IdValor;
+                    DocumentoEquipamiento.Documento.Tarea.IdTarea = Documento.Tarea.IdTarea;
+                    DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo = Documento.Tarea.NodoB.IdNodo;
                     lstDocumentoEquipamientoB = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
                     Session["EquipamientosB"] = lstDocumentoEquipamientoB;
 
@@ -311,9 +314,21 @@ namespace SNW.forms
                         imgSerieAntenaEstacionAEjemplo);
                     #endregion
 
+                    #region Serie Antena
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBQBGG00S;UBQCGG00S;U59CGY00S", 1,
+                        lblSerieAntenaEstacionA);
+                    #endregion
+
                     #region Serie ODU (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000072",
                         imgSerieODUEstacionAEjemplo);
+                    #endregion
+
+                    #region Serie ODU
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "GB9612;GB9613;GB9614;GB9615;GB9616;GB9617;GB9726;GB9727;ICA0068;ICA0069", 1,
+                        lblSerieODUEstacionA);
                     #endregion
 
                     #region Serie POE (Ejemplo)
@@ -321,23 +336,42 @@ namespace SNW.forms
                         imgSeriePOEEstacionAEjemplo);
                     #endregion
 
-                    //hfCMM4A.Value = lstCMM4A.Count.ToString();
+                    #region Serie POE
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "D60077;D60078", 1,
+                        lblSeriePOEEstacionA);
+                    #endregion
+
+                    hfCMM4A.Value = lstCMM4A.Count.ToString();
                     //if (!lstCMM4A.Count.Equals(0))//Si tiene CMM4 pedimos los equipos necesarios
                     //{
-                    //    #region Serie CMM4 (Ejemplo)
-                    //    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000074",
-                    //    imgSerieCMM4EstacionAEjemplo);
-                    //    #endregion
+                    #region Serie CMM4 (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000074",
+                    imgSerieCMM4EstacionAEjemplo);
+                    #endregion
 
-                    //    #region Serie UGPS (Ejemplo)
-                    //    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000075",
-                    //        imgSerieUGPSEstacionAEjemplo);
-                    //    #endregion
+                    #region Serie CMM4
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "ICA0071", 1,
+                        lblSerieCMM4EstacionA);
+                    #endregion
 
-                    //    #region Serie Conversor (Ejemplo)
-                    //    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000076",
-                    //        imgSerieConversorEstacionAEjemplo);
-                    //    #endregion
+                    #region Serie UGPS (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000075",
+                        imgSerieUGPSEstacionAEjemplo);
+                    #endregion
+
+                    #region Serie Conversor (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000076",
+                        imgSerieConversorEstacionAEjemplo);
+                    #endregion
+
+                    #region Serie Conversor
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
+                        "ICD001539", 1,
+                        lblSerieConversorEstacionA);
+                    #endregion
+
                     //}
                     #endregion
 
@@ -348,9 +382,21 @@ namespace SNW.forms
                         imgSerieAntenaEstacionBEjemplo);
                     #endregion
 
+                    #region Serie Antena
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBQBGG00S;UBQCGG00S;U59CGY00S", 1,
+                        lblSerieAntenaEstacionB);
+                    #endregion
+
                     #region Serie ODU (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000078",
                         imgSerieODUEstacionBEjemplo);
+                    #endregion
+
+                    #region Serie ODU
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "GB9612;GB9613;GB9614;GB9615;GB9616;GB9617;GB9726;GB9727;ICA0068;ICA0069", 1,
+                        lblSerieODUEstacionB);
                     #endregion
 
                     #region Serie POE (Ejemplo)
@@ -358,23 +404,42 @@ namespace SNW.forms
                         imgSeriePOEEstacionBEjemplo);
                     #endregion
 
-                    //hfCMM4B.Value = lstCMM4B.Count.ToString();
+                    #region Serie POE
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "D60077;D60078", 1,
+                        lblSeriePOEEstacionB);
+                    #endregion
+
+                    hfCMM4B.Value = lstCMM4B.Count.ToString();
                     //if (!lstCMM4B.Count.Equals(0))//Si tiene CMM4 pedimos los equipos necesarios
                     //{
-                    //    #region Serie CMM4 (Ejemplo)
-                    //    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000080",
-                    //    imgSerieCMM4EstacionBEjemplo);
-                    //    #endregion
+                    #region Serie CMM4 (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000080",
+                    imgSerieCMM4EstacionBEjemplo);
+                    #endregion
 
-                    //    #region Serie UGPS (Ejemplo)
-                    //    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000081",
-                    //        imgSerieUGPSEstacionBEjemplo);
-                    //    #endregion
+                    #region Serie CMM4
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "ICA0071", 1,
+                        lblSerieCMM4EstacionB);
+                    #endregion
 
-                    //    #region Serie Conversor (Ejemplo)
-                    //    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000082",
-                    //        imgSerieConversorEstacionBEjemplo);
-                    //    #endregion
+                    #region Serie UGPS (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000081",
+                        imgSerieUGPSEstacionBEjemplo);
+                    #endregion
+
+                    #region Serie Conversor (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000082",
+                        imgSerieConversorEstacionBEjemplo);
+                    #endregion
+
+                    #region Serie Conversor
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
+                        "ICD001539", 1,
+                        lblSerieConversorEstacionB);
+                    #endregion
+
                     //}
                     #endregion
 

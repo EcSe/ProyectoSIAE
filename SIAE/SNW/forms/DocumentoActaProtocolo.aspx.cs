@@ -44,6 +44,7 @@ namespace SNW.forms
                     this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
                     #endregion
 
+
                     #region Listar frecuencia
                     entidadDetalleBE = new EntidadDetalleBE();
                     entidadDetalleBE.Entidad.IdEntidad = "FREC_DOC";
@@ -763,16 +764,15 @@ namespace SNW.forms
 
                         #endregion
 
-                        #region Asignamos el metodo
-                        Session["metodo"] = "U";//Update
                         #endregion
 
+                        #region Asignamos el metodo
+                        Session["metodo"] = "U";//Update
                         #endregion
 
                     }
                     #endregion
 
-                    
                 }
                 else
                 {
@@ -1285,6 +1285,7 @@ namespace SNW.forms
                 #endregion
 
                 #region 8 Datos Generales del Nodo
+
                 #region # Serie ODU
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                     Documento, "000051", chkSerieODU, hfSerieODUComentario,
@@ -1360,11 +1361,11 @@ namespace SNW.forms
                     i.UsuarioCreacion = Usuario;
                     i.UsuarioModificacion = Usuario;
                 });
-                Documento.Equipamientos.ForEach(i =>
-                {
-                    i.UsuarioCreacion = Usuario;
-                    i.UsuarioModificacion = Usuario;
-                });
+                //Documento.Equipamientos.ForEach(i =>
+                //{
+                //    i.UsuarioCreacion = Usuario;
+                //    i.UsuarioModificacion = Usuario;
+                //});
                 Documento.Materiales.ForEach(i =>
                 {
                     i.UsuarioCreacion = Usuario;

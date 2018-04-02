@@ -54,7 +54,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieAntenaEstacionA" class="">
                                             </div>
-                                            <label for="divSerieAntenaEstacionA">Serie Antena</label>
+                                            <label for="divSerieAntenaEstacionA" id="lblSerieAntenaEstacionA" runat="server">Serie Antena</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieAntenaEstacionA" runat="server" />
@@ -93,7 +93,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieODUEstacionA" class="">
                                             </div>
-                                            <label for="divSerieODUEstacionA">Serie ODU</label>
+                                            <label for="divSerieODUEstacionA" id="lblSerieODUEstacionA" runat="server">Serie ODU</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieODUEstacionA" runat="server" />
@@ -132,7 +132,7 @@
                                         <div class="has-float-label">
                                             <div id="divSeriePOEEstacionA" class="">
                                             </div>
-                                            <label for="divSeriePOEEstacionA">Serie POE</label>
+                                            <label for="divSeriePOEEstacionA" id="lblSeriePOEEstacionA" runat="server">Serie POE</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSeriePOEEstacionA" runat="server" />
@@ -171,7 +171,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieCMM4EstacionA" class="">
                                             </div>
-                                            <label for="divSerieCMM4EstacionA">Serie CMM4</label>
+                                            <label for="divSerieCMM4EstacionA" id="lblSerieCMM4EstacionA" runat="server">Serie CMM4</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieCMM4EstacionA" runat="server" />
@@ -249,7 +249,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieConversorEstacionA" class="">
                                             </div>
-                                            <label for="divSerieConversorEstacionA">Serie Conversor</label>
+                                            <label for="divSerieConversorEstacionA" id="lblSerieConversorEstacionA" runat="server">Serie Conversor</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieConversorEstacionA" runat="server" />
@@ -292,7 +292,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieAntenaEstacionB" class="">
                                             </div>
-                                            <label for="divSerieAntenaEstacionB">Serie Antena</label>
+                                            <label for="divSerieAntenaEstacionB" id="lblSerieAntenaEstacionB" runat="server">Serie Antena</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieAntenaEstacionB" runat="server" />
@@ -331,7 +331,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieODUEstacionB" class="">
                                             </div>
-                                            <label for="divSerieODUEstacionB">Serie ODU</label>
+                                            <label for="divSerieODUEstacionB" id="lblSerieODUEstacionB" runat="server">Serie ODU</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieODUEstacionB" runat="server" />
@@ -370,7 +370,7 @@
                                         <div class="has-float-label">
                                             <div id="divSeriePOEEstacionB" class="">
                                             </div>
-                                            <label for="divSeriePOEEstacionB">Serie POE</label>
+                                            <label for="divSeriePOEEstacionB" id="lblSeriePOEEstacionB" runat="server">Serie POE</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSeriePOEEstacionB" runat="server" />
@@ -409,7 +409,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieCMM4EstacionB" class="">
                                             </div>
-                                            <label for="divSerieCMM4EstacionB">Serie CMM4</label>
+                                            <label for="divSerieCMM4EstacionB" id="lblSerieCMM4EstacionB" runat="server">Serie CMM4</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieCMM4EstacionB" runat="server" />
@@ -487,7 +487,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieConversorEstacionB" class="">
                                             </div>
-                                            <label for="divSerieConversorEstacionB">Serie Conversor</label>
+                                            <label for="divSerieConversorEstacionB" id="lblSerieConversorEstacionB" runat="server">Serie Conversor</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieConversorEstacionB" runat="server" />
@@ -514,6 +514,8 @@
     </asp:UpdatePanel>
     <br />
     <br />
+    <input type="hidden" id="hfIdPerfil" runat="server"/>
+    <input type="hidden" id="hfRutaVirtualTemporal" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPie" runat="server">
     <script src="../js/forms/DocumentoInventarioPTP.js"></script>

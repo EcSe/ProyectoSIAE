@@ -1,5 +1,11 @@
 ﻿$(document).ready(function () {
 
+    // #region 11 Serie logística
+
+    // #region Estación A
+
+    // #region Serie Antena
+
     $('#cphContenido_chkSerieAntenaEstacionA').change(function () {
         var blnActivo = $("#cphContenido_chkSerieAntenaEstacionA").prop("checked");
         if (blnActivo)
@@ -7,112 +13,6 @@
         else
             habilitarRealUploader(true, divSerieAntenaEstacionA, "#divSerieAntenaEstacionA");
     });
-
-    $('#cphContenido_chkSerieODUEstacionA').change(function () {
-        var blnActivo = $("#cphContenido_chkSerieODUEstacionA").prop("checked");
-        if (blnActivo)
-            habilitarRealUploader(false, divSerieODUEstacionA, "#divSerieODUEstacionA");
-        else
-            habilitarRealUploader(true, divSerieODUEstacionA, "#divSerieODUEstacionA");
-    });
-
-    $('#cphContenido_chkSeriePOEEstacionA').change(function () {
-        var blnActivo = $("#cphContenido_chkSeriePOEEstacionA").prop("checked");
-        if (blnActivo)
-            habilitarRealUploader(false, divSeriePOEEstacionA, "#divSeriePOEEstacionA");
-        else
-            habilitarRealUploader(true, divSeriePOEEstacionA, "#divSeriePOEEstacionA");
-    });
-
-    if ($('#cphContenido_hfCMM4A').val() != "0") {
-        //console.log("cramos 02");
-        $('#cphContenido_chkSerieCMM4EstacionA').change(function () {
-            var blnActivo = $("#cphContenido_chkSerieCMM4EstacionA").prop("checked");
-            if (blnActivo)
-                habilitarRealUploader(false, divSerieCMM4EstacionA, "#divSerieCMM4EstacionA");
-            else
-                habilitarRealUploader(true, divSerieCMM4EstacionA, "#divSerieCMM4EstacionA");
-        });
-
-        $('#cphContenido_chkSerieUGPSEstacionA').change(function () {
-            var blnActivo = $("#cphContenido_chkSerieUGPSEstacionA").prop("checked");
-            if (blnActivo)
-                habilitarRealUploader(false, divSerieUGPSEstacionA, "#divSerieUGPSEstacionA");
-            else
-                habilitarRealUploader(true, divSerieUGPSEstacionA, "#divSerieUGPSEstacionA");
-        });
-
-        $('#cphContenido_chkSerieConversorEstacionA').change(function () {
-            var blnActivo = $("#cphContenido_chkSerieConversorEstacionA").prop("checked");
-            if (blnActivo)
-                habilitarRealUploader(false, divSerieConversorEstacionA, "#divSerieConversorEstacionA");
-            else
-                habilitarRealUploader(true, divSerieConversorEstacionA, "#divSerieConversorEstacionA");
-        });
-    }
-    else {
-        $("#rowSerieCMM4EstacionA").hide();
-        $("#rowSerieUGPSEstacionA").hide();
-        $("#rowSerieConversorEstacionA").hide();
-    }
-
-    $('#cphContenido_chkSerieAntenaEstacionB').change(function () {
-        var blnActivo = $("#cphContenido_chkSerieAntenaEstacionB").prop("checked");
-        if (blnActivo)
-            habilitarRealUploader(false, divSerieAntenaEstacionB, "#divSerieAntenaEstacionB");
-        else
-            habilitarRealUploader(true, divSerieAntenaEstacionB, "#divSerieAntenaEstacionB");
-    });
-
-    $('#cphContenido_chkSerieODUEstacionB').change(function () {
-        var blnActivo = $("#cphContenido_chkSerieODUEstacionB").prop("checked");
-        if (blnActivo)
-            habilitarRealUploader(false, divSerieODUEstacionB, "#divSerieODUEstacionB");
-        else
-            habilitarRealUploader(true, divSerieODUEstacionB, "#divSerieODUEstacionB");
-    });
-
-    $('#cphContenido_chkSeriePOEEstacionB').change(function () {
-        var blnActivo = $("#cphContenido_chkSeriePOEEstacionB").prop("checked");
-        if (blnActivo)
-            habilitarRealUploader(false, divSeriePOEEstacionB, "#divSeriePOEEstacionB");
-        else
-            habilitarRealUploader(true, divSeriePOEEstacionB, "#divSeriePOEEstacionB");
-    });
-
-    //console.log("cramos 03");
-    if ($('#cphContenido_hfCMM4B').val() != "0") {
-        //console.log("cramos 04");
-        $('#cphContenido_chkSerieCMM4EstacionB').change(function () {
-            var blnActivo = $("#cphContenido_chkSerieCMM4EstacionB").prop("checked");
-            if (blnActivo)
-                habilitarRealUploader(false, divSerieCMM4EstacionB, "#divSerieCMM4EstacionB");
-            else
-                habilitarRealUploader(true, divSerieCMM4EstacionB, "#divSerieCMM4EstacionB");
-        });
-
-        $('#cphContenido_chkSerieUGPSEstacionB').change(function () {
-            var blnActivo = $("#cphContenido_chkSerieUGPSEstacionB").prop("checked");
-            if (blnActivo)
-                habilitarRealUploader(false, divSerieUGPSEstacionB, "#divSerieUGPSEstacionB");
-            else
-                habilitarRealUploader(true, divSerieUGPSEstacionB, "#divSerieUGPSEstacionB");
-        });
-
-        $('#cphContenido_chkSerieConversorEstacionB').change(function () {
-            var blnActivo = $("#cphContenido_chkSerieConversorEstacionB").prop("checked");
-            if (blnActivo)
-                habilitarRealUploader(false, divSerieConversorEstacionB, "#divSerieConversorEstacionB");
-            else
-                habilitarRealUploader(true, divSerieConversorEstacionB, "#divSerieConversorEstacionB");
-        });
-    }
-    else {
-        $("#rowSerieCMM4EstacionB").hide();
-        $("#rowSerieUGPSEstacionB").hide();
-        $("#rowSerieConversorEstacionB").hide();
-    }
-
 
     poSerieAntenaEstacionAComentario = $("#spSerieAntenaEstacionAComentario").popover({
         html: true,
@@ -133,6 +33,52 @@
         $("#txtSerieAntenaEstacionAComentario").keyup(function () {
             $("#cphContenido_hfSerieAntenaEstacionAComentario").val($(this).val());
         });
+    });
+
+    var divSerieAntenaEstacionA = new RealUploader("#divSerieAntenaEstacionA", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfSerieAntenaEstacionA').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfSerieAntenaEstacionA').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfSerieAntenaEstacionA').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfSerieAntenaEstacionA').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfSerieAntenaEstacionA').val() != "") {
+        divSerieAntenaEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieAntenaEstacionA').val(), $('#cphContenido_hfSerieAntenaEstacionA').val());
+    }
+
+    $("#cphContenido_chkSerieAntenaEstacionA").trigger("change");
+
+    // #endregion      
+
+    // #region Serie ODU
+
+    $('#cphContenido_chkSerieODUEstacionA').change(function () {
+        var blnActivo = $("#cphContenido_chkSerieODUEstacionA").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divSerieODUEstacionA, "#divSerieODUEstacionA");
+        else
+            habilitarRealUploader(true, divSerieODUEstacionA, "#divSerieODUEstacionA");
     });
 
     poSerieODUEstacionAComentario = $("#spSerieODUEstacionAComentario").popover({
@@ -156,6 +102,52 @@
         });
     });
 
+    var divSerieODUEstacionA = new RealUploader("#divSerieODUEstacionA", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfSerieODUEstacionA').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfSerieODUEstacionA').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfSerieODUEstacionA').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfSerieODUEstacionA').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfSerieODUEstacionA').val() != "") {
+        divSerieODUEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieODUEstacionA').val(), $('#cphContenido_hfSerieODUEstacionA').val());
+    }
+
+    $("#cphContenido_chkSerieODUEstacionA").trigger("change");
+
+    // #endregion
+
+    // #region Serie POE
+
+    $('#cphContenido_chkSeriePOEEstacionA').change(function () {
+        var blnActivo = $("#cphContenido_chkSeriePOEEstacionA").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divSeriePOEEstacionA, "#divSeriePOEEstacionA");
+        else
+            habilitarRealUploader(true, divSeriePOEEstacionA, "#divSeriePOEEstacionA");
+    });
+
     poSeriePOEEstacionAComentario = $("#spSeriePOEEstacionAComentario").popover({
         html: true,
         content: function () {
@@ -177,7 +169,53 @@
         });
     });
 
+    var divSeriePOEEstacionA = new RealUploader("#divSeriePOEEstacionA", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfSeriePOEEstacionA').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfSeriePOEEstacionA').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfSeriePOEEstacionA').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfSeriePOEEstacionA').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfSeriePOEEstacionA').val() != "") {
+        divSeriePOEEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSeriePOEEstacionA').val(), $('#cphContenido_hfSeriePOEEstacionA').val());
+    }
+
+    $("#cphContenido_chkSeriePOEEstacionA").trigger("change");
+
+    // #endregion
+
     if ($('#cphContenido_hfCMM4A').val() != "0") {
+        
+        // #region Serie CMM4
+
+        $('#cphContenido_chkSerieCMM4EstacionA').change(function () {
+            var blnActivo = $("#cphContenido_chkSerieCMM4EstacionA").prop("checked");
+            if (blnActivo)
+                habilitarRealUploader(false, divSerieCMM4EstacionA, "#divSerieCMM4EstacionA");
+            else
+                habilitarRealUploader(true, divSerieCMM4EstacionA, "#divSerieCMM4EstacionA");
+        });
 
         poSerieCMM4EstacionAComentario = $("#spSerieCMM4EstacionAComentario").popover({
             html: true,
@@ -198,6 +236,52 @@
             $("#txtSerieCMM4EstacionAComentario").keyup(function () {
                 $("#cphContenido_hfSerieCMM4EstacionAComentario").val($(this).val());
             });
+        });
+
+        var divSerieCMM4EstacionA = new RealUploader("#divSerieCMM4EstacionA", {
+            language: 'es_ES',//idioma
+            url: 'Upload.aspx',//pagina que carga los archivos
+            overrideFile: true,//sobreescribir
+            allowDelete: false,//permitir borrar despues de cargar al servidor
+            exifRead: true, //Leer los datos de un jpeg
+            maxFiles: 1,
+            autoStart: true,
+            allowedExtensions: ['png', 'jpg'],
+            isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
+            listeners: {
+                finish: function (fileNames, fileList) {
+                    $('#cphContenido_hfSerieCMM4EstacionA').val(fileNames);
+                },
+                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieCMM4EstacionA').val(fileNamesUploaded);
+                },
+                removeAllFiles: function () {
+                    $('#cphContenido_hfSerieCMM4EstacionA').val("");
+                },
+                removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieCMM4EstacionA').val(fileNamesUploaded);
+                },
+            }
+        });
+
+        if ($('#cphContenido_hfSerieCMM4EstacionA').val() != "") {
+            divSerieCMM4EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieCMM4EstacionA').val(), $('#cphContenido_hfSerieCMM4EstacionA').val());
+        }
+
+        $("#cphContenido_chkSerieCMM4EstacionA").trigger("change");
+
+        // #endregion
+
+        // #region Serie UGPS
+
+        $('#cphContenido_chkSerieUGPSEstacionA').change(function () {
+            var blnActivo = $("#cphContenido_chkSerieUGPSEstacionA").prop("checked");
+            if (blnActivo)
+                habilitarRealUploader(false, divSerieUGPSEstacionA, "#divSerieUGPSEstacionA");
+            else
+                habilitarRealUploader(true, divSerieUGPSEstacionA, "#divSerieUGPSEstacionA");
         });
 
         poSerieUGPSEstacionAComentario = $("#spSerieUGPSEstacionAComentario").popover({
@@ -221,6 +305,52 @@
             });
         });
 
+        var divSerieUGPSEstacionA = new RealUploader("#divSerieUGPSEstacionA", {
+            language: 'es_ES',//idioma
+            url: 'Upload.aspx',//pagina que carga los archivos
+            overrideFile: true,//sobreescribir
+            allowDelete: false,//permitir borrar despues de cargar al servidor
+            exifRead: true, //Leer los datos de un jpeg
+            maxFiles: 1,
+            autoStart: true,
+            allowedExtensions: ['png', 'jpg'],
+            isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
+            listeners: {
+                finish: function (fileNames, fileList) {
+                    $('#cphContenido_hfSerieUGPSEstacionA').val(fileNames);
+                },
+                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieUGPSEstacionA').val(fileNamesUploaded);
+                },
+                removeAllFiles: function () {
+                    $('#cphContenido_hfSerieUGPSEstacionA').val("");
+                },
+                removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieUGPSEstacionA').val(fileNamesUploaded);
+                },
+            }
+        });
+
+        if ($('#cphContenido_hfSerieUGPSEstacionA').val() != "") {
+            divSerieUGPSEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieUGPSEstacionA').val(), $('#cphContenido_hfSerieUGPSEstacionA').val());
+        }
+
+        $("#cphContenido_chkSerieUGPSEstacionA").trigger("change");
+
+        // #endregion
+
+        // #region Serie Conversor
+
+        $('#cphContenido_chkSerieConversorEstacionA').change(function () {
+            var blnActivo = $("#cphContenido_chkSerieConversorEstacionA").prop("checked");
+            if (blnActivo)
+                habilitarRealUploader(false, divSerieConversorEstacionA, "#divSerieConversorEstacionA");
+            else
+                habilitarRealUploader(true, divSerieConversorEstacionA, "#divSerieConversorEstacionA");
+        });
+
         poSerieConversorEstacionAComentario = $("#spSerieConversorEstacionAComentario").popover({
             html: true,
             content: function () {
@@ -242,7 +372,64 @@
             });
         });
 
+        var divSerieConversorEstacionA = new RealUploader("#divSerieConversorEstacionA", {
+            language: 'es_ES',//idioma
+            url: 'Upload.aspx',//pagina que carga los archivos
+            overrideFile: true,//sobreescribir
+            allowDelete: false,//permitir borrar despues de cargar al servidor
+            exifRead: true, //Leer los datos de un jpeg
+            maxFiles: 1,
+            autoStart: true,
+            allowedExtensions: ['png', 'jpg'],
+            isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
+            listeners: {
+                finish: function (fileNames, fileList) {
+                    $('#cphContenido_hfSerieConversorEstacionA').val(fileNames);
+                },
+                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieConversorEstacionA').val(fileNamesUploaded);
+                },
+                removeAllFiles: function () {
+                    $('#cphContenido_hfSerieConversorEstacionA').val("");
+                },
+                removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieConversorEstacionA').val(fileNamesUploaded);
+                },
+            }
+        });
+
+        if ($('#cphContenido_hfSerieConversorEstacionA').val() != "") {
+            divSerieConversorEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieConversorEstacionA').val(), $('#cphContenido_hfSerieConversorEstacionA').val());
+        }
+
+        $("#cphContenido_chkSerieConversorEstacionA").trigger("change");
+
+        // #endregion
+
     }
+    else {
+        $("#rowSerieCMM4EstacionA").hide();
+        $("#rowSerieUGPSEstacionA").hide();
+        $("#rowSerieConversorEstacionA").hide();
+    }
+
+    
+
+    // #endregion
+
+    // #region Estación B
+
+    // #region Serie Antena
+
+    $('#cphContenido_chkSerieAntenaEstacionB').change(function () {
+        var blnActivo = $("#cphContenido_chkSerieAntenaEstacionB").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divSerieAntenaEstacionB, "#divSerieAntenaEstacionB");
+        else
+            habilitarRealUploader(true, divSerieAntenaEstacionB, "#divSerieAntenaEstacionB");
+    });
 
     poSerieAntenaEstacionBComentario = $("#spSerieAntenaEstacionBComentario").popover({
         html: true,
@@ -263,6 +450,52 @@
         $("#txtSerieAntenaEstacionBComentario").keyup(function () {
             $("#cphContenido_hfSerieAntenaEstacionBComentario").val($(this).val());
         });
+    });
+
+    var divSerieAntenaEstacionB = new RealUploader("#divSerieAntenaEstacionB", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfSerieAntenaEstacionB').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfSerieAntenaEstacionB').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfSerieAntenaEstacionB').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfSerieAntenaEstacionB').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfSerieAntenaEstacionB').val() != "") {
+        divSerieAntenaEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieAntenaEstacionB').val(), $('#cphContenido_hfSerieAntenaEstacionB').val());
+    }
+
+    $("#cphContenido_chkSerieAntenaEstacionB").trigger("change");
+
+    // #endregion      
+
+    // #region Serie ODU
+
+    $('#cphContenido_chkSerieODUEstacionB').change(function () {
+        var blnActivo = $("#cphContenido_chkSerieODUEstacionB").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divSerieODUEstacionB, "#divSerieODUEstacionB");
+        else
+            habilitarRealUploader(true, divSerieODUEstacionB, "#divSerieODUEstacionB");
     });
 
     poSerieODUEstacionBComentario = $("#spSerieODUEstacionBComentario").popover({
@@ -286,6 +519,52 @@
         });
     });
 
+    var divSerieODUEstacionB = new RealUploader("#divSerieODUEstacionB", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfSerieODUEstacionB').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfSerieODUEstacionB').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfSerieODUEstacionB').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfSerieODUEstacionB').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfSerieODUEstacionB').val() != "") {
+        divSerieODUEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieODUEstacionB').val(), $('#cphContenido_hfSerieODUEstacionB').val());
+    }
+
+    $("#cphContenido_chkSerieODUEstacionB").trigger("change");
+
+    // #endregion
+
+    // #region Serie POE
+
+    $('#cphContenido_chkSeriePOEEstacionB').change(function () {
+        var blnActivo = $("#cphContenido_chkSeriePOEEstacionB").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divSeriePOEEstacionB, "#divSeriePOEEstacionB");
+        else
+            habilitarRealUploader(true, divSeriePOEEstacionB, "#divSeriePOEEstacionB");
+    });
+
     poSeriePOEEstacionBComentario = $("#spSeriePOEEstacionBComentario").popover({
         html: true,
         content: function () {
@@ -307,7 +586,53 @@
         });
     });
 
+    var divSeriePOEEstacionB = new RealUploader("#divSeriePOEEstacionB", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidtDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfSeriePOEEstacionB').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfSeriePOEEstacionB').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfSeriePOEEstacionB').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfSeriePOEEstacionB').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfSeriePOEEstacionB').val() != "") {
+        divSeriePOEEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSeriePOEEstacionB').val(), $('#cphContenido_hfSeriePOEEstacionB').val());
+    }
+
+    $("#cphContenido_chkSeriePOEEstacionB").trigger("change");
+
+    // #endregion
+
     if ($('#cphContenido_hfCMM4B').val() != "0") {
+
+        // #region Serie CMM4
+
+        $('#cphContenido_chkSerieCMM4EstacionB').change(function () {
+            var blnActivo = $("#cphContenido_chkSerieCMM4EstacionB").prop("checked");
+            if (blnActivo)
+                habilitarRealUploader(false, divSerieCMM4EstacionB, "#divSerieCMM4EstacionB");
+            else
+                habilitarRealUploader(true, divSerieCMM4EstacionB, "#divSerieCMM4EstacionB");
+        });
 
         poSerieCMM4EstacionBComentario = $("#spSerieCMM4EstacionBComentario").popover({
             html: true,
@@ -328,6 +653,52 @@
             $("#txtSerieCMM4EstacionBComentario").keyup(function () {
                 $("#cphContenido_hfSerieCMM4EstacionBComentario").val($(this).val());
             });
+        });
+
+        var divSerieCMM4EstacionB = new RealUploader("#divSerieCMM4EstacionB", {
+            language: 'es_ES',//idioma
+            url: 'Upload.aspx',//pagina que carga los archivos
+            overrideFile: true,//sobreescribir
+            allowDelete: false,//permitir borrar despues de cargar al servidor
+            exifRead: true, //Leer los datos de un jpeg
+            maxFiles: 1,
+            autoStart: true,
+            allowedExtensions: ['png', 'jpg'],
+            isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
+            listeners: {
+                finish: function (fileNames, fileList) {
+                    $('#cphContenido_hfSerieCMM4EstacionB').val(fileNames);
+                },
+                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieCMM4EstacionB').val(fileNamesUploaded);
+                },
+                removeAllFiles: function () {
+                    $('#cphContenido_hfSerieCMM4EstacionB').val("");
+                },
+                removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieCMM4EstacionB').val(fileNamesUploaded);
+                },
+            }
+        });
+
+        if ($('#cphContenido_hfSerieCMM4EstacionB').val() != "") {
+            divSerieCMM4EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieCMM4EstacionB').val(), $('#cphContenido_hfSerieCMM4EstacionB').val());
+        }
+
+        $("#cphContenido_chkSerieCMM4EstacionB").trigger("change");
+
+        // #endregion
+
+        // #region Serie UGPS
+
+        $('#cphContenido_chkSerieUGPSEstacionB').change(function () {
+            var blnActivo = $("#cphContenido_chkSerieUGPSEstacionB").prop("checked");
+            if (blnActivo)
+                habilitarRealUploader(false, divSerieUGPSEstacionB, "#divSerieUGPSEstacionB");
+            else
+                habilitarRealUploader(true, divSerieUGPSEstacionB, "#divSerieUGPSEstacionB");
         });
 
         poSerieUGPSEstacionBComentario = $("#spSerieUGPSEstacionBComentario").popover({
@@ -351,6 +722,52 @@
             });
         });
 
+        var divSerieUGPSEstacionB = new RealUploader("#divSerieUGPSEstacionB", {
+            language: 'es_ES',//idioma
+            url: 'Upload.aspx',//pagina que carga los archivos
+            overrideFile: true,//sobreescribir
+            allowDelete: false,//permitir borrar despues de cargar al servidor
+            exifRead: true, //Leer los datos de un jpeg
+            maxFiles: 1,
+            autoStart: true,
+            allowedExtensions: ['png', 'jpg'],
+            isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
+            listeners: {
+                finish: function (fileNames, fileList) {
+                    $('#cphContenido_hfSerieUGPSEstacionB').val(fileNames);
+                },
+                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieUGPSEstacionB').val(fileNamesUploaded);
+                },
+                removeAllFiles: function () {
+                    $('#cphContenido_hfSerieUGPSEstacionB').val("");
+                },
+                removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                    $('#cphContenido_hfSerieUGPSEstacionB').val(fileNamesUploaded);
+                },
+            }
+        });
+
+        if ($('#cphContenido_hfSerieUGPSEstacionB').val() != "") {
+            divSerieUGPSEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieUGPSEstacionB').val(), $('#cphContenido_hfSerieUGPSEstacionB').val());
+        }
+
+        $("#cphContenido_chkSerieUGPSEstacionB").trigger("change");
+
+        // #endregion
+
+        // #region Serie Conversor
+
+        $('#cphContenido_chkSerieConversorEstacionB').change(function () {
+            var blnActivo = $("#cphContenido_chkSerieConversorEstacionB").prop("checked");
+            if (blnActivo)
+                habilitarRealUploader(false, divSerieConversorEstacionB, "#divSerieConversorEstacionB");
+            else
+                habilitarRealUploader(true, divSerieConversorEstacionB, "#divSerieConversorEstacionB");
+        });
+
         poSerieConversorEstacionBComentario = $("#spSerieConversorEstacionBComentario").popover({
             html: true,
             content: function () {
@@ -372,298 +789,6 @@
             });
         });
 
-    }
-
-
-    var divSerieAntenaEstacionA = new RealUploader("#divSerieAntenaEstacionA", {
-        language: 'es_ES',//idioma
-        url: 'Upload.aspx',//pagina que carga los archivos
-        overrideFile: true,//sobreescribir
-        allowDelete: false,//permitir borrar despues de cargar al servidor
-        exifRead: true, //Leer los datos de un jpeg
-        maxFiles: 1,
-        autoStart: true,
-        allowedExtensions: ['png', 'jpg'],
-        isImage: true,
-        listeners: {
-            finish: function (fileNames, fileList) {
-                $('#cphContenido_hfSerieAntenaEstacionA').val(fileNames);
-            },
-            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                $('#cphContenido_hfSerieAntenaEstacionA').val(fileNamesUploaded);
-            },
-            removeAllFiles: function () {
-                $('#cphContenido_hfSerieAntenaEstacionA').val("");
-            },
-            removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                $('#cphContenido_hfSerieAntenaEstacionA').val(fileNamesUploaded);
-            },
-        }
-    });
-
-    var divSerieODUEstacionA = new RealUploader("#divSerieODUEstacionA", {
-        language: 'es_ES',//idioma
-        url: 'Upload.aspx',//pagina que carga los archivos
-        overrideFile: true,//sobreescribir
-        allowDelete: false,//permitir borrar despues de cargar al servidor
-        exifRead: true, //Leer los datos de un jpeg
-        maxFiles: 1,
-        autoStart: true,
-        allowedExtensions: ['png', 'jpg'],
-        isImage: true,
-        listeners: {
-            finish: function (fileNames, fileList) {
-                $('#cphContenido_hfSerieODUEstacionA').val(fileNames);
-            },
-            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                $('#cphContenido_hfSerieODUEstacionA').val(fileNamesUploaded);
-            },
-            removeAllFiles: function () {
-                $('#cphContenido_hfSerieODUEstacionA').val("");
-            },
-            removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                $('#cphContenido_hfSerieODUEstacionA').val(fileNamesUploaded);
-            },
-        }
-    });
-
-    var divSeriePOEEstacionA = new RealUploader("#divSeriePOEEstacionA", {
-        language: 'es_ES',//idioma
-        url: 'Upload.aspx',//pagina que carga los archivos
-        overrideFile: true,//sobreescribir
-        allowDelete: false,//permitir borrar despues de cargar al servidor
-        exifRead: true, //Leer los datos de un jpeg
-        maxFiles: 1,
-        autoStart: true,
-        allowedExtensions: ['png', 'jpg'],
-        isImage: true,
-        listeners: {
-            finish: function (fileNames, fileList) {
-                $('#cphContenido_hfSeriePOEEstacionA').val(fileNames);
-            },
-            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                $('#cphContenido_hfSeriePOEEstacionA').val(fileNamesUploaded);
-            },
-            removeAllFiles: function () {
-                $('#cphContenido_hfSeriePOEEstacionA').val("");
-            },
-            removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                $('#cphContenido_hfSeriePOEEstacionA').val(fileNamesUploaded);
-            },
-        }
-    });
-
-    if ($('#cphContenido_hfCMM4A').val() != "0") {
-        var divSerieCMM4EstacionA = new RealUploader("#divSerieCMM4EstacionA", {
-            language: 'es_ES',//idioma
-            url: 'Upload.aspx',//pagina que carga los archivos
-            overrideFile: true,//sobreescribir
-            allowDelete: false,//permitir borrar despues de cargar al servidor
-            exifRead: true, //Leer los datos de un jpeg
-            maxFiles: 1,
-            autoStart: true,
-            allowedExtensions: ['png', 'jpg'],
-            isImage: true,
-            listeners: {
-                finish: function (fileNames, fileList) {
-                    $('#cphContenido_hfSerieCMM4EstacionA').val(fileNames);
-                },
-                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieCMM4EstacionA').val(fileNamesUploaded);
-                },
-                removeAllFiles: function () {
-                    $('#cphContenido_hfSerieCMM4EstacionA').val("");
-                },
-                removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieCMM4EstacionA').val(fileNamesUploaded);
-                },
-            }
-        });
-
-        var divSerieUGPSEstacionA = new RealUploader("#divSerieUGPSEstacionA", {
-            language: 'es_ES',//idioma
-            url: 'Upload.aspx',//pagina que carga los archivos
-            overrideFile: true,//sobreescribir
-            allowDelete: false,//permitir borrar despues de cargar al servidor
-            exifRead: true, //Leer los datos de un jpeg
-            maxFiles: 1,
-            autoStart: true,
-            allowedExtensions: ['png', 'jpg'],
-            isImage: true,
-            listeners: {
-                finish: function (fileNames, fileList) {
-                    $('#cphContenido_hfSerieUGPSEstacionA').val(fileNames);
-                },
-                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieUGPSEstacionA').val(fileNamesUploaded);
-                },
-                removeAllFiles: function () {
-                    $('#cphContenido_hfSerieUGPSEstacionA').val("");
-                },
-                removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieUGPSEstacionA').val(fileNamesUploaded);
-                },
-            }
-        });
-
-        var divSerieConversorEstacionA = new RealUploader("#divSerieConversorEstacionA", {
-            language: 'es_ES',//idioma
-            url: 'Upload.aspx',//pagina que carga los archivos
-            overrideFile: true,//sobreescribir
-            allowDelete: false,//permitir borrar despues de cargar al servidor
-            exifRead: true, //Leer los datos de un jpeg
-            maxFiles: 1,
-            autoStart: true,
-            allowedExtensions: ['png', 'jpg'],
-            isImage: true,
-            listeners: {
-                finish: function (fileNames, fileList) {
-                    $('#cphContenido_hfSerieConversorEstacionA').val(fileNames);
-                },
-                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieConversorEstacionA').val(fileNamesUploaded);
-                },
-                removeAllFiles: function () {
-                    $('#cphContenido_hfSerieConversorEstacionA').val("");
-                },
-                removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieConversorEstacionA').val(fileNamesUploaded);
-                },
-            }
-        });
-    }
-
-    var divSerieAntenaEstacionB = new RealUploader("#divSerieAntenaEstacionB", {
-        language: 'es_ES',//idioma
-        url: 'Upload.aspx',//pagina que carga los archivos
-        overrideFile: true,//sobreescribir
-        allowDelete: false,//permitir borrar despues de cargar al servidor
-        exifRead: true, //Leer los datos de un jpeg
-        maxFiles: 1,
-        autoStart: true,
-        allowedExtensions: ['png', 'jpg'],
-        isImage: true,
-        listeners: {
-            finish: function (fileNames, fileList) {
-                $('#cphContenido_hfSerieAntenaEstacionB').val(fileNames);
-            },
-            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                $('#cphContenido_hfSerieAntenaEstacionB').val(fileNamesUploaded);
-            },
-            removeAllFiles: function () {
-                $('#cphContenido_hfSerieAntenaEstacionB').val("");
-            },
-            removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                $('#cphContenido_hfSerieAntenaEstacionB').val(fileNamesUploaded);
-            },
-        }
-    });
-
-    var divSerieODUEstacionB = new RealUploader("#divSerieODUEstacionB", {
-        language: 'es_ES',//idioma
-        url: 'Upload.aspx',//pagina que carga los archivos
-        overrideFile: true,//sobreescribir
-        allowDelete: false,//permitir borrar despues de cargar al servidor
-        exifRead: true, //Leer los datos de un jpeg
-        maxFiles: 1,
-        autoStart: true,
-        allowedExtensions: ['png', 'jpg'],
-        isImage: true,
-        listeners: {
-            finish: function (fileNames, fileList) {
-                $('#cphContenido_hfSerieODUEstacionB').val(fileNames);
-            },
-            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                $('#cphContenido_hfSerieODUEstacionB').val(fileNamesUploaded);
-            },
-            removeAllFiles: function () {
-                $('#cphContenido_hfSerieODUEstacionB').val("");
-            },
-            removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                $('#cphContenido_hfSerieODUEstacionB').val(fileNamesUploaded);
-            },
-        }
-    });
-
-    var divSeriePOEEstacionB = new RealUploader("#divSeriePOEEstacionB", {
-        language: 'es_ES',//idioma
-        url: 'Upload.aspx',//pagina que carga los archivos
-        overrideFile: true,//sobreescribir
-        allowDelete: false,//permitir borrar despues de cargar al servidor
-        exifRead: true, //Leer los datos de un jpeg
-        maxFiles: 1,
-        autoStart: true,
-        allowedExtensions: ['png', 'jpg'],
-        isImage: true,
-        listeners: {
-            finish: function (fileNames, fileList) {
-                $('#cphContenido_hfSeriePOEEstacionB').val(fileNames);
-            },
-            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                $('#cphContenido_hfSeriePOEEstacionB').val(fileNamesUploaded);
-            },
-            removeAllFiles: function () {
-                $('#cphContenido_hfSeriePOEEstacionB').val("");
-            },
-            removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                $('#cphContenido_hfSeriePOEEstacionB').val(fileNamesUploaded);
-            },
-        }
-    });
-
-    if ($('#cphContenido_hfCMM4B').val() != "0") {
-        var divSerieCMM4EstacionB = new RealUploader("#divSerieCMM4EstacionB", {
-            language: 'es_ES',//idioma
-            url: 'Upload.aspx',//pagina que carga los archivos
-            overrideFile: true,//sobreescribir
-            allowDelete: false,//permitir borrar despues de cargar al servidor
-            exifRead: true, //Leer los datos de un jpeg
-            maxFiles: 1,
-            autoStart: true,
-            allowedExtensions: ['png', 'jpg'],
-            isImage: true,
-            listeners: {
-                finish: function (fileNames, fileList) {
-                    $('#cphContenido_hfSerieCMM4EstacionB').val(fileNames);
-                },
-                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieCMM4EstacionB').val(fileNamesUploaded);
-                },
-                removeAllFiles: function () {
-                    $('#cphContenido_hfSerieCMM4EstacionB').val("");
-                },
-                removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieCMM4EstacionB').val(fileNamesUploaded);
-                },
-            }
-        });
-
-        var divSerieUGPSEstacionB = new RealUploader("#divSerieUGPSEstacionB", {
-            language: 'es_ES',//idioma
-            url: 'Upload.aspx',//pagina que carga los archivos
-            overrideFile: true,//sobreescribir
-            allowDelete: false,//permitir borrar despues de cargar al servidor
-            exifRead: true, //Leer los datos de un jpeg
-            maxFiles: 1,
-            autoStart: true,
-            allowedExtensions: ['png', 'jpg'],
-            isImage: true,
-            listeners: {
-                finish: function (fileNames, fileList) {
-                    $('#cphContenido_hfSerieUGPSEstacionB').val(fileNames);
-                },
-                finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieUGPSEstacionB').val(fileNamesUploaded);
-                },
-                removeAllFiles: function () {
-                    $('#cphContenido_hfSerieUGPSEstacionB').val("");
-                },
-                removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                    $('#cphContenido_hfSerieUGPSEstacionB').val(fileNamesUploaded);
-                },
-            }
-        });
-
         var divSerieConversorEstacionB = new RealUploader("#divSerieConversorEstacionB", {
             language: 'es_ES',//idioma
             url: 'Upload.aspx',//pagina que carga los archivos
@@ -674,6 +799,8 @@
             autoStart: true,
             allowedExtensions: ['png', 'jpg'],
             isImage: true,
+            minWidtDimension: 2560,
+            minHeightDimension: 1920,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfSerieConversorEstacionB').val(fileNames);
@@ -689,10 +816,28 @@
                 },
             }
         });
+
+        if ($('#cphContenido_hfSerieConversorEstacionB').val() != "") {
+            divSerieConversorEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieConversorEstacionB').val(), $('#cphContenido_hfSerieConversorEstacionB').val());
+        }
+
+        $("#cphContenido_chkSerieConversorEstacionB").trigger("change");
+
+        // #endregion
+
+    }
+    else {
+        $("#rowSerieCMM4EstacionB").hide();
+        $("#rowSerieUGPSEstacionB").hide();
+        $("#rowSerieConversorEstacionB").hide();
     }
 
-    
-    //Cerrar todos los popovers cuando se da click fuera de uno
+    // #endregion
+
+    // #endregion
+
+    // #region Cerrar todos los popovers cuando se da click fuera de uno
+
     $("body").on('click', function (e) {
         $('[data-toggle=popover]').each(function () {
             // hide any open popovers when the anywhere else in the body is clicked
@@ -702,9 +847,63 @@
         });
     });
 
-    //Al momento de llamar el metodo hide del popover no necesite un segundo clic para mostrarse nuevamente
+    // #endregion
+
+    // #region Al momento de llamar el metodo hide del popover no necesite un segundo clic para mostrarse nuevamente
+
     $('body').on('hidden.bs.popover', function (e) {
         $(e.target).data("bs.popover").inState.click = false;
     });
+
+    // #endregion
+
+    // #region Bloqueamos los check de aprobacion
+
+    if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
+        //Check aprobacion
+        $('#cphContenido_chkSerieAntenaEstacionA').prop('disabled', true);
+        $('#cphContenido_chkSerieODUEstacionA').prop('disabled', true);
+        $('#cphContenido_chkSeriePOEEstacionA').prop('disabled', true);
+        
+        if ($('#cphContenido_hfCMM4A').val() != "0") {
+            $('#cphContenido_chkSerieCMM4EstacionA').prop('disabled', true);
+            $('#cphContenido_chkSerieUGPSEstacionA').prop('disabled', true);
+            $('#cphContenido_chkSerieConversorEstacionA').prop('disabled', true);
+        }
+
+        $('#cphContenido_chkSerieAntenaEstacionB').prop('disabled', true);
+        $('#cphContenido_chkSerieODUEstacionB').prop('disabled', true);
+        $('#cphContenido_chkSeriePOEEstacionB').prop('disabled', true);
+
+        if ($('#cphContenido_hfCMM4B').val() != "0") {
+            $('#cphContenido_chkSerieCMM4EstacionB').prop('disabled', true);
+            $('#cphContenido_chkSerieUGPSEstacionB').prop('disabled', true);
+            $('#cphContenido_chkSerieConversorEstacionB').prop('disabled', true);
+        }
+
+        //Comentarios
+        $('#txtSerieAntenaEstacionAComentario').prop('disabled', true);
+        $('#txtSerieODUEstacionAComentario').prop('disabled', true);
+        $('#txtSeriePOEEstacionAComentario').prop('disabled', true);
+
+        if ($('#cphContenido_hfCMM4A').val() != "0") {
+            $('#txtSerieCMM4EstacionAComentario').prop('disabled', true);
+            $('#txtSerieUGPSEstacionAComentario').prop('disabled', true);
+            $('#txtSerieConversorEstacionAComentario').prop('disabled', true);
+        }
+
+        $('#txtSerieAntenaEstacionBComentario').prop('disabled', true);
+        $('#txtSerieODUEstacionBComentario').prop('disabled', true);
+        $('#txtSeriePOEEstacionBComentario').prop('disabled', true);
+
+        if ($('#cphContenido_hfCMM4B').val() != "0") {
+            $('#txtSerieCMM4EstacionBComentario').prop('disabled', true);
+            $('#txtSerieUGPSEstacionBComentario').prop('disabled', true);
+            $('#txtSerieConversorEstacionBComentario').prop('disabled', true);
+        }
+
+    }
+
+    // #endregion
 
 });

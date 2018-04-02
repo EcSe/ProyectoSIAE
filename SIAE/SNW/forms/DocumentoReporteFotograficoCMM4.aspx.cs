@@ -22,9 +22,11 @@ namespace SNW.forms
                     EntidadDetalleBE entidadDetalleSecundarioBE = new EntidadDetalleBE();
                     DocumentoBE Documento = new DocumentoBE();
                     TareaBE Tarea = new TareaBE();
+                    UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
                     //EntidadDetalleBE entidadDefecto = new EntidadDetalleBE();
 
                     #region Inicializamos el formulario
+
                     #region Inicializamos el Título
 
                     Tarea.IdTarea = Request.QueryString["IdTarea"];
@@ -125,22 +127,182 @@ namespace SNW.forms
 
                     #endregion
 
-
                     #region Guardamos el documento
                     Session["Documento"] = Documento;
+                    #endregion
+
+                    #region Asignamos el metodo
+                    Session["metodo"] = "I";//Insert
+                    #endregion
+
+                    #region Asignacion Perfil
+                    hfIdPerfil.Value = Usuario.Perfil.IdValor;
                     #endregion
 
                     #endregion
 
                     #region Verificamos si existe la documentacion
-                    //DocumentoActaProtocoloSectorialBE documentoActaProtocoloSectorial = new DocumentoActaProtocoloSectorialBE();
-                    //List<DocumentoActaProtocoloSectorialBE> lstDocumentoActaProtocoloSectorial = new List<DocumentoActaProtocoloSectorialBE>();
-                    //documentoActaProtocoloSectorial.Documento.Tarea.IdTarea = Request.QueryString["IdTarea"].ToString();
-                    //lstDocumentoActaProtocoloSectorial = DocumentoActaProtocoloSectorialBL.ListarActasProtocoloSectorial(documentoActaProtocoloSectorial);
-                    //if (lstDocumentoActaProtocoloSectorial.Count.Equals(1))
-                    //{
+                    DocumentoDetalleBE DocumentoDetalle = new DocumentoDetalleBE();
+                    List<DocumentoDetalleBE> lstDetalles = new List<DocumentoDetalleBE>();
+                    DocumentoDetalle.Documento = Documento;
+                    lstDetalles = DocumentoDetalleBL.ListarDocumentoDetalle(DocumentoDetalle);
+                    if (lstDetalles.Count > 0)
+                    {
+                        String strRutaFisicaTemporal = "";
 
-                    //}
+                        #region Ruta Fisica Temporal
+                        entidadDetalleBE = new EntidadDetalleBE();
+                        entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                        entidadDetalleBE.IdValor = "RUTA_TEMP";
+                        entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                        strRutaFisicaTemporal = entidadDetalleBE.ValorCadena1;
+                        #endregion
+
+                        #region Ruta Virtual Temporal
+                        entidadDetalleBE = new EntidadDetalleBE();
+                        entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                        entidadDetalleBE.IdValor = "RUTA_VIRT_TEMP";
+                        entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                        hfRutaVirtualTemporal.Value = entidadDetalleBE.ValorCadena1;
+                        #endregion
+
+                        #region Reporte fotográfico
+
+                        #region Foto 1: Equipo GPS con Etiqueta Enrollada Visible
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000059").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEquipoGPSEtiqueta,
+                            hfEquipoGPSEtiquetaComentario, null, null,
+                            hfEquipoGPSEtiqueta, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 2.01: Aterramiento GPS (CMM4)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000060").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoGPS01,
+                            hfAterramientoGPS01Comentario, null, null,
+                            hfAterramientoGPS01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 2.02: Aterramiento GPS (CMM4)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000061").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoGPS02,
+                            hfAterramientoGPS02Comentario, null, null,
+                            hfAterramientoGPS02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 3: Recorrido de Cable CNT300 por Torre
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000062").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkRecorridoCableCNT300,
+                            hfRecorridoCableCNT300Comentario, null, null,
+                            hfRecorridoCableCNT300, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 4.01: Aterramiento Cable CNT300 (Inicio/Fin)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000063").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoCableCNT30001,
+                            hfAterramientoCableCNT30001Comentario, null, null,
+                            hfAterramientoCableCNT30001, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 4.02: Aterramiento Cable CNT300 (Inicio/Fin)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000064").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoCableCNT30002,
+                            hfAterramientoCableCNT30002Comentario, null, null,
+                            hfAterramientoCableCNT30002, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 5.01: Etiquetado del POE/CMM4
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000065").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEtiquetadoPOECMM401,
+                            hfEtiquetadoPOECMM401Comentario, null, null,
+                            hfEtiquetadoPOECMM401, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 5.02: Etiquetado del POE/CMM4
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000066").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEtiquetadoPOECMM402,
+                            hfEtiquetadoPOECMM402Comentario, null, null,
+                            hfEtiquetadoPOECMM402, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 6.01: Patch Core del CMM4 al Switch/Router (Inicio/Fin)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000067").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPatchCoreCMM4Switch01,
+                            hfPatchCoreCMM4Switch01Comentario, null, null,
+                            hfPatchCoreCMM4Switch01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 6.02: Patch Core del CMM4 al Switch/Router (Inicio/Fin)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000068").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPatchCoreCMM4Switch02,
+                            hfPatchCoreCMM4Switch02Comentario, null, null,
+                            hfPatchCoreCMM4Switch02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 7.01: POE/CMM4
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000069").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPOECMM401,
+                            hfPOECMM401Comentario, null, null,
+                            hfPOECMM401, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 7.01: POE/CMM4
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000070").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPOECMM402,
+                            hfPOECMM402Comentario, null, null,
+                            hfPOECMM402, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 8: TDK Lambda
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000071").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkTDKLambda,
+                            hfTDKLambdaComentario, null, null,
+                            hfTDKLambda, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 9.01: Energía TDK-Lambda (Inicio/Fin)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000072").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEnergiaTDKLambda01,
+                            hfEnergiaTDKLambda01Comentario, null, null,
+                            hfEnergiaTDKLambda01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 9.02: Energía TDK-Lambda (Inicio/Fin)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000073").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEnergiaTDKLambda02,
+                            hfEnergiaTDKLambda02Comentario, null, null,
+                            hfEnergiaTDKLambda02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10: Conexión TDK-Lambda a CMM4
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000074").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkConexionTDKLambdaCMM4,
+                            hfConexionTDKLambdaCMM4Comentario, null, null,
+                            hfConexionTDKLambdaCMM4, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #endregion
+
+                        #region Asignamos el metodo
+                        Session["metodo"] = "U";//Update
+                        #endregion
+
+                    }
                     #endregion
 
                 }
@@ -170,6 +332,7 @@ namespace SNW.forms
                 #endregion
 
                 #region Reporte Fotográfico
+
                 #region Foto 1: Equipo GPS con Etiqueta Enrollada Visible
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                     Documento, "000059", chkEquipoGPSEtiqueta,
@@ -300,15 +463,39 @@ namespace SNW.forms
 
                 #endregion 
 
-                #region Usuario Creacion
-                UsuarioBE UsuarioCreacion = (UsuarioBE)Session["Usuario"];
-                Documento.Detalles.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
-                //Documento.Materiales.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
-                //Documento.MedicionesEnlacePropagacion.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
+                #region Usuario Creacion y modificacion
+                UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
+                Documento.Detalles.ForEach(i =>
+                {
+                    i.UsuarioCreacion = Usuario;
+                    i.UsuarioModificacion = Usuario;
+                });
+                //Documento.Equipamientos.ForEach(i =>
+                //{
+                //    i.UsuarioCreacion = Usuario;
+                //    i.UsuarioModificacion = Usuario;
+                //});
+                //Documento.Materiales.ForEach(i =>
+                //{
+                //    i.UsuarioCreacion = Usuario;
+                //    i.UsuarioModificacion = Usuario;
+                //});
+                //Documento.MedicionesEnlacePropagacion.ForEach(i =>
+                //{
+                //    i.UsuarioCreacion = Usuario;
+                //    i.UsuarioModificacion = Usuario;
+                //});
                 #endregion
 
                 #region Guardar documento
-                DocumentoBL.InsertarDocumento(Documento);
+                if (Session["metodo"].Equals("I"))
+                    DocumentoBL.InsertarDocumento(Documento);
+                else if (Session["metodo"].Equals("U"))
+                    DocumentoBL.ActualizarDocumento(Documento);
+                #endregion
+
+                #region Asignamos el metodo
+                Session["metodo"] = "U";//Update
                 #endregion
 
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openAlert('#divAlert','#divAlertHeader','modal-header-success','#lblAlertTitle','Completado','#lblAlertBody','El documento se ha guardado correctamente.',true,true);", true);
@@ -318,5 +505,6 @@ namespace SNW.forms
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openAlert('#divAlert','#divAlertHeader','modal-header-danger','#lblAlertTitle','Error','#lblAlertBody','" + ex.Message.Replace("'", "\\'").Replace("\r", "\\r").Replace("\n", "\\n") + "',true,true);", true);
             }
         }
+
     }
 }

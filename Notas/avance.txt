@@ -1,0 +1,16 @@
+DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx	117
+DocumentoActaInstalacionPTP.aspx			100
+DocumentoInstalacionPozoTierra.aspx			30
+
+EJEMPLO
+DocumentoActaSeguridad.aspx
+
+
+
+if ($('#cphContenido_hfPantallaResultadoPruebaDITG').val() != "") {
+        divPantallaResultadoPruebaDITG.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPantallaResultadoPruebaDITG').val(), $('#cphContenido_hfPantallaResultadoPruebaDITG').val());
+    }
+
+    $("#cphContenido_chkPantallaResultadoPruebaDITG").trigger("change");
+
+

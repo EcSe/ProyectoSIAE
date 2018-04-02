@@ -1309,6 +1309,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieAntenaEstacionAComentario;
         
         /// <summary>
+        /// Control lblSerieAntenaEstacionA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieAntenaEstacionA;
+        
+        /// <summary>
         /// Control hfSerieAntenaEstacionA.
         /// </summary>
         /// <remarks>
@@ -1343,6 +1352,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieODUEstacionAComentario;
+        
+        /// <summary>
+        /// Control lblSerieODUEstacionA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieODUEstacionA;
         
         /// <summary>
         /// Control hfSerieODUEstacionA.
@@ -1381,6 +1399,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSeriePOEEstacionAComentario;
         
         /// <summary>
+        /// Control lblSeriePOEEstacionA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSeriePOEEstacionA;
+        
+        /// <summary>
         /// Control hfSeriePOEEstacionA.
         /// </summary>
         /// <remarks>
@@ -1415,6 +1442,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieCMM4EstacionAComentario;
+        
+        /// <summary>
+        /// Control lblSerieCMM4EstacionA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieCMM4EstacionA;
         
         /// <summary>
         /// Control hfSerieCMM4EstacionA.
@@ -1489,6 +1525,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieConversorEstacionAComentario;
         
         /// <summary>
+        /// Control lblSerieConversorEstacionA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieConversorEstacionA;
+        
+        /// <summary>
         /// Control hfSerieConversorEstacionA.
         /// </summary>
         /// <remarks>
@@ -1534,6 +1579,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieAntenaEstacionBComentario;
         
         /// <summary>
+        /// Control lblSerieAntenaEstacionB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieAntenaEstacionB;
+        
+        /// <summary>
         /// Control hfSerieAntenaEstacionB.
         /// </summary>
         /// <remarks>
@@ -1568,6 +1622,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieODUEstacionBComentario;
+        
+        /// <summary>
+        /// Control lblSerieODUEstacionB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieODUEstacionB;
         
         /// <summary>
         /// Control hfSerieODUEstacionB.
@@ -1606,6 +1669,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSeriePOEEstacionBComentario;
         
         /// <summary>
+        /// Control lblSeriePOEEstacionB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSeriePOEEstacionB;
+        
+        /// <summary>
         /// Control hfSeriePOEEstacionB.
         /// </summary>
         /// <remarks>
@@ -1640,6 +1712,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieCMM4EstacionBComentario;
+        
+        /// <summary>
+        /// Control lblSerieCMM4EstacionB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieCMM4EstacionB;
         
         /// <summary>
         /// Control hfSerieCMM4EstacionB.
@@ -1712,6 +1793,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieConversorEstacionBComentario;
+        
+        /// <summary>
+        /// Control lblSerieConversorEstacionB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieConversorEstacionB;
         
         /// <summary>
         /// Control hfSerieConversorEstacionB.

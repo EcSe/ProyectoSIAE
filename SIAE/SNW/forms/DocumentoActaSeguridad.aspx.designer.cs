@@ -1228,6 +1228,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerialNumberSensorMovimiento9001Comentario;
         
         /// <summary>
+        /// Control lblSerialNumberSensorMovimiento9001.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerialNumberSensorMovimiento9001;
+        
+        /// <summary>
         /// Control hfSerialNumberSensorMovimiento9001.
         /// </summary>
         /// <remarks>
@@ -1262,6 +1271,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerialNumberSensorMovimiento9002Comentario;
+        
+        /// <summary>
+        /// Control lblSerialNumberSensorMovimiento9002.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerialNumberSensorMovimiento9002;
         
         /// <summary>
         /// Control hfSerialNumberSensorMovimiento9002.
@@ -1300,6 +1318,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerialNumberSwitchPOENVR01Comentario;
         
         /// <summary>
+        /// Control lblSerialNumberSwitchPOENVR01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerialNumberSwitchPOENVR01;
+        
+        /// <summary>
         /// Control hfSerialNumberSwitchPOENVR01.
         /// </summary>
         /// <remarks>
@@ -1336,6 +1363,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerialNumberSwitchPOENVR02Comentario;
         
         /// <summary>
+        /// Control lblSerialNumberSwitchPOENVR02.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerialNumberSwitchPOENVR02;
+        
+        /// <summary>
         /// Control hfSerialNumberSwitchPOENVR02.
         /// </summary>
         /// <remarks>
@@ -1370,6 +1406,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerialNumberControladorComentario;
+        
+        /// <summary>
+        /// Control lblSerialNumberControlador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerialNumberControlador;
         
         /// <summary>
         /// Control hfSerialNumberControlador.
@@ -2486,5 +2531,23 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnCancelar;
+        
+        /// <summary>
+        /// Control hfIdPerfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfIdPerfil;
+        
+        /// <summary>
+        /// Control hfRutaVirtualTemporal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfRutaVirtualTemporal;
     }
 }

@@ -10,7 +10,7 @@
 namespace SNW.forms {
     
     
-    public partial class DocumentoInventarioPTP {
+    public partial class DocumentoEstudioCampo {
         
         /// <summary>
         /// Control h2Titulo.
@@ -22,544 +22,625 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl h2Titulo;
         
         /// <summary>
-        /// Control imgSerieAntenaEstacionAEjemplo.
+        /// Control chkFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieAntenaEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkFecha;
         
         /// <summary>
-        /// Control chkSerieAntenaEstacionA.
+        /// Control hfFechaComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieAntenaEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfFechaComentario;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionAComentario.
+        /// Control txtFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieAntenaEstacionAComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtFecha;
         
         /// <summary>
-        /// Control lblSerieAntenaEstacionA.
+        /// Control chkHoraInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieAntenaEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkHoraInicio;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionA.
+        /// Control hfHoraInicioComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieAntenaEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfHoraInicioComentario;
         
         /// <summary>
-        /// Control imgSerieODUEstacionAEjemplo.
+        /// Control txtHoraInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieODUEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.TextBox txtHoraInicio;
         
         /// <summary>
-        /// Control chkSerieODUEstacionA.
+        /// Control chkHoraFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieODUEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkHoraFin;
         
         /// <summary>
-        /// Control hfSerieODUEstacionAComentario.
+        /// Control hfHoraFinComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieODUEstacionAComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfHoraFinComentario;
         
         /// <summary>
-        /// Control lblSerieODUEstacionA.
+        /// Control txtHoraFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieODUEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtHoraFin;
         
         /// <summary>
-        /// Control hfSerieODUEstacionA.
+        /// Control chkLongitudLocalidadDesdePlazaPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieODUEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkLongitudLocalidadDesdePlazaPrincipal;
         
         /// <summary>
-        /// Control imgSeriePOEEstacionAEjemplo.
+        /// Control hfLongitudLocalidadDesdePlazaPrincipalComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSeriePOEEstacionAEjemplo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfLongitudLocalidadDesdePlazaPrincipalComentario;
         
         /// <summary>
-        /// Control chkSeriePOEEstacionA.
+        /// Control txtLongitudLocalidadDesdePlazaPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSeriePOEEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtLongitudLocalidadDesdePlazaPrincipal;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionAComentario.
+        /// Control chkLatitudLocalidadDesdePlazaPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSeriePOEEstacionAComentario;
+        protected global::System.Web.UI.WebControls.CheckBox chkLatitudLocalidadDesdePlazaPrincipal;
         
         /// <summary>
-        /// Control lblSeriePOEEstacionA.
+        /// Control hfLatitudLocalidadDesdePlazaPrincipalComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSeriePOEEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfLatitudLocalidadDesdePlazaPrincipalComentario;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionA.
+        /// Control txtLatitudLocalidadDesdePlazaPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSeriePOEEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtLatitudLocalidadDesdePlazaPrincipal;
         
         /// <summary>
-        /// Control imgSerieCMM4EstacionAEjemplo.
+        /// Control chkAltura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieCMM4EstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkAltura;
         
         /// <summary>
-        /// Control chkSerieCMM4EstacionA.
+        /// Control hfAlturaComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieCMM4EstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfAlturaComentario;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionAComentario.
+        /// Control txtAltura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieCMM4EstacionAComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtAltura;
         
         /// <summary>
-        /// Control lblSerieCMM4EstacionA.
+        /// Control chkAreaNaturalProtegida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieCMM4EstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkAreaNaturalProtegida;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionA.
+        /// Control hfAreaNaturalProtegidaComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieCMM4EstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfAreaNaturalProtegidaComentario;
         
         /// <summary>
-        /// Control imgSerieUGPSEstacionAEjemplo.
+        /// Control txtAreaNaturalProtegida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieUGPSEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.TextBox txtAreaNaturalProtegida;
         
         /// <summary>
-        /// Control chkSerieUGPSEstacionA.
+        /// Control chkNombreAreaNatural.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieUGPSEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkNombreAreaNatural;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionAComentario.
+        /// Control hfNombreAreaNaturalComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieUGPSEstacionAComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfNombreAreaNaturalComentario;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionA.
+        /// Control txtNombreAreaNatural.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieUGPSEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreAreaNatural;
         
         /// <summary>
-        /// Control imgSerieConversorEstacionAEjemplo.
+        /// Control chkRestosArqueologicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieConversorEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkRestosArqueologicos;
         
         /// <summary>
-        /// Control chkSerieConversorEstacionA.
+        /// Control hfRestosArqueologicosComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieConversorEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfRestosArqueologicosComentario;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionAComentario.
+        /// Control txtRestosArqueologicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieConversorEstacionAComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtRestosArqueologicos;
         
         /// <summary>
-        /// Control lblSerieConversorEstacionA.
+        /// Control chkTipoRestosArqueologicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieConversorEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkTipoRestosArqueologicos;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionA.
+        /// Control hfTipoRestosArqueologicosComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieConversorEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfTipoRestosArqueologicosComentario;
         
         /// <summary>
-        /// Control hfCMM4A.
+        /// Control txtTipoRestosArqueologicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfCMM4A;
+        protected global::System.Web.UI.WebControls.TextBox txtTipoRestosArqueologicos;
         
         /// <summary>
-        /// Control imgSerieAntenaEstacionBEjemplo.
+        /// Control chkBancoNacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieAntenaEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkBancoNacion;
         
         /// <summary>
-        /// Control chkSerieAntenaEstacionB.
+        /// Control hfBancoNacionComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieAntenaEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfBancoNacionComentario;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionBComentario.
+        /// Control txtBancoNacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieAntenaEstacionBComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtBancoNacion;
         
         /// <summary>
-        /// Control lblSerieAntenaEstacionB.
+        /// Control chkAgenteBancoNacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieAntenaEstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkAgenteBancoNacion;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionB.
+        /// Control hfAgenteBancoNacionComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieAntenaEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfAgenteBancoNacionComentario;
         
         /// <summary>
-        /// Control imgSerieODUEstacionBEjemplo.
+        /// Control txtAgenteBancoNacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieODUEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.TextBox txtAgenteBancoNacion;
         
         /// <summary>
-        /// Control chkSerieODUEstacionB.
+        /// Control chkCantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieODUEstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkCantidad;
         
         /// <summary>
-        /// Control hfSerieODUEstacionBComentario.
+        /// Control hfCantidadComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieODUEstacionBComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfCantidadComentario;
         
         /// <summary>
-        /// Control lblSerieODUEstacionB.
+        /// Control txtCantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieODUEstacionB;
+        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
         
         /// <summary>
-        /// Control hfSerieODUEstacionB.
+        /// Control chkOtrosBancos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieODUEstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkOtrosBancos;
         
         /// <summary>
-        /// Control imgSeriePOEEstacionBEjemplo.
+        /// Control hfOtrosBancosComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSeriePOEEstacionBEjemplo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfOtrosBancosComentario;
         
         /// <summary>
-        /// Control chkSeriePOEEstacionB.
+        /// Control txtOtrosBancos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSeriePOEEstacionB;
+        protected global::System.Web.UI.WebControls.TextBox txtOtrosBancos;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionBComentario.
+        /// Control chkCantidadOtrosBancos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSeriePOEEstacionBComentario;
+        protected global::System.Web.UI.WebControls.CheckBox chkCantidadOtrosBancos;
         
         /// <summary>
-        /// Control lblSeriePOEEstacionB.
+        /// Control hfCantidadOtrosBancosComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSeriePOEEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfCantidadOtrosBancosComentario;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionB.
+        /// Control txtCantidadOtrosBancos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSeriePOEEstacionB;
+        protected global::System.Web.UI.WebControls.TextBox txtCantidadOtrosBancos;
         
         /// <summary>
-        /// Control imgSerieCMM4EstacionBEjemplo.
+        /// Control chkEntidadImportante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieCMM4EstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkEntidadImportante;
         
         /// <summary>
-        /// Control chkSerieCMM4EstacionB.
+        /// Control hfEntidadImportanteComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieCMM4EstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfEntidadImportanteComentario;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionBComentario.
+        /// Control txtEntidadImportante.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieCMM4EstacionBComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtEntidadImportante;
         
         /// <summary>
-        /// Control lblSerieCMM4EstacionB.
+        /// Control chkInstitucionEducativa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieCMM4EstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkInstitucionEducativa;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionB.
+        /// Control hfInstitucionEducativaComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieCMM4EstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfInstitucionEducativaComentario;
         
         /// <summary>
-        /// Control imgSerieUGPSEstacionBEjemplo.
+        /// Control txtInstitucionEducativa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieUGPSEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.TextBox txtInstitucionEducativa;
         
         /// <summary>
-        /// Control chkSerieUGPSEstacionB.
+        /// Control chkCantidadInstitucionEducativa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieUGPSEstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkCantidadInstitucionEducativa;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionBComentario.
+        /// Control hfCantidadInstitucionEducativaComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieUGPSEstacionBComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfCantidadInstitucionEducativaComentario;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionB.
+        /// Control txtCantidadInstitucionEducativa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieUGPSEstacionB;
+        protected global::System.Web.UI.WebControls.TextBox txtCantidadInstitucionEducativa;
         
         /// <summary>
-        /// Control imgSerieConversorEstacionBEjemplo.
+        /// Control chkPoblacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieConversorEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkPoblacion;
         
         /// <summary>
-        /// Control chkSerieConversorEstacionB.
+        /// Control hfPoblacionComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieConversorEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPoblacionComentario;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionBComentario.
+        /// Control txtPoblacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieConversorEstacionBComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtPoblacion;
         
         /// <summary>
-        /// Control lblSerieConversorEstacionB.
+        /// Control chkNumeroMujeres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieConversorEstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkNumeroMujeres;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionB.
+        /// Control hfNumeroMujeresComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieConversorEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfNumeroMujeresComentario;
         
         /// <summary>
-        /// Control hfCMM4B.
+        /// Control txtNumeroMujeres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfCMM4B;
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroMujeres;
+        
+        /// <summary>
+        /// Control chkNumeroJovenesEntre15y24Anios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkNumeroJovenesEntre15y24Anios;
+        
+        /// <summary>
+        /// Control hfNumeroJovenesEntre15y24AniosComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfNumeroJovenesEntre15y24AniosComentario;
+        
+        /// <summary>
+        /// Control txtNumeroJovenesEntre15y24Anios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroJovenesEntre15y24Anios;
+        
+        /// <summary>
+        /// Control chkNumeroPersonasDiscapacidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkNumeroPersonasDiscapacidad;
+        
+        /// <summary>
+        /// Control hfNumeroPersonasDiscapacidadComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfNumeroPersonasDiscapacidadComentario;
+        
+        /// <summary>
+        /// Control txtNumeroPersonasDiscapacidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroPersonasDiscapacidad;
+        
+        /// <summary>
+        /// Control chkNumeroViviendas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkNumeroViviendas;
+        
+        /// <summary>
+        /// Control hfNumeroViviendasComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfNumeroViviendasComentario;
+        
+        /// <summary>
+        /// Control txtNumeroViviendas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroViviendas;
         
         /// <summary>
         /// Control upaGuardar.

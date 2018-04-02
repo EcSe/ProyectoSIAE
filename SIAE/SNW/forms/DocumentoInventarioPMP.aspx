@@ -195,6 +195,8 @@
     </asp:UpdatePanel>
     <br />
     <br />
+    <input type="hidden" id="hfIdPerfil" runat="server"/>
+    <input type="hidden" id="hfRutaVirtualTemporal" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPie" runat="server">
     <script src="../js/forms/DocumentoInventarioPMP.js"></script>

@@ -147,7 +147,7 @@ namespace SNW.master
 
 
             //Response.Redirect("/forms/Login.aspx", true);
-            Response.Redirect(lstEntidadDetalle[0].ValorCadena1, true);
+            Response.Redirect(lstEntidadDetalle[0].ValorCadena1 + "?IdMetodo=OUT", true);
         }
 
         protected void btnInicio_Click(object sender, EventArgs e)

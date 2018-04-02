@@ -10,7 +10,7 @@
 namespace SNW.forms {
     
     
-    public partial class DocumentoInventarioPTP {
+    public partial class DocumentoPruebasServicioDITGPTP {
         
         /// <summary>
         /// Control h2Titulo.
@@ -22,544 +22,679 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl h2Titulo;
         
         /// <summary>
-        /// Control imgSerieAntenaEstacionAEjemplo.
+        /// Control chkTiempoPrueba.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieAntenaEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkTiempoPrueba;
         
         /// <summary>
-        /// Control chkSerieAntenaEstacionA.
+        /// Control hfTiempoPruebaComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieAntenaEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfTiempoPruebaComentario;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionAComentario.
+        /// Control txtTiempoPrueba.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieAntenaEstacionAComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtTiempoPrueba;
         
         /// <summary>
-        /// Control lblSerieAntenaEstacionA.
+        /// Control chkRetardoMinimo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieAntenaEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkRetardoMinimo;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionA.
+        /// Control hfRetardoMinimoComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieAntenaEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfRetardoMinimoComentario;
         
         /// <summary>
-        /// Control imgSerieODUEstacionAEjemplo.
+        /// Control txtRetardoMinimo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieODUEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.TextBox txtRetardoMinimo;
         
         /// <summary>
-        /// Control chkSerieODUEstacionA.
+        /// Control chkRetardoMaximo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieODUEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkRetardoMaximo;
         
         /// <summary>
-        /// Control hfSerieODUEstacionAComentario.
+        /// Control hfRetardoMaximoComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieODUEstacionAComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfRetardoMaximoComentario;
         
         /// <summary>
-        /// Control lblSerieODUEstacionA.
+        /// Control txtRetardoMaximo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieODUEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtRetardoMaximo;
         
         /// <summary>
-        /// Control hfSerieODUEstacionA.
+        /// Control chkRetardoPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieODUEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkRetardoPromedio;
         
         /// <summary>
-        /// Control imgSeriePOEEstacionAEjemplo.
+        /// Control hfRetardoPromedioComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSeriePOEEstacionAEjemplo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfRetardoPromedioComentario;
         
         /// <summary>
-        /// Control chkSeriePOEEstacionA.
+        /// Control txtRetardoPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSeriePOEEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtRetardoPromedio;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionAComentario.
+        /// Control chkJitterPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSeriePOEEstacionAComentario;
+        protected global::System.Web.UI.WebControls.CheckBox chkJitterPromedio;
         
         /// <summary>
-        /// Control lblSeriePOEEstacionA.
+        /// Control hfJitterPromedioComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSeriePOEEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfJitterPromedioComentario;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionA.
+        /// Control txtJitterPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSeriePOEEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtJitterPromedio;
         
         /// <summary>
-        /// Control imgSerieCMM4EstacionAEjemplo.
+        /// Control chkDesviacionEstandarRetardo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieCMM4EstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkDesviacionEstandarRetardo;
         
         /// <summary>
-        /// Control chkSerieCMM4EstacionA.
+        /// Control hfDesviacionEstandarRetardoComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieCMM4EstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfDesviacionEstandarRetardoComentario;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionAComentario.
+        /// Control txtDesviacionEstandarRetardo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieCMM4EstacionAComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtDesviacionEstandarRetardo;
         
         /// <summary>
-        /// Control lblSerieCMM4EstacionA.
+        /// Control chkBytesRecibidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieCMM4EstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkBytesRecibidos;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionA.
+        /// Control hfBytesRecibidosComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieCMM4EstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfBytesRecibidosComentario;
         
         /// <summary>
-        /// Control imgSerieUGPSEstacionAEjemplo.
+        /// Control txtBytesRecibidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieUGPSEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.TextBox txtBytesRecibidos;
         
         /// <summary>
-        /// Control chkSerieUGPSEstacionA.
+        /// Control chkThroughputPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieUGPSEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkThroughputPromedio;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionAComentario.
+        /// Control hfThroughputPromedioComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieUGPSEstacionAComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfThroughputPromedioComentario;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionA.
+        /// Control txtThroughputPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieUGPSEstacionA;
+        protected global::System.Web.UI.WebControls.TextBox txtThroughputPromedio;
         
         /// <summary>
-        /// Control imgSerieConversorEstacionAEjemplo.
+        /// Control chkDescartePaquetes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieConversorEstacionAEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkDescartePaquetes;
         
         /// <summary>
-        /// Control chkSerieConversorEstacionA.
+        /// Control hfDescartePaquetesComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieConversorEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfDescartePaquetesComentario;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionAComentario.
+        /// Control txtDescartePaquetes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieConversorEstacionAComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtDescartePaquetes;
         
         /// <summary>
-        /// Control lblSerieConversorEstacionA.
+        /// Control imgPantallaResultadoPruebaDITGEjemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieConversorEstacionA;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPantallaResultadoPruebaDITGEjemplo;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionA.
+        /// Control chkPantallaResultadoPruebaDITG.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieConversorEstacionA;
+        protected global::System.Web.UI.WebControls.CheckBox chkPantallaResultadoPruebaDITG;
         
         /// <summary>
-        /// Control hfCMM4A.
+        /// Control hfPantallaResultadoPruebaDITGComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfCMM4A;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPantallaResultadoPruebaDITGComentario;
         
         /// <summary>
-        /// Control imgSerieAntenaEstacionBEjemplo.
+        /// Control hfPantallaResultadoPruebaDITG.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieAntenaEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.HiddenField hfPantallaResultadoPruebaDITG;
         
         /// <summary>
-        /// Control chkSerieAntenaEstacionB.
+        /// Control imgPingHaciaCPEDesdeNodoAEjemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieAntenaEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingHaciaCPEDesdeNodoAEjemplo;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionBComentario.
+        /// Control chkPingHaciaCPEDesdeNodoA.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieAntenaEstacionBComentario;
+        protected global::System.Web.UI.WebControls.CheckBox chkPingHaciaCPEDesdeNodoA;
         
         /// <summary>
-        /// Control lblSerieAntenaEstacionB.
+        /// Control hfPingHaciaCPEDesdeNodoAComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieAntenaEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingHaciaCPEDesdeNodoAComentario;
         
         /// <summary>
-        /// Control hfSerieAntenaEstacionB.
+        /// Control hfPingHaciaCPEDesdeNodoA.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieAntenaEstacionB;
+        protected global::System.Web.UI.WebControls.HiddenField hfPingHaciaCPEDesdeNodoA;
         
         /// <summary>
-        /// Control imgSerieODUEstacionBEjemplo.
+        /// Control imgFechaHoraRouterDesdeNodoAEjemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieODUEstacionBEjemplo;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgFechaHoraRouterDesdeNodoAEjemplo;
         
         /// <summary>
-        /// Control chkSerieODUEstacionB.
+        /// Control chkFechaHoraRouterDesdeNodoA.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieODUEstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkFechaHoraRouterDesdeNodoA;
         
         /// <summary>
-        /// Control hfSerieODUEstacionBComentario.
+        /// Control hfFechaHoraRouterDesdeNodoAComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieODUEstacionBComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfFechaHoraRouterDesdeNodoAComentario;
         
         /// <summary>
-        /// Control lblSerieODUEstacionB.
+        /// Control hfFechaHoraRouterDesdeNodoA.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieODUEstacionB;
+        protected global::System.Web.UI.WebControls.HiddenField hfFechaHoraRouterDesdeNodoA;
         
         /// <summary>
-        /// Control hfSerieODUEstacionB.
+        /// Control imgPingTodosUsuariosSoloMicroondaEjemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieODUEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingTodosUsuariosSoloMicroondaEjemplo;
         
         /// <summary>
-        /// Control imgSeriePOEEstacionBEjemplo.
+        /// Control chkPingTodosUsuariosSoloMicroonda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSeriePOEEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.CheckBox chkPingTodosUsuariosSoloMicroonda;
         
         /// <summary>
-        /// Control chkSeriePOEEstacionB.
+        /// Control hfPingTodosUsuariosSoloMicroondaComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSeriePOEEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingTodosUsuariosSoloMicroondaComentario;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionBComentario.
+        /// Control hfPingTodosUsuariosSoloMicroonda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSeriePOEEstacionBComentario;
+        protected global::System.Web.UI.WebControls.HiddenField hfPingTodosUsuariosSoloMicroonda;
         
         /// <summary>
-        /// Control lblSeriePOEEstacionB.
+        /// Control imgPingTodosUsuariosSoloMicroonda01Ejemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSeriePOEEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingTodosUsuariosSoloMicroonda01Ejemplo;
         
         /// <summary>
-        /// Control hfSeriePOEEstacionB.
+        /// Control chkPingTodosUsuariosSoloMicroonda01.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSeriePOEEstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkPingTodosUsuariosSoloMicroonda01;
         
         /// <summary>
-        /// Control imgSerieCMM4EstacionBEjemplo.
+        /// Control hfPingTodosUsuariosSoloMicroonda01Comentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieCMM4EstacionBEjemplo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingTodosUsuariosSoloMicroonda01Comentario;
         
         /// <summary>
-        /// Control chkSerieCMM4EstacionB.
+        /// Control hfPingTodosUsuariosSoloMicroonda01.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieCMM4EstacionB;
+        protected global::System.Web.UI.WebControls.HiddenField hfPingTodosUsuariosSoloMicroonda01;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionBComentario.
+        /// Control imgPingTodosUsuariosSoloMicroonda02Ejemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieCMM4EstacionBComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingTodosUsuariosSoloMicroonda02Ejemplo;
         
         /// <summary>
-        /// Control lblSerieCMM4EstacionB.
+        /// Control chkPingTodosUsuariosSoloMicroonda02.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieCMM4EstacionB;
+        protected global::System.Web.UI.WebControls.CheckBox chkPingTodosUsuariosSoloMicroonda02;
         
         /// <summary>
-        /// Control hfSerieCMM4EstacionB.
+        /// Control hfPingTodosUsuariosSoloMicroonda02Comentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieCMM4EstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingTodosUsuariosSoloMicroonda02Comentario;
         
         /// <summary>
-        /// Control imgSerieUGPSEstacionBEjemplo.
+        /// Control hfPingTodosUsuariosSoloMicroonda02.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieUGPSEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.HiddenField hfPingTodosUsuariosSoloMicroonda02;
         
         /// <summary>
-        /// Control chkSerieUGPSEstacionB.
+        /// Control imgPingTodosUsuariosSoloMicroonda03Ejemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieUGPSEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingTodosUsuariosSoloMicroonda03Ejemplo;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionBComentario.
+        /// Control chkPingTodosUsuariosSoloMicroonda03.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieUGPSEstacionBComentario;
+        protected global::System.Web.UI.WebControls.CheckBox chkPingTodosUsuariosSoloMicroonda03;
         
         /// <summary>
-        /// Control hfSerieUGPSEstacionB.
+        /// Control hfPingTodosUsuariosSoloMicroonda03Comentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieUGPSEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingTodosUsuariosSoloMicroonda03Comentario;
         
         /// <summary>
-        /// Control imgSerieConversorEstacionBEjemplo.
+        /// Control hfPingTodosUsuariosSoloMicroonda03.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSerieConversorEstacionBEjemplo;
+        protected global::System.Web.UI.WebControls.HiddenField hfPingTodosUsuariosSoloMicroonda03;
         
         /// <summary>
-        /// Control chkSerieConversorEstacionB.
+        /// Control imgPingTodosUsuariosSoloMicroonda04Ejemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSerieConversorEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingTodosUsuariosSoloMicroonda04Ejemplo;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionBComentario.
+        /// Control chkPingTodosUsuariosSoloMicroonda04.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfSerieConversorEstacionBComentario;
+        protected global::System.Web.UI.WebControls.CheckBox chkPingTodosUsuariosSoloMicroonda04;
         
         /// <summary>
-        /// Control lblSerieConversorEstacionB.
+        /// Control hfPingTodosUsuariosSoloMicroonda04Comentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSerieConversorEstacionB;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingTodosUsuariosSoloMicroonda04Comentario;
         
         /// <summary>
-        /// Control hfSerieConversorEstacionB.
+        /// Control hfPingTodosUsuariosSoloMicroonda04.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfSerieConversorEstacionB;
+        protected global::System.Web.UI.WebControls.HiddenField hfPingTodosUsuariosSoloMicroonda04;
         
         /// <summary>
-        /// Control hfCMM4B.
+        /// Control imgPingTodosUsuariosSoloMicroonda05Ejemplo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfCMM4B;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingTodosUsuariosSoloMicroonda05Ejemplo;
+        
+        /// <summary>
+        /// Control chkPingTodosUsuariosSoloMicroonda05.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkPingTodosUsuariosSoloMicroonda05;
+        
+        /// <summary>
+        /// Control hfPingTodosUsuariosSoloMicroonda05Comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingTodosUsuariosSoloMicroonda05Comentario;
+        
+        /// <summary>
+        /// Control hfPingTodosUsuariosSoloMicroonda05.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfPingTodosUsuariosSoloMicroonda05;
+        
+        /// <summary>
+        /// Control imgPingTodosUsuariosSoloMicroonda06Ejemplo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgPingTodosUsuariosSoloMicroonda06Ejemplo;
+        
+        /// <summary>
+        /// Control chkPingTodosUsuariosSoloMicroonda06.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkPingTodosUsuariosSoloMicroonda06;
+        
+        /// <summary>
+        /// Control hfPingTodosUsuariosSoloMicroonda06Comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPingTodosUsuariosSoloMicroonda06Comentario;
+        
+        /// <summary>
+        /// Control hfPingTodosUsuariosSoloMicroonda06.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfPingTodosUsuariosSoloMicroonda06;
+        
+        /// <summary>
+        /// Control imgDireccionesMACEjemplo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgDireccionesMACEjemplo;
+        
+        /// <summary>
+        /// Control chkDireccionesMAC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDireccionesMAC;
+        
+        /// <summary>
+        /// Control hfDireccionesMACComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfDireccionesMACComentario;
+        
+        /// <summary>
+        /// Control hfDireccionesMAC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfDireccionesMAC;
+        
+        /// <summary>
+        /// Control imgResultadoPruebaDITGEjemplo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgResultadoPruebaDITGEjemplo;
+        
+        /// <summary>
+        /// Control chkResultadoPruebaDITG.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkResultadoPruebaDITG;
+        
+        /// <summary>
+        /// Control hfResultadoPruebaDITGComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfResultadoPruebaDITGComentario;
+        
+        /// <summary>
+        /// Control hfResultadoPruebaDITG.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfResultadoPruebaDITG;
         
         /// <summary>
         /// Control upaGuardar.
@@ -605,5 +740,14 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfRutaVirtualTemporal;
+        
+        /// <summary>
+        /// Control hfIdDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfIdDocumento;
     }
 }
