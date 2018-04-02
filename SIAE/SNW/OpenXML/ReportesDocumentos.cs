@@ -487,6 +487,51 @@ namespace SNW.OpenXML
                 ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mEXTINTOR_EXTERIOR, "", 135, 14, 302, 227);
                 ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MAGNETICO_INTERNO, "", 156, 3, 148, 205);
                 ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MAGNETICO_INTERNO_2, "", 156, 7, 153, 205);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_OCUPACIONAL, "", 156, 14, 301, 200);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_DE_HUMO, "", 172, 3, 305, 228);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_MOVIMIENTO_360, "", 172, 14, 306, 230);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSENSOR_DE_INUNDACION, "", 188, 4, 197, 226);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCAMARA_PTZ_INTERIOR, "", 188, 15, 235, 227);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mEXTINTOR_INTERIOR, "", 205, 4, 257, 341);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mRELE_EQUIPO_INTERO, "", 208, 14, 316, 243 );
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCONTROLADOR_NVR_SWITCH, "", 222, 7, 393, 244);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mATERRAMIENTO_CONTROLADOR, "", 247, 3, 302, 225);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mATERRAMIENTO_NVR_POE, "", 247, 14, 152, 211);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mATERRAMIENTO_NVR_POE_2, "", 247, 19, 165, 211);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mATERRAMIENTO_A_BARRA, "", 263, 3, 264, 197);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSERIAL_NUMBER_SENSOR_MOVIMIENTO_1, "", 282, 3, 274, 200);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSERIAL_NUMBER_SENSOR_MOVIMIENTO_2, "", 282, 15, 274, 200);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSERIAL_NUMBER_SWITCH_POE_NVR, "", 298, 3, 146, 234);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSERIAL_NUMBER_SWITCH_POE_NVR_2, "", 298, 7, 169, 238);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mSERIAL_NUMBER_CONTROLADOR, "", 298, 15, 221, 239);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mETIQUETADOS_EQUIPOS_CONTROLADOR, "", 317, 6, 413, 225);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mETIQUETADOS_EQUIPOS_NVR, "", 335, 5, 460, 227);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCHECKLIST, "", 353, 7, 435, 542);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCAMARA_EXTERIOR_MODO_NORMAL_POS1, "", 391, 6, 487, 274);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCAMARA_EXTERIOR_MODO_NORMAL_POS2, "", 408, 6, 454, 228);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCAMARA_INTERIOR_MODO_NORMAL, "", 425, 6, 448, 229);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCAMARA_INTERIOR_MODO_INFRARROJO, "", 442, 6, 448, 229);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_PUERTA_PRINCIPAL_ABIERTA, "", 459, 5, 519, 271);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_PUERTA_SALAS_EQUIPOS_ABIERTA, "", 476, 5, 519, 271);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_CAMARA_INTERNA, "", 492, 6, 443, 270);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_CAMARA_EXTERNA, "", 507, 6, 443, 270);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_SENSOR_DE_ANIEGO, "", 522, 5, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_SENSOR_DE_HUMO, "", 539, 6, 443, 270);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_TAMPER_SENSOR_90_1, "", 554, 6, 443, 270);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_MOVIMIENTO_SENSOR_90_1, "", 569, 5, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_MASKING_SENSOR_90_1, "", 584, 5, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_TAMPER_SENSOR_90_2, "", 599, 5, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_MOVIMIENTO_SENSOR_90_2, "", 614, 5, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_MASKING_SENSOR_90_2, "", 629, 6, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_ALARMA_TAMPER_SENSOR_360, "", 644, 6, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mTPA_ALARMA_MOVIMIENTO_SENSOR_360, "", 659, 6, 531, 280);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_CAMARA_1_INDOOR, "", 676, 5, 535, 231);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_CAMARA_2_OUTDOOR, "", 693, 5, 535, 231);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_CONTROLADOR, "", 710, 5, 535, 231);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_GATEWAY, "", 727, 5, 535, 231);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_NVR, "", 744, 6, 454, 242);
+                ExcelTools.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_BIOMETRICO, "", 761, 5, 535, 231);
+
                 #endregion
 
             }
