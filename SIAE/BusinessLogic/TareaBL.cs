@@ -13,7 +13,7 @@ namespace BusinessLogic
 {
     public class TareaBL
     {
-        public static List<TareaBE> ListarTareas(TareaBE Tarea)
+        public static List<TareaBE> ListarTareas(TareaBE Tarea,String TipoTransaccion = "S")
         {
             List<TareaBE> lstResultadosBE = new List<TareaBE>();
             DBBaseDatos baseDatosDA = new DBBaseDatos();
@@ -22,12 +22,21 @@ namespace BusinessLogic
             try
             {
                 baseDatosDA.CrearComando("USP_TAREA", CommandType.StoredProcedure);
-                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "S", true);
+                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", TipoTransaccion, true);
 
                 if (Tarea.IdTarea.Equals(""))
                     baseDatosDA.AsignarParametroNulo("@PCH_ID_TAREA", true);
                 else
                     baseDatosDA.AsignarParametroCadena("@PCH_ID_TAREA", Tarea.IdTarea, true);
+
+                if (!Tarea.NodoIIBBA.IdNodo.Equals(""))
+                    baseDatosDA.AsignarParametroCadena("@PVC_ID_NODO_IIBB_A", Tarea.NodoIIBBA.IdNodo, true);
+                else
+                    baseDatosDA.AsignarParametroNulo("@PVC_ID_NODO_IIBB_A", true);
+                if (Tarea.Contratista.IdValor.Equals(""))
+                    baseDatosDA.AsignarParametroNulo("@PCH_ID_CONTRATISTA", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PCH_ID_CONTRATISTA", Tarea.Contratista.IdValor, true);
 
                 DbDataReader drDatos = baseDatosDA.EjecutarConsulta();
 
@@ -35,14 +44,44 @@ namespace BusinessLogic
                 {
                     TareaBE item = new TareaBE();
 
-                    item.IdTarea = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TAREA"));;
-                    item.TipoTarea.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_TAREA"));;
-                    item.NodoIIBBA.IdNodo = drDatos.GetString(drDatos.GetOrdinal("VC_ID_NODO_IIBB_A")); ;
-                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("IN_SECTOR")))
-                        item.Sector = drDatos.GetInt32(drDatos.GetOrdinal("IN_SECTOR"));
-                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_NODO_B")))
-                        item.NodoB.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO_B"));
-                    lstResultadosBE.Add(item);
+                    if (TipoTransaccion.Equals("S"))
+                    {
+                        item.IdTarea = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TAREA")); ;
+                        item.TipoTarea.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_TAREA")); ;
+                        item.NodoIIBBA.IdNodo = drDatos.GetString(drDatos.GetOrdinal("VC_ID_NODO_IIBB_A")); ;
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("IN_SECTOR")))
+                            item.Sector = drDatos.GetInt32(drDatos.GetOrdinal("IN_SECTOR"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_NODO_B")))
+                            item.NodoB.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO_B"));
+                    }
+                    if (TipoTransaccion.Equals("Z"))
+                    {
+                        item.IdTarea = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TAREA"));
+                        //if (!drDatos.IsDBNull(drDatos.GetOrdinal("IN_SECTOR")))
+                        //    item.Sector = drDatos.GetInt32(drDatos.GetOrdinal("IN_SECTOR"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("IN_SECTOR")))
+                            item.IdSectorAP = drDatos.GetInt32(drDatos.GetOrdinal("IN_SECTOR")).ToString();
+                        item.TipoTarea.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_TAREA"));
+                        item.TipoTarea.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_TIP_TAREA"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_TIP_NODO_A")))
+                            item.TipoNodoA.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_NODO_A"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_NOM_TIP_NODO_A")))
+                            item.TipoNodoA.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_TIP_NODO_A"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_ID_NODO_IIBB_A")))
+                            item.NodoIIBBA.IdNodo = drDatos.GetString(drDatos.GetOrdinal("VC_ID_NODO_IIBB_A"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_TIP_NODO_B")))
+                            item.TipoNodoB.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_NODO_B"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_NOM_TIP_NODO_B")))
+                            item.TipoNodoB.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_TIP_NODO_B"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_NODO_B")))
+                            item.NodoB.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO_B"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_CONTRATISTA")))
+                            item.Contratista.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_CONTRATISTA"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_NOM_CONTRATISTA")))
+                            item.Contratista.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_CONTRATISTA"));
+                    }
+
+                        lstResultadosBE.Add(item);
                 }
 
                 drDatos.Close();

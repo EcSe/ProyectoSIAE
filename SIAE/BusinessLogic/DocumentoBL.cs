@@ -33,6 +33,10 @@ namespace BusinessLogic
                     baseDatosDA.AsignarParametroNulo("@PCH_ID_CONTRATISTA", true);
                 else
                     baseDatosDA.AsignarParametroCadena("@PCH_ID_CONTRATISTA", documentoBE.Tarea.Contratista.IdValor, true);
+                if (documentoBE.Tarea.IdTarea.Equals(""))
+                    baseDatosDA.AsignarParametroNulo("@PCH_ID_TAREA", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PCH_ID_TAREA", documentoBE.Tarea.IdTarea, true);
 
                 DbDataReader drDatos = baseDatosDA.EjecutarConsulta();
 
@@ -40,14 +44,11 @@ namespace BusinessLogic
                 {
                     DocumentoBE item = new DocumentoBE();
 
-                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_TAREA")))
-                        item.Tarea.IdTarea = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TAREA"));
+                    item.Tarea.IdTarea = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TAREA"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_SECTOR")))
                         item.Tarea.IdSectorAP = drDatos.GetString(drDatos.GetOrdinal("CH_ID_SECTOR"));
-                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_TIP_TAREA")))
-                        item.Tarea.TipoTarea.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_TAREA"));
-                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_NOM_TIP_TAREA")))
-                        item.Tarea.TipoTarea.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_TIP_TAREA"));
+                    item.Tarea.TipoTarea.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_TAREA"));
+                    item.Tarea.TipoTarea.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_TIP_TAREA"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_TIP_NODO_A")))
                         item.Tarea.TipoNodoA.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_NODO_A"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_NOM_TIP_NODO_A")))

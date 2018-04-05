@@ -30,15 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +46,8 @@
     <Compile Include="DocumentoBL.cs" />
     <Compile Include="DocumentoDetalleBL.cs" />
     <Compile Include="DocumentoEquipamientoBL.cs" />
+    <Compile Include="DocumentoIPBL.cs" />
+    <Compile Include="DocumentoIPEquipamientoBL.cs" />
     <Compile Include="DocumentoMaterialBL.cs" />
     <Compile Include="DocumentoMedicionEnlacePropagacionBL.cs" />
     <Compile Include="EntidadDetalleBL.cs" />
@@ -83,10 +77,6 @@
       <Project>{e12cfa3a-5cc0-46d8-98ee-44b7f8081113}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

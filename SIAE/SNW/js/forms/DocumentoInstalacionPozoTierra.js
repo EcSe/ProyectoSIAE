@@ -2182,6 +2182,95 @@
     });
 
     // #endregion
+   
+    // #region Bloqueamos los check de aprobacion
+
+    if (!($("#cphContenido_hfIdPerfil").val() == "000001"))
+
+    {
+        //#region POZO A TIERRA 5 OHM
+        //Check aprobacion
+        $('#cphContenido_chkPT5FrontalIIBB').prop('disabled', true);
+        $('#cphContenido_chkPT5UbicacionPTAntesInstalacion').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaZanjaAbierta').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaColocacionFlejeCobre01').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaColocacionFlejeCobre02').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja').prop('disabled', true);
+        $('#cphContenido_chkPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja').prop('disabled', true);
+        $('#cphContenido_chkPT5MedicionPTPanoramicaMedicionPT01').prop('disabled', true);
+        $('#cphContenido_chkPT5MedicionPTPanoramicaMedicionPT02').prop('disabled', true);
+        $('#cphContenido_chkPT5MedicionPTPanoramicaMedicionPT03').prop('disabled', true);
+
+        // #endregion
+
+       //#region bloqueamos los comentarioss
+        $('#txtPT5FrontalIIBBComentario').prop('disabled', true);
+        $('#txtPT5UbicacionPTAntesInstalacionComentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaZanjaAbiertaComentario').prop('disabled', true);   
+        $('#txtPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaComentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaVertidoSalGranuladaZanjaComentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoComentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaColocacionFlejeCobre01Comentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaColocacionFlejeCobre02Comentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeComentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoComentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaComentario').prop('disabled', true);
+        $('#txtPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaComentario').prop('disabled', true);
+        $('#txtPT5MedicionPTPanoramicaMedicionPT01Comentario').prop('disabled', true);
+        $('#txtPT5MedicionPTPanoramicaMedicionPT02Comentario').prop('disabled', true);
+        $('#txtPT5MedicionPTPanoramicaMedicionPT03Comentario').prop('disabled', true);
+
+        //#endregion
+        //#endregion
+      
+        //#region POZO A TIERRA 10 OHM
+        //Check aprobacion
+        $('#cphContenido_chkPT10FrontalIIBB').prop('disabled', true);
+        $('#cphContenido_chkPT10UbicacionPTAntesInstalacion').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaZanjaAbierta').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaVertidoSalGranuladaZanja').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaVertidoDisolucionCementoConductivo').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaColocacionFlejeCobre01').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaColocacionFlejeCobre02').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja').prop('disabled', true);
+        $('#cphContenido_chkPT10InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja').prop('disabled', true);
+        $('#cphContenido_chkPT10MedicionPTPanoramicaMedicionPT01').prop('disabled', true);
+        $('#cphContenido_chkPT10MedicionPTPanoramicaMedicionPT02').prop('disabled', true);
+        $('#cphContenido_chkPT10MedicionPTPanoramicaMedicionPT03').prop('disabled', true);
+
+        // #endregion
+
+        //#region bloqueamos los comentarioss
+        $('#txtPT10FrontalIIBBComentario').prop('disabled', true);
+        $('#txtPT10UbicacionPTAntesInstalacionComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaZanjaAbiertaComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaVertidoSalGranuladaZanjaComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaVertidoDisolucionCementoConductivoComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaColocacionFlejeCobre01Comentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaColocacionFlejeCobre02Comentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaComentario').prop('disabled', true);
+        $('#txtPT10InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaComentario').prop('disabled', true);
+        $('#txtPT10MedicionPTPanoramicaMedicionPT01Comentario').prop('disabled', true);
+        $('#txtPT10MedicionPTPanoramicaMedicionPT02Comentario').prop('disabled', true);
+        $('#txtPT10MedicionPTPanoramicaMedicionPT03Comentario').prop('disabled', true);
+
+        //#endregion
+        //#endregion
+        
+
+
+    
 
     // #region Bloqueamos los check de aprobacion
 
@@ -2236,8 +2325,9 @@
     //    $('#cphContenido_chkSerieODU').prop('disabled', true);
     //    $('#cphContenido_chkSerieNodoAntena').prop('disabled', true);
     //    $('#cphContenido_chkMedicionEnlacePropagacion').prop('disabled', true);
-    //    $('#cphContenido_chkMedicionEnlacePropagacion').prop('disabled', true);
+        //    $('#cphContenido_chkMedicionEnlacePropagacion').prop('disabled', true);
 
+    
     //    //Comentarios
     //    $('#txtFrecuenciaComentario').prop('disabled', true);
     //    $('#txtFechaComentario').prop('disabled', true);
@@ -2290,7 +2380,7 @@
     //    $('#txtMedicionEnlacePropagacionComentario').prop('disabled', true);
     //    $('#txtMedicionEnlacePropagacionComentario').prop('disabled', true);
 
-    //}
+    }
 
     // #endregion
 

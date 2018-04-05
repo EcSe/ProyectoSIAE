@@ -30,15 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +48,8 @@
     <Compile Include="DocumentoBE.cs" />
     <Compile Include="DocumentoDetalleBE.cs" />
     <Compile Include="DocumentoEquipamientoBE.cs" />
+    <Compile Include="DocumentoIPBE.cs" />
+    <Compile Include="DocumentoIPEquipamientoBE.cs" />
     <Compile Include="DocumentoMaterialBE.cs" />
     <Compile Include="EntidadBE.cs" />
     <Compile Include="EntidadDetalleBE.cs" />
@@ -79,9 +73,6 @@
     <Compile Include="TareaNodoBE.cs" />
     <Compile Include="TerceroBE.cs" />
     <Compile Include="UsuarioBE.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

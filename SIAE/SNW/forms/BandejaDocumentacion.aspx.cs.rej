@@ -1,0 +1,9 @@
+diff a/SIAE/SNW/forms/BandejaDocumentacion.aspx.cs b/SIAE/SNW/forms/BandejaDocumentacion.aspx.cs	(rejected hunks)
+@@ -234,6 +234,7 @@
+                 case "000004": rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPMP.xlsx");
+                     report.Anexo2InventarioPMP
+                       (documento.Tarea.NodoIIBBA.IdNodo,documento.Tarea.IdTarea,documento.Documento.ValorCadena1,rutaPlantilla);
++                    break;
+             }
+ 
+ 

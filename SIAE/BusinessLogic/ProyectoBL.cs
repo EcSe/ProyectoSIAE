@@ -32,6 +32,8 @@ namespace BusinessLogic
             IPPlanningPTPBE IPPlanningPTP = new IPPlanningPTPBE();
             KitSIAEBE KitSIAE = new KitSIAEBE();
             DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
+            DocumentoIPBE DocumentoIP = new DocumentoIPBE();
+            DocumentoIPEquipamientoBE DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
 
             EntidadDetalleBE conexionExcelBE = new EntidadDetalleBE();
             EntidadDetalleBE rutaTemporalBE = new EntidadDetalleBE();
@@ -77,6 +79,8 @@ namespace BusinessLogic
                 IPPlanningPTPBL.EliminarFisicoIPPlanningPTPProceso(IPPlanningPTP, baseDatosDA);
                 KitSIAEBL.EliminarFisicoKitSIAEProceso(KitSIAE, baseDatosDA);
                 DocumentoEquipamientoBL.EliminarFisicoDocumentoEquipamientoProceso(DocumentoEquipamiento, baseDatosDA);
+                DocumentoIPBL.EliminarFisicoDocumentoIPProceso(DocumentoIP, baseDatosDA);
+                DocumentoIPEquipamientoBL.EliminarFisicoDocumentoIPEquipamientoProceso(DocumentoIPEquipamiento, baseDatosDA);
                 #endregion
 
                 #region Insertamos toda la configuracion
@@ -1735,7 +1739,7 @@ namespace BusinessLogic
                 }
                 #endregion
 
-                #region Validamos la hoja EQUIPAMIENTO AIO
+                #region Validamos la hoja EQUIPAMIENTO DELTRON
                 intFila = 2;
                 file.WriteLine("");
                 file.WriteLine("");
@@ -1833,6 +1837,602 @@ namespace BusinessLogic
                     if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
                     {
                         file.WriteLine("No existe la tabla EQUIPAMIENTO DELTRON");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja DISTRIBUCION
+                intFila = 2;
+                file.WriteLine("");
+                file.WriteLine("");
+                file.WriteLine("DISTRIBUCION");
+                file.WriteLine("------------");
+                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [DISTRIBUCION$]", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Object objValor = null;
+                            blnErrorDato = false;
+                            blnErrorCampo = false;
+                            blnErrorDatoTemp = false;
+                            blnErrorCampoTemp = false;
+
+                            #region Validamos los campos de DocumentoIP
+                            DocumentoIP = new DocumentoIPBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO NODO", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "IP SYSTEM", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.IPSystem = Convert.ToString(objValor);
+
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "RANGO GESTION SEGURIDAD Y ENERGIA (/27)", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.RangoGestionSeguridadEnergia = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Gateway", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Gateway = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "MASCARA", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Mascara = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "IP Reservada", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.IPReservada = Convert.ToString(objValor);
+
+                            DocumentoIP.Documento.Tarea.TipoNodoA.ValorCadena1 = "DISTRIBUCION";
+
+                            #region Controladora inteligente
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Controladora inteligente", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CONT-ACC-002";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Cámara 01 PTZ Indoor
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Cámara 01 PTZ Indoor", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CMR-IND-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Cámara 02 outdoor
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Cámara 02 outdoor", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CMR-OUT-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Grabador de Video NVR
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Grabador de Video NVR", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "SIS-GRB-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Lector Biométrico
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Lector Biométrico", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "LEC-ACC-OD-001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+
+                            #endregion
+
+                            #endregion
+
+                            if (blnErrorCampo)
+                                break;
+
+                            #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                            if (!blnErrorCampo && !blnErrorDato)
+                            {
+                                try
+                                {
+                                    if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                    {
+                                        DocumentoIP.UsuarioCreacion = UsuarioCreacion;
+                                        DocumentoIP.Documento.Documento.IdValor = "000014";//ACTA DE SEGURIDAD Y DISTRIBUCION
+                                        DocumentoIPBL.InsertarDocumentoIPProceso(DocumentoIP, baseDatosDA);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    blnErrorDato = true;
+                                    file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                }
+                            }
+                            #endregion
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla DISTRIBUCION no tiene registros.");
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla DISTRIBUCION");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja DISTRITAL
+                intFila = 2;
+                file.WriteLine("");
+                file.WriteLine("");
+                file.WriteLine("DISTRITAL");
+                file.WriteLine("---------");
+                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [DISTRITAL$]", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Object objValor = null;
+                            blnErrorDato = false;
+                            blnErrorCampo = false;
+                            blnErrorDatoTemp = false;
+                            blnErrorCampoTemp = false;
+
+                            #region Validamos los campos de DocumentoIP
+                            DocumentoIP = new DocumentoIPBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO NODO", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "IP SYSTEM", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.IPSystem = Convert.ToString(objValor);
+
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "RANGO GESTION SEGURIDAD Y ENERGIA (/27)", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.RangoGestionSeguridadEnergia = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Gateway", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Gateway = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "MASCARA", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Mascara = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "IP Reservada", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.IPReservada = Convert.ToString(objValor);
+
+                            DocumentoIP.Documento.Tarea.TipoNodoA.ValorCadena1 = "DISTRITAL";
+
+                            #region Controladora inteligente
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Controladora inteligente", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CONT-ACC-002";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Cámara 01 PTZ Indoor
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Cámara 01 PTZ Indoor", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CMR-IND-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Cámara 02 outdoor
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Cámara 02 outdoor", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CMR-OUT-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Grabador de Video NVR
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Grabador de Video NVR", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "SIS-GRB-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #endregion
+
+                            if (blnErrorCampo)
+                                break;
+
+                            #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                            if (!blnErrorCampo && !blnErrorDato)
+                            {
+                                try
+                                {
+                                    if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                    {
+                                        DocumentoIP.UsuarioCreacion = UsuarioCreacion;
+                                        DocumentoIP.Documento.Documento.IdValor = "000013";//ACTA DE SEGURIDAD Y ACCESO
+                                        DocumentoIPBL.InsertarDocumentoIPProceso(DocumentoIP, baseDatosDA);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    blnErrorDato = true;
+                                    file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                }
+                            }
+                            #endregion
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla DISTRITAL no tiene registros.");
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla DISTRITAL");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja INTERMEDIO - TERMINAL
+                intFila = 2;
+                file.WriteLine("");
+                file.WriteLine("");
+                file.WriteLine("INTERMEDIO - TERMINAL");
+                file.WriteLine("---------------------");
+                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [INTERMEDIO - TERMINAL$]", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Object objValor = null;
+                            blnErrorDato = false;
+                            blnErrorCampo = false;
+                            blnErrorDatoTemp = false;
+                            blnErrorCampoTemp = false;
+
+                            #region Validamos los campos de DocumentoIP
+                            DocumentoIP = new DocumentoIPBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO LOCALIDAD", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Tipo de Nodo", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Documento.Tarea.TipoNodoA.ValorCadena1 = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "GATEWAY (/23)", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Gateway = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "MASCARA", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.Mascara = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "IP Reservada", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoIP.IPReservada = Convert.ToString(objValor);
+
+
+
+                            #region Controladora inteligente
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "Controladora inteligente", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CONT-ACC-002";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Cámara 01 Outdoor
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Cámara 01 Outdoor", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CMR-OUT-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Cámara 02 Indoor
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Cámara 02 Indoor", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "CMR-IND-0002";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Lector RFID 1
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Lector RFID 1", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "LEC-RFID-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #region Lector RFID 2
+                            DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "Lector RFID 2", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            {
+                                DocumentoIPEquipamiento.IPEquipamiento = Convert.ToString(objValor);
+                                DocumentoIPEquipamiento.Equipamiento.IdValor = "LEC-RFID-0001";
+                                DocumentoIPEquipamiento.DocumentoIP = DocumentoIP;
+                                DocumentoIPEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                DocumentoIP.Equipamientos.Add(DocumentoIPEquipamiento);
+                            }
+                            #endregion
+
+                            #endregion
+
+                            if (blnErrorCampo)
+                                break;
+
+                            #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                            if (!blnErrorCampo && !blnErrorDato)
+                            {
+                                try
+                                {
+                                    if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                    {
+                                        DocumentoIP.UsuarioCreacion = UsuarioCreacion;
+                                        DocumentoIP.Documento.Documento.IdValor = "000013";//ACTA DE SEGURIDAD Y ACCESO
+                                        DocumentoIPBL.InsertarDocumentoIPProceso(DocumentoIP, baseDatosDA);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    blnErrorDato = true;
+                                    file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                }
+                            }
+                            #endregion
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla DISTRITAL no tiene registros.");
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla DISTRITAL");
                     }
                     else
                     {

@@ -14,7 +14,6 @@ namespace BusinessEntity
         public String Documento_IdValor { get { return Documento.IdValor; } }
         public String Documento_ValorCadena1 { get { return Documento.ValorCadena1; } }
         public String Documento_ValorCadena2 { get { return Documento.ValorCadena2; } }
-        public String Tarea_IdNodo { get { return Tarea.NodoIIBBA.IdNodo; } }
 
         public List<DocumentoDetalleBE> Detalles { get; set; }
         public List<DocumentoEquipamientoBE> Equipamientos { get; set; }
@@ -30,10 +29,10 @@ namespace BusinessEntity
             MedicionesEnlacePropagacion = new List<DocumentoMedicionEnlacePropagacionBE>();
         }
 
-        //public DocumentoBE Clone()
-        //{
-        //    return (DocumentoBE)this.MemberwiseClone();
-        //}
+        public DocumentoBE Clone()
+        {
+            return (DocumentoBE)this.MemberwiseClone();
+        }
 
     }
 }

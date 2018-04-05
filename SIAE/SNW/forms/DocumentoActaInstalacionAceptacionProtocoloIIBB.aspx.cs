@@ -610,471 +610,1239 @@ namespace SNW.forms
 
                     #endregion
 
-                    //#region Verificamos si existe la documentacion
-                    //DocumentoDetalleBE DocumentoDetalle = new DocumentoDetalleBE();
-                    //List<DocumentoDetalleBE> lstDetalles = new List<DocumentoDetalleBE>();
-                    //DocumentoDetalle.Documento = Documento;
-                    //lstDetalles = DocumentoDetalleBL.ListarDocumentoDetalle(DocumentoDetalle);
-                    //if (lstDetalles.Count > 0)
-                    //{
-                    //    String strRutaFisicaTemporal = "";
-
-                    //    #region Ruta Fisica Temporal
-                    //    entidadDetalleBE = new EntidadDetalleBE();
-                    //    entidadDetalleBE.Entidad.IdEntidad = "CONF";
-                    //    entidadDetalleBE.IdValor = "RUTA_TEMP";
-                    //    entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
-                    //    strRutaFisicaTemporal = entidadDetalleBE.ValorCadena1;
-                    //    #endregion
-
-                    //    #region Ruta Virtual Temporal
-                    //    entidadDetalleBE = new EntidadDetalleBE();
-                    //    entidadDetalleBE.Entidad.IdEntidad = "CONF";
-                    //    entidadDetalleBE.IdValor = "RUTA_VIRT_TEMP";
-                    //    entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
-                    //    hfRutaVirtualTemporal.Value = entidadDetalleBE.ValorCadena1;
-                    //    #endregion
-
-                    //    #region Carátula
-
-                    //    #region Frecuencia
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000001").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkFrecuencia,
-                    //        hfFrecuenciaComentario, ddlFrecuencia, null, null);
-                    //    #endregion
-
-                    //    #region Fecha
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000002").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkFecha,
-                    //        hfFechaComentario, null,
-                    //        txtFecha, null, null,
-                    //        Type.GetType("System.DateTime"));
-                    //    #endregion
-
-                    //    #endregion
-
-                    //    #region 1 Configuración y Pruebas
-
-                    //    #region Dirección
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000003").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkDireccion,
-                    //        hfDireccionComentario, null,
-                    //        txtDireccion, null, null,
-                    //        Type.GetType("System.String"));
-                    //    #endregion
-
-                    //    #region Latitud
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000004").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkLatitud,
-                    //        hfLatitudComentario, null,
-                    //        txtLatitud, null, null,
-                    //        Type.GetType("System.Double"));
-                    //    #endregion
-
-                    //    #region Longitud
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000005").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkLongitud,
-                    //        hfLongitudComentario, null,
-                    //        txtLongitud, null, null,
-                    //        Type.GetType("System.Double"));
-                    //    #endregion
-
-                    //    #region Altitud
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000006").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAltitud,
-                    //        hfAltitudComentario, null,
-                    //        txtAltitud, null, null,
-                    //        Type.GetType("System.Double"));
-                    //    #endregion
-
-                    //    #region Azimut
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000007").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAzimut,
-                    //        hfAzimutComentario, null,
-                    //        txtAzimut, null, null,
-                    //        Type.GetType("System.Int32"));
-
-                    //    #endregion
-
-                    //    #region Down Tilt
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000008").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkDownTilt,
-                    //        hfDownTiltComentario, null,
-                    //        txtDownTilt, null, null,
-                    //        Type.GetType("System.Int32"));
-                    //    #endregion
-
-                    //    #region Altura Instalada
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000009").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAlturaInstalada,
-                    //        hfAlturaInstaladaComentario, null,
-                    //        txtAlturaInstalada, null, null,
-                    //        Type.GetType("System.Int32"));
-                    //    #endregion
-
-                    //    #region Capacidad Enlace
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000010").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCapacidadEnlace,
-                    //        hfCapacidadEnlaceComentario, null,
-                    //        txtCapacidadEnlace, null, null,
-                    //        Type.GetType("System.Int32"));
-                    //    #endregion
-
-                    //    #region Eficiencia Enlace
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000011").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEficienciaEnlace,
-                    //        hfEficienciaEnlaceComentario, null,
-                    //        txtEficienciaEnlace, null, null,
-                    //        Type.GetType("System.Int32"));
-                    //    #endregion
-
-                    //    #region Capt 1: Configuration/Radio
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000012").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkConfigurationRadio,
-                    //        hfConfigurationRadioComentario, null, null,
-                    //        hfConfigurationRadio, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-
-                    //    #endregion
-
-                    //    #region Capt 2: Configuration/QoS
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000013").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkConfigurationQoS,
-                    //        hfConfigurationQoSComentario, null, null,
-                    //        hfConfigurationQoS, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Capt 3.01: Configuration/System
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000014").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkConfigurationSystem01,
-                    //        hfConfigurationSystem01Comentario, null, null,
-                    //        hfConfigurationSystem01, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Capt 3.02: Configuration/System
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000015").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkConfigurationSystem02,
-                    //        hfConfigurationSystem02Comentario, null, null,
-                    //        hfConfigurationSystem02, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Capt 4: Monitor/System
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000016").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMonitorSystem,
-                    //        hfMonitorSystemComentario, null, null,
-                    //        hfMonitorSystem, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Capt 5.01: Monitor/Wireless
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000017").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMonitorWireless01,
-                    //        hfMonitorWireless01Comentario, null, null,
-                    //        hfMonitorWireless01, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Capt 5.02: Monitor/Wireless
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000018").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMonitorWireless02,
-                    //        hfMonitorWireless02Comentario, null, null,
-                    //        hfMonitorWireless02, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Capt 6: Tools/Wireless link test
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000019").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkToolsWireless,
-                    //        hfToolsWirelessComentario, null, null,
-                    //        hfToolsWireless, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Capt 7: Pantalla Home
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000019").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPantallaHome,
-                    //        hfPantallaHomeComentario, null, null,
-                    //        hfPantallaHome, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #endregion
-
-                    //    #region 2 Materiales AP
-
-                    //    #region Tipo Fuente
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000024").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkTipoFuente,
-                    //        hfTipoFuenteComentario, ddlTipoFuente, null, null);
-                    //    #endregion
-
-                    //    #region Equipamientos
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000083").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEquipamientos,
-                    //        hfEquipamientosComentario);
-                    //    DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
-                    //    DocumentoEquipamiento.Documento = Documento;
-                    //    lstDocumentoEquipamiento = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
-                    //    Session["Equipamientos"] = lstDocumentoEquipamiento;
-
-                    //    gvEquipamientos.DataSource = lstDocumentoEquipamiento;
-                    //    gvEquipamientos.DataBind();
-
-                    //    Documento.Equipamientos = lstDocumentoEquipamiento;
-                    //    #endregion
-
-                    //    #region Materiales
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000026").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMateriales,
-                    //        hfMaterialesComentario);
-                    //    DocumentoMaterialBE DocumentoMaterial = new DocumentoMaterialBE();
-                    //    DocumentoMaterial.Documento = Documento;
-                    //    lstDocumentoMaterial = DocumentoMaterialBL.ListarDocumentoMaterial(DocumentoMaterial);
-                    //    Session["Materiales"] = lstDocumentoMaterial;
-
-                    //    gvMateriales.DataSource = lstDocumentoMaterial;
-                    //    gvMateriales.DataBind();
-
-                    //    Documento.Materiales = lstDocumentoMaterial;
-
-                    //    #endregion
-
-                    //    #endregion
-
-                    //    #region 3 SFTP
-
-                    //    #region Distancia B
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000027").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkB,
-                    //        hfBComentario, null, txtB, null, null,
-                    //        Type.GetType("System.Double"));
-                    //    #endregion
-
-                    //    #region Distancia C
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000028").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkC,
-                    //        hfCComentario, null, txtC, null, null,
-                    //        Type.GetType("System.Double"));
-                    //    #endregion
-
-                    //    #region Distancia D
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000029").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkD,
-                    //        hfDComentario, null, txtD, null, null,
-                    //        Type.GetType("System.Double"));
-                    //    #endregion
-
-                    //    #region Distancia E
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000030").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkE, hfEComentario, null, txtE, null, null,
-                    //        Type.GetType("System.Double"));
-                    //    #endregion
-
-                    //    #endregion
-
-                    //    #region 7 Reporte Fotográfico
-
-                    //    #region Foto 1: Panorámica Estacion A
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000031").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPanoramicaEstacionA,
-                    //        hfPanoramicaEstacionAComentario, null, null,
-                    //        hfPanoramicaEstacionA, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 2: Posición Antena Instalada
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000032").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPosicionAntena,
-                    //        hfPosicionAntenaComentario, null, null,
-                    //        hfPosicionAntena, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 3: Antena ODU Torre
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000033").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAntenaODU,
-                    //        hfAntenaODUComentario, null, null,
-                    //        hfAntenaODU, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 4: UGPS
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000034").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkUGPS,
-                    //        hfUGPSComentario, null, null,
-                    //        hfUGPS, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 5: Engrasado Perno
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000035").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEngrasadoPerno,
-                    //        hfEngrasadoPernoComentario, null, null,
-                    //        hfEngrasadoPerno, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 6: Siliconeado Etiquetado Conector
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000036").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSiliconeadoEtiquetadoConector,
-                    //        hfSiliconeadoEtiquetadoConectorComentario, null, null,
-                    //        hfSiliconeadoEtiquetadoConector, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 8: Recorrido Cable SFTP
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000038").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkRecorridoCableSFTP,
-                    //        hfRecorridoCableSFTPComentario, null, null,
-                    //        hfRecorridoCableSFTP, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 9: Aterramiento Cable SFTP Outdoor
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000039").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoCableSFTPOutdoor,
-                    //        hfAterramientoCableSFTPOutdoorComentario, null, null,
-                    //        hfAterramientoCableSFTPOutdoor, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 10: Aterramiento Cable SFTP Indoor
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000040").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoCableSFTPIndoor,
-                    //        hfAterramientoCableSFTPIndoorComentario, null, null,
-                    //        hfAterramientoCableSFTPIndoor, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 11: Etiquetado POE
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000041").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEtiquetadoPOE,
-                    //        hfEtiquetadoPOEComentario, null, null,
-                    //        hfEtiquetadoPOE, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 12: Panorámica Rack
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000042").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPanoramicaRack,
-                    //        hfPanoramicaRackComentario, null, null,
-                    //        hfPanoramicaRack, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 13: Aterramiento POE
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000043").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoPOE,
-                    //        hfAterramientoPOEComentario, null, null,
-                    //        hfAterramientoPOE, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 14.01: Emergencia POE Etiqueta
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000044").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEmergenciaPOEEtiqueta01,
-                    //        hfEmergenciaPOEEtiqueta01Comentario, null, null,
-                    //        hfEmergenciaPOEEtiqueta01, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 14.02: Emergencia POE Etiqueta
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000045").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEmergenciaPOEEtiqueta02,
-                    //        hfEmergenciaPOEEtiqueta02Comentario, null, null,
-                    //        hfEmergenciaPOEEtiqueta02, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 15: Patch Core Salida POE
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000046").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPatchCoreSalidaPOE,
-                    //        hfPatchCoreSalidaPOEComentario, null, null,
-                    //        hfPatchCoreSalidaPOE, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 16: Patch Core Salida Switch
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000047").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPatchCoreSalidaSwitch,
-                    //        hfPatchCoreSalidaSwitchComentario, null, null,
-                    //        hfPatchCoreSalidaSwitch, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 17: Serie POE
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000048").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSeriePOE,
-                    //        hfSeriePOEComentario, null, null,
-                    //        hfSeriePOE, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 18: Serie AP
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000049").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieAP,
-                    //        hfSerieAPComentario, null, null,
-                    //        hfSerieAP, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #region Foto 19: Serie Antena
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000050").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieAntena,
-                    //        hfSerieAntenaComentario, null, null,
-                    //        hfSerieAntena, strRutaFisicaTemporal,
-                    //        Type.GetType("System.Byte[]"));
-                    //    #endregion
-
-                    //    #endregion
-
-                    //    #region 8 Datos Generales del Nodo
-
-                    //    #region # Serie ODU
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000051").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                    //        chkSerieODU, hfSerieODUComentario,
-                    //        null, txtSerieODU,
-                    //        null, null, Type.GetType("System.String"));
-                    //    #endregion
-
-                    //    #region # Serie Antena
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000052").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieNodoAntena,
-                    //        hfSerieNodoAntenaComentario, null, txtSerieNodoAntena,
-                    //        null, null, Type.GetType("System.String"));
-                    //    #endregion
-
-                    //    #region Mediciones de Enlaces de Propagación
-                    //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000053").Select(dd => dd).First();
-                    //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMedicionEnlacePropagacion,
-                    //        hfMedicionEnlacePropagacionComentario);
-                    //    DocumentoMedicionEnlacePropagacionBE DocumentoMedicionEnlacePropagacion = new DocumentoMedicionEnlacePropagacionBE();
-                    //    DocumentoMedicionEnlacePropagacion.Documento = Documento;
-                    //    DocumentoMedicionEnlacePropagacion.NodoA.IdNodo = Tarea.NodoIIBBA.IdNodo;
-                    //    lstMedicionEnlacePropagacion = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacion);
-
-                    //    Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
-
-                    //    gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
-                    //    gvMedicionEnlacePropagacion.DataBind();
-
-                    //    Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
-
-                    //    #endregion
-
-                    //    #region Asignamos el metodo
-                    //    Session["metodo"] = "U";//Update
-                    //    #endregion
-
-                    //    #endregion
-
-                    //}
-                    //#endregion
-
+                    #region  Verificamos si existe la documentacion
+                    DocumentoDetalleBE DocumentoDetalle = new DocumentoDetalleBE();
+                    List<DocumentoDetalleBE> lstDetalles = new List<DocumentoDetalleBE>();
+                    DocumentoDetalle.Documento = Documento;
+                    lstDetalles = DocumentoDetalleBL.ListarDocumentoDetalle(DocumentoDetalle);
+                    if(lstDetalles.Count > 0)
+                    {
+                        String strRutaFisicaTemporal = "";
+
+                        #region Ruta Fisica Temporal
+                        entidadDetalleBE = new EntidadDetalleBE();
+                        entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                        entidadDetalleBE.IdValor = "RUTA_TEMP";
+                        entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                        strRutaFisicaTemporal = entidadDetalleBE.ValorCadena1;
+                        #endregion
+
+                        #region Ruta Virtual Temporal
+                        entidadDetalleBE = new EntidadDetalleBE();
+                        entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                        entidadDetalleBE.IdValor = "RUTA_VIRT_TEMP";
+                        entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                        hfRutaVirtualTemporal.Value = entidadDetalleBE.ValorCadena1;
+                        #endregion
+
+                        #region Carátula
+
+                        #region Fecha
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000002").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkFecha,
+                            hfFechaComentario, null,
+                            txtFecha, null, null,
+                            Type.GetType("System.DateTime"));
+                        #endregion
+
+                        #endregion
+
+                        #region 1 Acta de Instalación FITEL
+
+                        #region 1. UBICACIÓN DEL NODO
+
+                        #region Dirección Nodo
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000075").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkDireccionNodo,
+                            hfDireccionNodoComentario, null,
+                            txtDireccionNodo, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #endregion
+
+                        #region 2. INSTITUCIÓN BENEFICIARIA
+
+                        #region 2.1. Ubicación
+
+                        #region Latitud (S)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000084").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkLatitud,
+                            hfLatitudComentario, null,
+                            txtLatitud, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Longitud (W)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000005").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkLongitud,
+                            hfLongitudComentario, null,
+                            txtLongitud, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Referencia Ubicación IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000280").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkReferenciaIIBB,
+                            hfReferenciaIIBBComentario, null,
+                            txtReferenciaIIBB, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #endregion
+
+                        #region 2.2. Infraestructura
+
+                        #region Tipo Mástil
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000281").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkTipoMastil,
+                            hfTipoMastilComentario, ddlTipoMastil, null, null);
+                        #endregion
+
+                        #region Altura Mástil (m)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000282").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkAlturaMastil,
+                            hfAlturaMastilComentario, null,
+                            txtAlturaMastil, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #endregion
+
+                        #region 2.4. Energía Eléctrica del Servicio Instalado
+
+                        #region Disponibilidad Horas (H)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000283").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkDisponibilidadHora,
+                            hfDisponibilidadHoraComentario, null,
+                            txtDisponibilidadHora, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #endregion
+
+                        #region 2.5. Sistema de Puesta a Tierra instituciones
+
+                        #region Valor Medio Medida 1
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000284").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkValorMedioMedida01,
+                            hfValorMedioMedida01Comentario, null,
+                            txtValorMedioMedida01, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Valor Medio Medida 2
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000285").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkValorMedioMedida02,
+                            hfValorMedioMedida02Comentario, null,
+                            txtValorMedioMedida02, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Valor Medio Medida 3
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000286").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkValorMedioMedida03,
+                            hfValorMedioMedida03Comentario, null,
+                            txtValorMedioMedida03, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #endregion
+
+                        #region 2.6. Característica de Propagación
+
+                        #region Potencia de transmisión (Watts ó dBm)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000287").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPotenciaTransmision,
+                            hfPotenciaTransmisionComentario, null,
+                            txtPotenciaTransmision, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #region Frecuencia de operación (MHz)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000001").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkFrecuencia,
+                            hfFrecuenciaComentario, ddlFrecuencia, null, null);
+                        #endregion
+
+                        #region Ancho de banda de canal (MHz)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000288").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkAnchoBandaCanal,
+                            hfAnchoBandaCanalComentario, null,
+                            txtAnchoBandaCanal, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #region Azimuth (X°)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000007").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkAzimuth,
+                            hfAzimuthComentario, null,
+                            txtAzimuth, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #region Elevación (Y°)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000289").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkElevacion,
+                            hfElevacionComentario, null,
+                            txtElevacion, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #endregion
+
+                        #region 2.7. Mediciones de Enlaces
+
+                        #region Mediciones de Enlaces de Propagación
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000053").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkMedicionEnlacePropagacion,
+                            hfMedicionEnlacePropagacionComentario);
+                        List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacion2 = new List<DocumentoMedicionEnlacePropagacionBE>();
+                        lstMedicionEnlacePropagacion2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacion"];
+
+                        foreach (GridViewRow item in gvMedicionEnlacePropagacion.Rows)
+                        {
+                            String strIdNodo = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoA_IdNodo"].ToString();
+                            String strIdIIBB = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoIIBBB_IdNodo"].ToString();
+                            TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                            TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                            TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                            TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                            TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
+
+                            Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
+                            Int32 intTiempoPromedio;
+                            if (txtRSSLocal.Text.Equals(""))
+                                dblRSSLocal = 0;
+                            else
+                                dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
+                            if (txtRSSRemoto.Text.Equals(""))
+                                dblRSSRemoto = 0;
+                            else
+                                dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
+                            if (txtTiempoPromedio.Text.Equals(""))
+                                intTiempoPromedio = 0;
+                            else
+                                intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                            if (txtCapacidadSubida.Text.Equals(""))
+                                dblCapacidadSubida = 0;
+                            else
+                                dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
+                            if (txtCapacidadBajada.Text.Equals(""))
+                                dblCapacidadBajada = 0;
+                            else
+                                dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
+                            lstMedicionEnlacePropagacion2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
+                            {
+                                s.RSSLocal = dblRSSLocal;
+                                s.RSSRemoto = dblRSSRemoto;
+                                s.TiempoPromedio = intTiempoPromedio;
+                                s.CapidadSubida = dblCapacidadSubida;
+                                s.CapidadBajada = dblCapacidadBajada;
+                            });
+                        }
+
+                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion2;
+                        #endregion
+
+                        #endregion
+
+                        #region 2.8. Conectividad a la Red
+
+                        #region Conectividad a Gilat
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000290").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkVerificacionConectividad,
+                            hfVerificacionConectividadComentario, ddlVerificacionConectividad, null, null);
+                        #endregion
+
+                        #region Conectividad al nodo terminal (tiempo de ida y vuelta) [ms]
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000291").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkConectividadNodoTerminal,
+                            hfConectividadNodoTerminalComentario, null,
+                            txtConectividadNodoTerminal, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #region Conectividad al nodo distrital (tiempo de ida y vuelta) [ms]
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000292").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkConectividadNodoDistrital,
+                            hfConectividadNodoDistritalComentario, null,
+                            txtConectividadNodoDistrital, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #region Conectividad al NOC (tiempo de ida y vuelta) [ms]
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000293").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkConectividadNOC,
+                            hfConectividadNOCComentario, null,
+                            txtConectividadNOC, null, null,
+                            Type.GetType("System.Int32"));
+                        #endregion
+
+                        #endregion
+
+                        #endregion
+
+                        #region 4. DATOS DEL ENCARGADO
+
+                        #region Nombres y Apellidos
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000294").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkNombreCompletoEncargado,
+                            hfNombreCompletoEncargadoComentario, null,
+                            txtNombreCompletoEncargado, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region DNI
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000295").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkDocumentoIdentidadEncargado,
+                            hfDocumentoIdentidadEncargadoComentario, null,
+                            txtDocumentoIdentidadEncargado, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Celular Contacto
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000296").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkCelularContactoEncargado,
+                            hfCelularContactoEncargadoComentario, null,
+                            txtCelularContactoEncargado, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Email
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000297").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEmailEncargado,
+                            hfEmailEncargadoComentario, null,
+                            txtEmailEncargado, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #endregion
+
+                        #region 6. Firmas
+
+                        #region 6.1. Representante de la institución Beneficiaria
+
+                        #region Nombres y Apellidos
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000298").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkNombreCompletoRepresentanteIIBB,
+                            hfNombreCompletoRepresentanteIIBBComentario, null,
+                            txtNombreCompletoRepresentanteIIBB, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region DNI
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000299").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkDocumentoIdentidadRepresentanteIIBB,
+                            hfDocumentoIdentidadRepresentanteIIBBComentario, null,
+                            txtDocumentoIdentidadRepresentanteIIBB, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Celular Contacto
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000300").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkCelularContactoRepresentanteIIBB,
+                            hfCelularContactoRepresentanteIIBBComentario, null,
+                            txtCelularContactoRepresentanteIIBB, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Cargo
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000301").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkCargoRepresentanteIIBB,
+                            hfCargoRepresentanteIIBBComentario, null,
+                            txtCargoRepresentanteIIBB, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Email
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000302").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEmailRepresentanteIIBB,
+                            hfEmailRepresentanteIIBBComentario, null,
+                            txtEmailRepresentanteIIBB, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #endregion
+
+                        #region 6.2. Representante del Operador
+
+                        #region Nombres y Apellidos
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000303").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkNombreCompletoOperador,
+                            hfNombreCompletoOperadorComentario, null,
+                            txtNombreCompletoOperador, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region DNI
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000304").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkDocumentoIdentidadOperador,
+                            hfDocumentoIdentidadOperadorComentario, null,
+                            txtDocumentoIdentidadOperador, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Cargo
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000305").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkCargoOperador,
+                            hfCargoOperadorComentario, null,
+                            txtCargoOperador, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Email
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000306").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEmailOperador,
+                            hfEmailOperadorComentario, null,
+                            txtEmailOperador, null, null,
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #endregion
+
+                        #endregion
+
+                        #endregion
+
+                        #region 2 Configuración y Pruebas
+
+                        #region Altitud (msnm)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000006").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkAltitud,
+                            hfAltitudComentario, null,
+                            txtAltitud, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #endregion
+
+                        #region 3 Pantallas de Configuración
+
+                        #region Access Point
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000307").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionAccessPoint,
+                            hfPantallaConfiguracionAccessPointComentario, null, null,
+                            hfPantallaConfiguracionAccessPoint, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Router Mikrotik
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000308").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionRouterMikrotik,
+                            hfPantallaConfiguracionRouterMikrotikComentario, null, null,
+                            hfPantallaConfiguracionRouterMikrotik, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Switch Dlink 01
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000309").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkPantallaConfiguracionSwitchDlink01,
+                            hfPantallaConfiguracionSwitchDlink01Comentario, null, null,
+                            hfPantallaConfiguracionSwitchDlink01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Switch Dlink 02
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000310").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkPantallaConfiguracionSwitchDlink02,
+                            hfPantallaConfiguracionSwitchDlink02Comentario, null, null,
+                            hfPantallaConfiguracionSwitchDlink02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region UPS
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000311").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionUPS,
+                            hfPantallaConfiguracionUPSComentario, null, null,
+                            hfPantallaConfiguracionUPS, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region All In One 01
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000312").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionAllInOne01,
+                            hfPantallaConfiguracionAllInOne01Comentario, null, null,
+                            hfPantallaConfiguracionAllInOne01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region All In One 02
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000313").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionAllInOne02,
+                            hfPantallaConfiguracionAllInOne02Comentario, null, null,
+                            hfPantallaConfiguracionAllInOne02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Impresora
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000314").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionImpresora,
+                            hfPantallaConfiguracionImpresoraComentario, null, null,
+                            hfPantallaConfiguracionImpresora, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #endregion
+
+                        #region 4 Medición SPAT
+
+                        #region Medición del Sistema de Puesta a tierra
+
+                        #region Medida 1 Valor Medio
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000315").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMedicionSistemaPuestaTierraMedida01ValorMedio,
+                            hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario, null,
+                            txtMedicionSistemaPuestaTierraMedida01ValorMedio, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Medida 2 Valor Medio
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000316").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMedicionSistemaPuestaTierraMedida02ValorMedio,
+                            hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario, null,
+                            txtMedicionSistemaPuestaTierraMedida02ValorMedio, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Medida 3 Valor Medio
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000317").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMedicionSistemaPuestaTierraMedida03ValorMedio,
+                            hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario, null,
+                            txtMedicionSistemaPuestaTierraMedida03ValorMedio, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #endregion
+
+                        #region Medición del Sistema de Puesta a tierra Pararrayos
+
+                        #region Medida 1 Valor Medio
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000318").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio,
+                            hfMedicionSistemaPuestaTierraPararrayosMedida01ValorMedioComentario, null,
+                            txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Medida 2 Valor Medio
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000319").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio,
+                            hfMedicionSistemaPuestaTierraPararrayosMedida02ValorMedioComentario, null,
+                            txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #region Medida 3 Valor Medio
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000320").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio,
+                            hfMedicionSistemaPuestaTierraPararrayosMedida03ValorMedioComentario, null,
+                            txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio, null, null,
+                            Type.GetType("System.Double"));
+                        #endregion
+
+                        #endregion
+
+                        #endregion
+
+                        #region 6 Material IIBB CPE
+
+                        #region Equipamientos
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000083").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkEquipamientos, hfEquipamientosComentario);
+                        //List<DocumentoEquipamientoBE> lstDocumentoEquipamiento = new List<DocumentoEquipamientoBE>();
+                        //lstDocumentoEquipamiento = (List<DocumentoEquipamientoBE>)Session["Equipamientos"];
+
+                        //foreach (GridViewRow item in gvEquipamientos.Rows)
+                        //{
+                        //    String strCodigoEquipamiento = gvEquipamientos.DataKeys[item.RowIndex]["Equipamiento_IdValor"].ToString();
+                        //    TextBox txtSerieEquipamiento = (TextBox)item.FindControl("txtSerieEquipamiento");
+                        //    lstDocumentoEquipamiento.Where(w => w.Equipamiento.IdValor == strCodigoEquipamiento).ToList().ForEach(s => s.SerieEquipamiento = txtSerieEquipamiento.Text.ToUpper());
+                        //}
+
+                        //Documento.Equipamientos = lstDocumentoEquipamiento;
+                        #endregion
+
+                        #region Materiales
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000026").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMateriales,
+                            hfMaterialesComentario);
+                        List<DocumentoMaterialBE> lstDocumentoMaterial2 = new List<DocumentoMaterialBE>();
+                        lstDocumentoMaterial2 = (List<DocumentoMaterialBE>)Session["Materiales"];
+
+                        foreach (GridViewRow item in gvMateriales.Rows)
+                        {
+                            //String strCodigoMaterial = item.Cells[2].Text;
+                            String strCodigoMaterial = gvMateriales.DataKeys[item.RowIndex]["Material_IdValor"].ToString();
+                            TextBox txtCantidad = (TextBox)item.FindControl("txtCantidad");
+                            Int32 intCantidad;
+                            if (txtCantidad.Text.Equals(""))
+                                intCantidad = 0;
+                            else
+                                intCantidad = Convert.ToInt32(txtCantidad.Text);
+                            lstDocumentoMaterial2.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = intCantidad);
+                        }
+
+                        Documento.Materiales = lstDocumentoMaterial2;
+                        #endregion
+
+                        #endregion
+
+                        #region 7 Reporte Fotográfico IIBB CPE
+
+                        #region Foto 01: Panorámica de la Localidad
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000321").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPanoramicaLocalidad,
+                            hfPanoramicaLocalidadComentario, null, null,
+                            hfPanoramicaLocalidad, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 02: Fachada de la Institución
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000322").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkFachadaInstitucion,
+                            hfFachadaInstitucionComentario, null, null,
+                            hfFachadaInstitucion, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 03.01: Impresora
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000323").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkImpresora,
+                            hfImpresoraComentario, null, null,
+                            hfImpresora, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 03.02: Switch
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000324").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSwitch,
+                            hfSwitchComentario, null, null,
+                            hfSwitch, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 03.03: Router
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000325").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkRouter,
+                            hfRouterComentario, null, null,
+                            hfRouter, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 03.04: PCsEncendidas
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000326").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPCsEncendidas,
+                            hfPCsEncendidasComentario, null, null,
+                            hfPCsEncendidas, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 03.05: UPS
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000327").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkUPS,
+                            hfUPSComentario, null, null,
+                            hfUPS, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 03.06: Access Point
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000328").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkAccessPoint,
+                            hfAccessPointComentario, null, null,
+                            hfAccessPoint, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.01: ODU-CPE
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000329").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkODUCPE,
+                            hfODUCPEComentario, null, null,
+                            hfODUCPE, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.02: Mástil
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000330").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMastil,
+                            hfMastilComentario, null, null,
+                            hfMastil, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.03: Panorámica de Antena Instalada en Mástil
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000331").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPanoramicaAntenaInstaladaMastil,
+                            hfPanoramicaAntenaInstaladaMastilComentario, null, null,
+                            hfPanoramicaAntenaInstaladaMastil, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.04: Recorrido STFP Cat5e
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000332").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkRecorridoSFTPCat5e,
+                            hfRecorridoSFTPCat5eComentario, null, null,
+                            hfRecorridoSFTPCat5e, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.05: Ingreso de SFTP
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000333").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkIngresoSFTP,
+                            hfIngresoSFTPComentario, null, null,
+                            hfIngresoSFTP, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.06: Recorrido de SFTP por Canaleta
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000334").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkRecorridoSFTPCanaleta,
+                            hfRecorridoSFTPCanaletaComentario, null, null,
+                            hfRecorridoSFTPCanaleta, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.07: POE
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000335").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPOE,
+                            hfPOEComentario, null, null,
+                            hfPOE, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04.08: Patch cord POE / Router
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000336").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPatchCordPOERouter,
+                            hfPatchCordPOERouterComentario, null, null,
+                            hfPatchCordPOERouter, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 05.01: Tablero General / Secundario
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000337").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkTableroGeneralSecundario,
+                            hfTableroGeneralSecundarioComentario, null, null,
+                            hfTableroGeneralSecundario, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 05.02: Instalación de Breaker
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000338").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkInstalacionBreaker,
+                            hfInstalacionBreakerComentario, null, null,
+                            hfInstalacionBreaker, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 05.03: Cable Conexión Eléctrica
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000339").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkCableConexionElectrica,
+                            hfCableConexionElectricaComentario, null, null,
+                            hfCableConexionElectrica, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 05.04: Tomas de Energía
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000340").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkTomasEnergia,
+                            hfTomasEnergiaComentario, null, null,
+                            hfTomasEnergia, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 05.05: Foto Interna de Instalación de Breaker
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000341").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkFotoInternaInstalacionBreaker,
+                            hfFotoInternaInstalacionBreakerComentario, null, null,
+                            hfFotoInternaInstalacionBreaker, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 06.01: DNI / DJ Representante / Abonado
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000342").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkDNIDJRepresentanteAbonado01,
+                            hfDNIDJRepresentanteAbonado01Comentario, null, null,
+                            hfDNIDJRepresentanteAbonado01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 06.02: DNI / DJ Representante / Abonado
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000343").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkDNIDJRepresentanteAbonado02,
+                            hfDNIDJRepresentanteAbonado02Comentario, null, null,
+                            hfDNIDJRepresentanteAbonado02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.01: Switch
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000344").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEquipoSwitch,
+                            hfEquipoSwitchComentario, null, null,
+                            hfEquipoSwitch, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.02: Router
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000345").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEquipoRouter,
+                            hfEquipoRouterComentario, null, null,
+                            hfEquipoRouter, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.03: Regleta de Energía
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000346").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEquipoRegletaEnergia,
+                            hfEquipoRegletaEnergiaComentario, null, null,
+                            hfEquipoRegletaEnergia, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.04: UPS
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000347").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEquipoUPS,
+                            hfEquipoUPSComentario, null, null,
+                            hfEquipoUPS, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.05: Computador(as)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000348").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkEquipoComputadoras,
+                            hfEquipoComputadorasComentario, null, null,
+                            hfEquipoComputadoras, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.06: Access Point
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000349").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEquipoAccessPoint,
+                            hfEquipoAccessPointComentario, null, null,
+                            hfEquipoAccessPoint, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.07: Impresora
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000350").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEquipoImpresora,
+                            hfEquipoImpresoraComentario, null, null,
+                            hfEquipoImpresora, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.08: Panoramica de Sala de Equipos
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000351").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPanoramicaSalaEquipos,
+                            hfPanoramicaSalaEquiposComentario, null, null,
+                            hfPanoramicaSalaEquipos, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07.09: JACK RJ45
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000352").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEquipoJACKRJ45,
+                            hfEquipoJACKRJ45Comentario, null, null,
+                            hfEquipoJACKRJ45, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 08.01: Instalación del Pozo a Tierra
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000353").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTInstalacionPozoTierra,
+                            hfPTInstalacionPozoTierraComentario, null, null,
+                            hfPTInstalacionPozoTierra, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 08.02: Conexiones en la Caja de Registro
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000354").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTConexionesCajaRegistro,
+                            hfPTConexionesCajaRegistroComentario, null, null,
+                            hfPTConexionesCajaRegistro, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 08.03: Escala Utilizada y Resultado de Medición N° 1
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000355").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTEscalaUtilizadaResultadoMedicion01,
+                            hfPTEscalaUtilizadaResultadoMedicion01Comentario, null, null,
+                            hfPTEscalaUtilizadaResultadoMedicion01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 08.04: Escala Utilizada y Resultado de Medición N° 2
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000356").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTEscalaUtilizadaResultadoMedicion02,
+                            hfPTEscalaUtilizadaResultadoMedicion02Comentario, null, null,
+                            hfPTEscalaUtilizadaResultadoMedicion02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 08.05: Escala Utilizada y Resultado de Medición N° 3
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000357").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTEscalaUtilizadaResultadoMedicion03,
+                            hfPTEscalaUtilizadaResultadoMedicion03Comentario, null, null,
+                            hfPTEscalaUtilizadaResultadoMedicion03, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 09.01: Instalación del Pozo a Tierra N° 1
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000358").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTPInstalacionPozoTierra01,
+                            hfPTPInstalacionPozoTierra01Comentario, null, null,
+                            hfPTPInstalacionPozoTierra01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 09.02: Instalación del Pozo a Tierra N° 2
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000359").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTPInstalacionPozoTierra02,
+                            hfPTPInstalacionPozoTierra02Comentario, null, null,
+                            hfPTPInstalacionPozoTierra02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 09.03: Escala Utilizada y Resultado de Medición N° 1
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000360").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTPEscalaUtilizadaResultadoMedicion01,
+                            hfPTPEscalaUtilizadaResultadoMedicion01Comentario, null, null,
+                            hfPTPEscalaUtilizadaResultadoMedicion01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 09.04: Escala Utilizada y Resultado de Medición N° 2
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000361").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTPEscalaUtilizadaResultadoMedicion02,
+                            hfPTPEscalaUtilizadaResultadoMedicion02Comentario, null, null,
+                            hfPTPEscalaUtilizadaResultadoMedicion02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 09.05: Escala Utilizada y Resultado de Medición N° 3
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000362").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPTPEscalaUtilizadaResultadoMedicion03,
+                            hfPTPEscalaUtilizadaResultadoMedicion03Comentario, null, null,
+                            hfPTPEscalaUtilizadaResultadoMedicion03, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.01: Pantalla de configuración (home)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000363").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionHome,
+                            hfPantallaConfiguracionHomeComentario, null, null,
+                            hfPantallaConfiguracionHome, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.02: Pantalla de configuración (securiry)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000364").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionSecurity,
+                            hfPantallaConfiguracionSecurityComentario, null, null,
+                            hfPantallaConfiguracionSecurity, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.03: Pantalla de configuración (radio parte 1)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000365").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionRadio01,
+                            hfPantallaConfiguracionRadio01Comentario, null, null,
+                            hfPantallaConfiguracionRadio01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.04: Pantalla de configuración (radio parte 2)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000366").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionRadio02,
+                            hfPantallaConfiguracionRadio02Comentario, null, null,
+                            hfPantallaConfiguracionRadio02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.05: Configuración del Sistema (System parte 1)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000367").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkConfiguracionSistemaSystem01,
+                            hfConfiguracionSistemaSystem01Comentario, null, null,
+                            hfConfiguracionSistemaSystem01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.06: Configuración del Sistema (System parte 2)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000368").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkConfiguracionSistemaSystem02,
+                            hfConfiguracionSistemaSystem02Comentario, null, null,
+                            hfConfiguracionSistemaSystem02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.07: Pantalla de Configuración (Network - parte 1)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000369").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionNetwork01,
+                            hfPantallaConfiguracionNetwork01Comentario, null, null,
+                            hfPantallaConfiguracionNetwork01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.08: Pantalla de Configuración (Network - parte 2)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000370").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionNetwork02,
+                            hfPantallaConfiguracionNetwork02Comentario, null, null,
+                            hfPantallaConfiguracionNetwork02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.09: Pantalla de Configuración (Monitor Wireless)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000371").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkPantallaConfiguracionMonitorWireless,
+                            hfPantallaConfiguracionMonitorWirelessComentario, null, null,
+                            hfPantallaConfiguracionMonitorWireless, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10.10: Configuración del Sistema (Tools Wireleess Linktest)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000372").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkConfiguracionSistemaToolsWirelessLinktest,
+                            hfConfiguracionSistemaToolsWirelessLinktestComentario, null, null,
+                            hfConfiguracionSistemaToolsWirelessLinktest, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 11.01: Monitor Donde se Muestre la Conexión al Sitio Web
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000373").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMonitorMuestraConexionSitioWeb,
+                            hfMonitorMuestraConexionSitioWebComentario, null, null,
+                            hfMonitorMuestraConexionSitioWeb, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 11.02: Monitor Donde se Muestre Conectividad al Nodo Terminal
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000374").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMonitorMuestraConectividadNodoTerminal,
+                            hfMonitorMuestraConectividadNodoTerminalComentario, null, null,
+                            hfMonitorMuestraConectividadNodoTerminal, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 11.03: Monitor Donde se Muestre Conectividad al Nodo Distrital de Cabecera
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000375").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkMonitorMuestraConectividadNodoDistritalCabecera,
+                            hfMonitorMuestraConectividadNodoDistritalCabeceraComentario, null, null,
+                            hfMonitorMuestraConectividadNodoDistritalCabecera, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #endregion
+
+                        #region 8 Serie Equipos (fotos)
+
+                        #region EPMP 1000 Force 180
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000376").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkEPMP1000Force180,
+                            hfEPMP1000Force180Comentario, null, null,
+                            hfEPMP1000Force180, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 01: Access Point, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000377").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSerieAccessPoint,
+                            hfSerieAccessPointComentario, null, null,
+                            hfSerieAccessPoint, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 02: Switch, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000378").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSerieSwitch,
+                            hfSerieSwitchComentario, null, null,
+                            hfSerieSwitch, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 03: Router, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000379").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSerieRouter,
+                            hfSerieRouterComentario, null, null,
+                            hfSerieRouter, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 04: Impresora, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000380").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSerieImpresora,
+                            hfSerieImpresoraComentario, null, null,
+                            hfSerieImpresora, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 05: UPS, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000381").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSerieUPS,
+                            hfSerieUPSComentario, null, null,
+                            hfSerieUPS, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 06: PC-01, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000382").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSeriePC01,
+                            hfSeriePC01Comentario, null, null,
+                            hfSeriePC01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 07: PC-02, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000383").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSeriePC02,
+                            hfSeriePC02Comentario, null, null,
+                            hfSeriePC02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 08: PC-03, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000384").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkSeriePC03,
+                            hfSeriePC03Comentario, null, null,
+                            hfSeriePC03, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 09: PC-04, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000385").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSeriePC04,
+                            hfSeriePC04Comentario, null, null,
+                            hfSeriePC04, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Foto 10: PC-05, incluir la serie y cartel IIBB
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000386").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkSeriePC05,
+                            hfSeriePC05Comentario, null, null,
+                            hfSeriePC05, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #endregion
+
+                    }
+                    #endregion
 
                 }
                 else

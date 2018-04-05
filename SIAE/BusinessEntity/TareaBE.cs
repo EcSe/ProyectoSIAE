@@ -10,6 +10,7 @@ namespace BusinessEntity
     {
         public String IdTarea { get; set; }
         public EntidadDetalleBE TipoTarea { get; set; }
+        public String TipoTarea_ValorCadena1 { get { return TipoTarea.ValorCadena1; } }
         public String IdIsoNodo { get; set; }
         public EntidadDetalleBE Contratista { get; set; }
         public DateTime InicioInstalacion { get; set; }
@@ -17,6 +18,7 @@ namespace BusinessEntity
         public EntidadDetalleBE Proyecto { get; set; }
         public EntidadDetalleBE TipoNodoA { get; set; }
         public NodoBE NodoIIBBA { get; set; }
+        public String NodoIIBBA_IdNodo { get { return NodoIIBBA.IdNodo; } }
         public EntidadDetalleBE TipoNodoB { get; set; }
         public NodoBE NodoB { get; set; }
         public String IdSectorAP { get; set; }
@@ -25,6 +27,7 @@ namespace BusinessEntity
         public UsuarioBE UsuarioModificacion { get; set; }
         public TareaBE()
         {
+            IdTarea = String.Empty;
             TipoTarea = new EntidadDetalleBE();
             Contratista = new EntidadDetalleBE();
             Proyecto = new EntidadDetalleBE();
