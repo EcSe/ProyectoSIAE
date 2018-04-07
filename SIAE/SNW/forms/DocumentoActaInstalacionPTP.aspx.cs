@@ -727,7 +727,7 @@ namespace SNW.forms
 
                   #region Verificamos si existe la documentacion
 
-                  /*  DocumentoDetalleBE DocumentoDetalle = new DocumentoDetalleBE();
+                    DocumentoDetalleBE DocumentoDetalle = new DocumentoDetalleBE();
                     List<DocumentoDetalleBE> lstDetalles = new List<DocumentoDetalleBE>();
                     DocumentoDetalle.Documento = Documento;
                     lstDetalles = DocumentoDetalleBL.ListarDocumentoDetalle(DocumentoDetalle);
@@ -1865,7 +1865,7 @@ namespace SNW.forms
                         Session["metodo"] = "U"; //Update
                         #endregion
                     }
-                    */
+                    
                     #endregion  
 
                 }

@@ -814,8 +814,8 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                            chkMedicionEnlacePropagacion,
                             hfMedicionEnlacePropagacionComentario);
-                        List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacion2 = new List<DocumentoMedicionEnlacePropagacionBE>();
-                        lstMedicionEnlacePropagacion2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacion"];
+                        //List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacion2 = new List<DocumentoMedicionEnlacePropagacionBE>();
+                        lstMedicionEnlacePropagacion = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacion"];
 
                         foreach (GridViewRow item in gvMedicionEnlacePropagacion.Rows)
                         {
@@ -849,7 +849,7 @@ namespace SNW.forms
                                 dblCapacidadBajada = 0;
                             else
                                 dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
-                            lstMedicionEnlacePropagacion2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
+                            lstMedicionEnlacePropagacion.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
                             {
                                 s.RSSLocal = dblRSSLocal;
                                 s.RSSRemoto = dblRSSRemoto;
@@ -859,7 +859,7 @@ namespace SNW.forms
                             });
                         }
 
-                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion2;
+                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
                         #endregion
 
                         #endregion
@@ -1218,8 +1218,8 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                             chkMateriales,
                             hfMaterialesComentario);
-                        List<DocumentoMaterialBE> lstDocumentoMaterial2 = new List<DocumentoMaterialBE>();
-                        lstDocumentoMaterial2 = (List<DocumentoMaterialBE>)Session["Materiales"];
+                        //List<DocumentoMaterialBE> lstDocumentoMaterial2 = new List<DocumentoMaterialBE>();
+                        lstDocumentoMaterial = (List<DocumentoMaterialBE>)Session["Materiales"];
 
                         foreach (GridViewRow item in gvMateriales.Rows)
                         {
@@ -1231,10 +1231,10 @@ namespace SNW.forms
                                 intCantidad = 0;
                             else
                                 intCantidad = Convert.ToInt32(txtCantidad.Text);
-                            lstDocumentoMaterial2.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = intCantidad);
+                            lstDocumentoMaterial.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = intCantidad);
                         }
 
-                        Documento.Materiales = lstDocumentoMaterial2;
+                        Documento.Materiales = lstDocumentoMaterial;
                         #endregion
 
                         #endregion
