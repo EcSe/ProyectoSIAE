@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessEntity;
 using BusinessLogic;
 using System.Web.UI.HtmlControls;
+
+using System.Windows.Forms;
 
 namespace SNW.forms
 {
@@ -115,45 +115,30 @@ namespace SNW.forms
             documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Documento_ValorCadena1"].ToString();
             documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();
 
+            
             #region CodigoBueno
-            /*
-                         try
+                  try
                         {
-                            String rutaReporte = "";
-
-
+                            String rutaPlantilla = "";
+                
+                       
                             switch (documento.Documento.IdValor)
                             {
-                                case "000003": rutaReporte = "~/Reportes/PruebaInterferencia.rpt"; break;
-                                case "000004": rutaReporte = "~/Reportes/InventarioPMP.rpt"; break;
-                                case "000011": rutaReporte = "~/Reportes/PruebaServicioDITG_PMP.rpt"; break;
-                                case "000017": rutaReporte = "~/Reportes/InstalacionPozoTierraTipoA.rpt"; break;
-                                case "000007": rutaReporte = "~/Reportes/ProtocoloInstalacion.rpt"; break;
+                                case "000003": rutaPlantilla = "~/Reportes/PruebaInterferencia.xlsx";
+                               
+                        break;
+                                case "000004": rutaPlantilla = "~/Reportes/Anexo2InventarioPMP.xlsx"; break;
+                                case "000011": rutaPlantilla = "~/Reportes/PruebasDeServicioDITG_PMP.xlsx"; break;
+                                case "000017": rutaPlantilla = "~/Reportes/InstalaciondePozoaTierraTipoA.xlsx"; break;
+                                case "000007": rutaPlantilla = "~/Reportes/ProtocoloInstalacion.rpt"; break;
 
                             }
 
-                            ReportDocument reporte = new ReportDocument();
-                            reporte.Load(Server.MapPath(rutaReporte));
+                         
 
-                            reporte.SetDatabaseLogon("sa", "123456", "ELVIN-MACBOOK", "SIAEDES");
-                            reporte.SetParameterValue("@CH_ID_TAREA", documento.Tarea.IdTarea);
-
-                            String usuarioWindows = Environment.UserName;
-                            ExportOptions options;
-                            DiskFileDestinationOptions diskFile = new DiskFileDestinationOptions();
-                            ExcelFormatOptions format = new ExcelFormatOptions();
-                            format.ExcelUseConstantColumnWidth = true;
-                            diskFile.DiskFileName = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + documento.Documento.ValorCadena1 + " " + documento.Tarea.IdTarea + ".xls";
-                            options = reporte.ExportOptions;
-                            options.ExportDestinationType = ExportDestinationType.DiskFile;
-                            options.ExportFormatType = ExportFormatType.Excel;
-                            options.ExportDestinationOptions = diskFile;
-                            options.ExportFormatOptions = format;
-
-                            reporte.Export();
+                        
                             MessageBox.Show("Reporte Exportado Correctamente");
-                            reporte.Close();
-                            reporte.Dispose();
+                        
 
                         }
                         catch (Exception ex)
@@ -162,8 +147,8 @@ namespace SNW.forms
 
                         }
  
-    */
-
+   
+            #endregion
         }
 
         protected void btnBuscarDocumentos_Click(object sender, EventArgs e)
