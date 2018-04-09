@@ -106,11 +106,11 @@ namespace SNW.forms
 
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
-            /*                LinkButton btnExportar = (LinkButton)sender;
+                       LinkButton btnExportar = (LinkButton)sender;
    GridViewRow gvrRegistro = (GridViewRow)btnExportar.NamingContainer;
    DocumentoBE documento = new DocumentoBE();
 
-                         documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdTarea"].ToString();
+             documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdTarea"].ToString();
             documento.Documento.IdValor = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Documento_IdValor"].ToString();
             documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Documento_ValorCadena1"].ToString();
             documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();
@@ -162,8 +162,7 @@ namespace SNW.forms
 
                         }
  
-                    
-   */
+    */
 
         }
 
