@@ -1,6 +1,6 @@
-DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx	117
-DocumentoActaInstalacionPTP.aspx			100
-DocumentoInstalacionPozoTierra.aspx			30
+DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx	117 (HECHO)
+DocumentoActaInstalacionPTP.aspx			100 (HECHO)
+DocumentoInstalacionPozoTierra.aspx			30    (HECHO)
 
 EJEMPLO
 DocumentoActaSeguridad.aspx

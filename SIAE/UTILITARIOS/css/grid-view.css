@@ -1,0 +1,64 @@
+﻿/*viene de https://stackoverflow.com/questions/40647751/how-to-add-responsive-behaviour-to-the-aspgridview*/
+
+.grid-view-primary th{
+    background-color:#337ab7;
+    font-weight:bold;
+    color:white;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: #84CDFC;
+}
+
+@media only screen and (max-width: 767px) {
+    
+    /* Force gridview to not be like gridview anymore */
+    .no-more-gridView table, 
+    .no-more-gridView thead, 
+    .no-more-gridView tbody, 
+    .no-more-gridView th, 
+    .no-more-gridView td, 
+    .no-more-gridView tr { 
+        display: block; 
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    /*#no-more-gridView .table_column_head > * {*/ 
+    .no-more-gridView th{
+        display:none;
+    }
+    .no-more-gridView tr { border: 1px solid #ccc;}
+    .no-more-gridView td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+        white-space: normal;
+        text-align:left;
+        padding-bottom: 1em;
+    }
+    .no-more-gridView td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align:left;
+        font-weight: bold;
+    }
+    /*
+    Label the data
+    */
+    .no-more-gridView td:before { content: attr(data-title); }
+
+    .table-bordered {
+        border: none;
+    }
+
+    /*para arreglar ellipse confrilto defs esta regla content ellipse bootstrap*/
+    .table-condensed > tbody > tr > td {
+        padding-left:50%;
+    }
+}

@@ -1,0 +1,34 @@
+PRUEBAS APLICATIVO WEB
+
+USER 1043016241
+PASS 1234
+
+OMNISWITCH SERIE, INDICATIVO DE COMENTARIO, LAS FOTOS ....
+
+
+ <input type="hidden" id="hfIdPerfil" runat="server" />
+    <input type="hidden" id="hfRutaVirtualTemporal" runat="server" />
+
+IdTarea=G006286
+IdDocumento=000016
+DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx?IdTarea=G006286&IdDocumento=000016http://192.168.1.177/SNW/forms/DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx?IdTarea=G006286&IdDocumento=000016
+
+
+error no carga series documentos
+
+no hacer error no quiar la lista original de los equipamientos sin codigo ya quen o tienen serie pero si deben aparecer la pantalla
+
+
+para las tareas VIG_NODO_RDA VIG_NODO_RT se debe agregar 2 docyumentos
+camara interna
+camara externa
+camara sirena
+
+
+plantear solucion de demora de carga de fotos, scrolear los controles para carga inicial
+
+todas las pantallas que vengan de pc revisar a 768
+
+
+
+
