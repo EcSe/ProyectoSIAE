@@ -313,7 +313,9 @@
     <Content Include="upload\source\tests\specs\sidegames\controller\SideGamesSpec.js" />
     <Content Include="upload\source\tests\specs\sidegames\store\GameStoreSpec.js" />
     <Content Include="upload\source\tests\specs\sidegames\util\GameLaunchingSpec.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="forms\EntidadDetalle.aspx.cs">
@@ -358,7 +360,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>38717</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1590/UTILITARIOS</IISUrl>
+          <IISUrl>http://localhost:1520/UTILITARIOS</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

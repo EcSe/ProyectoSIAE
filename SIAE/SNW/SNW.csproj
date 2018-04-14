@@ -180,6 +180,7 @@
     <Content Include="master\MasterPage.Master" />
     <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\CARLOS.pubxml" />
+    <Content Include="Reportes\EstudioCampo.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,7 +192,9 @@
     <Content Include="Default.aspx" />
     <Content Include="forms\Inicio.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -374,9 +377,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>10875</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1515/SNW</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:1515/SNW</IISAppRootUrl>
+          <IISUrl>http://localhost:1520/SNW</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

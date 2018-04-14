@@ -7,3 +7,9 @@ D:\SIAE\FUENTES\SIAE\BusinessEntity\bin\Debug\BusinessEntity.pdb
 D:\SIAE\FUENTES\SIAE\BusinessEntity\obj\Debug\BusinessEntity.csprojResolveAssemblyReference.cache
 D:\SIAE\FUENTES\SIAE\BusinessEntity\obj\Debug\BusinessEntity.dll
 D:\SIAE\FUENTES\SIAE\BusinessEntity\obj\Debug\BusinessEntity.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.dll.config
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\System.Net.Http.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.pdb

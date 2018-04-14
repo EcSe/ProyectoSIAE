@@ -27,18 +27,7 @@ namespace BusinessLogic
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
                 
-               
 
-              /*  SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-                SqlCommand cmd = new SqlCommand("USP_R_PRUEBAINTERFERENCIA", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CH_ID_TAREA", IdTarea);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                con.Close();
-
-                */
                 String codNodo = ds.Tables[0].Rows[0]["COD_NODO"].ToString();
 
                 byte[] imageBuffer = (byte[])ds.Tables[0].Rows[0]["CAP_PANT_EPMP1000"];
@@ -218,17 +207,6 @@ namespace BusinessLogic
                 ds.Tables.Add(baseDatosDA.EjecutarConsultaDataTable());
 
 
-             /*   SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-                SqlCommand cmd = new SqlCommand("[USP_R_INSTALACION_POZO_TIERRA_A]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CH_ID_TAREA", IdTarea);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                con.Close();
-                */
-
-
                 #region valores String
                 String INSTITUCION = ds.Tables[0].Rows[0]["INSTITUCION"].ToString();
                 String CODIGO_IIBB = ds.Tables[0].Rows[0]["CODIGO_IIBB"].ToString();
@@ -346,16 +324,7 @@ namespace BusinessLogic
                 DataSet ds = new DataSet();
                 ds.Tables.Add(baseDatosDA.EjecutarConsultaDataTable());
 
-                /*  SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-                  SqlCommand cmd = new SqlCommand("[USP_R_ACTA_SEGURIDAD_DISTRIBUCION]", con);
-                  cmd.CommandType = CommandType.StoredProcedure;
-                  cmd.Parameters.AddWithValue("@CH_ID_TAREA", IdTarea);
-                  SqlDataAdapter da = new SqlDataAdapter(cmd);
-                  DataSet ds = new DataSet();
-                  da.Fill(ds);
-                  con.Close();
-                  */
-
+        
 
                 #region valores_String
                 String NOMBRE_NODO = "NODO " + ds.Tables[0].Rows[0]["NOMBRE_NODO"].ToString();
@@ -605,8 +574,8 @@ namespace BusinessLogic
             {
                 baseDatosDA.CrearComando("USP_R_ESTUDIO_DE_CAMPO", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
-                DataSet ds = new DataSet();
-                ds.Tables.Add(baseDatosDA.EjecutarConsultaDataTable());
+                DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+                
 
                 #region Ingresando Strings
                 String FECHA = ds.Tables[0].Rows[0]["FECHA"].ToString();
@@ -647,6 +616,34 @@ namespace BusinessLogic
 
                 #region Agregando datos al excel
                 ExcelToolsBL.UpdateCell(excelGenerado,"Sheet3",FECHA,2,"A");
+                ExcelToolsBL.UpdateCell(excelGenerado,"Sheet3",HORA_INICIO,2,"B");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", HORA_FIN, 2, "C");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", TIPO_NODO, 2, "D");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", UBIGEO, 2, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", DEPARTAMENTO, 2, "F");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", PROVINCIA, 2, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", DISTRITO, 2, "H");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", NOMBRE_NODO, 2, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", LONGITUD_LOCALIDAD_PLAZA_PRINCIPAL, 2, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", LATITUD_LOCALIDAD_PLAZA_PRINCIPAL, 2, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", ALTURA_MSNM, 2, "L");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", AREA_NATURAL_PROTEG, 2, "M");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", NOMBRE_AREA_NATURAL, 2, "N");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", RESTOS_ARQUEOLOGICOS, 2, "O");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", ESPECIF_TIPO_RESTOS_ARQ, 2, "P");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", BANCO_NACION, 2, "Q");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", AGENTE_BANCO_NACION, 2, "R");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", CANTIDAD, 2, "S");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", OTROS_BANCOS, 2, "T");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", CANTIDAD_OTROS_BANCOS, 2, "U");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", ENTIDAD_IMPORTANTE, 2, "V");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", IIEE, 2, "W");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", CANTIDAD_IIEE, 2, "X");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", POBLACION, 2, "Y");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", N_DE_MUJERES, 2, "Z");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", N_DE_JOVENES_15_24, 2, "AA");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", N_DE_PERSONAS_DISCAPACIDAD, 2, "AB");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Sheet3", N_VIVIENDAS, 2, "AC");
                 #endregion
 
             }
@@ -655,7 +652,84 @@ namespace BusinessLogic
 
                 throw ex;
             }
+            finally
+            {
+
+                baseDatosDA.Desconectar();
+                baseDatosDA = null;
+            }
         }
+
+        public void ProtocoloInstalacion(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
+        {
+            baseDatosDA.Configurar();
+            baseDatosDA.Conectar();
+
+            try
+            {
+                baseDatosDA.CrearComando("USP_R_PROTOCOLO_INSTALACION",CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                #region Valores
+
+                String DEPARTAMENTO = ds.Tables[0].Rows[0]["DEPARTAMENTO"].ToString();
+                String NOMBRE_NODO = ds.Tables[0].Rows[0]["NOMBRE_NODO"].ToString();
+                String TIPO_NODO = ds.Tables[0].Rows[0]["TIPO_NODO"].ToString();
+                String CODIGO_NODO = ds.Tables[0].Rows[0]["CODIGO_NODO"].ToString();
+                String FECHA = ds.Tables[0].Rows[0]["FECHA"].ToString();
+                String NUM_SERIE_SWITCH = ds.Tables[0].Rows[0]["NUM_SERIE_SWITCH"].ToString();
+
+                byte[] OMNISWITCH = (byte[])ds.Tables[0].Rows[0]["FOTO_1_OMNISWITCH"];
+                MemoryStream mOMNISWITCH = new MemoryStream(OMNISWITCH);
+                byte[] PAN_RACK = (byte[])ds.Tables[0].Rows[0]["FOTO_2_PAN_RACK"];
+                MemoryStream mPAN_RACK = new MemoryStream(PAN_RACK);
+                byte[] CON_BREAKERS_ASIGNADOS = (byte[])ds.Tables[0].Rows[0]["FOTO_3_CON_BREAKERS_ASIGNADOS"];
+                MemoryStream mCON_BREAKERS_ASIGNADOS = new MemoryStream(CON_BREAKERS_ASIGNADOS);
+                byte[] CON_ALIMEN_SWITCH = (byte[])ds.Tables[0].Rows[0]["FOTO_4_CON_ALIMEN_SWITCH"];
+                MemoryStream mCON_ALIMEN_SWITCH = new MemoryStream(CON_ALIMEN_SWITCH);
+                byte[] ATERRAMIENTO_SWITCH = (byte[])ds.Tables[0].Rows[0]["FOTO_5_ATERRAMIENTO_SWITCH"];
+                MemoryStream mATERRAMIENTO_SWITCH = new MemoryStream(ATERRAMIENTO_SWITCH);
+                byte[] ATERRAMIENTO_BARRA = (byte[])ds.Tables[0].Rows[0]["FOTO_6_ATERRAMIENTO_BARRA"];
+                MemoryStream mATERRAMIENTO_BARRA = new MemoryStream(ATERRAMIENTO_BARRA);
+
+                String usuarioWindows = Environment.UserName;
+                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+
+                File.Copy(rutaPlantilla, excelGenerado, true);
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula",CODIGO_NODO,15,"D");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", NOMBRE_NODO, 15, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", DEPARTAMENTO, 17, "D");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", TIPO_NODO, 22, "D");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", CODIGO_NODO, 24, "D");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", FECHA, 26, "D");
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "Acta de Instal- aceptación", CODIGO_NODO, 15, "H");
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado,"Reporte fotográfico", mOMNISWITCH, "", 11, 5, 490, 225);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPAN_RACK, "", 29, 8, 331, 226);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCON_BREAKERS_ASIGNADOS, "", 46, 5, 468, 220);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mCON_ALIMEN_SWITCH, "", 62, 5, 480, 223);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mATERRAMIENTO_SWITCH, "", 80, 5, 493, 220);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mATERRAMIENTO_BARRA, "", 97, 5, 480, 160);
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", NUM_SERIE_SWITCH, 17, "G");
+                #endregion
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                baseDatosDA.Desconectar();
+                baseDatosDA = null;
+
+            }
+        }
+
+
     }
 }
 

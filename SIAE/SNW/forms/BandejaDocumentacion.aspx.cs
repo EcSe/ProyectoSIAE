@@ -129,7 +129,6 @@ namespace SNW.forms
                 switch (documento.Documento.IdValor)
                 {
                     case "000003":
-                       // rutaPlantilla = "//BusinessLogic//Reportes//PruebaInterferencia.xlsx";
                         rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
 
                         rd.PruebaInterferencia(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1,rutaPlantilla);
@@ -137,19 +136,26 @@ namespace SNW.forms
                     case "000004": rutaPlantilla =Server.MapPath( "~/Reportes/Anexo2InventarioPMP.xlsx");
                         rd.Anexo2InventarioPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
                         break;
+                    case "000005":
+                        rutaPlantilla = Server.MapPath("~/Reportes/EstudioCampo.xlsx");
+                        rd.EstudioDeCampo(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                        break;
+                    case "000007":
+                        rutaPlantilla = Server.MapPath("~/Reportes/ProtocoloInstalacion.xlsx");
+                        rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                        break;
                     case "000011": rutaPlantilla = "~/Reportes/PruebasDeServicioDITG_PMP.xlsx";
+                        rd.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                        break;
+                    case "000014":
+                        rutaPlantilla = "~/Reportes/ActaSeguridadDistribucion.xlsx";
                         rd.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
                         break;
                     case "000017": rutaPlantilla = "~/Reportes/InstalaciondePozoaTierraTipoA.xlsx";
                         rd.InstalacionPozoTierra(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
                         break;
-                    case "000007": rutaPlantilla = "~/Reportes/ProtocoloInstalacion.rpt";
-                            
-                        break;
+                    
 
-                    case "000005": rutaPlantilla = Server.MapPath("~/Reportes/EstudioCampo.xlsx");
-
-                        break;
 
                 }
 
