@@ -344,6 +344,15 @@ namespace BusinessLogic
                 String PVC_TAPE_25M_X_19MM_BLACK = ds.Tables[0].Rows[0]["PVC_TAPE_25M_X_19MM_BLACK"].ToString();
                 String EXTINGUIDOR_EXT_FECHA_EXPIRACION = ds.Tables[0].Rows[0]["EXTINGUIDOR_EXT_FECHA_EXPIRACION"].ToString();
                 String EXTINGUIDOR_INT_FECHA_EXPIRACION = ds.Tables[0].Rows[0]["EXTINGUIDOR_INT_FECHA_EXPIRACION"].ToString();
+
+                String SERIAL_CAMARA_PTZ_INT = ds.Tables[0].Rows[0]["SERIAL_CAMARA_PTZ_INT"].ToString();
+                String SERIAL_CAMARA_PTZ_EXT = ds.Tables[0].Rows[0]["SERIAL_CAMARA_PTZ_EXT"].ToString();
+                String SERIAL_CONTROL_ALARMAS = ds.Tables[0].Rows[0]["SERIAL_CONTROL_ALARMAS"].ToString();
+                String SERIAL_NVR = ds.Tables[0].Rows[0]["SERIAL_NVR"].ToString();
+                String SERIAL_SWITCH_POE = ds.Tables[0].Rows[0]["SERIAL_SWITCH_POE"].ToString();
+                String SERIAL_LECTOR_BIO = ds.Tables[0].Rows[0]["SERIAL_LECTOR_BIO"].ToString();
+                String SERIAL_SENSOR_90_1 = ds.Tables[0].Rows[0]["SERIAL_SENSOR_90_1"].ToString();
+                String SERIAL_SENSOR_90_2 = ds.Tables[0].Rows[0]["SERIAL_SENSOR_90_2"].ToString();
                 #endregion
 
                 #region valores binarios
@@ -553,6 +562,14 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_NVR, "", 744, 6, 454, 242);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte fotográfico", mPING_BIOMETRICO, "", 761, 5, 535, 231);
 
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales",SERIAL_CAMARA_PTZ_INT,16,"G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", SERIAL_CAMARA_PTZ_EXT, 17, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", SERIAL_CONTROL_ALARMAS, 18, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", SERIAL_NVR, 20, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", SERIAL_SWITCH_POE, 21, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", SERIAL_LECTOR_BIO, 22, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", SERIAL_SENSOR_90_1, 24, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Materiales", SERIAL_SENSOR_90_2, 25, "G");
                 #endregion
 
             }

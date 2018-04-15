@@ -16,3 +16,11 @@ D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.AppContext.dll
 D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.Net.Http.dll
 D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.dll
 D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.AppContext.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.Net.Http.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.pdb
