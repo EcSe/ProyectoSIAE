@@ -3,24 +3,7 @@ C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\bin\Debug\
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\obj\Debug\DataAccess.pdb
-D:\SIAE\FUENTES\SIAE\DataAccess\bin\Debug\DataAccess.dll
-D:\SIAE\FUENTES\SIAE\DataAccess\bin\Debug\DataAccess.pdb
-D:\SIAE\FUENTES\SIAE\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
-D:\SIAE\FUENTES\SIAE\DataAccess\obj\Debug\DataAccess.dll
-D:\SIAE\FUENTES\SIAE\DataAccess\obj\Debug\DataAccess.pdb
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.dll.config
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.dll
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.pdb
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\Microsoft.Win32.Primitives.dll
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.AppContext.dll
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.Net.Http.dll
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.dll
-D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.dll.config
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.AppContext.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\System.Net.Http.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\obj\Debug\DataAccess.pdb

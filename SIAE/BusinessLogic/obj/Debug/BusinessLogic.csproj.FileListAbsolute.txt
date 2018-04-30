@@ -16,38 +16,13 @@ C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\bin\Deb
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb
-D:\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll
-D:\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessLogic.pdb
-D:\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessEntity.dll
-D:\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\DataAccess.dll
-D:\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessEntity.pdb
-D:\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\DataAccess.pdb
-D:\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
-D:\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
-D:\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll.config
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.pdb
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.dll
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.dll
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DocumentFormat.OpenXml.dll
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\System.Net.Http.dll
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.pdb
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.pdb
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DocumentFormat.OpenXml.xml
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
-D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll.config
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\System.Net.Http.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessEntity.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\BusinessEntity.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\DataAccess.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb

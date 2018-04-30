@@ -45,4 +45,19 @@
 
     });
 
+    $("#cphContenido_txtIdNodoIIBB").keyup(function (event) {
+        if (event.keyCode === 13) {
+            //$("#cphContenido_btnIngresar").click();
+            __doPostBack('ctl00$cphContenido$btnBuscar', '');
+        }
+    });
+
+    $("#cphContenido_txtContratista").keyup(function (event) {
+        //console.log("cramos01");
+        if (event.keyCode === 13) {
+            //$("#cphContenido_btnIngresar").click();
+            __doPostBack('ctl00$cphContenido$btnBuscar', '');
+        }
+    });
+
 });

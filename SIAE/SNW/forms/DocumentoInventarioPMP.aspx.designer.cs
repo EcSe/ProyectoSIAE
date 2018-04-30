@@ -49,6 +49,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfAntenaSNComentario;
         
         /// <summary>
+        /// Control lblAntenaSN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAntenaSN;
+        
+        /// <summary>
         /// Control hfAntenaSN.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfODUsSNComentario;
         
         /// <summary>
+        /// Control lblODUsSN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblODUsSN;
+        
+        /// <summary>
         /// Control hfODUsSN.
         /// </summary>
         /// <remarks>
@@ -155,6 +173,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfPOESNComentario;
+        
+        /// <summary>
+        /// Control lblPOESN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPOESN;
         
         /// <summary>
         /// Control hfPOESN.

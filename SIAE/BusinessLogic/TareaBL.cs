@@ -53,6 +53,8 @@ namespace BusinessLogic
                             item.Sector = drDatos.GetInt32(drDatos.GetOrdinal("IN_SECTOR"));
                         if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_NODO_B")))
                             item.NodoB.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO_B"));
+                        if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_CONTRATISTA")))
+                            item.Contratista.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_CONTRATISTA"));
                     }
                     if (TipoTransaccion.Equals("Z"))
                     {

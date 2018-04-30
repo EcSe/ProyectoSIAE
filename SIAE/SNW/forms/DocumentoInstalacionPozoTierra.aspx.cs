@@ -571,6 +571,7 @@ namespace SNW.forms
                         #endregion
                     }
                     #endregion
+
                 }
                 else
                 {
@@ -906,6 +907,11 @@ namespace SNW.forms
                     DocumentoBL.InsertarDocumento(Documento);
                 else if (Session["metodo"].Equals("U"))
                     DocumentoBL.ActualizarDocumento(Documento);
+                #endregion
+
+                #region Enviar mail observaciones
+                if (Usuario.Perfil.IdValor.Equals("000001"))
+                    DocumentoBL.EnviarEmailObservaciones(Documento);
                 #endregion
 
                 #region Asignamos el metodo

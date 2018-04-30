@@ -44,6 +44,8 @@ namespace SNW
                     }
 
                 }
+                //DocumentoBL.EnviarEmailObservaciones(new DocumentoBE());
+
             }
         }
     }

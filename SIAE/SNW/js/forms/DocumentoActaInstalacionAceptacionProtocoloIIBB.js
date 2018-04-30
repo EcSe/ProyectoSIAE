@@ -5477,8 +5477,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5547,8 +5547,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5827,8 +5827,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5897,8 +5897,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5967,8 +5967,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -6037,8 +6037,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -6863,9 +6863,10 @@
 
     // #endregion
 
-    // #region Bloqueamos los check de
+    // #region Bloqueamos los check de aprobacion
 
-    if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
+    
+if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
         // Bloqueamos Check Aprobacion
         $('#cphContenido_chkFecha').prop('disabled', true);
         $('#cphContenido_chkDireccionNodo').prop('disabled', true);

@@ -24,61 +24,30 @@ C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\LOG\bin\DataAccess.pd
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\LOG\obj\Debug\LOG.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\LOG\obj\Debug\LOG.dll
 C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\LOG\obj\Debug\LOG.pdb
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\csc.exe
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\System.Collections.Immutable.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\System.Reflection.Metadata.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\vbc.exe
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\VBCSCompiler.exe
-D:\SIAE\FUENTES\SIAE\LOG\bin\roslyn\VBCSCompiler.exe.config
-D:\SIAE\FUENTES\SIAE\LOG\bin\LOG.dll.config
-D:\SIAE\FUENTES\SIAE\LOG\bin\LOG.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\LOG.pdb
-D:\SIAE\FUENTES\SIAE\LOG\bin\BusinessEntity.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\BusinessLogic.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\DataAccess.dll
-D:\SIAE\FUENTES\SIAE\LOG\bin\BusinessEntity.pdb
-D:\SIAE\FUENTES\SIAE\LOG\bin\BusinessLogic.pdb
-D:\SIAE\FUENTES\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\SIAE\FUENTES\SIAE\LOG\bin\DataAccess.pdb
-D:\SIAE\FUENTES\SIAE\LOG\obj\Debug\LOG.csprojResolveAssemblyReference.cache
-D:\SIAE\FUENTES\SIAE\LOG\obj\Debug\LOG.dll
-D:\SIAE\FUENTES\SIAE\LOG\obj\Debug\LOG.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\csc.exe
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\vbc.exe
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\VBCSCompiler.exe
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\LOG.dll.config
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\LOG.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\LOG.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\BusinessEntity.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\BusinessLogic.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\Microsoft.Win32.Primitives.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\System.AppContext.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\System.Console.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\System.Xml.ReaderWriter.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\DataAccess.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\DocumentFormat.OpenXml.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\BusinessEntity.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\BusinessLogic.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\DataAccess.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\DocumentFormat.OpenXml.xml
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\obj\Debug\LOG.csprojResolveAssemblyReference.cache
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\obj\Debug\LOG.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\obj\Debug\LOG.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\csc.exe
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\vbc.exe
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\VBCSCompiler.exe
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\LOG.dll.config
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\LOG.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\LOG.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\BusinessEntity.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\BusinessLogic.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\DataAccess.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\DocumentFormat.OpenXml.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\BusinessEntity.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\BusinessLogic.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\bin\DataAccess.pdb
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\obj\Debug\LOG.csprojResolveAssemblyReference.cache
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\obj\Debug\LOG.dll
+C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\LOG\obj\Debug\LOG.pdb

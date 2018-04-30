@@ -7,8 +7,7 @@ using BusinessEntity;
 using DataAccess;
 using System.Data;
 using System.Data.Common;
-
-
+using System.Net.Mail;
 
 
 namespace BusinessLogic
@@ -189,6 +188,99 @@ namespace BusinessLogic
                 baseDatosDA = null;
             }
 
+        }
+
+        public static void EnviarEmailObservaciones(DocumentoBE Documento)
+        {
+            if (!Documento.Tarea.Contratista.IdValor.Equals(""))
+            {
+                try
+                {
+                    #region Listamos los usuarios del contratista
+                    UsuarioBE Usuario = new UsuarioBE();
+                    Usuario.Contratista = Documento.Tarea.Contratista;
+                    List<UsuarioBE> Usuarios = UsuarioBL.ListarUsuarios(Usuario);
+                    #endregion
+
+                    if (Usuarios.Where(us => !us.Email.Equals("")).Select(us => us).Count() > 0)
+                    {
+
+                        if (Documento.Detalles.Where(dd => !dd.Comentario.Equals("") && !dd.Aprobado).Select(dd => dd).Count() > 0)
+                        {
+                            EntidadDetalleBE entidadDetalleBE;
+
+                            MailMessage mail = new MailMessage();
+
+                            entidadDetalleBE = new EntidadDetalleBE();
+                            entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                            entidadDetalleBE.IdValor = "SMTP_CLIENT";
+                            entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                            SmtpClient SmtpServer = new SmtpClient(entidadDetalleBE.ValorCadena1);
+
+                            entidadDetalleBE = new EntidadDetalleBE();
+                            entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                            entidadDetalleBE.IdValor = "MAIL_FROM";
+                            entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                            mail.From = new MailAddress(entidadDetalleBE.ValorCadena1, entidadDetalleBE.ValorCadena2);
+
+                            #region Recorremos los correos
+                            Usuarios.Where(us => !us.Email.Equals("")).ToList().ForEach(iUsuario =>
+                            {
+                                mail.To.Add(iUsuario.Email);
+                            });
+                            #endregion
+
+                            entidadDetalleBE = new EntidadDetalleBE();
+                            entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                            entidadDetalleBE.IdValor = "MAIL_OBS_SUBJ";
+                            entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                            mail.Subject = entidadDetalleBE.ValorCadena1;
+
+                            mail.Body = "Se tienen las siguientes observaciones:" + Environment.NewLine;
+                            mail.Body = mail.Body + "Documento: " + Documento.Documento.ValorCadena1 + Environment.NewLine;
+                            mail.Body = mail.Body + "Tarea: " + Documento.Tarea.IdTarea + Environment.NewLine;
+                            mail.Body = mail.Body + "Nodo o IIBB A: " + Documento.Tarea.NodoIIBBA.IdNodo + Environment.NewLine + Environment.NewLine;
+
+                            #region Recorremos las observaciones
+                            Documento.Detalles.Where(dd => !dd.Comentario.Equals("") && !dd.Aprobado).ToList().ForEach(iDocumentoDetalle =>
+                            {
+                                entidadDetalleBE = new EntidadDetalleBE();
+                                entidadDetalleBE.Entidad.IdEntidad = "CAMP_DOCU";
+                                entidadDetalleBE.IdValor = iDocumentoDetalle.Campo.IdValor;
+                                entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+
+                                mail.Body = mail.Body + entidadDetalleBE.ValorCadena1 + ": " + iDocumentoDetalle.Comentario + Environment.NewLine;
+                            });
+                            #endregion
+
+                            entidadDetalleBE = new EntidadDetalleBE();
+                            entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                            entidadDetalleBE.IdValor = "SMTP_PORT";
+                            entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                            SmtpServer.Port = entidadDetalleBE.ValorEntero1;
+
+                            entidadDetalleBE = new EntidadDetalleBE();
+                            entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                            entidadDetalleBE.IdValor = "SMTP_CRED";
+                            entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                            SmtpServer.Credentials = new System.Net.NetworkCredential(entidadDetalleBE.ValorCadena1, entidadDetalleBE.ValorCadena2);
+                            SmtpServer.EnableSsl = true;
+
+                            SmtpServer.Send(mail);
+                        }
+                        
+                    }
+
+                    
+
+                    
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            
         }
     }
 }

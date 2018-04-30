@@ -298,9 +298,9 @@
             <asp:HiddenField ID="hfIdContratistaU" runat="server" />
             <asp:HiddenField ID="hfMetodo" runat="server" />
         </ContentTemplate>
-        <Triggers>
+        <%--<Triggers>
             <asp:AsyncPostBackTrigger ControlID="btnNuevo" EventName="Click" />
-        </Triggers>
+        </Triggers>--%>
     </asp:UpdatePanel>
 
 </asp:Content>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessEntity;
@@ -7,7 +9,6 @@ using BusinessLogic;
 using System.Web.UI.HtmlControls;
 
 using System.Windows.Forms;
-
 
 namespace SNW.forms
 {
@@ -17,7 +18,6 @@ namespace SNW.forms
         {
             if (!IsPostBack)
             {
-                
                 UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
                 #region Asignar el contratista
                 if (!Usuario.Perfil.IdValor.Equals("000001"))
@@ -103,77 +103,109 @@ namespace SNW.forms
         //    documento.Documento.ValorCadena2 = gvTareas.DataKeys[gvrRegistro.RowIndex]["Documento_ValorCadena2"].ToString();
         //    Response.Redirect(documento.Documento.ValorCadena2 + "?IdTarea=" + documento.Tarea.IdTarea + "&IdDocumento=" + documento.Documento.IdValor, true);
 
-
+                
         //}
 
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
-            LinkButton btnExportar = (LinkButton)sender;
-            GridViewRow gvrTarea = (GridViewRow)btnExportar.NamingContainer;
-            DocumentoBE documento = new DocumentoBE();
 
-            documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Tarea_IdTarea"].ToString();
-            documento.Documento.IdValor = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_IdValor"].ToString();
-            documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_ValorCadena1"].ToString();
-            // documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();  NodoIIBBA_IdNodo
-            //documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();
-            documento.Tarea.NodoIIBBA.IdNodo = gvTareas.DataKeys[gvrTarea.RowIndex]["NodoIIBBA_IdNodo"].ToString();
-
-            ReporteDocumentosBL rd = new ReporteDocumentosBL();
-            #region CodigoBueno
-            try
             {
-                String rutaPlantilla = "";
-                
-                
-                switch (documento.Documento.IdValor)
-                {
-                    case "000003":
-                        rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
+                LinkButton btnExportar = (LinkButton)sender;
+                GridViewRow gvrTarea = (GridViewRow)btnExportar.NamingContainer;
+                DocumentoBE documento = new DocumentoBE();
 
-                        rd.PruebaInterferencia(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1,rutaPlantilla);
-                        break;
-                    case "000004": rutaPlantilla =Server.MapPath( "~/Reportes/Anexo2InventarioPMP.xlsx");
-                        rd.Anexo2InventarioPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                        break;
-                    case "000005":
-                        rutaPlantilla = Server.MapPath("~/Reportes/EstudioCampo.xlsx");
-                        rd.EstudioDeCampo(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                        break;
-                    case "000007":
-                        rutaPlantilla = Server.MapPath("~/Reportes/ProtocoloInstalacion.xlsx");
-                        rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                        break;
-                    case "000011": rutaPlantilla = "~/Reportes/PruebasDeServicioDITG_PMP.xlsx";
-                        rd.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                        break;
-                    case "000014":
-                        rutaPlantilla = "~/Reportes/ActaSeguridadDistribucion.xlsx";
-                        rd.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                        break;
-                    case "000017": rutaPlantilla = "~/Reportes/InstalaciondePozoaTierraTipoA.xlsx";
-                        rd.InstalacionPozoTierra(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                        break;
-                    
+                documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Tarea_IdTarea"].ToString();
+                documento.Documento.IdValor = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_IdValor"].ToString();
+                documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_ValorCadena1"].ToString();
+                // documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();  NodoIIBBA_IdNodo
+                //documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();
+                documento.Tarea.NodoIIBBA.IdNodo = gvTareas.DataKeys[gvrTarea.RowIndex]["NodoIIBBA_IdNodo"].ToString();
+
+                ReporteDocumentosBL rd = new ReporteDocumentosBL();
+                #region CodigoBueno
+                try
+                {
+                    String rutaPlantilla = "";
+
+
+                    switch (documento.Documento.IdValor)
+                    {
+                        case "000001":
+                            rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloSectorial.xlsx");
+
+                            rd.ActaInstalacionAceptacionProtocoloSectorial(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+
+                        case "000003":
+                            rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
+
+                            rd.PruebaInterferencia(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000004":
+                            rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPMP.xlsx");
+                            rd.Anexo2InventarioPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000005":
+                            rutaPlantilla = Server.MapPath("~/Reportes/EstudioCampo.xlsx");
+                            rd.EstudioDeCampo(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000007":
+                            rutaPlantilla = Server.MapPath("~/Reportes/ProtocoloInstalacion.xlsx");
+                            rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000010":
+                            rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPTP.xlsx");
+                            rd.PruebaServicioDITGPTP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000011":
+                            rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPMP.xlsx");
+                            rd.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000012":
+                            rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPTP.xlsx");
+                            rd.Anexo2InventarioPTP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000013":
+                            rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadAcceso.xlsx");
+                            rd.ActaSeguridadAcceso(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000014":
+                            rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadDistribucion.xlsx");
+                            rd.ActaSeguridadDistribucion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000015":
+                            rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_A.xlsx");
+                            rd.ActaInstalacionAceptacionProtocoloIIBB_A(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000016":
+                            rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_B.xlsx");
+                            rd.ActaInstalacionAceptacionProtocoloIIBB_B(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+                        case "000017":
+                            rutaPlantilla =Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoA.xlsx");
+                            rd.InstalacionPozoTierra(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            break;
+
+
+
+                    }
+
+
+
+
+                    MessageBox.Show("Reporte Exportado Correctamente");
 
 
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
 
-               
+                }
 
 
-               MessageBox.Show("Reporte Exportado Correctamente");
-
-
+                #endregion
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-
-            }
-
-
-            #endregion
         }
 
         protected void btnBuscarDocumentos_Click(object sender, EventArgs e)
@@ -231,8 +263,6 @@ namespace SNW.forms
 
             }
         }
-      
-    }
 
-    
+    }
 }

@@ -319,7 +319,7 @@ namespace SNW.forms
 
                     #region Serie Antena
                     UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoA,
-                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBQBGG00S;UBQCGG00S;U59CGY00S", 1,
+                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBQBGG00S;UBQCGG00S;U59CGY00S;UBUBGG00S", 1,
                         lblSerieAntenaEstacionA);
                     #endregion
 
@@ -387,7 +387,7 @@ namespace SNW.forms
 
                     #region Serie Antena
                     UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamientoB,
-                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBQBGG00S;UBQCGG00S;U59CGY00S", 1,
+                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBQBGG00S;UBQCGG00S;U59CGY00S;UBUBGG00S", 1,
                         lblSerieAntenaEstacionB);
                     #endregion
 
@@ -724,7 +724,6 @@ namespace SNW.forms
                     #region Asignacion Perfil
                     hfIdPerfil.Value = Usuario.Perfil.IdValor;
                     #endregion
-
                     #endregion
 
                     #region Verificamos si existe la documentacion
@@ -1988,6 +1987,7 @@ namespace SNW.forms
                     null, txtFecha, null, null,
                     Type.GetType("System.DateTime"));
                 #endregion
+
                 #endregion
 
                 #region 1 Configuración y Mediciones
@@ -2252,6 +2252,7 @@ namespace SNW.forms
                 #endregion
 
                 #region Estación B
+
                 #region Distancia B
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                     Documento, "000109", chkB_B, hfB_BComentario,
@@ -2926,7 +2927,7 @@ namespace SNW.forms
 
                 #endregion
 
-                #region 11 DATOS GENERALES NODO B
+                #region 12 DATOS GENERALES NODO B
 
                 #region # Serie PTP450i
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,

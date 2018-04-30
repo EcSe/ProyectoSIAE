@@ -21,13 +21,13 @@ namespace BusinessLogic
  public   class ExcelToolsBL
     {
 
-        private static Row GetRow(Worksheet worksheet, uint rowIndex)
+        private static Row GetRow(Worksheet worksheet, int rowIndex)
         {
             return worksheet.GetFirstChild<SheetData>().
                     Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
         }
 
-        private static Cell GetCell(Worksheet worksheet, String columName, uint rowIndex)
+        private static Cell GetCell(Worksheet worksheet, String columName, int rowIndex)
         {
             Row row = GetRow(worksheet, rowIndex);
             if (row == null) return null;
@@ -55,7 +55,7 @@ namespace BusinessLogic
         }
 
 
-        public static void UpdateCell(String rutaDest, String nameSheet, String dato, uint rowIndex, String columName)
+        public static void UpdateCell(String rutaDest, String nameSheet, String dato, int rowIndex, String columName)
         {
 
             using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(rutaDest, true))

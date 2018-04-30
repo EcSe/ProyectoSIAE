@@ -3065,8 +3065,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaPrincipalAbierta').val(fileNames);
@@ -3132,8 +3132,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaSalaEquiposAbierta').val(fileNames);
@@ -3199,8 +3199,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraInterna').val(fileNames);
@@ -3266,8 +3266,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraExterna').val(fileNames);
@@ -3333,8 +3333,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorAniego').val(fileNames);
@@ -3400,8 +3400,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorHumo').val(fileNames);
@@ -3467,8 +3467,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9001').val(fileNames);
@@ -3534,8 +3534,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9001').val(fileNames);
@@ -3601,8 +3601,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9001').val(fileNames);
@@ -3668,8 +3668,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9002').val(fileNames);
@@ -3735,8 +3735,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9002').val(fileNames);
@@ -3802,8 +3802,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9002').val(fileNames);
@@ -3869,8 +3869,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor360').val(fileNames);
@@ -3936,8 +3936,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor360').val(fileNames);
@@ -4007,8 +4007,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara01Indoor').val(fileNames);
@@ -4074,8 +4074,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara02Outdoor').val(fileNames);
@@ -4141,8 +4141,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingControlador').val(fileNames);
@@ -4208,8 +4208,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingGateway').val(fileNames);
@@ -4275,8 +4275,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingNVR').val(fileNames);
@@ -4342,8 +4342,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         isImage: true,
-        minWidtDimension: 2560,
-        minHeightDimension: 1920,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingBiometrico').val(fileNames);

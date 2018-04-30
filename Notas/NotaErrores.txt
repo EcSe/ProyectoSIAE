@@ -1,0 +1,3 @@
+--DOCUMENTO ACTA INSTALACION ACEPTACION PROTOCOLO SECTORIAL
+Tarea = G002636 IdDocumento = 000001
+.Problema aun con las fotos, bota error en el reporte fotografico

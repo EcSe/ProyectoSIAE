@@ -2185,7 +2185,7 @@
 
     // #region Bloqueamos los check de aprobacion
 
-    if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
+	 if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
         //#region POZO A TIERRA 5 OHM
         //Check aprobacion
         $('#cphContenido_chkPT5FrontalIIBB').prop('disabled', true);
@@ -2267,15 +2267,10 @@
         //#endregion
 
 
-
-
-
-
-
     }
 
     // #endregion
 
-
+    
 
 });

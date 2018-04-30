@@ -46,16 +46,29 @@ namespace SNW.forms
                     this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ") " + " .:SIAE:.";
                     #endregion
 
-                    #region 11 Serie logística
+                    #region Equipamiento
                     List<DocumentoEquipamientoBE> lstDocumentoEquipamiento = new List<DocumentoEquipamientoBE>();
+
                     DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
                     DocumentoEquipamiento.Documento = Documento;
                     lstDocumentoEquipamiento = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
+                    //Session["EquipamientosA"] = lstDocumentoEquipamientoA;
+
+                    #endregion
+
+                    #region 11 Serie logística
 
                     #region Antena s/n (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000032",
                         imgAntenaSNEjemplo);
                     #endregion
+
+                    #region Antena s/n
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
+                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBUBGG00S;UBUCGG00S", 1,
+                        lblAntenaSN);
+                    #endregion
+
 
                     #region Arrestor LAN s/n (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000033",
@@ -67,9 +80,21 @@ namespace SNW.forms
                         imgODUsSNEjemplo);
                     #endregion
 
+                    #region ODUs s/n
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
+                        "GB9612;GB9613;GB9614;GB9615;GB9616;GB9617;GB9726;GB9727", 1,
+                        lblODUsSN);
+                    #endregion
+
                     #region POE s/n (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000035",
                         imgPOESNEjemplo);
+                    #endregion
+
+                    #region POE s/n
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
+                        "D60077;D60078", 1,
+                        lblPOESN);
                     #endregion
 
                     #endregion
@@ -164,7 +189,6 @@ namespace SNW.forms
             }
         }
 
-
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -248,6 +272,11 @@ namespace SNW.forms
                     DocumentoBL.InsertarDocumento(Documento);
                 else if (Session["metodo"].Equals("U"))
                     DocumentoBL.ActualizarDocumento(Documento);
+                #endregion
+
+                #region Enviar mail observaciones
+                if (Usuario.Perfil.IdValor.Equals("000001"))
+                    DocumentoBL.EnviarEmailObservaciones(Documento);
                 #endregion
 
                 #region Asignamos el metodo

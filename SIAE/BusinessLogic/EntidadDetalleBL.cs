@@ -58,6 +58,8 @@ namespace BusinessLogic
                         item.ValorCadena3 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA3"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_VALOR_CADENA4")))
                         item.ValorCadena4 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA4"));
+                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("IN_VALOR_ENTERO1")))
+                        item.ValorEntero1 = drDatos.GetInt32(drDatos.GetOrdinal("IN_VALOR_ENTERO1"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("NU_VALOR_NUMERICO1")))
                         item.ValorNumerico1 = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_VALOR_NUMERICO1"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("VB_VALOR_BINARIO1")))

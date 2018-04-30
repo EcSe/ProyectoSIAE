@@ -554,6 +554,11 @@ namespace SNW.forms
                     DocumentoBL.ActualizarDocumento(Documento);
                 #endregion
 
+                #region Enviar mail observaciones
+                if (Usuario.Perfil.IdValor.Equals("000001"))
+                    DocumentoBL.EnviarEmailObservaciones(Documento);
+                #endregion
+
                 #region Asignamos el metodo
                 Session["metodo"] = "U";//Update
                 #endregion

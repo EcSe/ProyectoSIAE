@@ -24,6 +24,7 @@ namespace BusinessEntity
 
         public UsuarioBE()
         {
+            IdUsuario = String.Empty;
             Perfil = new EntidadDetalleBE();
             TipoDocumento = new EntidadDetalleBE();
             Contratista = new EntidadDetalleBE();
