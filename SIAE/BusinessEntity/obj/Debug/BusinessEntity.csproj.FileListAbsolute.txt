@@ -6,7 +6,14 @@ C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessEntity\bin\Debug\Busi
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessEntity\bin\Debug\BusinessEntity.pdb
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessEntity\obj\Debug\BusinessEntity.dll
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessEntity\obj\Debug\BusinessEntity.pdb
+<<<<<<< HEAD
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.pdb
+=======
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.pdb
+>>>>>>> 3313e633665bbd16b604b1e4917a22aaa0837658
