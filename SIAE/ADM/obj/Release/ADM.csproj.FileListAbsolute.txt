@@ -1,0 +1,53 @@
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\csc.exe
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\vbc.exe
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\VBCSCompiler.exe
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\ADM.dll.config
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\ADM.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\ADM.pdb
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\BusinessEntity.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\BusinessLogic.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\DataAccess.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\BusinessEntity.pdb
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\BusinessLogic.pdb
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\bin\DataAccess.pdb
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\obj\Release\ADM.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\obj\Release\ADM.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\ADM\obj\Release\ADM.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\csc.exe
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\vbc.exe
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\VBCSCompiler.exe
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.dll.config
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessEntity.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DocumentFormat.OpenXml.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessEntity.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Release\ADM.csprojResolveAssemblyReference.cache
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Release\ADM.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Release\ADM.pdb

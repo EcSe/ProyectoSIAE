@@ -1,0 +1,94 @@
+﻿.modal-loader
+{
+    position: fixed;
+    z-index: 2000;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /*background-color: Black;*/
+    background-color: rgba(0,0,0,0.5);/*Se usa este metodo para darle el color de fondo para evitar que el div hijo herede la transparencia*/
+    /*filter: alpha(opacity=60);
+    opacity: 0.6;
+    -moz-opacity: 0.8;*/
+}
+.center-loader
+{
+    /*z-index: 1000;
+    margin: 300px auto;
+    padding: 10px;
+    background-color: White;
+    border-radius: 10px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;*/
+
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:94px;
+    height:90px;
+    margin-top: -45px; /*set to a negative number 1/2 of your height*/
+    margin-left: -47px; /*set to a negative number 1/2 of your width*/
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    z-index: 600;
+}
+
+.l.loader{
+    width: 92px;
+    height: 90px;
+    margin: 40px auto;
+}oad
+.luto;
+}
+.loader p{
+    font-size: 16px;
+    color: #777;
+}
+.loader .loader-inner{
+    display: inline-block;
+    width: 15px;
+    border-radius: 15px;
+    background: #74d2ba;
+}
+.loader .loader-inner:nth-last-child(1){
+    -webkit-animation: loading 2s 1.5s infinite;
+    animation: loading 2s 1.5s infinite;
+}
+.loader .loader-inner:nth-last-child(2){
+    -webkit-animation: loading 2s 1s infinite;
+    animation: loading 2s 1s infinite;
+}
+.loader .loader-inner:nth-last-child(3){
+    -webkit-animation: loading 2s .5s infinite;
+    animation: loading 2s .5s infinite;
+}
+.loader .loader-inner:nth-last-child(4){
+    -webkit-animation: loading 2s 0s infinite;
+    animation: loading 2s 0s infinite;
+}
+@-webkit-keyframes loading{
+    0%{
+        height: 15px;
+    }
+    50%{
+        height: 35px;
+    }
+    100%{
+        height: 15px;
+    }
+}
+@keyframes loading{
+    0%{
+        height: 15px;
+    }
+    50%{
+        height: 35px;
+    }
+    100%{
+        height: 15px;
+    }
+}

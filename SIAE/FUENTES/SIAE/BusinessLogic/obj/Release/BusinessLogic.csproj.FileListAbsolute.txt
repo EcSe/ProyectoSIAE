@@ -1,0 +1,9 @@
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\bin\Release\BusinessLogic.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\bin\Release\BusinessLogic.pdb
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\bin\Release\BusinessEntity.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\bin\Release\DataAccess.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\bin\Release\BusinessEntity.pdb
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\bin\Release\DataAccess.pdb
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\obj\Release\BusinessLogic.dll
+C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessLogic\obj\Release\BusinessLogic.pdb
