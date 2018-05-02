@@ -1,3 +1,53 @@
 --DOCUMENTO ACTA INSTALACION ACEPTACION PROTOCOLO SECTORIAL
-Tarea = G002636 IdDocumento = 000001
-.Problema aun con las fotos, bota error en el reporte fotografico
+Tarea = G002636 IdDocumento = 000001 AP-0092
+.Todo OK, salvo  le problema en la pagina "Configuracion y Pruebas" 
+.fila 16
+ 
+--ANEXO 2 INVENTARIO PTP
+Tarea = G000280 IdDocumento = 000012 AP-0092
+.Todo bien salvo, que no hay mas datos que jalar del formulario
+
+
+
+--DOCUMENTO PROTOCOLO INSTALACION
+Tarea = G003310 IdDocumento = 000007 AY-0100
+.Todo bien salvo por la reescalabilidad de las imagenes
+
+--DOCUMENTO ANEXO 2 INVENTARIO PMP
+Tarea = G002636 IdDocumento = 000004
+.Todo bien salvo por la reescalabilidad de las imagenes
+
+--DOCUMENTO ESTUDIO DE CAMPO
+Tarea = G002636 IdDocumento = 000005 AP-0092
+.Todo bien solo verificar si necesitan mas datos
+
+--DOCUMENTO ACTA SEGURIDAD DISTRIBUCION
+Tarea = G000980 IdDocumento = 000014 AP-0092
+No graba el campo 220
+.Todo OK! Salvo por la reescalabilidad de la imagenes
+
+--DOCUMENTO ACTA INSTALACION PTP LICENCIADO
+Tarea= G000280 IdDocumento = 000008 AP'0092
+.Referencia  al objeto no establecida como instancia de un objeto
+
+--DOCUMENTO PRUEBAS SERVICIO DITGPTP
+Tarea = G000280 IdDocumento = 000010 AP-0092
+.Todo bien, las imagenes reescaladas se ven mucho mejor
+
+--DOCUMENTO ANEXO 1 PRUEBAS SERVICIO DITG PMP
+Tarea = G006286 IdDocumento = 000011 AP-0092-IE2
+.Falta el campo 207 = ping cpe desde nodo A
+  no se guarda ese campo en la BD. Todo lo demas OK!
+
+--DOCUMENTO ACTA SEGURIDAD Y ACCESO 
+Tarea= G005312 idDocumento = 000013 HC-0018
+.Todo OK! Reescalabilidad de las fotos nada mas
+
+--DOCUMENTO ACTA INSTALACION ACEPTACION PROTOCOLO IIBB A
+.Tarea = G006288 IdDocumento = 000015 AP-0092
+Todo OK! Reescalabilidad de imagenes
+
+--DOCUMENTO ACTA INSTALACION ACEPTACION PROTOCOLO IIBB B
+Tarea = G006286 IdDocumento = 000016 	AP-0092
+Todo OK! Problemas con reescalibidad de imagenes 
+
