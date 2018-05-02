@@ -51,3 +51,30 @@ C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\ADM\bin\DataAccess.pdb
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\ADM\obj\Debug\ADM.csprojResolveAssemblyReference.cache
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\ADM\obj\Debug\ADM.dll
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\ADM\obj\Debug\ADM.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\csc.exe
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\System.Collections.Immutable.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\System.Reflection.Metadata.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\vbc.exe
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\VBCSCompiler.exe
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\roslyn\VBCSCompiler.exe.config
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.dll.config
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessEntity.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DocumentFormat.OpenXml.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessEntity.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.csprojResolveAssemblyReference.cache
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.dll
+D:\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.pdb

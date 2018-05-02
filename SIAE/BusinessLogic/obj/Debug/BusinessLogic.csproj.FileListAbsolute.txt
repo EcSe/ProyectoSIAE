@@ -26,3 +26,13 @@ C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\bin\Debug\DataA
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb

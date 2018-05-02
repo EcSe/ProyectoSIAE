@@ -7,3 +7,8 @@ C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\bin\Debug\DataAcce
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\bin\Debug\DataAccess.pdb
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\DataAccess\obj\Debug\DataAccess.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.dll
+D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.pdb
+D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.dll
+D:\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.pdb
