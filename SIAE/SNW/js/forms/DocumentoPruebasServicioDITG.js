@@ -438,16 +438,16 @@
             minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
-                    $('#cphContenido_hfdivPingHaciaCPEDesdeNodoA').val(fileNames);
+                    $('#cphContenido_hfPingHaciaCPEDesdeNodoA').val(fileNames);
                 },
                 finishFile: function (file, msg, fileNames, fileNamesUploaded) {
-                    $('#cphContenido_hfdivPingHaciaCPEDesdeNodoA').val(fileNamesUploaded);
+                    $('#cphContenido_hfPingHaciaCPEDesdeNodoA').val(fileNamesUploaded);
                 },
                 removeAllFiles: function () {
-                    $('#cphContenido_hfdivPingHaciaCPEDesdeNodoA').val("");
+                    $('#cphContenido_hfPingHaciaCPEDesdeNodoA').val("");
                 },
                 removeFile: function (fileNames, fileList, fileNamesUploaded) {
-                    $('#cphContenido_hfdivPingHaciaCPEDesdeNodoA').val(fileNamesUploaded);
+                    $('#cphContenido_hfPingHaciaCPEDesdeNodoA').val(fileNamesUploaded);
                 },
             }
         });

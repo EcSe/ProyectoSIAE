@@ -77,7 +77,7 @@ namespace SNW.forms
                     List<PMPDetalleBE> lstPMPDetalle = new List<PMPDetalleBE>();
                     List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacion = new List<DocumentoMedicionEnlacePropagacionBE>();
                     PMPDetalleBE PMPDetalle = new PMPDetalleBE();
-                    PMPDetalle.PMP.Nodo.IdNodo = Tarea.NodoIIBBA.IdNodo;
+                    PMPDetalle.InstitucionBeneficiaria.IdInstitucionBeneficiaria = Tarea.NodoIIBBA.IdNodo;
                     PMPDetalle.SectorIIBB = Tarea.Sector;
                     lstPMPDetalle = PMPDetalleBL.ListarPMPDetalles(PMPDetalle);
                     foreach (PMPDetalleBE item in lstPMPDetalle)
@@ -91,6 +91,7 @@ namespace SNW.forms
                     Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
                     gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
                     gvMedicionEnlacePropagacion.DataBind();
+
 
                     #endregion
 

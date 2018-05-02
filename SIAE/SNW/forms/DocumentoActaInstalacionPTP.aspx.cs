@@ -2179,17 +2179,17 @@ namespace SNW.forms
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                     Documento, "000103", chkEquipamientosB,
                     hfEquipamientosBComentario);
-                List<DocumentoEquipamientoBE> lstDocumentoEquipamientoB = new List<DocumentoEquipamientoBE>();
-                lstDocumentoEquipamientoB = (List<DocumentoEquipamientoBE>)Session["EquipamientosB"];
+                //List<DocumentoEquipamientoBE> lstDocumentoEquipamientoB = new List<DocumentoEquipamientoBE>();
+                //lstDocumentoEquipamientoB = (List<DocumentoEquipamientoBE>)Session["EquipamientosB"];
 
-                foreach (GridViewRow item in gvEquipamientosB.Rows)
-                {
-                    String strCodigoEquipamiento = gvEquipamientosB.DataKeys[item.RowIndex]["Equipamiento_IdValor"].ToString();
-                    TextBox txtSerieEquipamiento = (TextBox)item.FindControl("txtSerieEquipamientoB");
-                    lstDocumentoEquipamientoB.Where(w => w.Equipamiento.IdValor == strCodigoEquipamiento).ToList().ForEach(s => s.SerieEquipamiento = txtSerieEquipamiento.Text.ToUpper());
-                }
-                //Insertar al final de la lista
-                Documento.Equipamientos.InsertRange(Documento.Equipamientos.Count(), lstDocumentoEquipamientoB);
+                //foreach (GridViewRow item in gvEquipamientosB.Rows)
+                //{
+                //    String strCodigoEquipamiento = gvEquipamientosB.DataKeys[item.RowIndex]["Equipamiento_IdValor"].ToString();
+                //    TextBox txtSerieEquipamiento = (TextBox)item.FindControl("txtSerieEquipamientoB");
+                //    lstDocumentoEquipamientoB.Where(w => w.Equipamiento.IdValor == strCodigoEquipamiento).ToList().ForEach(s => s.SerieEquipamiento = txtSerieEquipamiento.Text.ToUpper());
+                //}
+                ////Insertar al final de la lista
+                //Documento.Equipamientos.InsertRange(Documento.Equipamientos.Count(), lstDocumentoEquipamientoB);
                 #endregion
 
                 #region Materiales
@@ -2991,16 +2991,44 @@ namespace SNW.forms
 
                 #endregion
 
-                #region Usuario Creacion
-                UsuarioBE UsuarioCreacion = (UsuarioBE)Session["Usuario"];
-                Documento.Detalles.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
-                Documento.Equipamientos.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
-                Documento.Materiales.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
-                Documento.MedicionesEnlacePropagacion.ForEach(i => i.UsuarioCreacion = UsuarioCreacion);
+                #region Usuario Creacion y modificacion
+                UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
+                Documento.Detalles.ForEach(i =>
+                {
+                    i.UsuarioCreacion = Usuario;
+                    i.UsuarioModificacion = Usuario;
+                });
+                Documento.Equipamientos.ForEach(i =>
+                {
+                    i.UsuarioCreacion = Usuario;
+                    i.UsuarioModificacion = Usuario;
+                });
+                Documento.Materiales.ForEach(i =>
+                {
+                    i.UsuarioCreacion = Usuario;
+                    i.UsuarioModificacion = Usuario;
+                });
+                Documento.MedicionesEnlacePropagacion.ForEach(i =>
+                {
+                    i.UsuarioCreacion = Usuario;
+                    i.UsuarioModificacion = Usuario;
+                });
                 #endregion
 
                 #region Guardar documento
-                DocumentoBL.InsertarDocumento(Documento);
+                if (Session["metodo"].Equals("I"))
+                    DocumentoBL.InsertarDocumento(Documento);
+                else if (Session["metodo"].Equals("U"))
+                    DocumentoBL.ActualizarDocumento(Documento);
+                #endregion
+
+                #region Enviar mail observaciones
+                if (Usuario.Perfil.IdValor.Equals("000001"))
+                    DocumentoBL.EnviarEmailObservaciones(Documento);
+                #endregion
+
+                #region Asignamos el metodo
+                Session["metodo"] = "U";//Update
                 #endregion
 
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openAlert('#divAlert','#divAlertHeader','modal-header-success','#lblAlertTitle','Completado','#lblAlertBody','El documento se ha guardado correctamente.',true,true);", true);

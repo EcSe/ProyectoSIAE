@@ -126,6 +126,11 @@ namespace SNW.forms
                     Session["Documento"] = Documento;
                     #endregion
 
+                    #region Asignamos el metodo
+                    Session["metodo"] = "I";//Insert
+                    #endregion
+
+
                     #region Asignacion Perfil
                     hfIdPerfil.Value = Usuario.Perfil.IdValor;
                     #endregion

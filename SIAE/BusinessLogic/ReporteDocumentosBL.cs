@@ -83,8 +83,8 @@ namespace BusinessLogic
                 MemoryStream DIRECCIONES_MACm = new MemoryStream(DIRECCIONES_MAC);
                 byte[] RESULTADO_PRUEBA_DITG = (byte[])ds.Tables[0].Rows[0]["RESULTADO_PRUEBA_DITG"];
                 MemoryStream RESULTADO_PRUEBA_DITGm = new MemoryStream(RESULTADO_PRUEBA_DITG);
-                //byte[] PING_CPE_DESDE_NODO_A = (byte[])ds.Tables[0].Rows[0]["PING_CPE_DESDE_NODO_A"];
-                //MemoryStream PING_CPE_DESDE_NODO_Am = new MemoryStream(PING_CPE_DESDE_NODO_A);
+                byte[] PING_CPE_DESDE_NODO_A = (byte[])ds.Tables[0].Rows[0]["PING_CPE_DESDE_NODO_A"];
+                MemoryStream PING_CPE_DESDE_NODO_Am = new MemoryStream(PING_CPE_DESDE_NODO_A);
                 byte[] PING_ALL_USERS_01 = (byte[])ds.Tables[0].Rows[0]["PING_ALL_USERS_01"];
                 MemoryStream PING_ALL_USERS_01m = new MemoryStream(PING_ALL_USERS_01);
                 byte[] PING_ALL_USERS_02 = (byte[])ds.Tables[0].Rows[0]["PING_ALL_USERS_02"];
@@ -119,7 +119,7 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", FECHA_HORA_ROUTERm, "", 72, 2, 534, 234);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", DIRECCIONES_MACm, "", 126, 2, 534, 234);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", RESULTADO_PRUEBA_DITGm, "", 149, 2, 534, 234);
-                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", PING_CPE_DESDE_NODO_Am, "", 48, 2, 534, 234);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", PING_CPE_DESDE_NODO_Am, "", 48, 2, 534, 234);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", PING_ALL_USERS_01m, "", 98, 2, 177, 141);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", PING_ALL_USERS_02m, "", 98, 5, 177, 141);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Pruebas de Servicios", PING_ALL_USERS_03m, "", 98, 8, 177, 141);
