@@ -52,7 +52,7 @@
                                         <div class="has-float-label">
                                             <div id="divAntenaSN" class="">
                                             </div>
-                                            <label for="divAntenaSN">Antena s/n</label>
+                                            <label for="divAntenaSN" id="lblAntenaSN" runat="server">Antena s/n</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfAntenaSN" runat="server" />
@@ -130,7 +130,7 @@
                                         <div class="has-float-label">
                                             <div id="divODUsSN" class="">
                                             </div>
-                                            <label for="divODUsSN">ODUs s/n</label>
+                                            <label for="divODUsSN" id="lblODUsSN" runat="server">ODUs s/n</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfODUsSN" runat="server" />
@@ -169,7 +169,7 @@
                                         <div class="has-float-label">
                                             <div id="divPOESN" class="">
                                             </div>
-                                            <label for="divPOESN">POE s/n</label>
+                                            <label for="divPOESN" id="lblPOESN" runat="server">POE s/n</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfPOESN" runat="server" />

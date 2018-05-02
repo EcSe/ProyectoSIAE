@@ -27,7 +27,7 @@
 </head>
 <body>
     <form id="frmMaster" runat="server">
-        <asp:ScriptManager ID="smManager" runat="server"></asp:ScriptManager>
+        <asp:ScriptManager ID="smManager" runat="server" AsyncPostBackTimeout="1800"></asp:ScriptManager>
         <header>
             <nav class="navbar-base navbar-base-default">
                 <div class="container-fluid">

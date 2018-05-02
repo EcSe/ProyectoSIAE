@@ -6,9 +6,10 @@
 	{
 		$(controlBody).text(body);	
 	}
+
     $(controlAlert).modal({
             backdrop: pbackdrop,//true - dark overlay;false - no overlay (transparent);static - it is not possible to close the modal when clicking outside of it
-			keyboard:pkeyboard,//true - the modal can be closed with Esc; false - the modal cannot be closed with Esc
+			keyboard: pkeyboard,//true - the modal can be closed with Esc; false - the modal cannot be closed with Esc
 			show: true
         });
 }

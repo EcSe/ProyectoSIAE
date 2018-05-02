@@ -1,79 +1,48 @@
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\csc.exe
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\vbc.exe
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\VBCSCompiler.exe
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\SNW.dll.config
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\SNW.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\SNW.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\BusinessEntity.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\BusinessLogic.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\DataAccess.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\BusinessEntity.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\BusinessLogic.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\bin\DataAccess.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\obj\Debug\SNW.csprojResolveAssemblyReference.cache
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\obj\Debug\SNW.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE - copia (7)\SNW\obj\Debug\SNW.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\csc.exe
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\vbc.exe
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\VBCSCompiler.exe
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\SNW.dll.config
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\SNW.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\SNW.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\BusinessEntity.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\BusinessLogic.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\DataAccess.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\BusinessEntity.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\BusinessLogic.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\bin\DataAccess.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\obj\Debug\SNW.csprojResolveAssemblyReference.cache
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\obj\Debug\SNW.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\SNW\obj\Debug\SNW.pdb
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\csc.exe
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\vbc.exe
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\VBCSCompiler.exe
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\SNW.dll.config
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\SNW.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\SNW.pdb
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\BusinessEntity.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\BusinessLogic.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\DataAccess.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\DocumentFormat.OpenXml.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\BusinessEntity.pdb
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\BusinessLogic.pdb
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\bin\DataAccess.pdb
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\obj\Debug\SNW.csprojResolveAssemblyReference.cache
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\obj\Debug\SNW.Properties.Resources.resources
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\obj\Debug\SNW.csproj.GenerateResource.Cache
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\obj\Debug\SNW.dll
-C:\Users\Elvin Salinas\Downloads\SIAE\FUENTES\SIAE\SNW\obj\Debug\SNW.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.csprojResolveAssemblyReference.cache
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.Properties.Resources.resources
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.csproj.GenerateResource.Cache
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\csc.exe
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\vbc.exe
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\VBCSCompiler.exe
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\SNW.dll.config
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\SNW.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\SNW.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\BusinessEntity.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\BusinessLogic.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\Microsoft.Win32.Primitives.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.AppContext.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Console.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Globalization.Calendars.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.IO.Compression.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.IO.Compression.ZipFile.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.IO.FileSystem.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.IO.Packaging.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Net.Http.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Net.Sockets.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Xml.ReaderWriter.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\DataAccess.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\DocumentFormat.OpenXml.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\BusinessEntity.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\BusinessLogic.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\DataAccess.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.pdb
