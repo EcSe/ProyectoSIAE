@@ -1844,6 +1844,10 @@ namespace SNW.forms
 
                         #endregion
 
+                        #region Asignamos el metodo
+                        Session["metodo"] = "U"; //Update
+                        #endregion
+
                     }
                     #endregion
 

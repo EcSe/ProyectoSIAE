@@ -380,6 +380,13 @@
         }
     });
 
+    if ($('#cphContenido_hfConfiguracionGeneralEnlaceEstacionA').val() != "") {
+        divConfiguracionGeneralEnlaceEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionA').val(), $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionA').val());
+    }
+
+    $("#cphContenido_chkConfiguracionGeneralEnlaceEstacionA").trigger("change");
+
+
     // #endregion
 
     // #region Configuración General del Enlace Estación B
@@ -441,6 +448,13 @@
         }
     });
 
+    if ($('#cphContenido_hfConfiguracionGeneralEnlaceEstacionB').val() != "") {
+        divConfiguracionGeneralEnlaceEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionB').val(), $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionB').val());
+    }
+
+    $("#cphContenido_chkConfiguracionGeneralEnlaceEstacionB").trigger("change");
+
+
     // #endregion
 
     // #region Configuración VLAN Estación A
@@ -501,6 +515,13 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfConfiguracionVLANEstacionA').val() != "") {
+        divConfiguracionVLANEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionVLANEstacionA').val(), $('#cphContenido_hfConfiguracionVLANEstacionA').val());
+    }
+
+    $("#cphContenido_chkConfiguracionVLANEstacionA").trigger("change");
+
 
     // #endregion
 
@@ -564,6 +585,12 @@
         }
     });
 
+    if ($('#cphContenido_hfConfiguracionVLANEstacionB').val() != "") {
+        divConfiguracionVLANEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionVLANEstacionB').val(), $('#cphContenido_hfConfiguracionVLANEstacionB').val());
+    }
+
+    $("#cphContenido_chkConfiguracionVLANEstacionB").trigger("change");
+
     // #endregion
 
     // #region Configuración Radio Estación A 01
@@ -624,6 +651,14 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfConfiguracionRadioEstacionA01').val() != "") {
+        divConfiguracionRadioEstacionA01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionRadioEstacionA01').val(), $('#cphContenido_hfConfiguracionRadioEstacionA01').val());
+    }
+
+    $("#cphContenido_chkConfiguracionRadioEstacionA01").trigger("change");
+
+
 
     // #endregion
 
@@ -686,6 +721,12 @@
         }
     });
 
+    if ($('#cphContenido_hfConfiguracionRadioEstacionA02').val() != "") {
+        divConfiguracionRadioEstacionA02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionRadioEstacionA02').val(), $('#cphContenido_hfConfiguracionRadioEstacionA02').val());
+    }
+
+    $("#cphContenido_chkConfiguracionRadioEstacionA02").trigger("change");
+
     // #endregion
 
     // #region Configuración Radio Estación B
@@ -746,6 +787,13 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfConfiguracionRadioEstacionB').val() != "") {
+        divConfiguracionRadioEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionRadioEstacionB').val(), $('#cphContenido_hfConfiguracionRadioEstacionB').val());
+    }
+
+    $("#cphContenido_chkConfiguracionRadioEstacionB").trigger("change");
+
 
     // #endregion
 
@@ -808,6 +856,12 @@
         }
     });
 
+    if ($('#cphContenido_hfConfiguracionIPEstacionA').val() != "") {
+        divConfiguracionIPEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionIPEstacionA').val(), $('#cphContenido_hfConfiguracionIPEstacionA').val());
+    }
+
+    $("#cphConfiguracionIPEstacionA").trigger("change");
+
     // #endregion
 
     // #region Configuración IP Estación B
@@ -868,6 +922,14 @@
             },
         }
     });
+
+
+    if ($('#cphContenido_hfConfiguracionIPEstacionB').val() != "") {
+        divConfiguracionIPEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfConfiguracionIPEstacionB').val(), $('#cphContenido_hfConfiguracionIPEstacionB').val());
+    }
+
+    $("#cphContenido_chkConfiguracionIPEstacionB").trigger("change");
+
 
     // #endregion
 
@@ -1650,6 +1712,12 @@
         }
     });
 
+    if ($('#cphContenido_hfIngenieria').val() != "") {
+        divIngenieria.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfIngenieria').val(), $('#cphContenido_hfIngenieria').val());
+    }
+
+    $("#cphContenido_chkIngenieria").trigger("change");
+
     // #endregion
 
     // #region Perfil
@@ -1710,6 +1778,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPerfil').val() != "") {
+        divPerfil.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPerfil').val(), $('#cphContenido_hfPerfil').val());
+    }
+
+    $("#cphContenido_chkPerfil").trigger("change");
 
     // #endregion
 
@@ -1776,6 +1850,13 @@
         }
     });
 
+    if ($('#cphContenido_hfPantallaRadioEstacionA').val() != "") {
+        divPantallaRadioEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPantallaRadioEstacionA').val(), $('#cphContenido_hfPantallaRadioEstacionA').val());
+    }
+
+    $("#cphContenido_chkPantallaRadioEstacionA").trigger("change");
+
+
     // #endregion
 
     // #region Pantalla RADIO Estación B
@@ -1836,6 +1917,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPantallaRadioEstacionB').val() != "") {
+        divPantallaRadioEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPantallaRadioEstacionB').val(), $('#cphContenido_hfPantallaRadioEstacionB').val());
+    }
+
+    $("#cphContenido_chkPantallaRadioEstacionB").trigger("change");
 
     // #endregion
 
@@ -1904,6 +1991,12 @@
         }
     });
 
+    if ($('#cphContenido_hfSerieAntenaEstacionA').val() != "") {
+        divSerieAntenaEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieAntenaEstacionA').val(), $('#cphContenido_hfSerieAntenaEstacionA').val());
+    }
+
+    $("#cphContenido_chkSerieAntenaEstacionA").trigger("change");
+
     // #endregion
 
     // #region Serie ODU
@@ -1965,6 +2058,12 @@
         }
     });
 
+    if ($('#cphContenido_hfSerieODUEstacionA').val() != "") {
+        divSerieODUEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieODUEstacionA').val(), $('#cphContenido_hfSerieODUEstacionA').val());
+    }
+
+    $("#cphContenido_chkSerieODUEstacionA").trigger("change");
+
     // #endregion
 
     // #region Serie POE
@@ -2025,6 +2124,14 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSeriePOEEstacionA').val() != "") {
+        divSeriePOEEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSeriePOEEstacionA').val(), $('#cphContenido_hfSeriePOEEstacionA').val());
+    }
+
+    $("#cphContenido_chkSeriePOEEstacionA").trigger("change");
+
+
 
     // #endregion
 
@@ -2089,6 +2196,13 @@
             }
         });
 
+        if ($('#cphContenido_hfSerieCMM4EstacionA').val() != "") {
+            divSerieCMM4EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieCMM4EstacionA').val(), $('#cphContenido_hfSerieCMM4EstacionA').val());
+        }
+
+        $("#cphContenido_chkSerieCMM4EstacionA").trigger("change");
+
+
         // #endregion
 
         // #region Serie UGPS
@@ -2150,6 +2264,12 @@
             }
         });
 
+        if ($('#cphContenido_hfSerieUGPSEstacionA').val() != "") {
+            divSerieUGPSEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieUGPSEstacionA').val(), $('#cphContenido_hfSerieUGPSEstacionA').val());
+        }
+
+        $("#cphContenido_chkSerieUGPSEstacionA").trigger("change");
+
         // #endregion
 
         // #region Serie Conversor
@@ -2210,6 +2330,12 @@
                 },
             }
         });
+
+        if ($('#cphContenido_hfSerieConversorEstacionA').val() != "") {
+            divSerieConversorEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieConversorEstacionA').val(), $('#cphContenido_hfSerieConversorEstacionA').val());
+        }
+
+        $("#cphContenido_chkSerieConversorEstacionA").trigger("change");
 
         // #endregion
         
@@ -2283,6 +2409,12 @@
         }
     });
 
+    if ($('#cphContenido_hfSerieAntenaEstacionB').val() != "") {
+        divSerieAntenaEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieAntenaEstacionB').val(), $('#cphContenido_hfSerieAntenaEstacionB').val());
+    }
+
+    $("#cphContenido_chkSerieAntenaEstacionB").trigger("change");
+
     // #endregion
 
     // #region Serie ODU
@@ -2344,6 +2476,12 @@
         }
     });
 
+    if ($('#cphContenido_hfSerieODUEstacionB').val() != "") {
+        divSerieODUEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieODUEstacionB').val(), $('#cphContenido_hfSerieODUEstacionB').val());
+    }
+
+    $("#cphContenido_chkSerieODUEstacionB").trigger("change");
+
     // #endregion
     
     // #region Serie POE
@@ -2404,6 +2542,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSeriePOEEstacionB').val() != "") {
+        divSeriePOEEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSeriePOEEstacionB').val(), $('#cphContenido_hfSeriePOEEstacionB').val());
+    }
+
+    $("#cphContenido_chkSeriePOEEstacionB").trigger("change");
 
     // #endregion
 
@@ -2468,6 +2612,12 @@
             }
         });
 
+        if ($('#cphContenido_hfSerieCMM4EstacionB').val() != "") {
+            divSerieCMM4EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieCMM4EstacionB').val(), $('#cphContenido_hfSerieCMM4EstacionB').val());
+        }
+
+        $("#cphContenido_chkSerieCMM4EstacionB").trigger("change");
+
         // #endregion
 
         // #region Serie UGPS
@@ -2529,6 +2679,12 @@
             }
         });
 
+        if ($('#cphContenido_hfSerieUGPSEstacionB').val() != "") {
+            divSerieUGPSEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieUGPSEstacionB').val(), $('#cphContenido_hfSerieUGPSEstacionB').val());
+        }
+
+        $("#cphContenido_chkSerieUGPSEstacionB").trigger("change");
+
         // #endregion
 
         // #region Serie Conversor
@@ -2589,6 +2745,12 @@
                 },
             }
         });
+
+        if ($('#cphContenido_hfSerieConversorEstacionB').val() != "") {
+            divSerieConversorEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSerieConversorEstacionB').val(), $('#cphContenido_hfSerieConversorEstacionB').val());
+        }
+
+        $("#cphContenido_chkSerieConversorEstacionB").trigger("change");
 
         // #endregion
         
@@ -2666,6 +2828,12 @@
         }
     });
 
+    if ($('#cphContenido_hfPanoramicaEstacionA').val() != "") {
+        divPanoramicaEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPanoramicaEstacionA').val(), $('#cphContenido_hfPanoramicaEstacionA').val());
+    }
+
+    $("#cphContenido_chkPanoramicaEstacionA").trigger("change");
+
     // #endregion  
 
     // #region Foto 2: Posición e Identificación Antena Instalada en Torre
@@ -2726,6 +2894,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPosicionIdentificacionEstacionA').val() != "") {
+        divPosicionIdentificacionEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPosicionIdentificacionEstacionA').val(), $('#cphContenido_hfPosicionIdentificacionEstacionA').val());
+    }
+
+    $("#cphContenido_chkPosicionIdentificacionEstacionA").trigger("change");
 
     // #endregion
 
@@ -2788,6 +2962,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAntenaPTP450iEstacionA').val() != "") {
+        divAntenaPTP450iEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAntenaPTP450iEstacionA').val(), $('#cphContenido_hfAntenaPTP450iEstacionA').val());
+    }
+
+    $("#cphContenido_chkAntenaPTP450iEstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 4: Etiquetado en Puerto de Antena
@@ -2848,6 +3028,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfEtiquetadoPuertoAntenaEstacionA').val() != "") {
+        divEtiquetadoPuertoAntenaEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEtiquetadoPuertoAntenaEstacionA').val(), $('#cphContenido_hfEtiquetadoPuertoAntenaEstacionA').val());
+    }
+
+    $("#cphContenido_chkEtiquetadoPuertoAntenaEstacionA").trigger("change");
 
     // #endregion
 
@@ -2910,6 +3096,12 @@
         }
     });
 
+    if ($('#cphContenido_hfEngrasadoPernosEstacionA').val() != "") {
+        divEngrasadoPernosEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEngrasadoPernosEstacionA').val(), $('#cphContenido_hfEngrasadoPernosEstacionA').val());
+    }
+
+    $("#cphContenido_chkEngrasadoPernosEstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 6: Siliconeado del Conector
@@ -2970,6 +3162,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSiliconeadoConectorEstacionA').val() != "") {
+        divSiliconeadoConectorEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSiliconeadoConectorEstacionA').val(), $('#cphContenido_hfSiliconeadoConectorEstacionA').val());
+    }
+
+    $("#cphContenido_chkSiliconeadoConectorEstacionA").trigger("change");
 
     // #endregion
 
@@ -3032,6 +3230,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoODUEstacionA').val() != "") {
+        divAterramientoODUEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoODUEstacionA').val(), $('#cphContenido_hfAterramientoODUEstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoODUEstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 8: Recorrido Cable SFTP
@@ -3092,6 +3296,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfRecorridoCableSFTPEstacionA').val() != "") {
+        divRecorridoCableSFTPEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfRecorridoCableSFTPEstacionA').val(), $('#cphContenido_hfRecorridoCableSFTPEstacionA').val());
+    }
+
+    $("#cphContenido_chkRecorridoCableSFTPEstacionA").trigger("change");
 
     // #endregion
 
@@ -3155,6 +3365,13 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoCableSFTP01EstacionA').val() != "") {
+        divAterramientoCableSFTP01EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTP01EstacionA').val(), $('#cphContenido_hfAterramientoCableSFTP01EstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTP01EstacionA").trigger("change");
+
+
     // #endregion
 
     // #region Foto 9.02: Aterramiento Cable SFTP
@@ -3215,6 +3432,13 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoCableSFTP02EstacionA').val() != "") {
+        divAterramientoCableSFTP02EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTP02EstacionA').val(), $('#cphContenido_hfAterramientoCableSFTP02EstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTP02EstacionA").trigger("change");
+
 
     // #endregion
 
@@ -3277,6 +3501,12 @@
         }
     });
 
+    if ($('#cphContenido_hfSALANOutdoorEtiquetadoEstacionA').val() != "") {
+        divSALANOutdoorEtiquetadoEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSALANOutdoorEtiquetadoEstacionA').val(), $('#cphContenido_hfSALANOutdoorEtiquetadoEstacionA').val());
+    }
+
+    $("#cphContenido_chkSALANOutdoorEtiquetadoEstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 11: Aterramiento SA-LAN Outdoor
@@ -3337,6 +3567,13 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoSALANOutdoorEstacionA').val() != "") {
+        divAterramientoSALANOutdoorEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoSALANOutdoorEstacionA').val(), $('#cphContenido_hfAterramientoSALANOutdoorEstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoSALANOutdoorEstacionA").trigger("change");
+
 
     // #endregion
 
@@ -3399,6 +3636,13 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionA').val() != "") {
+        divAterramientoCableSFTPIndoor01EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionA').val(), $('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTPIndoor01EstacionA").trigger("change");
+
+
     // #endregion
 
     // #region Foto 14.02: Aterramiento Cable SFTP Indoor
@@ -3459,6 +3703,13 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionA').val() != "") {
+        divAterramientoCableSFTPIndoor02EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionA').val(), $('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTPIndoor02EstacionA").trigger("change");
+
 
     // #endregion
 
@@ -3521,6 +3772,12 @@
         }
     });
 
+    if ($('#cphContenido_hfPanoramicaRackEstacionA').val() != "") {
+        divPanoramicaRackEstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPanoramicaRackEstacionA').val(), $('#cphContenido_hfPanoramicaRackEstacionA').val());
+    }
+
+    $("#cphContenido_chkPanoramicaRackEstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 18.01: Aterramiento POE (Inicio/Fin)
@@ -3581,6 +3838,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoPOE01EstacionA').val() != "") {
+        divAterramientoPOE01EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoPOE01EstacionA').val(), $('#cphContenido_hfAterramientoPOE01EstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoPOE01EstacionA").trigger("change");
 
     // #endregion
 
@@ -3643,6 +3906,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoPOE02EstacionA').val() != "") {
+        divAterramientoPOE02EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoPOE02EstacionA').val(), $('#cphContenido_hfAterramientoPOE02EstacionA').val());
+    }
+
+    $("#cphContenido_chkAterramientoPOE02EstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 19.01: Energía de POE con Etiqueta (Inicio/Fin)
@@ -3703,6 +3972,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfEnergiaPOEEtiqueta01EstacionA').val() != "") {
+        divEnergiaPOEEtiqueta01EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEnergiaPOEEtiqueta01EstacionA').val(), $('#cphContenido_hfEnergiaPOEEtiqueta01EstacionA').val());
+    }
+
+    $("#cphContenido_chkEnergiaPOEEtiqueta01EstacionA").trigger("change");
 
     // #endregion
 
@@ -3765,6 +4040,12 @@
         }
     });
 
+    if ($('#cphContenido_hfEnergiaPOEEtiqueta02EstacionA').val() != "") {
+        divEnergiaPOEEtiqueta02EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEnergiaPOEEtiqueta02EstacionA').val(), $('#cphContenido_hfEnergiaPOEEtiqueta02EstacionA').val());
+    }
+
+    $("#cphContenido_chkEnergiaPOEEtiqueta02EstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 20.01: Patch Core del POE al Switch (Inicio/Fin)
@@ -3826,6 +4107,12 @@
         }
     });
 
+    if ($('#cphContenido_hfPatchCorePOESwitch01EstacionA').val() != "") {
+        divPatchCorePOESwitch01EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPatchCorePOESwitch01EstacionA').val(), $('#cphContenido_hfPatchCorePOESwitch01EstacionA').val());
+    }
+
+    $("#cphContenido_chkPatchCorePOESwitch01EstacionA").trigger("change");
+
     // #endregion
 
     // #region Foto 20.02: Patch Core del POE al Switch (Inicio/Fin)
@@ -3886,6 +4173,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPatchCorePOESwitch02EstacionA').val() != "") {
+        divPatchCorePOESwitch02EstacionA.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPatchCorePOESwitch02EstacionA').val(), $('#cphContenido_hfPatchCorePOESwitch02EstacionA').val());
+    }
+
+    $("#cphContenido_chkPatchCorePOESwitch02EstacionA").trigger("change");
 
     // #endregion
 
@@ -3952,6 +4245,12 @@
         }
     });
 
+    if ($('#cphContenido_hfPanoramicaEstacionB').val() != "") {
+        divPanoramicaEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPanoramicaEstacionB').val(), $('#cphContenido_hfPanoramicaEstacionB').val());
+    }
+
+    $("#cphContenido_chkPanoramicaEstacionB").trigger("change");
+
     // #endregion  
 
     // #region Foto 2: Posición e Identificación Antena Instalada en Torre
@@ -4012,6 +4311,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPosicionIdentificacionEstacionB').val() != "") {
+        divPosicionIdentificacionEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPosicionIdentificacionEstacionB').val(), $('#cphContenido_hfPosicionIdentificacionEstacionB').val());
+    }
+
+    $("#cphContenido_chkPosicionIdentificacionEstacionB").trigger("change");
 
     // #endregion
 
@@ -4074,6 +4379,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAntenaPTP450iEstacionB').val() != "") {
+        divAntenaPTP450iEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAntenaPTP450iEstacionB').val(), $('#cphContenido_hfAntenaPTP450iEstacionB').val());
+    }
+
+    $("#cphContenido_chkAntenaPTP450iEstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 4: Etiquetado en Puerto de Antena
@@ -4134,6 +4445,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfEtiquetadoPuertoAntenaEstacionB').val() != "") {
+        divEtiquetadoPuertoAntenaEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEtiquetadoPuertoAntenaEstacionB').val(), $('#cphContenido_hfEtiquetadoPuertoAntenaEstacionB').val());
+    }
+
+    $("#cphContenido_chkEtiquetadoPuertoAntenaEstacionB").trigger("change");
 
     // #endregion
 
@@ -4196,6 +4513,12 @@
         }
     });
 
+    if ($('#cphContenido_hfEngrasadoPernosEstacionB').val() != "") {
+        divEngrasadoPernosEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEngrasadoPernosEstacionB').val(), $('#cphContenido_hfEngrasadoPernosEstacionB').val());
+    }
+
+    $("#cphContenido_chkEngrasadoPernosEstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 6: Siliconeado del Conector
@@ -4256,6 +4579,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfSiliconeadoConectorEstacionB').val() != "") {
+        divSiliconeadoConectorEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSiliconeadoConectorEstacionB').val(), $('#cphContenido_hfSiliconeadoConectorEstacionB').val());
+    }
+
+    $("#cphContenido_chkSiliconeadoConectorEstacionB").trigger("change");
 
     // #endregion
 
@@ -4318,6 +4647,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoODUEstacionB').val() != "") {
+        divAterramientoODUEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoODUEstacionB').val(), $('#cphContenido_hfAterramientoODUEstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoODUEstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 8: Recorrido Cable SFTP
@@ -4378,6 +4713,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfRecorridoCableSFTPEstacionB').val() != "") {
+        divRecorridoCableSFTPEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfRecorridoCableSFTPEstacionB').val(), $('#cphContenido_hfRecorridoCableSFTPEstacionB').val());
+    }
+
+    $("#cphContenido_chkRecorridoCableSFTPEstacionB").trigger("change");
 
     // #endregion
 
@@ -4441,6 +4782,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoCableSFTP01EstacionB').val() != "") {
+        divAterramientoCableSFTP01EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTP01EstacionB').val(), $('#cphContenido_hfAterramientoCableSFTP01EstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTP01EstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 9.02: Aterramiento Cable SFTP
@@ -4501,6 +4848,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoCableSFTP02EstacionB').val() != "") {
+        divAterramientoCableSFTP02EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTP02EstacionB').val(), $('#cphContenido_hfAterramientoCableSFTP02EstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTP02EstacionB").trigger("change");
 
     // #endregion
 
@@ -4563,6 +4916,12 @@
         }
     });
 
+    if ($('#cphContenido_hfSALANOutdoorEtiquetadoEstacionB').val() != "") {
+        divSALANOutdoorEtiquetadoEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSALANOutdoorEtiquetadoEstacionB').val(), $('#cphContenido_hfSALANOutdoorEtiquetadoEstacionB').val());
+    }
+
+    $("#cphContenido_chkSALANOutdoorEtiquetadoEstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 11: Aterramiento SA-LAN Outdoor
@@ -4623,6 +4982,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoSALANOutdoorEstacionB').val() != "") {
+        divAterramientoSALANOutdoorEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoSALANOutdoorEstacionB').val(), $('#cphContenido_hfAterramientoSALANOutdoorEstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoSALANOutdoorEstacionB").trigger("change");
 
     // #endregion
 
@@ -4685,6 +5050,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionB').val() != "") {
+        divAterramientoCableSFTPIndoor01EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionB').val(), $('#cphContenido_hfAterramientoCableSFTPIndoor01EstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTPIndoor01EstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 14.02: Aterramiento Cable SFTP Indoor
@@ -4745,6 +5116,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionB').val() != "") {
+        divAterramientoCableSFTPIndoor02EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionB').val(), $('#cphContenido_hfAterramientoCableSFTPIndoor02EstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoCableSFTPIndoor02EstacionB").trigger("change");
 
     // #endregion
 
@@ -4807,6 +5184,12 @@
         }
     });
 
+    if ($('#cphContenido_hfPanoramicaRackEstacionB').val() != "") {
+        divPanoramicaRackEstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPanoramicaRackEstacionB').val(), $('#cphContenido_hfPanoramicaRackEstacionB').val());
+    }
+
+    $("#cphContenido_chkPanoramicaRackEstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 18.01: Aterramiento POE (Inicio/Fin)
@@ -4867,6 +5250,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfAterramientoPOE01EstacionB').val() != "") {
+        divAterramientoPOE01EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoPOE01EstacionB').val(), $('#cphContenido_hfAterramientoPOE01EstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoPOE01EstacionB").trigger("change");
 
     // #endregion
 
@@ -4929,6 +5318,12 @@
         }
     });
 
+    if ($('#cphContenido_hfAterramientoPOE02EstacionB').val() != "") {
+        divAterramientoPOE02EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoPOE02EstacionB').val(), $('#cphContenido_hfAterramientoPOE02EstacionB').val());
+    }
+
+    $("#cphContenido_chkAterramientoPOE02EstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 19.01: Energía de POE con Etiqueta (Inicio/Fin)
@@ -4989,6 +5384,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfEnergiaPOEEtiqueta01EstacionB').val() != "") {
+        divEnergiaPOEEtiqueta01EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEnergiaPOEEtiqueta01EstacionB').val(), $('#cphContenido_hfEnergiaPOEEtiqueta01EstacionB').val());
+    }
+
+    $("#cphContenido_chkEnergiaPOEEtiqueta01EstacionB").trigger("change");
 
     // #endregion
 
@@ -5051,6 +5452,12 @@
         }
     });
 
+    if ($('#cphContenido_hfEnergiaPOEEtiqueta02EstacionB').val() != "") {
+        divEnergiaPOEEtiqueta02EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfEnergiaPOEEtiqueta02EstacionB').val(), $('#cphContenido_hfEnergiaPOEEtiqueta02EstacionB').val());
+    }
+
+    $("#cphContenido_chkEnergiaPOEEtiqueta02EstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 20.01: Patch Core del POE al Switch (Inicio/Fin)
@@ -5112,6 +5519,12 @@
         }
     });
 
+    if ($('#cphContenido_hfPatchCorePOESwitch01EstacionB').val() != "") {
+        divPatchCorePOESwitch01EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPatchCorePOESwitch01EstacionB').val(), $('#cphContenido_hfPatchCorePOESwitch01EstacionB').val());
+    }
+
+    $("#cphContenido_chkPatchCorePOESwitch01EstacionB").trigger("change");
+
     // #endregion
 
     // #region Foto 20.02: Patch Core del POE al Switch (Inicio/Fin)
@@ -5172,6 +5585,12 @@
             },
         }
     });
+
+    if ($('#cphContenido_hfPatchCorePOESwitch02EstacionB').val() != "") {
+        divPatchCorePOESwitch02EstacionB.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfPatchCorePOESwitch02EstacionB').val(), $('#cphContenido_hfPatchCorePOESwitch02EstacionB').val());
+    }
+
+    $("#cphContenido_chkPatchCorePOESwitch02EstacionB").trigger("change");
 
     // #endregion
 
@@ -5499,6 +5918,7 @@
         $('#cphContenido_chkPatchCorePOESwitch02EstacionB').prop('disabled', true);
 
         $('#cphContenido_chkSeriePTP450iNodoA').prop('disabled', true);
+        $('#cphContenido_chkSeriePTP450iNodoB').prop('disabled', true);
         $('#cphContenido_chkMedicionEnlacePropagacionNodoA').prop('disabled', true);
         $('#cphContenido_chkMedicionEnlacePropagacionNodoB').prop('disabled', true);
 
@@ -5511,13 +5931,12 @@
         $('#txtReferenciaEstacionAComentario').prop('disabled', true);
         $('#txtReferenciaEstacionBComentario').prop('disabled', true);
         $('#txtNivelRecepcionOperacionRadioAComentario').prop('disabled', true);
-
         $('#txtNivelRecepcionOperacionRadioBComentario').prop('disabled', true);
         $('#txtPingPTPRadioAComentario').prop('disabled', true);
         $('#txtPingPTPRadioBComentario').prop('disabled', true);
         $('#txtConfiguracionGeneralEnlaceEstacionAComentario').prop('disabled', true);
         $('#txtConfiguracionGeneralEnlaceEstacionBComentario').prop('disabled', true);
-        $('##txtConfiguracionVLANEstacionAComentario').prop('disabled', true);
+        $('#txtConfiguracionVLANEstacionAComentario').prop('disabled', true);
         $('#txtConfiguracionVLANEstacionBComentario').prop('disabled', true);
         $('#txtConfiguracionRadioEstacionA01Comentario').prop('disabled', true);
         $('#txtConfiguracionRadioEstacionA02Comentario').prop('disabled', true);

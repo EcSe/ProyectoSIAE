@@ -35,12 +35,14 @@ namespace BusinessLogic
 
                 MemoryStream EPMP1000 = new MemoryStream(imageBuffer);
 
-                String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
-
+               // String usuarioWindows = Environment.UserName;
+                //  String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\"+ IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
                 ExcelToolsBL.UpdateCell(excelGenerado, "Selección de Frecuencia", codNodo, 12, "E");
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "Selección de Frecuencia", EPMP1000, "", 18, 3, 525, 297);
+
+                
             }
             catch (Exception ex)
             {
@@ -2792,6 +2794,9 @@ namespace BusinessLogic
                 baseDatosDA = null;
             }
         }
+
+        public void ActaInstalacionPTPLicenciado(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
+        { }
     }
 }
 

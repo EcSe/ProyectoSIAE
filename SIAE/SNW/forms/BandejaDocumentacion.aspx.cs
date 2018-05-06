@@ -9,6 +9,8 @@ using BusinessLogic;
 using System.Web.UI.HtmlControls;
 
 using System.Windows.Forms;
+using System.Net;
+using System.IO;
 
 namespace SNW.forms
 {
@@ -134,12 +136,18 @@ namespace SNW.forms
                             rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloSectorial.xlsx");
 
                             rd.ActaInstalacionAceptacionProtocoloSectorial(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            
                             break;
 
                         case "000003":
                             rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
 
                             rd.PruebaInterferencia(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                            //String usuarioWindows = Environment.UserName;
+                            //WebClient cliente = new WebClient();
+                            //cliente.DownloadFile("http://localhost/SIAE_ARCHIVOS/TEMPORAL", "C:\\Users\\" + usuarioWindows + "\\Desktop\\"+documento.Tarea.NodoIIBBA.IdNodo + " " + documento.Documento.ValorCadena1 + " " + documento.Tarea.IdTarea + ".xlsx");
+
+
                             break;
                         case "000004":
                             rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPMP.xlsx");

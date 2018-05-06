@@ -7015,8 +7015,8 @@ if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
         $('#txtNombreCompletoRepresentanteIIBBComentario').prop('disabled', true);
         $('#txtDocumentoIdentidadRepresentanteIIBBComentario').prop('disabled', true);
         $('#txtCelularContactoRepresentanteIIBBComentario').prop('disabled', true);
-        $('##txtCargoRepresentanteIIBBComentario').prop('disabled', true);
-        $('##txtEmailRepresentanteIIBBComentario').prop('disabled', true);
+        $('#txtCargoRepresentanteIIBBComentario').prop('disabled', true);
+        $('#txtEmailRepresentanteIIBBComentario').prop('disabled', true);
         $('#txtNombreCompletoOperadorComentario').prop('disabled', true);
         $('#txtDocumentoIdentidadOperadorComentario').prop('disabled', true);
         $('#txtCargoOperadorComentario').prop('disabled', true);

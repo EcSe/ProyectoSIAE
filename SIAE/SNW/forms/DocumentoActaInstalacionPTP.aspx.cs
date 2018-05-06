@@ -717,13 +717,16 @@ namespace SNW.forms
                     Session["Documento"] = Documento;
                     #endregion
 
+                    #region Asignacion Perfil
+                    hfIdPerfil.Value = Usuario.Perfil.IdValor;
+                    #endregion
+
                     #region Asignamos el metodo
                     Session["metodo"] = "I";//Insert
                     #endregion
 
-                    #region Asignacion Perfil
-                    hfIdPerfil.Value = Usuario.Perfil.IdValor;
-                    #endregion
+  
+
                     #endregion
 
                     #region Verificamos si existe la documentacion
@@ -972,17 +975,17 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                            chkEquipamientosB,
                             hfEquipamientosBComentario);
-                        List<DocumentoEquipamientoBE> lstDocumentoEquipamientoB2 = new List<DocumentoEquipamientoBE>();
-                        lstDocumentoEquipamientoB2 = (List<DocumentoEquipamientoBE>)Session["EquipamientosB"];
+                        //List<DocumentoEquipamientoBE> lstDocumentoEquipamientoB2 = new List<DocumentoEquipamientoBE>();
+                        //lstDocumentoEquipamientoB2 = (List<DocumentoEquipamientoBE>)Session["EquipamientosB"];
 
-                        foreach (GridViewRow item in gvEquipamientosB.Rows)
-                        {
-                            String strCodigoEquipamiento = gvEquipamientosB.DataKeys[item.RowIndex]["Equipamiento_IdValor"].ToString();
-                            TextBox txtSerieEquipamiento = (TextBox)item.FindControl("txtSerieEquipamientoB");
-                            lstDocumentoEquipamientoB2.Where(w => w.Equipamiento.IdValor == strCodigoEquipamiento).ToList().ForEach(s => s.SerieEquipamiento = txtSerieEquipamiento.Text.ToUpper());
-                        }
+                        //foreach (GridViewRow item in gvEquipamientosB.Rows)
+                        //{
+                        //    String strCodigoEquipamiento = gvEquipamientosB.DataKeys[item.RowIndex]["Equipamiento_IdValor"].ToString();
+                        //    TextBox txtSerieEquipamiento = (TextBox)item.FindControl("txtSerieEquipamientoB");
+                        //    lstDocumentoEquipamientoB2.Where(w => w.Equipamiento.IdValor == strCodigoEquipamiento).ToList().ForEach(s => s.SerieEquipamiento = txtSerieEquipamiento.Text.ToUpper());
+                        //}
                         //Insertar al final de la lista
-                        Documento.Equipamientos.InsertRange(Documento.Equipamientos.Count(), lstDocumentoEquipamientoB2);
+                        //Documento.Equipamientos.InsertRange(Documento.Equipamientos.Count(), lstDocumentoEquipamientoB2);
                         #endregion
 
                         #region Materiales
@@ -1471,7 +1474,7 @@ namespace SNW.forms
                         #endregion
 
                         #region Foto 17: Panorámica del Rack
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000153").Select(dd => dd).First();
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000156").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                            chkPanoramicaRackEstacionA,
                             hfPanoramicaRackEstacionAComentario, null, null,
