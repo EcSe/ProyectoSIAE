@@ -78,6 +78,30 @@ namespace SNW.forms
 
                     #endregion
 
+                    #region Materiales
+
+                    #region Equipamiento
+                    List<DocumentoEquipamientoBE> lstDocumentoEquipamiento = new List<DocumentoEquipamientoBE>();
+
+                    DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
+                    DocumentoEquipamiento.Documento = Documento;
+                    lstDocumentoEquipamiento = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
+                    //Session["EquipamientosA"] = lstDocumentoEquipamientoA;
+
+                    #endregion
+
+                    #region # Serie Switch
+
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
+                            "OS6450-BP-D", 1,
+                            txtSerieSwitch);
+
+                    #endregion
+
+                    #endregion
+
+
+
                     #region Guardamos el documento
                     Session["Documento"] = Documento;
                     #endregion
@@ -184,11 +208,11 @@ namespace SNW.forms
                         #region Materiales
 
                         #region # Serie Switch
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000082").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieSwitch,
-                            hfSerieSwitchComentario, null,
-                            txtSerieSwitch, null, null,
-                            Type.GetType("System.String"));
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000082").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieSwitch,
+                        //    hfSerieSwitchComentario, null,
+                        //    txtSerieSwitch, null, null,
+                        //    Type.GetType("System.String"));
                         #endregion
 
                         #endregion
@@ -287,15 +311,15 @@ namespace SNW.forms
                     Type.GetType("System.Byte[]"));
                 #endregion
 
-                #endregion                
+                #endregion
 
                 #region Materiales
 
                 #region # Serie Switch
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000082", chkSerieSwitch, hfSerieSwitchComentario,
-                    null, txtSerieSwitch, null, null,
-                    Type.GetType("System.String"));
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000082", chkSerieSwitch, hfSerieSwitchComentario,
+                //    null, txtSerieSwitch, null, null,
+                //    Type.GetType("System.String"));
                 #endregion
 
                 #endregion

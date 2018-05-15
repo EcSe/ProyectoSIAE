@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using BusinessEntity;
 using BusinessLogic;
 
+
+
 namespace SNW.forms
 {
     public partial class DocumentoActaInstalacionAceptacionProtocoloIIBB : System.Web.UI.Page
@@ -817,50 +819,16 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                            chkMedicionEnlacePropagacion,
                             hfMedicionEnlacePropagacionComentario);
-                        //List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacion2 = new List<DocumentoMedicionEnlacePropagacionBE>();
-                        lstMedicionEnlacePropagacion = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacion"];
 
-                        foreach (GridViewRow item in gvMedicionEnlacePropagacion.Rows)
-                        {
-                            String strIdNodo = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoA_IdNodo"].ToString();
-                            String strIdIIBB = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoIIBBB_IdNodo"].ToString();
-                            TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
-                            TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
-                            TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
-                            TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
-                            TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
+                        DocumentoMedicionEnlacePropagacionBE DocumentoMedicionEnlacePropagacionB = new DocumentoMedicionEnlacePropagacionBE();
+                        DocumentoMedicionEnlacePropagacionB.Documento = Documento;
+                        DocumentoMedicionEnlacePropagacionB.NodoA.IdNodo = Tarea.NodoB.IdNodo;
+                        lstMedicionEnlacePropagacion = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacionB);
 
-                            Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
-                            Int32 intTiempoPromedio;
-                            if (txtRSSLocal.Text.Equals(""))
-                                dblRSSLocal = 0;
-                            else
-                                dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
-                            if (txtRSSRemoto.Text.Equals(""))
-                                dblRSSRemoto = 0;
-                            else
-                                dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
-                            if (txtTiempoPromedio.Text.Equals(""))
-                                intTiempoPromedio = 0;
-                            else
-                                intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
-                            if (txtCapacidadSubida.Text.Equals(""))
-                                dblCapacidadSubida = 0;
-                            else
-                                dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
-                            if (txtCapacidadBajada.Text.Equals(""))
-                                dblCapacidadBajada = 0;
-                            else
-                                dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
-                            lstMedicionEnlacePropagacion.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
-                            {
-                                s.RSSLocal = dblRSSLocal;
-                                s.RSSRemoto = dblRSSRemoto;
-                                s.TiempoPromedio = intTiempoPromedio;
-                                s.CapidadSubida = dblCapacidadSubida;
-                                s.CapidadBajada = dblCapacidadBajada;
-                            });
-                        }
+                        Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
+
+                        gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
+                        gvMedicionEnlacePropagacion.DataBind();
 
                         Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
                         #endregion
@@ -1221,21 +1189,14 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                             chkMateriales,
                             hfMaterialesComentario);
-                        //List<DocumentoMaterialBE> lstDocumentoMaterial2 = new List<DocumentoMaterialBE>();
-                        lstDocumentoMaterial = (List<DocumentoMaterialBE>)Session["Materiales"];
 
-                        foreach (GridViewRow item in gvMateriales.Rows)
-                        {
-                            //String strCodigoMaterial = item.Cells[2].Text;
-                            String strCodigoMaterial = gvMateriales.DataKeys[item.RowIndex]["Material_IdValor"].ToString();
-                            TextBox txtCantidad = (TextBox)item.FindControl("txtCantidad");
-                            Int32 intCantidad;
-                            if (txtCantidad.Text.Equals(""))
-                                intCantidad = 0;
-                            else
-                                intCantidad = Convert.ToInt32(txtCantidad.Text);
-                            lstDocumentoMaterial.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = intCantidad);
-                        }
+                        DocumentoMaterialBE DocumentoMaterialB = new DocumentoMaterialBE();
+                        DocumentoMaterialB.Documento = Documento;
+                        lstDocumentoMaterial = DocumentoMaterialBL.ListarDocumentoMaterial(DocumentoMaterialB);
+                        Session["Materiales"] = lstDocumentoMaterial;
+
+                        gvMateriales.DataSource = lstDocumentoMaterial;
+                        gvMateriales.DataBind();
 
                         Documento.Materiales = lstDocumentoMaterial;
                         #endregion

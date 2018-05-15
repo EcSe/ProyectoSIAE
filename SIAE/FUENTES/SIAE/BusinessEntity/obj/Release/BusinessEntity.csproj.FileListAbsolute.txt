@@ -1,5 +1,0 @@
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessEntity\bin\Release\BusinessEntity.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessEntity\bin\Release\BusinessEntity.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessEntity\obj\Release\BusinessEntity.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessEntity\obj\Release\BusinessEntity.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\BusinessEntity\obj\Release\BusinessEntity.csprojResolveAssemblyReference.cache

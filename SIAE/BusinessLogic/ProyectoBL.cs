@@ -16,8 +16,8 @@ namespace BusinessLogic
 {
     public class ProyectoBL
     {
-        public static void InsertarProyectoProceso(HiddenField hfArchivo,DropDownList ddlMetodo, 
-            HtmlAnchor lnkLog,UsuarioBE UsuarioCreacion)
+        public static void InsertarProyectoProceso(HiddenField hfArchivo, DropDownList ddlMetodo,
+            HtmlAnchor lnkLog, UsuarioBE UsuarioCreacion)
         {
             DBBaseDatos baseDatosDA = new DBBaseDatos();
             baseDatosDA.Configurar();
@@ -70,17 +70,17 @@ namespace BusinessLogic
                 baseDatosDA.ComenzarTransaccion();
 
                 #region Eliminamos toda la configuración
-                //NodoBL.EliminarFisicoNodoProceso(Nodo, baseDatosDA);
-                //InstitucionBeneficiariaBL.EliminarFisicoInstitucionBeneficiariaProceso(InstitucionBeneficiaria, baseDatosDA);
-                //TareaBL.EliminarFisicoTareaProceso(Tarea, baseDatosDA);
-                //PMPBL.EliminarFisicoPMPProceso(PMP, baseDatosDA);
-                //IPPlanningPMPBL.EliminarFisicoIPPlanningPMPProceso(IPPlanningPMP, baseDatosDA);
-                //PTPBL.EliminarFisicoPTPProceso(PTP, baseDatosDA);
-                //IPPlanningPTPBL.EliminarFisicoIPPlanningPTPProceso(IPPlanningPTP, baseDatosDA);
+                NodoBL.EliminarFisicoNodoProceso(Nodo, baseDatosDA);
+                InstitucionBeneficiariaBL.EliminarFisicoInstitucionBeneficiariaProceso(InstitucionBeneficiaria, baseDatosDA);
+                TareaBL.EliminarFisicoTareaProceso(Tarea, baseDatosDA);
+                PMPBL.EliminarFisicoPMPProceso(PMP, baseDatosDA);
+                IPPlanningPMPBL.EliminarFisicoIPPlanningPMPProceso(IPPlanningPMP, baseDatosDA);
+                PTPBL.EliminarFisicoPTPProceso(PTP, baseDatosDA);
+                IPPlanningPTPBL.EliminarFisicoIPPlanningPTPProceso(IPPlanningPTP, baseDatosDA);
                 KitSIAEBL.EliminarFisicoKitSIAEProceso(KitSIAE, baseDatosDA);
                 DocumentoEquipamientoBL.EliminarFisicoDocumentoEquipamientoProceso(DocumentoEquipamiento, baseDatosDA);
-                //DocumentoIPBL.EliminarFisicoDocumentoIPProceso(DocumentoIP, baseDatosDA);
-                //DocumentoIPEquipamientoBL.EliminarFisicoDocumentoIPEquipamientoProceso(DocumentoIPEquipamiento, baseDatosDA);
+                DocumentoIPBL.EliminarFisicoDocumentoIPProceso(DocumentoIP, baseDatosDA);
+                DocumentoIPEquipamientoBL.EliminarFisicoDocumentoIPEquipamientoProceso(DocumentoIPEquipamiento, baseDatosDA);
                 #endregion
 
                 #region Insertamos toda la configuracion
@@ -1837,6 +1837,222 @@ namespace BusinessLogic
                     if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
                     {
                         file.WriteLine("No existe la tabla EQUIPAMIENTO DELTRON");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja KIT CDTEL APURIMAC
+                intFila = 2;
+                file.WriteLine("");
+                file.WriteLine("");
+                file.WriteLine("KIT CDTEL APURIMAC");
+                file.WriteLine("------------------");
+                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [KIT CDTEL APURIMAC$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Object objValor = null;
+                            blnErrorDato = false;
+                            blnErrorCampo = false;
+                            blnErrorDatoTemp = false;
+                            blnErrorCampoTemp = false;
+
+                            #region Validamos los campos de DocumentoEquipamiento
+                            DocumentoEquipamiento = new DocumentoEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "NODO DESTINO", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO GILAT", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.Equipamiento.IdValor = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO DE KIT DE REFERECIA", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.KitSIAE.CodigoGilat = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "S/N", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.SerieEquipamiento = Convert.ToString(objValor);
+
+                            //objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO PROVEEDOR", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            //if (blnErrorDatoTemp)
+                            //    blnErrorDato = blnErrorDatoTemp;
+                            //if (blnErrorCampoTemp)
+                            //    blnErrorCampo = blnErrorCampoTemp;
+                            //if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                            //    DocumentoEquipamiento.Equipamiento.IdValor = Convert.ToString(objValor);
+
+                            DocumentoEquipamiento.IdEmpresa = "AP";//APURIMAC
+
+                            #endregion
+
+                            if (blnErrorCampo)
+                                break;
+
+                            #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                            if (!blnErrorCampo && !blnErrorDato)
+                            {
+                                try
+                                {
+                                    if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                    {
+                                        DocumentoEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                        DocumentoEquipamientoBL.InsertarDocumentoEquipamientoProceso(DocumentoEquipamiento, baseDatosDA);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    blnErrorDato = true;
+                                    file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                }
+                            }
+                            #endregion
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla KIT CDTEL APURIMAC no tiene registros.");
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla KIT CDTEL APURIMAC");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja CDTEL HCVA - AYA
+                intFila = 2;
+                file.WriteLine("");
+                file.WriteLine("");
+                file.WriteLine("CDTEL HCVA - AYA");
+                file.WriteLine("----------------");
+                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [CDTEL HCVA - AYA$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Object objValor = null;
+                            blnErrorDato = false;
+                            blnErrorCampo = false;
+                            blnErrorDatoTemp = false;
+                            blnErrorCampoTemp = false;
+
+                            #region Validamos los campos de DocumentoEquipamiento
+                            DocumentoEquipamiento = new DocumentoEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "NODO DESTINO", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO GILAT", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.Equipamiento.IdValor = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO DE KIT DE REFERECIA", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.KitSIAE.CodigoGilat = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "S/N", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.SerieEquipamiento = Convert.ToString(objValor);
+
+                            DocumentoEquipamiento.IdEmpresa = "HA";//HUANCAVELICA Y AYACUCHO
+
+                            #endregion
+
+                            if (blnErrorCampo)
+                                break;
+
+                            #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                            if (!blnErrorCampo && !blnErrorDato)
+                            {
+                                try
+                                {
+                                    if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                    {
+                                        DocumentoEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                        DocumentoEquipamientoBL.InsertarDocumentoEquipamientoProceso(DocumentoEquipamiento, baseDatosDA);
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    blnErrorDato = true;
+                                    file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                }
+                            }
+                            #endregion
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla CDTEL HCVA - AYA no tiene registros.");
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla CDTEL HCVA - AYA");
                     }
                     else
                     {

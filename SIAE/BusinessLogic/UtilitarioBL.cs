@@ -307,17 +307,51 @@ namespace BusinessLogic
         }
 
         public static void AsignarEntidadDetalleImagen(EntidadDetalleBE EntidadDetalle,
-            String strIdEntidad,String strIdValor,HtmlImage imgImagen)
+            String strIdEntidad,String strIdValor,HtmlImage imgImagen, String strRutaFisicaArchivo = null,
+            String strRutaVirtualArchivo = null)
         {
             EntidadDetalle = new EntidadDetalleBE();
+            EntidadDetalleBE entidadDetalleBE;
             EntidadDetalle.Entidad.IdEntidad = strIdEntidad;
             EntidadDetalle.IdValor = strIdValor;
             EntidadDetalle = EntidadDetalleBL.ListarEntidadDetalle(EntidadDetalle)[0];
+
+            #region Creamos la imagen en ruta
+
+            #region Ruta Fisica Temporal
+            if (strRutaFisicaArchivo == null || strRutaFisicaArchivo.Equals(""))
+            {
+                entidadDetalleBE = new EntidadDetalleBE();
+                entidadDetalleBE = new EntidadDetalleBE();
+                entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                entidadDetalleBE.IdValor = "RUTA_TEMP";
+                entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                strRutaFisicaArchivo = entidadDetalleBE.ValorCadena1;
+            }
+            #endregion
+
+            String strArchivo = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + EntidadDetalle.IdValor + ".png";
+            File.WriteAllBytes(strRutaFisicaArchivo + "\\" + strArchivo, EntidadDetalle.ValorBinario1); // Requires System.IO
+            #endregion
+
+            #region Ruta Virtual Temporal
+            if (strRutaVirtualArchivo == null || strRutaVirtualArchivo.Equals(""))
+            {
+                entidadDetalleBE = new EntidadDetalleBE();
+                entidadDetalleBE = new EntidadDetalleBE();
+                entidadDetalleBE.Entidad.IdEntidad = "CONF";
+                entidadDetalleBE.IdValor = "RUTA_VIRT_TEMP";
+                entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
+                strRutaVirtualArchivo = entidadDetalleBE.ValorCadena1;
+            }
+            #endregion
+
             imgImagen.Src = "data:image/png;base64," + Convert.ToBase64String(EntidadDetalle.ValorBinario1);
+            imgImagen.Src = strRutaVirtualArchivo + "/" + strArchivo;
         }
 
         public static void AsignarSerieLabel(List<DocumentoEquipamientoBE> lstDocumentoEquipamiento,
-            String strIdEquipamientos, Int32 intItem, HtmlGenericControl lblLabel)
+            String strIdEquipamientos, Int32 intItem, Control control)
         {
             String[] lstIdEquipamiento = strIdEquipamientos.Split(';');
             foreach (String idEquipamiento in lstIdEquipamiento)
@@ -325,16 +359,23 @@ namespace BusinessLogic
                 //if (lstDocumentoEquipamiento.Where(de => de.Equipamiento.IdValor == idEquipamiento && de.Item == (intItem.Equals(0)?de.Item:intItem)).Select(de => de).Count().Equals(1))
                 if (lstDocumentoEquipamiento.Where(de => de.Equipamiento.IdValor == idEquipamiento && de.Item == intItem).Select(de => de).Count().Equals(1))
                 {
-                    lblLabel.InnerText = lblLabel.InnerText +
-                        //" [" + lstDocumentoEquipamiento.Where(de => de.Equipamiento.IdValor == idEquipamiento && de.Item == (intItem.Equals(0) ? de.Item : intItem)).Select(de => de).First().SerieEquipamiento +
-                        " [" + lstDocumentoEquipamiento.Where(de => de.Equipamiento.IdValor == idEquipamiento && de.Item == intItem).Select(de => de).First().SerieEquipamiento +
-                        "]";
+                    if (control.GetType().Name.Equals("HtmlGenericControl"))
+                    {
+                        HtmlGenericControl hgcControl = (HtmlGenericControl)control;
+                        hgcControl.InnerText = hgcControl.InnerText +
+                            //" [" + lstDocumentoEquipamiento.Where(de => de.Equipamiento.IdValor == idEquipamiento && de.Item == (intItem.Equals(0) ? de.Item : intItem)).Select(de => de).First().SerieEquipamiento +
+                            " [" + lstDocumentoEquipamiento.Where(de => de.Equipamiento.IdValor == idEquipamiento && de.Item == intItem).Select(de => de).First().SerieEquipamiento +
+                            "]";
+                    }
+                    else if (control.GetType().Name.Equals("TextBox"))
+                    {
+                        TextBox txtControl = (TextBox)control;
+                        txtControl.Text = lstDocumentoEquipamiento.Where(de => de.Equipamiento.IdValor == idEquipamiento && de.Item == intItem).Select(de => de).First().SerieEquipamiento;
+                    }
                     return;
                 }
             }
         }
-
-
 
     }
 }

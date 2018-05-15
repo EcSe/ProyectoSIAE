@@ -65,7 +65,7 @@ namespace SNW.forms
 
                     #region Antena s/n
                     UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
-                        "UBQBGD00S;UBQCGD00S;UBQFGD00S;UBUBGG00S;UBUCGG00S", 1,
+                        "ICA0065;ICA0093;ICA0063", 1,
                         lblAntenaSN);
                     #endregion
 
@@ -82,7 +82,7 @@ namespace SNW.forms
 
                     #region ODUs s/n
                     UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
-                        "GB9612;GB9613;GB9614;GB9615;GB9616;GB9617;GB9726;GB9727", 1,
+                        "ICA0064", 1,
                         lblODUsSN);
                     #endregion
 
@@ -93,7 +93,7 @@ namespace SNW.forms
 
                     #region POE s/n
                     UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
-                        "D60077;D60078", 1,
+                        "ICD001578", 1,
                         lblPOESN);
                     #endregion
 

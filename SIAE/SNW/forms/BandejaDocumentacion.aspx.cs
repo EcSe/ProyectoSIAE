@@ -11,6 +11,7 @@ using System.Web.UI.HtmlControls;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace SNW.forms
 {
@@ -111,109 +112,112 @@ namespace SNW.forms
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
 
+
+            LinkButton btnExportar = (LinkButton)sender;
+            GridViewRow gvrTarea = (GridViewRow)btnExportar.NamingContainer;
+            DocumentoBE documento = new DocumentoBE();
+
+
+            EntidadDetalleBE rutaVirtualTemporalBE = new EntidadDetalleBE();
+            rutaVirtualTemporalBE.Entidad.IdEntidad = "CONF";
+            rutaVirtualTemporalBE.IdValor = "RUTA_VIRT_TEMP";
+            rutaVirtualTemporalBE = EntidadDetalleBL.ListarEntidadDetalle(rutaVirtualTemporalBE)[0];
+
+            documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Tarea_IdTarea"].ToString();
+            documento.Documento.IdValor = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_IdValor"].ToString();
+            documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_ValorCadena1"].ToString();
+            // documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();  NodoIIBBA_IdNodo
+            //documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();
+            documento.Tarea.NodoIIBBA.IdNodo = gvTareas.DataKeys[gvrTarea.RowIndex]["NodoIIBBA_IdNodo"].ToString();
+
+            ReporteDocumentosBL rd = new ReporteDocumentosBL();
+
+             String rutaPlantilla = "";
+
+          
+
+            switch (documento.Documento.IdValor)
             {
-                LinkButton btnExportar = (LinkButton)sender;
-                GridViewRow gvrTarea = (GridViewRow)btnExportar.NamingContainer;
-                DocumentoBE documento = new DocumentoBE();
+               
 
-                documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Tarea_IdTarea"].ToString();
-                documento.Documento.IdValor = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_IdValor"].ToString();
-                documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_ValorCadena1"].ToString();
-                // documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();  NodoIIBBA_IdNodo
-                //documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();
-                documento.Tarea.NodoIIBBA.IdNodo = gvTareas.DataKeys[gvrTarea.RowIndex]["NodoIIBBA_IdNodo"].ToString();
+                case "000001":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloSectorial.xlsx");
 
-                ReporteDocumentosBL rd = new ReporteDocumentosBL();
-                #region CodigoBueno
-                try
-                {
-                    String rutaPlantilla = "";
+                    rd.ActaInstalacionAceptacionProtocoloSectorial(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
 
-                    switch (documento.Documento.IdValor)
-                    {
-                        case "000001":
-                            rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloSectorial.xlsx");
+                case "000003":
+                    rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
 
-                            rd.ActaInstalacionAceptacionProtocoloSectorial(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            
-                            break;
+                    rd.PruebaInterferencia(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
-                        case "000003":
-                            rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
+                    break;
 
-                            rd.PruebaInterferencia(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            //String usuarioWindows = Environment.UserName;
-                            //WebClient cliente = new WebClient();
-                            //cliente.DownloadFile("http://localhost/SIAE_ARCHIVOS/TEMPORAL", "C:\\Users\\" + usuarioWindows + "\\Desktop\\"+documento.Tarea.NodoIIBBA.IdNodo + " " + documento.Documento.ValorCadena1 + " " + documento.Tarea.IdTarea + ".xlsx");
+                case "000004":
+                    rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPMP.xlsx");
+                    rd.Anexo2InventarioPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
+                case "000005":
+                    rutaPlantilla = Server.MapPath("~/Reportes/EstudioCampo.xlsx");
+                    rd.EstudioDeCampo(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
-                            break;
-                        case "000004":
-                            rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPMP.xlsx");
-                            rd.Anexo2InventarioPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000005":
-                            rutaPlantilla = Server.MapPath("~/Reportes/EstudioCampo.xlsx");
-                            rd.EstudioDeCampo(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000007":
-                            rutaPlantilla = Server.MapPath("~/Reportes/ProtocoloInstalacion.xlsx");
-                            rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000010":
-                            rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPTP.xlsx");
-                            rd.PruebaServicioDITGPTP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000011":
-                            rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPMP.xlsx");
-                            rd.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000012":
-                            rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPTP.xlsx");
-                            rd.Anexo2InventarioPTP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000013":
-                            rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadAcceso.xlsx");
-                            rd.ActaSeguridadAcceso(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000014":
-                            rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadDistribucion.xlsx");
-                            rd.ActaSeguridadDistribucion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000015":
-                            rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_A.xlsx");
-                            rd.ActaInstalacionAceptacionProtocoloIIBB_A(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000016":
-                            rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_B.xlsx");
-                            rd.ActaInstalacionAceptacionProtocoloIIBB_B(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
-                        case "000017":
-                            rutaPlantilla =Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoA.xlsx");
-                            rd.InstalacionPozoTierra(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-                            break;
+                    break;
+                case "000007":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ProtocoloInstalacion.xlsx");
+                    rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
+                case "000010":
+                    rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPTP.xlsx");
+                    rd.PruebaServicioDITGPTP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
+                case "000011":
+                    rutaPlantilla = Server.MapPath("~/Reportes/PruebasDeServicioDITGPMP.xlsx");
+                    rd.PruebaServicioDITGPMP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
-                    }
+                    break;
+                case "000012":
+                    rutaPlantilla = Server.MapPath("~/Reportes/Anexo2InventarioPTP.xlsx");
+                    rd.Anexo2InventarioPTP(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
+                case "000013":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadAcceso.xlsx");
+                    rd.ActaSeguridadAcceso(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
+                case "000014":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadDistribucion.xlsx");
+                    rd.ActaSeguridadDistribucion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
+                case "000015":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_A.xlsx");
+                    rd.ActaInstalacionAceptacionProtocoloIIBB_A(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
-                    MessageBox.Show("Reporte Exportado Correctamente");
+                    break;
+                case "000016":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_B.xlsx");
+                    rd.ActaInstalacionAceptacionProtocoloIIBB_B(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
+                    break;
+                case "000017":
+                    rutaPlantilla = Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoA.xlsx");
+                    rd.InstalacionPozoTierra(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
+                    break;                 
 
-                }
-
-
-                #endregion
             }
+            String nombreDocumento = documento.Tarea.NodoIIBBA.IdNodo + " " + documento.Documento.ValorCadena1 + " " + documento.Tarea.IdTarea + ".xlsx";
+            nombreDocumento = nombreDocumento.Replace(" ", "%20");
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "impresion", "window.open('"+rutaVirtualTemporalBE.ValorCadena1+"/" + nombreDocumento+"');", true);
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(),"impresion", "window.open('http://localhost/SIAE_ARCHIVOS/TEMPORAL/AP-0092%20ANEXO%2001%20PRUEBAS%20DE%20INTERFERENCIA%20G002636.xlsx');",true);
+
+
+
         }
 
         protected void btnBuscarDocumentos_Click(object sender, EventArgs e)
@@ -271,6 +275,7 @@ namespace SNW.forms
 
             }
         }
+
 
     }
 }

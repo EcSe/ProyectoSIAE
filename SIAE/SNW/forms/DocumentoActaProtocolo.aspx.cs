@@ -741,6 +741,7 @@ namespace SNW.forms
                             null, null, Type.GetType("System.String"));
                         #endregion
 
+
                         #region # Serie Antena
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000052").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieNodoAntena,

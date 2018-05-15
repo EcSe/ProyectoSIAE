@@ -168,7 +168,7 @@ namespace BusinessLogic
             {
                 baseDatosDA.CrearComando("USP_DOCUMENTO_EQUIPAMIENTO_PROC", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "I", true);
-                baseDatosDA.AsignarParametroCadena("@PCH_EMPRESA_EQUIPAMIENTO", DocumentoEquipamiento.IdEmpresa, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_EMPRESA_EQUIPAMIENTO", DocumentoEquipamiento.IdEmpresa, true);
                 if (DocumentoEquipamiento.Documento.Tarea.IdTarea == null)
                     baseDatosDA.AsignarParametroNulo("@PCH_ID_TAREA", true);
                 else

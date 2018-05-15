@@ -1,5 +1,0 @@
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\bin\Debug\DataAccess.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\bin\Debug\DataAccess.pdb
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\obj\Debug\DataAccess.dll
-C:\Users\Carlos\Documents\Visual Studio 2015\Projects\SIAE\DataAccess\obj\Debug\DataAccess.pdb

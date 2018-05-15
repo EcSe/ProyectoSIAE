@@ -103,7 +103,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -183,7 +183,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -244,7 +244,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -354,7 +354,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
                 #region Agregando los datos 
@@ -579,7 +579,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
                 #region Agregando datos
@@ -753,7 +753,10 @@ namespace BusinessLogic
                 
 
                 #region Ingresando Strings
-                String FECHA = ds.Tables[0].Rows[0]["FECHA"].ToString();
+               
+                DateTime dtFecha = DateTime.Parse(ds.Tables[0].Rows[0]["FECHA"].ToString());
+                String FECHA = dtFecha.ToString("dd/MM/yyyy");
+
                 String HORA_INICIO = ds.Tables[0].Rows[0]["HORA_INICIO"].ToString();
                 String HORA_FIN = ds.Tables[0].Rows[0]["HORA_FIN"].ToString();
                 String TIPO_NODO = ds.Tables[0].Rows[0]["TIPO_NODO"].ToString();
@@ -785,7 +788,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -871,7 +874,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -1066,7 +1069,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -1531,7 +1534,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -2086,7 +2089,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -2580,7 +2583,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
                 #region Agregando datos
@@ -2763,7 +2766,7 @@ namespace BusinessLogic
                 #endregion
 
                 String usuarioWindows = Environment.UserName;
-                String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -2796,7 +2799,423 @@ namespace BusinessLogic
         }
 
         public void ActaInstalacionPTPLicenciado(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
-        { }
+        {
+            baseDatosDA.Configurar();
+            baseDatosDA.Conectar();
+
+            try
+            {
+                baseDatosDA.CrearComando("ACTA_INSTALACION_PTP_LIC", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA",IdTarea ,true);
+                DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                #region Valores String
+
+                #region Caratula
+
+                //NOMBRE LOCALIDAD
+                String NODO_A = ds.Tables[0].Rows[0]["NODO_A"].ToString();
+                String NODO_B = ds.Tables[0].Rows[0]["NODO_B"].ToString();
+                String NOMBRE_NODO_A = ds.Tables[0].Rows[0]["NOMBRE_NODO_A"].ToString();
+                String NOMBRE_NODO_B = ds.Tables[0].Rows[0]["NOMBRE_NODO_B"].ToString();
+                String TIPO_NODO_A = ds.Tables[0].Rows[0]["TIPO_NODO_A"].ToString();
+                String TIPO_NODO_B = ds.Tables[0].Rows[0]["TIPO_NODO_B"].ToString();
+                String FRECUENCIA = ds.Tables[0].Rows[0]["FRECUENCIA"].ToString();
+
+                DateTime dtFecha = DateTime.Parse(ds.Tables[0].Rows[0]["FECHA"].ToString());
+                String FECHA = dtFecha.ToString("dd/MM/yyyy");
+
+                #endregion
+
+                #region Configuracion y Mediciones
+
+                String DIREC_ESTACION_A = ds.Tables[0].Rows[0]["DIREC_ESTACION_A"].ToString();
+                String DIREC_ESTACION_B = ds.Tables[0].Rows[0]["DIREC_ESTACION_B"].ToString();
+                String DISTRITO_A = ds.Tables[0].Rows[0]["DISTRITO_A"].ToString();
+                String DISTRITO_B = ds.Tables[0].Rows[0]["DISTRITO_B"].ToString();
+                String PROVINCIA_A = ds.Tables[0].Rows[0]["PROVINCIA_A"].ToString();
+                String PROVINCIA_B = ds.Tables[0].Rows[0]["PROVINCIA_B"].ToString();
+                String DEPARTAMENTO_A = ds.Tables[0].Rows[0]["DEPARTAMENTO_A"].ToString();
+                String DEPARTAMENTO_B = ds.Tables[0].Rows[0]["DEPARTAMENTO_B"].ToString();
+                String LATITUD_A = ds.Tables[0].Rows[0]["LATITUD_A"].ToString();
+                String LATITUD_B = ds.Tables[0].Rows[0]["LATITUD_B"].ToString();
+                String LONGITUD_A = ds.Tables[0].Rows[0]["LONGITUD_A"].ToString();
+                String LONGITUD_B = ds.Tables[0].Rows[0]["LONGITUD_B"].ToString();
+                String ALTURAmsnm_A = ds.Tables[0].Rows[0]["ALTURAmsnm_A"].ToString();
+                String ALTURAmsnm_B = ds.Tables[0].Rows[0]["ALTURAmsnm_B"].ToString();
+                String REF_UBIC_EST_A = ds.Tables[0].Rows[0]["REF_UBIC_EST_A"].ToString();
+                String REF_UBIC_EST_B = ds.Tables[0].Rows[0]["REF_UBIC_EST_B"].ToString();
+                String ALTURA_TORRE_A = ds.Tables[0].Rows[0]["ALTURA_TORRE_A"].ToString();
+                String ALTURA_TORRE_B = ds.Tables[0].Rows[0]["ALTURA_TORRE_B"].ToString();
+                String DISTANCIA_A_B = ds.Tables[0].Rows[0]["DISTANCIA_A_B"].ToString();
+                String MODULACION = ds.Tables[0].Rows[0]["MODULACION"].ToString();
+                String POLARIZACION_A = ds.Tables[0].Rows[0]["POLARIZACION_A"].ToString();
+                String POLARIZACION_B = ds.Tables[0].Rows[0]["POLARIZACION_B"].ToString();
+                String AZIMUT_A = ds.Tables[0].Rows[0]["AZIMUT_A"].ToString();
+                String AZIMUT_B = ds.Tables[0].Rows[0]["AZIMUT_B"].ToString();
+                String IP_NODO_A = ds.Tables[0].Rows[0]["IP_NODO_A"].ToString();
+                String IP_NODO_B = ds.Tables[0].Rows[0]["IP_NODO_B"].ToString();
+                String DEFAULT_GATE_A = ds.Tables[0].Rows[0]["DEFAULT_GATE_A"].ToString();
+                String DEFAULT_GATE_B = ds.Tables[0].Rows[0]["DEFAULT_GATE_B"].ToString();
+                String POTENCIA_A = ds.Tables[0].Rows[0]["POTENCIA_A"].ToString();
+                String POTENCIA_B = ds.Tables[0].Rows[0]["POTENCIA_B"].ToString();
+                String MARGEN_DES_A = ds.Tables[0].Rows[0]["MARGEN_DES_A"].ToString();
+                String MARGEN_DES_B = ds.Tables[0].Rows[0]["MARGEN_DES_B"].ToString();
+                String NIVEL_UMBRAL_A_B = ds.Tables[0].Rows[0]["NIVEL_UMBRAL_A_B"].ToString();
+                String NIVEL_RECEP_RADIO_A = ds.Tables[0].Rows[0]["NIVEL_RECEP_RADIO_A"].ToString();
+                String NIVEL_RECEP_RADIO_B = ds.Tables[0].Rows[0]["NIVEL_RECEP_RADIO_B"].ToString();
+                String PING_PTP_RADIO_A = ds.Tables[0].Rows[0]["PING_PTP_RADIO_A"].ToString();
+                String PING_PTP_RADIO_B = ds.Tables[0].Rows[0]["PING_PTP_RADIO_B"].ToString();
+
+                byte[] CONF_GEN_ENL_EST_A = (byte[])ds.Tables[0].Rows[0]["CONF_GEN_ENL_EST_A"];
+                MemoryStream mCONF_GEN_ENL_EST_A = new MemoryStream(CONF_GEN_ENL_EST_A);
+                byte[] CONF_GEN_ENL_EST_B = (byte[])ds.Tables[0].Rows[0]["CONF_GEN_ENL_EST_B"];
+                MemoryStream mCONF_GEN_ENL_EST_B = new MemoryStream(CONF_GEN_ENL_EST_B);
+
+                //CONFIGURACION DE LOS LAN ESTACION A 3 FOTOS
+                //CONFIGURACION DE LOS LAN ESTACION B 3 FOTOS
+                //CONFIGURACION DE ETHERNET SWITCH
+                //CONFIGURACION DE ETHERNET SWTCH
+
+                byte[] CONF_IP_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["CONF_IP_ESTAC_A"];
+                MemoryStream mCONF_IP_ESTAC_A = new MemoryStream(CONF_IP_ESTAC_A);
+                byte[] CONF_IP_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["CONF_IP_ESTAC_B"];
+                MemoryStream mCONF_IP_ESTAC_B = new MemoryStream(CONF_IP_ESTAC_B);
+                #endregion
+
+                #region Longitud SFTP
+
+                String VALOR_B_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_B_ESTAC_A"].ToString();
+                String VALOR_C_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_C_ESTAC_A"].ToString();
+                String VALOR_D_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_D_ESTAC_A"].ToString();
+                String VALOR_E_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_E_ESTAC_A"].ToString();
+                String VALOR_B_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_B_ESTAC_B"].ToString();
+                String VALOR_C_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_C_ESTAC_B"].ToString();
+                String VALOR_D_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_D_ESTAC_B"].ToString();
+                String VALOR_E_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_E_ESTAC_B"].ToString();
+
+                #endregion
+
+                #region Asignaciones y Observaciones
+
+                String SWITCH_ROUTER_A = ds.Tables[0].Rows[0]["SWITCH_ROUTER_A"].ToString();
+                String SWITCH_ROUTER_B = ds.Tables[0].Rows[0]["SWITCH_ROUTER_B"].ToString();
+                String CAP_BREAKER_ASIG_EST_A = ds.Tables[0].Rows[0]["CAP_BREAKER_ASIG_EST_A"].ToString();
+                String VOLT_DC_ESTAC_A = ds.Tables[0].Rows[0]["VOLT_DC_ESTAC_A"].ToString();
+                String POS_BREAKER_ASIG_ESTAC_A = ds.Tables[0].Rows[0]["POS_BREAKER_ASIG_ESTAC_A"].ToString();
+                String POS_BARRA_ATERRA_ESTA_A = ds.Tables[0].Rows[0]["POS_BARRA_ATERRA_ESTA_A"].ToString();
+                String CAP_BREAKER_ASIG_EST_B = ds.Tables[0].Rows[0]["CAP_BREAKER_ASIG_EST_B"].ToString();
+                String VOLT_DC_ESTAC_B = ds.Tables[0].Rows[0]["VOLT_DC_ESTAC_B"].ToString();
+                String POS_BREAKER_ASIG_ESTAC_B = ds.Tables[0].Rows[0]["POS_BREAKER_ASIG_ESTAC_B"].ToString();
+                String POS_BARRA_ATERRA_ESTA_B = ds.Tables[0].Rows[0]["POS_BARRA_ATERRA_ESTA_B"].ToString();
+
+                #endregion
+
+                #region Calculo Propagacion
+
+                byte[] INGENIERIA = (byte[])ds.Tables[0].Rows[0]["INGENIERIA"];
+                MemoryStream mINGENIERIA = new MemoryStream(INGENIERIA);
+                byte[] PERFIL = (byte[])ds.Tables[0].Rows[0]["PERFIL"];
+                MemoryStream mPERFIL = new MemoryStream(PERFIL);
+
+                #endregion
+
+                #region Pruebas de Interferencia
+
+                byte[] PANT_RADIO_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["PANT_RADIO_ESTAC_A"];
+                MemoryStream mPANT_RADIO_ESTAC_A = new MemoryStream(PANT_RADIO_ESTAC_A);
+                byte[] PANT_RADIO_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["PANT_RADIO_ESTAC_B"];
+                MemoryStream mPANT_RADIO_ESTAC_B = new MemoryStream(PANT_RADIO_ESTAC_B);
+
+                #endregion
+
+                #region Serie Equipos Fotos
+
+                byte[] SERIE_ANT_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_ANT_ESTAC_A"];
+                MemoryStream mSERIE_ANT_ESTAC_A = new MemoryStream(SERIE_ANT_ESTAC_A);
+                byte[] SERIE_ODU_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_ODU_ESTAC_A"];
+                MemoryStream mSERIE_ODU_ESTAC_A = new MemoryStream(SERIE_ODU_ESTAC_A);
+                byte[] SERIE_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_A"];
+                MemoryStream mSERIE_POE_ESTAC_A = new MemoryStream(SERIE_POE_ESTAC_A);
+                byte[] SERIE_ANT_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ANT_ESTAC_B"];
+                MemoryStream mSERIE_ANT_ESTAC_B = new MemoryStream(SERIE_ANT_ESTAC_B);
+                byte[] SERIE_ODU_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ODU_ESTAC_B"];
+                MemoryStream mSERIE_ODU_ESTAC_B = new MemoryStream(SERIE_ODU_ESTAC_B);
+                byte[] SERIE_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_B"];
+                MemoryStream mSERIE_POE_ESTAC_B = new MemoryStream(SERIE_POE_ESTAC_B);
+
+                #endregion
+
+                #region Reporte Fotografico
+
+                byte[] FOTO1_PAN_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO1_PAN_ESTAC_A"];
+                MemoryStream mFOTO1_PAN_ESTAC_A = new MemoryStream(FOTO1_PAN_ESTAC_A);
+                byte[] FOTO2_POS_ANT_INST_TORRE_A = (byte[])ds.Tables[0].Rows[0]["FOTO2_POS_ANT_INST_TORRE_A"];
+                MemoryStream mFOTO2_POS_ANT_INST_TORRE_A = new MemoryStream(FOTO2_POS_ANT_INST_TORRE_A);
+                byte[] FOTO3_FOTO_ANTENA_PTP_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO3_FOTO_ANTENA_PTP_ESTAC_A"];
+                MemoryStream mFOTO3_FOTO_ANTENA_PTP_ESTAC_A = new MemoryStream(FOTO3_FOTO_ANTENA_PTP_ESTAC_A);
+                byte[] FOTO4_ETIQ_PUERTO_ANT_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO4_ETIQ_PUERTO_ANT_ESTAC_A"];
+                MemoryStream mFOTO4_ETIQ_PUERTO_ANT_ESTAC_A = new MemoryStream(FOTO4_ETIQ_PUERTO_ANT_ESTAC_A);
+                byte[] FOTO5_ENGRAS_PERNOS_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO5_ENGRAS_PERNOS_ESTAC_A"];
+                MemoryStream mFOTO5_ENGRAS_PERNOS_ESTAC_A = new MemoryStream(FOTO5_ENGRAS_PERNOS_ESTAC_A);
+                byte[] FOTO6_SILC_CONECT_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO6_SILC_CONECT_ESTAC_A"];
+                MemoryStream mFOTO6_SILC_CONECT_ESTAC_A = new MemoryStream(FOTO6_SILC_CONECT_ESTAC_A);
+                byte[] FOTO7_ATERRAM_ODU_TORRE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO7_ATERRAM_ODU_TORRE_ESTAC_A"];
+                MemoryStream mFOTO7_ATERRAM_ODU_TORRE_ESTAC_A = new MemoryStream(FOTO7_ATERRAM_ODU_TORRE_ESTAC_A);
+                byte[] FOTO8_RECORRI_SFTP_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO8_RECORRI_SFTP_ESTAC_A"];
+                MemoryStream mFOTO8_RECORRI_SFTP_ESTAC_A = new MemoryStream(FOTO8_RECORRI_SFTP_ESTAC_A);
+                //pendiente revision 
+
+                #endregion
+
+                #region Datos Generales Nodo A
+
+                String UBIGEO_A = ds.Tables[0].Rows[0]["UBIGEO_A"].ToString();
+               
+
+                #endregion
+
+                #endregion
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void ActaInstalacionPTPNoLicenciado(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
+        {
+            baseDatosDA.Configurar();
+            baseDatosDA.Conectar();
+
+            try
+            {
+                baseDatosDA.CrearComando("ACTA_INSTALACION_PTP_LIC", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                baseDatosDA.CrearComando("",CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA",IdTarea,true);
+                DataSet ds1 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                #region Valores String
+
+                #region Caratula
+
+                //NOMBRE LOCALIDAD QUE LOCALIDAD SE PONDRIA LA A O LA B
+                String NODO_A = ds.Tables[0].Rows[0]["NODO_A"].ToString();
+                String NODO_B = ds.Tables[0].Rows[0]["NODO_B"].ToString();
+                String NOMBRE_NODO_A = ds.Tables[0].Rows[0]["NOMBRE_NODO_A"].ToString();
+                String NOMBRE_NODO_B = ds.Tables[0].Rows[0]["NOMBRE_NODO_B"].ToString();
+                String TIPO_NODO_A = ds.Tables[0].Rows[0]["TIPO_NODO_A"].ToString();
+                String TIPO_NODO_B = ds.Tables[0].Rows[0]["TIPO_NODO_B"].ToString();
+                String FRECUENCIA = ds.Tables[0].Rows[0]["FRECUENCIA"].ToString();
+
+                DateTime dtFecha = DateTime.Parse(ds.Tables[0].Rows[0]["FECHA"].ToString());
+                String FECHA = dtFecha.ToString("dd/MM/yyyy");
+
+                #endregion
+
+                #region Configuracion y Mediciones
+
+                String DIREC_ESTACION_A = ds.Tables[0].Rows[0]["DIREC_ESTACION_A"].ToString();
+                String DIREC_ESTACION_B = ds.Tables[0].Rows[0]["DIREC_ESTACION_B"].ToString();
+                String DISTRITO_A = ds.Tables[0].Rows[0]["DISTRITO_A"].ToString();
+                String DISTRITO_B = ds.Tables[0].Rows[0]["DISTRITO_B"].ToString();
+                String PROVINCIA_A = ds.Tables[0].Rows[0]["PROVINCIA_A"].ToString();
+                String PROVINCIA_B = ds.Tables[0].Rows[0]["PROVINCIA_B"].ToString();
+                String DEPARTAMENTO_A = ds.Tables[0].Rows[0]["DEPARTAMENTO_A"].ToString();
+                String DEPARTAMENTO_B = ds.Tables[0].Rows[0]["DEPARTAMENTO_B"].ToString();
+                String LATITUD_A = ds.Tables[0].Rows[0]["LATITUD_A"].ToString();
+                String LATITUD_B = ds.Tables[0].Rows[0]["LATITUD_B"].ToString();
+                String LONGITUD_A = ds.Tables[0].Rows[0]["LONGITUD_A"].ToString();
+                String LONGITUD_B = ds.Tables[0].Rows[0]["LONGITUD_B"].ToString();
+                String ALTURAmsnm_A = ds.Tables[0].Rows[0]["ALTURAmsnm_A"].ToString();
+                String ALTURAmsnm_B = ds.Tables[0].Rows[0]["ALTURAmsnm_B"].ToString();
+                String REF_UBIC_EST_A = ds.Tables[0].Rows[0]["REF_UBIC_EST_A"].ToString();
+                String REF_UBIC_EST_B = ds.Tables[0].Rows[0]["REF_UBIC_EST_B"].ToString();
+                String ALTURA_TORRE_A = ds.Tables[0].Rows[0]["ALTURA_TORRE_A"].ToString();
+                String ALTURA_TORRE_B = ds.Tables[0].Rows[0]["ALTURA_TORRE_B"].ToString();
+                String DISTANCIA_A_B = ds.Tables[0].Rows[0]["DISTANCIA_A_B"].ToString();
+                String MODULACION = ds.Tables[0].Rows[0]["MODULACION"].ToString();
+                String POLARIZACION_A = ds.Tables[0].Rows[0]["POLARIZACION_A"].ToString();
+                String POLARIZACION_B = ds.Tables[0].Rows[0]["POLARIZACION_B"].ToString();
+                String AZIMUT_A = ds.Tables[0].Rows[0]["AZIMUT_A"].ToString();
+                String AZIMUT_B = ds.Tables[0].Rows[0]["AZIMUT_B"].ToString();
+                String IP_NODO_A = ds.Tables[0].Rows[0]["IP_NODO_A"].ToString();
+                String IP_NODO_B = ds.Tables[0].Rows[0]["IP_NODO_B"].ToString();
+                String DEFAULT_GATE_A = ds.Tables[0].Rows[0]["DEFAULT_GATE_A"].ToString();
+                String DEFAULT_GATE_B = ds.Tables[0].Rows[0]["DEFAULT_GATE_B"].ToString();
+                String POTENCIA_A = ds.Tables[0].Rows[0]["POTENCIA_A"].ToString();
+                String POTENCIA_B = ds.Tables[0].Rows[0]["POTENCIA_B"].ToString();
+                String MARGEN_DES_A = ds.Tables[0].Rows[0]["MARGEN_DES_A"].ToString();
+                String MARGEN_DES_B = ds.Tables[0].Rows[0]["MARGEN_DES_B"].ToString();
+                String NIVEL_UMBRAL_A_B = ds.Tables[0].Rows[0]["NIVEL_UMBRAL_A_B"].ToString();
+                String NIVEL_RECEP_RADIO_A = ds.Tables[0].Rows[0]["NIVEL_RECEP_RADIO_A"].ToString();
+                String NIVEL_RECEP_RADIO_B = ds.Tables[0].Rows[0]["NIVEL_RECEP_RADIO_B"].ToString();
+                String PING_PTP_RADIO_A = ds.Tables[0].Rows[0]["PING_PTP_RADIO_A"].ToString();
+                String PING_PTP_RADIO_B = ds.Tables[0].Rows[0]["PING_PTP_RADIO_B"].ToString();
+
+                byte[] CONF_GEN_ENL_EST_A = (byte[])ds.Tables[0].Rows[0]["CONF_GEN_ENL_EST_A"];
+                MemoryStream mCONF_GEN_ENL_EST_A = new MemoryStream(CONF_GEN_ENL_EST_A);
+                byte[] CONF_GEN_ENL_EST_B = (byte[])ds.Tables[0].Rows[0]["CONF_GEN_ENL_EST_B"];
+                MemoryStream mCONF_GEN_ENL_EST_B = new MemoryStream(CONF_GEN_ENL_EST_B);
+                byte[] CONF_VLAN_ESTA_A = (byte[])ds.Tables[0].Rows[0]["CONF_VLAN_ESTA_A"];
+                MemoryStream mCONF_VLAN_ESTA_A = new MemoryStream(CONF_VLAN_ESTA_A);
+                byte[] CONF_RADIO_ESTAC_A_1 = (byte[])ds.Tables[0].Rows[0]["CONF_RADIO_ESTAC_A_1"];
+                MemoryStream mCONF_RADIO_ESTAC_A_1 = new MemoryStream(CONF_RADIO_ESTAC_A_1);
+                byte[] CONF_RADIO_ESTAC_A_2 = (byte[])ds.Tables[0].Rows[0]["CONF_RADIO_ESTAC_A_2"];
+                MemoryStream mCONF_RADIO_ESTAC_A_2 = new MemoryStream(CONF_RADIO_ESTAC_A_2);
+                byte[] CONF_RADIO_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["CONF_RADIO_ESTAC_B"];
+                MemoryStream mCONF_RADIO_ESTAC_B = new MemoryStream(CONF_RADIO_ESTAC_B);
+                byte[] CONF_IP_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["CONF_IP_ESTAC_A"];
+                MemoryStream mCONF_IP_ESTAC_A = new MemoryStream(CONF_IP_ESTAC_A);
+                byte[] CONF_IP_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["CONF_IP_ESTAC_B"];
+                MemoryStream mCONF_IP_ESTAC_B = new MemoryStream(CONF_IP_ESTAC_B);
+
+                #endregion
+
+                #region Longitud SFTP
+
+                String VALOR_B_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_B_ESTAC_A"].ToString();
+                String VALOR_C_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_C_ESTAC_A"].ToString();
+                String VALOR_D_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_D_ESTAC_A"].ToString();
+                String VALOR_E_ESTAC_A = ds.Tables[0].Rows[0]["VALOR_E_ESTAC_A"].ToString();
+                String VALOR_B_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_B_ESTAC_B"].ToString();
+                String VALOR_C_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_C_ESTAC_B"].ToString();
+                String VALOR_D_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_D_ESTAC_B"].ToString();
+                String VALOR_E_ESTAC_B = ds.Tables[0].Rows[0]["VALOR_E_ESTAC_B"].ToString();
+
+                #endregion
+
+                #region Asignaciones y Observaciones
+
+                String SWITCH_ROUTER_A = ds.Tables[0].Rows[0]["SWITCH_ROUTER_A"].ToString();
+                String SWITCH_ROUTER_B = ds.Tables[0].Rows[0]["SWITCH_ROUTER_B"].ToString();
+                String CAP_BREAKER_ASIG_EST_A = ds.Tables[0].Rows[0]["CAP_BREAKER_ASIG_EST_A"].ToString();
+                String VOLT_DC_ESTAC_A = ds.Tables[0].Rows[0]["VOLT_DC_ESTAC_A"].ToString();
+                String POS_BREAKER_ASIG_ESTAC_A = ds.Tables[0].Rows[0]["POS_BREAKER_ASIG_ESTAC_A"].ToString();
+                String POS_BARRA_ATERRA_ESTA_A = ds.Tables[0].Rows[0]["POS_BARRA_ATERRA_ESTA_A"].ToString();
+                String CAP_BREAKER_ASIG_EST_B = ds.Tables[0].Rows[0]["CAP_BREAKER_ASIG_EST_B"].ToString();
+                String VOLT_DC_ESTAC_B = ds.Tables[0].Rows[0]["VOLT_DC_ESTAC_B"].ToString();
+                String POS_BREAKER_ASIG_ESTAC_B = ds.Tables[0].Rows[0]["POS_BREAKER_ASIG_ESTAC_B"].ToString();
+                String POS_BARRA_ATERRA_ESTA_B = ds.Tables[0].Rows[0]["POS_BARRA_ATERRA_ESTA_B"].ToString();
+
+                #endregion
+
+                #region Calculo Propagacion
+
+                byte[] INGENIERIA = (byte[])ds.Tables[0].Rows[0]["INGENIERIA"];
+                MemoryStream mINGENIERIA = new MemoryStream(INGENIERIA);
+                byte[] PERFIL = (byte[])ds.Tables[0].Rows[0]["PERFIL"];
+                MemoryStream mPERFIL = new MemoryStream(PERFIL);
+
+                #endregion
+
+                #region Pruebas de Interferencia
+
+                byte[] PANT_RADIO_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["PANT_RADIO_ESTAC_A"];
+                MemoryStream mPANT_RADIO_ESTAC_A = new MemoryStream(PANT_RADIO_ESTAC_A);
+                byte[] PANT_RADIO_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["PANT_RADIO_ESTAC_B"];
+                MemoryStream mPANT_RADIO_ESTAC_B = new MemoryStream(PANT_RADIO_ESTAC_B);
+
+                #endregion
+
+                #region Serie Equipos Fotos
+
+                byte[] SERIE_ANT_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_ANT_ESTAC_A"];
+                MemoryStream mSERIE_ANT_ESTAC_A = new MemoryStream(SERIE_ANT_ESTAC_A);
+                byte[] SERIE_ODU_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_ODU_ESTAC_A"];
+                MemoryStream mSERIE_ODU_ESTAC_A = new MemoryStream(SERIE_ODU_ESTAC_A);
+                byte[] SERIE_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_A"];
+                MemoryStream mSERIE_POE_ESTAC_A = new MemoryStream(SERIE_POE_ESTAC_A);
+                byte[] SERIE_ANT_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ANT_ESTAC_B"];
+                MemoryStream mSERIE_ANT_ESTAC_B = new MemoryStream(SERIE_ANT_ESTAC_B);
+                byte[] SERIE_ODU_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ODU_ESTAC_B"];
+                MemoryStream mSERIE_ODU_ESTAC_B = new MemoryStream(SERIE_ODU_ESTAC_B);
+                byte[] SERIE_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_B"];
+                MemoryStream mSERIE_POE_ESTAC_B = new MemoryStream(SERIE_POE_ESTAC_B);
+                //AVERIGUAR SOBRE LOS CMM4
+
+                #endregion
+
+                #region Reporte Fotografico
+
+                #region Estacion A
+                byte[] FOTO1_PAN_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO1_PAN_ESTAC_A"];
+                MemoryStream mFOTO1_PAN_ESTAC_A = new MemoryStream(FOTO1_PAN_ESTAC_A);
+                byte[] FOTO2_POS_ANT_INST_TORRE_A = (byte[])ds.Tables[0].Rows[0]["FOTO2_POS_ANT_INST_TORRE_A"];
+                MemoryStream mFOTO2_POS_ANT_INST_TORRE_A = new MemoryStream(FOTO2_POS_ANT_INST_TORRE_A);
+                byte[] FOTO3_FOTO_ANTENA_PTP_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO3_FOTO_ANTENA_PTP_ESTAC_A"];
+                MemoryStream mFOTO3_FOTO_ANTENA_PTP_ESTAC_A = new MemoryStream(FOTO3_FOTO_ANTENA_PTP_ESTAC_A);
+                byte[] FOTO4_ETIQ_PUERTO_ANT_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO4_ETIQ_PUERTO_ANT_ESTAC_A"];
+                MemoryStream mFOTO4_ETIQ_PUERTO_ANT_ESTAC_A = new MemoryStream(FOTO4_ETIQ_PUERTO_ANT_ESTAC_A);
+                byte[] FOTO5_ENGRAS_PERNOS_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO5_ENGRAS_PERNOS_ESTAC_A"];
+                MemoryStream mFOTO5_ENGRAS_PERNOS_ESTAC_A = new MemoryStream(FOTO5_ENGRAS_PERNOS_ESTAC_A);
+                byte[] FOTO6_SILC_CONECT_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO6_SILC_CONECT_ESTAC_A"];
+                MemoryStream mFOTO6_SILC_CONECT_ESTAC_A = new MemoryStream(FOTO6_SILC_CONECT_ESTAC_A);
+                byte[] FOTO7_ATERRAM_ODU_TORRE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO7_ATERRAM_ODU_TORRE_ESTAC_A"];
+                MemoryStream mFOTO7_ATERRAM_ODU_TORRE_ESTAC_A = new MemoryStream(FOTO7_ATERRAM_ODU_TORRE_ESTAC_A);
+                byte[] FOTO8_RECORRI_SFTP_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO8_RECORRI_SFTP_ESTAC_A"];
+                MemoryStream mFOTO8_RECORRI_SFTP_ESTAC_A = new MemoryStream(FOTO8_RECORRI_SFTP_ESTAC_A);
+                byte[] FOTO9_1__SFTP_OUT_1_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO9_1__SFTP_OUT_1_ESTAC_A"];
+                MemoryStream mFOTO9_1__SFTP_OUT_1_ESTAC_A = new MemoryStream(FOTO9_1__SFTP_OUT_1_ESTAC_A);
+                byte[] FOTO9_2_SFTP_OUT_2_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO9_2_SFTP_OUT_2_ESTAC_A"];
+                MemoryStream mFOTO9_2_SFTP_OUT_2_ESTAC_A = new MemoryStream(FOTO9_2_SFTP_OUT_2_ESTAC_A);
+                byte[] FOTO10_SALAN_OUT_ETIQ_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO10_SALAN_OUT_ETIQ_ESTAC_A"];
+                MemoryStream mFOTO10_SALAN_OUT_ETIQ_ESTAC_A = new MemoryStream(FOTO10_SALAN_OUT_ETIQ_ESTAC_A);
+                byte[] FOTO11_ATERRAM_SALAN_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO11_ATERRAM_SALAN_ESTAC_A"];
+                MemoryStream mFOTO11_ATERRAM_SALAN_ESTAC_A = new MemoryStream(FOTO11_ATERRAM_SALAN_ESTAC_A);
+                byte[] FOTO14_1_SFTP_IN_1_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO14_1_SFTP_IN_1_ESTAC_A"];
+                MemoryStream mFOTO14_1_SFTP_IN_1_ESTAC_A = new MemoryStream(FOTO14_1_SFTP_IN_1_ESTAC_A);
+                byte[] FOTO14_2_SFTP_IN_2_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO14_2_SFTP_IN_2_ESTAC_A"];
+                MemoryStream mFOTO14_2_SFTP_IN_2_ESTAC_A = new MemoryStream(FOTO14_2_SFTP_IN_2_ESTAC_A);
+                byte[] FOTO17_FOTO_PAN_RACK_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO17_FOTO_PAN_RACK_ESTAC_A"];
+                MemoryStream mFOTO17_FOTO_PAN_RACK_ESTAC_A = new MemoryStream(FOTO17_FOTO_PAN_RACK_ESTAC_A);
+                byte[] FOTO18_1_ATERRAM_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO18_1_ATERRAM_POE_ESTAC_A"];
+                MemoryStream mFOTO18_1_ATERRAM_POE_ESTAC_A = new MemoryStream(FOTO18_1_ATERRAM_POE_ESTAC_A);
+                byte[] FOTO18_2_ATERRAM_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO18_2_ATERRAM_POE_ESTAC_A"];
+                MemoryStream mFOTO18_2_ATERRAM_POE_ESTAC_A = new MemoryStream(FOTO18_2_ATERRAM_POE_ESTAC_A);
+                byte[] FOTO19_1_ENERG_POE_ETIQ_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO19_1_ENERG_POE_ETIQ_ESTAC_A"];
+                MemoryStream mFOTO19_1_ENERG_POE_ETIQ_ESTAC_A = new MemoryStream(FOTO19_1_ENERG_POE_ETIQ_ESTAC_A);
+                byte[] FOTO19_2_ENERG_POE_ETIQ_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO19_2_ENERG_POE_ETIQ_ESTAC_A"];
+                MemoryStream mFOTO19_2_ENERG_POE_ETIQ_ESTAC_A = new MemoryStream(FOTO19_2_ENERG_POE_ETIQ_ESTAC_A);
+                byte[] FOTO20_1_PATCH_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO20_1_PATCH_POE_ESTAC_A"];
+                MemoryStream mFOTO20_1_PATCH_POE_ESTAC_A = new MemoryStream(FOTO20_1_PATCH_POE_ESTAC_A);
+                byte[] FOTO20_2_PATCH_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["FOTO20_2_PATCH_POE_ESTAC_A"];
+                MemoryStream mFOTO20_2_PATCH_POE_ESTAC_A = new MemoryStream(FOTO20_2_PATCH_POE_ESTAC_A);
+                #endregion
+
+                #region Estacion B
+
+
+
+                #endregion
+
+                #region Datos Generales del Nodo A
+
+                
+
+                #endregion
+
+                #endregion
+
+                #region Datos Generales Nodo A
+
+                String UBIGEO_A = ds.Tables[0].Rows[0]["UBIGEO_A"].ToString();
+
+
+                #endregion
+
+                #endregion
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
 

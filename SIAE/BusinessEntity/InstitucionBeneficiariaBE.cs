@@ -17,6 +17,7 @@ namespace BusinessEntity
 
         public InstitucionBeneficiariaBE()
         {
+            IdInstitucionBeneficiaria = String.Empty;
             UsuarioCreacion = new UsuarioBE();
             UsuarioModificacion = new UsuarioBE();
         }

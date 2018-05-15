@@ -54,7 +54,7 @@ namespace BusinessLogic
                         item.ValorBoolean = drDatos.GetBoolean(drDatos.GetOrdinal("BL_VALOR_BOOLEANO"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("VB_VALOR_BINARIO")))
                         item.ValorBinario = (Byte[])drDatos.GetValue(drDatos.GetOrdinal("VB_VALOR_BINARIO"));
-                    item.Aprobado = drDatos.GetBoolean(drDatos.GetOrdinal("BL_APROVADO"));
+                    item.Aprobado = drDatos.GetBoolean(drDatos.GetOrdinal("BL_APROBADO"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_COMENTARIO")))
                         item.Comentario = drDatos.GetString(drDatos.GetOrdinal("VC_COMENTARIO"));
                     lstResultado.Add(item);
@@ -123,7 +123,7 @@ namespace BusinessLogic
                     baseDatosDA.AsignarParametroNulo("@PVB_VALOR_BINARIO", true,ParameterDirection.Input,DbType.Binary);
                 else
                     baseDatosDA.AsignarParametroArrayByte("@PVB_VALOR_BINARIO", DocumentoDetalle.ValorBinario, true, ParameterDirection.Input, DbType.Binary);
-                baseDatosDA.AsignarParametroBoolean("@PBL_APROVADO", DocumentoDetalle.Aprobado, true);
+                baseDatosDA.AsignarParametroBoolean("@PBL_APROBADO", DocumentoDetalle.Aprobado, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_COMENTARIO", DocumentoDetalle.Comentario, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_CRE", DocumentoDetalle.UsuarioCreacion.IdUsuario, true);
 
@@ -192,7 +192,7 @@ namespace BusinessLogic
                     baseDatosDA.AsignarParametroNulo("@PVB_VALOR_BINARIO", true, ParameterDirection.Input, DbType.Binary);
                 else
                     baseDatosDA.AsignarParametroArrayByte("@PVB_VALOR_BINARIO", DocumentoDetalle.ValorBinario, true, ParameterDirection.Input, DbType.Binary);
-                baseDatosDA.AsignarParametroBoolean("@PBL_APROVADO", DocumentoDetalle.Aprobado, true);
+                baseDatosDA.AsignarParametroBoolean("@PBL_APROBADO", DocumentoDetalle.Aprobado, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_COMENTARIO", DocumentoDetalle.Comentario, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_MOD", DocumentoDetalle.UsuarioModificacion.IdUsuario, true);
 
