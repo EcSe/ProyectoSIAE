@@ -3031,8 +3031,6 @@ namespace BusinessLogic
                 String LATITUD_B = ds.Tables[0].Rows[0]["LATITUD_B"].ToString();
                 String LONGITUD_A = ds.Tables[0].Rows[0]["LONGITUD_A"].ToString();
                 String LONGITUD_B = ds.Tables[0].Rows[0]["LONGITUD_B"].ToString();
-                String ALTURAmsnm_A = ds.Tables[0].Rows[0]["ALTURAmsnm_A"].ToString();
-                String ALTURAmsnm_B = ds.Tables[0].Rows[0]["ALTURAmsnm_B"].ToString();
                 String REF_UBIC_EST_A = ds.Tables[0].Rows[0]["REF_UBIC_EST_A"].ToString();
                 String REF_UBIC_EST_B = ds.Tables[0].Rows[0]["REF_UBIC_EST_B"].ToString();
                 String ALTURA_TORRE_A = ds.Tables[0].Rows[0]["ALTURA_TORRE_A"].ToString();
@@ -3187,28 +3185,113 @@ namespace BusinessLogic
                 MemoryStream mFOTO20_2_PATCH_POE_ESTAC_A = new MemoryStream(FOTO20_2_PATCH_POE_ESTAC_A);
                 #endregion
 
-                #region Estacion B
-
-
-
-                #endregion
-
-                #region Datos Generales del Nodo A
-
-                
-
-                #endregion
-
+          
                 #endregion
 
                 #region Datos Generales Nodo A
 
                 String UBIGEO_A = ds.Tables[0].Rows[0]["UBIGEO_A"].ToString();
+                String SERIE_PTP_450__A = ds.Tables[0].Rows[0]["SERIE_PTP_450__A"].ToString();
+                String FRECUENCIA_A = ds.Tables[0].Rows[0]["FRECUENCIA_A"].ToString();
+                String PIRE_EIRP_A = ds.Tables[0].Rows[0]["PIRE_EIRP_A"].ToString();
+                String ANTENA_MARCA_MODELO_A = ds.Tables[0].Rows[0]["ANTENA_MARCA_MODELO_A"].ToString();
+                String GANANCIA_ANTENA_A = ds.Tables[0].Rows[0]["GANANCIA_ANTENA_A"].ToString();
+                String ALTURA_ANTENA_A = ds.Tables[0].Rows[0]["ALTURA_ANTENA_A"].ToString();
+                String ELEVACION_A = ds.Tables[0].Rows[0]["ELEVACION_A"].ToString();
+                String ALTITUD_msnm_A = ds.Tables[0].Rows[0]["ALTITUD_msnm"].ToString();
 
+                #endregion
+
+                #region Datos Generales Nodo B
+
+                String UBIGEO_B = ds.Tables[0].Rows[0]["UBIGEO_B"].ToString();
+                String SERIE_PTP_450__B = ds.Tables[0].Rows[0]["SERIE_PTP_450__B"].ToString();
+                String FRECUENCIA_B = ds.Tables[0].Rows[0]["FRECUENCIA_B"].ToString();
+                String PIRE_EIRP_B = ds.Tables[0].Rows[0]["PIRE_EIRP_B"].ToString();
+                String ANTENA_MARCA_MODELO_B = ds.Tables[0].Rows[0]["ANTENA_MARCA_MODELO_B"].ToString();
+                String GANANCIA_ANTENA_B = ds.Tables[0].Rows[0]["GANANCIA_ANTENA_B"].ToString();
+                String ALTURA_ANTENA_B = ds.Tables[0].Rows[0]["ALTURA_ANTENA_B"].ToString();
+                String ELEVACION_B = ds.Tables[0].Rows[0]["ELEVACION_B"].ToString();
+                String ALTITUD_msnm_B = ds.Tables[0].Rows[0]["ALTITUD_msnm_B"].ToString();
 
                 #endregion
 
                 #endregion
+
+                String usuarioWindows = Environment.UserName;
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+
+                File.Copy(rutaPlantilla, excelGenerado, true);
+
+                #region Ingresando Valores
+
+                #region Caratula
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", NOMBRE_NODO_A, 15, "C");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", NODO_A, 18, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", NODO_B, 18, "F");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", NOMBRE_NODO_A, 19, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", NOMBRE_NODO_A, 19, "F");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", TIPO_NODO_A, 20, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", TIPO_NODO_B, 20, "F");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", FRECUENCIA, 22, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", FECHA, 24, "E");
+
+                #endregion
+
+                #region Configuracion y Mediciones
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", TIPO_NODO_A, 16, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", TIPO_NODO_B, 16, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NODO_A, 17, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NODO_B, 17, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NOMBRE_NODO_A, 18, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NOMBRE_NODO_B, 18, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DIREC_ESTACION_A, 19, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DIREC_ESTACION_B, 19, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DISTRITO_A, 20, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DISTRITO_B, 20, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", PROVINCIA_A, 21, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", PROVINCIA_B, 21, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEPARTAMENTO_A, 22, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEPARTAMENTO_B, 22, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", LATITUD_A, 23, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", LATITUD_B, 23, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", LONGITUD_A, 24, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", LONGITUD_B, 24, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", ALTITUD_msnm_A, 25, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", ALTITUD_msnm_B, 25, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", REF_UBIC_EST_A, 26, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", REF_UBIC_EST_B, 26, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", ALTURA_TORRE_A, 28, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", ALTURA_TORRE_B, 28, "J");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DISTANCIA_A_B, 29, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", MODULACION, 31, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", MODULACION, 31, "j");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", AZIMUT_A, 43, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", AZIMUT_B, 43, "j");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", "Modulación:"+ MODULACION+"QAM", 50, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A, 55, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 55, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A, 56, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 56, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_A, 58, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_B, 58, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 71, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_B, 71, "M");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 72, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_B, 72, "M");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", MARGEN_DES_A, 73, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", MARGEN_DES_B, 73, "M");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_UMBRAL_A_B, 74, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_UMBRAL_A_B, 74, "M");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_RECEP_RADIO_A, 77, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_RECEP_RADIO_B, 77, "M");
+
+                #endregion
+
+                #endregion
+
             }
             catch (Exception)
             {

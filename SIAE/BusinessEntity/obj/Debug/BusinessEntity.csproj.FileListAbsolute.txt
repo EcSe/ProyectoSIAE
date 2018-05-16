@@ -21,6 +21,6 @@ C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\BusinessEntity\obj\Debug\BusinessEnt
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\BusinessEntity\obj\Debug\BusinessEntity.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Debug\BusinessEntity.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.csprojResolveAssemblyReference.cache
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Debug\BusinessEntity.csprojResolveAssemblyReference.cache
