@@ -150,16 +150,3 @@ C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\UTILITARIOS\bin\DataAccess.pdb
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\UTILITARIOS\obj\Debug\UTILITARIOS.csprojResolveAssemblyReference.cache
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\UTILITARIOS\obj\Debug\UTILITARIOS.dll
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\UTILITARIOS\obj\Debug\UTILITARIOS.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\UTILITARIOS.dll.config
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\UTILITARIOS.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\UTILITARIOS.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\BusinessEntity.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\BusinessLogic.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\DataAccess.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\DocumentFormat.OpenXml.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\BusinessEntity.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\BusinessLogic.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\bin\DataAccess.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\obj\Debug\UTILITARIOS.csprojResolveAssemblyReference.cache
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\obj\Debug\UTILITARIOS.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\UTILITARIOS\obj\Debug\UTILITARIOS.pdb

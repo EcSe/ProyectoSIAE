@@ -2995,11 +2995,31 @@ namespace BusinessLogic
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                baseDatosDA.CrearComando("",CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("EQUIPAMIENTO_PTP_NO_LIC_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA",IdTarea,true);
                 DataSet ds1 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                #region Valores String
+                baseDatosDA.CrearComando("MATERIALES_PTP_NO_LIC_A", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds2 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                baseDatosDA.CrearComando("EQUIPAMIENTO_PTP_NO_LIC_B", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds3 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                baseDatosDA.CrearComando("MATERIALES_PTP_NO_LIC_B", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds4 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                baseDatosDA.CrearComando("MEDICION_ENLACE_PROP_PTP_NO_LIC_A", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds5 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                baseDatosDA.CrearComando("MEDICION_ENLACE_PROP_PTP_NO_LIC_B", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds6 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                #region Valores 
 
                 #region Caratula
 
@@ -3061,6 +3081,8 @@ namespace BusinessLogic
                 MemoryStream mCONF_GEN_ENL_EST_B = new MemoryStream(CONF_GEN_ENL_EST_B);
                 byte[] CONF_VLAN_ESTA_A = (byte[])ds.Tables[0].Rows[0]["CONF_VLAN_ESTA_A"];
                 MemoryStream mCONF_VLAN_ESTA_A = new MemoryStream(CONF_VLAN_ESTA_A);
+                byte[] CONF_VLAN_ESTA_B = (byte[])ds.Tables[0].Rows[0]["CONF_VLAN_ESTA_B"];
+                MemoryStream mCONF_VLAN_ESTA_B = new MemoryStream(CONF_VLAN_ESTA_B);
                 byte[] CONF_RADIO_ESTAC_A_1 = (byte[])ds.Tables[0].Rows[0]["CONF_RADIO_ESTAC_A_1"];
                 MemoryStream mCONF_RADIO_ESTAC_A_1 = new MemoryStream(CONF_RADIO_ESTAC_A_1);
                 byte[] CONF_RADIO_ESTAC_A_2 = (byte[])ds.Tables[0].Rows[0]["CONF_RADIO_ESTAC_A_2"];
@@ -3285,10 +3307,320 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", MARGEN_DES_B, 73, "M");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_UMBRAL_A_B, 74, "K");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_UMBRAL_A_B, 74, "M");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_RECEP_RADIO_A, 77, "K");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_RECEP_RADIO_B, 77, "M");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_RECEP_RADIO_A, 78, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", NIVEL_RECEP_RADIO_B, 78, "M");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", PING_PTP_RADIO_A+" ms", 87, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", PING_PTP_RADIO_B+" ms", 87, "M");
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_GEN_ENL_EST_A, "", 94, 3, 712, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_GEN_ENL_EST_B, "", 110, 3, 709, 299);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_VLAN_ESTA_A, "", 128, 3, 710, 285);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_VLAN_ESTA_B, "", 147, 3, 710, 284);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_RADIO_ESTAC_A_1, "", 170, 3, 334, 301);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_RADIO_ESTAC_A_2, "", 170, 7, 380, 298);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_RADIO_ESTAC_B, "", 187, 3, 688, 587);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_A, "", 245, 3, 687, 328);
 
                 #endregion
+
+                #region Materiales A
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", NOMBRE_NODO_A+" - "+ NOMBRE_NODO_B, 12, "C");
+                ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", NOMBRE_NODO_A, 12, "F");
+
+                foreach (DataRow dr in ds1.Tables[0].Rows)
+                {
+                    String EQUIPO = dr["EQUIPO"].ToString();
+                    String MARCA = dr["MARCA"].ToString();
+                    String MODELO = dr["MODELO"].ToString();
+                    String Nro_SERIE = dr["Nro_SERIE"].ToString();
+
+                    int ind = Convert.ToInt32(ds1.Tables[0].Rows.IndexOf(dr));
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", Convert.ToString(ind + 1), 17 + ind, "B");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", EQUIPO, 17 + ind, "C");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", "1", 17 + ind, "D");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", MARCA, 17 + ind, "E");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", MODELO, 17 + ind, "F");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", Nro_SERIE, 17 + ind, "G");
+
+                }
+
+                foreach (DataRow dr in ds2.Tables[0].Rows)
+                {
+                    String DESCRIPCION = dr["DESCRIPCION"].ToString();
+                    String UNIDAD = dr["UNIDAD"].ToString();
+                    String CANTIDAD = dr["CANTIDAD"].ToString();
+
+                    int ind = Convert.ToInt32(ds2.Tables[0].Rows.IndexOf(dr));
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", Convert.ToString(ind + 1), 32 + ind, "B");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", DESCRIPCION, 32 + ind, "C");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", UNIDAD, 32 + ind, "F");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", CANTIDAD, 32 + ind, "G");
+
+                }
+
+                #endregion
+
+                #region Materiales B
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", NOMBRE_NODO_A + " - " + NOMBRE_NODO_B, 12, "C");
+                ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", NOMBRE_NODO_B, 12, "F");
+
+                foreach (DataRow dr in ds3.Tables[0].Rows)
+                {
+                    String EQUIPO = dr["EQUIPO"].ToString();
+                    String MARCA = dr["MARCA"].ToString();
+                    String MODELO = dr["MODELO"].ToString();
+                    String Nro_SERIE = dr["Nro_SERIE"].ToString();
+
+                    int ind = Convert.ToInt32(ds3.Tables[0].Rows.IndexOf(dr));
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", Convert.ToString(ind + 1), 17 + ind, "B");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", EQUIPO, 17 + ind, "C");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", "1", 17 + ind, "D");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", MARCA, 17 + ind, "E");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", MODELO, 17 + ind, "F");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", Nro_SERIE, 17 + ind, "G");
+
+                }
+
+                foreach (DataRow dr in ds4.Tables[0].Rows)
+                {
+                    String DESCRIPCION = dr["DESCRIPCION"].ToString();
+                    String UNIDAD = dr["UNIDAD"].ToString();
+                    String CANTIDAD = dr["CANTIDAD"].ToString();
+
+                    int ind = Convert.ToInt32(ds4.Tables[0].Rows.IndexOf(dr));
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", Convert.ToString(ind + 1), 32 + ind, "B");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", DESCRIPCION, 32 + ind, "C");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", UNIDAD, 32 + ind, "F");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", CANTIDAD, 32 + ind, "G");
+
+                }
+
+                #endregion
+
+                #region Longitud SFTP
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP",NOMBRE_NODO_A+ " - "+NOMBRE_NODO_B , 13, "D");
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", DIREC_ESTACION_A, 20, "D");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", ALTURA_TORRE_A, 20, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", ALTURA_ANTENA_A, 20, "F");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_B_ESTAC_A, 20, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_C_ESTAC_A, 20, "h");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_D_ESTAC_A, 20, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_E_ESTAC_A, 20, "J");
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", DIREC_ESTACION_B , 22, "D");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", ALTURA_TORRE_B ,22, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", ALTURA_ANTENA_B, 22, "F");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_B_ESTAC_B, 22, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_C_ESTAC_B, 22, "h");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_D_ESTAC_B, 22, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "4 Longitud SFTP", VALOR_E_ESTAC_B, 22, "J");
+
+
+                #endregion
+
+                #region Asignaciones y Observaciones
+
+                if (SWITCH_ROUTER_A.First().Equals("7"))
+                {
+                    ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", "Router Nokia Puerto"+" "+SWITCH_ROUTER_A.Last(), 17, "G");
+                }else
+                {
+                    ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", "Omni Switch Puerto" + " " + SWITCH_ROUTER_A.Last(), 17, "G");
+                }
+                if (SWITCH_ROUTER_B.First().Equals("7"))
+                {
+                    ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", "Router Nokia Puerto" + " " + SWITCH_ROUTER_B.Last(), 22, "G");
+                }
+                else
+                {
+                    ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", "Omni Switch Puerto" + " " + SWITCH_ROUTER_B.Last(), 22, "G");
+                }
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones",CAP_BREAKER_ASIG_EST_A, 27, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", VOLT_DC_ESTAC_A, 28, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", POS_BREAKER_ASIG_ESTAC_A, 29, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", POS_BARRA_ATERRA_ESTA_A, 30, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", CAP_BREAKER_ASIG_EST_B, 34, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", VOLT_DC_ESTAC_B, 35, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", POS_BREAKER_ASIG_ESTAC_B, 36, "K");
+                ExcelToolsBL.UpdateCell(excelGenerado, "5 Asignaciones y Observaciones", POS_BARRA_ATERRA_ESTA_B, 37, "K");
+
+
+                #endregion
+
+                #region Calculo Propagacion
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "6 Cálculo Propagacion", mINGENIERIA, "", 8, 3, 632,528);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "6 Cálculo Propagacion", mPERFIL, "", 33, 2, 654, 368);
+
+                #endregion
+
+                #region Pruebas de Interferencia
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "8 Pruebas de Interferencia", NODO_A, 15, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "8 Pruebas de Interferencia", NODO_B, 15, "F");
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "8 Pruebas de Interferencia", mPANT_RADIO_ESTAC_A, "", 20, 3,700,268);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "8 Pruebas de Interferencia", mPANT_RADIO_ESTAC_B, "", 38, 3,698,269);
+
+                #endregion
+
+                #region Serie Equipos Fotos
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ANT_ESTAC_A, "", 14, 3, 120, 98);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ODU_ESTAC_A, "", 21, 3, 81, 113);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_POE_ESTAC_A, "", 29, 3, 152, 117);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ANT_ESTAC_B, "", 59, 3, 120, 98);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ODU_ESTAC_B, "", 66, 3, 81, 113);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_POE_ESTAC_B, "", 74, 3, 152, 117);
+
+                #endregion
+
+                #region Reporte Fotografico
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO1_PAN_ESTAC_A, "", 12,3, 401, 368);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO2_POS_ANT_INST_TORRE_A, "", 12,14 , 415, 378);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO3_FOTO_ANTENA_PTP_ESTAC_A, "", 29, 3, 397, 239);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO4_ETIQ_PUERTO_ANT_ESTAC_A, "", 29, 16, 189, 250);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_A, "", 46, 3, 362, 278);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO6_SILC_CONECT_ESTAC_A, "", 46, 14, 189, 250);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_ATERRAM_ODU_TORRE_ESTAC_A, "", 62, 3,396, 448);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_A, "", 62, 14, 393, 423);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1__SFTP_OUT_1_ESTAC_A, "", 79, 4, 244, 176);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_A, "", 90, 5, 244, 176);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO10_SALAN_OUT_ETIQ_ESTAC_A, "", 79, 15, 295, 327);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO11_ATERRAM_SALAN_ESTAC_A, "", 101, 3, 399, 245);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_1_SFTP_IN_1_ESTAC_A, "", 120, 14, 405, 185);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_2_SFTP_IN_2_ESTAC_A, "", 131, 14, 406, 157);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO17_FOTO_PAN_RACK_ESTAC_A, "", 152, 3, 377, 338);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_1_ATERRAM_POE_ESTAC_A, "", 152, 15, 334, 179);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_2_ATERRAM_POE_ESTAC_A, "", 163, 15, 264, 166);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_2_ATERRAM_POE_ESTAC_A, "", 163, 15, 264, 166);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_1_ENERG_POE_ETIQ_ESTAC_A, "", 169, 3, 345, 175);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_2_ENERG_POE_ETIQ_ESTAC_A, "", 180, 3, 385, 183);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_1_PATCH_POE_ESTAC_A, "", 169, 15, 296, 178);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_2_PATCH_POE_ESTAC_A, "", 180, 14, 323, 162);
+
+
+
+                #endregion
+
+                #region Datos Generales Nodo A
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", TIPO_NODO_A, 9, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A",NODO_A, 12, "B");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", NOMBRE_NODO_A, 12, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", NOMBRE_NODO_A, 17, "B");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", UBIGEO_A, 17, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", DEPARTAMENTO_A, 20, "B");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", PROVINCIA_A, 20, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", DISTRITO_A, 20, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", SERIE_PTP_450__A, 29, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", FRECUENCIA_A+" Mhz", 40, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", PIRE_EIRP_A + " dbm", 44, "I");
+
+                if(ANTENA_MARCA_MODELO_A.Equals("INTEGRADA"))
+                {
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", "Cambium Networks/5092HH", 46, "I");
+
+                } else if(ANTENA_MARCA_MODELO_A.Equals("0.6"))
+                {
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", "SHENGLU/SLU0652DD6B", 46, "I");
+                }
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ALTURA_ANTENA_A, 49, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ELEVACION_A, 52, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ALTITUD_msnm_A, 53, "I");
+
+                foreach (DataRow dr in ds1.Tables[0].Rows)
+                {
+                    String NODO_LOCAL = dr["NODO_LOCAL"].ToString();
+                    String NODO_REMOTO = dr["NODO_REMOTO"].ToString();
+                    String RSS_LOCAL = dr["RSS_LOCAL"].ToString();
+                    String RSS_REMOTO = dr["RSS_REMOTO"].ToString();
+                    String TIEMPO_PROM = dr["TIEMPO_PROM"].ToString();
+                    String CAP_SUBIDA = dr["CAP_SUBIDA"].ToString();
+                    String CAP_BAJADA = dr["CAP_BAJADA"].ToString();
+                    String DISTANCIA_metros = dr["DISTANCIA_metros"].ToString();
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", NODO_LOCAL, 60, "B");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", NODO_REMOTO, 60, "C");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", RSS_LOCAL, 60, "D");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", RSS_REMOTO, 60, "E");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", "20", 60, "F");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", "16 QAM", 60, "G");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", TIEMPO_PROM,60, "H");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", "UL " + CAP_SUBIDA + "/" + "DL " + CAP_BAJADA, 60, "I");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", DISTANCIA_metros, 60, "K");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", FRECUENCIA + "MHz", 60, "L");
+
+                }
+
+
+                #endregion
+
+                #region Datos Generales Nodo B
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", TIPO_NODO_B, 9, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", NODO_B, 12, "B");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", NOMBRE_NODO_B, 12, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", NOMBRE_NODO_B, 17, "B");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", UBIGEO_B, 17, "G");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", DEPARTAMENTO_B, 20, "B");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", PROVINCIA_B, 20, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", DISTRITO_B, 20, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", SERIE_PTP_450__B, 29, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", FRECUENCIA_B + " Mhz", 40, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", PIRE_EIRP_B + " dbm", 44, "I");
+
+                if (ANTENA_MARCA_MODELO_B.Equals("INTEGRADA"))
+                {
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", "Cambium Networks/5092HH", 46, "I");
+
+                }
+                else if (ANTENA_MARCA_MODELO_B.Equals("0.6"))
+                {
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", "SHENGLU/SLU0652DD6B", 46, "I");
+                }
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ALTURA_ANTENA_B, 49, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ELEVACION_B, 52, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ALTITUD_msnm_B, 53, "I");
+
+                foreach (DataRow dr in ds1.Tables[0].Rows)
+                {
+                    String NODO_LOCAL = dr["NODO_LOCAL"].ToString();
+                    String NODO_REMOTO = dr["NODO_REMOTO"].ToString();
+                    String RSS_LOCAL = dr["RSS_LOCAL"].ToString();
+                    String RSS_REMOTO = dr["RSS_REMOTO"].ToString();
+                    String TIEMPO_PROM = dr["TIEMPO_PROM"].ToString();
+                    String CAP_SUBIDA = dr["CAP_SUBIDA"].ToString();
+                    String CAP_BAJADA = dr["CAP_BAJADA"].ToString();
+                    String DISTANCIA_metros = dr["DISTANCIA_metros"].ToString();
+
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", NODO_LOCAL, 60, "B");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", NODO_REMOTO, 60, "C");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", RSS_LOCAL, 60, "D");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", RSS_REMOTO, 60, "E");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", "20", 60, "F");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", "16 QAM", 60, "G");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", TIEMPO_PROM, 60, "H");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", "UL " + CAP_SUBIDA + "/" + "DL " + CAP_BAJADA, 60, "I");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", DISTANCIA_metros, 60, "K");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", FRECUENCIA + "MHz", 60, "L");
+
+                }
+
+
+                #endregion
+
 
                 #endregion
 

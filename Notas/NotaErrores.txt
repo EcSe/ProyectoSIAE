@@ -51,3 +51,6 @@ Todo OK! Reescalabilidad de imagenes
 Tarea = G006286 IdDocumento = 000016 	AP-0092
 Todo OK! Problemas con reescalibidad de imagenes 
 
+--DOCUMENTO ACTA INSTALACION  PTP NO LICENCIADO 
+Tarea = G000688 IdDocumento = 000009 HC-0386
+
