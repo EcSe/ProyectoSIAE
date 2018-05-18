@@ -2991,31 +2991,31 @@ namespace BusinessLogic
 
             try
             {
-                baseDatosDA.CrearComando("ACTA_INSTALACION_PTP_LIC", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_R_ACTA_INSTALACION_PTP_NO_LIC", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                baseDatosDA.CrearComando("EQUIPAMIENTO_PTP_NO_LIC_A", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_R_EQUIPAMIENTOS_PTP_NO_LIC_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA",IdTarea,true);
                 DataSet ds1 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                baseDatosDA.CrearComando("MATERIALES_PTP_NO_LIC_A", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_R_MATERIALES_PTP_NO_LIC_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds2 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                baseDatosDA.CrearComando("EQUIPAMIENTO_PTP_NO_LIC_B", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_R_EQUIPAMIENTOS_PTP_NO_LIC_B", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds3 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                baseDatosDA.CrearComando("MATERIALES_PTP_NO_LIC_B", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_R_MATERIALES_PTP_NO_LIC_B", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds4 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                baseDatosDA.CrearComando("MEDICION_ENLACE_PROP_PTP_NO_LIC_A", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_R_MEDICION_ENLACE_PTP_NO_LIC_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds5 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                baseDatosDA.CrearComando("MEDICION_ENLACE_PROP_PTP_NO_LIC_B", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_R_MEDICION_ENLACE_PTP_NO_LIC_B", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds6 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
@@ -3030,7 +3030,7 @@ namespace BusinessLogic
                 String NOMBRE_NODO_B = ds.Tables[0].Rows[0]["NOMBRE_NODO_B"].ToString();
                 String TIPO_NODO_A = ds.Tables[0].Rows[0]["TIPO_NODO_A"].ToString();
                 String TIPO_NODO_B = ds.Tables[0].Rows[0]["TIPO_NODO_B"].ToString();
-                String FRECUENCIA = ds.Tables[0].Rows[0]["FRECUENCIA"].ToString();
+                //String FRECUENCIA = ds.Tables[0].Rows[0]["FRECUENCIA"].ToString();
 
                 DateTime dtFecha = DateTime.Parse(ds.Tables[0].Rows[0]["FECHA"].ToString());
                 String FECHA = dtFecha.ToString("dd/MM/yyyy");
@@ -3063,8 +3063,7 @@ namespace BusinessLogic
                 String AZIMUT_B = ds.Tables[0].Rows[0]["AZIMUT_B"].ToString();
                 String IP_NODO_A = ds.Tables[0].Rows[0]["IP_NODO_A"].ToString();
                 String IP_NODO_B = ds.Tables[0].Rows[0]["IP_NODO_B"].ToString();
-                String DEFAULT_GATE_A = ds.Tables[0].Rows[0]["DEFAULT_GATE_A"].ToString();
-                String DEFAULT_GATE_B = ds.Tables[0].Rows[0]["DEFAULT_GATE_B"].ToString();
+                String DEFAULT_GATE_A_B = ds.Tables[0].Rows[0]["DEFAULT_GATE_A_B"].ToString();
                 String POTENCIA_A = ds.Tables[0].Rows[0]["POTENCIA_A"].ToString();
                 String POTENCIA_B = ds.Tables[0].Rows[0]["POTENCIA_B"].ToString();
                 String MARGEN_DES_A = ds.Tables[0].Rows[0]["MARGEN_DES_A"].ToString();
@@ -3150,13 +3149,25 @@ namespace BusinessLogic
                 MemoryStream mSERIE_ODU_ESTAC_A = new MemoryStream(SERIE_ODU_ESTAC_A);
                 byte[] SERIE_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_A"];
                 MemoryStream mSERIE_POE_ESTAC_A = new MemoryStream(SERIE_POE_ESTAC_A);
+                byte[] SERIE_CMM4_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_ESTAC_A"];
+                MemoryStream mSERIE_CMM4_ESTAC_A = new MemoryStream(SERIE_CMM4_ESTAC_A);
+                byte[] SERIE_UGPS_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_ESTAC_A"];
+                MemoryStream mSERIE_UGPS_ESTAC_A = new MemoryStream(SERIE_UGPS_ESTAC_A);
+                byte[] SERIE_CONVERSOR_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_ESTAC_A"];
+                MemoryStream mSERIE_CONVERSOR_ESTAC_A = new MemoryStream(SERIE_CONVERSOR_ESTAC_A);
+
                 byte[] SERIE_ANT_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ANT_ESTAC_B"];
                 MemoryStream mSERIE_ANT_ESTAC_B = new MemoryStream(SERIE_ANT_ESTAC_B);
                 byte[] SERIE_ODU_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ODU_ESTAC_B"];
                 MemoryStream mSERIE_ODU_ESTAC_B = new MemoryStream(SERIE_ODU_ESTAC_B);
                 byte[] SERIE_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_B"];
                 MemoryStream mSERIE_POE_ESTAC_B = new MemoryStream(SERIE_POE_ESTAC_B);
-                //AVERIGUAR SOBRE LOS CMM4
+                //byte[] SERIE_CMM4_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_ESTAC_B"];
+                //MemoryStream mSERIE_CMM4_ESTAC_B = new MemoryStream(SERIE_CMM4_ESTAC_B);
+                //byte[] SERIE_UGPS_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_ESTAC_B"];
+                //MemoryStream mSERIE_UGPS_ESTAC_B = new MemoryStream(SERIE_UGPS_ESTAC_B);
+                //byte[] SERIE_CONVERSOR_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_ESTAC_B"];
+                //MemoryStream mSERIE_CONVERSOR_ESTAC_B = new MemoryStream(SERIE_CONVERSOR_ESTAC_B);
 
                 #endregion
 
@@ -3207,27 +3218,74 @@ namespace BusinessLogic
                 MemoryStream mFOTO20_2_PATCH_POE_ESTAC_A = new MemoryStream(FOTO20_2_PATCH_POE_ESTAC_A);
                 #endregion
 
-          
+                #region Estacion B
+
+                //byte[] FOTO1_PAN_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO1_PAN_ESTAC_B"];
+                //MemoryStream mFOTO1_PAN_ESTAC_B = new MemoryStream(FOTO1_PAN_ESTAC_B);
+                //byte[] FOTO2_POS_ANT_INST_TORRE_B = (byte[])ds.Tables[0].Rows[0]["FOTO2_POS_ANT_INST_TORRE_B"];
+                //MemoryStream mFOTO2_POS_ANT_INST_TORRE_B = new MemoryStream(FOTO2_POS_ANT_INST_TORRE_B);
+                //byte[] FOTO3_FOTO_ANTENA_PTP_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO3_FOTO_ANTENA_PTP_ESTAC_B"];
+                //MemoryStream mFOTO3_FOTO_ANTENA_PTP_ESTAC_B = new MemoryStream(FOTO3_FOTO_ANTENA_PTP_ESTAC_B);
+                //byte[] FOTO4_ETIQ_PUERTO_ANT_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO4_ETIQ_PUERTO_ANT_ESTAC_B"];
+                //MemoryStream mFOTO4_ETIQ_PUERTO_ANT_ESTAC_B = new MemoryStream(FOTO4_ETIQ_PUERTO_ANT_ESTAC_B);
+                //byte[] FOTO5_ENGRAS_PERNOS_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO5_ENGRAS_PERNOS_ESTAC_B"];
+                //MemoryStream mFOTO5_ENGRAS_PERNOS_ESTAC_B = new MemoryStream(FOTO5_ENGRAS_PERNOS_ESTAC_B);
+                //byte[] FOTO6_SILC_CONECT_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO6_SILC_CONECT_ESTAC_B"];
+                //MemoryStream mFOTO6_SILC_CONECT_ESTAC_B = new MemoryStream(FOTO6_SILC_CONECT_ESTAC_B);
+                //byte[] FOTO7_ATERRAM_ODU_TORRE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO7_ATERRAM_ODU_TORRE_ESTAC_B"];
+                //MemoryStream mFOTO7_ATERRAM_ODU_TORRE_ESTAC_B = new MemoryStream(FOTO7_ATERRAM_ODU_TORRE_ESTAC_B);
+                //byte[] FOTO8_RECORRI_SFTP_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO8_RECORRI_SFTP_ESTAC_B"];
+                //MemoryStream mFOTO8_RECORRI_SFTP_ESTAC_B = new MemoryStream(FOTO8_RECORRI_SFTP_ESTAC_B);
+                //byte[] FOTO9_1__SFTP_OUT_1_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO9_1__SFTP_OUT_1_ESTAC_B"];
+                //MemoryStream mFOTO9_1__SFTP_OUT_1_ESTAC_B = new MemoryStream(FOTO9_1__SFTP_OUT_1_ESTAC_B);
+                //byte[] FOTO9_2_SFTP_OUT_2_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO9_2_SFTP_OUT_2_ESTAC_B"];
+                //MemoryStream mFOTO9_2_SFTP_OUT_2_ESTAC_B = new MemoryStream(FOTO9_2_SFTP_OUT_2_ESTAC_B);
+                //byte[] FOTO10_SALAN_OUT_ETIQ_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO10_SALAN_OUT_ETIQ_ESTAC_B"];
+                //MemoryStream mFOTO10_SALAN_OUT_ETIQ_ESTAC_B = new MemoryStream(FOTO10_SALAN_OUT_ETIQ_ESTAC_B);
+                //byte[] FOTO11_ATERRAM_SALAN_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO11_ATERRAM_SALAN_ESTAC_B"];
+                //MemoryStream mFOTO11_ATERRAM_SALAN_ESTAC_B = new MemoryStream(FOTO11_ATERRAM_SALAN_ESTAC_B);
+                //byte[] FOTO14_1_SFTP_IN_1_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO14_1_SFTP_IN_1_ESTAC_B"];
+                //MemoryStream mFOTO14_1_SFTP_IN_1_ESTAC_B = new MemoryStream(FOTO14_1_SFTP_IN_1_ESTAC_B);
+                //byte[] FOTO14_2_SFTP_IN_2_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO14_2_SFTP_IN_2_ESTAC_B"];
+                //MemoryStream mFOTO14_2_SFTP_IN_2_ESTAC_B = new MemoryStream(FOTO14_2_SFTP_IN_2_ESTAC_B);
+                //byte[] FOTO17_FOTO_PAN_RACK_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO17_FOTO_PAN_RACK_ESTAC_B"];
+                //MemoryStream mFOTO17_FOTO_PAN_RACK_ESTAC_B = new MemoryStream(FOTO17_FOTO_PAN_RACK_ESTAC_B);
+                //byte[] FOTO18_1_ATERRAM_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO18_1_ATERRAM_POE_ESTAC_B"];
+                //MemoryStream mFOTO18_1_ATERRAM_POE_ESTAC_B = new MemoryStream(FOTO18_1_ATERRAM_POE_ESTAC_B);
+                //byte[] FOTO18_2_ATERRAM_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO18_2_ATERRAM_POE_ESTAC_B"];
+                //MemoryStream mFOTO18_2_ATERRAM_POE_ESTAC_B = new MemoryStream(FOTO18_2_ATERRAM_POE_ESTAC_B);
+                //byte[] FOTO19_1_ENERG_POE_ETIQ_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO19_1_ENERG_POE_ETIQ_ESTAC_B"];
+                //MemoryStream mFOTO19_1_ENERG_POE_ETIQ_ESTAC_B = new MemoryStream(FOTO19_1_ENERG_POE_ETIQ_ESTAC_B);
+                //byte[] FOTO19_2_ENERG_POE_ETIQ_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO19_2_ENERG_POE_ETIQ_ESTAC_B"];
+                //MemoryStream mFOTO19_2_ENERG_POE_ETIQ_ESTAC_B = new MemoryStream(FOTO19_2_ENERG_POE_ETIQ_ESTAC_B);
+                //byte[] FOTO20_1_PATCH_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO20_1_PATCH_POE_ESTAC_B"];
+                //MemoryStream mFOTO20_1_PATCH_POE_ESTAC_B = new MemoryStream(FOTO20_1_PATCH_POE_ESTAC_B);
+                //byte[] FOTO20_2_PATCH_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["FOTO20_2_PATCH_POE_ESTAC_B"];
+                //MemoryStream mFOTO20_2_PATCH_POE_ESTAC_B = new MemoryStream(FOTO20_2_PATCH_POE_ESTAC_B);
+
+
+                #endregion
+
                 #endregion
 
                 #region Datos Generales Nodo A
 
                 String UBIGEO_A = ds.Tables[0].Rows[0]["UBIGEO_A"].ToString();
-                String SERIE_PTP_450__A = ds.Tables[0].Rows[0]["SERIE_PTP_450__A"].ToString();
+                String SERIE_PTP_450_A = ds.Tables[0].Rows[0]["SERIE_PTP_450_A"].ToString();
                 String FRECUENCIA_A = ds.Tables[0].Rows[0]["FRECUENCIA_A"].ToString();
                 String PIRE_EIRP_A = ds.Tables[0].Rows[0]["PIRE_EIRP_A"].ToString();
                 String ANTENA_MARCA_MODELO_A = ds.Tables[0].Rows[0]["ANTENA_MARCA_MODELO_A"].ToString();
                 String GANANCIA_ANTENA_A = ds.Tables[0].Rows[0]["GANANCIA_ANTENA_A"].ToString();
                 String ALTURA_ANTENA_A = ds.Tables[0].Rows[0]["ALTURA_ANTENA_A"].ToString();
                 String ELEVACION_A = ds.Tables[0].Rows[0]["ELEVACION_A"].ToString();
-                String ALTITUD_msnm_A = ds.Tables[0].Rows[0]["ALTITUD_msnm"].ToString();
+                String ALTITUD_msnm_A = ds.Tables[0].Rows[0]["ALTITUD_msnm_A"].ToString();
 
                 #endregion
 
                 #region Datos Generales Nodo B
 
                 String UBIGEO_B = ds.Tables[0].Rows[0]["UBIGEO_B"].ToString();
-                String SERIE_PTP_450__B = ds.Tables[0].Rows[0]["SERIE_PTP_450__B"].ToString();
+                String SERIE_PTP_450_B = ds.Tables[0].Rows[0]["SERIE_PTP_450_B"].ToString();
                 String FRECUENCIA_B = ds.Tables[0].Rows[0]["FRECUENCIA_B"].ToString();
                 String PIRE_EIRP_B = ds.Tables[0].Rows[0]["PIRE_EIRP_B"].ToString();
                 String ANTENA_MARCA_MODELO_B = ds.Tables[0].Rows[0]["ANTENA_MARCA_MODELO_B"].ToString();
@@ -3256,7 +3314,7 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", NOMBRE_NODO_A, 19, "F");
                 ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", TIPO_NODO_A, 20, "E");
                 ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", TIPO_NODO_B, 20, "F");
-                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", FRECUENCIA, 22, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", FRECUENCIA_A, 22, "E");
                 ExcelToolsBL.UpdateCell(excelGenerado, "Carátula", FECHA, 24, "E");
 
                 #endregion
@@ -3297,8 +3355,7 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 55, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A, 56, "E");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 56, "I");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_A, 58, "E");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_B, 58, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_A_B, 58, "E");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 71, "K");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_B, 71, "M");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 72, "K");
@@ -3319,7 +3376,8 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_RADIO_ESTAC_A_1, "", 170, 3, 334, 301);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_RADIO_ESTAC_A_2, "", 170, 7, 380, 298);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_RADIO_ESTAC_B, "", 187, 3, 688, 587);
-                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_A, "", 245, 3, 687, 328);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_A, "", 229, 3, 710, 231);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_B, "", 245, 3, 687, 328);
 
                 #endregion
 
@@ -3356,8 +3414,8 @@ namespace BusinessLogic
 
                     ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", Convert.ToString(ind + 1), 32 + ind, "B");
                     ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", DESCRIPCION, 32 + ind, "C");
-                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", UNIDAD, 32 + ind, "F");
-                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", CANTIDAD, 32 + ind, "G");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", UNIDAD, 32 + ind, "E");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "2 Materiales A", CANTIDAD, 32 + ind, "F");
 
                 }
 
@@ -3396,8 +3454,8 @@ namespace BusinessLogic
 
                     ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", Convert.ToString(ind + 1), 32 + ind, "B");
                     ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", DESCRIPCION, 32 + ind, "C");
-                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", UNIDAD, 32 + ind, "F");
-                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", CANTIDAD, 32 + ind, "G");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", UNIDAD, 32 + ind, "E");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "3 Materiales B", CANTIDAD, 32 + ind, "F");
 
                 }
 
@@ -3477,13 +3535,34 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ANT_ESTAC_A, "", 14, 3, 120, 98);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ODU_ESTAC_A, "", 21, 3, 81, 113);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_POE_ESTAC_A, "", 29, 3, 152, 117);
-                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ANT_ESTAC_B, "", 59, 3, 120, 98);
+
+                if (mSERIE_CMM4_ESTAC_A != null || mSERIE_UGPS_ESTAC_A != null || mSERIE_CONVERSOR_ESTAC_A != null)
+                {
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_A, "", 36, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_A, "", 44, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_A, "", 51, 3, 152, 117);
+
+                }
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ANT_ESTAC_B, "", 59, 3, 179, 23);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ODU_ESTAC_B, "", 66, 3, 81, 113);
-                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_POE_ESTAC_B, "", 74, 3, 152, 117);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_POE_ESTAC_B, "", 75, 3, 152, 117);
+
+
+
+                //if (mSERIE_CMM4_ESTAC_B != null || mSERIE_UGPS_ESTAC_B != null || mSERIE_CONVERSOR_ESTAC_B != null)
+                //{
+                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_B, "", 81, 3, 152, 117);
+                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_B, "", 89, 3, 152, 117);
+                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_B, "", 96, 3, 152, 117);
+
+                //}
 
                 #endregion
 
                 #region Reporte Fotografico
+
+                #region Estacion A
 
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO1_PAN_ESTAC_A, "", 12,3, 401, 368);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO2_POS_ANT_INST_TORRE_A, "", 12,14 , 415, 378);
@@ -3508,6 +3587,34 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_1_PATCH_POE_ESTAC_A, "", 169, 15, 296, 178);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_2_PATCH_POE_ESTAC_A, "", 180, 14, 323, 162);
 
+                #endregion
+
+                #region Estacion B
+
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO1_PAN_ESTAC_A, "", 192, 3, 401, 368);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO2_POS_ANT_INST_TORRE_A, "", 192, 14, 415, 378);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO3_FOTO_ANTENA_PTP_ESTAC_A, "", 29, 3, 397, 239);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO4_ETIQ_PUERTO_ANT_ESTAC_A, "", 29, 16, 189, 250);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_A, "", 46, 3, 362, 278);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO6_SILC_CONECT_ESTAC_A, "", 46, 14, 189, 250);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_ATERRAM_ODU_TORRE_ESTAC_A, "", 62, 3, 396, 448);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_A, "", 62, 14, 393, 423);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1__SFTP_OUT_1_ESTAC_A, "", 79, 4, 244, 176);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_A, "", 90, 5, 244, 176);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO10_SALAN_OUT_ETIQ_ESTAC_A, "", 79, 15, 295, 327);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO11_ATERRAM_SALAN_ESTAC_A, "", 101, 3, 399, 245);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_1_SFTP_IN_1_ESTAC_A, "", 120, 14, 405, 185);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_2_SFTP_IN_2_ESTAC_A, "", 131, 14, 406, 157);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO17_FOTO_PAN_RACK_ESTAC_A, "", 152, 3, 377, 338);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_1_ATERRAM_POE_ESTAC_A, "", 152, 15, 334, 179);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_2_ATERRAM_POE_ESTAC_A, "", 163, 15, 264, 166);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_2_ATERRAM_POE_ESTAC_A, "", 163, 15, 264, 166);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_1_ENERG_POE_ETIQ_ESTAC_A, "", 169, 3, 345, 175);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_2_ENERG_POE_ETIQ_ESTAC_A, "", 180, 3, 385, 183);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_1_PATCH_POE_ESTAC_A, "", 169, 15, 296, 178);
+                //ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_2_PATCH_POE_ESTAC_A, "", 180, 14, 323, 162);
+
+                #endregion
 
 
                 #endregion
@@ -3522,7 +3629,7 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", DEPARTAMENTO_A, 20, "B");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", PROVINCIA_A, 20, "E");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", DISTRITO_A, 20, "I");
-                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", SERIE_PTP_450__A, 29, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", SERIE_PTP_450_A, 29, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", FRECUENCIA_A+" Mhz", 40, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", PIRE_EIRP_A + " dbm", 44, "I");
 
@@ -3539,7 +3646,7 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ELEVACION_A, 52, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ALTITUD_msnm_A, 53, "I");
 
-                foreach (DataRow dr in ds1.Tables[0].Rows)
+                foreach (DataRow dr in ds5.Tables[0].Rows)
                 {
                     String NODO_LOCAL = dr["NODO_LOCAL"].ToString();
                     String NODO_REMOTO = dr["NODO_REMOTO"].ToString();
@@ -3559,7 +3666,7 @@ namespace BusinessLogic
                     ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", TIEMPO_PROM,60, "H");
                     ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", "UL " + CAP_SUBIDA + "/" + "DL " + CAP_BAJADA, 60, "I");
                     ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", DISTANCIA_metros, 60, "K");
-                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", FRECUENCIA + "MHz", 60, "L");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", FRECUENCIA_A + "MHz", 60, "L");
 
                 }
 
@@ -3576,7 +3683,7 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", DEPARTAMENTO_B, 20, "B");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", PROVINCIA_B, 20, "E");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", DISTRITO_B, 20, "I");
-                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", SERIE_PTP_450__B, 29, "I");
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", SERIE_PTP_450_B, 29, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", FRECUENCIA_B + " Mhz", 40, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", PIRE_EIRP_B + " dbm", 44, "I");
 
@@ -3594,7 +3701,7 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ELEVACION_B, 52, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ALTITUD_msnm_B, 53, "I");
 
-                foreach (DataRow dr in ds1.Tables[0].Rows)
+                foreach (DataRow dr in ds6.Tables[0].Rows)
                 {
                     String NODO_LOCAL = dr["NODO_LOCAL"].ToString();
                     String NODO_REMOTO = dr["NODO_REMOTO"].ToString();
@@ -3614,7 +3721,7 @@ namespace BusinessLogic
                     ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", TIEMPO_PROM, 60, "H");
                     ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", "UL " + CAP_SUBIDA + "/" + "DL " + CAP_BAJADA, 60, "I");
                     ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", DISTANCIA_metros, 60, "K");
-                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", FRECUENCIA + "MHz", 60, "L");
+                    ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", FRECUENCIA_B + "MHz", 60, "L");
 
                 }
 

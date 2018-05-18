@@ -171,7 +171,7 @@ namespace SNW.forms
                     break;
                 case "000009":
                     rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionPTPNoLicenciado.xlsx");
-                    rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                    rd.ActaInstalacionPTPNoLicenciado(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
                     break;
                 case "000010":
