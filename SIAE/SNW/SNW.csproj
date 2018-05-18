@@ -154,6 +154,7 @@
     <Content Include="Reportes\ActaInstalacionAceptacionProtocoloIIBB_B.xlsx" />
     <Content Include="Reportes\ActaInstalacionPTPNoLicenciado.xlsx" />
     <Content Include="Reportes\ActaInstalacionAceptacionProtocoloIIBB_A.xlsx" />
+    <Content Include="Reportes\Anexo3ReporteFotográficoCMM4.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

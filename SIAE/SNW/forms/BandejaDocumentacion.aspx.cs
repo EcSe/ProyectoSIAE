@@ -164,6 +164,11 @@ namespace SNW.forms
                     rd.EstudioDeCampo(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
                     break;
+                case "000006":
+                    rutaPlantilla = Server.MapPath("~/Reportes/Anexo3ReporteFotográficoCMM4.xlsx");
+                    rd.Anexo3ReporteFotograficoCMM4(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+
+                    break;
                 case "000007":
                     rutaPlantilla = Server.MapPath("~/Reportes/ProtocoloInstalacion.xlsx");
                     rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);

@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows.Forms;
 using DataAccess;
 using System.Globalization;
+using BusinessEntity;
 
 namespace BusinessLogic
 {
@@ -35,7 +36,7 @@ namespace BusinessLogic
 
                 MemoryStream EPMP1000 = new MemoryStream(imageBuffer);
 
-               // String usuarioWindows = Environment.UserName;
+               //// String usuarioWindows = Environment.UserName;
                 //  String excelGenerado = "C:\\Users\\" + usuarioWindows + "\\Desktop\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\"+ IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -102,7 +103,7 @@ namespace BusinessLogic
 
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -182,7 +183,7 @@ namespace BusinessLogic
                
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -243,7 +244,7 @@ namespace BusinessLogic
                 MemoryStream POEm = new MemoryStream(POE);
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -353,7 +354,7 @@ namespace BusinessLogic
                 MemoryStream DIEZ_OHM_MEDICION3m = new MemoryStream(DIEZ_OHM_MEDICION3);
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -578,7 +579,7 @@ namespace BusinessLogic
                 MemoryStream mPING_BIOMETRICO = new MemoryStream(PING_BIOMETRICO);
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -787,7 +788,7 @@ namespace BusinessLogic
                 String N_VIVIENDAS = ds.Tables[0].Rows[0]["N_VIVIENDAS"].ToString();
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -873,7 +874,7 @@ namespace BusinessLogic
 
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -1068,7 +1069,7 @@ namespace BusinessLogic
 
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -1533,7 +1534,7 @@ namespace BusinessLogic
 
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -2088,7 +2089,7 @@ namespace BusinessLogic
 
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -2582,7 +2583,7 @@ namespace BusinessLogic
                 MemoryStream mPING_BIOMETRICO = new MemoryStream(PING_BIOMETRICO);
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
@@ -2765,7 +2766,7 @@ namespace BusinessLogic
 
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -3149,12 +3150,14 @@ namespace BusinessLogic
                 MemoryStream mSERIE_ODU_ESTAC_A = new MemoryStream(SERIE_ODU_ESTAC_A);
                 byte[] SERIE_POE_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_A"];
                 MemoryStream mSERIE_POE_ESTAC_A = new MemoryStream(SERIE_POE_ESTAC_A);
-                byte[] SERIE_CMM4_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_ESTAC_A"];
-                MemoryStream mSERIE_CMM4_ESTAC_A = new MemoryStream(SERIE_CMM4_ESTAC_A);
-                byte[] SERIE_UGPS_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_ESTAC_A"];
-                MemoryStream mSERIE_UGPS_ESTAC_A = new MemoryStream(SERIE_UGPS_ESTAC_A);
-                byte[] SERIE_CONVERSOR_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_ESTAC_A"];
-                MemoryStream mSERIE_CONVERSOR_ESTAC_A = new MemoryStream(SERIE_CONVERSOR_ESTAC_A);
+
+                CMM4BE CMM4A = new CMM4BE();
+                TareaBE Tarea = new TareaBE();
+                List<CMM4BE> lstCMM4A = new List<CMM4BE>();
+                CMM4A.Nodo.IdNodo = Tarea.NodoIIBBA.IdNodo;
+                lstCMM4A = CMM4BL.ListarCMM4(CMM4A);
+
+               
 
                 byte[] SERIE_ANT_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ANT_ESTAC_B"];
                 MemoryStream mSERIE_ANT_ESTAC_B = new MemoryStream(SERIE_ANT_ESTAC_B);
@@ -3162,6 +3165,8 @@ namespace BusinessLogic
                 MemoryStream mSERIE_ODU_ESTAC_B = new MemoryStream(SERIE_ODU_ESTAC_B);
                 byte[] SERIE_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_B"];
                 MemoryStream mSERIE_POE_ESTAC_B = new MemoryStream(SERIE_POE_ESTAC_B);
+
+               
                 //byte[] SERIE_CMM4_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_ESTAC_B"];
                 //MemoryStream mSERIE_CMM4_ESTAC_B = new MemoryStream(SERIE_CMM4_ESTAC_B);
                 //byte[] SERIE_UGPS_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_ESTAC_B"];
@@ -3298,7 +3303,7 @@ namespace BusinessLogic
 
                 #endregion
 
-                String usuarioWindows = Environment.UserName;
+               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -3536,13 +3541,29 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ODU_ESTAC_A, "", 21, 3, 81, 113);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_POE_ESTAC_A, "", 29, 3, 152, 117);
 
-                if (mSERIE_CMM4_ESTAC_A != null || mSERIE_UGPS_ESTAC_A != null || mSERIE_CONVERSOR_ESTAC_A != null)
+
+                if (!lstCMM4A.Count.Equals(0))
                 {
+                    byte[] SERIE_CMM4_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_ESTAC_A"];
+                    MemoryStream mSERIE_CMM4_ESTAC_A = new MemoryStream(SERIE_CMM4_ESTAC_A);
+                    byte[] SERIE_UGPS_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_ESTAC_A"];
+                    MemoryStream mSERIE_UGPS_ESTAC_A = new MemoryStream(SERIE_UGPS_ESTAC_A);
+                    byte[] SERIE_CONVERSOR_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_ESTAC_A"];
+                    MemoryStream mSERIE_CONVERSOR_ESTAC_A = new MemoryStream(SERIE_CONVERSOR_ESTAC_A);
+
                     ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_A, "", 36, 3, 152, 117);
                     ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_A, "", 44, 3, 152, 117);
                     ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_A, "", 51, 3, 152, 117);
 
                 }
+
+                //if (mSERIE_CMM4_ESTAC_A != null && mSERIE_UGPS_ESTAC_A != null || mSERIE_CONVERSOR_ESTAC_A != null)
+                //{
+                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_A, "", 36, 3, 152, 117);
+                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_A, "", 44, 3, 152, 117);
+                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_A, "", 51, 3, 152, 117);
+
+                //}
 
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ANT_ESTAC_B, "", 59, 3, 179, 23);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ODU_ESTAC_B, "", 66, 3, 81, 113);
@@ -3642,6 +3663,8 @@ namespace BusinessLogic
 
                     ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", "SHENGLU/SLU0652DD6B", 46, "I");
                 }
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", GANANCIA_ANTENA_A, 47, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ALTURA_ANTENA_A, 49, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ELEVACION_A, 52, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 DATOS GENERALES NODO A", ALTITUD_msnm_A, 53, "I");
@@ -3697,6 +3720,8 @@ namespace BusinessLogic
 
                     ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", "SHENGLU/SLU0652DD6B", 46, "I");
                 }
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", GANANCIA_ANTENA_B, 47, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ALTURA_ANTENA_B, 49, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ELEVACION_B, 52, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "12 DATOS GENERALES NODO B", ALTITUD_msnm_B, 53, "I");
@@ -3728,6 +3753,90 @@ namespace BusinessLogic
 
                 #endregion
 
+
+                #endregion
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void Anexo3ReporteFotograficoCMM4(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
+        {
+            baseDatosDA.Configurar();
+            baseDatosDA.Conectar();
+
+            try
+            {
+                baseDatosDA.CrearComando("USP_R_REPORTE_CMM4", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+                #region Valores
+
+                byte[] FOTO_1_EQUIPO_GPS = (byte[])ds.Tables[0].Rows[0]["FOTO_1_EQUIPO_GPS"];
+                MemoryStream mFOTO_1_EQUIPO_GPS = new MemoryStream(FOTO_1_EQUIPO_GPS);
+                byte[] FOTO2_1_ATERRAMIENTO_GPS = (byte[])ds.Tables[0].Rows[0]["FOTO2_1_ATERRAMIENTO_GPS"];
+                MemoryStream mFOTO2_1_ATERRAMIENTO_GPS = new MemoryStream(FOTO2_1_ATERRAMIENTO_GPS);
+                byte[] FOTO2_2_ATERRAMIENTO_GPS = (byte[])ds.Tables[0].Rows[0]["FOTO2_2_ATERRAMIENTO_GPS"];
+                MemoryStream mFOTO2_2_ATERRAMIENTO_GPS = new MemoryStream(FOTO2_2_ATERRAMIENTO_GPS);
+                byte[] FOTO3_RECORRIDO_CABLE_CNT300 = (byte[])ds.Tables[0].Rows[0]["FOTO3_RECORRIDO_CABLE_CNT300"];
+                MemoryStream mFOTO3_RECORRIDO_CABLE_CNT300 = new MemoryStream(FOTO3_RECORRIDO_CABLE_CNT300);
+                byte[] FOTO4_1_ATERRAMIENTO_CABLE_CNT300 = (byte[])ds.Tables[0].Rows[0]["FOTO4_1_ATERRAMIENTO_CABLE_CNT300"];
+                MemoryStream mFOTO4_1_ATERRAMIENTO_CABLE_CNT300 = new MemoryStream(FOTO4_1_ATERRAMIENTO_CABLE_CNT300);
+                byte[] FOTO4_2_ATERRAMIENTO_CABLE_CNT300 = (byte[])ds.Tables[0].Rows[0]["FOTO4_2_ATERRAMIENTO_CABLE_CNT300"];
+                MemoryStream mFOTO4_2_ATERRAMIENTO_CABLE_CNT300 = new MemoryStream(FOTO4_2_ATERRAMIENTO_CABLE_CNT300);
+                byte[] FOTO5_1_ETIQUETADO_POE_CMM4 = (byte[])ds.Tables[0].Rows[0]["FOTO5_1_ETIQUETADO_POE_CMM4"];
+                MemoryStream mFOTO5_1_ETIQUETADO_POE_CMM4 = new MemoryStream(FOTO5_1_ETIQUETADO_POE_CMM4);
+                byte[] FOTO5_2_ETIQUETADO_POE_CMM4 = (byte[])ds.Tables[0].Rows[0]["FOTO5_2_ETIQUETADO_POE_CMM4"];
+                MemoryStream mFOTO5_2_ETIQUETADO_POE_CMM4 = new MemoryStream(FOTO5_2_ETIQUETADO_POE_CMM4);
+                byte[] FOTO6_1_PATCH_CORE = (byte[])ds.Tables[0].Rows[0]["FOTO6_1_PATCH_CORE"];
+                MemoryStream mFOTO6_1_PATCH_CORE = new MemoryStream(FOTO6_1_PATCH_CORE);
+                byte[] FOTO6_2_PATCH_CORE = (byte[])ds.Tables[0].Rows[0]["FOTO6_2_PATCH_CORE"];
+                MemoryStream mFOTO6_2_PATCH_CORE = new MemoryStream(FOTO6_2_PATCH_CORE);
+                byte[] FOTO7_1_POE_CMM4 = (byte[])ds.Tables[0].Rows[0]["FOTO7_1_POE_CMM4"];
+                MemoryStream mFOTO7_1_POE_CMM4 = new MemoryStream(FOTO7_1_POE_CMM4);
+                byte[] FOTO7_2_POE_CMM4 = (byte[])ds.Tables[0].Rows[0]["FOTO7_2_POE_CMM4"];
+                MemoryStream mFOTO7_2_POE_CMM4 = new MemoryStream(FOTO7_2_POE_CMM4);
+                byte[] FOTO8_TDK_LAMBDA = (byte[])ds.Tables[0].Rows[0]["FOTO8_TDK_LAMBDA"];
+                MemoryStream mFOTO8_TDK_LAMBDA = new MemoryStream(FOTO8_TDK_LAMBDA);
+                byte[] FOTO9_1_ENERGIA_TDK_LAMBDA = (byte[])ds.Tables[0].Rows[0]["FOTO9_1_ENERGIA_TDK_LAMBDA"];
+                MemoryStream mFOTO9_1_ENERGIA_TDK_LAMBDA = new MemoryStream(FOTO9_1_ENERGIA_TDK_LAMBDA);
+                byte[] FOTO9_2_ENERGIA_TDK_LAMBDA = (byte[])ds.Tables[0].Rows[0]["FOTO9_2_ENERGIA_TDK_LAMBDA"];
+                MemoryStream mFOTO9_2_ENERGIA_TDK_LAMBDA = new MemoryStream(FOTO9_2_ENERGIA_TDK_LAMBDA);
+                byte[] FOTO10_CONEXION_TDK_CMM4 = (byte[])ds.Tables[0].Rows[0]["FOTO10_CONEXION_TDK_CMM4"];
+                MemoryStream mFOTO10_CONEXION_TDK_CMM4 = new MemoryStream(FOTO10_CONEXION_TDK_CMM4);
+
+
+
+
+                #endregion
+
+                // String usuarioWindows = Environment.UserName;
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                File.Copy(rutaPlantilla, excelGenerado, true);
+
+                #region Ingresando Valores
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO_1_EQUIPO_GPS, "", 13, 3, 402, 340);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO2_1_ATERRAMIENTO_GPS, "", 13, 14, 373, 173);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO2_2_ATERRAMIENTO_GPS, "", 24, 14, 367, 161);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO3_RECORRIDO_CABLE_CNT300, "", 31, 4, 318, 341);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO4_1_ATERRAMIENTO_CABLE_CNT300, "", 31, 14, 372, 178);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO4_2_ATERRAMIENTO_CABLE_CNT300, "", 42, 14, 338, 147);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO5_1_ETIQUETADO_POE_CMM4, "", 49, 3, 338, 147);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO5_2_ETIQUETADO_POE_CMM4, "", 60, 4, 395, 166);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO6_1_PATCH_CORE, "", 49, 14, 405, 185);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO6_2_PATCH_CORE, "", 60, 14, 401, 157);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO7_1_POE_CMM4, "", 66, 5, 213, 181);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO7_2_POE_CMM4, "", 77, 4, 320, 164);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO8_TDK_LAMBDA, "", 66, 14, 397, 332);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO9_1_ENERGIA_TDK_LAMBDA, "", 82, 3, 399, 181);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO9_2_ENERGIA_TDK_LAMBDA, "", 93, 4, 299, 160);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Reporte Fotográfico", mFOTO10_CONEXION_TDK_CMM4, "", 82, 15, 348, 341);
 
                 #endregion
 
