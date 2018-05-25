@@ -16,8 +16,8 @@ namespace BusinessLogic
 {
     public class ProyectoBL
     {
-        public static void InsertarProyectoProceso(HiddenField hfArchivo, DropDownList ddlMetodo,
-            HtmlAnchor lnkLog, UsuarioBE UsuarioCreacion)
+        public static void InsertarProyectoProceso(HiddenField hfArchivo,DropDownList ddlMetodo, 
+            HtmlAnchor lnkLog,UsuarioBE UsuarioCreacion)
         {
             DBBaseDatos baseDatosDA = new DBBaseDatos();
             baseDatosDA.Configurar();
@@ -342,7 +342,7 @@ namespace BusinessLogic
                     blnErrorTabla = true;
                 }
                 #endregion
-
+                    
                 #region Validamos la hoja DOCUMENTACION
                 intFila = 2;
                 file.WriteLine("");

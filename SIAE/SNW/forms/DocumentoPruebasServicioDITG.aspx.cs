@@ -42,9 +42,9 @@ namespace SNW.forms
 
                     //h2Titulo.InnerText = entidadDetalleBE.ValorCadena3;
                     //h2Titulo.InnerText = entidadDetalleBE.ValorCadena3;
-                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ")";
+                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Nodo B: " + Tarea.NodoB.IdNodo + ")";
                     //this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
-                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ") " + " .:SIAE:.";
+                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Nodo B: " + Tarea.NodoB.IdNodo + ") " + " .:SIAE:.";
                     #endregion
 
                     #region Pruebas de Servicios
@@ -129,7 +129,6 @@ namespace SNW.forms
                     #region Asignamos el metodo
                     Session["metodo"] = "I";//Insert
                     #endregion
-
 
                     #region Asignacion Perfil
                     hfIdPerfil.Value = Usuario.Perfil.IdValor;

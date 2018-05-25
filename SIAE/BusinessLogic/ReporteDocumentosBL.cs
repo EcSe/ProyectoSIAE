@@ -1362,10 +1362,10 @@ namespace BusinessLogic
                 String CELULAR_CONTACTO_REPRESENTANTE = ds.Tables[0].Rows[0]["CELULAR_CONTACTO_REPRESENTANTE"].ToString();
                 String CARGO_REPRESENTANTE_IIBB = ds.Tables[0].Rows[0]["CARGO_REPRESENTANTE_IIBB"].ToString();
                 String EMAIL_REPRESENTANTE_IIBB = ds.Tables[0].Rows[0]["EMAIL_REPRESENTANTE_IIBB"].ToString();
-                String NOMBRES_APELLIDOS_REPR_OPERADOR = ds.Tables[0].Rows[0]["NOMBRES_APELLIDOS_REPR_OPERADOR"].ToString();
-                String DOC_IDENTIDAD_REPR_OPERADOR = ds.Tables[0].Rows[0]["DOC_IDENTIDAD_REPR_OPERADOR"].ToString();
-                String CARGO_REPRESENTANTE_OPERADOR = ds.Tables[0].Rows[0]["CARGO_REPRESENTANTE_OPERADOR"].ToString();
-                String EMAIL_REPR_OPERADOR = ds.Tables[0].Rows[0]["EMAIL_REPR_OPERADOR"].ToString();
+                //String NOMBRES_APELLIDOS_REPR_OPERADOR = ds.Tables[0].Rows[0]["NOMBRES_APELLIDOS_REPR_OPERADOR"].ToString();
+                //String DOC_IDENTIDAD_REPR_OPERADOR = ds.Tables[0].Rows[0]["DOC_IDENTIDAD_REPR_OPERADOR"].ToString();
+                //String CARGO_REPRESENTANTE_OPERADOR = ds.Tables[0].Rows[0]["CARGO_REPRESENTANTE_OPERADOR"].ToString();
+                //String EMAIL_REPR_OPERADOR = ds.Tables[0].Rows[0]["EMAIL_REPR_OPERADOR"].ToString();
 
                 //String MSPT_MEDIDA1_VALORMEDIO = ds.Tables[0].Rows[0]["MSPT_MEDIDA1_VALORMEDIO"].ToString();
                 //String MSPT_MEDIDA2_VALORMEDIO = ds.Tables[0].Rows[0]["MSPT_MEDIDA2_VALORMEDIO"].ToString();
@@ -1649,10 +1649,10 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", DOC_IDENTIDAD_REPRESENTANTE, 119, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", CARGO_REPRESENTANTE_IIBB, 119, "J");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EMAIL_REPRESENTANTE_IIBB, 119, "L");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", NOMBRES_APELLIDOS_REPR_OPERADOR, 120, "D");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", DOC_IDENTIDAD_REPR_OPERADOR, 120, "I");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", CARGO_REPRESENTANTE_OPERADOR, 120, "J");
-                ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EMAIL_REPR_OPERADOR, 120, "L");
+                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", NOMBRES_APELLIDOS_REPR_OPERADOR, 120, "D");
+                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", DOC_IDENTIDAD_REPR_OPERADOR, 120, "I");
+                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", CARGO_REPRESENTANTE_OPERADOR, 120, "J");
+                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EMAIL_REPR_OPERADOR, 120, "L");
 
 
                 #endregion

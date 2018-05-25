@@ -52,5 +52,9 @@ Tarea = G006286 IdDocumento = 000016 	AP-0092
 Todo OK! Problemas con reescalibidad de imagenes 
 
 --DOCUMENTO ACTA INSTALACION  PTP NO LICENCIADO 
-Tarea = G000688 IdDocumento = 000009 HC-0386
+Tarea = G000688 IdDocumento = 000009 HC-0386 
+Tarea = G000155 IdDocumento = 000009 AP-0015 con CMM4
+
+--ANEXO 03 REPORTE FOTOGRAFICO CMM4
+Tarea = G000288 IdDocumento  = 000006  AP-0095       
 

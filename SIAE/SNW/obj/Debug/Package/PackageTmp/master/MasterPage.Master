@@ -1,0 +1,209 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SNW.master.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <%--<link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/bootstrap-default.css" />
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/bootstrap-float-label.css" />
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/loader.css" />
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/animate.css" />
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/hover-default.css" />
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/checkbox-radio.css"/>
+	<link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/grid-view.css"/>
+	<link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/font-awesome.css"/>
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/css/default.css" />
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/themes/classic.css"/>
+	<link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/themes/classic.date.css"/>
+	<link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/themes/classic.time.css"/>
+    <link rel="stylesheet" href="http://localhost/ESTANDAR_SIAE/upload/css/classic.css" />
+    <link rel="shortcut icon" type="image/png" href="http://localhost/ESTANDAR_SIAE/images/LogoSIAE60.png" />--%>
+
+    <asp:ContentPlaceHolder ID="cphCabecera" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frmMaster" runat="server">
+        <asp:ScriptManager ID="smManager" runat="server" AsyncPostBackTimeout="7200"></asp:ScriptManager><%--AsyncPostBackTimeout en segundos--%>
+        <header>
+            <nav class="navbar-base navbar-base-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#divUsuario" id="btnUsuario" runat="server">
+                            <span class="sr-only">Usuario</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-left">
+                            <img class="img-responsive" id="imgLogo" runat="server" />
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="divUsuario" runat="server">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <span>Bienvenid@ </span>
+                                    <span class="fa fa-user"></span>
+                                    <strong id="lblIdUsuario" runat="server">Nombre</strong>
+                                    <span class="fa fa-chevron-down"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="navbar-login">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <p class="text-center">
+                                                        <span class="fa fa-user fa-111px"></span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <p class="text-center" id="lblNombreCompleto" runat="server"><strong>Nombre Apellido</strong></p>
+                                                    <p class="text-center small" id="lblPerfil" runat="server">correoElectronico@email.com</p>
+                                                    <p class="text-center">
+                                                        <asp:LinkButton ID="btnInicio" runat="server" CssClass="btn btn-block btn-primary" Text="Inicio" OnClick="btnInicio_Click" ><span class="fa fa-home"></span> Inicio</asp:LinkButton>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <div class="navbar-login navbar-login-session">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <p>
+                                                        <%--<a href="#" class="btn btn-danger btn-block">Cerrar Sesion</a>--%>
+                                                        <asp:LinkButton ID="btnCerrarSesion" runat="server" CssClass="btn btn-block btn-danger" Text="Cerrar Sesion" OnClick="btnCerrarSesion_Click"><span class="fa fa-sign-out"></span> Cerrar Sesion</asp:LinkButton>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+            </nav>
+        </header>
+        <nav id="divNav" runat="server" class="">
+
+        </nav>
+        <%--<nav class="navbar-base navbar-base-primary">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#divMenu">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>--%>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <%--<div class="collapse navbar-collapse" id="divMenu" runat="server">
+                    <ul class="nav navbar-nav navbar-base-center">
+                        <li class="hvr-base-sweep-to-top-primary"><a ><span class="glyphicon glyphicon-save"></span> Item #1</a></li>
+						<li class="hvr-base-sweep-to-top-primary"><a href="#">Item #2</a></li>--%>
+                        <%--<li class="active"><a href="#">Item #2</a></li>--%>
+                        <%--<li class="dropdown hvr-base-sweep-to-top-primary"><a class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-save"></span> Dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"><span class="glyphicon glyphicon-save"></span> COTIZACION3</a></li>
+								<li><a href="#">Item #2</a></li>
+								<li class="divider"></li>
+								<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-save"></span> Dropdown <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Item #2</a></li>
+                                        <li><a href="#">Item #2</a></li>
+                                    </ul>
+								</li>
+							</ul>
+						</li>
+                        <li class="         hvr-base-sweep-to-top-primary"><a                                                             ><span class="glyphicon glyphicon-save"></span> Item #1</a></li>
+						
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>--%>
+
+        <div class="container">
+            <asp:UpdateProgress ID="uprLoader" runat="server">
+                <%--AssociatedUpdatePanelID="upaIngresar" No le pongo esta propiedad para que sea el unico UpdateProgress para todos los update panel--%>
+                <ProgressTemplate>
+                    <div class="modal-loader">
+                        <div class="loader center-loader">
+                            <p>Cargando</p>
+                            <div class="loader-inner"></div>
+                            <div class="loader-inner"></div>
+                            <div class="loader-inner"></div>
+                            <div class="loader-inner"></div>
+                        </div>
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+            <asp:ContentPlaceHolder ID="cphContenido" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:HiddenField ID="hfRutaVirtualEstandar" runat="server" />
+    </form>
+
+    <footer>
+        <nav class="navbar-base navbar-base-default">
+            <div class="container-fluid">
+                <p class="pull-left">
+                    Copyright © 2017 SIAE MICROELETTRONICA Group - Todos los Derechos Reservados.
+                </p>
+            </div>
+        </nav>
+    </footer>
+
+    <!-- Bootstrap Modal Dialog -->
+    <div class="modal fade" id="divAlert" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <%--<div id="divAlertHeader" class="modal-header modal-header-success">--%>
+                <div id="divAlertHeader" class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">
+                        <asp:Label ID="lblAlertTitle" runat="server" Text=""></asp:Label></h4>
+                </div>
+                <div class="modal-body">
+                    <asp:Label ID="lblAlertBody" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">
+                        <span class="fa fa-times"></span>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%--<script src="../js/jquery-3.2.1.min.js"></script>--%>
+    <%--<script src="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/jquery-3.2.1.min.js"></script>
+    <script src="http://localhost/ESTANDAR_SIAE/js/bootstrap.min.js"></script>
+    <script src="http://localhost/ESTANDAR_SIAE/js/utilitarios.js"></script>
+
+    <script src="http://localhost/ESTANDAR_SIAE/js/bootstrap3-typeahead.js"></script>
+    
+    <script src="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/picker.js"></script>
+    <script src="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/picker.date.js"></script>
+    <script src="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/picker.time.js"></script>
+    <script src="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/legacy.js"></script>
+    <script src="http://localhost/ESTANDAR_SIAE/pickadate.js-3.5.6/lib/translations/es_PE.js"></script>
+
+    <script src="http://localhost/ESTANDAR_SIAE/upload/js/realuploader.js"></script>--%>
+
+    <asp:ContentPlaceHolder ID="cphPie" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

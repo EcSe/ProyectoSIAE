@@ -40,9 +40,9 @@ namespace SNW.forms
                     Documento.Documento = entidadDetalleBE.Clone();
 
                     //h2Titulo.InnerText = entidadDetalleBE.ValorCadena3;
-                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ")";
+                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Nodo B: " + Tarea.NodoB.IdNodo + ")";
                     //this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
-                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ") " + " .:SIAE:.";
+                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Nodo B: " + Tarea.NodoB.IdNodo + ") " + " .:SIAE:.";
                     #endregion
 
                     #region Equipamiento A

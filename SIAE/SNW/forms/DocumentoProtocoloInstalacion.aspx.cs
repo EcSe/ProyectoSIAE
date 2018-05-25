@@ -25,6 +25,7 @@ namespace SNW.forms
                     //EntidadDetalleBE entidadDefecto = new EntidadDetalleBE();
 
                     #region Inicializamos el formulario
+                    
                     #region Inicializamos el Título
 
                     Tarea.IdTarea = Request.QueryString["IdTarea"];
@@ -39,9 +40,9 @@ namespace SNW.forms
                     Documento.Documento = entidadDetalleBE.Clone();
 
                     //h2Titulo.InnerText = entidadDetalleBE.ValorCadena3;
-                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ")";
+                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Tipo Tarea: " + Tarea.TipoTarea.ValorCadena1 + ")";
                     //this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
-                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ") " + " .:SIAE:.";
+                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Tipo Tarea: " + Tarea.TipoTarea.ValorCadena1 + ") " + " .:SIAE:.";
                     #endregion
 
                     #region Reporte Fotográfico

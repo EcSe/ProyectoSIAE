@@ -40,9 +40,9 @@ namespace SNW.forms
                     Documento.Documento = entidadDetalleBE.Clone();
 
                     //h2Titulo.InnerText = entidadDetalleBE.ValorCadena3;
-                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ")";
+                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Nodo B: " + Tarea.NodoB.IdNodo + ")";
                     //this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
-                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ") " + " .:SIAE:.";
+                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Nodo B: " + Tarea.NodoB.IdNodo + ") " + " .:SIAE:.";
                     #endregion
 
                     #region 1 Configuración y Mediciones
@@ -725,7 +725,8 @@ namespace SNW.forms
                     Session["metodo"] = "I";//Insert
                     #endregion
 
-  
+
+
 
                     #endregion
 
@@ -764,6 +765,7 @@ namespace SNW.forms
                             null, txtFecha, null, null,
                             Type.GetType("System.DateTime"));
                         #endregion
+
                         #endregion
 
                         #region 1 Configuración y Mediciones
@@ -947,15 +949,23 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                            chkMaterialesA,
                             hfMaterialesAComentario);
-                        DocumentoMaterialBE DocumentoMaterial = new DocumentoMaterialBE();
-                        DocumentoMaterial.Documento = Documento;
-                        lstDocumentoMaterialA = DocumentoMaterialBL.ListarDocumentoMaterial(DocumentoMaterial);
-                        Session["Materiales"] = lstDocumentoMaterialA;
+                        List<DocumentoMaterialBE> lstDocumentoMaterialA2 = new List<DocumentoMaterialBE>();
+                        lstDocumentoMaterialA2 = (List<DocumentoMaterialBE>)Session["MaterialesA"];
 
-                        gvMaterialesA.DataSource = lstDocumentoMaterialA;
-                        gvMaterialesA.DataBind();
+                        foreach (GridViewRow item in gvMaterialesA.Rows)
+                        {
+                            //String strCodigoMaterial = item.Cells[2].Text;
+                            String strCodigoMaterial = gvMaterialesA.DataKeys[item.RowIndex]["Material_IdValor"].ToString();
+                            TextBox txtCantidad = (TextBox)item.FindControl("txtCantidadA");
+                            Int32 intCantidad;
+                            if (txtCantidad.Text.Equals(""))
+                                intCantidad = 0;
+                            else
+                                intCantidad = Convert.ToInt32(txtCantidad.Text);
+                            lstDocumentoMaterialA2.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = intCantidad);
+                        }
 
-                        Documento.Materiales = lstDocumentoMaterialA;
+                        Documento.Materiales = lstDocumentoMaterialA2;
                         #endregion
 
                         #endregion
@@ -985,15 +995,23 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                             chkMaterialesB,
                             hfMaterialesBComentario);
-                        DocumentoMaterialBE DocumentoMaterialB = new DocumentoMaterialBE();
-                        DocumentoMaterialB.Documento = Documento;
-                        lstDocumentoMaterialB = DocumentoMaterialBL.ListarDocumentoMaterial(DocumentoMaterialB);
-                        Session["Materiales"] = lstDocumentoMaterialB;
+                        List<DocumentoMaterialBE> lstDocumentoMaterialB2 = new List<DocumentoMaterialBE>();
+                        lstDocumentoMaterialB2 = (List<DocumentoMaterialBE>)Session["MaterialesB"];
 
-                        gvMaterialesB.DataSource = lstDocumentoMaterialB;
-                        gvMaterialesB.DataBind();
-
-                        Documento.Materiales = lstDocumentoMaterialB;
+                        foreach (GridViewRow item in gvMaterialesB.Rows)
+                        {
+                            //String strCodigoMaterial = item.Cells[2].Text;
+                            String strCodigoMaterial = gvMaterialesB.DataKeys[item.RowIndex]["Material_IdValor"].ToString();
+                            TextBox txtCantidad = (TextBox)item.FindControl("txtCantidadB");
+                            Int32 intCantidad;
+                            if (txtCantidad.Text.Equals(""))
+                                intCantidad = 0;
+                            else
+                                intCantidad = Convert.ToInt32(txtCantidad.Text);
+                            lstDocumentoMaterialB2.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = intCantidad);
+                        }
+                        //Insertar al final de la lista
+                        Documento.Materiales.InsertRange(Documento.Materiales.Count(), lstDocumentoMaterialB2);
                         #endregion
 
                         #endregion
@@ -1037,6 +1055,7 @@ namespace SNW.forms
                         #endregion
 
                         #region Estación B
+
                         #region Distancia B
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000109").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
@@ -1730,20 +1749,55 @@ namespace SNW.forms
 
                         #region Mediciones de Enlaces de Propagación
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000190").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMedicionEnlacePropagacionNodoA,
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkMedicionEnlacePropagacionNodoA,
                             hfMedicionEnlacePropagacionNodoAComentario);
-                        DocumentoMedicionEnlacePropagacionBE DocumentoMedicionEnlacePropagacion = new DocumentoMedicionEnlacePropagacionBE();
-                        DocumentoMedicionEnlacePropagacion.Documento = Documento;
-                        DocumentoMedicionEnlacePropagacion.NodoA.IdNodo = Tarea.NodoIIBBA.IdNodo;
-                        lstMedicionEnlacePropagacionA  = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacion);
+                        List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacionA2 = new List<DocumentoMedicionEnlacePropagacionBE>();
+                        lstMedicionEnlacePropagacionA2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacionA"];
 
-                        Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacionA;
+                        foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoA.Rows)
+                        {
+                            String strIdNodo = item.Cells[0].Text;
+                            String strIdIIBB = item.Cells[1].Text;
+                            TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                            TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                            TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                            TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                            TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
-                        gvMedicionEnlacePropagacionNodoA.DataSource = lstMedicionEnlacePropagacionA;
-                        gvMedicionEnlacePropagacionNodoA.DataBind();
+                            Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
+                            Int32 intTiempoPromedio;
+                            if (txtRSSLocal.Text.Equals(""))
+                                dblRSSLocal = 0;
+                            else
+                                dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
+                            if (txtRSSRemoto.Text.Equals(""))
+                                dblRSSRemoto = 0;
+                            else
+                                dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
+                            if (txtTiempoPromedio.Text.Equals(""))
+                                intTiempoPromedio = 0;
+                            else
+                                intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                            if (txtCapacidadSubida.Text.Equals(""))
+                                dblCapacidadSubida = 0;
+                            else
+                                dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
+                            if (txtCapacidadBajada.Text.Equals(""))
+                                dblCapacidadBajada = 0;
+                            else
+                                dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
+                            lstMedicionEnlacePropagacionA2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
+                            {
+                                s.RSSLocal = dblRSSLocal;
+                                s.RSSRemoto = dblRSSRemoto;
+                                s.TiempoPromedio = intTiempoPromedio;
+                                s.CapidadSubida = dblCapacidadSubida;
+                                s.CapidadBajada = dblCapacidadBajada;
+                            });
+                        }
 
-                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacionA;
-
+                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacionA2;
                         #endregion
 
                         #endregion
@@ -1761,20 +1815,55 @@ namespace SNW.forms
 
                         #region Mediciones de Enlaces de Propagación
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000192").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMedicionEnlacePropagacionNodoB,
-                            hfMedicionEnlacePropagacionNodoBComentario);
-                        DocumentoMedicionEnlacePropagacionBE DocumentoMedicionEnlacePropagacionB = new DocumentoMedicionEnlacePropagacionBE();
-                        DocumentoMedicionEnlacePropagacionB.Documento = Documento;
-                        DocumentoMedicionEnlacePropagacionB.NodoA.IdNodo = Tarea.NodoB.IdNodo;
-                        lstMedicionEnlacePropagacionB = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacionB);
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                           chkMedicionEnlacePropagacionNodoA,
+                            hfMedicionEnlacePropagacionNodoAComentario);
+                        List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacionB2 = new List<DocumentoMedicionEnlacePropagacionBE>();
+                        lstMedicionEnlacePropagacionB2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacionB"];
 
-                        Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacionB;
+                        foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoB.Rows)
+                        {
+                            String strIdNodo = item.Cells[0].Text;
+                            String strIdIIBB = item.Cells[1].Text;
+                            TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                            TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                            TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                            TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                            TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
-                        gvMedicionEnlacePropagacionNodoB.DataSource = lstMedicionEnlacePropagacionB;
-                        gvMedicionEnlacePropagacionNodoB.DataBind();
-
-                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacionB;
-
+                            Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
+                            Int32 intTiempoPromedio;
+                            if (txtRSSLocal.Text.Equals(""))
+                                dblRSSLocal = 0;
+                            else
+                                dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
+                            if (txtRSSRemoto.Text.Equals(""))
+                                dblRSSRemoto = 0;
+                            else
+                                dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
+                            if (txtTiempoPromedio.Text.Equals(""))
+                                intTiempoPromedio = 0;
+                            else
+                                intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                            if (txtCapacidadSubida.Text.Equals(""))
+                                dblCapacidadSubida = 0;
+                            else
+                                dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
+                            if (txtCapacidadBajada.Text.Equals(""))
+                                dblCapacidadBajada = 0;
+                            else
+                                dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
+                            lstMedicionEnlacePropagacionB2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
+                            {
+                                s.RSSLocal = dblRSSLocal;
+                                s.RSSRemoto = dblRSSRemoto;
+                                s.TiempoPromedio = intTiempoPromedio;
+                                s.CapidadSubida = dblCapacidadSubida;
+                                s.CapidadBajada = dblCapacidadBajada;
+                            });
+                        }
+                        //Insertar al final de la lista
+                        Documento.MedicionesEnlacePropagacion.InsertRange(Documento.MedicionesEnlacePropagacion.Count(), lstMedicionEnlacePropagacionB2);
                         #endregion
 
                         #endregion

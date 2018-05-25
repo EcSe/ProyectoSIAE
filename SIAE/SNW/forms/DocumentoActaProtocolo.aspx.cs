@@ -41,9 +41,9 @@ namespace SNW.forms
                     Documento.Documento = entidadDetalleBE.Clone();
 
                     //h2Titulo.InnerText = entidadDetalleBE.ValorCadena3;
-                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ")";
+                    h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Tipo Tarea: " + Tarea.TipoTarea.ValorCadena1 + ")";
                     //this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
-                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + ") " + " .:SIAE:.";
+                    this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Tipo Tarea: " + Tarea.TipoTarea.ValorCadena1 + ") " + " .:SIAE:.";
                     #endregion
 
 
@@ -733,21 +733,20 @@ namespace SNW.forms
 
                         #region 8 Datos Generales del Nodo
 
-                        #region # Serie ODU
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000051").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkSerieODU, hfSerieODUComentario,
-                            null, txtSerieODU,
-                            null, null, Type.GetType("System.String"));
-                        #endregion
+                        //#region # Serie ODU
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000051").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkSerieODU, hfSerieODUComentario,
+                        //    null, txtSerieODU,
+                        //    null, null, Type.GetType("System.String"));
+                        //#endregion
 
-
-                        #region # Serie Antena
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000052").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieNodoAntena,
-                            hfSerieNodoAntenaComentario, null, txtSerieNodoAntena,
-                            null, null, Type.GetType("System.String"));
-                        #endregion
+                        //#region # Serie Antena
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000052").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSerieNodoAntena,
+                        //    hfSerieNodoAntenaComentario, null, txtSerieNodoAntena,
+                        //    null, null, Type.GetType("System.String"));
+                        //#endregion
 
                         #region Mediciones de Enlaces de Propagación
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000053").Select(dd => dd).First();
@@ -1289,19 +1288,19 @@ namespace SNW.forms
 
                 #region 8 Datos Generales del Nodo
 
-                #region # Serie ODU
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000051", chkSerieODU, hfSerieODUComentario,
-                    null, txtSerieODU,
-                    null, null, Type.GetType("System.String"));
-                #endregion
+                //#region # Serie ODU
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000051", chkSerieODU, hfSerieODUComentario,
+                //    null, txtSerieODU,
+                //    null, null, Type.GetType("System.String"));
+                //#endregion
 
-                #region # Serie Antena
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000052", chkSerieNodoAntena,
-                    hfSerieNodoAntenaComentario, null, txtSerieNodoAntena,
-                    null, null, Type.GetType("System.String"));
-                #endregion
+                //#region # Serie Antena
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000052", chkSerieNodoAntena,
+                //    hfSerieNodoAntenaComentario, null, txtSerieNodoAntena,
+                //    null, null, Type.GetType("System.String"));
+                //#endregion
 
                 #region Mediciones de Enlaces de Propagación
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
