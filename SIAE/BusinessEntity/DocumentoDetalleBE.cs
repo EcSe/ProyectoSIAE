@@ -18,6 +18,7 @@ namespace BusinessEntity
         public Boolean? ValorBoolean { get; set; }
         public Byte[] ValorBinario { get; set; }
         public Boolean Aprobado { get; set; }
+        public String ExtensionArchivo { get; set; }
         public String Comentario { get; set; }
         public UsuarioBE UsuarioCreacion { get; set; }
         public UsuarioBE UsuarioModificacion { get; set; }
@@ -25,12 +26,13 @@ namespace BusinessEntity
         public DocumentoDetalleBE()
         {
             Campo = new EntidadDetalleBE();
-            Comentario = string.Empty;
+            Comentario = String.Empty;
             IdValor = String.Empty;
             ValorCadena = String.Empty;
             ValorEntero = null;
             ValorNumerico = null;
             ValorBoolean = null;
+            ExtensionArchivo = String.Empty;
             UsuarioCreacion = new UsuarioBE();
             UsuarioModificacion = new UsuarioBE();
 

@@ -19,6 +19,7 @@
                         <li><a href="#tabSFTP" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;3 SFTP</a></li>
                         <li><a href="#tabReporteFotografico" data-toggle="tab"><span class="fa fa-file-image-o"></span>&nbsp;7 Reporte Fotográfico</a></li>
                         <li><a href="#tabDatosGeneralesNodo" data-toggle="tab"><span class="fa fa-cubes"></span>&nbsp;8 Datos Generales del Nodo</a></li>
+                        <li><a href="#tabFotosAdicionales" data-toggle="tab"><span class="fa fa-file-image-o"></span>&nbsp;Fotos Adicionales</a></li>
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -1743,6 +1744,86 @@
                                             <label for="cphContenido_txt">Mediciones de Enlaces de Propagación</label>
                                         </span>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tabFotosAdicionales">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <span class="input-group-addon"><span class="fa fa-file-image-o"></span></span>
+                                        <div class="has-float-label">
+                                            <div id="divAterramientoSALANOutdoorEjemplo" class="form-control" style="height: 100%;">
+                                                <%--<asp:Image ID="imgConfigurationEjemplo" runat="server" />--%>
+                                                <img id="imgAterramientoSALANOutdoorEjemplo" runat="server" alt="Aterramiento de SA-LAN Outdoor (Ejemplo)" style="width: 100%;" />
+                                            </div>
+                                            <label for="divAterramientoSALANOutdoorEjemplo">Aterramiento de SA-LAN Outdoor (Ejemplo)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkAterramientoSALANOutdoor" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spAterramientoSALANOutdoorComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocAterramientoSALANOutdoorComentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtAterramientoSALANOutdoorComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfAterramientoSALANOutdoorComentario" runat="server"/>
+                                        <div class="has-float-label">
+                                            <div id="divAterramientoSALANOutdoor" class="">
+                                            </div>
+                                            <label for="divAterramientoSALANOutdoor">Aterramiento de SA-LAN Outdoor</label>
+                                        </div>
+                                    </div>
+                                    <asp:HiddenField ID="hfAterramientoSALANOutdoor" runat="server" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <span class="input-group-addon"><span class="fa fa-file-image-o"></span></span>
+                                        <div class="has-float-label">
+                                            <div id="divSALANOutdoorEjemplo" class="form-control" style="height: 100%;">
+                                                <%--<asp:Image ID="imgConfigurationEjemplo" runat="server" />--%>
+                                                <img id="imgSALANOutdoorEjemplo" runat="server" alt="SA-LAN Outdoor (Ejemplo)" style="width: 100%;" />
+                                            </div>
+                                            <label for="divSALANOutdoorEjemplo">SA-LAN Outdoor (Ejemplo)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkSALANOutdoor" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spSALANOutdoorComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocSALANOutdoorComentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtSALANOutdoorComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfSALANOutdoorComentario" runat="server"/>
+                                        <div class="has-float-label">
+                                            <div id="divSALANOutdoor" class="">
+                                            </div>
+                                            <label for="divSALANOutdoor">SA-LAN Outdoor</label>
+                                        </div>
+                                    </div>
+                                    <asp:HiddenField ID="hfSALANOutdoor" runat="server" />
                                 </div>
                             </div>
                         </div>

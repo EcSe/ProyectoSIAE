@@ -297,6 +297,20 @@ namespace SNW.forms
                     gvMedicionEnlacePropagacion.DataBind();
                     #endregion
 
+                    #region Fotos Adicionales
+
+                    #region Aterramiento de SA-LAN Outdoor (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000315",
+                        imgAterramientoSALANOutdoorEjemplo);
+                    #endregion
+
+                    #region SA-LAN Outdoor (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000316",
+                        imgSALANOutdoorEjemplo);
+                    #endregion
+
+                    #endregion
+
                     #region Guardamos el documento
                     Session["Documento"] = Documento;
                     #endregion
@@ -764,6 +778,26 @@ namespace SNW.forms
 
                         Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
 
+                        #endregion
+
+                        #endregion
+
+                        #region Fotos Adicionales
+
+                        #region Aterramiento de SA-LAN Outdoor
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000442").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAterramientoSALANOutdoor,
+                            hfAterramientoSALANOutdoorComentario, null, null,
+                            hfAterramientoSALANOutdoor, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region SA-LAN Outdoor
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000443").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkSALANOutdoor,
+                            hfSALANOutdoorComentario, null, null,
+                            hfSALANOutdoor, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
                         #endregion
 
                         #endregion
@@ -1352,6 +1386,26 @@ namespace SNW.forms
                 }
 
                 Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
+                #endregion
+
+                #endregion
+
+                #region Fotos Adicionales
+
+                #region Aterramiento de SA-LAN Outdoor
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                    Documento, "000442", chkAterramientoSALANOutdoor,
+                    hfAterramientoSALANOutdoorComentario, null, null,
+                    hfAterramientoSALANOutdoor, strRutaFisicaTemporal,
+                    Type.GetType("System.Byte[]"));
+                #endregion
+
+                #region SA-LAN Outdoor
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                    Documento, "000443", chkSALANOutdoor,
+                    hfSALANOutdoorComentario, null, null,
+                    hfSALANOutdoor, strRutaFisicaTemporal,
+                    Type.GetType("System.Byte[]"));
                 #endregion
 
                 #endregion

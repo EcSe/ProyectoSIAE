@@ -103,6 +103,7 @@
     <Content Include="forms\DocumentoProtocoloInstalacion.aspx" />
     <Content Include="forms\DocumentoPruebasServicioDITG.aspx" />
     <Content Include="forms\DocumentoReporteFotograficoCMM4.aspx" />
+    <Content Include="forms\DocumentoVideoVigilanciaNodo.aspx" />
     <Content Include="forms\ObtenerBytesArchivo.aspx" />
     <Content Include="forms\Upload.aspx" />
     <Content Include="js\forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.js" />
@@ -120,6 +121,7 @@
     <Content Include="js\forms\DocumentoProtocoloInstalacion.js" />
     <Content Include="js\forms\DocumentoPruebasServicioDITG.js" />
     <Content Include="js\forms\DocumentoReporteFotograficoCMM4.js" />
+    <Content Include="js\forms\DocumentoVideoVigilanciaNodo.js" />
     <Content Include="js\forms\realuploader.js" />
     <Content Include="obj\Release\SNW.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Release\SNW.dll" />
@@ -176,6 +178,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DocumentoVideoVigilanciaNodo.aspx.cs">
+      <DependentUpon>DocumentoVideoVigilanciaNodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoVideoVigilanciaNodo.aspx.designer.cs">
+      <DependentUpon>DocumentoVideoVigilanciaNodo.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\DownLoadExcel.ashx.cs">
       <DependentUpon>DownLoadExcel.ashx</DependentUpon>

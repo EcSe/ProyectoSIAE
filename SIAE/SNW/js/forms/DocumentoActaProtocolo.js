@@ -2886,6 +2886,150 @@
 
     // #endregion
 
+    // #region Fotos Adicionales
+
+    // #region Aterramiento de SA-LAN Outdoor
+
+    $('#cphContenido_chkAterramientoSALANOutdoor').change(function () {
+        var blnActivo = $("#cphContenido_chkAterramientoSALANOutdoor").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divAterramientoSALANOutdoor, "#divAterramientoSALANOutdoor");
+        else
+            habilitarRealUploader(true, divAterramientoSALANOutdoor, "#divAterramientoSALANOutdoor");
+    });
+
+    poAterramientoSALANOutdoorComentario = $("#spAterramientoSALANOutdoorComentario").popover({
+        html: true,
+        content: function () {
+            return $('#pocAterramientoSALANOutdoorComentario').html();
+        }
+    });
+
+    poAterramientoSALANOutdoorComentario.on('show.bs.popover', function () {
+        //Devuelve el popover: $(this).data("bs.popover").tip()
+        $(this).data("bs.popover").tip().addClass('info');
+        $(this).data("bs.popover").tip().css("max-width", "600px");
+    });
+
+    poAterramientoSALANOutdoorComentario.on('shown.bs.popover', function () {
+        $("#txtAterramientoSALANOutdoorComentario").val($("#cphContenido_hfAterramientoSALANOutdoorComentario").val());
+        $("#txtAterramientoSALANOutdoorComentario").focus();
+        $("#txtAterramientoSALANOutdoorComentario").keyup(function () {
+            $("#cphContenido_hfAterramientoSALANOutdoorComentario").val($(this).val());
+        });
+    });
+
+    var divAterramientoSALANOutdoor = new RealUploader("#divAterramientoSALANOutdoor", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidthDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            start: function (filesPending) { },
+            startFile: function (fileObj) { },
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfAterramientoSALANOutdoor').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfAterramientoSALANOutdoor').val(fileNamesUploaded);
+            },
+            select: function (fileList) { },
+            removeAllFiles: function () {
+                $('#cphContenido_hfAterramientoSALANOutdoor').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfAterramientoSALANOutdoor').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfAterramientoSALANOutdoor').val() != "") {
+        divAterramientoSALANOutdoor.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfAterramientoSALANOutdoor').val(), $('#cphContenido_hfAterramientoSALANOutdoor').val());
+    }
+
+    $("#cphContenido_chkAterramientoSALANOutdoor").trigger("change");
+
+    // #endregion
+
+    // #region SA-LAN Outdoor
+
+    $('#cphContenido_chkSALANOutdoor').change(function () {
+        var blnActivo = $("#cphContenido_chkSALANOutdoor").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divSALANOutdoor, "#divSALANOutdoor");
+        else
+            habilitarRealUploader(true, divSALANOutdoor, "#divSALANOutdoor");
+    });
+
+    poSALANOutdoorComentario = $("#spSALANOutdoorComentario").popover({
+        html: true,
+        content: function () {
+            return $('#pocSALANOutdoorComentario').html();
+        }
+    });
+
+    poSALANOutdoorComentario.on('show.bs.popover', function () {
+        //Devuelve el popover: $(this).data("bs.popover").tip()
+        $(this).data("bs.popover").tip().addClass('info');
+        $(this).data("bs.popover").tip().css("max-width", "600px");
+    });
+
+    poSALANOutdoorComentario.on('shown.bs.popover', function () {
+        $("#txtSALANOutdoorComentario").val($("#cphContenido_hfSALANOutdoorComentario").val());
+        $("#txtSALANOutdoorComentario").focus();
+        $("#txtSALANOutdoorComentario").keyup(function () {
+            $("#cphContenido_hfSALANOutdoorComentario").val($(this).val());
+        });
+    });
+
+    var divSALANOutdoor = new RealUploader("#divSALANOutdoor", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        isImage: true,
+        minWidthDimension: 2560,
+        minHeightDimension: 1920,
+        listeners: {
+            start: function (filesPending) { },
+            startFile: function (fileObj) { },
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfSALANOutdoor').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfSALANOutdoor').val(fileNamesUploaded);
+            },
+            select: function (fileList) { },
+            removeAllFiles: function () {
+                $('#cphContenido_hfSALANOutdoor').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfSALANOutdoor').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfSALANOutdoor').val() != "") {
+        divSALANOutdoor.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfSALANOutdoor').val(), $('#cphContenido_hfSALANOutdoor').val());
+    }
+
+    $("#cphContenido_chkSALANOutdoor").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
     //$.fn.validarDdlTipoFuente();
 
     // #region Cerrar todos los popovers cuando se da click fuera de uno

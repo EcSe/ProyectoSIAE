@@ -45,100 +45,105 @@ namespace SNW.forms
                     this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Tipo Tarea: " + Tarea.TipoTarea.ValorCadena1 + ") " + " .:SIAE:.";
                     #endregion
 
-                    #region POZO A TIERRA 5 Ohm
+                    if (Request.QueryString["IdDocumento"].Equals("000017"))//INSTALACION DE POZO A TIERRA TIPO A
+                    {
 
-                    #region 1. Fotografía frontal de la IIBB
+                        #region POZO A TIERRA 5 Ohm
 
-                    #region Frontal de la IIBB (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000300",
+                        #region 1. Fotografía frontal de la IIBB
+
+                        #region Frontal de la IIBB (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000300",
                         imgPT5FrontalIIBBEjemplo);
-                    #endregion
+                        #endregion
 
-                    #endregion
+                        #endregion
 
-                    #region 2. Fotografía de la ubicación del pozo a tierra antes de ser instalado
+                        #region 2. Fotografía de la ubicación del pozo a tierra antes de ser instalado
 
-                    #region Ubicación del pozo a Tierra Antes de ser Instalado (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000301",
-                        imgPT5UbicacionPTAntesInstalacionEjemplo);
-                    #endregion
+                        #region Ubicación del pozo a Tierra Antes de ser Instalado (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000301",
+                            imgPT5UbicacionPTAntesInstalacionEjemplo);
+                        #endregion
 
-                    #endregion
+                        #endregion
 
-                    #region 3. Fotografía de instalación de pozo a tierra
+                        #region 3. Fotografía de instalación de pozo a tierra
 
-                    #region Panoramica de la zanja abierta (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000302",
-                        imgPT5InstalacionPTPanoramicaZanjaAbiertaEjemplo);
-                    #endregion
+                        #region Panoramica de la zanja abierta (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000302",
+                            imgPT5InstalacionPTPanoramicaZanjaAbiertaEjemplo);
+                        #endregion
 
-                    #region Panorámica Vertido de Tierra Cultivo cernida en Zanja (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000303",
-                        imgPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaEjemplo);
-                    #endregion
+                        #region Panorámica Vertido de Tierra Cultivo cernida en Zanja (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000303",
+                            imgPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaEjemplo);
+                        #endregion
 
-                    #region Panorámica del vertido de la sal granulada en la zanja (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000304",
-                        imgPT5InstalacionPTPanoramicaVertidoSalGranuladaZanjaEjemplo);
-                    #endregion
+                        #region Panorámica del vertido de la sal granulada en la zanja (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000304",
+                            imgPT5InstalacionPTPanoramicaVertidoSalGranuladaZanjaEjemplo);
+                        #endregion
 
-                    #region Panorámica Vertido de la Disolución del Cemento Conductivo (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000305",
-                        imgPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoEjemplo);
-                    #endregion
+                        #region Panorámica Vertido de la Disolución del Cemento Conductivo (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000305",
+                            imgPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoEjemplo);
+                        #endregion
 
-                    #region Panorámica de la Colocación del Fleje de Cobre 01 (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000306",
-                        imgPT5InstalacionPTPanoramicaColocacionFlejeCobre01Ejemplo);
-                    #endregion
+                        #region Panorámica de la Colocación del Fleje de Cobre 01 (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000306",
+                            imgPT5InstalacionPTPanoramicaColocacionFlejeCobre01Ejemplo);
+                        #endregion
 
-                    #region Panorámica de la Colocación del Fleje de Cobre 02 (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000307",
-                        imgPT5InstalacionPTPanoramicaColocacionFlejeCobre02Ejemplo);
-                    #endregion
+                        #region Panorámica de la Colocación del Fleje de Cobre 02 (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000307",
+                            imgPT5InstalacionPTPanoramicaColocacionFlejeCobre02Ejemplo);
+                        #endregion
 
-                    #region Panorámica Vertido Disolución Cemento Conduc. Sobre Fleje (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000308",
-                        imgPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeEjemplo);
-                    #endregion
+                        #region Panorámica Vertido Disolución Cemento Conduc. Sobre Fleje (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000308",
+                            imgPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeEjemplo);
+                        #endregion
 
-                    #region Panorámica Vertido Sal Granu. Luego del Cemento Conductivo (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000309",
-                        imgPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoEjemplo);
-                    #endregion
+                        #region Panorámica Vertido Sal Granu. Luego del Cemento Conductivo (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000309",
+                            imgPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoEjemplo);
+                        #endregion
 
-                    #region Panorámica Vertido Resto Tierra Cultivo Cernida Sobre Zanja (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000310",
-                        imgPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaEjemplo);
-                    #endregion
+                        #region Panorámica Vertido Resto Tierra Cultivo Cernida Sobre Zanja (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000310",
+                            imgPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaEjemplo);
+                        #endregion
 
-                    #region Panorámica Vertido Rellenado Tierra Cernida Sobre Zanja (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000311",
-                        imgPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaEjemplo);
-                    #endregion
+                        #region Panorámica Vertido Rellenado Tierra Cernida Sobre Zanja (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000311",
+                            imgPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaEjemplo);
+                        #endregion
 
-                    #endregion
+                        #endregion
 
-                    #region 4. Fotografía de medición del pozo a tierra
+                        #region 4. Fotografía de medición del pozo a tierra
 
-                    #region MEDICION 1:Foto panorámica de medición de pozo a tierra (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000312",
-                        imgPT5MedicionPTPanoramicaMedicionPT01Ejemplo);
-                    #endregion
+                        #region MEDICION 1:Foto panorámica de medición de pozo a tierra (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000312",
+                            imgPT5MedicionPTPanoramicaMedicionPT01Ejemplo);
+                        #endregion
 
-                    #region MEDICION 2:Foto panorámica de medición de pozo a tierra (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000313",
-                        imgPT5MedicionPTPanoramicaMedicionPT02Ejemplo);
-                    #endregion
+                        #region MEDICION 2:Foto panorámica de medición de pozo a tierra (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000313",
+                            imgPT5MedicionPTPanoramicaMedicionPT02Ejemplo);
+                        #endregion
 
-                    #region MEDICION 3:Foto panorámica de medición de pozo a tierra (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000314",
-                        imgPT5MedicionPTPanoramicaMedicionPT03Ejemplo);
-                    #endregion
+                        #region MEDICION 3:Foto panorámica de medición de pozo a tierra (Ejemplo)
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000314",
+                            imgPT5MedicionPTPanoramicaMedicionPT03Ejemplo);
+                        #endregion
 
-                    #endregion
+                        #endregion
 
-                    #endregion
+                        #endregion
+
+                    }
 
                     #region POZO A TIERRA 10 Ohm
 
@@ -239,12 +244,16 @@ namespace SNW.forms
                     Session["Documento"] = Documento;
                     #endregion
 
+                    #region Asignamos el metodo
+                    Session["metodo"] = "I";//Insert
+                    #endregion
+
                     #region Asignacion Perfil
                     hfIdPerfil.Value = Usuario.Perfil.IdValor;
                     #endregion
 
-                    #region Asignamos el metodo
-                    Session["metodo"] = "I";//Insert
+                    #region Asignacion Documento
+                    hfIdDocumento.Value = Request.QueryString["IdDocumento"];
                     #endregion
 
                     #endregion
@@ -274,142 +283,147 @@ namespace SNW.forms
                         hfRutaVirtualTemporal.Value = entidadDetalleBE.ValorCadena1;
                         #endregion
 
-                        #region POZO A TIERRA 5 Ohm
+                        if (hfIdDocumento.Value.Equals("000017"))//INSTALACION DE POZO A TIERRA TIPO A
+                        {
 
-                        #region 1. Fotografía frontal de la IIBB
+                            #region POZO A TIERRA 5 Ohm
 
-                        #region Frontal de la IIBB
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000387").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                         chkPT5FrontalIIBB,
-                           hfPT5FrontalIIBBComentario, null, null,
-                           hfPT5FrontalIIBB, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region 1. Fotografía frontal de la IIBB
 
-                        #endregion
+                            #region Frontal de la IIBB
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000387").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                             chkPT5FrontalIIBB,
+                               hfPT5FrontalIIBBComentario, null, null,
+                               hfPT5FrontalIIBB, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region 2. Fotografía de la ubicación del pozo a tierra antes de ser instalado
+                            #endregion
 
-                        #region Ubicación del Pozo a Tierra Antes de ser Instalado
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000388").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5UbicacionPTAntesInstalacion, hfPT5UbicacionPTAntesInstalacionComentario, null, null, hfPT5UbicacionPTAntesInstalacion, strRutaFisicaTemporal, Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region 2. Fotografía de la ubicación del pozo a tierra antes de ser instalado
 
-                        #endregion
+                            #region Ubicación del Pozo a Tierra Antes de ser Instalado
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000388").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5UbicacionPTAntesInstalacion, hfPT5UbicacionPTAntesInstalacionComentario, null, null, hfPT5UbicacionPTAntesInstalacion, strRutaFisicaTemporal, Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region 3. Fotografía de instalación de pozo a tierra
+                            #endregion
 
-                        #region Panoramica de la zanja abierta
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000389").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaZanjaAbierta, hfPT5InstalacionPTPanoramicaZanjaAbiertaComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaZanjaAbierta, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region 3. Fotografía de instalación de pozo a tierra
 
-                        #region Panorámica Vertido de Tierra Cultivo cernida en Zanja
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000390").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja,
-                           hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panoramica de la zanja abierta
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000389").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaZanjaAbierta, hfPT5InstalacionPTPanoramicaZanjaAbiertaComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaZanjaAbierta, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica del vertido de la sal granulada en la zanja
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000391").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja,
-                           hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanjaComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica Vertido de Tierra Cultivo cernida en Zanja
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000390").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja,
+                               hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica Vertido de la Disolución del Cemento Conductivo
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000392").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo,
-                           hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica del vertido de la sal granulada en la zanja
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000391").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja,
+                               hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanjaComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica de la Colocación del Fleje de Cobre 01
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000393").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaColocacionFlejeCobre01,
-                           hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01Comentario, null, null,
-                           hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica Vertido de la Disolución del Cemento Conductivo
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000392").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo,
+                               hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica de la Colocación del Fleje de Cobre 02
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000394").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaColocacionFlejeCobre02,
-                           hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02Comentario, null, null,
-                           hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica de la Colocación del Fleje de Cobre 01
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000393").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaColocacionFlejeCobre01,
+                               hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01Comentario, null, null,
+                               hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica Vertido Disolución Cemento Conduc. Sobre Fleje
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000395").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje,
-                           hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica de la Colocación del Fleje de Cobre 02
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000394").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaColocacionFlejeCobre02,
+                               hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02Comentario, null, null,
+                               hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica Vertido Sal Granu. Luego del Cemento Conductivo
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000396").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo,
-                           hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica Vertido Disolución Cemento Conduc. Sobre Fleje
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000395").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje,
+                               hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica Vertido Resto Tierra Cultivo Cernida Sobre Zanja
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000397").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja,
-                           hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica Vertido Sal Granu. Luego del Cemento Conductivo
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000396").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo,
+                               hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region Panorámica Vertido Rellenado Tierra Cernida Sobre Zanja
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000398").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja,
-                           hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaComentario, null, null,
-                           hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region Panorámica Vertido Resto Tierra Cultivo Cernida Sobre Zanja
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000397").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja,
+                               hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #endregion
+                            #region Panorámica Vertido Rellenado Tierra Cernida Sobre Zanja
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000398").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja,
+                               hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaComentario, null, null,
+                               hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region 4. Fotografía de medición del pozo a tierra
+                            #endregion
 
-                        #region MEDICION 1:Foto panorámica de medición de pozo a tierra
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000399").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5MedicionPTPanoramicaMedicionPT01,
-                           hfPT5MedicionPTPanoramicaMedicionPT01Comentario, null, null,
-                           hfPT5MedicionPTPanoramicaMedicionPT01, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region 4. Fotografía de medición del pozo a tierra
 
-                        #region MEDICION 2:Foto panorámica de medición de pozo a tierra
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000400").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5MedicionPTPanoramicaMedicionPT02,
-                           hfPT5MedicionPTPanoramicaMedicionPT02Comentario, null, null,
-                           hfPT5MedicionPTPanoramicaMedicionPT02, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region MEDICION 1:Foto panorámica de medición de pozo a tierra
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000399").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5MedicionPTPanoramicaMedicionPT01,
+                               hfPT5MedicionPTPanoramicaMedicionPT01Comentario, null, null,
+                               hfPT5MedicionPTPanoramicaMedicionPT01, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #region MEDICION 3:Foto panorámica de medición de pozo a tierra
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000401").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5MedicionPTPanoramicaMedicionPT03,
-                           hfPT5MedicionPTPanoramicaMedicionPT03Comentario, null, null,
-                           hfPT5MedicionPTPanoramicaMedicionPT03, strRutaFisicaTemporal,
-                           Type.GetType("System.Byte[]"));
-                        #endregion
+                            #region MEDICION 2:Foto panorámica de medición de pozo a tierra
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000400").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5MedicionPTPanoramicaMedicionPT02,
+                               hfPT5MedicionPTPanoramicaMedicionPT02Comentario, null, null,
+                               hfPT5MedicionPTPanoramicaMedicionPT02, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #endregion
+                            #region MEDICION 3:Foto panorámica de medición de pozo a tierra
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000401").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPT5MedicionPTPanoramicaMedicionPT03,
+                               hfPT5MedicionPTPanoramicaMedicionPT03Comentario, null, null,
+                               hfPT5MedicionPTPanoramicaMedicionPT03, strRutaFisicaTemporal,
+                               Type.GetType("System.Byte[]"));
+                            #endregion
 
-                        #endregion
+                            #endregion
+
+                            #endregion
+
+                        }
 
                         #region POZO A TIERRA 10 Ohm
 
@@ -598,145 +612,150 @@ namespace SNW.forms
                 strRutaFisicaTemporal = EntidadDetalle.ValorCadena1;
                 #endregion
 
-                #region POZO A TIERRA 5 Ohm
+                if (hfIdDocumento.Value.Equals("000017"))//INSTALACION DE POZO A TIERRA TIPO A
+                {
 
-                #region 1. Fotografía frontal de la IIBB
+                    #region POZO A TIERRA 5 Ohm
 
-                #region Frontal de la IIBB
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                    #region 1. Fotografía frontal de la IIBB
+
+                    #region Frontal de la IIBB
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                    Documento, "000387", chkPT5FrontalIIBB,
                    hfPT5FrontalIIBBComentario, null, null,
                    hfPT5FrontalIIBB, strRutaFisicaTemporal,
                    Type.GetType("System.Byte[]"));
-                #endregion
+                    #endregion
 
-                #endregion
+                    #endregion
 
-                #region 2. Fotografía de la ubicación del pozo a tierra antes de ser instalado
+                    #region 2. Fotografía de la ubicación del pozo a tierra antes de ser instalado
 
-                #region Ubicación del Pozo a Tierra Antes de ser Instalado
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000388", chkPT5UbicacionPTAntesInstalacion,
-                   hfPT5UbicacionPTAntesInstalacionComentario, null, null,
-                   hfPT5UbicacionPTAntesInstalacion, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Ubicación del Pozo a Tierra Antes de ser Instalado
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000388", chkPT5UbicacionPTAntesInstalacion,
+                       hfPT5UbicacionPTAntesInstalacionComentario, null, null,
+                       hfPT5UbicacionPTAntesInstalacion, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #endregion
+                    #endregion
 
-                #region 3. Fotografía de instalación de pozo a tierra
+                    #region 3. Fotografía de instalación de pozo a tierra
 
-                #region Panoramica de la zanja abierta
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000389", chkPT5InstalacionPTPanoramicaZanjaAbierta,
-                   hfPT5InstalacionPTPanoramicaZanjaAbiertaComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaZanjaAbierta, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panoramica de la zanja abierta
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000389", chkPT5InstalacionPTPanoramicaZanjaAbierta,
+                       hfPT5InstalacionPTPanoramicaZanjaAbiertaComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaZanjaAbierta, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica Vertido de Tierra Cultivo cernida en Zanja
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000390", chkPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja,
-                   hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica Vertido de Tierra Cultivo cernida en Zanja
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000390", chkPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja,
+                       hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanjaComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaVertidoTierraCultivoCernidaZanja, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica del vertido de la sal granulada en la zanja
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000391", chkPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja,
-                   hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanjaComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica del vertido de la sal granulada en la zanja
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000391", chkPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja,
+                       hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanjaComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaVertidoSalGranuladaZanja, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica Vertido de la Disolución del Cemento Conductivo
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000392", chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo,
-                   hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica Vertido de la Disolución del Cemento Conductivo
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000392", chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo,
+                       hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivo, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica de la Colocación del Fleje de Cobre 01
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000393", chkPT5InstalacionPTPanoramicaColocacionFlejeCobre01,
-                   hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01Comentario, null, null,
-                   hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica de la Colocación del Fleje de Cobre 01
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000393", chkPT5InstalacionPTPanoramicaColocacionFlejeCobre01,
+                       hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01Comentario, null, null,
+                       hfPT5InstalacionPTPanoramicaColocacionFlejeCobre01, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica de la Colocación del Fleje de Cobre 02
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000394", chkPT5InstalacionPTPanoramicaColocacionFlejeCobre02,
-                   hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02Comentario, null, null,
-                   hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica de la Colocación del Fleje de Cobre 02
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000394", chkPT5InstalacionPTPanoramicaColocacionFlejeCobre02,
+                       hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02Comentario, null, null,
+                       hfPT5InstalacionPTPanoramicaColocacionFlejeCobre02, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica Vertido Disolución Cemento Conduc. Sobre Fleje
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000395", chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje,
-                   hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica Vertido Disolución Cemento Conduc. Sobre Fleje
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000395", chkPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje,
+                       hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFlejeComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaVertidoDisolucionCementoConductivoSobreFleje, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica Vertido Sal Granu. Luego del Cemento Conductivo
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000396", chkPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo,
-                   hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica Vertido Sal Granu. Luego del Cemento Conductivo
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000396", chkPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo,
+                       hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivoComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaVertidoSalGranuladaLuegoCementoConductivo, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica Vertido Resto Tierra Cultivo Cernida Sobre Zanja
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000397", chkPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja,
-                   hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica Vertido Resto Tierra Cultivo Cernida Sobre Zanja
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000397", chkPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja,
+                       hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanjaComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaVertidoRestoTierraCultivoCernidaSobreZanja, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region Panorámica Vertido Rellenado Tierra Cernida Sobre Zanja
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000398", chkPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja,
-                   hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaComentario, null, null,
-                   hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region Panorámica Vertido Rellenado Tierra Cernida Sobre Zanja
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000398", chkPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja,
+                       hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanjaComentario, null, null,
+                       hfPT5InstalacionPTPanoramicaVertidoRellenadoTierraCernidaSobreZanja, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #endregion
+                    #endregion
 
-                #region 4. Fotografía de medición del pozo a tierra
+                    #region 4. Fotografía de medición del pozo a tierra
 
-                #region MEDICION 1:Foto panorámica de medición de pozo a tierra
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000399", chkPT5MedicionPTPanoramicaMedicionPT01,
-                   hfPT5MedicionPTPanoramicaMedicionPT01Comentario, null, null,
-                   hfPT5MedicionPTPanoramicaMedicionPT01, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region MEDICION 1:Foto panorámica de medición de pozo a tierra
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000399", chkPT5MedicionPTPanoramicaMedicionPT01,
+                       hfPT5MedicionPTPanoramicaMedicionPT01Comentario, null, null,
+                       hfPT5MedicionPTPanoramicaMedicionPT01, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region MEDICION 2:Foto panorámica de medición de pozo a tierra
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000400", chkPT5MedicionPTPanoramicaMedicionPT02,
-                   hfPT5MedicionPTPanoramicaMedicionPT02Comentario, null, null,
-                   hfPT5MedicionPTPanoramicaMedicionPT02, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region MEDICION 2:Foto panorámica de medición de pozo a tierra
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000400", chkPT5MedicionPTPanoramicaMedicionPT02,
+                       hfPT5MedicionPTPanoramicaMedicionPT02Comentario, null, null,
+                       hfPT5MedicionPTPanoramicaMedicionPT02, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #region MEDICION 3:Foto panorámica de medición de pozo a tierra
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                   Documento, "000401", chkPT5MedicionPTPanoramicaMedicionPT03,
-                   hfPT5MedicionPTPanoramicaMedicionPT03Comentario, null, null,
-                   hfPT5MedicionPTPanoramicaMedicionPT03, strRutaFisicaTemporal,
-                   Type.GetType("System.Byte[]"));
-                #endregion
+                    #region MEDICION 3:Foto panorámica de medición de pozo a tierra
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                       Documento, "000401", chkPT5MedicionPTPanoramicaMedicionPT03,
+                       hfPT5MedicionPTPanoramicaMedicionPT03Comentario, null, null,
+                       hfPT5MedicionPTPanoramicaMedicionPT03, strRutaFisicaTemporal,
+                       Type.GetType("System.Byte[]"));
+                    #endregion
 
-                #endregion
+                    #endregion
 
-                #endregion
+                    #endregion
+
+                }
 
                 #region POZO A TIERRA 10 Ohm
 

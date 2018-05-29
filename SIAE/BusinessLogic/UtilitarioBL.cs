@@ -171,6 +171,7 @@ namespace BusinessLogic
             page.ClientScript.RegisterClientScriptInclude("legacy.js", rutaVirtualEstandar.ValorCadena1 + "/pickadate.js-3.5.6/lib/legacy.js");
             page.ClientScript.RegisterClientScriptInclude("es_PE.js", rutaVirtualEstandar.ValorCadena1 + "/pickadate.js-3.5.6/lib/translations/es_PE.js");
             page.ClientScript.RegisterClientScriptInclude("realuploader.js", rutaVirtualEstandar.ValorCadena1 + "/upload/js/realuploader.js");
+            page.ClientScript.RegisterClientScriptInclude("jquery.number.js", rutaVirtualEstandar.ValorCadena1 + "/js/jquery.number.js");
 
         }
 
@@ -241,7 +242,11 @@ namespace BusinessLogic
                 if (tipo != null && tipo.Equals(Type.GetType("System.Byte[]")))
                 {
                     if (!hfValor.Value.Equals(""))
+                    {
                         DocumentoDetalle.ValorBinario = File.ReadAllBytes(strRutaArchivo + "\\" + hfValor.Value);
+                        DocumentoDetalle.ExtensionArchivo = Path.GetExtension(strRutaArchivo + "\\" + hfValor.Value).ToLower();
+                    }
+                        
                 }
             }
             Documento.Detalles.Add(DocumentoDetalle.Clone());
@@ -296,7 +301,8 @@ namespace BusinessLogic
                     if (DocumentoDetalle.ValorBinario != null)
                     {
                         //Creamos la imagen en ruta
-                        String strArchivo = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + DocumentoDetalle.Documento.Documento.IdValor + "_" + DocumentoDetalle.Campo.IdValor + ".png";
+                        //String strArchivo = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + DocumentoDetalle.Documento.Documento.IdValor + "_" + DocumentoDetalle.Campo.IdValor + ".png";
+                        String strArchivo = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + DocumentoDetalle.Documento.Documento.IdValor + "_" + DocumentoDetalle.Campo.IdValor + DocumentoDetalle.ExtensionArchivo;
                         File.WriteAllBytes(strRutaArchivo + "\\" + strArchivo, DocumentoDetalle.ValorBinario); // Requires System.IO
                         hfValor.Value = strArchivo;
                     }
