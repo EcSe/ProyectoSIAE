@@ -24,7 +24,7 @@ Tarea = G002636 IdDocumento = 000005 AP-0092
 --DOCUMENTO ACTA SEGURIDAD DISTRIBUCION
 Tarea = G000980 IdDocumento = 000014 AP-0092
 No graba el campo 220
-.Todo OK! Salvo por la reescalabilidad de la imagenes
+.Todo OK! OK! Salvo por la reescalabilidad de la imagenes
 
 --DOCUMENTO ACTA INSTALACION PTP LICENCIADO
 Tarea= G000280 IdDocumento = 000008 AP'0092
