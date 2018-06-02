@@ -145,7 +145,6 @@
     <Content Include="Reportes\Anexo2InventarioPMP.xlsx" />
     <Content Include="Reportes\Anexo2InventarioPTP.xlsx" />
     <Content Include="Reportes\EstudioCampo.xlsx" />
-    <Content Include="Reportes\InstalacióndePozoaTierraTipoA.xlsx" />
     <Content Include="Reportes\ProtocoloInstalacion.xlsx" />
     <Content Include="Reportes\PruebaInterferencia.xlsx" />
     <Content Include="Reportes\PruebasDeServicioDITGPMP.xlsx" />
@@ -158,6 +157,8 @@
     <Content Include="Reportes\ActaInstalacionPTPNoLicenciado.xlsx" />
     <Content Include="Reportes\ActaInstalacionAceptacionProtocoloIIBB_A.xlsx" />
     <Content Include="Reportes\Anexo3ReporteFotográficoCMM4.xlsx" />
+    <Content Include="Reportes\InstalaciondePozoaTierraTipoA.xlsx" />
+    <Content Include="Reportes\InstalaciondePozoaTierraTipoB.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -75,7 +75,7 @@ namespace SNW.forms
         protected void gvTareas_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
-            {
+            {   
                 e.Row.Cells[0].Attributes["data-title"] = "Tarea";
                 e.Row.Cells[1].Attributes["data-title"] = "Sector";
                 e.Row.Cells[2].Attributes["data-title"] = "T. Tarea";
@@ -216,9 +216,14 @@ namespace SNW.forms
                     break;
                 case "000017":
                     rutaPlantilla = Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoA.xlsx");
-                    rd.InstalacionPozoTierra(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                    rd.InstalacionPozoTierraTipoA(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
-                    break;                 
+                    break;
+                case "000018":
+                    rutaPlantilla = Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoB.xlsx");
+                    rd.InstalacionPozoTierraTipoB(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+
+                    break;
 
             }
             String nombreDocumento = documento.Tarea.NodoIIBBA.IdNodo + " " + documento.Documento.ValorCadena1 + " " + documento.Tarea.IdTarea + ".xlsx";

@@ -22,7 +22,7 @@
         }
     };
 
-    if (($("#cphContenido_hfIdDocumento").val() == "000017")) {//INSTALACION DE POZO A TIERRA TIPO A
+    if (($("#cphContenido_hfIdDocumento").val() == "000018")) {//INSTALACION DE POZO A TIERRA TIPO B
 
         // #region POZO A TIERRA 5 Ohm
 
@@ -2196,7 +2196,7 @@
     if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
 
         //Check aprobacion
-        if (($("#cphContenido_hfIdDocumento").val() == "000017")) {//INSTALACION DE POZO A TIERRA TIPO A
+        if (($("#cphContenido_hfIdDocumento").val() == "000018")) {//INSTALACION DE POZO A TIERRA TIPO B
             $('#cphContenido_chkPT5FrontalIIBB').prop('disabled', true);
             $('#cphContenido_chkPT5UbicacionPTAntesInstalacion').prop('disabled', true);
             $('#cphContenido_chkPT5InstalacionPTPanoramicaZanjaAbierta').prop('disabled', true);
@@ -2232,7 +2232,7 @@
         $('#cphContenido_chkPT10MedicionPTPanoramicaMedicionPT03').prop('disabled', true);
 
         //Comentarios
-        if (($("#cphContenido_hfIdDocumento").val() == "000017")) {//INSTALACION DE POZO A TIERRA TIPO A
+        if (($("#cphContenido_hfIdDocumento").val() == "000018")) {//INSTALACION DE POZO A TIERRA TIPO B
             $('#txtPT5FrontalIIBBComentario').prop('disabled', true);
             $('#txtPT5UbicacionPTAntesInstalacionComentario').prop('disabled', true);
             $('#txtPT5InstalacionPTPanoramicaZanjaAbiertaComentario').prop('disabled', true);

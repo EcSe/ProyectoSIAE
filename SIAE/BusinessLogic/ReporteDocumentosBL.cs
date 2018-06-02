@@ -272,7 +272,7 @@ namespace BusinessLogic
             }
         }
 
-        public void InstalacionPozoTierra(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
+        public void InstalacionPozoTierraTipoA(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
         {
 
             baseDatosDA.Configurar();
@@ -286,7 +286,132 @@ namespace BusinessLogic
 
 
                 #region valores String
-                String INSTITUCION = ds.Tables[0].Rows[0]["INSTITUCION"].ToString();
+                String TIPO_INSTITUCION = ds.Tables[0].Rows[0]["TIPO_INSTITUCION"].ToString();
+                String CODIGO_IIBB = ds.Tables[0].Rows[0]["CODIGO_IIBB"].ToString();
+                String NOMBRE_IIBB = ds.Tables[0].Rows[0]["NOMBRE_IIBB"].ToString();
+                #endregion
+
+                #region valores binarios
+
+                #region Campos que no se usan en este tipo de pozo
+                //byte[] CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBB = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBB"];
+                //MemoryStream CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBBm = new MemoryStream(CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBB);
+                //byte[] CINCO_OHM_UBICACION_POZO_ANTES_INSTALAR = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_UBICACION_POZO_ANTES_INSTALAR"];
+                //MemoryStream CINCO_OHM_UBICACION_POZO_ANTES_INSTALARm = new MemoryStream(CINCO_OHM_UBICACION_POZO_ANTES_INSTALAR);
+                //byte[] CINCO_OHM_PAN_ZANJA_ABIERTA = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_ZANJA_ABIERTA"];
+                //MemoryStream CINCO_OHM_PAN_ZANJA_ABIERTAm = new MemoryStream(CINCO_OHM_PAN_ZANJA_ABIERTA);
+                //byte[] CINCO_OHM_PAN_VERTIDO_TIERRA = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_VERTIDO_TIERRA"];
+                //MemoryStream CINCO_OHM_PAN_VERTIDO_TIERRAm = new MemoryStream(CINCO_OHM_PAN_VERTIDO_TIERRA);
+                //byte[] CINCO_OHM_PAN_VERTIDO_SAL = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_VERTIDO_SAL"];
+                //MemoryStream CINCO_OHM_PAN_VERTIDO_SALm = new MemoryStream(CINCO_OHM_PAN_VERTIDO_SAL);
+                //byte[] CINCO_OHM_PAN_VERTIDO_DISOLUCION = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_VERTIDO_DISOLUCION"];
+                //MemoryStream CINCO_OHM_PAN_VERTIDO_DISOLUCIONm = new MemoryStream(CINCO_OHM_PAN_VERTIDO_DISOLUCION);
+                //byte[] CINCO_OHM_PAN_COL_REJE_COBRE01 = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_COL_REJE_COBRE01"];
+                //MemoryStream CINCO_OHM_PAN_COL_REJE_COBRE01m = new MemoryStream(CINCO_OHM_PAN_COL_REJE_COBRE01);
+                //byte[] CINCO_OHM_PAN_COL_REJE_COBRE02 = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_COL_REJE_COBRE02"];
+                //MemoryStream CINCO_OHM_PAN_COL_REJE_COBRE02m = new MemoryStream(CINCO_OHM_PAN_COL_REJE_COBRE02);
+                //byte[] CINCO_OHM_PAN_VERTIDO_DISOLUCION_SOBRE_REJE = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_VERTIDO_DISOLUCION_SOBRE_REJE"];
+                //MemoryStream CINCO_OHM_PAN_VERTIDO_DISOLUCION_SOBRE_REJEm = new MemoryStream(CINCO_OHM_PAN_VERTIDO_DISOLUCION_SOBRE_REJE);
+                //byte[] CINCO_OHM_PAN_VERTIDO_SAL_GRANULADO_LUEGO_DEL_CEMENTO = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_VERTIDO_SAL_GRANULADO_LUEGO_DEL_CEMENTO"];
+                //MemoryStream CINCO_OHM_PAN_VERTIDO_SAL_GRANULADO_LUEGO_DEL_CEMENTOm = new MemoryStream(CINCO_OHM_PAN_VERTIDO_SAL_GRANULADO_LUEGO_DEL_CEMENTO);
+                //byte[] CINCO_OHM_PAN_VERTIDO_RESTO_TIERRA_CULTIVO = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_VERTIDO_RESTO_TIERRA_CULTIVO"];
+                //MemoryStream CINCO_OHM_PAN_VERTIDO_RESTO_TIERRA_CULTIVOm = new MemoryStream(CINCO_OHM_PAN_VERTIDO_RESTO_TIERRA_CULTIVO);
+                //byte[] CINCO_OHM_PAN_RELLENADO_TIERRA_CERNIDA_ZANJA = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_PAN_RELLENADO_TIERRA_CERNIDA_ZANJA"];
+                //MemoryStream CINCO_OHM_PAN_RELLENADO_TIERRA_CERNIDA_ZANJAm = new MemoryStream(CINCO_OHM_PAN_RELLENADO_TIERRA_CERNIDA_ZANJA);
+                //byte[] CINCO_OHM_MED1_PAN_POZO_TIERRA = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_MED1_PAN_POZO_TIERRA"];
+                //MemoryStream CINCO_OHM_MED1_PAN_POZO_TIERRAm = new MemoryStream(CINCO_OHM_MED1_PAN_POZO_TIERRA);
+                //byte[] CINCO_OHM_MED2_PAN_POZO_TIERRA = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_MED2_PAN_POZO_TIERRA"];
+                //MemoryStream CINCO_OHM_MED2_PAN_POZO_TIERRAm = new MemoryStream(CINCO_OHM_MED2_PAN_POZO_TIERRA);
+                //byte[] CINCO_OHM_MED3_PAN_POZO_TIERRA = (byte[])ds.Tables[0].Rows[0]["CINCO_OHM_MED3_PAN_POZO_TIERRA"];
+                //MemoryStream CINCO_OHM_MED3_PAN_POZO_TIERRAm = new MemoryStream(CINCO_OHM_MED3_PAN_POZO_TIERRA);
+                #endregion
+
+                byte[] DIEZ_OHM_FRONTAL_IIBB = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_FRONTAL_IIBB"];
+                MemoryStream DIEZ_OHM_FRONTAL_IIBBm = new MemoryStream(DIEZ_OHM_FRONTAL_IIBB);
+                byte[] DIEZ_OHM_UBIC_POZO_ANTES_INSTALACION = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_UBIC_POZO_ANTES_INSTALACION"];
+                MemoryStream DIEZ_OHM_UBIC_POZO_ANTES_INSTALACIONm = new MemoryStream(DIEZ_OHM_UBIC_POZO_ANTES_INSTALACION);
+                byte[] DIEZ_OHM_PAN_ZANJA_ABIERTA = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_PAN_ZANJA_ABIERTA"];
+                MemoryStream DIEZ_OHM_PAN_ZANJA_ABIERTAm = new MemoryStream(DIEZ_OHM_PAN_ZANJA_ABIERTA);
+                byte[] DIEZ_OHM_PAN_VERITDO_TIERRA_EN_ZANJA = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_PAN_VERITDO_TIERRA_EN_ZANJA"];
+                MemoryStream DIEZ_OHM_PAN_VERITDO_TIERRA_EN_ZANJAm = new MemoryStream(DIEZ_OHM_PAN_VERITDO_TIERRA_EN_ZANJA);
+                byte[] DIEZ_OHM_PAN_VERTIDO_SAL_GRANULADA_ZANJA = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_PAN_VERTIDO_SAL_GRANULADA_ZANJA"];
+                MemoryStream DIEZ_OHM_PAN_VERTIDO_SAL_GRANULADA_ZANJAm = new MemoryStream(DIEZ_OHM_PAN_VERTIDO_SAL_GRANULADA_ZANJA);
+                byte[] DIEZ_OHM_VESTIDO_DIS_CEMENTO = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_VESTIDO_DIS_CEMENTO"];
+                MemoryStream DIEZ_OHM_VESTIDO_DIS_CEMENTOm = new MemoryStream(DIEZ_OHM_VESTIDO_DIS_CEMENTO);
+                byte[] DIEZ_OHM_PAN_REJE_COBRE_01 = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_PAN_REJE_COBRE_01"];
+                MemoryStream DIEZ_OHM_PAN_REJE_COBRE_01m = new MemoryStream(DIEZ_OHM_PAN_REJE_COBRE_01);
+                byte[] DIEZ_OHM_PAN_REJE_COBRE_02 = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_PAN_REJE_COBRE_02"];
+                MemoryStream DIEZ_OHM_PAN_REJE_COBRE_02m = new MemoryStream(DIEZ_OHM_PAN_REJE_COBRE_02);
+                byte[] DIEZ_OHM_PAN_VERTIDO_DIS_ZANJA = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_PAN_VERTIDO_DIS_ZANJA"];
+                MemoryStream DIEZ_OHM_PAN_VERTIDO_DIS_ZANJAm = new MemoryStream(DIEZ_OHM_PAN_VERTIDO_DIS_ZANJA);
+                byte[] DIEZ_OHM_PAN_VERTIDO_sAL_GRANULADA = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_PAN_VERTIDO_sAL_GRANULADA"];
+                MemoryStream DIEZ_OHM_PAN_VERTIDO_sAL_GRANULADAm = new MemoryStream(DIEZ_OHM_PAN_VERTIDO_sAL_GRANULADA);
+                byte[] DIEZ_OHM_VERTIDO_RESTO_TIERRA = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_VERTIDO_RESTO_TIERRA"];
+                MemoryStream DIEZ_OHM_VERTIDO_RESTO_TIERRAm = new MemoryStream(DIEZ_OHM_VERTIDO_RESTO_TIERRA);
+                byte[] DIEZ_OHM_VERTIDO_RELLENADO_TIERRA = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_VERTIDO_RELLENADO_TIERRA"];
+                MemoryStream DIEZ_OHM_VERTIDO_RELLENADO_TIERRAm = new MemoryStream(DIEZ_OHM_VERTIDO_RELLENADO_TIERRA);
+                byte[] DIEZ_OHM_MEDICION1 = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_MEDICION1"];
+                MemoryStream DIEZ_OHM_MEDICION1m = new MemoryStream(DIEZ_OHM_MEDICION1);
+                byte[] DIEZ_OHM_MEDICION2 = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_MEDICION2"];
+                MemoryStream DIEZ_OHM_MEDICION2m = new MemoryStream(DIEZ_OHM_MEDICION2);
+                byte[] DIEZ_OHM_MEDICION3 = (byte[])ds.Tables[0].Rows[0]["DIEZ_OHM_MEDICION3"];
+                MemoryStream DIEZ_OHM_MEDICION3m = new MemoryStream(DIEZ_OHM_MEDICION3);
+                #endregion
+
+               // String usuarioWindows = Environment.UserName;
+                String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                File.Copy(rutaPlantilla, excelGenerado, true);
+
+                #region Agregando los datos 
+                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", TIPO_INSTITUCION, 7, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", CODIGO_IIBB, 7, "N");
+                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", NOMBRE_IIBB, 8, "G");
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_FRONTAL_IIBBm, "", 13, 3, 1317, 340);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_UBIC_POZO_ANTES_INSTALACIONm, "", 49, 3, 1317, 340);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_ZANJA_ABIERTAm, "", 83, 3, 540, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_VERITDO_TIERRA_EN_ZANJAm, "", 83, 14, 540, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_VERTIDO_SAL_GRANULADA_ZANJAm, "", 102, 3, 540, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VESTIDO_DIS_CEMENTOm, "", 102, 14, 540, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_REJE_COBRE_01m, "", 123, 3, 232, 335);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_REJE_COBRE_02m, "", 123, 8, 302, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VESTIDO_DIS_CEMENTOm, "", 123, 14, 675, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_VERTIDO_sAL_GRANULADAm, "", 142, 3, 533, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VERTIDO_RESTO_TIERRAm, "", 142, 14, 718, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VERTIDO_RELLENADO_TIERRAm, "", 160, 3, 534, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION1m, "", 181, 7, 863, 274);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION2m, "", 181, 7, 863, 274);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION3m, "", 181, 7, 863, 274);
+                #endregion
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                baseDatosDA.Desconectar();
+                baseDatosDA = null;
+            }
+        }
+
+        public void InstalacionPozoTierraTipoB(String IdNodo, String IdTarea, String valorCadena1, String rutaPlantilla)
+        {
+
+            baseDatosDA.Configurar();
+            baseDatosDA.Conectar();
+
+            try
+            {
+                baseDatosDA.CrearComando("USP_R_INSTALACION_POZO_TIERRA_B", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
+                DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
+
+
+                #region valores String
+                String TIPO_INSTITUCION = ds.Tables[0].Rows[0]["TIPO_INSTITUCION"].ToString();
                 String CODIGO_IIBB = ds.Tables[0].Rows[0]["CODIGO_IIBB"].ToString();
                 String NOMBRE_IIBB = ds.Tables[0].Rows[0]["NOMBRE_IIBB"].ToString();
                 #endregion
@@ -354,12 +479,15 @@ namespace BusinessLogic
                 MemoryStream DIEZ_OHM_MEDICION3m = new MemoryStream(DIEZ_OHM_MEDICION3);
                 #endregion
 
-               // String usuarioWindows = Environment.UserName;
+                // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
                 #region Agregando los datos 
-                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", INSTITUCION, 7, "E");
+
+                #region Pozo a Tierra  10 ohm
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", TIPO_INSTITUCION, 7, "E");
                 ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", CODIGO_IIBB, 7, "N");
                 ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 10 Ohm", NOMBRE_IIBB, 8, "G");
 
@@ -375,16 +503,47 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_PAN_VERTIDO_sAL_GRANULADAm, "", 142, 3, 533, 334);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VERTIDO_RESTO_TIERRAm, "", 142, 14, 718, 334);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_VERTIDO_RELLENADO_TIERRAm, "", 160, 3, 534, 334);
-                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION1m, "", 181, 7, 863, 274);
-                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION2m, "", 181, 7, 863, 274);
-                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION3m, "", 181, 7, 863, 274);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION1m, "", 181, 7, 1069, 351);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION2m, "", 201, 7, 1069, 351);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 10 Ohm", DIEZ_OHM_MEDICION3m, "", 221, 7, 1069, 351);
+
+                #endregion
+
+                #region Pozo a Tierra 5 ohm
+
+                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 5 Ohm", TIPO_INSTITUCION, 7, "E");
+                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 5 Ohm", CODIGO_IIBB, 7, "N");
+                ExcelToolsBL.UpdateCell(excelGenerado, "POZO A TIERRA 5 Ohm", NOMBRE_IIBB, 8, "G");
+
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_FOTOGRAFIA_FRONTAL_iIBBm, "", 13, 3, 1860, 480);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_UBICACION_POZO_ANTES_INSTALARm, "", 49, 3, 1799, 394);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_ZANJA_ABIERTAm, "", 83, 3, 755, 444);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_VERTIDO_TIERRAm, "", 83, 14, 916, 443);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_VERTIDO_SALm, "", 102, 3, 740, 444);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_VERTIDO_DISOLUCIONm, "", 102, 14, 974, 443);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_COL_REJE_COBRE01m, "", 123, 3, 232, 335);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_COL_REJE_COBRE02m, "", 123, 8, 302, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_VERTIDO_DISOLUCION_SOBRE_REJEm, "", 123, 14, 675, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_VERTIDO_SAL_GRANULADO_LUEGO_DEL_CEMENTOm, "", 142, 3, 533, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_VERTIDO_RESTO_TIERRA_CULTIVOm, "", 142, 14, 718, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_PAN_RELLENADO_TIERRA_CERNIDA_ZANJAm, "", 160, 3, 534, 334);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_MED1_PAN_POZO_TIERRAm, "", 181, 7, 1069, 351);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_MED2_PAN_POZO_TIERRAm, "", 201, 7, 1069, 351);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "POZO A TIERRA 5 Ohm", CINCO_OHM_MED3_PAN_POZO_TIERRAm, "", 221, 7, 1069, 351);
+
+                #endregion
                 #endregion
 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                throw ex;
+            }
+            finally
+            {
+                baseDatosDA.Desconectar();
+                baseDatosDA = null;
             }
 
         }

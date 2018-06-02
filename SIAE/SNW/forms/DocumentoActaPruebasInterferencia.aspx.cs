@@ -59,6 +59,10 @@ namespace SNW.forms
                     Session["metodo"] = "I";//Insert
                     #endregion
 
+                    #region Asignacion Perfil
+                    hfIdPerfil.Value = Usuario.Perfil.IdValor;
+                    #endregion
+
                     #endregion
 
                     #region Verificamos si existe la documentacion
@@ -105,10 +109,6 @@ namespace SNW.forms
                         #endregion
 
                     }
-                    #endregion
-
-                    #region Asignacion Perfil
-                    hfIdPerfil.Value = Usuario.Perfil.IdValor;
                     #endregion
 
                 }

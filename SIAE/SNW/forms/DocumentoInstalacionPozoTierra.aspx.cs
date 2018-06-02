@@ -45,7 +45,7 @@ namespace SNW.forms
                     this.Title = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Tipo Tarea: " + Tarea.TipoTarea.ValorCadena1 + ") " + " .:SIAE:.";
                     #endregion
 
-                    if (Request.QueryString["IdDocumento"].Equals("000017"))//INSTALACION DE POZO A TIERRA TIPO A
+                    if (Request.QueryString["IdDocumento"].Equals("000018"))//INSTALACION DE POZO A TIERRA TIPO B
                     {
 
                         #region POZO A TIERRA 5 Ohm
@@ -283,7 +283,7 @@ namespace SNW.forms
                         hfRutaVirtualTemporal.Value = entidadDetalleBE.ValorCadena1;
                         #endregion
 
-                        if (hfIdDocumento.Value.Equals("000017"))//INSTALACION DE POZO A TIERRA TIPO A
+                        if (hfIdDocumento.Value.Equals("000018"))//INSTALACION DE POZO A TIERRA TIPO B
                         {
 
                             #region POZO A TIERRA 5 Ohm
@@ -612,7 +612,7 @@ namespace SNW.forms
                 strRutaFisicaTemporal = EntidadDetalle.ValorCadena1;
                 #endregion
 
-                if (hfIdDocumento.Value.Equals("000017"))//INSTALACION DE POZO A TIERRA TIPO A
+                if (hfIdDocumento.Value.Equals("000018"))//INSTALACION DE POZO A TIERRA TIPO B
                 {
 
                     #region POZO A TIERRA 5 Ohm
