@@ -89,6 +89,7 @@
     <Content Include="bin\SNW.dll" />
     <Content Include="bin\SNW.pdb" />
     <Content Include="forms\BandejaDocumentacion.aspx" />
+    <Content Include="forms\BandejaNodo.aspx" />
     <Content Include="forms\BandejaTarea.aspx" />
     <Content Include="forms\CargaMasiva.aspx" />
     <Content Include="forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx" />
@@ -136,7 +137,6 @@
     <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
     <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
     <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
-    <Content Include="forms\DownLoadExcel.ashx" />
     <None Include="Properties\PublishProfiles\CARLOS.pubxml" />
     <Content Include="Reportes\ActaInstalacionAceptacionProtocoloOmnidireccional.xlsx" />
     <Content Include="Reportes\ActaInstalacionAceptacionProtocoloSectorial.xlsx" />
@@ -180,15 +180,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="forms\BandejaNodo.aspx.cs">
+      <DependentUpon>BandejaNodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\BandejaNodo.aspx.designer.cs">
+      <DependentUpon>BandejaNodo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\DocumentoVideoVigilanciaNodo.aspx.cs">
       <DependentUpon>DocumentoVideoVigilanciaNodo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="forms\DocumentoVideoVigilanciaNodo.aspx.designer.cs">
       <DependentUpon>DocumentoVideoVigilanciaNodo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="forms\DownLoadExcel.ashx.cs">
-      <DependentUpon>DownLoadExcel.ashx</DependentUpon>
     </Compile>
     <Compile Include="forms\BandejaDocumentacion.aspx.cs">
       <DependentUpon>BandejaDocumentacion.aspx</DependentUpon>

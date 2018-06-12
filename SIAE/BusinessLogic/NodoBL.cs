@@ -93,5 +93,48 @@ namespace BusinessLogic
 
         }
 
+        public static List<NodoBE> ListarNodos(NodoBE nodoBE)
+        {
+            List<NodoBE> lstResultadosBE = new List<NodoBE>();
+            DBBaseDatos baseDatosDA = new DBBaseDatos();
+            baseDatosDA.Configurar();
+            baseDatosDA.Conectar();
+            try
+            {
+                baseDatosDA.CrearComando("USP_NODO", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "S", true);
+
+                if (!nodoBE.IdNodo.Equals(""))
+                    baseDatosDA.AsignarParametroCadena("@PCH_ID_NODO", nodoBE.IdNodo, true);
+                else
+                    baseDatosDA.AsignarParametroNulo("@PCH_ID_NODO", true);
+
+                DbDataReader drDatos = baseDatosDA.EjecutarConsulta();
+
+                while (drDatos.Read())
+                {
+                    NodoBE item = new NodoBE();
+
+                    item.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO"));
+                    item.Nombre = drDatos.GetString(drDatos.GetOrdinal("VC_NOMBRE"));
+                    item.Region.Nombre = drDatos.GetString(drDatos.GetOrdinal("VC_NOMBRE_REGION"));
+                    lstResultadosBE.Add(item);
+                }
+
+                drDatos.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                baseDatosDA.Desconectar();
+                baseDatosDA = null;
+            }
+
+            return lstResultadosBE;
+        }
+
     }
 }

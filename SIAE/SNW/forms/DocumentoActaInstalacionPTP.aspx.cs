@@ -92,6 +92,12 @@ namespace SNW.forms
                         imgConfiguracionIPEstacionBEjemplo);
                     #endregion
 
+                    #region Resultado de Analisis Estacion A (Ejemplo)
+                    #endregion
+
+                    #region Resultado de Analisis Estacion B (Ejemplo)
+                    #endregion
+
                     #endregion
 
                     #region 2 Materiales A

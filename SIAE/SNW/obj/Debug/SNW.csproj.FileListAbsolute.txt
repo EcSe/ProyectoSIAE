@@ -177,6 +177,9 @@ C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\SNW\obj\Debug\SNW.Properties.Resourc
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\SNW\obj\Debug\SNW.csproj.GenerateResource.Cache
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\SNW\obj\Debug\SNW.dll
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\SNW\obj\Debug\SNW.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.csprojResolveAssemblyReference.cache
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.Properties.Resources.resources
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.csproj.GenerateResource.Cache
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\csc.exe
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\csc.exe.config
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\roslyn\csc.rsp
@@ -240,8 +243,5 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\BusinessLogic
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\DataAccess.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.csprojResolveAssemblyReference.cache
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.Properties.Resources.resources
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.csproj.GenerateResource.Cache
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\obj\Debug\SNW.pdb

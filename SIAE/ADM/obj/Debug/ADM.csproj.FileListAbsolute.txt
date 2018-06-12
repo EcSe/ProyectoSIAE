@@ -150,3 +150,16 @@ C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\ADM\bin\DataAccess.pdb
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\ADM\obj\Debug\ADM.csprojResolveAssemblyReference.cache
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\ADM\obj\Debug\ADM.dll
 C:\Users\Elvin Salinas\ownCloud2\elvin\SIAE\ADM\obj\Debug\ADM.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.dll.config
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\ADM.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessEntity.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DocumentFormat.OpenXml.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessEntity.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.pdb
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.csprojResolveAssemblyReference.cache
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.pdb
