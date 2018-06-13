@@ -460,6 +460,10 @@
             AX_CHECK: 3,
             AX_READY: 4,
             AX_NO_FILES: 5,
+            // #region Agregado Carlos Ramos 07/06/2018 Determinar el tipo de archivo
+            AX_IMAGE: 6,
+            AX_VIDEO: 7,
+            // #endregion
             events: {
                 finish: 'upload_finish',
                 finishFile: 'upload_finish_file',
@@ -660,6 +664,7 @@
              */
             runInBackground: function (job) {
                 // Build a worker from an anonymous function body
+                //console.log("runInBackground");
                 var blobURL = URL.createObjectURL(new Blob(['(',
 
                     function (job) {
@@ -676,6 +681,7 @@
                     ')(', job.toString(), ')'], { type: 'application/javascript' }));
 
                 var worker = new Worker(blobURL);
+                //console.log("runInBackground worker = " + worker);
                 return worker;
             },
             /**
@@ -1364,7 +1370,7 @@
                     //Inicio
                     //if (dataView.getUint8(0) == 0xFF && dataView.getUint8(1) == 0xD8 && dataView.getUint8(2) == 0xFF) {
                     if (me.file.size > 0 && dataView.getUint8(0) == 0xFF && dataView.getUint8(1) == 0xD8 && dataView.getUint8(2) == 0xFF) {
-                    //Fin
+                        //Fin
                         me._runStack(me._progress, ['jpegData']);
                         var jpegData = me.readExifJpeg(dataView);
 
@@ -2342,6 +2348,7 @@
              * @private
              */
             _onDoneRead: function (event) {
+                //console.log("_onDoneRead");
                 var img = new Image();
                 var me = this;
                 img.onload = function () {
@@ -2351,6 +2358,7 @@
                     }
                 };
                 img.onerror = me._onErrorImageLoad.bind(me);
+                //console.log("_onDoneRead event.target.result = " + event.target.result);
                 img.src = event.target.result;
             },
             /**
@@ -2994,7 +3002,7 @@
         //Inicio
         //var FileObject = function (file, fileId, AU) {
         var FileObject = function (file, fileId, AU, imgURL) {
-        //Fin        
+            //Fin        
             //console.log("FileObject 01");
             //console.log("file.width = " + file.width);
             var me = this;
@@ -3026,6 +3034,7 @@
             me.checkSum = {};                   //checksum information about me file
 
             //temp variables
+            //console.log("FileObject inicio");
             me.currentByte = 0; 	            //current uploaded byte
             me.loading_bytes = 0;
             me.temp_bytes = 0;
@@ -3036,7 +3045,7 @@
             //Inicio
             me.imgURL = imgURL;
             //Fin 
-            
+
             me.init();
         };
 
@@ -3184,7 +3193,7 @@
                         me.AU.triggerEvent('exifDone', [me, exif]);
                         me.setMessage('').setProgress(0);
                         me.imgCls = me.fixOrientation();
-                        me.dom.previewImage.className += ' ' + me.imgCls;//fix image orientation
+                        me.dom.previewControl.className += ' ' + me.imgCls;//fix image orientation
                     }, me).progress(function (percent) {
                         //progress bar update
                         me.workProgress(_('Reading exif'), percent);
@@ -3240,7 +3249,11 @@
                 //base file template configuration: override with fileTemplate option
                 var tpl = me.config.fileTemplate ? me.config.fileTemplate : [
                 '<a class="ax-prev-container">',
-                    '<img style="cursor: pointer;" class="ax-preview" src="" alt="">',
+                // #region Agregado Carlos Ramos 07/06/2018 Determinar el tipo de archivo
+                //'<img style="cursor: pointer;" class="ax-preview" src="" alt="">',
+                //me.config.fileType == Constants.AX_VIDEO ? '<video controls style="cursor: pointer;" class="ax-preview"><source src="" type="video/mp4">Tu navegador no soporta la etiqueta video.</video>' : '<img style="cursor: pointer;" class="ax-preview" src="" alt="">',
+                me.config.fileType == Constants.AX_VIDEO ? '<video controls style="cursor: pointer;" class="ax-preview" src="">Tu navegador no soporta la etiqueta video.</video>' : '<img style="cursor: pointer;" class="ax-preview" src="" alt="">',
+                // #endregion
                 '</a>',
                 '<div class="ax-details">',
                     '<div class="ax-file-name"></div>',
@@ -3272,26 +3285,29 @@
                     '</a>',
                 '</div>'].join('');
 
+                //console.log("tpl = " + tpl);
                 var tplEdit = me.AU.triggerEvent('beforeRenderFile', [me, tpl]);
                 if (tplEdit) {
                     tpl = tplEdit;
                 }
 
                 //create the file placeholder
+                //console.log("tpl2 = " + tpl);
 
                 me.dom.container = document.createElement('div');
                 //just a short hand avoiding long code down
                 var c = me.dom.container;
+                //console.log("tpl3 = " + tpl);
                 c.innerHTML = tpl;
-                //Agregado Carlos Ramos 07/01/2018 previe imagen
-                //Inicio
-                //console.log("renderHtml01");
-                if (me.config.isImage)
+                // #region Agregado Carlos Ramos 07/06/2018 Determinar el tipo de archivo
+                if (me.config.fileType == Constants.AX_IMAGE)
                     c.classList.add('ax-image-wrapper');
+                else if (me.config.fileType == Constants.AX_VIDEO)
+                    c.classList.add('ax-video-wrapper');
                 else
                     c.classList.add('ax-file-wrapper');
-                //Fin
-                //console.log("renderHtml02");
+                // #endregion
+                //console.log("c.innerHTML = " + c.innerHTML);
 
                 //get a reference to the visible elements
                 me.dom.nameContainer = Utils.getEl(c, '.ax-file-name');
@@ -3315,7 +3331,7 @@
                 me.dom.infoButton = Utils.getEl(c, '.ax-info');
                 me.dom.infoButtonText = Utils.getEl(me.dom.infoButton, '.ax-btn-text');
 
-                me.dom.previewImage = Utils.getEl(c, '.ax-preview');
+                me.dom.previewControl = Utils.getEl(c, '.ax-preview');
                 me.dom.previewContainer = Utils.getEl(c, '.ax-prev-container');
                 me.dom.progressBar = Utils.getEl(c, '.ax-progress-bar');
                 me.dom.progressInfo = Utils.getEl(c, '.ax-progress-info');
@@ -3333,6 +3349,8 @@
 
                 me.AU.dom.fileList.appendChild(me.dom.container);
                 me.AU.triggerEvent('afterRenderFile', [me, me.dom]);
+                //console.log("c.innerHTML2 = " + c.innerHTML);
+                //console.log("me = " + me);
                 return me;
             },
             /**
@@ -3452,16 +3470,18 @@
              */
             setPreviewImage: function (show, src) {
                 var me = this;
-                //console.log("me.dom.previewImage = " + me.dom.previewImage);
-                if (me.dom.previewImage) {
+                //console.log("setPreviewImage me.dom.previewImage = " + me.dom.previewImage);
+                //console.log("setPreviewImage show = " + show);
+                //console.log("setPreviewImage src = " + src);
+                if (me.dom.previewControl) {
                     if (show) {
                         me.dom.previewContainer && (me.dom.previewContainer.style.background = 'none');//lazy if
                         //alert("setPreviewImage01");
-                        me.dom.previewImage.src = src;
+                        me.dom.previewControl.src = src;
                         //alert("setPreviewImage02");
-                        me.dom.previewImage.style.cursor = 'pointer';
-                        me.dom.previewImage.setAttribute('alt', _('Preview'));
-                        me.dom.previewImage.addEventListener('click', function () {
+                        me.dom.previewControl.style.cursor = 'pointer';
+                        me.dom.previewControl.setAttribute('alt', _('Preview'));
+                        me.dom.previewControl.addEventListener('click', function () {
                             Utils.lightBoxPreview(this, me.name, Utils.formatSize(me.size), me.imgCls);
                         });
                     } else {
@@ -3469,11 +3489,46 @@
                             me.dom.previewContainer.classList.add('ax-no-preview');
                             me.dom.previewContainer.innerHTML = '<span class="ax-extension">' + me.ext + '</span>';
                         }
-                        me.dom.previewImage.style.display = 'none';
+                        me.dom.previewControl.style.display = 'none';
                     }
                 }
                 return me;
             },
+
+            /**
+             * Creates the video preview
+             * @param show if true enalbes the preview
+             * @param src the image sr
+             * @returns {FileObject}
+             * @private
+             */
+            setPreviewVideo: function (show, src) {
+                var me = this;
+                //console.log("setPreviewVideo me.dom.previewImage = " + me.dom.previewImage);
+                //console.log("setPreviewVideo show = " + show);
+                //console.log("setPreviewVideo src = " + src);
+                if (me.dom.previewControl) {
+                    if (show) {
+                        me.dom.previewContainer && (me.dom.previewContainer.style.background = 'none');//lazy if
+                        //alert("setPreviewImage01");
+                        me.dom.previewControl.src = src;
+                        //alert("setPreviewImage02");
+                        me.dom.previewControl.style.cursor = 'pointer';
+                        //me.dom.previewControl.setAttribute('alt', _('Preview'));
+                        //me.dom.previewControl.addEventListener('click', function () {
+                        //    Utils.lightBoxPreview(this, me.name, Utils.formatSize(me.size), me.imgCls);
+                        //});
+                    } else {
+                        if (me.dom.previewContainer) {
+                            me.dom.previewContainer.classList.add('ax-no-preview');
+                            me.dom.previewContainer.innerHTML = '<span class="ax-extension">' + me.ext + '</span>';
+                        }
+                        me.dom.previewControl.style.display = 'none';
+                    }
+                }
+                return me;
+            },
+
             /**
              * Disables the upload for this file
              * @param msg Message to show on the progress bar
@@ -3520,7 +3575,7 @@
                 //Inicio
                 //if (this.dom.progressBar) {
                 if (this.dom != null && this.dom.progressBar) {
-                //Fin
+                    //Fin
                     this.dom.progressBar.style.width = percent + '%';
                 }
                 return this;
@@ -3567,7 +3622,7 @@
                 //Inicio
                 //if (me.dom.progressInfo) {
                 if (me.dom != null && me.dom.progressInfo) {
-                //Fin
+                    //Fin
                     me.dom.progressInfo.innerHTML = msg;
                     me.dom.progressInfo.setAttribute('title', msg);
                 }
@@ -3750,9 +3805,15 @@
 
                 var doPreview = me.AU.triggerEvent('beforePreview', [this]);
                 //alert("cramosc01");
-                var createPrev = me.config.previews && me.file.type.match(/image.*/) &&
-                                    (me.ext === 'jpeg' || me.ext === 'jpg' || me.ext === 'gif' || me.ext === 'png');
-                //alert("cramosc02");
+                //console.log("me.file.type = " + me.file.type);
+                //console.log("me.ext = " + me.ext);
+                //console.log("me.file.name = " + me.file.name);
+                //var createPrev = me.config.previews && me.file.type.match(/image.*/) &&
+                //                    (me.ext === 'jpeg' || me.ext === 'jpg' || me.ext === 'gif' || me.ext === 'png');
+                var createPrev = me.config.previews && ((me.file.type.match(/image.*/) &&
+                                    (me.ext === 'jpeg' || me.ext === 'jpg' || me.ext === 'gif' || me.ext === 'png')) ||
+                                    (me.file.type.match(/video.*/) &&
+                                    (me.ext === 'mp4')));
 
                 var URL = window.URL || window.webkitURL;
                 //alert("cramosc03");
@@ -3762,44 +3823,65 @@
                 //console.log("FileObject.bindFilePreview URL = " + URL);
                 //console.log("FileObject.bindFilePreview URL.createObjectURL = " + URL.createObjectURL);
                 //console.log("FileObject.bindFilePreview createPrev = " + createPrev);
-                //console.log("FileObject.bindFilePreview me.config.previewFileSize = " + me.config.previewFileSize);
+                //console.log("FileObject.bindFilePreview me.config.previewImageFileSize = " + me.config.previewImageFileSize);
+                //console.log("FileObject.bindFilePreview me.config.previewVideoFileSize = " + me.config.previewVideoFileSize);
                 //console.log("FileObject.bindFilePreview me.size = " + me.size);
                 //console.log("FileObject.bindFilePreview doPreview = " + doPreview);
+                //console.log("FileObject.bindFilePreview me.status01 = " + me.status);
+                //console.log("FileObject.bindFilePreview me.imgURL01 = " + me.imgURL);
+                //console.log("FileObject.bindFilePreview this.src01 = " + this.src);
+
 
                 //Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
                 //Validamos si el tamaño del archivo es cero si deberia entrar en el if
                 //Inicio
-                //if (URL && URL.createObjectURL && createPrev && me.config.previewFileSize >= me.size && doPreview !== false) {
-                if ((URL && URL.createObjectURL && createPrev && me.config.previewFileSize >= me.size && doPreview !== false)
+                //if (URL && URL.createObjectURL && createPrev && me.config.previewImageFileSize >= me.size && doPreview !== false) {
+                if ((URL && URL.createObjectURL && createPrev && (me.config.previewImageFileSize >= me.size || me.config.previewVideoFileSize >= me.size) && doPreview !== false)
                     || (me.size == 0)) {
-                //Fin
-                                
-                //if ((URL && URL.createObjectURL && createPrev && me.config.previewFileSize >= me.size && doPreview !== false)
-                //    || ((me.imgURL != undefined && me.imgURL.length > 0))
-                //    ) {
+                    //Fin
+
+                    //if ((URL && URL.createObjectURL && createPrev && me.config.previewImageFileSize >= me.size && doPreview !== false)
+                    //    || ((me.imgURL != undefined && me.imgURL.length > 0))
+                    //    ) {
                     //alert("cramosc04");
                     //console.log("FileObject.bindFilePreview 02");
-                    var img = new Image();
-                    //alert("cramosc05");
-                    img.onload = function () {
-                        //console.log("img.onload01");
-                        //console.log("img.naturalWidth = " + img.naturalWidth);
-                        //console.log("img.naturalHeight = " + img.naturalHeight);
-                        //Agregado Carlos Ramos 12/02/2018 validar dimensiones de la imagen subida
-                        //Inicio
-                        //alert("cramosc06");
-                        if (me.ext === 'jpeg' || me.ext === 'jpg' || me.ext === 'gif' || me.ext === 'png') {
+                    //console.log("FileObject.bindFilePreview me.status02 = " + me.status);
+                    //console.log('bindFilePreview this01' + this);
+                    //console.log("FileObject.bindFilePreview me.imgURL02 = " + me.imgURL);
+                    //console.log("FileObject.bindFilePreview this.src02 = " + this.src);
+
+                    if (me.ext === 'jpeg' || me.ext === 'jpg' || me.ext === 'gif' || me.ext === 'png') {
+                        //console.log("es imagen");
+                        var img = new Image();
+                        //console.log("FileObject.bindFilePreview me.imgURL02.01 = " + me.imgURL);
+                        //console.log("FileObject.bindFilePreview this.src02.01 = " + this.src);
+                        //alert("cramosc05");
+                        //console.log("FileObject.bindFilePreview me.status03 = " + me.status);
+                        img.onload = function () {
+                            //console.log("img.onload01");
+                            //console.log("img.naturalWidth = " + img.naturalWidth);
+                            //console.log("img.naturalHeight = " + img.naturalHeight);
+
+                            // #region Carlos Ramos 12/02/2018 validar dimensiones de la imagen subida
+
+                            //alert("cramosc06");
+
                             //alert("cramosc07");
-                            if (me.config.minWidtDimension > 0) {
+                            //console.log("FileObject.bindFilePreview me.status04 = " + me.status);
+                            //console.log("FileObject.bindFilePreview me.imgURL03 = " + me.imgURL);
+                            //console.log("FileObject.bindFilePreview this.src03 = " + this.src);
+                            if (me.config.minWidthDimension > 0) {
                                 //alert("cramosc08");
-                                if (img.naturalWidth < me.config.minWidtDimension) {
+                                //if (img.naturalWidth < me.config.minWidthDimension) {
+                                if (img.naturalWidth < (me.config.changeDimensions ? Math.min(me.config.minHeightDimension, me.config.minWidthDimension) : me.config.minWidthDimension)) {
                                     //alert("cramosc09");
-                                    alert("El ancho mínimo debe ser " + me.config.minWidtDimension + " pixeles.");
+                                    //alert("El ancho mínimo debe ser " + me.config.minWidthDimension + " pixeles.");
+                                    alert("El ancho mínimo debe ser " + Math.min(me.config.minHeightDimension, me.config.minWidthDimension) + " pixeles.");
                                     me.destroy();
                                     //console.log("cramosc01");
                                     //console.log("me.AU.dom.removeButton = " + me.AU.dom.removeButton);
                                     //me.dom.removeButton.click();
-                                    
+
                                     //console.log("cramosc01.01");
                                     //alert("cramosc10");
                                     return false;
@@ -3809,72 +3891,116 @@
                             //alert("cramosc11")
                             if (me.config.minHeightDimension > 0) {
                                 //alert("cramosc12")
-                                if (img.naturalHeight < me.config.minHeightDimension) {
+                                //if (img.naturalHeight < me.config.minHeightDimension) {
+                                if (img.naturalHeight < (me.config.changeDimensions ? Math.min(me.config.minHeightDimension, me.config.minWidthDimension) : me.config.minHeightDimension)) {
                                     //alert("cramosc13")
-                                    alert("El alto mínimo debe ser " + me.config.minHeightDimension + " pixeles.");
-                                    console.log("cramosc01");
+                                    //alert("El alto mínimo debe ser " + me.config.minHeightDimension + " pixeles.");
+                                    alert("El alto mínimo debe ser " + Math.min(me.config.minHeightDimension, me.config.minWidthDimension) + " pixeles.");
+                                    //console.log("cramosc01");
                                     //me.dom.removeButton.click();
                                     me.destroy();
                                     //alert("cramosc14")
                                     return false;
                                 }
                             }
-                        }
-                        //Fin
-                        //console.log("bindFilePreview cramosc 01");
-                        //alert("cramosc15");
 
+                            // #endregion
+
+                            //console.log("bindFilePreview cramosc 01");
+                            //alert("cramosc15");
+
+                            //Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
+                            //Validamos si el tamaño del archivo es cero para asignarle la URL como imagen
+                            //Inicio
+                            //me.setPreviewImage(true, this.src);
+                            //console.log("FileObject.bindFilePreview me.imgURL04 = " + me.imgURL);
+                            //console.log("FileObject.bindFilePreview this.src04 = " + this.src);
+                            //console.log("FileObject.bindFilePreview me.status05 = " + me.status);
+
+                            if (me.imgURL != undefined && me.imgURL.length > 0)
+                                me.setPreviewImage(true, me.imgURL);
+                            else
+                                me.setPreviewImage(true, this.src);
+                            //Fin
+
+                            //alert("cramosc16");
+                            me.AU.triggerEvent('preview', [this]);
+                            //alert("cramosc17");
+                            // #region Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
+
+                            //Validamos si el tamaño del archivo es cero para asignarle el estado de subido al servidor
+                            //console.log("FileObject.bindFilePreview me.status06 = " + me.status);
+                            if (me.size == 0)
+                                me.setStatus(Constants.AX_DONE);
+                            else
+                                me.setStatus(Constants.AX_READY);
+                            //console.log("FileObject.bindFilePreview me.status07 = " + me.status);
+                            // #endregion
+
+                            //alert("cramosc18");
+                            URL.revokeObjectURL(me.file);
+                            //alert("cramosc19");
+                            img = null;
+                            //console.log("FileObject.bindFilePreview me.status08 = " + me.status);
+                            //alert("cramosc20");
+                        };
+                        img.onerror = function () {
+                            //alert("cramosc21");
+                            me.setStatus(Constants.AX_READY);
+                            //alert("cramosc22");
+                        };
+                        //alert("cramosc05.01");
                         //Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
                         //Validamos si el tamaño del archivo es cero para asignarle la URL como imagen
                         //Inicio
-                        //me.setPreviewImage(true, this.src);
+                        //img.src = URL.createObjectURL(this.file);
+                        if (me.size == 0) {
+                            img.src = me.imgURL;
+                        }
+                        else {
+                            //console.log("FileObject.bindFilePreview me.imgURL05 = " + me.imgURL);
+                            //console.log("FileObject.bindFilePreview this.src05 = " + this.src);
+                            img.src = URL.createObjectURL(this.file);
+                            //console.log("FileObject.bindFilePreview me.imgURL06 = " + me.imgURL);
+                            //console.log("FileObject.bindFilePreview this.src06 = " + this.src);
+                            //console.log("FileObject.bindFilePreview img.src = " + img.src);
+
+                        }
+                            
+                        //Fin
+
+                        //console.log("URL = " + URL);
+                        //console.log("img.src = " + img.src);
+                        //alert("cramosc05.02");
+                    }
+                    else if (me.ext === 'mp4') {
+
+                        //console.log("FileObject.bindFilePreview me.imgURL = " + me.imgURL);
+                        //console.log("FileObject.bindFilePreview this.src = " + this.src);
+                        //console.log("FileObject.bindFilePreview me.status05 = " + me.status);
+                        // #region Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
                         if (me.imgURL != undefined && me.imgURL.length > 0)
                             me.setPreviewImage(true, me.imgURL);
                         else
-                            me.setPreviewImage(true, this.src);
-                        //Fin
+                            me.setPreviewVideo(true, URL.createObjectURL(this.file));
 
-                        //alert("cramosc16");
-                        me.AU.triggerEvent('preview', [this]);
-                        //alert("cramosc17");
-                        //Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
                         //Validamos si el tamaño del archivo es cero para asignarle el estado de subido al servidor
-                        //Inicio
+                        //console.log("FileObject.bindFilePreview me.status06 = " + me.status);
                         if (me.size == 0)
                             me.setStatus(Constants.AX_DONE);
                         else
                             me.setStatus(Constants.AX_READY);
-                        //Fin
-                        //alert("cramosc18");
-                        URL.revokeObjectURL(me.file);
-                        //alert("cramosc19");
-                        img = null;
-                        //alert("cramosc20");
-                    };
-                    img.onerror = function () {
-                        //alert("cramosc21");
-                        me.setStatus(Constants.AX_READY);
-                        //alert("cramosc22");
-                    };
-                    //alert("cramosc05.01");
-                    //Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
-                    //Validamos si el tamaño del archivo es cero para asignarle la URL como imagen
-                    //Inicio
-                    //img.src = URL.createObjectURL(this.file);
-                    if (me.size == 0)
-                        img.src = me.imgURL;
-                    else
-                        img.src = URL.createObjectURL(this.file);
-                    //Fin
-                    
-                    //console.log("URL = " + URL);
-                    //console.log("img.src = " + img.src);
-                    //alert("cramosc05.02");
+                        //console.log("FileObject.bindFilePreview me.status07 = " + me.status);
+                        // #endregion
+
+                    }
                 } else {
                     //console.log("FileObject.bindFilePreview 03");
+                    alert("cramosc07");
                     me.setPreviewImage(false, null);
                     me.setStatus(Constants.AX_READY);
                 }
+                //console.log('bindFilePreview this' + this);
                 return this;
             },
             /**
@@ -3882,9 +4008,9 @@
              */
             fixOrientation: function () {
                 var me = this;
-                if (me.dom.previewImage && this.exifData && this.exifData.Orientation) {
-                    var width = me.dom.previewImage.width;
-                    var height = me.dom.previewImage.height;
+                if (me.dom.previewControl && this.exifData && this.exifData.Orientation) {
+                    var width = me.dom.previewControl.width;
+                    var height = me.dom.previewControl.height;
                     var orientation = this.exifData.Orientation;
                     Utils.log('fixOrientation:', orientation);
                     switch (orientation) {
@@ -4018,10 +4144,10 @@
                 //if (me.AU.triggerEvent('beforeUploadFile', [me, this.name]) !== false) {
                 if (me.AU != null && me.AU.triggerEvent('beforeUploadFile', [me, this.name]) !== false) {
                     me.status = Constants.AX_CHECK;//check status
-
+                    //console.log("startUpload02 me.status = " + me.status);
                     //check if file exists on server, this returns a deferred
                     me.checkFileExists().yes(function () {
-
+                        //console.log("startUpload02.01 me.status = " + me.status);
                         me.askUser(_('File exits on server. Override?')).yes(function () {
                             me._upload();
                         }).no(function () {
@@ -4029,9 +4155,11 @@
                         });
 
                     }).no(function () {
+                        //console.log("startUpload02.02 me.status = " + me.status);
                         me._upload();
                     });
                 } else {
+                    //console.log("startUpload03 me.status = " + me.status);
                     me._onError('beforeUploadFile', _('beforeUploadFile::File validation failed'));
                 }
                 //console.log("startUpload02 me.status = " + me.status);
@@ -4094,6 +4222,9 @@
                     chunk = file;
                     isLast = true;
                 } else {
+                    //console.log("_upload file.name = " + file.name);
+                    //console.log("_upload currentByte = " + currentByte);
+                    //console.log("_upload endByte = " + endByte);
                     chunk = Utils.sliceFile(file, currentByte, endByte);
                 }
 
@@ -4105,6 +4236,7 @@
 
                 //abort event, (nothing to do for the moment)
                 me.xhr.upload.addEventListener('abort', function (e) {
+                    console.log("me.xhr.upload.addEventListener abort");
                     me._onError('aborted', _('Upload aborted'));
                 }, false);
 
@@ -4168,7 +4300,10 @@
                                 me._onFinishUpload(ret);
                             } else {
                                 //upload the next chunk
+                                //console.log("me.xhr.onreadystatechange file.name = " + file.name);
+                                //console.log("me.xhr.onreadystatechange me.currentByte01 = " + me.currentByte);
                                 me.currentByte = endByte;
+                                //console.log("me.xhr.onreadystatechange me.currentByte02 = " + me.currentByte);
                                 me._upload();
                             }
                         } catch (err) {
@@ -4179,18 +4314,33 @@
                     }
                 };
 
-                //anti freeze system: if the current request last more then the prev request per 10 times then abort it and restart
-                if (me.requestDuration > 0 && !isLast) {
-                    //start a timeout base on the time of the prev request duration time x10
-                    me.abortTimeout = setTimeout(function () {
-                        me.xhr.abort();//abort the request
-                        me._upload();//retry upload of current chunk and resend
 
-                    }, (me.requestDuration * 10));
-                }
+                //anti freeze system: if the current request last more then the prev request per 10 times then abort it and restart
+                //console.log("_upload me.requestDuration = " + me.requestDuration);
+                //console.log("_upload isLast = " + isLast);
+                //console.log("_upload me.abortTimeout = " + me.abortTimeout);
+                //if (me.requestDuration > 0 && !isLast) {
+                //    //start a timeout base on the time of the prev request duration time x10
+                //    me.abortTimeout = setTimeout(function () {
+                //        console.log("_upload abortar");
+                //        me.xhr.abort();//abort the request
+                //        me._upload();//retry upload of current chunk and resend
+
+                //    }, (me.requestDuration * 10));
+
+                //    console.log("_upload me.requestDuration2 = " + me.requestDuration);
+                //    console.log("_upload isLast2 = " + isLast);
+                //    console.log("_upload me.abortTimeout2 = " + me.abortTimeout);
+
+                //}
 
                 //some parameters are mandatory for correct file upload
                 var params = this.getParams();
+
+                //console.log("_upload2 chunk.name = " + chunk.name);
+                //console.log("_upload2 me.currentByte = " + me.currentByte);
+                //console.log("_upload2 me.md5 = " + me.md5);
+
                 params.append('ax_file_input', chunk);
                 params.append('ax-start-byte', me.currentByte);
                 params.append('ax-file-md5', me.md5);
@@ -4251,6 +4401,8 @@
                         me.destroy();
                     }
                 }
+                console.log("_onError err = " + err);
+                console.log("_onError msg = " + msg);
                 me._onComplete();
             },
 
@@ -4265,6 +4417,7 @@
             _onFinishUpload: function (json) {
                 var me = this;
                 //update file information
+                //console.log("_onFinishUpload json.name = " + json.name);
                 me.setName(json.name)
                     .setStatus(json.status)
                     .setInfo(json.info)
@@ -4275,6 +4428,7 @@
                 me.checkSum = json.checkSum;
                 me.path = json.path;
 
+                //console.log("_onFinishUpload");
                 me._onComplete();
 
                 //remove on success option
@@ -4291,7 +4445,9 @@
             _onComplete: function () {
                 var me = this;
                 //to be done always
+                //console.log("_onComplete me.currentByte01 = " + me.currentByte);
                 me.currentByte = 0; 	//reset current byte
+                //console.log("_onComplete me.currentByte02 = " + me.currentByte);
                 me.setProgress(0);        //reset progress bar
 
                 //remove interval speed updater
@@ -4423,7 +4579,7 @@
          * the exif info on the new image
          * @param {boolean} [config.previews=true] If true the system will make the preview of the image and a light box
          * Set to false to avoid memory problems on multiple image selection
-         * @param {number} [config.previewFileSize=10485760] Set a limit to the image preview, for big images the browser
+         * @param {number} [config.previewImageFileSize=10485760] Set a limit to the image preview, for big images the browser
          * can cause memory problems and slowness
          * @param {Function} [config.listeners] Main listeners handles. This is an object containing all listeners events
          * @param {Function} [config.listeners.start] Runs on upload start of the upload
@@ -4541,17 +4697,18 @@
                         alpha: true
                     },
                     previews: true,
-                    previewFileSize: 10 * 1024 * 1024,
+                    previewImageFileSize: 10 * 1024 * 1024,
+                    previewVideoFileSize: 100 * 1024 * 1024,
                     listeners: null,
                     validateFile: null
-                    //Agregado Carlos Ramos 07/01/2018
-                    //Inicio
-                    , isImage: false
-                    //Fin
+                    // #region Agregado Carlos Ramos 07/06/2018 Determinar el tipo de archivo
+                    , fileType: 0
+                    // #endregion
                     //Agregado Carlos Ramos 12/02/2018 Validar Dimensiones
                     //Inicio
-                    , minWidtDimension: 0
+                    , minWidthDimension: 0
                     , minHeightDimension: 0
+                    , changeDimensions: true //Permite que se intercalen el largo y ancho de la imagen al momento de validar
                     //Fin
                 }
             };
@@ -5085,6 +5242,7 @@
 
                 //if AutoStart is enabled then start upload MOVE ON FILES READY
                 if (this.config.autoStart) {
+                    //console.log("addFiles");
                     this.enqueueAll();
                 }
             },
@@ -5143,7 +5301,7 @@
             },
 
             //Fin
-            
+
             /**
              * Checking file if extension is allowed or if this file is exceeding the maximum file number
              * @param name name of the file
@@ -5219,7 +5377,7 @@
                     //console.log("enqueueAll cramosc02");
                     //push files in the upload queue
                     for (var i = 0, len = pending.length; i < len; i++) {
-                        //console.log("enqueueAll cramosc03");
+                        //console.log("enqueueAll pending[i] = " + pending[i]);
                         this.uploadQueue.push(pending[i]);
                         //console.log("enqueueAll cramosc04");
                     }
@@ -5249,6 +5407,7 @@
                     Utils.log('Process queue');
                     me.checkInterval = setInterval(function () {
                         Utils.log('Start interval');
+                        //console.log("processQueue me.uploadQueue.length = " + me.uploadQueue.length);
                         if (me.uploadQueue.length == 0) {
                             clearInterval(me.checkInterval);
                             me.checkInterval = null;

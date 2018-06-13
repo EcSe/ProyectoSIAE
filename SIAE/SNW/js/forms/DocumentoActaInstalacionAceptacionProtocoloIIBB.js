@@ -364,7 +364,7 @@
         });
     });
 
-    $('#cphContenido_txtValorMedioMedida01').number(true, 1);
+    $('#cphContenido_txtValorMedioMedida01').number(true, 2);
 
     $("#cphContenido_chkValorMedioMedida01").trigger("change");
 
@@ -401,7 +401,7 @@
         });
     });
 
-    $('#cphContenido_txtValorMedioMedida02').number(true, 1);
+    $('#cphContenido_txtValorMedioMedida02').number(true, 2);
 
     $("#cphContenido_chkValorMedioMedida02").trigger("change");
 
@@ -438,7 +438,7 @@
         });
     });
 
-    $('#cphContenido_txtValorMedioMedida03').number(true, 1);
+    $('#cphContenido_txtValorMedioMedida03').number(true, 2);
 
     $("#cphContenido_chkValorMedioMedida03").trigger("change");
 

@@ -594,6 +594,158 @@
                                     <asp:HiddenField ID="hfConfiguracionIPEstacionB" runat="server" />
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <span class="input-group-addon"><span class="fa fa-file-image-o"></span></span>
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionA01Ejemplo" class="form-control" style="height: 100%;">
+                                                <img id="imgResultadodeAnalisisEstacionA01Ejemplo" runat="server" alt="Resultado de Analisis Estacion A01 (Ejemplo)" style="width: 100%;" />
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionA01Ejemplo">Resultado de Analisis Estación A01 (Ejemplo)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkResultadodeAnalisisEstacionA01" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spResultadodeAnalisisEstacionA01Comentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocResultadodeAnalisisEstacionA01Comentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtResultadodeAnalisisEstacionA01Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfResultadodeAnalisisEstacionA01Comentario" runat="server" />
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionA01" class="">
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionA01">Resultado de Analisis Estación A01</label>
+                                        </div>
+                                    </div>
+                                    <asp:HiddenField ID="hfResultadodeAnalisisEstacionA01" runat="server" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <span class="input-group-addon"><span class="fa fa-file-image-o"></span></span>
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionA02Ejemplo" class="form-control" style="height: 100%;">
+                                                <img id="imgResultadodeAnalisisEstacionA02Ejemplo" runat="server" alt="Resultado de Analisis Estacion A02 (Ejemplo)" style="width: 100%;" />
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionA02Ejemplo">Resultado de Analisis Estación A02 (Ejemplo)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkResultadodeAnalisisEstacionA02" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spResultadodeAnalisisEstacionA02Comentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocResultadodeAnalisisEstacionA02Comentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtResultadodeAnalisisEstacionA02Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfResultadodeAnalisisEstacionA02Comentario" runat="server" />
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionA02" class="">
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionA02">Resultado de Analisis Estación A02</label>
+                                        </div>
+                                    </div>
+                                    <asp:HiddenField ID="hfResultadodeAnalisisEstacionA02" runat="server" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <span class="input-group-addon"><span class="fa fa-file-image-o"></span></span>
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionB01Ejemplo" class="form-control" style="height: 100%;">
+                                                <img id="imgResultadodeAnalisisEstacionB01Ejemplo" runat="server" alt="Resultado de Analisis Estacion B01 (Ejemplo)" style="width: 100%;" />
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionB01Ejemplo">Resultado de Analisis Estación B01 (Ejemplo)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkResultadodeAnalisisEstacionB01" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spResultadodeAnalisisEstacionB01Comentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocResultadodeAnalisisEstacionB01Comentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtResultadodeAnalisisEstacionB01Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfResultadodeAnalisisEstacionB01Comentario" runat="server" />
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionB01" class="">
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionB01">Resultado de Analisis Estación B01</label>
+                                        </div>
+                                    </div>
+                                    <asp:HiddenField ID="hfResultadodeAnalisisEstacionB01" runat="server" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <span class="input-group-addon"><span class="fa fa-file-image-o"></span></span>
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionB02Ejemplo" class="form-control" style="height: 100%;">
+                                                <img id="imgResultadodeAnalisisEstacionB02Ejemplo" runat="server" alt="Resultado de Analisis Estacion B02 (Ejemplo)" style="width: 100%;" />
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionB02Ejemplo">Resultado de Analisis Estación B02 (Ejemplo)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkResultadodeAnalisisEstacionB02" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spResultadodeAnalisisEstacionB02Comentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocResultadodeAnalisisEstacionB02Comentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtResultadodeAnalisisEstacionB02Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfResultadodeAnalisisEstacionB02Comentario" runat="server" />
+                                        <div class="has-float-label">
+                                            <div id="divResultadodeAnalisisEstacionB02" class="">
+                                            </div>
+                                            <label for="divResultadodeAnalisisEstacionB02">Resultado de Analisis Estación B02</label>
+                                        </div>
+                                    </div>
+                                    <asp:HiddenField ID="hfResultadodeAnalisisEstacionB02" runat="server" />
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="tabMaterialesEstacionA">
                             <div class="row">

@@ -925,6 +925,274 @@
 
     // #endregion
 
+    // #region Resultado de Analisis Estación A01
+
+    $('#cphContenido_chkResultadodeAnalisisEstacionA01').change(function () {
+        var blnActivo = $("#cphContenido_chkResultadodeAnalisisEstacionA01").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divResultadodeAnalisisEstacionA01, "#divResultadodeAnalisisEstacionA01");
+        else
+            habilitarRealUploader(true, divResultadodeAnalisisEstacionA01, "#divResultadodeAnalisisEstacionA01");
+    });
+
+    poResultadodeAnalisisEstacionA01Comentario = $("#spResultadodeAnalisisEstacionA01Comentario").popover({
+        html: true,
+        content: function () {
+            return $('#pocResultadodeAnalisisEstacionA01Comentario').html();
+        }
+    });
+
+    poResultadodeAnalisisEstacionA01Comentario.on('show.bs.popover', function () {
+        //Devuelve el popover: $(this).data("bs.popover").tip()
+        $(this).data("bs.popover").tip().addClass('info');
+        $(this).data("bs.popover").tip().css("max-width", "600px");
+    });
+
+    poResultadodeAnalisisEstacionA01Comentario.on('shown.bs.popover', function () {
+        $("#txtResultadodeAnalisisEstacionA01Comentario").val($("#cphContenido_hfResultadodeAnalisisEstacionA01Comentario").val());
+        $("#txtResultadodeAnalisisEstacionA01Comentario").focus();
+        $("#txtResultadodeAnalisisEstacionA01Comentario").keyup(function () {
+            $("#cphContenido_hfResultadodeAnalisisEstacionA01Comentario").val($(this).val());
+        });
+    });
+
+    var divResultadodeAnalisisEstacionA01 = new RealUploader("#divResultadodeAnalisisEstacionA01", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        fileType: 6,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA01').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA01').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA01').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA01').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfResultadodeAnalisisEstacionA01').val() != "") {
+        divResultadodeAnalisisEstacionA01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfResultadodeAnalisisEstacionA01').val(), $('#cphContenido_hfResultadodeAnalisisEstacionA01').val());
+    }
+
+    $("#cphContenido_chkResultadodeAnalisisEstacionA01").trigger("change");
+
+    // #endregion
+
+    // #region Resultado de Analisis Estación A02
+
+    $('#cphContenido_chkResultadodeAnalisisEstacionA02').change(function () {
+        var blnActivo = $("#cphContenido_chkResultadodeAnalisisEstacionA02").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divResultadodeAnalisisEstacionA02, "#divResultadodeAnalisisEstacionA02");
+        else
+            habilitarRealUploader(true, divResultadodeAnalisisEstacionA02, "#divResultadodeAnalisisEstacionA02");
+    });
+
+    poResultadodeAnalisisEstacionA02Comentario = $("#spResultadodeAnalisisEstacionA02Comentario").popover({
+        html: true,
+        content: function () {
+            return $('#pocResultadodeAnalisisEstacionA02Comentario').html();
+        }
+    });
+
+    poResultadodeAnalisisEstacionA02Comentario.on('show.bs.popover', function () {
+        //Devuelve el popover: $(this).data("bs.popover").tip()
+        $(this).data("bs.popover").tip().addClass('info');
+        $(this).data("bs.popover").tip().css("max-width", "600px");
+    });
+
+    poResultadodeAnalisisEstacionA02Comentario.on('shown.bs.popover', function () {
+        $("#txtResultadodeAnalisisEstacionA02Comentario").val($("#cphContenido_hfResultadodeAnalisisEstacionA02Comentario").val());
+        $("#txtResultadodeAnalisisEstacionA02Comentario").focus();
+        $("#txtResultadodeAnalisisEstacionA02Comentario").keyup(function () {
+            $("#cphContenido_hfResultadodeAnalisisEstacionA02Comentario").val($(this).val());
+        });
+    });
+
+    var divResultadodeAnalisisEstacionA02 = new RealUploader("#divResultadodeAnalisisEstacionA02", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        fileType: 6,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA02').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA02').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA02').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionA02').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfResultadodeAnalisisEstacionA02').val() != "") {
+        divResultadodeAnalisisEstacionA02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfResultadodeAnalisisEstacionA02').val(), $('#cphContenido_hfResultadodeAnalisisEstacionA02').val());
+    }
+
+    $("#cphContenido_chkResultadodeAnalisisEstacionA02").trigger("change");
+
+    // #endregion
+
+    // #region Resultado de Analisis Estación B01
+
+    $('#cphContenido_chkResultadodeAnalisisEstacionB01').change(function () {
+        var blnActivo = $("#cphContenido_chkResultadodeAnalisisEstacionB01").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divResultadodeAnalisisEstacionB01, "#divResultadodeAnalisisEstacionB01");
+        else
+            habilitarRealUploader(true, divResultadodeAnalisisEstacionB01, "#divResultadodeAnalisisEstacionB01");
+    });
+
+    poResultadodeAnalisisEstacionB01Comentario = $("#spResultadodeAnalisisEstacionB01Comentario").popover({
+        html: true,
+        content: function () {
+            return $('#pocResultadodeAnalisisEstacionB01Comentario').html();
+        }
+    });
+
+    poResultadodeAnalisisEstacionB01Comentario.on('show.bs.popover', function () {
+        //Devuelve el popover: $(this).data("bs.popover").tip()
+        $(this).data("bs.popover").tip().addClass('info');
+        $(this).data("bs.popover").tip().css("max-width", "600px");
+    });
+
+    poResultadodeAnalisisEstacionB01Comentario.on('shown.bs.popover', function () {
+        $("#txtResultadodeAnalisisEstacionB01Comentario").val($("#cphContenido_hfResultadodeAnalisisEstacionB01Comentario").val());
+        $("#txtResultadodeAnalisisEstacionB01Comentario").focus();
+        $("#txtResultadodeAnalisisEstacionB01Comentario").keyup(function () {
+            $("#cphContenido_hfResultadodeAnalisisEstacionB01Comentario").val($(this).val());
+        });
+    });
+
+    var divResultadodeAnalisisEstacionB01 = new RealUploader("#divResultadodeAnalisisEstacionB01", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        fileType: 6,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB01').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB01').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB01').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB01').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfResultadodeAnalisisEstacionB01').val() != "") {
+        divResultadodeAnalisisEstacionB01.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfResultadodeAnalisisEstacionB01').val(), $('#cphContenido_hfResultadodeAnalisisEstacionB01').val());
+    }
+
+    $("#cphContenido_chkResultadodeAnalisisEstacionB01").trigger("change");
+
+    // #endregion
+
+    // #region Resultado de Analisis Estación B02
+
+    $('#cphContenido_chkResultadodeAnalisisEstacionB02').change(function () {
+        var blnActivo = $("#cphContenido_chkResultadodeAnalisisEstacionB02").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divResultadodeAnalisisEstacionB02, "#divResultadodeAnalisisEstacionB02");
+        else
+            habilitarRealUploader(true, divResultadodeAnalisisEstacionB02, "#divResultadodeAnalisisEstacionB02");
+    });
+
+    poResultadodeAnalisisEstacionB02Comentario = $("#spResultadodeAnalisisEstacionB02Comentario").popover({
+        html: true,
+        content: function () {
+            return $('#pocResultadodeAnalisisEstacionB02Comentario').html();
+        }
+    });
+
+    poResultadodeAnalisisEstacionB02Comentario.on('show.bs.popover', function () {
+        //Devuelve el popover: $(this).data("bs.popover").tip()
+        $(this).data("bs.popover").tip().addClass('info');
+        $(this).data("bs.popover").tip().css("max-width", "600px");
+    });
+
+    poResultadodeAnalisisEstacionB02Comentario.on('shown.bs.popover', function () {
+        $("#txtResultadodeAnalisisEstacionB02Comentario").val($("#cphContenido_hfResultadodeAnalisisEstacionB02Comentario").val());
+        $("#txtResultadodeAnalisisEstacionB02Comentario").focus();
+        $("#txtResultadodeAnalisisEstacionB02Comentario").keyup(function () {
+            $("#cphContenido_hfResultadodeAnalisisEstacionB02Comentario").val($(this).val());
+        });
+    });
+
+    var divResultadodeAnalisisEstacionB02 = new RealUploader("#divResultadodeAnalisisEstacionB02", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['png', 'jpg'],
+        fileType: 6,
+        minWidtDimension: 1366,
+        minHeightDimension: 768,
+        listeners: {
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB02').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB02').val(fileNamesUploaded);
+            },
+            removeAllFiles: function () {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB02').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfResultadodeAnalisisEstacionB02').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfResultadodeAnalisisEstacionB02').val() != "") {
+        divResultadodeAnalisisEstacionB02.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfResultadodeAnalisisEstacionB02').val(), $('#cphContenido_hfResultadodeAnalisisEstacionB02').val());
+    }
+
+    $("#cphContenido_chkResultadodeAnalisisEstacionB02").trigger("change");
+
+    // #endregion
+
     // #endregion
 
     // #region 2 Materiales A
@@ -5822,6 +6090,13 @@
         $('#cphContenido_chkConfiguracionRadioEstacionB').prop('disabled', true);
         $('#cphContenido_chkConfiguracionIPEstacionA').prop('disabled', true);
         $('#cphContenido_chkConfiguracionIPEstacionB').prop('disabled', true);
+        $('#cphContenido_chkResultadodeAnalisisEstacionA01').prop('disabled', true);
+        $('#cphContenido_chkResultadodeAnalisisEstacionA02').prop('disabled', true);
+        $('#cphContenido_chkResultadodeAnalisisEstacionB01').prop('disabled', true);
+        $('#cphContenido_chkResultadodeAnalisisEstacionB02').prop('disabled', true);
+
+
+
 
         $('#cphContenido_chkEquipamientosA').prop('disabled', true);
         $('#cphContenido_chkMaterialesA').prop('disabled', true);
@@ -5926,6 +6201,11 @@
         $('#txtConfiguracionRadioEstacionBComentario').prop('disabled', true);
         $('#txtConfiguracionIPEstacionAComentario').prop('disabled', true);
         $('#txtConfiguracionIPEstacionBComentario').prop('disabled', true);
+        $('#txtResultadodeAnalisisEstacionA01Comentario').prop('disabled', true);
+        $('#txtResultadodeAnalisisEstacionA02Comentario').prop('disabled', true);
+        $('#txtResultadodeAnalisisEstacionB01Comentario').prop('disabled', true);
+        $('#txtResultadodeAnalisisEstacionB02Comentario').prop('disabled', true);
+
 
         $('#txtEquipamientosAComentario').prop('disabled', true);
         $('#txtMaterialesAComentario').prop('disabled', true);

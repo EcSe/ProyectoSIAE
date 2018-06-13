@@ -589,6 +589,150 @@ namespace SNW.forms {
         protected global::System.Web.UI.WebControls.HiddenField hfConfiguracionIPEstacionB;
         
         /// <summary>
+        /// Control imgResultadodeAnalisisEstacionA01Ejemplo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgResultadodeAnalisisEstacionA01Ejemplo;
+        
+        /// <summary>
+        /// Control chkResultadodeAnalisisEstacionA01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkResultadodeAnalisisEstacionA01;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionA01Comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfResultadodeAnalisisEstacionA01Comentario;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionA01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfResultadodeAnalisisEstacionA01;
+        
+        /// <summary>
+        /// Control imgResultadodeAnalisisEstacionA02Ejemplo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgResultadodeAnalisisEstacionA02Ejemplo;
+        
+        /// <summary>
+        /// Control chkResultadodeAnalisisEstacionA02.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkResultadodeAnalisisEstacionA02;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionA02Comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfResultadodeAnalisisEstacionA02Comentario;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionA02.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfResultadodeAnalisisEstacionA02;
+        
+        /// <summary>
+        /// Control imgResultadodeAnalisisEstacionB01Ejemplo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgResultadodeAnalisisEstacionB01Ejemplo;
+        
+        /// <summary>
+        /// Control chkResultadodeAnalisisEstacionB01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkResultadodeAnalisisEstacionB01;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionB01Comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfResultadodeAnalisisEstacionB01Comentario;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionB01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfResultadodeAnalisisEstacionB01;
+        
+        /// <summary>
+        /// Control imgResultadodeAnalisisEstacionB02Ejemplo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgResultadodeAnalisisEstacionB02Ejemplo;
+        
+        /// <summary>
+        /// Control chkResultadodeAnalisisEstacionB02.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkResultadodeAnalisisEstacionB02;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionB02Comentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfResultadodeAnalisisEstacionB02Comentario;
+        
+        /// <summary>
+        /// Control hfResultadodeAnalisisEstacionB02.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfResultadodeAnalisisEstacionB02;
+        
+        /// <summary>
         /// Control chkEquipamientosA.
         /// </summary>
         /// <remarks>

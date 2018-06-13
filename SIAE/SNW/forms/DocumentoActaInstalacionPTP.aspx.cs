@@ -92,10 +92,24 @@ namespace SNW.forms
                         imgConfiguracionIPEstacionBEjemplo);
                     #endregion
 
-                    #region Resultado de Analisis Estacion A (Ejemplo)
+                    #region Resultado de Analisis Estacion A 01 (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE,"CAMP_EJE", "000354",
+                        imgResultadodeAnalisisEstacionA01Ejemplo);
                     #endregion
 
-                    #region Resultado de Analisis Estacion B (Ejemplo)
+                    #region Resultado de Analisis Estacion A 02 (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000355",
+                        imgResultadodeAnalisisEstacionA02Ejemplo);
+                    #endregion
+
+                    #region Resultado de Analisis Estacion B 01 (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000356",
+                        imgResultadodeAnalisisEstacionB01Ejemplo);
+                    #endregion
+
+                    #region Resultado de Analisis Estacion B 02 (Ejemplo)
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000357",
+                        imgResultadodeAnalisisEstacionB02Ejemplo);
                     #endregion
 
                     #endregion
@@ -926,6 +940,42 @@ namespace SNW.forms
                             chkConfiguracionIPEstacionB,
                             hfConfiguracionIPEstacionBComentario, null, null,
                             hfConfiguracionIPEstacionB, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Resultado de Analisis Estacion AO1
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000481").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkResultadodeAnalisisEstacionA01,
+                            hfResultadodeAnalisisEstacionA01Comentario, null, null,
+                            hfResultadodeAnalisisEstacionA01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Resultado de Analisis Estacion AO2
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000482").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkResultadodeAnalisisEstacionA02,
+                            hfResultadodeAnalisisEstacionA02Comentario, null, null,
+                            hfResultadodeAnalisisEstacionA02, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Resultado de Analisis Estacion BO1
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000483").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkResultadodeAnalisisEstacionB01,
+                            hfResultadodeAnalisisEstacionB01Comentario, null, null,
+                            hfResultadodeAnalisisEstacionB01, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #region Resultado de Analisis Estacion BO2
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000484").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkResultadodeAnalisisEstacionB02,
+                            hfResultadodeAnalisisEstacionB02Comentario, null, null,
+                            hfResultadodeAnalisisEstacionB02, strRutaFisicaTemporal,
                             Type.GetType("System.Byte[]"));
                         #endregion
 
@@ -2140,6 +2190,37 @@ namespace SNW.forms
                     Type.GetType("System.Byte[]"));
                 #endregion
 
+                #region Resultado Analisis Estacion  A01
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                  Documento, "000481", chkResultadodeAnalisisEstacionA01,
+                  hfResultadodeAnalisisEstacionA01Comentario, null, null,
+                  hfResultadodeAnalisisEstacionA01, strRutaFisicaTemporal,
+                  Type.GetType("System.Byte[]"));
+                #endregion
+
+                #region Resultado Analisis Estacion  A02
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                 Documento, "000482", chkResultadodeAnalisisEstacionA02,
+                 hfResultadodeAnalisisEstacionA02Comentario, null, null,
+                 hfResultadodeAnalisisEstacionA02, strRutaFisicaTemporal,
+                 Type.GetType("System.Byte[]"));
+                #endregion
+
+                #region Resultado Analisis Estacion  B01
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                 Documento, "000483", chkResultadodeAnalisisEstacionB01,
+                 hfResultadodeAnalisisEstacionB01Comentario, null, null,
+                 hfResultadodeAnalisisEstacionB01, strRutaFisicaTemporal,
+                 Type.GetType("System.Byte[]"));
+                #endregion
+
+                #region Resultado Analisis Estacion  B02
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                 Documento, "000484", chkResultadodeAnalisisEstacionB02,
+                 hfResultadodeAnalisisEstacionB02Comentario, null, null,
+                 hfResultadodeAnalisisEstacionB02, strRutaFisicaTemporal,
+                 Type.GetType("System.Byte[]"));
+                #endregion
                 #endregion
 
                 #region 2 Materiales A
