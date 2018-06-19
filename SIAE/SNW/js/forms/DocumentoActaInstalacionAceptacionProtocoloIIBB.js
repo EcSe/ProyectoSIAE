@@ -1972,7 +1972,7 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio').number(true, 1);
+    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraMedida01ValorMedio").trigger("change");
 
@@ -2009,7 +2009,7 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio').number(true, 1);
+    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraMedida02ValorMedio").trigger("change");
 
@@ -2046,7 +2046,7 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio').number(true, 1);
+    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraMedida03ValorMedio").trigger("change");
 
@@ -2087,7 +2087,7 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio').number(true, 1);
+    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").trigger("change");
 
@@ -2124,7 +2124,7 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio').number(true, 1);
+    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").trigger("change");
 
@@ -2161,7 +2161,7 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio').number(true, 1);
+    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").trigger("change");
 

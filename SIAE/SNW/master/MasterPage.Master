@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SNW.master.MasterPage" %>
 
+<%@ Register src="~/UserControl/AutoRedirect.ascx" tagname="AutoRedirect" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,6 +31,7 @@
 <body>
     <form id="frmMaster" runat="server">
         <asp:ScriptManager ID="smManager" runat="server" AsyncPostBackTimeout="7200"></asp:ScriptManager><%--AsyncPostBackTimeout en segundos--%>
+        <uc1:AutoRedirect ID="AutoRedirect1" runat="server" />
         <header>
             <nav class="navbar-base navbar-base-default">
                 <div class="container-fluid">

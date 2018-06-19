@@ -47,7 +47,8 @@ namespace BusinessLogic
                     item.Documento.Tarea.IdTarea = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TAREA"));
                     item.Documento.Tarea.NodoIIBBA.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO"));
                     item.Material.Entidad.IdEntidad = drDatos.GetString(drDatos.GetOrdinal("VC_ID_ENTIDAD"));
-                    item.Cantidad = drDatos.GetInt32(drDatos.GetOrdinal("IN_CANTIDAD"));
+                    //item.Cantidad = drDatos.GetInt32(drDatos.GetOrdinal("IN_CANTIDAD"));
+                    item.Cantidad = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_CANTIDAD"));
                     item.Material.IdValor = drDatos.GetString(drDatos.GetOrdinal("VC_ID_VALOR"));
                     item.Material.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA1"));
                     item.Material.ValorCadena2 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA2"));
@@ -89,7 +90,7 @@ namespace BusinessLogic
                 baseDatosDA.AsignarParametroCadena("@PCH_ID_TAREA", DocumentoMaterial.Documento.Tarea.IdTarea, true);
                 baseDatosDA.AsignarParametroCadena("@PCH_ID_NODO", DocumentoMaterial.Documento.Tarea.NodoIIBBA.IdNodo, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_MATERIAL", DocumentoMaterial.Material.IdValor, true);
-                baseDatosDA.AsignarParametroEntero("@PIN_CANTIDAD", DocumentoMaterial.Cantidad, true);
+                baseDatosDA.AsignarParametroDouble("@PNU_CANTIDAD", DocumentoMaterial.Cantidad, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_CRE", DocumentoMaterial.UsuarioCreacion.IdUsuario, true);
                 baseDatosDA.EjecutarComando();
             }
@@ -127,7 +128,7 @@ namespace BusinessLogic
                 baseDatosDA.AsignarParametroCadena("@PCH_ID_TAREA", DocumentoMaterial.Documento.Tarea.IdTarea, true);
                 baseDatosDA.AsignarParametroCadena("@PCH_ID_NODO", DocumentoMaterial.Documento.Tarea.NodoIIBBA.IdNodo, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_MATERIAL", DocumentoMaterial.Material.IdValor, true);
-                baseDatosDA.AsignarParametroEntero("@PIN_CANTIDAD", DocumentoMaterial.Cantidad, true);
+                baseDatosDA.AsignarParametroDouble("@PNU_CANTIDAD", DocumentoMaterial.Cantidad, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_CRE", DocumentoMaterial.UsuarioCreacion.IdUsuario, true);
                 baseDatosDA.EjecutarComando();
             }

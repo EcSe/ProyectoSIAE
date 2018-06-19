@@ -762,14 +762,24 @@ namespace SNW.forms
 
                         #endregion
 
+                        #region Archivos Adicionales
+
+                        #region Mapa Georeferenciado (.kmz)
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000505").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkMapaGeoreferenciado,
+                            hfMapaGeoreferenciadoComentario, null, null,
+                            hfMapaGeoreferenciado, strRutaFisicaTemporal,
+                            Type.GetType("System.Byte[]"));
+                        #endregion
+
+                        #endregion
+
                         #region Asignamos el metodo
                         Session["metodo"] = "U";//Update
                         #endregion
 
                     }
                     #endregion
-
-                    
 
                 }
                 else
@@ -1280,6 +1290,18 @@ namespace SNW.forms
                     Documento, "000480", chkOtrosLugaresPrincipalesCartel15,
                     hfOtrosLugaresPrincipalesCartel15Comentario, null, null,
                     hfOtrosLugaresPrincipalesCartel15, strRutaFisicaTemporal,
+                    Type.GetType("System.Byte[]"));
+                #endregion
+
+                #endregion
+
+                #region Archivos Adicionales
+
+                #region Mapa Georeferenciado (.kmz)
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                    Documento, "000505", chkMapaGeoreferenciado,
+                    hfMapaGeoreferenciadoComentario, null, null,
+                    hfMapaGeoreferenciado, strRutaFisicaTemporal,
                     Type.GetType("System.Byte[]"));
                 #endregion
 

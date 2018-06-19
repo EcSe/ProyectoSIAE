@@ -11,7 +11,7 @@ namespace BusinessEntity
     {
         public DocumentoBE Documento { get; set; }
         public EntidadDetalleBE Material { get; set; }
-        public Int32 Cantidad { get; set; }
+        public Double Cantidad { get; set; }
         public String Material_IdValor { get { return Material.IdValor; } }
         public UsuarioBE UsuarioCreacion { get; set; }
         public UsuarioBE UsuarioModificacion { get; set; }

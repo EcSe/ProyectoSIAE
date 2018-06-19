@@ -22,14 +22,14 @@ namespace BusinessLogic
         {
             baseDatosDA.Configurar();
             baseDatosDA.Conectar();
-
+           //controlar los valores nulos cuando se agregan los datos.
             try
             {
                 baseDatosDA.CrearComando("USP_R_PRUEBAINTERFERENCIA", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                 DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
-                
 
+               String prueba =  ds.Tables[0].Rows[0]["COD_NODO"].ToString();
                 String codNodo = ds.Tables[0].Rows[0]["COD_NODO"].ToString();
 
                 byte[] imageBuffer = (byte[])ds.Tables[0].Rows[0]["CAP_PANT_EPMP1000"];

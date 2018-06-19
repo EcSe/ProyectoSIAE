@@ -3420,6 +3420,77 @@
 
     // #endregion
 
+    // #region Archivos Adicionales
+
+    // #region Mapa Georeferenciado (.kmz)
+
+    $('#cphContenido_chkMapaGeoreferenciado').change(function () {
+        var blnActivo = $("#cphContenido_chkMapaGeoreferenciado").prop("checked");
+        if (blnActivo)
+            habilitarRealUploader(false, divMapaGeoreferenciado, "#divMapaGeoreferenciado");
+        else
+            habilitarRealUploader(true, divMapaGeoreferenciado, "#divMapaGeoreferenciado");
+    });
+
+    poMapaGeoreferenciadoComentario = $("#spMapaGeoreferenciadoComentario").popover({
+        html: true,
+        content: function () {
+            return $('#pocMapaGeoreferenciadoComentario').html();
+        }
+    });
+
+    poMapaGeoreferenciadoComentario.on('show.bs.popover', function () {
+        //Devuelve el popover: $(this).data("bs.popover").tip()
+        $(this).data("bs.popover").tip().addClass('info');
+        $(this).data("bs.popover").tip().css("max-width", "600px");
+    });
+
+    poMapaGeoreferenciadoComentario.on('shown.bs.popover', function () {
+        $("#txtMapaGeoreferenciadoComentario").val($("#cphContenido_hfMapaGeoreferenciadoComentario").val());
+        $("#txtMapaGeoreferenciadoComentario").focus();
+        $("#txtMapaGeoreferenciadoComentario").keyup(function () {
+            $("#cphContenido_hfMapaGeoreferenciadoComentario").val($(this).val());
+        });
+    });
+
+    var divMapaGeoreferenciado = new RealUploader("#divMapaGeoreferenciado", {
+        language: 'es_ES',//idioma
+        url: 'Upload.aspx',//pagina que carga los archivos
+        overrideFile: true,//sobreescribir
+        allowDelete: false,//permitir borrar despues de cargar al servidor
+        exifRead: true, //Leer los datos de un jpeg
+        maxFiles: 1,
+        autoStart: true,
+        allowedExtensions: ['kmz'],
+        listeners: {
+            start: function (filesPending) { },
+            startFile: function (fileObj) { },
+            finish: function (fileNames, fileList) {
+                $('#cphContenido_hfMapaGeoreferenciado').val(fileNames);
+            },
+            finishFile: function (file, msg, fileNames, fileNamesUploaded) {
+                $('#cphContenido_hfMapaGeoreferenciado').val(fileNamesUploaded);
+            },
+            select: function (fileList) { },
+            removeAllFiles: function () {
+                $('#cphContenido_hfMapaGeoreferenciado').val("");
+            },
+            removeFile: function (fileNames, fileList, fileNamesUploaded) {
+                $('#cphContenido_hfMapaGeoreferenciado').val(fileNamesUploaded);
+            },
+        }
+    });
+
+    if ($('#cphContenido_hfMapaGeoreferenciado').val() != "") {
+        divMapaGeoreferenciado.addEmptyFile($('#cphContenido_hfRutaVirtualTemporal').val() + "/" + $('#cphContenido_hfMapaGeoreferenciado').val(), $('#cphContenido_hfMapaGeoreferenciado').val());
+    }
+
+    $("#cphContenido_chkMapaGeoreferenciado").trigger("change");
+
+    // #endregion
+
+    // #endregion
+
     // #region Cerrar todos los popovers cuando se da click fuera de uno
 
     $("body").on('click', function (e) {

@@ -93,7 +93,8 @@
     <Content Include="forms\BandejaTarea.aspx" />
     <Content Include="forms\CargaMasiva.aspx" />
     <Content Include="forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx" />
-    <Content Include="forms\DocumentoActaInstalacionPTP.aspx" />
+    <Content Include="forms\DocumentoActaInstalacionPTPLicenciado.aspx" />
+    <Content Include="forms\DocumentoActaInstalacionPTPNoLicenciado.aspx" />
     <Content Include="forms\DocumentoActaProtocolo.aspx" />
     <Content Include="forms\DocumentoActaPruebasInterferencia.aspx" />
     <Content Include="forms\DocumentoActaSeguridad.aspx" />
@@ -108,7 +109,8 @@
     <Content Include="forms\ObtenerBytesArchivo.aspx" />
     <Content Include="forms\Upload.aspx" />
     <Content Include="js\forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.js" />
-    <Content Include="js\forms\DocumentoActaInstalacionPTP.js" />
+    <Content Include="js\forms\DocumentoActaInstalacionPTPLicenciado.js" />
+    <Content Include="js\forms\DocumentoActaInstalacionPTPNoLicenciado.js" />
     <Content Include="js\forms\DocumentoActaProtocolo.js" />
     <Content Include="js\forms\BandejaDocumentacion.js" />
     <Content Include="js\forms\BandejaTarea.js" />
@@ -130,6 +132,7 @@
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="packages.config" />
     <Content Include="master\MasterPage.Master" />
+    <Content Include="UserControl\AutoRedirect.ascx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="bin\SNW.dll.config" />
     <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -187,6 +190,13 @@
     <Compile Include="forms\BandejaNodo.aspx.designer.cs">
       <DependentUpon>BandejaNodo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="forms\DocumentoActaInstalacionPTPLicenciado.aspx.cs">
+      <DependentUpon>DocumentoActaInstalacionPTPLicenciado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\DocumentoActaInstalacionPTPLicenciado.aspx.designer.cs">
+      <DependentUpon>DocumentoActaInstalacionPTPLicenciado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forms\DocumentoVideoVigilanciaNodo.aspx.cs">
       <DependentUpon>DocumentoVideoVigilanciaNodo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,12 +232,12 @@
     <Compile Include="forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx.designer.cs">
       <DependentUpon>DocumentoActaInstalacionAceptacionProtocoloIIBB.aspx</DependentUpon>
     </Compile>
-    <Compile Include="forms\DocumentoActaInstalacionPTP.aspx.cs">
-      <DependentUpon>DocumentoActaInstalacionPTP.aspx</DependentUpon>
+    <Compile Include="forms\DocumentoActaInstalacionPTPNoLicenciado.aspx.cs">
+      <DependentUpon>DocumentoActaInstalacionPTPNoLicenciado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="forms\DocumentoActaInstalacionPTP.aspx.designer.cs">
-      <DependentUpon>DocumentoActaInstalacionPTP.aspx</DependentUpon>
+    <Compile Include="forms\DocumentoActaInstalacionPTPNoLicenciado.aspx.designer.cs">
+      <DependentUpon>DocumentoActaInstalacionPTPNoLicenciado.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\DocumentoActaProtocolo.aspx.cs">
       <DependentUpon>DocumentoActaProtocolo.aspx</DependentUpon>
@@ -366,6 +376,10 @@
       <Project>{0482140b-db4d-4c12-9132-42cc099f15f0}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UTILITARIOS\UTILITARIOS.csproj">
+      <Project>{1586341d-7a8f-4e21-b29c-0e6a71487eab}</Project>
+      <Name>UTILITARIOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -408,6 +422,9 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>copy "$(SolutionDir)UTILITARIOS\UserControl\*.ascx" "$(ProjectDir)UserControl\"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

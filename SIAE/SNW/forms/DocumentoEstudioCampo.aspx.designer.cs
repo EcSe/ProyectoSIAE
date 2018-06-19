@@ -1975,6 +1975,33 @@ namespace SNW.forms {
         protected global::System.Web.UI.WebControls.HiddenField hfOtrosLugaresPrincipalesCartel15;
         
         /// <summary>
+        /// Control chkMapaGeoreferenciado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkMapaGeoreferenciado;
+        
+        /// <summary>
+        /// Control hfMapaGeoreferenciadoComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfMapaGeoreferenciadoComentario;
+        
+        /// <summary>
+        /// Control hfMapaGeoreferenciado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfMapaGeoreferenciado;
+        
+        /// <summary>
         /// Control upaGuardar.
         /// </summary>
         /// <remarks>

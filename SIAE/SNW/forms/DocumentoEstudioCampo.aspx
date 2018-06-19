@@ -15,6 +15,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tabEstudioCampo" data-toggle="tab"><span class="fa fa-book"></span>&nbsp;Estudio de Campo</a></li>
                         <li><a href="#tabFotosAdicionales" data-toggle="tab"><span class="fa fa-file-image-o"></span>&nbsp;Fotos Adicionales</a></li>
+                        <li><a href="#tabArchivosAdicionales" data-toggle="tab"><span class="fa fa-file"></span>&nbsp;Archivos Adicionales</a></li>
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -26,7 +27,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkFecha" runat="server" />
+                                                    <asp:CheckBox ID="chkFecha" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -39,7 +40,7 @@
                                         </div>
                                         <input type="hidden" id="hfFechaComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtFecha" class="form-control" placeholder="dd/mm/yyyy" runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtFecha" class="form-control" placeholder="dd/mm/yyyy" runat="server" MaxLength="10"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtFecha">Fecha</label>
                                         </span>
@@ -50,7 +51,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkHoraInicio" runat="server" />
+                                                    <asp:CheckBox ID="chkHoraInicio" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -63,7 +64,7 @@
                                         </div>
                                         <input type="hidden" id="hfHoraInicioComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtHoraInicio" class="form-control" placeholder="hh:mm" runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtHoraInicio" class="form-control" placeholder="hh:mm" runat="server" MaxLength="10"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtHoraInicio">Hora Inicio</label>
                                         </span>
@@ -74,7 +75,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkHoraFin" runat="server" />
+                                                    <asp:CheckBox ID="chkHoraFin" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -87,7 +88,7 @@
                                         </div>
                                         <input type="hidden" id="hfHoraFinComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtHoraFin" class="form-control" placeholder="hh:mm" runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtHoraFin" class="form-control" placeholder="hh:mm" runat="server" MaxLength="10"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtHoraFin">Hora Fin</label>
                                         </span>
@@ -98,7 +99,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkLongitudLocalidadDesdePlazaPrincipal" runat="server" />
+                                                    <asp:CheckBox ID="chkLongitudLocalidadDesdePlazaPrincipal" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -111,7 +112,7 @@
                                         </div>
                                         <input type="hidden" id="hfLongitudLocalidadDesdePlazaPrincipalComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtLongitudLocalidadDesdePlazaPrincipal" class="form-control " placeholder=" " runat="server" maxlength="200" autocomplete="off"></asp:textbox>
+                                            <asp:TextBox ID="txtLongitudLocalidadDesdePlazaPrincipal" class="form-control " placeholder=" " runat="server" MaxLength="200" autocomplete="off"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtLongitudLocalidadDesdePlazaPrincipal">Long. Loc. Plaza Princ.</label>
                                         </span>
@@ -124,7 +125,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkLatitudLocalidadDesdePlazaPrincipal" runat="server" />
+                                                    <asp:CheckBox ID="chkLatitudLocalidadDesdePlazaPrincipal" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -137,7 +138,7 @@
                                         </div>
                                         <input type="hidden" id="hfLatitudLocalidadDesdePlazaPrincipalComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtLatitudLocalidadDesdePlazaPrincipal" class="form-control " placeholder=" " runat="server" maxlength="200" autocomplete="off"></asp:textbox>
+                                            <asp:TextBox ID="txtLatitudLocalidadDesdePlazaPrincipal" class="form-control " placeholder=" " runat="server" MaxLength="200" autocomplete="off"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtLatitudLocalidadDesdePlazaPrincipal">Lat. Loc. Plaza Princ.</label>
                                         </span>
@@ -148,7 +149,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkAltura" runat="server" />
+                                                    <asp:CheckBox ID="chkAltura" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -161,7 +162,7 @@
                                         </div>
                                         <input type="hidden" id="hfAlturaComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtAltura" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtAltura" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtAltura">Altura (m.s.n.m.)</label>
                                         </span>
@@ -172,7 +173,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkAreaNaturalProtegida" runat="server" />
+                                                    <asp:CheckBox ID="chkAreaNaturalProtegida" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -185,7 +186,7 @@
                                         </div>
                                         <input type="hidden" id="hfAreaNaturalProtegidaComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtAreaNaturalProtegida" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtAreaNaturalProtegida" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtAreaNaturalProtegida">Área Natural Protegida</label>
                                         </span>
@@ -196,7 +197,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkNombreAreaNatural" runat="server" />
+                                                    <asp:CheckBox ID="chkNombreAreaNatural" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -209,7 +210,7 @@
                                         </div>
                                         <input type="hidden" id="hfNombreAreaNaturalComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtNombreAreaNatural" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtNombreAreaNatural" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
                                             <label for="cphContenido_txtNombreAreaNatural">Nombre Área Natural</label>
                                         </span>
@@ -222,7 +223,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkRestosArqueologicos" runat="server" />
+                                                    <asp:CheckBox ID="chkRestosArqueologicos" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -235,7 +236,7 @@
                                         </div>
                                         <input type="hidden" id="hfRestosArqueologicosComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtRestosArqueologicos" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtRestosArqueologicos" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtRestosArqueologicos">Restos Arquelógicos</label>
                                         </span>
                                     </div>
@@ -245,7 +246,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkTipoRestosArqueologicos" runat="server" />
+                                                    <asp:CheckBox ID="chkTipoRestosArqueologicos" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -258,7 +259,7 @@
                                         </div>
                                         <input type="hidden" id="hfTipoRestosArqueologicosComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtTipoRestosArqueologicos" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtTipoRestosArqueologicos" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtTipoRestosArqueologicos">Tip. Restos Arquelógicos</label>
                                         </span>
                                     </div>
@@ -268,7 +269,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkBancoNacion" runat="server" />
+                                                    <asp:CheckBox ID="chkBancoNacion" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -281,7 +282,7 @@
                                         </div>
                                         <input type="hidden" id="hfBancoNacionComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtBancoNacion" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtBancoNacion" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtBancoNacion">Banco de la Nación</label>
                                         </span>
                                     </div>
@@ -291,7 +292,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkAgenteBancoNacion" runat="server" />
+                                                    <asp:CheckBox ID="chkAgenteBancoNacion" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -304,7 +305,7 @@
                                         </div>
                                         <input type="hidden" id="hfAgenteBancoNacionComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtAgenteBancoNacion" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtAgenteBancoNacion" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtAgenteBancoNacion">Agente Banco Nación</label>
                                         </span>
                                     </div>
@@ -316,7 +317,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkCantidad" runat="server" />
+                                                    <asp:CheckBox ID="chkCantidad" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -329,7 +330,7 @@
                                         </div>
                                         <input type="hidden" id="hfCantidadComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtCantidad" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtCantidad" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtCantidad">Cantidad</label>
                                         </span>
                                     </div>
@@ -339,7 +340,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkOtrosBancos" runat="server" />
+                                                    <asp:CheckBox ID="chkOtrosBancos" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -352,7 +353,7 @@
                                         </div>
                                         <input type="hidden" id="hfOtrosBancosComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtOtrosBancos" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtOtrosBancos" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtOtrosBancos">Otros Bancos</label>
                                         </span>
                                     </div>
@@ -362,7 +363,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkCantidadOtrosBancos" runat="server" />
+                                                    <asp:CheckBox ID="chkCantidadOtrosBancos" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -375,7 +376,7 @@
                                         </div>
                                         <input type="hidden" id="hfCantidadOtrosBancosComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtCantidadOtrosBancos" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtCantidadOtrosBancos" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtCantidadOtrosBancos">Cantidad Otros Bancos</label>
                                         </span>
                                     </div>
@@ -385,7 +386,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkEntidadImportante" runat="server" />
+                                                    <asp:CheckBox ID="chkEntidadImportante" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -398,7 +399,7 @@
                                         </div>
                                         <input type="hidden" id="hfEntidadImportanteComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtEntidadImportante" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtEntidadImportante" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtEntidadImportante">Entidad Importante</label>
                                         </span>
                                     </div>
@@ -410,7 +411,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkInstitucionEducativa" runat="server" />
+                                                    <asp:CheckBox ID="chkInstitucionEducativa" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -423,7 +424,7 @@
                                         </div>
                                         <input type="hidden" id="hfInstitucionEducativaComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtInstitucionEducativa" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtInstitucionEducativa" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtInstitucionEducativa">Institución Educativa</label>
                                         </span>
                                     </div>
@@ -433,7 +434,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkCantidadInstitucionEducativa" runat="server" />
+                                                    <asp:CheckBox ID="chkCantidadInstitucionEducativa" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -446,7 +447,7 @@
                                         </div>
                                         <input type="hidden" id="hfCantidadInstitucionEducativaComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtCantidadInstitucionEducativa" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtCantidadInstitucionEducativa" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtCantidadInstitucionEducativa">Cantidad IIEE</label>
                                         </span>
                                     </div>
@@ -456,7 +457,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkPoblacion" runat="server" />
+                                                    <asp:CheckBox ID="chkPoblacion" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -469,7 +470,7 @@
                                         </div>
                                         <input type="hidden" id="hfPoblacionComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtPoblacion" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtPoblacion" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtPoblacion">Población</label>
                                         </span>
                                     </div>
@@ -479,7 +480,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkNumeroMujeres" runat="server" />
+                                                    <asp:CheckBox ID="chkNumeroMujeres" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -492,7 +493,7 @@
                                         </div>
                                         <input type="hidden" id="hfNumeroMujeresComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtNumeroMujeres" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtNumeroMujeres" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtNumeroMujeres">N° de Mujeres</label>
                                         </span>
                                     </div>
@@ -504,7 +505,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkNumeroJovenesEntre15y24Anios" runat="server" />
+                                                    <asp:CheckBox ID="chkNumeroJovenesEntre15y24Anios" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -517,7 +518,7 @@
                                         </div>
                                         <input type="hidden" id="hfNumeroJovenesEntre15y24AniosComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtNumeroJovenesEntre15y24Anios" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtNumeroJovenesEntre15y24Anios" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtNumeroJovenesEntre15y24Anios">N° Jov. 15 y 24</label>
                                         </span>
                                     </div>
@@ -527,7 +528,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkNumeroPersonasDiscapacidad" runat="server" />
+                                                    <asp:CheckBox ID="chkNumeroPersonasDiscapacidad" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -540,7 +541,7 @@
                                         </div>
                                         <input type="hidden" id="hfNumeroPersonasDiscapacidadComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtNumeroPersonasDiscapacidad" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtNumeroPersonasDiscapacidad" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtNumeroPersonasDiscapacidad">N° Pers. Discapacidad</label>
                                         </span>
                                     </div>
@@ -550,7 +551,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkNumeroViviendas" runat="server" />
+                                                    <asp:CheckBox ID="chkNumeroViviendas" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -563,7 +564,7 @@
                                         </div>
                                         <input type="hidden" id="hfNumeroViviendasComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtNumeroViviendas" class="form-control" placeholder=" " runat="server" maxlength="10"></asp:textbox>
+                                            <asp:TextBox ID="txtNumeroViviendas" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtNumeroViviendas">N° Viviendas</label>
                                         </span>
                                     </div>
@@ -602,7 +603,7 @@
                                                 <textarea id="txtCartelNombreLetreroComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfCartelNombreLetreroComentario" runat="server"/>
+                                        <input type="hidden" id="hfCartelNombreLetreroComentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divCartelNombreLetrero" class="">
                                             </div>
@@ -641,7 +642,7 @@
                                                 <textarea id="txtCentroComunalCartelComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfCentroComunalCartelComentario" runat="server"/>
+                                        <input type="hidden" id="hfCentroComunalCartelComentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divCentroComunalCartel" class="">
                                             </div>
@@ -680,7 +681,7 @@
                                                 <textarea id="txtTerrenoInstalacionCaseta01Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfTerrenoInstalacionCaseta01Comentario" runat="server"/>
+                                        <input type="hidden" id="hfTerrenoInstalacionCaseta01Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divTerrenoInstalacionCaseta01" class="">
                                             </div>
@@ -719,7 +720,7 @@
                                                 <textarea id="txtTerrenoInstalacionCaseta02Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfTerrenoInstalacionCaseta02Comentario" runat="server"/>
+                                        <input type="hidden" id="hfTerrenoInstalacionCaseta02Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divTerrenoInstalacionCaseta02" class="">
                                             </div>
@@ -758,7 +759,7 @@
                                                 <textarea id="txtTerrenoInstalacionCaseta03Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfTerrenoInstalacionCaseta03Comentario" runat="server"/>
+                                        <input type="hidden" id="hfTerrenoInstalacionCaseta03Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divTerrenoInstalacionCaseta03" class="">
                                             </div>
@@ -797,7 +798,7 @@
                                                 <textarea id="txtTerrenoInstalacionCaseta04Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfTerrenoInstalacionCaseta04Comentario" runat="server"/>
+                                        <input type="hidden" id="hfTerrenoInstalacionCaseta04Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divTerrenoInstalacionCaseta04" class="">
                                             </div>
@@ -836,7 +837,7 @@
                                                 <textarea id="txtPlazaMirasNodoCartelComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPlazaMirasNodoCartelComentario" runat="server"/>
+                                        <input type="hidden" id="hfPlazaMirasNodoCartelComentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPlazaMirasNodoCartel" class="">
                                             </div>
@@ -875,7 +876,7 @@
                                                 <textarea id="txtPanoramicaLocalidadCartel01Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaLocalidadCartel01Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaLocalidadCartel01Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaLocalidadCartel01" class="">
                                             </div>
@@ -914,7 +915,7 @@
                                                 <textarea id="txtPanoramicaLocalidadCartel02Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaLocalidadCartel02Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaLocalidadCartel02Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaLocalidadCartel02" class="">
                                             </div>
@@ -953,7 +954,7 @@
                                                 <textarea id="txtPanoramicaPlazaPrincipalCartelComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaPlazaPrincipalCartelComentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaPlazaPrincipalCartelComentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaPlazaPrincipalCartel" class="">
                                             </div>
@@ -992,7 +993,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36001Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36001Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36001Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36001" class="">
                                             </div>
@@ -1031,7 +1032,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36002Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36002Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36002Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36002" class="">
                                             </div>
@@ -1070,7 +1071,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36003Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36003Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36003Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36003" class="">
                                             </div>
@@ -1109,7 +1110,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36004Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36004Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36004Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36004" class="">
                                             </div>
@@ -1148,7 +1149,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36005Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36005Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36005Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36005" class="">
                                             </div>
@@ -1187,7 +1188,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36006Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36006Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36006Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36006" class="">
                                             </div>
@@ -1226,7 +1227,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36007Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36007Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36007Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36007" class="">
                                             </div>
@@ -1265,7 +1266,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36008Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36008Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36008Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36008" class="">
                                             </div>
@@ -1304,7 +1305,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36009Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36009Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36009Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36009" class="">
                                             </div>
@@ -1343,7 +1344,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36010Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36010Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36010Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36010" class="">
                                             </div>
@@ -1382,7 +1383,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36011Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36011Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36011Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36011" class="">
                                             </div>
@@ -1421,7 +1422,7 @@
                                                 <textarea id="txtPanoramicaDesdeNodo36012Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfPanoramicaDesdeNodo36012Comentario" runat="server"/>
+                                        <input type="hidden" id="hfPanoramicaDesdeNodo36012Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divPanoramicaDesdeNodo36012" class="">
                                             </div>
@@ -1460,7 +1461,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel01Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel01Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel01Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel01" class="">
                                             </div>
@@ -1499,7 +1500,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel02Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel02Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel02Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel02" class="">
                                             </div>
@@ -1538,7 +1539,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel03Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel03Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel03Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel03" class="">
                                             </div>
@@ -1577,7 +1578,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel04Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel04Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel04Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel04" class="">
                                             </div>
@@ -1616,7 +1617,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel05Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel05Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel05Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel05" class="">
                                             </div>
@@ -1655,7 +1656,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel06Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel06Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel06Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel06" class="">
                                             </div>
@@ -1694,7 +1695,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel07Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel07Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel07Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel07" class="">
                                             </div>
@@ -1733,7 +1734,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel08Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel08Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel08Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel08" class="">
                                             </div>
@@ -1772,7 +1773,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel09Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel09Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel09Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel09" class="">
                                             </div>
@@ -1811,7 +1812,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel10Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel10Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel10Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel10" class="">
                                             </div>
@@ -1850,7 +1851,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel11Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel11Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel11Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel11" class="">
                                             </div>
@@ -1889,7 +1890,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel12Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel12Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel12Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel12" class="">
                                             </div>
@@ -1928,7 +1929,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel13Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel13Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel13Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel13" class="">
                                             </div>
@@ -1967,7 +1968,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel14Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel14Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel14Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel14" class="">
                                             </div>
@@ -2006,7 +2007,7 @@
                                                 <textarea id="txtOtrosLugaresPrincipalesCartel15Comentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel15Comentario" runat="server"/>
+                                        <input type="hidden" id="hfOtrosLugaresPrincipalesCartel15Comentario" runat="server" />
                                         <div class="has-float-label">
                                             <div id="divOtrosLugaresPrincipalesCartel15" class="">
                                             </div>
@@ -2017,23 +2018,52 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="tabArchivosAdicionales">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group-base input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:checkbox id="chkMapaGeoreferenciado" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spMapaGeoreferenciadoComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocMapaGeoreferenciadoComentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtMapaGeoreferenciadoComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfMapaGeoreferenciadoComentario" runat="server" />
+                                        <div class="has-float-label">
+                                            <div id="divMapaGeoreferenciado" class="">
+                                            </div>
+                                            <label for="divMapaGeoreferenciado">Mapa Georeferenciado (.kmz)</label>
+                                        </div>
+                                    </div>
+                                    <asp:hiddenfield id="hfMapaGeoreferenciado" runat="server" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <asp:updatepanel id="upaGuardar" runat="server">
+    <asp:UpdatePanel ID="upaGuardar" runat="server">
         <ContentTemplate>
             <div class="row">
                 <div class="col-xs-12 col-sm-3 col-sm-offset-3">
-                    <asp:LinkButton ID="btnGuardar" runat="server" CssClass="btn btn-block btn-success" Text="" OnClick="btnGuardar_Click" ><span class="fa fa-floppy-o"></span> Guardar</asp:LinkButton>
+                    <asp:LinkButton ID="btnGuardar" runat="server" CssClass="btn btn-block btn-success" Text="" OnClick="btnGuardar_Click"><span class="fa fa-floppy-o"></span> Guardar</asp:LinkButton>
                 </div>
                 <div class="col-xs-12 col-sm-3">
-                    <asp:LinkButton ID="btnCancelar" runat="server" CssClass="btn btn-block btn-danger" Text="" ><span class="fa fa-times"></span> Cancelar</asp:LinkButton>
+                    <asp:LinkButton ID="btnCancelar" runat="server" CssClass="btn btn-block btn-danger" Text=""><span class="fa fa-times"></span> Cancelar</asp:LinkButton>
                 </div>
             </div>
         </ContentTemplate>
-    </asp:updatepanel>
+    </asp:UpdatePanel>
     <br />
     <br />
     <input type="hidden" id="hfIdPerfil" runat="server" />

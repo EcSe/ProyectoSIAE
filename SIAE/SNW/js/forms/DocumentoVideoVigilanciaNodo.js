@@ -42,7 +42,7 @@
         maxFiles: 1,
         autoStart: true,
         allowedExtensions: ['mp4'],
-        maxFileSize: '100M',
+        maxFileSize: '200M',
         fileType: 7,
         listeners: {
             finish: function (fileNames, fileList) {
@@ -108,7 +108,7 @@
         maxFiles: 1,
         autoStart: true,
         allowedExtensions: ['mp4'],
-        maxFileSize: '100M',
+        maxFileSize: '200M',
         fileType: 7,
         listeners: {
             finish: function (fileNames, fileList) {
@@ -174,7 +174,7 @@
         maxFiles: 1,
         autoStart: true,
         allowedExtensions: ['mp4'],
-        maxFileSize: '100M',
+        maxFileSize: '200M',
         fileType: 7,
         listeners: {
             finish: function (fileNames, fileList) {

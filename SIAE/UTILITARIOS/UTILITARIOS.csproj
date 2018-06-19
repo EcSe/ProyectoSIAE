@@ -308,6 +308,7 @@
     <Content Include="upload\source\tests\specs\sidegames\controller\SideGamesSpec.js" />
     <Content Include="upload\source\tests\specs\sidegames\store\GameStoreSpec.js" />
     <Content Include="upload\source\tests\specs\sidegames\util\GameLaunchingSpec.js" />
+    <Content Include="UserControl\AutoRedirect.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +327,13 @@
       <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\AutoRedirect.ascx.cs">
+      <DependentUpon>AutoRedirect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\AutoRedirect.ascx.designer.cs">
+      <DependentUpon>AutoRedirect.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntity\BusinessEntity.csproj">

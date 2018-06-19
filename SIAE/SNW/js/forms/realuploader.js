@@ -3966,7 +3966,7 @@
                             //console.log("FileObject.bindFilePreview img.src = " + img.src);
 
                         }
-                            
+
                         //Fin
 
                         //console.log("URL = " + URL);
@@ -3996,7 +3996,7 @@
                     }
                 } else {
                     //console.log("FileObject.bindFilePreview 03");
-                    alert("cramosc07");
+                    //alert("cramosc07");
                     me.setPreviewImage(false, null);
                     me.setStatus(Constants.AX_READY);
                 }
