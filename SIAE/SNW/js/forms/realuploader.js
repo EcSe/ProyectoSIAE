@@ -1363,13 +1363,18 @@
                     var dataView = new DataView(e.target.result);
 
                     //check if is a valid jpeg
-                    //console.log("ExifReader.start me.file = " + me.file);
-                    //console.log("ExifReader.start me.file.size = " + me.file.size);
+                    //console.log("frLoad me.file = " + me.file);
+                    //console.log("frLoad me.file.size = " + me.file.size);
+                    //console.log("frLoad dataView.getUint8(0) = " + dataView.getUint8(0));
+                    //console.log("frLoad dataView.getUint8(1) = " + dataView.getUint8(1));
+                    //console.log("frLoad dataView.getUint8(2) = " + dataView.getUint8(2));
                     //Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
                     //Validamos si el tamaño del archivo es mayor que cero si deberia entrar en el if
                     //Inicio
                     //if (dataView.getUint8(0) == 0xFF && dataView.getUint8(1) == 0xD8 && dataView.getUint8(2) == 0xFF) {
                     if (me.file.size > 0 && dataView.getUint8(0) == 0xFF && dataView.getUint8(1) == 0xD8 && dataView.getUint8(2) == 0xFF) {
+                    //if ((me.file.size > 0) || (dataView.getUint8(0) == 0xFF && dataView.getUint8(1) == 0xD8 && dataView.getUint8(2) == 0xFF)) {
+                        //console.log("frLoad 01");
                         //Fin
                         me._runStack(me._progress, ['jpegData']);
                         var jpegData = me.readExifJpeg(dataView);
@@ -1379,7 +1384,10 @@
 
                         //run the success callbacks functions
                         me._runStack(me._done, [jpegData, iptcData]);
+
                     }
+
+                    
 
                     me._runStack(me._always, [e]);
                 }
@@ -2314,7 +2322,7 @@
              */
             _readImage: function () {
                 var URL = window.URL || window.webkitURL;
-                //console.log("_readImage01");
+                console.log("_readImage01");
                 if (URL && URL.createObjectURL) {
                     this._onDoneRead({
                         target: {
@@ -2329,6 +2337,7 @@
                     reader.onprogress = this._onProgressRead.bind(this);
                     reader.onerror = this._onErrorRead.bind(this);
                     reader.onload = this._onDoneRead.bind(this);
+                    console.log("_readImage this.file = " + this.file);
                     reader.readAsDataURL(this.file);//start reading process
                 }
                 return this;
@@ -3071,10 +3080,12 @@
                 //bind events
                 me.bindEvents();
                 //console.log("init 03 me.disabled = " + me.disabled);
+                //console.log("init queueFileOperations() 01");
                 //bind file calculation, operation, most of case heavy operations using WebWorkers
                 //for the moment run on file select
                 me.queueFileOperations();
                 //console.log("init 04 me.disabled = " + me.disabled);
+                //console.log("init queueFileOperations() 02");
                 //create a preview for supported files
                 //console.log("init 03");
                 //console.log("me = " + me);
@@ -3182,13 +3193,19 @@
                     me._preUploadFun.push(md5App);
                 }
 
+                //console.log("queueFileOperations 01");
+                //console.log("queueFileOperations typeof ExifReader = " + typeof ExifReader);
+                //console.log("queueFileOperations me.config.exifRead = " + me.config.exifRead);
+                //console.log("queueFileOperations Constants.EXIF_ON = " + Constants.EXIF_ON);
                 //exif read
                 if (typeof ExifReader !== 'undefined' && me.config.exifRead && Constants.EXIF_ON) {
-                    //console.log("queueFileOperations01");
-                    var exifApp = new ExifReader(me.file);
                     //console.log("queueFileOperations02");
+                    //console.log("queueFileOperations me.file = " + me.file);
+                    var exifApp = new ExifReader(me.file);
+                    //console.log("queueFileOperations03");
                     exifApp.done(function (exif) {
                         Utils.log('exif calculated', exif);
+                        //console.log("exifApp.done exif = " + exif);
                         me.exifData = exif;
                         me.AU.triggerEvent('exifDone', [me, exif]);
                         me.setMessage('').setProgress(0);
@@ -3959,10 +3976,12 @@
                         }
                         else {
                             //console.log("FileObject.bindFilePreview me.imgURL05 = " + me.imgURL);
-                            //console.log("FileObject.bindFilePreview this.src05 = " + this.src);
+                            //console.log("FileObject.bindFilePreview this.src05 = " + img.src);
+                            //console.log("FileObject.bindFilePreview this.exifData01= " + this.exifData);
                             img.src = URL.createObjectURL(this.file);
                             //console.log("FileObject.bindFilePreview me.imgURL06 = " + me.imgURL);
-                            //console.log("FileObject.bindFilePreview this.src06 = " + this.src);
+                            //console.log("FileObject.bindFilePreview this.src06 = " + img.src);
+                            //console.log("FileObject.bindFilePreview this.exifData02= " + this.exifData);
                             //console.log("FileObject.bindFilePreview img.src = " + img.src);
 
                         }
@@ -4008,9 +4027,14 @@
              */
             fixOrientation: function () {
                 var me = this;
+                //console.log("fixOrientation 01");
+                //console.log("fixOrientation me.dom.previewControl = " + me.dom.previewControl);
+                //console.log("fixOrientation this.exifData = " + this.exifData);
+                //console.log("fixOrientation this.exifData.Orientation = " + this.exifData.Orientation);
                 if (me.dom.previewControl && this.exifData && this.exifData.Orientation) {
                     var width = me.dom.previewControl.width;
                     var height = me.dom.previewControl.height;
+                    //this.exifData.Orientation = 1;
                     var orientation = this.exifData.Orientation;
                     Utils.log('fixOrientation:', orientation);
                     switch (orientation) {
@@ -4032,6 +4056,7 @@
                      7 = The 0th row is the visual right-hand side of the image, and the 0th column is the visual bottom.
                      8 = The 0th row is the visual left-hand side of the image, and the 0th column is the visual bottom.
                      */
+                    //console.log("fixOrientation orientation = " + orientation);
                     switch (orientation) {
                         case 2:
                             // horizontal flip

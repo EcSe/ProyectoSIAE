@@ -206,6 +206,7 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DocumentFormat.OpenXml.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\EXIFextractor.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessEntity.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\BusinessLogic.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

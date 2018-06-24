@@ -426,20 +426,20 @@ namespace SNW.forms
                             Type.GetType("System.Int32"));
                         #endregion
 
-                        #region Capacidad Enlace
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000010").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCapacidadEnlace,
-                            hfCapacidadEnlaceComentario, null,
-                            txtCapacidadEnlace, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
-
                         #region Eficiencia Enlace
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000011").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEficienciaEnlace,
                             hfEficienciaEnlaceComentario, null,
                             txtEficienciaEnlace, null, null,
-                            Type.GetType("System.Int32"));
+                            Type.GetType("System.String"));
+                        #endregion
+
+                        #region Capacidad Enlace
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000010").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCapacidadEnlace,
+                            hfCapacidadEnlaceComentario, null,
+                            txtCapacidadEnlace, null, null,
+                            Type.GetType("System.String"));
                         #endregion
 
                         #region Capt 1: Configuration/Radio
@@ -968,20 +968,20 @@ namespace SNW.forms
                     Type.GetType("System.Int32"));
                 #endregion
 
-                #region Capacidad Enlace
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000010", chkCapacidadEnlace,
-                    hfCapacidadEnlaceComentario, null,
-                    txtCapacidadEnlace, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
-
                 #region Eficiencia Enlace
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                     Documento, "000011", chkEficienciaEnlace,
                     hfEficienciaEnlaceComentario, null,
                     txtEficienciaEnlace, null, null,
-                    Type.GetType("System.Int32"));
+                    Type.GetType("System.String"));
+                #endregion
+
+                #region Capacidad Enlace
+                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                    Documento, "000010", chkCapacidadEnlace,
+                    hfCapacidadEnlaceComentario, null,
+                    txtCapacidadEnlace, null, null,
+                    Type.GetType("System.String"));
                 #endregion
 
                 #region Capt 1: Configuration/Radio

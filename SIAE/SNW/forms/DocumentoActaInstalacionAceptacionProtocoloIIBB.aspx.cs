@@ -1221,20 +1221,27 @@ namespace SNW.forms
                             chkMateriales,
                             hfMaterialesComentario);
                         //List<DocumentoMaterialBE> lstDocumentoMaterial2 = new List<DocumentoMaterialBE>();
-                        lstDocumentoMaterial = (List<DocumentoMaterialBE>)Session["Materiales"];
+                        //lstDocumentoMaterial = (List<DocumentoMaterialBE>)Session["Materiales"];
 
-                        foreach (GridViewRow item in gvMateriales.Rows)
-                        {
-                            //String strCodigoMaterial = item.Cells[2].Text;
-                            String strCodigoMaterial = gvMateriales.DataKeys[item.RowIndex]["Material_IdValor"].ToString();
-                            TextBox txtCantidad = (TextBox)item.FindControl("txtCantidad");
-                            Double dblCantidad;
-                            if (txtCantidad.Text.Equals(""))
-                                dblCantidad = 0;
-                            else
-                                dblCantidad = Convert.ToDouble(txtCantidad.Text);
-                            lstDocumentoMaterial.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = dblCantidad);
-                        }
+                        //foreach (GridViewRow item in gvMateriales.Rows)
+                        //{
+                        //    //String strCodigoMaterial = item.Cells[2].Text;
+                        //    String strCodigoMaterial = gvMateriales.DataKeys[item.RowIndex]["Material_IdValor"].ToString();
+                        //    TextBox txtCantidad = (TextBox)item.FindControl("txtCantidad");
+                        //    Double dblCantidad;
+                        //    if (txtCantidad.Text.Equals(""))
+                        //        dblCantidad = 0;
+                        //    else
+                        //        dblCantidad = Convert.ToDouble(txtCantidad.Text);
+                        //    lstDocumentoMaterial.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = dblCantidad);
+                        //}
+                        DocumentoMaterialBE DocumentoMaterial = new DocumentoMaterialBE();
+                        DocumentoMaterial.Documento = Documento;
+                        lstDocumentoMaterial = DocumentoMaterialBL.ListarDocumentoMaterial(DocumentoMaterial);
+                        Session["Materiales"] = lstDocumentoMaterial;
+
+                        gvMateriales.DataSource = lstDocumentoMaterial;
+                        gvMateriales.DataBind();
 
                         Documento.Materiales = lstDocumentoMaterial;
                         #endregion

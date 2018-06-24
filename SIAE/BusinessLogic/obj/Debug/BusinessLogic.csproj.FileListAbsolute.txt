@@ -65,6 +65,7 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Deb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\EXIFextractor.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.pdb

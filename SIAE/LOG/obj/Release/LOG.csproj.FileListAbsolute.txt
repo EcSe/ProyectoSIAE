@@ -87,3 +87,4 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\VBCSCo
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\EXIFextractor.dll

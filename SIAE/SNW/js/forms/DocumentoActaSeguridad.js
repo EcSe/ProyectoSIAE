@@ -2793,8 +2793,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
-        minWidthDimension: 2560,
-        minHeightDimension: 1920,
+        minWidthDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion01').val(fileNames);
@@ -2860,8 +2860,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
-        minWidthDimension: 2560,
-        minHeightDimension: 1920,
+        minWidthDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion02').val(fileNames);
@@ -2927,8 +2927,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
-        minWidthDimension: 2560,
-        minHeightDimension: 1920,
+        minWidthDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoNormal').val(fileNames);
@@ -2994,8 +2994,8 @@
         autoStart: true,
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
-        minWidthDimension: 2560,
-        minHeightDimension: 1920,
+        minWidthDimension: 1366,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoInfrarojo').val(fileNames);

@@ -236,6 +236,7 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\System.AppCon
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\UTILITARIOS.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\DataAccess.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\DocumentFormat.OpenXml.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\EXIFextractor.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\BusinessEntity.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\BusinessLogic.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\SNW\bin\UTILITARIOS.pdb

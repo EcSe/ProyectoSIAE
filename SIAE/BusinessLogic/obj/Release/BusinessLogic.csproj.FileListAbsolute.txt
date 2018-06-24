@@ -21,3 +21,4 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Rel
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Release\BusinessLogic.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Release\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Release\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Release\EXIFextractor.dll

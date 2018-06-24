@@ -3283,14 +3283,57 @@ namespace BusinessLogic
                 byte[] SERIE_POE_EST_B = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_EST_B"];
                 MemoryStream mSERIE_POE_EST_B = new MemoryStream(SERIE_POE_EST_B);
 
+                CMM4BE CMM4A = new CMM4BE();
+                List<CMM4BE> lstCMM4A = new List<CMM4BE>();
+                CMM4A.Nodo.IdNodo = COD_NODO_A;
+                lstCMM4A = CMM4BL.ListarCMM4(CMM4A);
+
+                CMM4BE CMM4B = new CMM4BE();
+                List<CMM4BE> lstCMM4B = new List<CMM4BE>();
+                CMM4A.Nodo.IdNodo = COD_NODO_B;
+                lstCMM4B = CMM4BL.ListarCMM4(CMM4B);
+
                 #endregion
 
-               // String usuarioWindows = Environment.UserName;
+                // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
 
                 #region Ingresando Valores
+
+                if (!lstCMM4A.Count.Equals(0))
+                {
+                    byte[] SERIE_CMM4_EST_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_EST_A"];
+                    MemoryStream mSERIE_CMM4_EST_A = new MemoryStream(SERIE_CMM4_EST_A);
+                    byte[] SERIE_UGPS_EST_A = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_EST_A"];
+                    MemoryStream mSERIE_UGPS_EST_A = new MemoryStream(SERIE_UGPS_EST_A);
+                    byte[] SERIE_CONVERSOR_EST_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_EST_A"];
+                    MemoryStream mSERIE_CONVERSOR_EST_A = new MemoryStream(SERIE_CONVERSOR_EST_A);
+
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_CMM4_EST_A, "", 36, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_UGPS_EST_A, "", 44, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_CONVERSOR_EST_A, "", 51, 3, 152, 117);
+
+                }
+
+                if (!lstCMM4B.Count.Equals(0))
+                {
+                   
+
+                    byte[] SERIE_CMM4_EST_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_EST_B"];
+                    MemoryStream mSERIE_CMM4_EST_B = new MemoryStream(SERIE_CMM4_EST_B);
+                    byte[] SERIE_UGPS_EST_B = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_EST_B"];
+                    MemoryStream mSERIE_UGPS_EST_B = new MemoryStream(SERIE_UGPS_EST_B);
+                    byte[] SERIE_CONVERSOR_EST_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_EST_B"];
+                    MemoryStream mSERIE_CONVERSOR_EST_B = new MemoryStream(SERIE_CONVERSOR_EST_B);
+
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_CMM4_EST_B, "", 81, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_UGPS_EST_B, "", 89, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_CONVERSOR_EST_B, "", 96, 3, 152, 117);
+
+
+                }
 
                 ExcelToolsBL.UpdateCell(excelGenerado, "11 Serie Logística", "ENLACE "+COD_NODO_A+" - "+COD_NODO_B , 11, "B");
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_ANTENA_EST_A, "", 15, 2, 271, 228);
@@ -3300,6 +3343,8 @@ namespace BusinessLogic
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_ANTENA_EST_B, "", 60, 2, 271, 228);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_ODU_EST_B, "", 67, 2, 338, 254);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "11 Serie Logística", mSERIE_POE_EST_B, "", 75, 2, 338, 254);
+
+
 
 
                 #endregion
@@ -3671,12 +3716,16 @@ namespace BusinessLogic
                 MemoryStream mSERIE_POE_ESTAC_A = new MemoryStream(SERIE_POE_ESTAC_A);
 
                 CMM4BE CMM4A = new CMM4BE();
-                TareaBE Tarea = new TareaBE();
                 List<CMM4BE> lstCMM4A = new List<CMM4BE>();
-                CMM4A.Nodo.IdNodo = Tarea.NodoIIBBA.IdNodo;
+                CMM4A.Nodo.IdNodo =  NODO_A;
                 lstCMM4A = CMM4BL.ListarCMM4(CMM4A);
 
-               
+
+                CMM4BE CMM4B = new CMM4BE();
+                List<CMM4BE> lstCMM4B = new List<CMM4BE>();
+                CMM4A.Nodo.IdNodo = NODO_B;
+                lstCMM4A = CMM4BL.ListarCMM4(CMM4B);
+
 
                 byte[] SERIE_ANT_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_ANT_ESTAC_B"];
                 MemoryStream mSERIE_ANT_ESTAC_B = new MemoryStream(SERIE_ANT_ESTAC_B);
@@ -3685,13 +3734,6 @@ namespace BusinessLogic
                 byte[] SERIE_POE_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_POE_ESTAC_B"];
                 MemoryStream mSERIE_POE_ESTAC_B = new MemoryStream(SERIE_POE_ESTAC_B);
 
-               
-                //byte[] SERIE_CMM4_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_ESTAC_B"];
-                //MemoryStream mSERIE_CMM4_ESTAC_B = new MemoryStream(SERIE_CMM4_ESTAC_B);
-                //byte[] SERIE_UGPS_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_ESTAC_B"];
-                //MemoryStream mSERIE_UGPS_ESTAC_B = new MemoryStream(SERIE_UGPS_ESTAC_B);
-                //byte[] SERIE_CONVERSOR_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_ESTAC_B"];
-                //MemoryStream mSERIE_CONVERSOR_ESTAC_B = new MemoryStream(SERIE_CONVERSOR_ESTAC_B);
 
                 #endregion
 
@@ -4070,33 +4112,32 @@ namespace BusinessLogic
                     byte[] SERIE_CONVERSOR_ESTAC_A = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_ESTAC_A"];
                     MemoryStream mSERIE_CONVERSOR_ESTAC_A = new MemoryStream(SERIE_CONVERSOR_ESTAC_A);
 
-                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_A, "", 36, 3, 152, 117);
-                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_A, "", 44, 3, 152, 117);
-                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_A, "", 51, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_A, "", 37, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_A, "", 45, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_A, "", 52, 3, 152, 117);
 
                 }
 
-                //if (mSERIE_CMM4_ESTAC_A != null && mSERIE_UGPS_ESTAC_A != null || mSERIE_CONVERSOR_ESTAC_A != null)
-                //{
-                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_A, "", 36, 3, 152, 117);
-                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_A, "", 44, 3, 152, 117);
-                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_A, "", 51, 3, 152, 117);
+                if (!lstCMM4B.Count.Equals(0))
+                {
+                    byte[] SERIE_CMM4_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CMM4_ESTAC_B"];
+                    MemoryStream mSERIE_CMM4_ESTAC_B = new MemoryStream(SERIE_CMM4_ESTAC_B);
+                    byte[] SERIE_UGPS_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_UGPS_ESTAC_B"];
+                    MemoryStream mSERIE_UGPS_ESTAC_B = new MemoryStream(SERIE_UGPS_ESTAC_B);
+                    byte[] SERIE_CONVERSOR_ESTAC_B = (byte[])ds.Tables[0].Rows[0]["SERIE_CONVERSOR_ESTAC_B"];
+                    MemoryStream mSERIE_CONVERSOR_ESTAC_B = new MemoryStream(SERIE_CONVERSOR_ESTAC_B);
 
-                //}
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_B, "", 82, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_B, "", 90, 3, 152, 117);
+                    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_B, "", 97, 3, 152, 117);
+
+                }
+
 
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ANT_ESTAC_B, "", 59, 3, 179, 23);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_ODU_ESTAC_B, "", 66, 3, 81, 113);
                 ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_POE_ESTAC_B, "", 75, 3, 152, 117);
 
-
-
-                //if (mSERIE_CMM4_ESTAC_B != null || mSERIE_UGPS_ESTAC_B != null || mSERIE_CONVERSOR_ESTAC_B != null)
-                //{
-                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CMM4_ESTAC_B, "", 81, 3, 152, 117);
-                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_UGPS_ESTAC_B, "", 89, 3, 152, 117);
-                //    ExcelToolsBL.AddImageDocument(false, excelGenerado, "9 Serie Equipos (fotos)", mSERIE_CONVERSOR_ESTAC_B, "", 96, 3, 152, 117);
-
-                //}
 
                 #endregion
 

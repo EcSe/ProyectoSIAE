@@ -10,6 +10,8 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Xml.Serialization;
+using System.Drawing;
+using Goheer.EXIF;
 
 namespace BusinessLogic
 {
@@ -243,8 +245,27 @@ namespace BusinessLogic
                 {
                     if (!hfValor.Value.Equals(""))
                     {
-                        DocumentoDetalle.ValorBinario = File.ReadAllBytes(strRutaArchivo + "\\" + hfValor.Value);
                         DocumentoDetalle.ExtensionArchivo = Path.GetExtension(strRutaArchivo + "\\" + hfValor.Value).ToLower();
+                        #region Agregado Carlos Ramos 19/06/2018 De ser necesario Se cambia la orientacion de la imagen
+                        if (DocumentoDetalle.ExtensionArchivo.Equals(".jpg"))
+                        {
+                            var bmp = new Bitmap(strRutaArchivo + "\\" + hfValor.Value);
+                            var exif = new EXIFextractor(ref bmp, "n"); // get source from http://www.codeproject.com/KB/graphics/exifextractor.aspx?fid=207371
+
+                            if (exif["Orientation"] != null)
+                            {
+                                RotateFlipType flip = OrientationToFlipType(exif["Orientation"].ToString());
+
+                                if (flip != RotateFlipType.RotateNoneFlipNone) // don't flip of orientation is correct
+                                {
+                                    bmp.RotateFlip(flip);
+                                    exif.setTag(0x112, "1"); // Optional: reset orientation tag
+                                    bmp.Save(strRutaArchivo + "\\" + hfValor.Value);
+                                }
+                            }
+                        }
+                        #endregion
+                        DocumentoDetalle.ValorBinario = File.ReadAllBytes(strRutaArchivo + "\\" + hfValor.Value);
                     }
                         
                 }
@@ -304,6 +325,25 @@ namespace BusinessLogic
                         //String strArchivo = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + DocumentoDetalle.Documento.Documento.IdValor + "_" + DocumentoDetalle.Campo.IdValor + ".png";
                         String strArchivo = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + DocumentoDetalle.Documento.Documento.IdValor + "_" + DocumentoDetalle.Campo.IdValor + DocumentoDetalle.ExtensionArchivo;
                         File.WriteAllBytes(strRutaArchivo + "\\" + strArchivo, DocumentoDetalle.ValorBinario); // Requires System.IO
+                        //#region Agregado Carlos Ramos 19/06/2018 De ser necesario Se cambia la orientacion de la imagen
+                        //if (DocumentoDetalle.ExtensionArchivo.Equals(".jpg"))
+                        //{
+                        //    var bmp = new Bitmap(strRutaArchivo + "\\" + strArchivo);
+                        //    var exif = new EXIFextractor(ref bmp, "n"); // get source from http://www.codeproject.com/KB/graphics/exifextractor.aspx?fid=207371
+
+                        //    if (exif["Orientation"] != null)
+                        //    {
+                        //        RotateFlipType flip = OrientationToFlipType(exif["Orientation"].ToString());
+
+                        //        if (flip != RotateFlipType.RotateNoneFlipNone) // don't flip of orientation is correct
+                        //        {
+                        //            bmp.RotateFlip(flip);
+                        //            exif.setTag(0x112, "1"); // Optional: reset orientation tag
+                        //            bmp.Save(strRutaArchivo + "\\" + strArchivo);
+                        //        }
+                        //    }
+                        //}
+                        //#endregion
                         hfValor.Value = strArchivo;
                     }
                         
@@ -380,6 +420,41 @@ namespace BusinessLogic
                     }
                     return;
                 }
+            }
+        }
+
+
+        //Match the orientation code to the correct rotation:
+        public static RotateFlipType OrientationToFlipType(string orientation)
+        {
+            switch (int.Parse(orientation.Substring(0, 1)))
+            {
+                case 1:
+                    return RotateFlipType.RotateNoneFlipNone;
+                    break;
+                case 2:
+                    return RotateFlipType.RotateNoneFlipX;
+                    break;
+                case 3:
+                    return RotateFlipType.Rotate180FlipNone;
+                    break;
+                case 4:
+                    return RotateFlipType.Rotate180FlipX;
+                    break;
+                case 5:
+                    return RotateFlipType.Rotate90FlipX;
+                    break;
+                case 6:
+                    return RotateFlipType.Rotate90FlipNone;
+                    break;
+                case 7:
+                    return RotateFlipType.Rotate270FlipX;
+                    break;
+                case 8:
+                    return RotateFlipType.Rotate270FlipNone;
+                    break;
+                default:
+                    return RotateFlipType.RotateNoneFlipNone;
             }
         }
 

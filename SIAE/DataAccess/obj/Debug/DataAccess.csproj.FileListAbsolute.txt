@@ -25,4 +25,3 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\bin\Debug\DataAccess.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.pdb
-C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
