@@ -30,7 +30,7 @@
 </head>
 <body>
     <form id="frmMaster" runat="server">
-        <asp:ScriptManager ID="smManager" runat="server" AsyncPostBackTimeout="7200"></asp:ScriptManager><%--AsyncPostBackTimeout en segundos--%>
+        <asp:ScriptManager ID="smManager" runat="server" AsyncPostBackTimeout="28800"></asp:ScriptManager><%--AsyncPostBackTimeout en segundos--%>
         <uc1:AutoRedirect ID="AutoRedirect1" runat="server" />
         <header>
             <nav class="navbar-base navbar-base-default">

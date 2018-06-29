@@ -41,7 +41,7 @@ namespace BusinessLogic
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\"+ IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
                 ExcelToolsBL.UpdateCell(excelGenerado, "Selección de Frecuencia", codNodo, 12, "E");
-                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Selección de Frecuencia", EPMP1000, "", 18, 3, 525, 297);
+                ExcelToolsBL.AddImageDocument(false, excelGenerado, "Selección de Frecuencia", EPMP1000, "", 18, 3, 696, 394);
 
                 
             }
@@ -1452,7 +1452,7 @@ namespace BusinessLogic
                     baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                     DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                    baseDatosDA.CrearComando("USP_R_MEDICION_SECTORIAL", CommandType.StoredProcedure);
+                    baseDatosDA.CrearComando("USP_R_MEDICION_OMNIDIRECCIONAL", CommandType.StoredProcedure);
                     baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                     DataSet ds1 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
@@ -1460,7 +1460,7 @@ namespace BusinessLogic
                     baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                     DataSet ds2 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 
-                    baseDatosDA.CrearComando("USP_R_MATERIALES_PROTOCOLO_SECTORIAL", CommandType.StoredProcedure);
+                    baseDatosDA.CrearComando("USP_R_MATERIALES_PROTOCOLO_OMNIDIRECCIONAL", CommandType.StoredProcedure);
                     baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
                     DataSet ds3 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
 

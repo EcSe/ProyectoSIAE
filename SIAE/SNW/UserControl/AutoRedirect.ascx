@@ -14,7 +14,7 @@
 
     // Refresh this page to check session is expire or timeout.
     function Refresh() {
-        console.log("Refresh()");
+        //console.log("Refresh()");
         var current = getCookie("express");
         var date = current.split(" ")[0];
         var time = current.split(" ")[1];
@@ -25,9 +25,9 @@
         var hour = scriptDate.getHours();
         var min = scriptDate.getMinutes();
         var second = scriptDate.getSeconds();
-        console.log("Refresh() fecha 1 = " + Date.UTC(year, month, day, hour, min, second));
-        console.log("Refresh() fecha 2 = " + Date.UTC(date.split("-")[0], date.split("-")[1], date.split("-")[2],
-           time.split(":")[0], time.split(":")[1], time.split(":")[2]));
+        //console.log("Refresh() fecha 1 = " + Date.UTC(year, month, day, hour, min, second));
+        //console.log("Refresh() fecha 2 = " + Date.UTC(date.split("-")[0], date.split("-")[1], date.split("-")[2],
+        //   time.split(":")[0], time.split(":")[1], time.split(":")[2]));
         if (Date.UTC(year, month, day, hour, min, second) >=
            Date.UTC(date.split("-")[0], date.split("-")[1], date.split("-")[2],
            time.split(":")[0], time.split(":")[1], time.split(":")[2])) {

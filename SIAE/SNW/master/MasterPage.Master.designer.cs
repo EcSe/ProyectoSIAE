@@ -40,6 +40,15 @@ namespace SNW.master {
         protected global::System.Web.UI.ScriptManager smManager;
         
         /// <summary>
+        /// Control AutoRedirect1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::UTILITARIOS.UserControl.AutoRedirect AutoRedirect1;
+        
+        /// <summary>
         /// Control btnUsuario.
         /// </summary>
         /// <remarks>

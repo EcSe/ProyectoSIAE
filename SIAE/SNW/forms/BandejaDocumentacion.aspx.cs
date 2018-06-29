@@ -147,6 +147,13 @@ namespace SNW.forms
 
                     break;
 
+                case "000002":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloOmnidireccional.xlsx");
+
+                    rd.ActaInstalacionAceptacionProtocoloOmnidireccional(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+
+                    break;
+
                 case "000003":
                     rutaPlantilla = Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
 

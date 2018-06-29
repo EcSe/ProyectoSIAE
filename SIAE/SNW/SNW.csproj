@@ -125,7 +125,6 @@
     <Content Include="js\forms\DocumentoPruebasServicioDITG.js" />
     <Content Include="js\forms\DocumentoReporteFotograficoCMM4.js" />
     <Content Include="js\forms\DocumentoVideoVigilanciaNodo.js" />
-    <Content Include="js\forms\realuploader.js" />
     <Content Include="obj\Release\SNW.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Release\SNW.dll" />
     <Content Include="obj\Release\SNW.pdb" />
