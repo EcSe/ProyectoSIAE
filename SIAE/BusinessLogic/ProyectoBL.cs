@@ -63,7 +63,8 @@ namespace BusinessLogic
             conexionExcel.ConnectionString = strConexionExcel;
 
             conexionExcel.Open();
-            StreamWriter file = new StreamWriter(rutaTemporalBE.ValorCadena1 + "\\" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss") + "Log.txt");
+            //StreamWriter file = new StreamWriter(rutaTemporalBE.ValorCadena1 + "\\" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss") + "Log.txt");
+            StreamWriter file = new StreamWriter(rutaTemporalBE.ValorCadena1 + "\\" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + "Log.txt");
 
             try
             {
@@ -84,7 +85,6 @@ namespace BusinessLogic
                 #endregion
 
                 #region Insertamos toda la configuracion
-
 
                 #region Validamos la hoja DATOS GENERALES NODO
                 intFila = 2;
@@ -342,7 +342,7 @@ namespace BusinessLogic
                     blnErrorTabla = true;
                 }
                 #endregion
-                    
+
                 #region Validamos la hoja DOCUMENTACION
                 intFila = 2;
                 file.WriteLine("");
@@ -1745,7 +1745,6 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("EQUIPAMIENTO DELTRON");
                 file.WriteLine("--------------------");
-                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
                 Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE'", conexionExcel);
                 try
                 {
@@ -1852,7 +1851,6 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("KIT CDTEL APURIMAC");
                 file.WriteLine("------------------");
-                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
                 Command = new OleDbCommand("SELECT * FROM [KIT CDTEL APURIMAC$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
                 try
                 {
@@ -1901,14 +1899,6 @@ namespace BusinessLogic
                                 blnErrorCampo = blnErrorCampoTemp;
                             if (!blnErrorDatoTemp && !blnErrorCampoTemp)
                                 DocumentoEquipamiento.SerieEquipamiento = Convert.ToString(objValor);
-
-                            //objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO PROVEEDOR", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
-                            //if (blnErrorDatoTemp)
-                            //    blnErrorDato = blnErrorDatoTemp;
-                            //if (blnErrorCampoTemp)
-                            //    blnErrorCampo = blnErrorCampoTemp;
-                            //if (!blnErrorDatoTemp && !blnErrorCampoTemp)
-                            //    DocumentoEquipamiento.Equipamiento.IdValor = Convert.ToString(objValor);
 
                             DocumentoEquipamiento.IdEmpresa = "AP";//APURIMAC
 
@@ -1964,7 +1954,6 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("CDTEL HCVA - AYA");
                 file.WriteLine("----------------");
-                //Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO DELTRON$] WHERE [SERIE DE KIT] <> 'SPARE' AND [NUMERO DE SERIE] = '83121611105192'", conexionExcel);
                 Command = new OleDbCommand("SELECT * FROM [CDTEL HCVA - AYA$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
                 try
                 {

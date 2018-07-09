@@ -47,9 +47,23 @@ namespace SNW.forms
 
                     #region Reporte Fotográfico
 
+                    #region Equipamiento
+                    List<DocumentoEquipamientoBE> lstDocumentoEquipamiento = new List<DocumentoEquipamientoBE>();
+
+                    DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
+                    DocumentoEquipamiento.Documento = Documento;
+                    lstDocumentoEquipamiento = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
+                    //Session["EquipamientosA"] = lstDocumentoEquipamientoA;
+
+                    #endregion
+
                     #region Foto 1: Omniswitch OS6450-24 (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000052",
                         imgOmniswitchEjemplo);
+                    #endregion
+
+                    #region Foto 1: Omniswitch OS6450-24
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento, "OS6450-BP-D", 1, lblOmniswitch);
                     #endregion
 
                     #region Foto 2: Panorámica del Rack (Ejemplo)
@@ -79,27 +93,17 @@ namespace SNW.forms
 
                     #endregion
 
-                    #region Materiales
+                    //#region Materiales
 
-                    #region Equipamiento
-                    List<DocumentoEquipamientoBE> lstDocumentoEquipamiento = new List<DocumentoEquipamientoBE>();
+                    //#region # Serie Switch
 
-                    DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
-                    DocumentoEquipamiento.Documento = Documento;
-                    lstDocumentoEquipamiento = DocumentoEquipamientoBL.ListarDocumentoEquipamiento(DocumentoEquipamiento);
-                    //Session["EquipamientosA"] = lstDocumentoEquipamientoA;
+                    //UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
+                    //        "OS6450-BP-D", 1,
+                    //        txtSerieSwitch);
 
-                    #endregion
+                    //#endregion
 
-                    #region # Serie Switch
-
-                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento,
-                            "OS6450-BP-D", 1,
-                            txtSerieSwitch);
-
-                    #endregion
-
-                    #endregion
+                    //#endregion
 
 
 

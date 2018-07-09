@@ -106,10 +106,14 @@ namespace BusinessLogic
                                 int colNumber, int rowNumber, int width, int height)
         {
             // Necesitamos la transmisión de imágenes más de una vez, así creamos una copia de memoria
-            MemoryStream imageMemStream = new MemoryStream();
+             MemoryStream imageMemStream = new MemoryStream();
+            
+
             imageStream.Position = 0;
             imageStream.CopyTo(imageMemStream);
             imageStream.Position = 0;
+
+
 
             var drawingsPart = worksheetPart.DrawingsPart;
             if (drawingsPart == null)
@@ -129,20 +133,28 @@ namespace BusinessLogic
 
 
 
+            // Bitmap bm = new Bitmap(imageMemStream);
+          Bitmap bm = new Bitmap(ConvertImage(imageMemStream,ImageFormat.Jpeg));
 
-            Bitmap bm = new Bitmap(imageMemStream);
-
+            bm.SetResolution(60, 60);
 
             var imagePart = drawingsPart.AddImagePart(GetImagePartTypeByBitmap(bm));
-            imagePart.FeedData(imageStream);
-
+           //imagePart.FeedData(imageStream);
+            imagePart.FeedData(ConvertImage(imageStream,ImageFormat.Jpeg));
+            
+           
             A.Extents extents = new A.Extents();
             // var extentsCx = bm.Width * (long)(914400 / bm.HorizontalResolution);
             //var extentsCy = bm.Height * (long)(914400 / bm.VerticalResolution);
             //dividir  las medidas hecnas en el paint por 1.35 esa era la medida para 
             //el programa
-            var extentsCx = width * (long)(914400 / bm.HorizontalResolution);
-            var extentsCy = height * (long)(914400 / bm.VerticalResolution);
+
+            //var extentsCx = width * (long)(914400 / bm.HorizontalResolution);
+            //var extentsCy = height * (long)(914400 / bm.VerticalResolution);
+
+            var extentsCx = width * (long)(571500 / bm.HorizontalResolution);
+            var extentsCy = height * (long)(571500 / bm.VerticalResolution);
+
 
 
             bm.Dispose();
@@ -261,7 +273,16 @@ namespace BusinessLogic
             return destImage;
         }
 
+        public static Stream ConvertImage( Stream originalStream, ImageFormat format)
+        {
+            var image = Image.FromStream(originalStream);
+            var stream = new MemoryStream();
+            image.Save(stream, format);
+            stream.Position = 0;
+            return stream;
+        }
 
     }
+
 
 }

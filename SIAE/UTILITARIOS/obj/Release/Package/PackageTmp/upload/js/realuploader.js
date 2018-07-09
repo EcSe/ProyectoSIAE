@@ -464,6 +464,10 @@
             AX_IMAGE: 6,
             AX_VIDEO: 7,
             // #endregion
+            // #region Agregado Carlos Ramos 30/06/2018 Determinar el tipo de preview de imagen
+            AX_LIGHTBOX_PREVIEW: 8,
+            AX_WINDOW_OPEN: 9,
+            // #endregion
             events: {
                 finish: 'upload_finish',
                 finishFile: 'upload_finish_file',
@@ -3496,10 +3500,14 @@
                         //alert("setPreviewImage01");
                         me.dom.previewControl.src = src;
                         //alert("setPreviewImage02");
+                        //console.log("setPreviewImage me.dom.previewControl.src = " + me.dom.previewControl.src);
                         me.dom.previewControl.style.cursor = 'pointer';
                         me.dom.previewControl.setAttribute('alt', _('Preview'));
                         me.dom.previewControl.addEventListener('click', function () {
-                            Utils.lightBoxPreview(this, me.name, Utils.formatSize(me.size), me.imgCls);
+                            if (me.config.imagePreviewType == Constants.AX_LIGHTBOX_PREVIEW)
+                                Utils.lightBoxPreview(this, me.name, Utils.formatSize(me.size), me.imgCls);
+                            else if (me.config.imagePreviewType == Constants.AX_WINDOW_OPEN)
+                                window.open(me.dom.previewControl.src);
                         });
                     } else {
                         if (me.dom.previewContainer) {
@@ -4729,12 +4737,14 @@
                     // #region Agregado Carlos Ramos 07/06/2018 Determinar el tipo de archivo
                     , fileType: 0
                     // #endregion
-                    //Agregado Carlos Ramos 12/02/2018 Validar Dimensiones
-                    //Inicio
+                    //#region Agregado Carlos Ramos 12/02/2018 Validar Dimensiones
                     , minWidthDimension: 0
                     , minHeightDimension: 0
                     , changeDimensions: true //Permite que se intercalen el largo y ancho de la imagen al momento de validar
-                    //Fin
+                    // #endregion
+                    // #region Agregado Carlos Ramos 30/06/2018 Determinar el tipo de preview de imagen
+                    , imagePreviewType: 9
+                    // #endregion
                 }
             };
 

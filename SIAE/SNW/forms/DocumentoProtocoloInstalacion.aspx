@@ -14,7 +14,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tabCaratula" data-toggle="tab"><span class="fa fa-file-o"></span>&nbsp;Carátula</a></li>
                         <li><a href="#tabReporteFotografico" data-toggle="tab"><span class="fa fa-file-image-o"></span>&nbsp;Reporte Fotográfico</a></li>
-                        <li><a href="#tabMateriales" data-toggle="tab"><span class="fa fa-cubes"></span>&nbsp;Materiales</a></li>
+                        <%--<li><a href="#tabMateriales" data-toggle="tab"><span class="fa fa-cubes"></span>&nbsp;Materiales</a></li>--%>
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -81,7 +81,7 @@
                                         <div class="has-float-label">
                                             <div id="divOmniswitch" class="">
                                             </div>
-                                            <label for="divOmniswitch">Foto 1: Omniswitch OS6450-24</label>
+                                            <label for="divOmniswitch" id="lblOmniswitch" runat="server">Foto 1: Omniswitch OS6450-24</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfOmniswitch" runat="server" />
@@ -283,7 +283,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tabMateriales">
+                        <%--<div class="tab-pane fade" id="tabMateriales">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
@@ -309,8 +309,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div>--%>
                     </div>
                 </div>
             </div>
