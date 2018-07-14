@@ -161,6 +161,7 @@
     <Content Include="Reportes\Anexo3ReporteFotográficoCMM4.xlsx" />
     <Content Include="Reportes\InstalaciondePozoaTierraTipoA.xlsx" />
     <Content Include="Reportes\InstalaciondePozoaTierraTipoB.xlsx" />
+    <Content Include="Reportes\ActaInstalacionPTPLicenciado.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

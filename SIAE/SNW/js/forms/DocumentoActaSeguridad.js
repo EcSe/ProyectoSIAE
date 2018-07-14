@@ -2794,7 +2794,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion01').val(fileNames);
@@ -2861,7 +2861,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion02').val(fileNames);
@@ -2928,7 +2928,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoNormal').val(fileNames);
@@ -2995,7 +2995,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoInfrarojo').val(fileNames);
@@ -3066,7 +3066,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaPrincipalAbierta').val(fileNames);
@@ -3133,7 +3133,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaSalaEquiposAbierta').val(fileNames);
@@ -3200,7 +3200,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraInterna').val(fileNames);
@@ -3267,7 +3267,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraExterna').val(fileNames);
@@ -3334,7 +3334,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorAniego').val(fileNames);
@@ -3401,7 +3401,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorHumo').val(fileNames);
@@ -3468,7 +3468,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9001').val(fileNames);
@@ -3535,7 +3535,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9001').val(fileNames);
@@ -3602,7 +3602,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9001').val(fileNames);
@@ -3669,7 +3669,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9002').val(fileNames);
@@ -3736,7 +3736,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9002').val(fileNames);
@@ -3803,7 +3803,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9002').val(fileNames);
@@ -3870,7 +3870,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor360').val(fileNames);
@@ -3937,7 +3937,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor360').val(fileNames);
@@ -4008,7 +4008,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara01Indoor').val(fileNames);
@@ -4075,7 +4075,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara02Outdoor').val(fileNames);
@@ -4142,7 +4142,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingControlador').val(fileNames);
@@ -4209,7 +4209,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingGateway').val(fileNames);
@@ -4276,7 +4276,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingNVR').val(fileNames);
@@ -4343,7 +4343,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingBiometrico').val(fileNames);

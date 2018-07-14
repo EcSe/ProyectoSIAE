@@ -974,3 +974,52 @@
 .input-group-addon-base:last-child {
   border-left: 0;
 }
+
+/*#region Para animar el progress bar */
+
+.progress .progress-bar {
+    animation-name: animateBar;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+@keyframes animateBar {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+}
+/*#endregion */
+
+/*#region Personalizar progress bar */
+
+.progress-bar {
+  color:#000;
+}
+
+/*#endregion */
+
+/*#region Para centrar verticalmente el progress bar dentro de un td */
+
+/*#region Para una tabla normal */
+
+.table-bordered > tbody > tr > td {
+    vertical-align: middle !important;
+}
+.table-bordered > tbody > tr > td > .progress {
+    margin-bottom: 0px !important;
+}
+
+/*#endregion */
+
+/*#region Para una tabla con la clase  table-bordered*/
+
+.table-bordered > tbody > tr > td {
+    vertical-align: middle !important;
+}
+.table-bordered > tbody > tr > td > .progress {
+    margin-bottom: 0px !important;
+}
+
+/*#endregion */
+
+
+/*#endregion */

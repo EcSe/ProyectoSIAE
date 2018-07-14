@@ -121,6 +121,20 @@
                                             <asp:BoundField DataField="Tarea.NodoB.IdNodo" HeaderText="Nodo B" />
                                             <asp:BoundField DataField="Tarea.Contratista.ValorCadena1" HeaderText="Contratista" />--%>
                                                     <asp:BoundField DataField="Documento.ValorCadena1" HeaderText="Documento" />
+                                                    <asp:TemplateField HeaderText="P. Avance">
+                                                        <ItemTemplate>
+                                                            <div class="progress">
+                                                                <div id="divPorcentajeAvance" runat="server"></div>
+                                                            </div>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="P. Aprobado">
+                                                        <ItemTemplate>
+                                                            <div class="progress">
+                                                                <div id="divPorcentajeAprobado" runat="server"></div>
+                                                            </div>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Acciones">
                                                         <ItemTemplate>
                                                             <%--<asp:LinkButton ID="btnEditar" runat="server" CssClass="btn btn-default" ToolTip="Editar Documentación"><span class="fa fa-pencil"></span></asp:LinkButton>--%>

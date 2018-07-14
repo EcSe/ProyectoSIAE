@@ -14,7 +14,8 @@ namespace BusinessEntity
         public String Documento_IdValor { get { return Documento.IdValor; } }
         public String Documento_ValorCadena1 { get { return Documento.ValorCadena1; } }
         public String Documento_ValorCadena2 { get { return Documento.ValorCadena2; } }
-
+        public Double PorcentajeAvance { get; set; }
+        public Double PorcentajeAprobado { get; set; }
         public List<DocumentoDetalleBE> Detalles { get; set; }
         public List<DocumentoEquipamientoBE> Equipamientos { get; set; }
         public List<DocumentoMaterialBE> Materiales { get; set; }

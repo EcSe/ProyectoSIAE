@@ -363,7 +363,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 start: function (filesPending) { },
                 startFile: function (fileObj) { },
@@ -435,7 +435,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingHaciaCPEDesdeNodoA').val(fileNames);
@@ -504,7 +504,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -576,7 +576,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 start: function (filesPending) { },
                 startFile: function (fileObj) { },
@@ -649,7 +649,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda01').val(fileNames);
@@ -716,7 +716,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda02').val(fileNames);
@@ -783,7 +783,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda03').val(fileNames);
@@ -850,7 +850,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda04').val(fileNames);
@@ -917,7 +917,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda05').val(fileNames);
@@ -984,7 +984,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 768,
+            minHeightDimension: 760,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda06').val(fileNames);
@@ -1053,7 +1053,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1123,7 +1123,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },

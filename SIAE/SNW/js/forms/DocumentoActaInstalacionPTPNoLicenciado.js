@@ -363,7 +363,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionA').val(fileNames);
@@ -430,7 +430,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionB').val(fileNames);
@@ -497,7 +497,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionVLANEstacionA').val(fileNames);
@@ -565,7 +565,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionVLANEstacionB').val(fileNames);
@@ -632,7 +632,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionA01').val(fileNames);
@@ -699,7 +699,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionA02').val(fileNames);
@@ -766,7 +766,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionB').val(fileNames);
@@ -833,7 +833,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionA').val(fileNames);
@@ -900,7 +900,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionB').val(fileNames);
@@ -967,7 +967,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionA01').val(fileNames);
@@ -1034,7 +1034,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionA02').val(fileNames);
@@ -1101,7 +1101,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionB01').val(fileNames);
@@ -1168,7 +1168,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionB02').val(fileNames);
@@ -1955,7 +1955,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfIngenieria').val(fileNames);
@@ -2022,7 +2022,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPerfil').val(fileNames);
@@ -2093,7 +2093,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionA').val(fileNames);
@@ -2160,7 +2160,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionB').val(fileNames);

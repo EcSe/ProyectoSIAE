@@ -42,7 +42,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 768,
+        minHeightDimension: 760,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },

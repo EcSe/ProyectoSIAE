@@ -4691,7 +4691,7 @@
                     mainTemplate: null,
                     maxFiles: 9999,
                     maxConnections: 3,
-                    maxFileSize: 10485760,
+                    maxFileSize: '100M',
                     minFileSize: 0,
                     md5Calculate: false,
                     md5Check: true,

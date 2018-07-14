@@ -69,6 +69,8 @@ namespace BusinessLogic
                     item.Documento.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_DOCUMENTO"));
                     item.Documento.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_DOCUMENTO"));
                     item.Documento.ValorCadena2 = drDatos.GetString(drDatos.GetOrdinal("VC_URL_DOCUMENTO"));
+                    item.PorcentajeAvance = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_POR_AVANCE"));
+                    item.PorcentajeAprobado = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_POR_APROBADO"));
                     lstResultadosBE.Add(item);
                 }
 

@@ -7,11 +7,7 @@ using System.Web.UI.WebControls;
 using BusinessEntity;
 using BusinessLogic;
 using System.Web.UI.HtmlControls;
-
 using System.Windows.Forms;
-using System.Net;
-using System.IO;
-using System.Threading;
 
 namespace SNW.forms
 {
@@ -59,7 +55,7 @@ namespace SNW.forms
 
             try
             {
-                lstTareas = TareaBL.ListarTareas(Tarea,"Z");
+                lstTareas = TareaBL.ListarTareas(Tarea, "Z");
                 Session["lstTareas"] = lstTareas;
                 gvTareas.DataSource = lstTareas;
                 gvTareas.DataBind();
@@ -75,7 +71,7 @@ namespace SNW.forms
         protected void gvTareas_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
-            {   
+            {
                 e.Row.Cells[0].Attributes["data-title"] = "Tarea";
                 e.Row.Cells[1].Attributes["data-title"] = "Sector";
                 e.Row.Cells[2].Attributes["data-title"] = "T. Tarea";
@@ -106,14 +102,12 @@ namespace SNW.forms
         //    documento.Documento.ValorCadena2 = gvTareas.DataKeys[gvrRegistro.RowIndex]["Documento_ValorCadena2"].ToString();
         //    Response.Redirect(documento.Documento.ValorCadena2 + "?IdTarea=" + documento.Tarea.IdTarea + "&IdDocumento=" + documento.Documento.IdValor, true);
 
-                
+
         //}
 
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
-
-
-            LinkButton btnExportar = (LinkButton)sender;
+		 LinkButton btnExportar = (LinkButton)sender;
             GridViewRow gvrTarea = (GridViewRow)btnExportar.NamingContainer;
             DocumentoBE documento = new DocumentoBE();
 
@@ -181,6 +175,11 @@ namespace SNW.forms
                     rd.ProtocoloInstalacion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
 
                     break;
+                case "000008":
+                    rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionPTPLicenciado.xlsx");
+                    rd.ActaInstalacionPTPLicenciado(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+
+                    break;
                 case "000009":
                     rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionPTPNoLicenciado.xlsx");
                     rd.ActaInstalacionPTPNoLicenciado(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
@@ -238,8 +237,6 @@ namespace SNW.forms
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "impresion", "window.open('"+rutaVirtualTemporalBE.ValorCadena1+"/" + nombreDocumento+"');", true);
             //ScriptManager.RegisterStartupScript(Page, Page.GetType(),"impresion", "window.open('http://localhost/SIAE_ARCHIVOS/TEMPORAL/AP-0092%20ANEXO%2001%20PRUEBAS%20DE%20INTERFERENCIA%20G002636.xlsx');",true);
 
-
-
         }
 
         protected void btnBuscarDocumentos_Click(object sender, EventArgs e)
@@ -256,7 +253,7 @@ namespace SNW.forms
             //LimpiarPopup();
             //InicializarPopup();
             AsignarDocumentos(Documento);
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openAlert('#divAlertDocumento','#divAlertDocumentoHeader','modal-header-primary','#cphContenido_lblAlertDocumentoTitle','Documentos de Tarea: "+ Documento.Tarea.IdTarea + " || Tipo Tarea: " + Documento.Tarea.TipoTarea.ValorCadena1 + " || Nodo o IIBB A: " + Documento.Tarea.NodoIIBBA.IdNodo + "','','','static',false);", true);
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "openAlert('#divAlertDocumento','#divAlertDocumentoHeader','modal-header-primary','#cphContenido_lblAlertDocumentoTitle','Documentos de Tarea: " + Documento.Tarea.IdTarea + " || Tipo Tarea: " + Documento.Tarea.TipoTarea.ValorCadena1 + " || Nodo o IIBB A: " + Documento.Tarea.NodoIIBBA.IdNodo + "','','','static',false);", true);
             upaAlertDocumento.Update();
         }
 
@@ -275,7 +272,7 @@ namespace SNW.forms
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 DocumentoBE Documento = (DocumentoBE)e.Row.DataItem;
-
+                String strClass = "";
                 //e.Row.Cells[0].Attributes["data-title"] = "Tarea";
                 //e.Row.Cells[1].Attributes["data-title"] = "Sector";
                 //e.Row.Cells[2].Attributes["data-title"] = "T. Tarea";
@@ -285,7 +282,9 @@ namespace SNW.forms
                 //e.Row.Cells[6].Attributes["data-title"] = "Nodo B";
                 //e.Row.Cells[7].Attributes["data-title"] = "Contratista";
                 e.Row.Cells[0].Attributes["data-title"] = "Documento";
-                e.Row.Cells[1].Attributes["data-title"] = "Acciones";
+                e.Row.Cells[1].Attributes["data-title"] = "P. Avance";
+                e.Row.Cells[2].Attributes["data-title"] = "P. Aprobado";
+                e.Row.Cells[3].Attributes["data-title"] = "Acciones";
 
                 HtmlAnchor lnkEditar = (HtmlAnchor)e.Row.FindControl("lnkEditar");
                 lnkEditar.HRef = Documento.Documento.ValorCadena2 + "?IdTarea=" + Documento.Tarea.IdTarea + "&IdDocumento=" + Documento.Documento.IdValor;
@@ -294,10 +293,34 @@ namespace SNW.forms
                 //upaUsuario.Triggers.Add(new AsyncPostBackTrigger { ControlID = btnEditar.UniqueID, EventName ="click"});
                 //ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(btnEditar);
 
+                #region Porcentaje avance
+                HtmlGenericControl divPorcentajeAvance = (HtmlGenericControl)e.Row.FindControl("divPorcentajeAvance");
+                if (Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAvance * 100)) < 50)
+                    strClass = "progress-bar progress-bar-danger";
+                else if (Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAvance * 100)) < 100)
+                    strClass = "progress-bar progress-bar-warning";
+                else
+                    strClass = "progress-bar progress-bar-success";
+                divPorcentajeAvance.Attributes.Add("class",strClass);
+                divPorcentajeAvance.Attributes.Add("style", "width: " + Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAvance * 100)).ToString() + "%;");
+                divPorcentajeAvance.InnerHtml = Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAvance * 100)).ToString() + "%";
+                #endregion
+
+                #region Porcentaje aprobado
+                HtmlGenericControl divPorcentajeAprobado = (HtmlGenericControl)e.Row.FindControl("divPorcentajeAprobado");
+                if (Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAprobado * 100)) < 50)
+                    strClass = "progress-bar progress-bar-danger";
+                else if (Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAprobado * 100)) < 100)
+                    strClass = "progress-bar progress-bar-warning";
+                else
+                    strClass = "progress-bar progress-bar-success";
+                divPorcentajeAprobado.Attributes.Add("class", strClass);
+                divPorcentajeAprobado.Attributes.Add("style", "width: " + Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAprobado * 100)).ToString() + "%;");
+                divPorcentajeAprobado.InnerHtml = Convert.ToInt32(Math.Ceiling(Documento.PorcentajeAprobado * 100)).ToString() + "%";
+                #endregion
 
             }
         }
-
 
     }
 }
