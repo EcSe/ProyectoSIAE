@@ -88,6 +88,7 @@
     <Content Include="bin\DocumentFormat.OpenXml.dll" />
     <Content Include="bin\SNW.dll" />
     <Content Include="bin\SNW.pdb" />
+    <Content Include="forms\BandejaAvanceAprobacion.aspx" />
     <Content Include="forms\BandejaDocumentacion.aspx" />
     <Content Include="forms\BandejaNodo.aspx" />
     <Content Include="forms\BandejaTarea.aspx" />
@@ -108,6 +109,7 @@
     <Content Include="forms\DocumentoVideoVigilanciaNodo.aspx" />
     <Content Include="forms\ObtenerBytesArchivo.aspx" />
     <Content Include="forms\Upload.aspx" />
+    <Content Include="js\forms\BandejaAvanceAprobacion.js" />
     <Content Include="js\forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.js" />
     <Content Include="js\forms\DocumentoActaInstalacionPTPLicenciado.js" />
     <Content Include="js\forms\DocumentoActaInstalacionPTPNoLicenciado.js" />
@@ -182,6 +184,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\BandejaAvanceAprobacion.aspx.cs">
+      <DependentUpon>BandejaAvanceAprobacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forms\BandejaAvanceAprobacion.aspx.designer.cs">
+      <DependentUpon>BandejaAvanceAprobacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="forms\BandejaNodo.aspx.cs">
       <DependentUpon>BandejaNodo.aspx</DependentUpon>

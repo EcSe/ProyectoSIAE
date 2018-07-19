@@ -22,7 +22,7 @@ namespace BusinessLogic
             baseDatosDA.Conectar();
             try
             {
-                baseDatosDA.CrearComando("USP_DOCUMENTO", CommandType.StoredProcedure);
+                baseDatosDA.CrearComando("USP_DOCUMENTO", CommandType.StoredProcedure,false,300);
                 baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "S", true);
 
                 //if (documentoBE.Tarea.NodoIIBBA.IdNodo != null && !documentoBE.Tarea.NodoIIBBA.IdNodo.Equals(""))
@@ -38,6 +38,10 @@ namespace BusinessLogic
                     baseDatosDA.AsignarParametroNulo("@PCH_ID_TAREA", true);
                 else
                     baseDatosDA.AsignarParametroCadena("@PCH_ID_TAREA", documentoBE.Tarea.IdTarea, true);
+                if (documentoBE.Tarea.Proyecto.IdValor.Equals(""))
+                    baseDatosDA.AsignarParametroNulo("@PCH_ID_PROY", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PCH_ID_PROY", documentoBE.Tarea.Proyecto.IdValor, true);
 
                 DbDataReader drDatos = baseDatosDA.EjecutarConsulta();
 
@@ -50,6 +54,7 @@ namespace BusinessLogic
                         item.Tarea.IdSectorAP = drDatos.GetString(drDatos.GetOrdinal("CH_ID_SECTOR"));
                     item.Tarea.TipoTarea.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_TAREA"));
                     item.Tarea.TipoTarea.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_TIP_TAREA"));
+                    item.Tarea.Proyecto.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_NOM_PROYECTO"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("CH_ID_TIP_NODO_A")))
                         item.Tarea.TipoNodoA.IdValor = drDatos.GetString(drDatos.GetOrdinal("CH_ID_TIP_NODO_A"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_NOM_TIP_NODO_A")))
