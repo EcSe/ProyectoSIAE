@@ -80,7 +80,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="js\BandejaNodo.js" />
     <Content Include="js\jquery.number.js" />
     <Content Include="js\jquery.number.min.js" />
     <Content Include="pickadate.js-3.5.6\.jshintrc" />

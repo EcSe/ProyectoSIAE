@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessEntity;
 using BusinessLogic;
+using System.Web.UI.HtmlControls;
 
 namespace SNW.forms
 {
@@ -42,6 +43,15 @@ namespace SNW.forms
 
         protected void btnDescargarZip_Click(object sender, EventArgs e)
         {
+            LinkButton btnDescargarZip = (LinkButton)sender;
+            GridViewRow gvrNodos = (GridViewRow)btnDescargarZip.NamingContainer;
+            DocumentoBE documento = new DocumentoBE();
+
+            documento.Tarea.NodoIIBBA.IdNodo = gvNodos.DataKeys[gvrNodos.RowIndex]["IdNodo"].ToString();
+
+            ZipBL zip = new ZipBL();
+
+            zip.DescargarZip(documento.Tarea.NodoIIBBA.IdNodo);
 
         }
 

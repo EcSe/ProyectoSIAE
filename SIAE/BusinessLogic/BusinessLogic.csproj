@@ -89,6 +89,7 @@
     <Compile Include="TerceroBL.cs" />
     <Compile Include="UsuarioBL.cs" />
     <Compile Include="UtilitarioBL.cs" />
+    <Compile Include="ZipBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntity\BusinessEntity.csproj">

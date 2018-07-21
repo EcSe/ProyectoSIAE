@@ -110,6 +110,7 @@
     <Content Include="forms\ObtenerBytesArchivo.aspx" />
     <Content Include="forms\Upload.aspx" />
     <Content Include="js\forms\BandejaAvanceAprobacion.js" />
+    <Content Include="js\forms\BandejaNodo.js" />
     <Content Include="js\forms\DocumentoActaInstalacionAceptacionProtocoloIIBB.js" />
     <Content Include="js\forms\DocumentoActaInstalacionPTPLicenciado.js" />
     <Content Include="js\forms\DocumentoActaInstalacionPTPNoLicenciado.js" />
