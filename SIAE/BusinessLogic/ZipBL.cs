@@ -8,6 +8,7 @@ using System.Data;
 using DataAccess;
 using BusinessEntity;
 using System.IO;
+using System.Drawing;
 
 namespace BusinessLogic
 {
@@ -20,24 +21,30 @@ namespace BusinessLogic
             baseDatosDA.Configurar();
             baseDatosDA.Conectar();
 
+            String ruta = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\";
+
             try
             {
                 baseDatosDA.CrearComando("USP_R_RUTA_ZIP",CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@VC_ID_NODO",IdNodo,true);
                 DataTable dt = baseDatosDA.EjecutarConsultaDataTable();
-                String prueba = dt.Rows[0]["Columns"].ToString();
+                
                 foreach(DataRow dr in dt.Rows)
                 {
                     String rutaCarpeta = dr["VC_RUTA_CARPETA"].ToString();
 
                     byte[] valorBinario = (byte[])dr["VB_VALOR_BINARIO"];
 
-                  MemoryStream mBinario = new MemoryStream(valorBinario);
-
+                  //MemoryStream mBinario = new MemoryStream(valorBinario);
+                  //  Image img = (Bitmap)((new ImageConverter()).ConvertFrom(valorBinario));
+                    String folder = IdNodo + rutaCarpeta;
+                    String rutaCompleta = Path.Combine(ruta, folder);
+                    ////img.Save(rutaCompleta);
+                    File.WriteAllBytes(rutaCompleta,valorBinario);
                 }
 
                 
-                
+               
             }
             catch (Exception ex)
             {
