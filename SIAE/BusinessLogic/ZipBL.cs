@@ -36,16 +36,27 @@ namespace BusinessLogic
                     String nombreArchivo = dr["VC_VALOR_CADENA1"].ToString();
                     byte[] binario = (byte[])dr["VB_VALOR_BINARIO"];
                     String extension = dr["VC_EXTENSION_ARCHIVO"].ToString();
+
                     nombreArchivo = nombreArchivo.Replace(":", ""); //LA RUTA DE ARCHIVOS NO DEBE LLEVAR SIMBOLOS DE PUNTUACION
                     String folder = IdNodo + rutaCarpeta;
                     String rutaCompleta = Path.Combine(ruta, folder);
 
                     Directory.CreateDirectory(rutaCompleta);
 
-                    MemoryStream stream = new MemoryStream(binario);
-                    Bitmap bm = new Bitmap (stream);
-                    bm.Save(rutaCompleta + "\\" + nombreArchivo + extension); 
-                    stream.Dispose();
+                    if (extension.Equals(".mp4"))
+                    {
+                        
+                    }
+                    else
+                    {
+                        MemoryStream stream = new MemoryStream(binario);
+                        Bitmap bm = new Bitmap(stream);
+                        bm.Save(rutaCompleta + "\\" + nombreArchivo + extension);
+                        stream.Dispose();
+                    }
+             
+
+
                    
                 }
 
