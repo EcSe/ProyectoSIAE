@@ -1812,22 +1812,18 @@ namespace BusinessLogic
             {
                 baseDatosDA.CrearComando("USP_R_ACTA_INSTALACION_ACEPTACION_PROTOCOLO_IIBB_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
-                DataSet ds = baseDatosDA.EjecutarConsultaDataTable().DataSet;
                 DataTable dt = baseDatosDA.EjecutarConsultaDataTable();
 
                 baseDatosDA.CrearComando("USP_R_MEDICION_ENLACE_IIBB_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
-                DataSet ds1 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
                 DataTable dt1 = baseDatosDA.EjecutarConsultaDataTable();
 
                 baseDatosDA.CrearComando("USP_R_EQUIPAMIENTOS_IIBB_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
-                DataSet ds2 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
                 DataTable dt2 = baseDatosDA.EjecutarConsultaDataTable();
 
                 baseDatosDA.CrearComando("USP_R_MATERIALES_IIBB_A", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@CH_ID_TAREA", IdTarea, true);
-                DataSet ds3 = baseDatosDA.EjecutarConsultaDataTable().DataSet;
                 DataTable dt3 = baseDatosDA.EjecutarConsultaDataTable();
 
                 #region Valores
@@ -1860,19 +1856,14 @@ namespace BusinessLogic
                 String SWITCH_COMUNICACIONES = dt.Rows[0]["SWITCH_COMUNICACIONES"].ToString();
                 String ROUTER = dt.Rows[0]["ROUTER"].ToString();
                 String EQUIPO_COMPUTO1 = dt.Rows[0]["EQUIPO_COMPUTO1"].ToString();
-                //String EQUIPO_COMPUTO2 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO2"].ToString();
-                //String EQUIPO_COMPUTO3 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO3"].ToString();
-                //String EQUIPO_COMPUTO4 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO4"].ToString();
-                //String EQUIPO_COMPUTO5 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO5"].ToString();
+           
                 String IMPRESORA_MULTIFUNCIONAL = dt.Rows[0]["IMPRESORA_MULTIFUNCIONAL"].ToString();
                 String UPS = dt.Rows[0]["UPS"].ToString();
                 String REFERENCIA_UBICACION_IIBB = dt.Rows[0]["REFERENCIA_UBICACION_IIBB"].ToString();
                 String TIPO_MASTIL = dt.Rows[0]["TIPO_MASTIL"].ToString();
                 String ALTURA_MASTIL = dt.Rows[0]["ALTURA_MASTIL"].ToString();
                 String DISPONIBILIDAD_HORAS = dt.Rows[0]["DISPONIBILIDAD_HORAS"].ToString();
-                //String VALOR_MEDIO_MEDIDA1 = ds.Tables[0].Rows[0]["VALOR_MEDIO_MEDIDA1"].ToString();
-                //String VALOR_MEDIO_MEDIDA2 = ds.Tables[0].Rows[0]["VALOR_MEDIO_MEDIDA2"].ToString();
-                //String VALOR_MEDIO_MEDIDA3 = ds.Tables[0].Rows[0]["VALOR_MEDIO_MEDIDA3"].ToString();
+             
                 String POTENCIA_TRANSMISION = dt.Rows[0]["POTENCIA_TRANSMISION"].ToString();
                 String ANCHO_BANDA_CANAL = dt.Rows[0]["ANCHO_BANDA_CANAL"].ToString();
                 String ELEVACION = dt.Rows[0]["ELEVACION"].ToString();
@@ -1889,11 +1880,7 @@ namespace BusinessLogic
                 String CELULAR_CONTACTO_REPRESENTANTE = dt.Rows[0]["CELULAR_CONTACTO_REPRESENTANTE"].ToString();
                 String CARGO_REPRESENTANTE_IIBB = dt.Rows[0]["CARGO_REPRESENTANTE_IIBB"].ToString();
                 String EMAIL_REPRESENTANTE_IIBB = dt.Rows[0]["EMAIL_REPRESENTANTE_IIBB"].ToString();
-                //String NOMBRES_APELLIDOS_REPR_OPERADOR = ds.Tables[0].Rows[0]["NOMBRES_APELLIDOS_REPR_OPERADOR"].ToString();
-                //String DOC_IDENTIDAD_REPR_OPERADOR = ds.Tables[0].Rows[0]["DOC_IDENTIDAD_REPR_OPERADOR"].ToString();
-                //String CARGO_REPRESENTANTE_OPERADOR = ds.Tables[0].Rows[0]["CARGO_REPRESENTANTE_OPERADOR"].ToString();
-                //String EMAIL_REPR_OPERADOR = ds.Tables[0].Rows[0]["EMAIL_REPR_OPERADOR"].ToString();
-
+               
                 String MSPT_MEDIDA1_VALORMEDIO = dt.Rows[0]["MSPT_MEDIDA1_VALORMEDIO"].ToString();
                 String MSPT_MEDIDA2_VALORMEDIO = dt.Rows[0]["MSPT_MEDIDA2_VALORMEDIO"].ToString();
                 String MSPT_MEDIDA3_VALORMEDIO = dt.Rows[0]["MSPT_MEDIDA3_VALORMEDIO"].ToString();
@@ -1904,77 +1891,7 @@ namespace BusinessLogic
                 String CODIGO_NODO = dt.Rows[0]["CODIGO_NODO"].ToString();
                 String IP_IIBB = dt.Rows[0]["IP_IIBB"].ToString();
 
-                #region Valores comentados 
-                //String FRECUENCIA = ds.Tables[0].Rows[0]["FRECUENCIA"].ToString();
-                //String CODIGO_IIBB = ds.Tables[0].Rows[0]["CODIGO_IIBB"].ToString();
-                //String TIPO_INSTITUCION = ds.Tables[0].Rows[0]["TIPO_INSTITUCION"].ToString();
-                //String NOMBRE_IIBB = ds.Tables[0].Rows[0]["NOMBRE_IIBB"].ToString();
-
-                //DateTime dtFecha = DateTime.Parse(ds.Tables[0].Rows[0]["FECHA"].ToString());
-                //String FECHA = dtFecha.ToString("dd/MM/yyyy");
-
-                //String DEPARTAMENTO = ds.Tables[0].Rows[0]["DEPARTAMENTO"].ToString();
-                //String PROVINCIA = ds.Tables[0].Rows[0]["PROVINCIA"].ToString();
-                //String DISTRITO = ds.Tables[0].Rows[0]["DISTRITO"].ToString();
-                //String NOMBRE_NODO = ds.Tables[0].Rows[0]["NOMBRE_NODO"].ToString();
-                //String UBIGEO = ds.Tables[0].Rows[0]["UBIGEO"].ToString();
-                //String LATITUD = ds.Tables[0].Rows[0]["LATITUD"].ToString();
-                //String LONGITUD = ds.Tables[0].Rows[0]["LONGITUD"].ToString();
-                //String ALTITUDmsnm = ds.Tables[0].Rows[0]["ALTITUDmsnm"].ToString();
-                //String AZIMUT = ds.Tables[0].Rows[0]["AZIMUT"].ToString();
-
-
-                //String DIRECCION_NODO = ds.Tables[0].Rows[0]["DIRECCION_NODO"].ToString();
-
-                //String ODU_CPE = ds.Tables[0].Rows[0]["ODU_CPE"].ToString();
-                //String ACCESS_POINT_INDOOR = ds.Tables[0].Rows[0]["ACCESS_POINT_INDOOR"].ToString();
-                //String SWITCH_COMUNICACIONES = ds.Tables[0].Rows[0]["SWITCH_COMUNICACIONES"].ToString();
-                //String ROUTER = ds.Tables[0].Rows[0]["ROUTER"].ToString();
-                //String EQUIPO_COMPUTO1 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO1"].ToString();
-                ////String EQUIPO_COMPUTO2 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO2"].ToString();
-                ////String EQUIPO_COMPUTO3 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO3"].ToString();
-                ////String EQUIPO_COMPUTO4 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO4"].ToString();
-                ////String EQUIPO_COMPUTO5 = ds.Tables[0].Rows[0]["EQUIPO_COMPUTO5"].ToString();
-                //String IMPRESORA_MULTIFUNCIONAL = ds.Tables[0].Rows[0]["IMPRESORA_MULTIFUNCIONAL"].ToString();
-                //String UPS = ds.Tables[0].Rows[0]["UPS"].ToString();
-                //String REFERENCIA_UBICACION_IIBB = ds.Tables[0].Rows[0]["REFERENCIA_UBICACION_IIBB"].ToString();
-                //String TIPO_MASTIL = ds.Tables[0].Rows[0]["TIPO_MASTIL"].ToString();
-                //String ALTURA_MASTIL = ds.Tables[0].Rows[0]["ALTURA_MASTIL"].ToString();
-                //String DISPONIBILIDAD_HORAS = ds.Tables[0].Rows[0]["DISPONIBILIDAD_HORAS"].ToString();
-                ////String VALOR_MEDIO_MEDIDA1 = ds.Tables[0].Rows[0]["VALOR_MEDIO_MEDIDA1"].ToString();
-                ////String VALOR_MEDIO_MEDIDA2 = ds.Tables[0].Rows[0]["VALOR_MEDIO_MEDIDA2"].ToString();
-                ////String VALOR_MEDIO_MEDIDA3 = ds.Tables[0].Rows[0]["VALOR_MEDIO_MEDIDA3"].ToString();
-                //String POTENCIA_TRANSMISION = ds.Tables[0].Rows[0]["POTENCIA_TRANSMISION"].ToString();
-                //String ANCHO_BANDA_CANAL = ds.Tables[0].Rows[0]["ANCHO_BANDA_CANAL"].ToString();
-                //String ELEVACION = ds.Tables[0].Rows[0]["ELEVACION"].ToString();
-                //String CONECTIVIDAD_GILAT = ds.Tables[0].Rows[0]["CONECTIVIDAD_GILAT"].ToString();
-                //String CONECTIVIDAD_NODO_TERMINAL = ds.Tables[0].Rows[0]["CONECTIVIDAD_NODO_TERMINAL"].ToString();
-                //String CONECTIVIDAD_NODO_DISTRITAL = ds.Tables[0].Rows[0]["CONECTIVIDAD_NODO_DISTRITAL"].ToString();
-                //String CONECTIVIDAD_NOC = ds.Tables[0].Rows[0]["CONECTIVIDAD_NOC"].ToString();
-                //String NOMBRES_APELLIDOS_ENCARGADO = ds.Tables[0].Rows[0]["NOMBRES_APELLIDOS_ENCARGADO"].ToString();
-                //String DOC_IDENTIDAD_ENCARGADO = ds.Tables[0].Rows[0]["DOC_IDENTIDAD_ENCARGADO"].ToString();
-                //String CELULAR_CONTACTO_ENCARGADO = ds.Tables[0].Rows[0]["CELULAR_CONTACTO_ENCARGADO"].ToString();
-                //String EMAIL_ENCARGADO_IIBB = ds.Tables[0].Rows[0]["EMAIL_ENCARGADO_IIBB"].ToString();
-                //String NOMBRES_APELLIDOS_REPRESENTANTE = ds.Tables[0].Rows[0]["NOMBRES_APELLIDOS_REPRESENTANTE"].ToString();
-                //String DOC_IDENTIDAD_REPRESENTANTE = ds.Tables[0].Rows[0]["DOC_IDENTIDAD_REPRESENTANTE"].ToString();
-                //String CELULAR_CONTACTO_REPRESENTANTE = ds.Tables[0].Rows[0]["CELULAR_CONTACTO_REPRESENTANTE"].ToString();
-                //String CARGO_REPRESENTANTE_IIBB = ds.Tables[0].Rows[0]["CARGO_REPRESENTANTE_IIBB"].ToString();
-                //String EMAIL_REPRESENTANTE_IIBB = ds.Tables[0].Rows[0]["EMAIL_REPRESENTANTE_IIBB"].ToString();
-                ////String NOMBRES_APELLIDOS_REPR_OPERADOR = ds.Tables[0].Rows[0]["NOMBRES_APELLIDOS_REPR_OPERADOR"].ToString();
-                ////String DOC_IDENTIDAD_REPR_OPERADOR = ds.Tables[0].Rows[0]["DOC_IDENTIDAD_REPR_OPERADOR"].ToString();
-                ////String CARGO_REPRESENTANTE_OPERADOR = ds.Tables[0].Rows[0]["CARGO_REPRESENTANTE_OPERADOR"].ToString();
-                ////String EMAIL_REPR_OPERADOR = ds.Tables[0].Rows[0]["EMAIL_REPR_OPERADOR"].ToString();
-
-                //String MSPT_MEDIDA1_VALORMEDIO = ds.Tables[0].Rows[0]["MSPT_MEDIDA1_VALORMEDIO"].ToString();
-                //String MSPT_MEDIDA2_VALORMEDIO = ds.Tables[0].Rows[0]["MSPT_MEDIDA2_VALORMEDIO"].ToString();
-                //String MSPT_MEDIDA3_VALORMEDIO = ds.Tables[0].Rows[0]["MSPT_MEDIDA3_VALORMEDIO"].ToString();
-                //String MSPTP_MEDIDA1_VALORMEDIO = ds.Tables[0].Rows[0]["MSPTP_MEDIDA1_VALORMEDIO"].ToString();
-                //String MSPTP_MEDIDA2_VALORMEDIO = ds.Tables[0].Rows[0]["MSPTP_MEDIDA2_VALORMEDIO"].ToString();
-                //String MSPTP_MEDIDA3_VALORMEDIO = ds.Tables[0].Rows[0]["MSPTP_MEDIDA3_VALORMEDIO"].ToString();
-
-                //String CODIGO_NODO = ds.Tables[0].Rows[0]["CODIGO_NODO"].ToString();
-                //String IP_IIBB = ds.Tables[0].Rows[0]["IP_IIBB"].ToString();
-                #endregion
+             
 
                 #endregion
 
@@ -2129,156 +2046,7 @@ namespace BusinessLogic
                 byte[] FOTO_10_PC05_SERIE = (byte[])dt.Rows[0]["FOTO_10_PC05_SERIE"];
                 MemoryStream mFOTO_10_PC05_SERIE = new MemoryStream(FOTO_10_PC05_SERIE);
 
-                #region Valores Comentados
-                //byte[] PANT_CONF_ACCESS_POINt = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_ACCESS_POINt"];
-                //MemoryStream mPANT_CONF_ACCESS_POINt = new MemoryStream(PANT_CONF_ACCESS_POINt);
-                //byte[] PANT_CONF_ROUTER = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_ROUTER"];
-                //MemoryStream mPANT_CONF_ROUTER = new MemoryStream(PANT_CONF_ROUTER);
-                //byte[] PANT_CONF_SWITCH01 = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_SWITCH01"];
-                //MemoryStream mPANT_CONF_SWITCH01 = new MemoryStream(PANT_CONF_SWITCH01);
-                //byte[] PANT_CONF_SWITCH02 = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_SWITCH02"];
-                //MemoryStream mPANT_CONF_SWITCH02 = new MemoryStream(PANT_CONF_SWITCH02);
-                //byte[] PANT_CONF_UPS = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_UPS"];
-                //MemoryStream mPANT_CONF_UPS = new MemoryStream(PANT_CONF_UPS);
-                //byte[] PANT_CONF_ALLINONE01 = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_ALLINONE01"];
-                //MemoryStream mPANT_CONF_ALLINONE01 = new MemoryStream(PANT_CONF_ALLINONE01);
-                //byte[] PANT_CONF_ALLINONE02 = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_ALLINONE02"];
-                //MemoryStream mPANT_CONF_ALLINONE02 = new MemoryStream(PANT_CONF_ALLINONE02);
-                //byte[] PANT_CONF_IMPRESORA = (byte[])ds.Tables[0].Rows[0]["PANT_CONF_IMPRESORA"];
-                //MemoryStream mPANT_CONF_IMPRESORA = new MemoryStream(PANT_CONF_IMPRESORA);
-                //byte[] FOTO1_PAN_LOCALIDAD = (byte[])ds.Tables[0].Rows[0]["FOTO1_PAN_LOCALIDAD"];
-                //MemoryStream mFOTO1_PAN_LOCALIDAD = new MemoryStream(FOTO1_PAN_LOCALIDAD);
-                //byte[] FOTO2_FACHADA_INSTITUCION = (byte[])ds.Tables[0].Rows[0]["FOTO2_FACHADA_INSTITUCION"];
-                //MemoryStream mFOTO2_FACHADA_INSTITUCION = new MemoryStream(FOTO2_FACHADA_INSTITUCION);
-                //byte[] FOTO3_1_IMPRESORA = (byte[])ds.Tables[0].Rows[0]["FOTO3_1_IMPRESORA"];
-                //MemoryStream mFOTO3_1_IMPRESORA = new MemoryStream(FOTO3_1_IMPRESORA);
-                //byte[] FOTO3_2_SWITCH = (byte[])ds.Tables[0].Rows[0]["FOTO3_2_SWITCH"];
-                //MemoryStream mFOTO3_2_SWITCH = new MemoryStream(FOTO3_2_SWITCH);
-                //byte[] FOTO3_3_ROUTER = (byte[])ds.Tables[0].Rows[0]["FOTO3_3_ROUTER"];
-                //MemoryStream mFOTO3_3_ROUTER = new MemoryStream(FOTO3_3_ROUTER);
-                //byte[] FOTO3_4_PC_ENCENDIDAS = (byte[])ds.Tables[0].Rows[0]["FOTO3_4_PC_ENCENDIDAS"];
-                //MemoryStream mFOTO3_4_PC_ENCENDIDAS = new MemoryStream(FOTO3_4_PC_ENCENDIDAS);
-                //byte[] FOTO3_5_PC_UPS = (byte[])ds.Tables[0].Rows[0]["FOTO3_5_PC_UPS"];
-                //MemoryStream mFOTO3_5_PC_UPS = new MemoryStream(FOTO3_5_PC_UPS);
-                //byte[] FOTO3_6_ACCESS_POINT = (byte[])ds.Tables[0].Rows[0]["FOTO3_6_ACCESS_POINT"];
-                //MemoryStream mFOTO3_6_ACCESS_POINT = new MemoryStream(FOTO3_6_ACCESS_POINT);
-                //byte[] FOTO4_1_ODU_CPE = (byte[])ds.Tables[0].Rows[0]["FOTO4_1_ODU_CPE"];
-                //MemoryStream mFOTO4_1_ODU_CPE = new MemoryStream(FOTO4_1_ODU_CPE);
-                //byte[] FOTO4_2_MASTIL = (byte[])ds.Tables[0].Rows[0]["FOTO4_2_MASTIL"];
-                //MemoryStream mFOTO4_2_MASTIL = new MemoryStream(FOTO4_2_MASTIL);
-                //byte[] FOTO4_3_PAN_ANT_INSTAL_MASTIL = (byte[])ds.Tables[0].Rows[0]["FOTO4_3_PAN_ANT_INSTAL_MASTIL"];
-                //MemoryStream mFOTO4_3_PAN_ANT_INSTAL_MASTIL = new MemoryStream(FOTO4_3_PAN_ANT_INSTAL_MASTIL);
-                //byte[] FOTO4_4_RECORRIDO_SFTP_CATSE = (byte[])ds.Tables[0].Rows[0]["FOTO4_4_RECORRIDO_SFTP_CATSE"];
-                //MemoryStream mFOTO4_4_RECORRIDO_SFTP_CATSE = new MemoryStream(FOTO4_4_RECORRIDO_SFTP_CATSE);
-                //byte[] FOTO4_5_INGRESO_SFTP = (byte[])ds.Tables[0].Rows[0]["FOTO4_5_INGRESO_SFTP"];
-                //MemoryStream mFOTO4_5_INGRESO_SFTP = new MemoryStream(FOTO4_5_INGRESO_SFTP);
-                //byte[] FOTO4_6_RECORRIDO_SFTP_CANALETA = (byte[])ds.Tables[0].Rows[0]["FOTO4_6_RECORRIDO_SFTP_CANALETA"];
-                //MemoryStream mFOTO4_6_RECORRIDO_SFTP_CANALETA = new MemoryStream(FOTO4_6_RECORRIDO_SFTP_CANALETA);
-                //byte[] FOTO4_7_POE = (byte[])ds.Tables[0].Rows[0]["FOTO4_7_POE"];
-                //MemoryStream mFOTO4_7_POE = new MemoryStream(FOTO4_7_POE);
-                //byte[] FOTO4_8_PATCH_POE_ROUTER = (byte[])ds.Tables[0].Rows[0]["FOTO4_8_PATCH_POE_ROUTER"];
-                //MemoryStream mFOTO4_8_PATCH_POE_ROUTER = new MemoryStream(FOTO4_8_PATCH_POE_ROUTER);
-                //byte[] FOTO5_1_TABLERO_GENERAL_SECUNDARIO = (byte[])ds.Tables[0].Rows[0]["FOTO5_1_TABLERO_GENERAL_SECUNDARIO"];
-                //MemoryStream mFOTO5_1_TABLERO_GENERAL_SECUNDARIO = new MemoryStream(FOTO5_1_TABLERO_GENERAL_SECUNDARIO);
-                //byte[] FOTO5_2_INSTALACION_BREAKER = (byte[])ds.Tables[0].Rows[0]["FOTO5_2_INSTALACION_BREAKER"];
-                //MemoryStream mFOTO5_2_INSTALACION_BREAKER = new MemoryStream(FOTO5_2_INSTALACION_BREAKER);
-                //byte[] FOTO5_3_CABLE_CONEXION_ELECTRICA = (byte[])ds.Tables[0].Rows[0]["FOTO5_3_CABLE_CONEXION_ELECTRICA"];
-                //MemoryStream mFOTO5_3_CABLE_CONEXION_ELECTRICA = new MemoryStream(FOTO5_3_CABLE_CONEXION_ELECTRICA);
-                //byte[] FOTO5_4_TOMAS_ENERGIA = (byte[])ds.Tables[0].Rows[0]["FOTO5_4_TOMAS_ENERGIA"];
-                //MemoryStream mFOTO5_4_TOMAS_ENERGIA = new MemoryStream(FOTO5_4_TOMAS_ENERGIA);
-                //byte[] FOTO5_5_FOTO_INTERNA_INST_BREAKER = (byte[])ds.Tables[0].Rows[0]["FOTO5_5_FOTO_INTERNA_INST_BREAKER"];
-                //MemoryStream mFOTO5_5_FOTO_INTERNA_INST_BREAKER = new MemoryStream(FOTO5_5_FOTO_INTERNA_INST_BREAKER);
-                //byte[] FOTO6_1_DNI_DJREPRESENTANTE_ABONADO = (byte[])ds.Tables[0].Rows[0]["FOTO6_1_DNI_DJREPRESENTANTE_ABONADO"];
-                //MemoryStream mFOTO6_1_DNI_DJREPRESENTANTE_ABONADO = new MemoryStream(FOTO6_1_DNI_DJREPRESENTANTE_ABONADO);
-                //byte[] FOTO6_2_DNI_DJREPRESENTANTE_ABONADO = (byte[])ds.Tables[0].Rows[0]["FOTO6_2_DNI_DJREPRESENTANTE_ABONADO"];
-                //MemoryStream mFOTO6_2_DNI_DJREPRESENTANTE_ABONADO = new MemoryStream(FOTO6_2_DNI_DJREPRESENTANTE_ABONADO);
-                //byte[] FOTO7_1_SWITCH = (byte[])ds.Tables[0].Rows[0]["FOTO7_1_SWITCH"];
-                //MemoryStream mFOTO7_1_SWITCH = new MemoryStream(FOTO7_1_SWITCH);
-                //byte[] FOTO7_2_ROUTER = (byte[])ds.Tables[0].Rows[0]["FOTO7_2_ROUTER"];
-                //MemoryStream mFOTO7_2_ROUTER = new MemoryStream(FOTO7_2_ROUTER);
-                //byte[] FOTO7_3_REGLETA_ENERGIA = (byte[])ds.Tables[0].Rows[0]["FOTO7_3_REGLETA_ENERGIA"];
-                //MemoryStream mFOTO7_3_REGLETA_ENERGIA = new MemoryStream(FOTO7_3_REGLETA_ENERGIA);
-                //byte[] FOTO7_4_UPS = (byte[])ds.Tables[0].Rows[0]["FOTO7_4_UPS"];
-                //MemoryStream mFOTO7_4_UPS = new MemoryStream(FOTO7_4_UPS);
-                //byte[] FOTO7_5_COMPUTADORAS = (byte[])ds.Tables[0].Rows[0]["FOTO7_5_COMPUTADORAS"];
-                //MemoryStream mFOTO7_5_COMPUTADORAS = new MemoryStream(FOTO7_5_COMPUTADORAS);
-                //byte[] FOTO7_6_ACESS_POINT = (byte[])ds.Tables[0].Rows[0]["FOTO7_6_ACESS_POINT"];
-                //MemoryStream mFOTO7_6_ACESS_POINT = new MemoryStream(FOTO7_6_ACESS_POINT);
-                //byte[] FOTO7_7_IMPRESORA = (byte[])ds.Tables[0].Rows[0]["FOTO7_7_IMPRESORA"];
-                //MemoryStream mFOTO7_7_IMPRESORA = new MemoryStream(FOTO7_7_IMPRESORA);
-                //byte[] FOTO7_8_PAN_SALA_EQUIPOS = (byte[])ds.Tables[0].Rows[0]["FOTO7_8_PAN_SALA_EQUIPOS"];
-                //MemoryStream mFOTO7_8_PAN_SALA_EQUIPOS = new MemoryStream(FOTO7_8_PAN_SALA_EQUIPOS);
-                //byte[] FOTO7_9_JACK_RJ45 = (byte[])ds.Tables[0].Rows[0]["FOTO7_9_JACK_RJ45"];
-                //MemoryStream mFOTO7_9_JACK_RJ45 = new MemoryStream(FOTO7_9_JACK_RJ45);
-                //byte[] FOTO8_1_INSTALACION_POZO_TIERRA = (byte[])ds.Tables[0].Rows[0]["FOTO8_1_INSTALACION_POZO_TIERRA"];
-                //MemoryStream mFOTO8_1_INSTALACION_POZO_TIERRA = new MemoryStream(FOTO8_1_INSTALACION_POZO_TIERRA);
-                //byte[] FOTO8_2_CONEX_CAJA_REGISTRO = (byte[])ds.Tables[0].Rows[0]["FOTO8_2_CONEX_CAJA_REGISTRO"];
-                //MemoryStream mFOTO8_2_CONEX_CAJA_REGISTRO = new MemoryStream(FOTO8_2_CONEX_CAJA_REGISTRO);
-                //byte[] FOTO8_3_ESCALA_UTIL_RESULT_MEDICION1 = (byte[])ds.Tables[0].Rows[0]["FOTO8_3_ESCALA_UTIL_RESULT_MEDICION1"];
-                //MemoryStream mFOTO8_3_ESCALA_UTIL_RESULT_MEDICION1 = new MemoryStream(FOTO8_3_ESCALA_UTIL_RESULT_MEDICION1);
-                //byte[] FOTO8_4_ESCALA_UTIL_RESULT_MEDICION2 = (byte[])ds.Tables[0].Rows[0]["FOTO8_4_ESCALA_UTIL_RESULT_MEDICION2"];
-                //MemoryStream mFOTO8_4_ESCALA_UTIL_RESULT_MEDICION2 = new MemoryStream(FOTO8_4_ESCALA_UTIL_RESULT_MEDICION2);
-                //byte[] FOTO8_5_ESCALA_UTIL_RESULT_MEDICION3 = (byte[])ds.Tables[0].Rows[0]["FOTO8_5_ESCALA_UTIL_RESULT_MEDICION3"];
-                //MemoryStream mFOTO8_5_ESCALA_UTIL_RESULT_MEDICION3 = new MemoryStream(FOTO8_5_ESCALA_UTIL_RESULT_MEDICION3);
-                //byte[] FOTO9_1_INSTAL_POZO_TIERRA_1 = (byte[])ds.Tables[0].Rows[0]["FOTO9_1_INSTAL_POZO_TIERRA_1"];
-                //MemoryStream mFOTO9_1_INSTAL_POZO_TIERRA_1 = new MemoryStream(FOTO9_1_INSTAL_POZO_TIERRA_1);
-                //byte[] FOTO9_2_INSTAL_POZO_TIERRA_2 = (byte[])ds.Tables[0].Rows[0]["FOTO9_2_INSTAL_POZO_TIERRA_2"];
-                //MemoryStream mFOTO9_2_INSTAL_POZO_TIERRA_2 = new MemoryStream(FOTO9_2_INSTAL_POZO_TIERRA_2);
-                //byte[] FOTO9_3_ESCALA_UTIL_RESULT_MEDICION1 = (byte[])ds.Tables[0].Rows[0]["FOTO9_3_ESCALA_UTIL_RESULT_MEDICION1"];
-                //MemoryStream mFOTO9_3_ESCALA_UTIL_RESULT_MEDICION1 = new MemoryStream(FOTO9_3_ESCALA_UTIL_RESULT_MEDICION1);
-                //byte[] FOTO9_4_ESCALA_UTIL_RESULT_MEDICION2 = (byte[])ds.Tables[0].Rows[0]["FOTO9_4_ESCALA_UTIL_RESULT_MEDICION2"];
-                //MemoryStream mFOTO9_4_ESCALA_UTIL_RESULT_MEDICION2 = new MemoryStream(FOTO9_4_ESCALA_UTIL_RESULT_MEDICION2);
-                //byte[] FOTO9_5_ESCALA_UTIL_RESULT_MEDICION3 = (byte[])ds.Tables[0].Rows[0]["FOTO9_5_ESCALA_UTIL_RESULT_MEDICION3"];
-                //MemoryStream mFOTO9_5_ESCALA_UTIL_RESULT_MEDICION3 = new MemoryStream(FOTO9_5_ESCALA_UTIL_RESULT_MEDICION3);
-                //byte[] FOTO10_1_PANT_CONF_HOME = (byte[])ds.Tables[0].Rows[0]["FOTO10_1_PANT_CONF_HOME"];
-                //MemoryStream mFOTO10_1_PANT_CONF_HOME = new MemoryStream(FOTO10_1_PANT_CONF_HOME);
-                //byte[] FOTO10_2_PANT_CONF_SECURITY = (byte[])ds.Tables[0].Rows[0]["FOTO10_2_PANT_CONF_SECURITY"];
-                //MemoryStream mFOTO10_2_PANT_CONF_SECURITY = new MemoryStream(FOTO10_2_PANT_CONF_SECURITY);
-                //byte[] FOTO10_3_PANT_CONF_RADIO_1 = (byte[])ds.Tables[0].Rows[0]["FOTO10_3_PANT_CONF_RADIO_1"];
-                //MemoryStream mFOTO10_3_PANT_CONF_RADIO_1 = new MemoryStream(FOTO10_3_PANT_CONF_RADIO_1);
-                //byte[] FOTO10_4_PANT_CONF_RADIO_2 = (byte[])ds.Tables[0].Rows[0]["FOTO10_4_PANT_CONF_RADIO_2"];
-                //MemoryStream mFOTO10_4_PANT_CONF_RADIO_2 = new MemoryStream(FOTO10_4_PANT_CONF_RADIO_2);
-                //byte[] FOTO10_5_CONF_SISTEMA_1 = (byte[])ds.Tables[0].Rows[0]["FOTO10_5_CONF_SISTEMA_1"];
-                //MemoryStream mFOTO10_5_CONF_SISTEMA_1 = new MemoryStream(FOTO10_5_CONF_SISTEMA_1);
-                //byte[] FOTO10_6_CONF_SISTEMA_2 = (byte[])ds.Tables[0].Rows[0]["FOTO10_6_CONF_SISTEMA_2"];
-                //MemoryStream mFOTO10_6_CONF_SISTEMA_2 = new MemoryStream(FOTO10_6_CONF_SISTEMA_2);
-                //byte[] FOTO10_7_PANT_CONF_NETWORK_1 = (byte[])ds.Tables[0].Rows[0]["FOTO10_7_PANT_CONF_NETWORK_1"];
-                //MemoryStream mFOTO10_7_PANT_CONF_NETWORK_1 = new MemoryStream(FOTO10_7_PANT_CONF_NETWORK_1);
-                //byte[] FOTO10_8_PANT_CONF_NETWORK_2 = (byte[])ds.Tables[0].Rows[0]["FOTO10_8_PANT_CONF_NETWORK_2"];
-                //MemoryStream mFOTO10_8_PANT_CONF_NETWORK_2 = new MemoryStream(FOTO10_8_PANT_CONF_NETWORK_2);
-                //byte[] FOTO10_9_PANT_CONF_MONITOR_WIRELESS = (byte[])ds.Tables[0].Rows[0]["FOTO10_9_PANT_CONF_MONITOR_WIRELESS"];
-                //MemoryStream mFOTO10_9_PANT_CONF_MONITOR_WIRELESS = new MemoryStream(FOTO10_9_PANT_CONF_MONITOR_WIRELESS);
-                //byte[] FOTO10_10_CONF_SISTEMA_TOOLS = (byte[])ds.Tables[0].Rows[0]["FOTO10_10_CONF_SISTEMA_TOOLS"];
-                //MemoryStream mFOTO10_10_CONF_SISTEMA_TOOLS = new MemoryStream(FOTO10_10_CONF_SISTEMA_TOOLS);
-                //byte[] FOTO11_1_MON_CONEX_SITIO_WEB = (byte[])ds.Tables[0].Rows[0]["FOTO11_1_MON_CONEX_SITIO_WEB"];
-                //MemoryStream mFOTO11_1_MON_CONEX_SITIO_WEB = new MemoryStream(FOTO11_1_MON_CONEX_SITIO_WEB);
-                //byte[] FOTO11_2_MON_CONECTIVIDAD_NODO_TERMINAL = (byte[])ds.Tables[0].Rows[0]["FOTO11_2_MON_CONECTIVIDAD_NODO_TERMINAL"];
-                //MemoryStream mFOTO11_2_MON_CONECTIVIDAD_NODO_TERMINAL = new MemoryStream(FOTO11_2_MON_CONECTIVIDAD_NODO_TERMINAL);
-                //byte[] FOTO11_3_MON_CONECTIVIDAD_NODO_DISTRITAL = (byte[])ds.Tables[0].Rows[0]["FOTO11_3_MON_CONECTIVIDAD_NODO_DISTRITAL"];
-                //MemoryStream mFOTO11_3_MON_CONECTIVIDAD_NODO_DISTRITAL = new MemoryStream(FOTO11_3_MON_CONECTIVIDAD_NODO_DISTRITAL);
-                //byte[] FOTO_EPMP_1000_FORCE_180 = (byte[])ds.Tables[0].Rows[0]["FOTO_EPMP_1000_FORCE_180"];
-                //MemoryStream mFOTO_EPMP_1000_FORCE_180 = new MemoryStream(FOTO_EPMP_1000_FORCE_180);
-                //byte[] FOTO_1_ACCESS_POINT_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_1_ACCESS_POINT_SERIE"];
-                //MemoryStream mFOTO_1_ACCESS_POINT_SERIE = new MemoryStream(FOTO_1_ACCESS_POINT_SERIE);
-                //byte[] FOTO_2_SWITCH_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_2_SWITCH_SERIE"];
-                //MemoryStream mFOTO_2_SWITCH_SERIE = new MemoryStream(FOTO_2_SWITCH_SERIE);
-                //byte[] FOTO_3_ROUTER_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_3_ROUTER_SERIE"];
-                //MemoryStream mFOTO_3_ROUTER_SERIE = new MemoryStream(FOTO_3_ROUTER_SERIE);
-                //byte[] FOTO_4_IMPRESORA_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_4_IMPRESORA_SERIE"];
-                //MemoryStream mFOTO_4_IMPRESORA_SERIE = new MemoryStream(FOTO_4_IMPRESORA_SERIE);
-                //byte[] FOTO_5_UPS_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_5_UPS_SERIE"];
-                //MemoryStream mFOTO_5_UPS_SERIE = new MemoryStream(FOTO_5_UPS_SERIE);
-                //byte[] FOTO_6_PC01_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_6_PC01_SERIE"];
-                //MemoryStream mFOTO_6_PC01_SERIE = new MemoryStream(FOTO_6_PC01_SERIE);
-                //byte[] FOTO_7_PC02_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_7_PC02_SERIE"];
-                //MemoryStream mFOTO_7_PC02_SERIE = new MemoryStream(FOTO_7_PC02_SERIE);
-                //byte[] FOTO_8_PC03_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_8_PC03_SERIE"];
-                //MemoryStream mFOTO_8_PC03_SERIE = new MemoryStream(FOTO_8_PC03_SERIE);
-                //byte[] FOTO_9_PC04_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_9_PC04_SERIE"];
-                //MemoryStream mFOTO_9_PC04_SERIE = new MemoryStream(FOTO_9_PC04_SERIE);
-                //byte[] FOTO_10_PC05_SERIE = (byte[])ds.Tables[0].Rows[0]["FOTO_10_PC05_SERIE"];
-                //MemoryStream mFOTO_10_PC05_SERIE = new MemoryStream(FOTO_10_PC05_SERIE);
-                #endregion
+                
 
                 #endregion
 
@@ -2348,23 +2116,16 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", IMPRESORA_MULTIFUNCIONAL, 37, "J");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", ROUTER, 38, "J");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EQUIPO_COMPUTO1, 39, "J");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EQUIPO_COMPUTO2, 40, "J");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EQUIPO_COMPUTO3, 41, "J");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EQUIPO_COMPUTO4, 42, "J");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EQUIPO_COMPUTO5, 43, "J");
-
+                
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", DISPONIBILIDAD_HORAS, 58, "G");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", VALOR_MEDIO_MEDIDA1, 62, "J");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", VALOR_MEDIO_MEDIDA2, 63, "J");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", VALOR_MEDIO_MEDIDA3, 64, "J");
-
+                
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", POTENCIA_TRANSMISION + " DBM", 70, "F");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", FRECUENCIA + " MHz", 71, "F");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", ANCHO_BANDA_CANAL, 72, "F");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", AZIMUT + "º", 71, "L");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", FRECUENCIA, 72, "L");
 
-                foreach (DataRow dr in dt1.Rows )//DataRow dr in ds1.Tables[0].Rows)
+                foreach (DataRow dr in dt1.Rows )
                 {
                     String CPE = dr["CPE"].ToString();
                     String ESTACION_LOCAL = dr["ESTACION_LOCAL"].ToString();
@@ -2399,10 +2160,7 @@ namespace BusinessLogic
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", DOC_IDENTIDAD_REPRESENTANTE, 119, "I");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", CARGO_REPRESENTANTE_IIBB, 119, "J");
                 ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EMAIL_REPRESENTANTE_IIBB, 119, "L");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", NOMBRES_APELLIDOS_REPR_OPERADOR, 120, "D");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", DOC_IDENTIDAD_REPR_OPERADOR, 120, "I");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", CARGO_REPRESENTANTE_OPERADOR, 120, "J");
-                //ExcelToolsBL.UpdateCell(excelGenerado, "1 Acta de Instalación FITEL", EMAIL_REPR_OPERADOR, 120, "L");
+               
 
 
                 #endregion
@@ -2840,7 +2598,6 @@ namespace BusinessLogic
 
                 #endregion
 
-               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
 
                 File.Copy(rutaPlantilla, excelGenerado, true);
@@ -3334,7 +3091,6 @@ namespace BusinessLogic
                 MemoryStream mPING_BIOMETRICO = new MemoryStream(PING_BIOMETRICO);
                 #endregion
 
-               // String usuarioWindows = Environment.UserName;
                 String excelGenerado = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                 File.Copy(rutaPlantilla, excelGenerado, true);
 

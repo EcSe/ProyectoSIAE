@@ -34,38 +34,19 @@ namespace BusinessLogic
                 {
                     String rutaCarpeta = dr["VC_RUTA_CARPETA"].ToString();
                     String nombreArchivo = dr["VC_VALOR_CADENA1"].ToString();
-                   
                     byte[] binario = (byte[])dr["VB_VALOR_BINARIO"];
                     String extension = dr["VC_EXTENSION_ARCHIVO"].ToString();
-                    //  String nombreCompleto = nombreArchivo + extension;
-                    nombreArchivo = nombreArchivo.Replace(":", "");
+                    nombreArchivo = nombreArchivo.Replace(":", ""); //LA RUTA DE ARCHIVOS NO DEBE LLEVAR SIMBOLOS DE PUNTUACION
                     String folder = IdNodo + rutaCarpeta;
                     String rutaCompleta = Path.Combine(ruta, folder);
+
                     Directory.CreateDirectory(rutaCompleta);
 
                     MemoryStream stream = new MemoryStream(binario);
-                    Bitmap bm = new Bitmap(stream);
-                    bm.Save(rutaCompleta + "\\" + nombreArchivo + extension); //, ImageFormat.Jpeg);
+                    Bitmap bm = new Bitmap (stream);
+                    bm.Save(rutaCompleta + "\\" + nombreArchivo + extension); 
                     stream.Dispose();
-                    //mBinario.Flush();
-                    //mBinario.Close();
-                    
-                 
-
-                    //FileStream fs = new FileStream(rutaCompleta+"\\"+nombreArchivo+extension,FileMode.Create,FileAccess.ReadWrite);
-                    //bm.Save(stream, ImageFormat.Jpeg);
-                    //byte[] bytes = stream.ToArray();
-                    //fs.Write(bytes, 0, bytes.Length);
-
-                    //bm.Save(rutaCompleta, ImageFormat.Jpeg );
-                  
-
-                    //FileStream fs = new FileStream(rutaCompleta+"\\"+valorBinario, FileMode.Create, FileAccess.ReadWrite);
-                    //fs.Write(valorBinario, 0, valorBinario.Length);
-                    //fs.Flush();
-                    //fs.Close();
-                    ////img.Save(rutaCompleta);
-                    // File.WriteAllBytes(rutaCompleta + "\\" +nombreArchivo ,valorBinario);
+                   
                 }
 
 
