@@ -47,11 +47,19 @@ namespace SNW.forms
             GridViewRow gvrNodos = (GridViewRow)btnDescargarZip.NamingContainer;
             DocumentoBE documento = new DocumentoBE();
 
+            EntidadDetalleBE rutaVirtualTemporalBE = new EntidadDetalleBE();
+            rutaVirtualTemporalBE.Entidad.IdEntidad = "CONF";
+            rutaVirtualTemporalBE.IdValor = "RUTA_VIRT_TEMP";
+            rutaVirtualTemporalBE = EntidadDetalleBL.ListarEntidadDetalle(rutaVirtualTemporalBE)[0];
+
             documento.Tarea.NodoIIBBA.IdNodo = gvNodos.DataKeys[gvrNodos.RowIndex]["IdNodo"].ToString();
 
             ZipBL zip = new ZipBL();
 
             zip.DescargarZip(documento.Tarea.NodoIIBBA.IdNodo);
+
+            String nombreCarpetaZip = documento.Tarea.NodoIIBBA.IdNodo + ".zip";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "impresion", "window.open('" + rutaVirtualTemporalBE.ValorCadena1 + "/" + nombreCarpetaZip + "');", true);
 
         }
 

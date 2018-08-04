@@ -150,6 +150,81 @@ namespace BusinessLogic
 
         }
 
+        public static void InsertarDocumentoDetalleProceso(DocumentoDetalleBE DocumentoDetalle, DBBaseDatos BaseDatos = null)
+        {
+            DBBaseDatos baseDatosDA = new DBBaseDatos();
+            if (BaseDatos == null)
+            {
+                baseDatosDA.Configurar();
+                baseDatosDA.Conectar();
+            }
+            else
+            {
+                baseDatosDA = BaseDatos;
+            }
+
+            try
+            {
+                baseDatosDA.CrearComando("USP_DOCUMENTO_DET_PROC", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "I", true);
+                baseDatosDA.AsignarParametroCadena("@PCH_ID_DOCUMENTO", DocumentoDetalle.Documento.Documento.IdValor, true);
+                //baseDatosDA.AsignarParametroCadena("@PCH_ID_TAREA", DocumentoDetalle.Documento.Tarea.IdTarea, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_ID_NODO_IIBB_A", DocumentoDetalle.Documento.Tarea.NodoIIBBA.IdNodo, true);
+                baseDatosDA.AsignarParametroCadena("@PCH_ID_CAMPO", DocumentoDetalle.Campo.IdValor, true);
+                if (DocumentoDetalle.IdValor.Equals(""))
+                    baseDatosDA.AsignarParametroNulo("@PVC_VALOR_CAMPO", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PVC_VALOR_CAMPO", DocumentoDetalle.IdValor, true);
+                if (DocumentoDetalle.ValorCadena.Equals(""))
+                    baseDatosDA.AsignarParametroNulo("@PVC_VALOR_CADENA", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PVC_VALOR_CADENA", DocumentoDetalle.ValorCadena, true);
+                if (DocumentoDetalle.ValorEntero.Equals(null))
+                    baseDatosDA.AsignarParametroNulo("@PIN_VALOR_ENTERO", true);
+                else
+                    baseDatosDA.AsignarParametroEntero("@PIN_VALOR_ENTERO", (Int32)DocumentoDetalle.ValorEntero, true);
+                if (DocumentoDetalle.ValorNumerico.Equals(null))
+                    baseDatosDA.AsignarParametroNulo("@PNU_VALOR_NUMERICO", true);
+                else
+                    baseDatosDA.AsignarParametroDouble("@PNU_VALOR_NUMERICO", (Double)DocumentoDetalle.ValorNumerico, true);
+                if (DocumentoDetalle.ValorFecha.Equals(Convert.ToDateTime("01/01/0001 00:00:00.00")))
+                    baseDatosDA.AsignarParametroNulo("@PDT_VALOR_FECHA", true);
+                else
+                    baseDatosDA.AsignarParametroFecha("@PDT_VALOR_FECHA", DocumentoDetalle.ValorFecha, true);
+                if (DocumentoDetalle.ValorBoolean.Equals(null))
+                    baseDatosDA.AsignarParametroNulo("@PBL_VALOR_BOOLEANO", true);
+                else
+                    baseDatosDA.AsignarParametroBoolean("@PBL_VALOR_BOOLEANO", (Boolean)DocumentoDetalle.ValorBoolean, true);
+                //if (DocumentoDetalle.ValorBinario == null || DocumentoDetalle.ValorBinario.Length.Equals(0))
+                //    baseDatosDA.AsignarParametroNulo("@PVB_VALOR_BINARIO", true, ParameterDirection.Input, DbType.Binary);
+                //else
+                //    baseDatosDA.AsignarParametroArrayByte("@PVB_VALOR_BINARIO", DocumentoDetalle.ValorBinario, true, ParameterDirection.Input, DbType.Binary);
+                //if (DocumentoDetalle.ExtensionArchivo.Equals(""))
+                //    baseDatosDA.AsignarParametroNulo("@PVC_EXTENSION_ARCHIVO", true);
+                //else
+                //    baseDatosDA.AsignarParametroCadena("@PVC_EXTENSION_ARCHIVO", DocumentoDetalle.ExtensionArchivo, true);
+                baseDatosDA.AsignarParametroBoolean("@PBL_APROBADO", DocumentoDetalle.Aprobado, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_COMENTARIO", DocumentoDetalle.Comentario, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_CRE", DocumentoDetalle.UsuarioCreacion.IdUsuario, true);
+                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_INSERCION", DocumentoDetalle.TipoInsercion, true);
+
+                baseDatosDA.EjecutarComando();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (BaseDatos == null)
+                {
+                    baseDatosDA.Desconectar();
+                    baseDatosDA = null;
+                }
+            }
+
+        }
+
         public static void ActualizarDocumentoDetalle(DocumentoDetalleBE DocumentoDetalle, DBBaseDatos BaseDatos = null)
         {
             DBBaseDatos baseDatosDA = new DBBaseDatos();
@@ -222,5 +297,41 @@ namespace BusinessLogic
             }
 
         }
+
+        public static void EliminarFisicoEntidadDetalleProceso(DocumentoDetalleBE DocumentoDetalle, DBBaseDatos BaseDatos = null)
+        {
+            DBBaseDatos baseDatosDA = new DBBaseDatos();
+            if (BaseDatos == null)
+            {
+                baseDatosDA.Configurar();
+                baseDatosDA.Conectar();
+            }
+            else
+            {
+                baseDatosDA = BaseDatos;
+            }
+
+            try
+            {
+                baseDatosDA.CrearComando("USP_DOCUMENTO_DET_PROC", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "F", true);
+                baseDatosDA.AsignarParametroCadena("@PCH_ID_DOCUMENTO", DocumentoDetalle.Documento.Documento.IdValor, true);
+                baseDatosDA.EjecutarComando();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (BaseDatos == null)
+                {
+                    baseDatosDA.Desconectar();
+                    baseDatosDA = null;
+                }
+            }
+
+        }
+
     }
 }

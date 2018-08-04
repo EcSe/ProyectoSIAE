@@ -11,6 +11,8 @@ using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 
+using System.IO.Compression;
+
 namespace BusinessLogic
 {
    public  class ZipBL
@@ -45,22 +47,23 @@ namespace BusinessLogic
 
                     if (extension.Equals(".mp4"))
                     {
-                        
+                        File.WriteAllBytes(rutaCompleta + "\\" + nombreArchivo + extension, binario);
                     }
                     else
                     {
-                        MemoryStream stream = new MemoryStream(binario);
-                        Bitmap bm = new Bitmap(stream);
-                        bm.Save(rutaCompleta + "\\" + nombreArchivo + extension);
-                        stream.Dispose();
+                        File.WriteAllBytes(rutaCompleta + "\\" + nombreArchivo + extension, binario);
+                        //MemoryStream stream = new MemoryStream(binario);
+                        //Bitmap bm = new Bitmap(stream);
+                        //bm.Save(rutaCompleta + "\\" + nombreArchivo + extension);
+                        //stream.Dispose();
                     }
-             
 
 
+                  
                    
                 }
 
-
+                ZipFile.CreateFromDirectory(ruta+IdNodo, ruta+IdNodo + ".zip");
 
             }
             catch (Exception ex)

@@ -54,6 +54,7 @@
 
     // #endregion
 
+    /*
     // #region Hora Inicio
 
     $('#cphContenido_chkHoraInicio').change(function () {
@@ -194,6 +195,8 @@
 
     // #endregion
 
+    */
+
     // #region Altura (m.s.n.m.)
 
     $('#cphContenido_chkAltura').change(function () {
@@ -229,6 +232,7 @@
 
     // #endregion
 
+    /*
     // #region Área Natural Protegida
 
     $('#cphContenido_chkAreaNaturalProtegida').change(function () {
@@ -823,6 +827,7 @@
     $("#cphContenido_chkNumeroViviendas").trigger("change");
 
     // #endregion
+    */
 
     // #endregion
 

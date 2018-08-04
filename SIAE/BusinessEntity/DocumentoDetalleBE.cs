@@ -22,7 +22,7 @@ namespace BusinessEntity
         public String Comentario { get; set; }
         public UsuarioBE UsuarioCreacion { get; set; }
         public UsuarioBE UsuarioModificacion { get; set; }
-
+        public String TipoInsercion { get; set; }
         public DocumentoDetalleBE()
         {
             Campo = new EntidadDetalleBE();

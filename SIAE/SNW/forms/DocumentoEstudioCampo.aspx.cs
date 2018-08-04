@@ -284,181 +284,181 @@ namespace SNW.forms
                             Type.GetType("System.DateTime"));
                         #endregion
 
-                        #region Hora Inicio
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000417").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkHoraInicio,
-                            hfHoraInicioComentario, null,
-                            txtHoraInicio, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region Hora Inicio
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000417").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkHoraInicio,
+                        //    hfHoraInicioComentario, null,
+                        //    txtHoraInicio, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Hora Fin
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000417").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkHoraFin,
-                            hfHoraFinComentario, null,
-                            txtHoraFin, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region Hora Fin
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000417").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkHoraFin,
+                        //    hfHoraFinComentario, null,
+                        //    txtHoraFin, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Long. Loc. Plaza Princ.
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000419").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkLongitudLocalidadDesdePlazaPrincipal,
-                            hfLongitudLocalidadDesdePlazaPrincipalComentario, null,
-                            txtLongitudLocalidadDesdePlazaPrincipal, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region Long. Loc. Plaza Princ.
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000419").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkLongitudLocalidadDesdePlazaPrincipal,
+                        //    hfLongitudLocalidadDesdePlazaPrincipalComentario, null,
+                        //    txtLongitudLocalidadDesdePlazaPrincipal, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Lat. Loc. Plaza Princ.
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000420").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkLatitudLocalidadDesdePlazaPrincipal,
-                            hfLatitudLocalidadDesdePlazaPrincipalComentario, null,
-                            txtLatitudLocalidadDesdePlazaPrincipal, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region Lat. Loc. Plaza Princ.
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000420").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkLatitudLocalidadDesdePlazaPrincipal,
+                        //    hfLatitudLocalidadDesdePlazaPrincipalComentario, null,
+                        //    txtLatitudLocalidadDesdePlazaPrincipal, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
                         #region Altura (m.s.n.m.)
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000421").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAltura,
                             hfAlturaComentario, null,
                             txtAltura, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
-
-                        #region Área Natural Protegida
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000422").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAreaNaturalProtegida,
-                            hfAreaNaturalProtegidaComentario, null,
-                            txtAreaNaturalProtegida, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
-
-                        #region Área Natural Protegida
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000423").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNombreAreaNatural,
-                            hfNombreAreaNaturalComentario, null,
-                            txtNombreAreaNatural, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
-
-                        #region Restos Arquelógicos
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000424").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkRestosArqueologicos,
-                            hfRestosArqueologicosComentario, null,
-                            txtRestosArqueologicos, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
-
-                        #region Tip. Restos Arquelógicos
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000425").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkTipoRestosArqueologicos,
-                            hfTipoRestosArqueologicosComentario, null,
-                            txtTipoRestosArqueologicos, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
-
-                        #region Banco de la Nación
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000426").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkBancoNacion,
-                            hfBancoNacionComentario, null,
-                            txtBancoNacion, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
-
-                        #region Agente Banco Nación
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000427").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAgenteBancoNacion,
-                            hfAgenteBancoNacionComentario, null,
-                            txtAgenteBancoNacion, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
-
-                        #region Cantidad
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000428").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCantidad,
-                            hfCantidadComentario, null,
-                            txtCantidad, null, null,
                             Type.GetType("System.Int32"));
                         #endregion
 
-                        #region Otros Bancos
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000429").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkOtrosBancos,
-                            hfOtrosBancosComentario, null,
-                            txtOtrosBancos, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region Área Natural Protegida
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000422").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAreaNaturalProtegida,
+                        //    hfAreaNaturalProtegidaComentario, null,
+                        //    txtAreaNaturalProtegida, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Cantidad Otros Bancos
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000430").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCantidadOtrosBancos,
-                            hfCantidadOtrosBancosComentario, null,
-                            txtCantidadOtrosBancos, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Área Natural Protegida
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000423").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNombreAreaNatural,
+                        //    hfNombreAreaNaturalComentario, null,
+                        //    txtNombreAreaNatural, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Entidad Importante
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000431").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEntidadImportante,
-                            hfEntidadImportanteComentario, null,
-                            txtEntidadImportante, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region Restos Arquelógicos
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000424").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkRestosArqueologicos,
+                        //    hfRestosArqueologicosComentario, null,
+                        //    txtRestosArqueologicos, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Institución Educativa
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000432").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkInstitucionEducativa,
-                            hfInstitucionEducativaComentario, null,
-                            txtInstitucionEducativa, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region Tip. Restos Arquelógicos
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000425").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkTipoRestosArqueologicos,
+                        //    hfTipoRestosArqueologicosComentario, null,
+                        //    txtTipoRestosArqueologicos, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Cantidad IIEE
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000433").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCantidadInstitucionEducativa,
-                            hfCantidadInstitucionEducativaComentario, null,
-                            txtCantidadInstitucionEducativa, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Banco de la Nación
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000426").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkBancoNacion,
+                        //    hfBancoNacionComentario, null,
+                        //    txtBancoNacion, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Población
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000434").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPoblacion,
-                            hfPoblacionComentario, null,
-                            txtPoblacion, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Agente Banco Nación
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000427").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAgenteBancoNacion,
+                        //    hfAgenteBancoNacionComentario, null,
+                        //    txtAgenteBancoNacion, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region Población
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000435").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroMujeres,
-                            hfNumeroMujeresComentario, null,
-                            txtNumeroMujeres, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Cantidad
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000428").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCantidad,
+                        //    hfCantidadComentario, null,
+                        //    txtCantidad, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
-                        #region N° Jov. 15 y 24
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000436").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroJovenesEntre15y24Anios,
-                            hfNumeroJovenesEntre15y24AniosComentario, null,
-                            txtNumeroJovenesEntre15y24Anios, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Otros Bancos
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000429").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkOtrosBancos,
+                        //    hfOtrosBancosComentario, null,
+                        //    txtOtrosBancos, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
-                        #region N° Pers. Discapacidad
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000437").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroPersonasDiscapacidad,
-                            hfNumeroPersonasDiscapacidadComentario, null,
-                            txtNumeroPersonasDiscapacidad, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Cantidad Otros Bancos
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000430").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCantidadOtrosBancos,
+                        //    hfCantidadOtrosBancosComentario, null,
+                        //    txtCantidadOtrosBancos, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
-                        #region N° Viviendas
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000438").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroViviendas,
-                            hfNumeroViviendasComentario, null,
-                            txtNumeroViviendas, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Entidad Importante
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000431").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkEntidadImportante,
+                        //    hfEntidadImportanteComentario, null,
+                        //    txtEntidadImportante, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
+
+                        //#region Institución Educativa
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000432").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkInstitucionEducativa,
+                        //    hfInstitucionEducativaComentario, null,
+                        //    txtInstitucionEducativa, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
+
+                        //#region Cantidad IIEE
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000433").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkCantidadInstitucionEducativa,
+                        //    hfCantidadInstitucionEducativaComentario, null,
+                        //    txtCantidadInstitucionEducativa, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
+
+                        //#region Población
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000434").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPoblacion,
+                        //    hfPoblacionComentario, null,
+                        //    txtPoblacion, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
+
+                        //#region Población
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000435").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroMujeres,
+                        //    hfNumeroMujeresComentario, null,
+                        //    txtNumeroMujeres, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
+
+                        //#region N° Jov. 15 y 24
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000436").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroJovenesEntre15y24Anios,
+                        //    hfNumeroJovenesEntre15y24AniosComentario, null,
+                        //    txtNumeroJovenesEntre15y24Anios, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
+
+                        //#region N° Pers. Discapacidad
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000437").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroPersonasDiscapacidad,
+                        //    hfNumeroPersonasDiscapacidadComentario, null,
+                        //    txtNumeroPersonasDiscapacidad, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
+
+                        //#region N° Viviendas
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000438").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkNumeroViviendas,
+                        //    hfNumeroViviendasComentario, null,
+                        //    txtNumeroViviendas, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
                         #endregion
 
@@ -817,37 +817,37 @@ namespace SNW.forms
                     Type.GetType("System.DateTime"));
                 #endregion
 
-                #region Hora Inicio
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000417", chkHoraInicio,
-                    hfHoraInicioComentario, null,
-                    txtHoraInicio, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Hora Inicio
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000417", chkHoraInicio,
+                //    hfHoraInicioComentario, null,
+                //    txtHoraInicio, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Hora Fin
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000418", chkHoraFin,
-                    hfHoraFinComentario, null,
-                    txtHoraFin, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Hora Fin
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000418", chkHoraFin,
+                //    hfHoraFinComentario, null,
+                //    txtHoraFin, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Long. Loc. Plaza Princ.
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000419", chkLongitudLocalidadDesdePlazaPrincipal,
-                    hfLongitudLocalidadDesdePlazaPrincipalComentario, null,
-                    txtLongitudLocalidadDesdePlazaPrincipal, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Long. Loc. Plaza Princ.
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000419", chkLongitudLocalidadDesdePlazaPrincipal,
+                //    hfLongitudLocalidadDesdePlazaPrincipalComentario, null,
+                //    txtLongitudLocalidadDesdePlazaPrincipal, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Lat. Loc. Plaza Princ.
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000420", chkLatitudLocalidadDesdePlazaPrincipal,
-                    hfLatitudLocalidadDesdePlazaPrincipalComentario, null,
-                    txtLatitudLocalidadDesdePlazaPrincipal, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Lat. Loc. Plaza Princ.
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000420", chkLatitudLocalidadDesdePlazaPrincipal,
+                //    hfLatitudLocalidadDesdePlazaPrincipalComentario, null,
+                //    txtLatitudLocalidadDesdePlazaPrincipal, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
                 #region Altura (m.s.n.m.)
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
@@ -857,141 +857,141 @@ namespace SNW.forms
                     Type.GetType("System.Int32"));
                 #endregion
 
-                #region Área Natural Protegida
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000422", chkAreaNaturalProtegida,
-                    hfAreaNaturalProtegidaComentario, null,
-                    txtAreaNaturalProtegida, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Área Natural Protegida
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000422", chkAreaNaturalProtegida,
+                //    hfAreaNaturalProtegidaComentario, null,
+                //    txtAreaNaturalProtegida, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Nombre Área Natural
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000423", chkNombreAreaNatural,
-                    hfNombreAreaNaturalComentario, null,
-                    txtNombreAreaNatural, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Nombre Área Natural
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000423", chkNombreAreaNatural,
+                //    hfNombreAreaNaturalComentario, null,
+                //    txtNombreAreaNatural, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Restos Arquelógicos
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000424", chkRestosArqueologicos,
-                    hfRestosArqueologicosComentario, null,
-                    txtRestosArqueologicos, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Restos Arquelógicos
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000424", chkRestosArqueologicos,
+                //    hfRestosArqueologicosComentario, null,
+                //    txtRestosArqueologicos, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Tip. Restos Arquelógicos
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000425", chkTipoRestosArqueologicos,
-                    hfTipoRestosArqueologicosComentario, null,
-                    txtTipoRestosArqueologicos, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Tip. Restos Arquelógicos
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000425", chkTipoRestosArqueologicos,
+                //    hfTipoRestosArqueologicosComentario, null,
+                //    txtTipoRestosArqueologicos, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Banco de la Nación
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000426", chkBancoNacion,
-                    hfBancoNacionComentario, null,
-                    txtBancoNacion, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Banco de la Nación
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000426", chkBancoNacion,
+                //    hfBancoNacionComentario, null,
+                //    txtBancoNacion, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Agente Banco Nación
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000427", chkAgenteBancoNacion,
-                    hfAgenteBancoNacionComentario, null,
-                    txtAgenteBancoNacion, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Agente Banco Nación
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000427", chkAgenteBancoNacion,
+                //    hfAgenteBancoNacionComentario, null,
+                //    txtAgenteBancoNacion, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Cantidad
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000428", chkCantidad,
-                    hfCantidadComentario, null,
-                    txtCantidad, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Cantidad
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000428", chkCantidad,
+                //    hfCantidadComentario, null,
+                //    txtCantidad, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region Otros Bancos
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000429", chkOtrosBancos,
-                    hfOtrosBancosComentario, null,
-                    txtOtrosBancos, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Otros Bancos
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000429", chkOtrosBancos,
+                //    hfOtrosBancosComentario, null,
+                //    txtOtrosBancos, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Cantidad Otros Bancos
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000430", chkCantidadOtrosBancos,
-                    hfCantidadOtrosBancosComentario, null,
-                    txtCantidadOtrosBancos, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Cantidad Otros Bancos
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000430", chkCantidadOtrosBancos,
+                //    hfCantidadOtrosBancosComentario, null,
+                //    txtCantidadOtrosBancos, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region Entidad Importante
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000431", chkEntidadImportante,
-                    hfEntidadImportanteComentario, null,
-                    txtEntidadImportante, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Entidad Importante
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000431", chkEntidadImportante,
+                //    hfEntidadImportanteComentario, null,
+                //    txtEntidadImportante, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Institución Educativa
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000432", chkInstitucionEducativa,
-                    hfInstitucionEducativaComentario, null,
-                    txtInstitucionEducativa, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region Institución Educativa
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000432", chkInstitucionEducativa,
+                //    hfInstitucionEducativaComentario, null,
+                //    txtInstitucionEducativa, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
-                #region Cantidad IIEE
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000433", chkCantidadInstitucionEducativa,
-                    hfCantidadInstitucionEducativaComentario, null,
-                    txtCantidadInstitucionEducativa, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Cantidad IIEE
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000433", chkCantidadInstitucionEducativa,
+                //    hfCantidadInstitucionEducativaComentario, null,
+                //    txtCantidadInstitucionEducativa, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region Población
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000434", chkPoblacion,
-                    hfPoblacionComentario, null,
-                    txtPoblacion, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Población
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000434", chkPoblacion,
+                //    hfPoblacionComentario, null,
+                //    txtPoblacion, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region N° de Mujeres
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000435", chkNumeroMujeres,
-                    hfNumeroMujeresComentario, null,
-                    txtNumeroMujeres, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region N° de Mujeres
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000435", chkNumeroMujeres,
+                //    hfNumeroMujeresComentario, null,
+                //    txtNumeroMujeres, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region N° Jov. 15 y 24
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000436", chkNumeroJovenesEntre15y24Anios,
-                    hfNumeroJovenesEntre15y24AniosComentario, null,
-                    txtNumeroJovenesEntre15y24Anios, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region N° Jov. 15 y 24
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000436", chkNumeroJovenesEntre15y24Anios,
+                //    hfNumeroJovenesEntre15y24AniosComentario, null,
+                //    txtNumeroJovenesEntre15y24Anios, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region N° Pers. Discapacidad
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000437", chkNumeroPersonasDiscapacidad,
-                    hfNumeroPersonasDiscapacidadComentario, null,
-                    txtNumeroPersonasDiscapacidad, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region N° Pers. Discapacidad
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000437", chkNumeroPersonasDiscapacidad,
+                //    hfNumeroPersonasDiscapacidadComentario, null,
+                //    txtNumeroPersonasDiscapacidad, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region N° Viviendas
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000438", chkNumeroViviendas,
-                    hfNumeroViviendasComentario, null,
-                    txtNumeroViviendas, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region N° Viviendas
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000438", chkNumeroViviendas,
+                //    hfNumeroViviendasComentario, null,
+                //    txtNumeroViviendas, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
                 #endregion
 

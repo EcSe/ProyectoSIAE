@@ -34,6 +34,7 @@ namespace BusinessLogic
             DocumentoEquipamientoBE DocumentoEquipamiento = new DocumentoEquipamientoBE();
             DocumentoIPBE DocumentoIP = new DocumentoIPBE();
             DocumentoIPEquipamientoBE DocumentoIPEquipamiento = new DocumentoIPEquipamientoBE();
+            DocumentoDetalleBE DocumentoDetalle = new DocumentoDetalleBE();
 
             EntidadDetalleBE conexionExcelBE = new EntidadDetalleBE();
             EntidadDetalleBE rutaTemporalBE = new EntidadDetalleBE();
@@ -62,6 +63,11 @@ namespace BusinessLogic
             strConexionExcel = String.Format(conexionExcelBE.ValorCadena1, rutaTemporalBE.ValorCadena1 + "\\" + hfArchivo.Value);
             conexionExcel.ConnectionString = strConexionExcel;
 
+            #region Para eliminar los registros del Estudio de Campo
+            DocumentoDetalle.Documento = new DocumentoBE();
+            DocumentoDetalle.Documento.Documento.IdValor = "000005";//ESTUDIO DE CAMPO
+            #endregion
+
             conexionExcel.Open();
             //StreamWriter file = new StreamWriter(rutaTemporalBE.ValorCadena1 + "\\" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss") + "Log.txt");
             StreamWriter file = new StreamWriter(rutaTemporalBE.ValorCadena1 + "\\" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + "Log.txt");
@@ -82,6 +88,7 @@ namespace BusinessLogic
                 DocumentoEquipamientoBL.EliminarFisicoDocumentoEquipamientoProceso(DocumentoEquipamiento, baseDatosDA);
                 DocumentoIPBL.EliminarFisicoDocumentoIPProceso(DocumentoIP, baseDatosDA);
                 DocumentoIPEquipamientoBL.EliminarFisicoDocumentoIPEquipamientoProceso(DocumentoIPEquipamiento, baseDatosDA);
+                DocumentoDetalleBL.EliminarFisicoEntidadDetalleProceso(DocumentoDetalle, baseDatosDA);
                 #endregion
 
                 #region Insertamos toda la configuracion
@@ -195,10 +202,6 @@ namespace BusinessLogic
                             if (!blnErrorDatoTemp && !blnErrorCampoTemp)
                                 Nodo.AlturaTorre = Convert.ToInt32(objValor);
 
-
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -296,10 +299,6 @@ namespace BusinessLogic
                             if (!blnErrorDatoTemp && !blnErrorCampoTemp)
                                 InstitucionBeneficiaria.Longitud = Convert.ToDouble(objValor);
                             #endregion
-
-
-                            if (blnErrorCampo)
-                                break;
 
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
@@ -483,10 +482,6 @@ namespace BusinessLogic
                                 Tarea.IdSectorAP = Convert.ToString(objValor);
 
                             #endregion
-
-
-                            if (blnErrorCampo)
-                                break;
 
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
@@ -723,9 +718,6 @@ namespace BusinessLogic
 
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -852,9 +844,6 @@ namespace BusinessLogic
                                 IPPlanningPMPDetalle.IPIIBB = Convert.ToString(objValor);
 
                             #endregion
-
-                            if (blnErrorCampo)
-                                break;
 
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
@@ -1216,9 +1205,6 @@ namespace BusinessLogic
 
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -1380,9 +1366,6 @@ namespace BusinessLogic
 
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -1487,9 +1470,6 @@ namespace BusinessLogic
 
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -1588,9 +1568,6 @@ namespace BusinessLogic
 
                             DocumentoEquipamiento.IdEmpresa = "S";//SIAE
                             #endregion
-
-                            if (blnErrorCampo)
-                                break;
 
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
@@ -1695,9 +1672,6 @@ namespace BusinessLogic
                             DocumentoEquipamiento.IdEmpresa = "A";//AIO
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -1801,9 +1775,6 @@ namespace BusinessLogic
                             DocumentoEquipamiento.IdEmpresa = "D";//DELTRON
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -1904,9 +1875,6 @@ namespace BusinessLogic
 
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -2006,9 +1974,6 @@ namespace BusinessLogic
                             DocumentoEquipamiento.IdEmpresa = "HA";//HUANCAVELICA Y AYACUCHO
 
                             #endregion
-
-                            if (blnErrorCampo)
-                                break;
 
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
@@ -2214,9 +2179,6 @@ namespace BusinessLogic
 
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -2403,9 +2365,6 @@ namespace BusinessLogic
                             #endregion
 
                             #endregion
-
-                            if (blnErrorCampo)
-                                break;
 
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
@@ -2602,9 +2561,6 @@ namespace BusinessLogic
 
                             #endregion
 
-                            if (blnErrorCampo)
-                                break;
-
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
                             if (!blnErrorCampo && !blnErrorDato)
                             {
@@ -2638,6 +2594,2184 @@ namespace BusinessLogic
                     if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
                     {
                         file.WriteLine("No existe la tabla DISTRITAL");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja ESTUDIO CAMPO APURIMAC
+                intFila = 2;
+                file.WriteLine("ESTUDIO CAMPO APURIMAC");
+                file.WriteLine("----------------------");
+                Command = new OleDbCommand("SELECT * FROM [ESTUDIO CAMPO APURIMAC$]", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            if (intFila >= 5)
+                            {
+                                Object objValor = null;
+                                blnErrorDato = false;
+                                blnErrorCampo = false;
+                                blnErrorDatoTemp = false;
+                                blnErrorCampoTemp = false;
+
+                                DocumentoDetalle = new DocumentoDetalleBE();
+                                DocumentoDetalle.Documento = new DocumentoBE();
+                                DocumentoDetalle.Documento.Documento.IdValor = "000005";//ESTUDIO DE CAMPO
+
+                                #region Nodo
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "2", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                    DocumentoDetalle.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+                                #endregion
+
+                                #region Area Natural Protegida
+                                DocumentoDetalle.Campo.IdValor = "000422";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "51", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Nombre Area Natural
+                                DocumentoDetalle.Campo.IdValor = "000423";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "52", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Restos Arqueologicos
+                                DocumentoDetalle.Campo.IdValor = "000424";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "53", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Tipo de restos arqueologicos
+                                DocumentoDetalle.Campo.IdValor = "000425";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "54", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Banco de la Nacion
+                                DocumentoDetalle.Campo.IdValor = "000426";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Agente Banco Nacion
+                                DocumentoDetalle.Campo.IdValor = "000427";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "39", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad
+                                DocumentoDetalle.Campo.IdValor = "000428";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Otros Bancos
+                                DocumentoDetalle.Campo.IdValor = "000429";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "39", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad Otros Bancos
+                                DocumentoDetalle.Campo.IdValor = "000430";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Entidad Importante
+                                DocumentoDetalle.Campo.IdValor = "000431";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "37", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Entidad Importante 2
+                                DocumentoDetalle.Campo.IdValor = "000506";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "35", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Institucion Educativa
+                                DocumentoDetalle.Campo.IdValor = "000432";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "33", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad Institucion Educativa
+                                DocumentoDetalle.Campo.IdValor = "000433";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "32", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Poblacion
+                                DocumentoDetalle.Campo.IdValor = "000434";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "16", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE MUJERES
+                                DocumentoDetalle.Campo.IdValor = "000435";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "26", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° JÓVENES ENTRE 15 Y 24 AÑOS
+                                DocumentoDetalle.Campo.IdValor = "000436";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "24", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE PERSONAS CON ALGUNA DISCAPACIDAD
+                                DocumentoDetalle.Campo.IdValor = "000437";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "28", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE VIVIENDAS
+                                DocumentoDetalle.Campo.IdValor = "000438";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "22", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                            }
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla ESTUDIO CAMPO APURIMAC no tiene registros.");
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla ESTUDIO CAMPO APURIMAC");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja ESTUDIO CAMPO AYACUCHO
+                intFila = 2;
+                file.WriteLine("ESTUDIO CAMPO AYACUCHO");
+                file.WriteLine("----------------------");
+                Command = new OleDbCommand("SELECT * FROM [ESTUDIO CAMPO AYACUCHO$]", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            if (intFila >= 5)
+                            {
+                                Object objValor = null;
+                                blnErrorDato = false;
+                                blnErrorCampo = false;
+                                blnErrorDatoTemp = false;
+                                blnErrorCampoTemp = false;
+
+                                DocumentoDetalle = new DocumentoDetalleBE();
+                                DocumentoDetalle.Documento = new DocumentoBE();
+                                DocumentoDetalle.Documento.Documento.IdValor = "000005";//ESTUDIO DE CAMPO
+
+                                #region Nodo
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "2", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                    DocumentoDetalle.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+                                #endregion
+
+                                #region Area Natural Protegida
+                                DocumentoDetalle.Campo.IdValor = "000422";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "51", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Nombre Area Natural
+                                DocumentoDetalle.Campo.IdValor = "000423";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "52", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Restos Arqueologicos
+                                DocumentoDetalle.Campo.IdValor = "000424";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "53", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Tipo de restos arqueologicos
+                                DocumentoDetalle.Campo.IdValor = "000425";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "54", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Banco de la Nacion
+                                DocumentoDetalle.Campo.IdValor = "000426";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Agente Banco Nacion
+                                DocumentoDetalle.Campo.IdValor = "000427";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "39", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad
+                                DocumentoDetalle.Campo.IdValor = "000428";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Otros Bancos
+                                DocumentoDetalle.Campo.IdValor = "000429";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "39", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad Otros Bancos
+                                DocumentoDetalle.Campo.IdValor = "000430";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Entidad Importante
+                                DocumentoDetalle.Campo.IdValor = "000431";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "37", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Entidad Importante 2
+                                DocumentoDetalle.Campo.IdValor = "000506";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "35", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Institucion Educativa
+                                DocumentoDetalle.Campo.IdValor = "000432";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "33", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad Institucion Educativa
+                                DocumentoDetalle.Campo.IdValor = "000433";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "32", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Poblacion
+                                DocumentoDetalle.Campo.IdValor = "000434";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "16", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE MUJERES
+                                DocumentoDetalle.Campo.IdValor = "000435";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "26", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° JÓVENES ENTRE 15 Y 24 AÑOS
+                                DocumentoDetalle.Campo.IdValor = "000436";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "24", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE PERSONAS CON ALGUNA DISCAPACIDAD
+                                DocumentoDetalle.Campo.IdValor = "000437";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "28", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE VIVIENDAS
+                                DocumentoDetalle.Campo.IdValor = "000438";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "22", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                            }
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla ESTUDIO CAMPO AYACUCHO no tiene registros.");
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla ESTUDIO CAMPO AYACUCHO");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja ESTUDIO CAMPO HUANCAVELICA
+                intFila = 2;
+                file.WriteLine("ESTUDIO CAMPO HUANCAVELICA");
+                file.WriteLine("--------------------------");
+                Command = new OleDbCommand("SELECT * FROM [ESTUDIO CAMPO HUANCAVELICA$]", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            if (intFila >= 5)
+                            {
+                                Object objValor = null;
+                                blnErrorDato = false;
+                                blnErrorCampo = false;
+                                blnErrorDatoTemp = false;
+                                blnErrorCampoTemp = false;
+
+                                DocumentoDetalle = new DocumentoDetalleBE();
+                                DocumentoDetalle.Documento = new DocumentoBE();
+                                DocumentoDetalle.Documento.Documento.IdValor = "000005";//ESTUDIO DE CAMPO
+
+                                #region Nodo
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "6", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                    DocumentoDetalle.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+                                #endregion
+
+                                #region Area Natural Protegida
+                                DocumentoDetalle.Campo.IdValor = "000422";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "50", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Nombre Area Natural
+                                DocumentoDetalle.Campo.IdValor = "000423";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "51", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Restos Arqueologicos
+                                DocumentoDetalle.Campo.IdValor = "000424";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "52", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Tipo de restos arqueologicos
+                                DocumentoDetalle.Campo.IdValor = "000425";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "53", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Banco de la Nacion
+                                DocumentoDetalle.Campo.IdValor = "000426";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "37", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Agente Banco Nacion
+                                DocumentoDetalle.Campo.IdValor = "000427";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad
+                                DocumentoDetalle.Campo.IdValor = "000428";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "37", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Otros Bancos
+                                DocumentoDetalle.Campo.IdValor = "000429";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "38", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad Otros Bancos
+                                DocumentoDetalle.Campo.IdValor = "000430";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "37", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Entidad Importante
+                                DocumentoDetalle.Campo.IdValor = "000431";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "34", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Entidad Importante 2
+                                DocumentoDetalle.Campo.IdValor = "000506";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "36", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Institucion Educativa
+                                DocumentoDetalle.Campo.IdValor = "000432";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "32", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Cantidad Institucion Educativa
+                                DocumentoDetalle.Campo.IdValor = "000433";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "31", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region Poblacion
+                                DocumentoDetalle.Campo.IdValor = "000434";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "15", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE MUJERES
+                                DocumentoDetalle.Campo.IdValor = "000435";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "25", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° JÓVENES ENTRE 15 Y 24 AÑOS
+                                DocumentoDetalle.Campo.IdValor = "000436";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "23", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE PERSONAS CON ALGUNA DISCAPACIDAD
+                                DocumentoDetalle.Campo.IdValor = "000437";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "27", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                                #region N° DE VIVIENDAS
+                                DocumentoDetalle.Campo.IdValor = "000438";
+                                DocumentoDetalle.Aprobado = true;
+                                DocumentoDetalle.Comentario = "Valor insertado de forma automática.";
+                                DocumentoDetalle.TipoInsercion = "A";
+
+                                objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "21", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                                if (blnErrorDatoTemp)
+                                    blnErrorDato = blnErrorDatoTemp;
+                                if (blnErrorCampoTemp)
+                                    blnErrorCampo = blnErrorCampoTemp;
+                                if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                {
+                                    DocumentoDetalle.ValorCadena = Convert.ToString(objValor);
+                                }
+
+                                #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoDetalle.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoDetalleBL.InsertarDocumentoDetalleProceso(DocumentoDetalle, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                                #endregion
+
+                                #endregion
+
+                            }
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla ESTUDIO CAMPO HUANCAVELICA no tiene registros.");
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla ESTUDIO CAMPO HUANCAVELICA");
                     }
                     else
                     {
