@@ -56,6 +56,7 @@
     <Compile Include="InstitucionBeneficiariaBE.cs" />
     <Compile Include="IPPlanningPMPBE.cs" />
     <Compile Include="IPPlanningPMPDetalleBE.cs" />
+    <Compile Include="IPPlanningPMPSectorBE.cs" />
     <Compile Include="IPPlanningPTPBE.cs" />
     <Compile Include="IPPlanningPTPDetalleBE.cs" />
     <Compile Include="DocumentoMedicionEnlacePropagacionBE.cs" />

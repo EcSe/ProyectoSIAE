@@ -134,8 +134,9 @@ namespace SNW.forms
                     hfIdPerfil.Value = Usuario.Perfil.IdValor;
                     #endregion
 
-                    #region Asignacion Documento
+                    #region Asignacion Documento y Tarea
                     hfIdDocumento.Value = Request.QueryString["IdDocumento"];
+                    hfIdTipoTarea.Value = Documento.Tarea.TipoTarea.IdValor;
                     #endregion
 
                     #endregion

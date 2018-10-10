@@ -293,17 +293,14 @@ namespace SNW.forms
 
                     #endregion
 
-                    #region 4 Longitud SFTP
+                    //#region 4 Longitud SFTP
 
-                    #region SFTP (Gráfico)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000010",
-                        imgSFTPEjemplo);
-                    #endregion
+                    //#region SFTP (Gráfico)
+                    //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000010",
+                    //    imgSFTPEjemplo);
+                    //#endregion
 
-
-
-
-                    #endregion
+                    //#endregion
 
                     #region 6 Cálculo Propagacion
 
@@ -691,7 +688,13 @@ namespace SNW.forms
                         MedicionEnlacePropagacion.NodoA = item.PTP.NodoA;
                         MedicionEnlacePropagacion.NodoIIBBB = item.NodoB;
                         lstMedicionEnlacePropagacionA.Add(MedicionEnlacePropagacion);
+
+                        #region Agregado Carlos Ramos 15/09/2018 agregar 5 etiquetas a control "Resultados de Analisis Estación A 01"
+                        lblConfiguracionGeneralEnlaceEstacionA.InnerText = lblConfiguracionGeneralEnlaceEstacionA.InnerText +
+                            " [" + item.DisenoFrecuenciaNodoA + " || " + item.DisenoFrecuenciaNodoB + " || " + item.ModeloRadioNodoA + " || " + item.PotenciaTorreNodoA + " || " + item.SenalRecepcionNodoA + "]";
+                        #endregion
                     }
+
                     Session["MedicionesEnlacePropagacionA"] = lstMedicionEnlacePropagacionA;
                     gvMedicionEnlacePropagacionNodoA.DataSource = lstMedicionEnlacePropagacionA;
                     gvMedicionEnlacePropagacionNodoA.DataBind();
@@ -729,10 +732,7 @@ namespace SNW.forms
                     #region Asignamos el metodo
                     Session["metodo"] = "I";//Insert
                     #endregion
-
-
-
-
+                    
                     #endregion
 
                     #region Verificamos si existe la documentacion
@@ -1055,81 +1055,81 @@ namespace SNW.forms
 
                         #endregion
 
-                        #region 4 Longitud SFTP
+                        //#region 4 Longitud SFTP
 
-                        #region Estación A
+                        //#region Estación A
 
-                        #region Distancia B
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000105").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkB_A, hfB_AComentario, null, txtB_A,
-                            null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia B
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000105").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkB_A, hfB_AComentario, null, txtB_A,
+                        //    null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia C
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000106").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkC_A, hfC_AComentario,
-                            null, txtC_A, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia C
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000106").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkC_A, hfC_AComentario,
+                        //    null, txtC_A, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia D
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000107").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkD_A, hfD_AComentario,
-                            null, txtD_A, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia D
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000107").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkD_A, hfD_AComentario,
+                        //    null, txtD_A, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia E
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000108").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkE_A, hfE_AComentario,
-                            null, txtE_A, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia E
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000108").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkE_A, hfE_AComentario,
+                        //    null, txtE_A, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #endregion
+                        //#endregion
 
-                        #region Estación B
+                        //#region Estación B
 
-                        #region Distancia B
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000109").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkB_B, hfB_BComentario,
-                            null, txtB_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia B
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000109").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkB_B, hfB_BComentario,
+                        //    null, txtB_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia C
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000110").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkC_B, hfC_BComentario,
-                            null, txtC_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia C
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000110").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkC_B, hfC_BComentario,
+                        //    null, txtC_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia D
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000111").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkD_B, hfD_BComentario,
-                            null, txtD_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia D
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000111").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkD_B, hfD_BComentario,
+                        //    null, txtD_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia E
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000112").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkE_B, hfE_BComentario,
-                            null, txtE_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia E
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000112").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkE_B, hfE_BComentario,
+                        //    null, txtE_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #endregion
+                        //#endregion
 
-                        #endregion
+                        //#endregion
 
                         #region 5 Asignaciones y Observaciones
 
@@ -2266,73 +2266,73 @@ namespace SNW.forms
 
                 #endregion
 
-                #region 4 Longitud SFTP
+                //#region 4 Longitud SFTP
 
-                #region Estación A
+                //#region Estación A
 
-                #region Distancia B
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000105", chkB_A, hfB_AComentario, null, txtB_A,
-                    null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia B
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000105", chkB_A, hfB_AComentario, null, txtB_A,
+                //    null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia C
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000106", chkC_A, hfC_AComentario,
-                    null, txtC_A, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia C
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000106", chkC_A, hfC_AComentario,
+                //    null, txtC_A, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia D
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000107", chkD_A, hfD_AComentario,
-                    null, txtD_A, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia D
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000107", chkD_A, hfD_AComentario,
+                //    null, txtD_A, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia E
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000108", chkE_A, hfE_AComentario,
-                    null, txtE_A, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia E
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000108", chkE_A, hfE_AComentario,
+                //    null, txtE_A, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #endregion
+                //#endregion
 
-                #region Estación B
+                //#region Estación B
 
-                #region Distancia B
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000109", chkB_B, hfB_BComentario,
-                    null, txtB_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia B
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000109", chkB_B, hfB_BComentario,
+                //    null, txtB_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia C
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000110", chkC_B, hfC_BComentario,
-                    null, txtC_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia C
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000110", chkC_B, hfC_BComentario,
+                //    null, txtC_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia D
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000111", chkD_B, hfD_BComentario,
-                    null, txtD_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia D
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000111", chkD_B, hfD_BComentario,
+                //    null, txtD_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia E
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000112", chkE_B, hfE_BComentario,
-                    null, txtE_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia E
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000112", chkE_B, hfE_BComentario,
+                //    null, txtE_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #endregion
+                //#endregion
 
-                #endregion
+                //#endregion
 
                 #region 5 Asignaciones y Observaciones
 

@@ -17,7 +17,7 @@
                         <li><a href="#tabConfiguracionMediciones" data-toggle="tab"><span class="fa fa-cog"></span>&nbsp;1 Configuración y Mediciones</a></li>
                         <li><a href="#tabMaterialesEstacionA" data-toggle="tab"><span class="fa fa-list-ol"></span>&nbsp;2 Materiales A</a></li>
                         <li><a href="#tabMaterialesEstacionB" data-toggle="tab"><span class="fa fa-list-ol"></span>&nbsp;3 Materiales B</a></li>
-                        <li><a href="#tabLongitudSFTP" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;4 Longitud SFTP</a></li>
+                        <%--<li><a href="#tabLongitudSFTP" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;4 Longitud SFTP</a></li>--%>
                         <li><a href="#tabAsignacionesObservaciones" data-toggle="tab"><span class="fa fa-search"></span>&nbsp;5 Asignaciones y Observaciones</a></li>
                         <li><a href="#tabCalculoPropagacion" data-toggle="tab"><span class="fa fa-line-chart"></span>&nbsp;6 Cálculo Propagacion</a></li>
                         <li><a href="#tabPruebasInterferencia" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;8 Pruebas de Interferencia</a></li>
@@ -626,7 +626,7 @@
                                         <div class="has-float-label">
                                             <div id="divResultadosAnalisisEstacionA01" class="">
                                             </div>
-                                            <label for="divResultadosAnalisisEstacionA01">Resultados de Analisis Estación A 01</label>
+                                            <label for="divResultadosAnalisisEstacionA01" id="lblResultadosAnalisisEstacionA01" runat="server">Resultados de Analisis Estación A 01</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfResultadosAnalisisEstacionA01" runat="server" />
@@ -841,7 +841,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="Cantidad">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtCantidadA" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0}") %>'></asp:TextBox>
+                                                            <asp:TextBox ID="txtCantidadA" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0.00000}") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -953,7 +953,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="Cantidad">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtCantidadB" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0}") %>'></asp:TextBox>
+                                                            <asp:TextBox ID="txtCantidadB" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0.00000}") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -971,7 +971,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tabLongitudSFTP">
+                        <%--<div class="tab-pane fade" id="tabLongitudSFTP">
                             <div class="row">
                                 <h4 class="color-primary text-center" runat="server">Estación A</h4>
                             </div>
@@ -1171,7 +1171,6 @@
                                     <div class="form-group-base input-group">
                                         <div class="has-float-label">
                                             <div id="divSFTP" class="form-control" style="height: 100%;">
-                                                <%--<asp:Image ID="imgConfigurationEjemplo" runat="server" />--%>
                                                 <img id="imgSFTPEjemplo" runat="server" alt="SFTP" style="width: 40%; margin-left: auto; margin-right: auto; display: block; min-width: 362px;" />
                                             </div>
                                             <label for="divSFTP">SFTP (Gráfico)</label>
@@ -1179,13 +1178,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="tab-pane fade" id="tabAsignacionesObservaciones">
                             <div class="row">
                                 <h4 class="color-primary text-center" runat="server">Estación A</h4>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <%--<div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -1230,7 +1229,7 @@
                                             <label for="cphContenido_txtVoltajeCDBreakerEstacionA">Voltaje CD Breaker (V)</label>
                                         </span>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -1282,7 +1281,7 @@
                                 <h4 class="color-primary text-center" runat="server">Estación B</h4>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <%--<div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -1327,7 +1326,7 @@
                                             <label for="cphContenido_txtVoltajeCDBreakerEstacionB">Voltaje CD Breaker (V)</label>
                                         </span>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -1811,7 +1810,7 @@
                                         <div class="has-float-label">
                                             <div id="divSerieAntenaEstacionB" class="">
                                             </div>
-                                            <label for="divSerieAntenaEstacionB"  id="lblSerieAntenaEstacionB" runat="server">Serie Antena</label>
+                                            <label for="divSerieAntenaEstacionB" id="lblSerieAntenaEstacionB" runat="server">Serie Antena</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfSerieAntenaEstacionB" runat="server" />
@@ -3621,7 +3620,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tabDatosGeneralesNodoA">
-                            <div class="row">
+                            <%--<div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -3645,7 +3644,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="row">
                                 <div class="col-xs-12 no-more-gridView">
                                     <div class="form-group input-group">
@@ -3665,7 +3664,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionEnlacePropagacionNodoAComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:GridView ID="gvMedicionEnlacePropagacionNodoA" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%">
+                                            <asp:GridView ID="gvMedicionEnlacePropagacionNodoA" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvMedicionEnlacePropagacionNodoA_RowDataBound">
                                                 <Columns>
                                                     <asp:BoundField DataField="NodoA.IdNodo" HeaderText="Local">
                                                         <HeaderStyle HorizontalAlign="Center" />
@@ -3687,7 +3686,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Tiempo Promedio (ms)">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0}") %>' Style="width: 75px"></asp:TextBox>
+                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0}") %>' Style="width: 75px" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -3712,7 +3711,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tabDatosGeneralesNodoB">
-                            <div class="row">
+                            <%--<div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -3736,7 +3735,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="row">
                                 <div class="col-xs-12 no-more-gridView">
                                     <div class="form-group input-group">
@@ -3756,7 +3755,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionEnlacePropagacionNodoBComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:GridView ID="gvMedicionEnlacePropagacionNodoB" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%">
+                                            <asp:GridView ID="gvMedicionEnlacePropagacionNodoB" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvMedicionEnlacePropagacionNodoB_RowDataBound">
                                                 <Columns>
                                                     <asp:BoundField DataField="NodoA.IdNodo" HeaderText="Local">
                                                         <HeaderStyle HorizontalAlign="Center" />
@@ -3778,7 +3777,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Tiempo Promedio (ms)">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0}") %>' Style="width: 75px"></asp:TextBox>
+                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0}") %>' Style="width: 75px" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -3821,7 +3820,7 @@
     </asp:UpdatePanel>
     <br />
     <br />
-     <input type="hidden" id="hfIdPerfil" runat="server" />
+    <input type="hidden" id="hfIdPerfil" runat="server" />
     <input type="hidden" id="hfRutaVirtualTemporal" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPie" runat="server">

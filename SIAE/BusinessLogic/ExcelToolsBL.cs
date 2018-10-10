@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
+
 
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -21,12 +19,14 @@ namespace BusinessLogic
  public   class ExcelToolsBL
     {
 
+        //INSTRUCCION 1
         private static Row GetRow(Worksheet worksheet, int rowIndex)
         {
             return worksheet.GetFirstChild<SheetData>().
                     Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
         }
 
+        //INSTRUCCION 2
         private static Cell GetCell(Worksheet worksheet, String columName, int rowIndex)
         {
             Row row = GetRow(worksheet, rowIndex);
@@ -37,6 +37,7 @@ namespace BusinessLogic
 
         }
 
+        //INSTRUCCION 3
         private static WorksheetPart GetWorkSheetPartByName(SpreadsheetDocument document, String sheetName)
         {
 
@@ -54,7 +55,7 @@ namespace BusinessLogic
 
         }
 
-
+        //INSTRUCCION 4
         public static void UpdateCell(String rutaDest, String nameSheet, String dato, int rowIndex, String columName)
         {
 

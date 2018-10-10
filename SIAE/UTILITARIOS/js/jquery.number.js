@@ -174,7 +174,7 @@
 					 * @return void;
 					 */
 					'keydown.format' : function(e){
-
+					    //console.log("keydown.format");
 						// Define variables used in the code below.
 						var $this	= $(this),
 							data	= $this.data('numFormat'),
@@ -239,13 +239,14 @@
 						// The whole lot has been selected, or if the field is empty...
 						if( start == 0 && end == this.value.length ) //|| $this.val() == 0 )
 						{
+						    //console.log("code = " + code);
 							if( code == 8 )		// Backspace
 							{
 								// Blank out the field, but only if the data object has already been instantiated.
 								start = end = 1;
 								this.value = '';
 
-								// Reset the cursor position.
+							    // Reset the cursor position.
 								data.init = (decimals>0?-1:0);
 								data.c = (decimals>0?-(decimals+1):0);
 								setSelectionRange.apply(this, [0,0]);
@@ -261,8 +262,19 @@
 							}
 							else if( code == 45 )	// Negative sign
 							{
-								start = end = 2;
-								this.value = '-0'+dec_point + (new Array(decimals+1).join('0'));
+							    //console.log("decimals = " + decimals);
+							    start = end = 2;
+							    //console.log("start = " + start);
+							    //console.log("end = " + end);
+							    //console.log("dec_point = " + dec_point);
+							    //console.log("(new Array(decimals+1).join('0')) = " + (new Array(decimals + 1).join('0')));
+
+							    // #region Correccion Carlos Ramos 26/08/2018 - No poner el punto decimal cuando la cantidad de decimales es cero
+
+							    //this.value = '-0' + dec_point + (new Array(decimals + 1).join('0'));
+							    this.value = '-0' + ((decimals > 0) ? dec_point : '') + (new Array(decimals + 1).join('0'));
+
+							    // #endregion
 
 								// Reset the cursor position.
 								data.init = (decimals>0?1:0);

@@ -211,7 +211,7 @@
     // #endregion
 
     // #endregion
-    
+
     // #region 2.2. Infraestructura
 
     // #region Tipo Mástil
@@ -331,120 +331,153 @@
 
     // #endregion
 
-    // #region 2.5. Sistema de Puesta a Tierra instituciones
+    if (!($("#cphContenido_hfIdDocumento").val() == "000015")) {//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
 
-    // #region Valor Medio Medida 1
+        // #region 2.5. Sistema de Puesta a Tierra instituciones
 
-    $('#cphContenido_chkValorMedioMedida01').change(function () {
-        var blnActivo = $("#cphContenido_chkValorMedioMedida01").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtValorMedioMedida01").prop('disabled', true);
-        else
-            $('#cphContenido_txtValorMedioMedida01').prop('disabled', false);
-    });
+        // #region Valor Medio Medida 1
 
-    poValorMedioMedida01Comentario = $("#spValorMedioMedida01Comentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocValorMedioMedida01Comentario').html();
-        }
-    });
-
-    poValorMedioMedida01Comentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poValorMedioMedida01Comentario.on('shown.bs.popover', function () {
-        $("#txtValorMedioMedida01Comentario").val($("#cphContenido_hfValorMedioMedida01Comentario").val());
-        $("#txtValorMedioMedida01Comentario").focus();
-        $("#txtValorMedioMedida01Comentario").keyup(function () {
-            $("#cphContenido_hfValorMedioMedida01Comentario").val($(this).val());
+        $('#cphContenido_chkValorMedioMedida01').change(function () {
+            var blnActivo = $("#cphContenido_chkValorMedioMedida01").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtValorMedioMedida01").prop('disabled', true);
+            else
+                $('#cphContenido_txtValorMedioMedida01').prop('disabled', false);
         });
-    });
 
-    $('#cphContenido_txtValorMedioMedida01').number(true, 2);
-
-    $("#cphContenido_chkValorMedioMedida01").trigger("change");
-
-    // #endregion
-
-    // #region Valor Medio Medida 2
-
-    $('#cphContenido_chkValorMedioMedida02').change(function () {
-        var blnActivo = $("#cphContenido_chkValorMedioMedida02").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtValorMedioMedida02").prop('disabled', true);
-        else
-            $('#cphContenido_txtValorMedioMedida02').prop('disabled', false);
-    });
-
-    poValorMedioMedida02Comentario = $("#spValorMedioMedida02Comentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocValorMedioMedida02Comentario').html();
-        }
-    });
-
-    poValorMedioMedida02Comentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poValorMedioMedida02Comentario.on('shown.bs.popover', function () {
-        $("#txtValorMedioMedida02Comentario").val($("#cphContenido_hfValorMedioMedida02Comentario").val());
-        $("#txtValorMedioMedida02Comentario").focus();
-        $("#txtValorMedioMedida02Comentario").keyup(function () {
-            $("#cphContenido_hfValorMedioMedida02Comentario").val($(this).val());
+        poValorMedioMedida01Comentario = $("#spValorMedioMedida01Comentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocValorMedioMedida01Comentario').html();
+            }
         });
-    });
 
-    $('#cphContenido_txtValorMedioMedida02').number(true, 2);
-
-    $("#cphContenido_chkValorMedioMedida02").trigger("change");
-
-    // #endregion
-
-    // #region Valor Medio Medida 3
-
-    $('#cphContenido_chkValorMedioMedida03').change(function () {
-        var blnActivo = $("#cphContenido_chkValorMedioMedida03").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtValorMedioMedida03").prop('disabled', true);
-        else
-            $('#cphContenido_txtValorMedioMedida03').prop('disabled', false);
-    });
-
-    poValorMedioMedida03Comentario = $("#spValorMedioMedida03Comentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocValorMedioMedida03Comentario').html();
-        }
-    });
-
-    poValorMedioMedida03Comentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poValorMedioMedida03Comentario.on('shown.bs.popover', function () {
-        $("#txtValorMedioMedida03Comentario").val($("#cphContenido_hfValorMedioMedida03Comentario").val());
-        $("#txtValorMedioMedida03Comentario").focus();
-        $("#txtValorMedioMedida03Comentario").keyup(function () {
-            $("#cphContenido_hfValorMedioMedida03Comentario").val($(this).val());
+        poValorMedioMedida01Comentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
         });
-    });
 
-    $('#cphContenido_txtValorMedioMedida03').number(true, 2);
+        poValorMedioMedida01Comentario.on('shown.bs.popover', function () {
+            $("#txtValorMedioMedida01Comentario").val($("#cphContenido_hfValorMedioMedida01Comentario").val());
+            $("#txtValorMedioMedida01Comentario").focus();
+            $("#txtValorMedioMedida01Comentario").keyup(function () {
+                $("#cphContenido_hfValorMedioMedida01Comentario").val($(this).val());
+            });
+        });
 
-    $("#cphContenido_chkValorMedioMedida03").trigger("change");
+      
 
-    // #endregion
+        $("#cphContenido_chkValorMedioMedida01").trigger("change");
 
-    // #endregion
+        $("#cphContenido_txtValorMedioMedida01").number(true, 3);
+
+        $("#cphContenido_txtValorMedioMedida01").keyup(function () {
+            $.fn.validarTxtValorMedioMedida01();
+        });
+
+        $("#cphContenido_txtValorMedioMedida01").focus(function () {
+            $.fn.validarTxtValorMedioMedida01();
+        });
+
+        // #endregion
+
+        // #region Valor Medio Medida 2
+
+        $('#cphContenido_chkValorMedioMedida02').change(function () {
+            var blnActivo = $("#cphContenido_chkValorMedioMedida02").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtValorMedioMedida02").prop('disabled', true);
+            else
+                $('#cphContenido_txtValorMedioMedida02').prop('disabled', false);
+        });
+
+        poValorMedioMedida02Comentario = $("#spValorMedioMedida02Comentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocValorMedioMedida02Comentario').html();
+            }
+        });
+
+        poValorMedioMedida02Comentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
+        });
+
+        poValorMedioMedida02Comentario.on('shown.bs.popover', function () {
+            $("#txtValorMedioMedida02Comentario").val($("#cphContenido_hfValorMedioMedida02Comentario").val());
+            $("#txtValorMedioMedida02Comentario").focus();
+            $("#txtValorMedioMedida02Comentario").keyup(function () {
+                $("#cphContenido_hfValorMedioMedida02Comentario").val($(this).val());
+            });
+        });
+
+
+        $("#cphContenido_chkValorMedioMedida02").trigger("change");
+
+        $("#cphContenido_txtValorMedioMedida02").number(true, 3);
+
+        $("#cphContenido_txtValorMedioMedida02").keyup(function () {
+            $.fn.validarTxtValorMedioMedida02();
+        });
+
+        $("#cphContenido_txtValorMedioMedida02").focus(function () {
+            $.fn.validarTxtValorMedioMedida02();
+        });
+
+        // #endregion
+
+        // #region Valor Medio Medida 3
+
+        $('#cphContenido_chkValorMedioMedida03').change(function () {
+            var blnActivo = $("#cphContenido_chkValorMedioMedida03").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtValorMedioMedida03").prop('disabled', true);
+            else
+                $('#cphContenido_txtValorMedioMedida03').prop('disabled', false);
+        });
+
+        poValorMedioMedida03Comentario = $("#spValorMedioMedida03Comentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocValorMedioMedida03Comentario').html();
+            }
+        });
+
+        poValorMedioMedida03Comentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
+        });
+
+        poValorMedioMedida03Comentario.on('shown.bs.popover', function () {
+            $("#txtValorMedioMedida03Comentario").val($("#cphContenido_hfValorMedioMedida03Comentario").val());
+            $("#txtValorMedioMedida03Comentario").focus();
+            $("#txtValorMedioMedida03Comentario").keyup(function () {
+                $("#cphContenido_hfValorMedioMedida03Comentario").val($(this).val());
+            });
+        });
+
+
+        $("#cphContenido_chkValorMedioMedida03").trigger("change");
+
+        $("#cphContenido_txtValorMedioMedida03").number(true,3);
+
+        $("#cphContenido_txtValorMedioMedida03").keyup(function () {
+            $.fn.validarTxtValorMedioMedida03();
+        });
+
+        $("#cphContenido_txtValorMedioMedida03").focus(function () {
+            $.fn.validarTxtValorMedioMedida03();
+        });
+
+        // #endregion
+
+        // #endregion
+
+    }
+    
 
     // #region 2.6. Característica de Propagación
 
@@ -522,6 +555,7 @@
 
     // #endregion
 
+    /*
     // #region Ancho de banda de canal (MHz)
 
     $('#cphContenido_chkAnchoBandaCanal').change(function () {
@@ -632,6 +666,7 @@
     $("#cphContenido_chkElevacion").trigger("change");
 
     // #endregion
+    */
 
     // #endregion
 
@@ -1417,7 +1452,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1487,7 +1522,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1557,7 +1592,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1627,7 +1662,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1697,7 +1732,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1767,7 +1802,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1837,7 +1872,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1907,7 +1942,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1939,120 +1974,151 @@
 
     // #region 4 Medición SPAT
 
-    // #region Medición del Sistema de Puesta a tierra
+    if (!($("#cphContenido_hfIdDocumento").val() == "000015")) {//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
 
-    // #region Medida 1 Valor Medio
+        // #region Medición del Sistema de Puesta a tierra
 
-    $('#cphContenido_chkMedicionSistemaPuestaTierraMedida01ValorMedio').change(function () {
-        var blnActivo = $("#cphContenido_chkMedicionSistemaPuestaTierraMedida01ValorMedio").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").prop('disabled', true);
-        else
-            $('#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio').prop('disabled', false);
-    });
+        // #region Medida 1 Valor Medio
 
-    poMedicionSistemaPuestaTierraMedida01ValorMedioComentario = $("#spMedicionSistemaPuestaTierraMedida01ValorMedioComentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocMedicionSistemaPuestaTierraMedida01ValorMedioComentario').html();
-        }
-    });
-
-    poMedicionSistemaPuestaTierraMedida01ValorMedioComentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poMedicionSistemaPuestaTierraMedida01ValorMedioComentario.on('shown.bs.popover', function () {
-        $("#txtMedicionSistemaPuestaTierraMedida01ValorMedioComentario").val($("#cphContenido_hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario").val());
-        $("#txtMedicionSistemaPuestaTierraMedida01ValorMedioComentario").focus();
-        $("#txtMedicionSistemaPuestaTierraMedida01ValorMedioComentario").keyup(function () {
-            $("#cphContenido_hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario").val($(this).val());
+        $('#cphContenido_chkMedicionSistemaPuestaTierraMedida01ValorMedio').change(function () {
+            var blnActivo = $("#cphContenido_chkMedicionSistemaPuestaTierraMedida01ValorMedio").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").prop('disabled', true);
+            else
+                $('#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio').prop('disabled', false);
         });
-    });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio').number(true, 2);
-
-    $("#cphContenido_chkMedicionSistemaPuestaTierraMedida01ValorMedio").trigger("change");
-
-    // #endregion
-
-    // #region Medida 2 Valor Medio
-
-    $('#cphContenido_chkMedicionSistemaPuestaTierraMedida02ValorMedio').change(function () {
-        var blnActivo = $("#cphContenido_chkMedicionSistemaPuestaTierraMedida02ValorMedio").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").prop('disabled', true);
-        else
-            $('#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio').prop('disabled', false);
-    });
-
-    poMedicionSistemaPuestaTierraMedida02ValorMedioComentario = $("#spMedicionSistemaPuestaTierraMedida02ValorMedioComentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocMedicionSistemaPuestaTierraMedida02ValorMedioComentario').html();
-        }
-    });
-
-    poMedicionSistemaPuestaTierraMedida02ValorMedioComentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poMedicionSistemaPuestaTierraMedida02ValorMedioComentario.on('shown.bs.popover', function () {
-        $("#txtMedicionSistemaPuestaTierraMedida02ValorMedioComentario").val($("#cphContenido_hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario").val());
-        $("#txtMedicionSistemaPuestaTierraMedida02ValorMedioComentario").focus();
-        $("#txtMedicionSistemaPuestaTierraMedida02ValorMedioComentario").keyup(function () {
-            $("#cphContenido_hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario").val($(this).val());
+        poMedicionSistemaPuestaTierraMedida01ValorMedioComentario = $("#spMedicionSistemaPuestaTierraMedida01ValorMedioComentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocMedicionSistemaPuestaTierraMedida01ValorMedioComentario').html();
+            }
         });
-    });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio').number(true, 2);
-
-    $("#cphContenido_chkMedicionSistemaPuestaTierraMedida02ValorMedio").trigger("change");
-
-    // #endregion
-
-    // #region Medida 3 Valor Medio
-
-    $('#cphContenido_chkMedicionSistemaPuestaTierraMedida03ValorMedio').change(function () {
-        var blnActivo = $("#cphContenido_chkMedicionSistemaPuestaTierraMedida03ValorMedio").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").prop('disabled', true);
-        else
-            $('#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio').prop('disabled', false);
-    });
-
-    poMedicionSistemaPuestaTierraMedida03ValorMedioComentario = $("#spMedicionSistemaPuestaTierraMedida03ValorMedioComentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocMedicionSistemaPuestaTierraMedida03ValorMedioComentario').html();
-        }
-    });
-
-    poMedicionSistemaPuestaTierraMedida03ValorMedioComentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poMedicionSistemaPuestaTierraMedida03ValorMedioComentario.on('shown.bs.popover', function () {
-        $("#txtMedicionSistemaPuestaTierraMedida03ValorMedioComentario").val($("#cphContenido_hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario").val());
-        $("#txtMedicionSistemaPuestaTierraMedida03ValorMedioComentario").focus();
-        $("#txtMedicionSistemaPuestaTierraMedida03ValorMedioComentario").keyup(function () {
-            $("#cphContenido_hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario").val($(this).val());
+        poMedicionSistemaPuestaTierraMedida01ValorMedioComentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
         });
-    });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio').number(true, 2);
+        poMedicionSistemaPuestaTierraMedida01ValorMedioComentario.on('shown.bs.popover', function () {
+            $("#txtMedicionSistemaPuestaTierraMedida01ValorMedioComentario").val($("#cphContenido_hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario").val());
+            $("#txtMedicionSistemaPuestaTierraMedida01ValorMedioComentario").focus();
+            $("#txtMedicionSistemaPuestaTierraMedida01ValorMedioComentario").keyup(function () {
+                $("#cphContenido_hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario").val($(this).val());
+            });
+        });
 
-    $("#cphContenido_chkMedicionSistemaPuestaTierraMedida03ValorMedio").trigger("change");
 
-    // #endregion
+        $("#cphContenido_chkMedicionSistemaPuestaTierraMedida01ValorMedio").trigger("change");
 
-    // #endregion
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").number(true, 3);
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").keyup(function () {
+            $.fn.validarTxtMedicionSistemaPuestaTierraMedida01ValorMedio();
+        });
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").focus(function () {
+            $.fn.validarTxtMedicionSistemaPuestaTierraMedida01ValorMedio();
+        });
+
+        // #endregion
+
+        // #region Medida 2 Valor Medio
+
+        $('#cphContenido_chkMedicionSistemaPuestaTierraMedida02ValorMedio').change(function () {
+            var blnActivo = $("#cphContenido_chkMedicionSistemaPuestaTierraMedida02ValorMedio").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").prop('disabled', true);
+            else
+                $('#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio').prop('disabled', false);
+        });
+
+        poMedicionSistemaPuestaTierraMedida02ValorMedioComentario = $("#spMedicionSistemaPuestaTierraMedida02ValorMedioComentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocMedicionSistemaPuestaTierraMedida02ValorMedioComentario').html();
+            }
+        });
+
+        poMedicionSistemaPuestaTierraMedida02ValorMedioComentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
+        });
+
+        poMedicionSistemaPuestaTierraMedida02ValorMedioComentario.on('shown.bs.popover', function () {
+            $("#txtMedicionSistemaPuestaTierraMedida02ValorMedioComentario").val($("#cphContenido_hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario").val());
+            $("#txtMedicionSistemaPuestaTierraMedida02ValorMedioComentario").focus();
+            $("#txtMedicionSistemaPuestaTierraMedida02ValorMedioComentario").keyup(function () {
+                $("#cphContenido_hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario").val($(this).val());
+            });
+        });
+
+
+        $("#cphContenido_chkMedicionSistemaPuestaTierraMedida02ValorMedio").trigger("change");
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").number(true, 3);
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").keyup(function () {
+            $.fn.validarTxtMedicionSistemaPuestaTierraMedida02ValorMedio();
+        });
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").focus(function () {
+            $.fn.validarTxtMedicionSistemaPuestaTierraMedida02ValorMedio();
+        });
+
+        // #endregion
+
+        // #region Medida 3 Valor Medio
+
+        $('#cphContenido_chkMedicionSistemaPuestaTierraMedida03ValorMedio').change(function () {
+            var blnActivo = $("#cphContenido_chkMedicionSistemaPuestaTierraMedida03ValorMedio").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").prop('disabled', true);
+            else
+                $('#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio').prop('disabled', false);
+        });
+
+        poMedicionSistemaPuestaTierraMedida03ValorMedioComentario = $("#spMedicionSistemaPuestaTierraMedida03ValorMedioComentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocMedicionSistemaPuestaTierraMedida03ValorMedioComentario').html();
+            }
+        });
+
+        poMedicionSistemaPuestaTierraMedida03ValorMedioComentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
+        });
+
+        poMedicionSistemaPuestaTierraMedida03ValorMedioComentario.on('shown.bs.popover', function () {
+            $("#txtMedicionSistemaPuestaTierraMedida03ValorMedioComentario").val($("#cphContenido_hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario").val());
+            $("#txtMedicionSistemaPuestaTierraMedida03ValorMedioComentario").focus();
+            $("#txtMedicionSistemaPuestaTierraMedida03ValorMedioComentario").keyup(function () {
+                $("#cphContenido_hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario").val($(this).val());
+            });
+        });
+
+
+        $("#cphContenido_chkMedicionSistemaPuestaTierraMedida03ValorMedio").trigger("change");
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").number(true, 3);
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").keyup(function () {
+            $.fn.validarTxtMedicionSistemaPuestaTierraMedida03ValorMedio();
+        });
+
+        $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").focus(function () {
+            $.fn.validarTxtMedicionSistemaPuestaTierraMedida03ValorMedio();
+        });
+
+        // #endregion
+
+        // #endregion
+
+    }
 
     // #region Medición del Sistema de Puesta a tierra Pararrayos
 
@@ -2087,9 +2153,19 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio').number(true, 2);
+  
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").trigger("change");
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").number(true, 3);
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").keyup(function () {
+        $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio();
+    });
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").focus(function () {
+        $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio();
+    });
 
     // #endregion
 
@@ -2124,9 +2200,18 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").trigger("change");
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").number(true, 3);
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").keyup(function () {
+        $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio();
+    });
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").focus(function () {
+        $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio();
+    });
 
     // #endregion
 
@@ -2161,9 +2246,18 @@
         });
     });
 
-    $('#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio').number(true, 2);
 
     $("#cphContenido_chkMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").trigger("change");
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").number(true,3);
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").keyup(function () {
+        $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio();
+    });
+
+    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").focus(function () {
+        $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio();
+    });
 
     // #endregion
 
@@ -2210,7 +2304,7 @@
         });
     });
 
-    $("#cphContenido_chkEquipamientos").trigger("change");
+    //$("#cphContenido_chkEquipamientos").trigger("change");
 
     // #endregion
 
@@ -5241,7 +5335,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5311,7 +5405,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5381,7 +5475,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5451,7 +5545,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5521,7 +5615,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5591,7 +5685,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5661,7 +5755,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5731,7 +5825,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5801,7 +5895,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5871,7 +5965,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -5941,7 +6035,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -6011,7 +6105,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -6081,7 +6175,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -6885,6 +6979,66 @@
 
     // #endregion
 
+    $("#cphContenido_btnGuardar").click(function () {
+        //Validamos los campos
+        var hasErrors = false;
+        var cantError = 0;
+
+        $("#cphContenido_gvMedicionEnlacePropagacion input[id^=cphContenido_gvMedicionEnlacePropagacion_txtTiempoPromedio]").each(function () {
+            hasErrors = $.fn.validarTxtTiempoPromedio($(this));
+            if (hasErrors)
+                cantError++;
+        });
+
+        if (!($("#cphContenido_hfIdDocumento").val() == "000015")) {//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
+
+            hasErrors = $.fn.validarTxtValorMedioMedida01();
+            if (hasErrors)
+                cantError++;
+
+            hasErrors = $.fn.validarTxtValorMedioMedida02();
+            if (hasErrors)
+                cantError++;
+
+            hasErrors = $.fn.validarTxtValorMedioMedida03();
+            if (hasErrors)
+                cantError++;
+
+            hasErrors = $.fn.validarTxtMedicionSistemaPuestaTierraMedida01ValorMedio();
+            if (hasErrors)
+                cantError++;
+
+            hasErrors = $.fn.validarTxtMedicionSistemaPuestaTierraMedida02ValorMedio();
+            if (hasErrors)
+                cantError++;
+
+            hasErrors = $.fn.validarTxtMedicionSistemaPuestaTierraMedida03ValorMedio();
+            if (hasErrors)
+                cantError++;
+
+        }
+        
+        hasErrors = $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio();
+        if (hasErrors)
+            cantError++;
+
+        hasErrors = $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio();
+        if (hasErrors)
+            cantError++;
+
+        hasErrors = $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio();
+        if (hasErrors)
+            cantError++;
+
+        if (cantError == 0)
+            return true;
+        else {
+            openAlert('#divAlert', '#divAlertHeader', 'modal-header-danger', '#lblAlertTitle', 'Error', '#lblAlertBody', 'Algunos datos nos son válidos favor revisar antes de intentar guardar.', true, true);
+            return false;
+        }
+
+    });
+
     // #region Cerrar todos los popovers cuando se da click fuera de uno
 
     $("body").on('click', function (e) {
@@ -6908,8 +7062,8 @@
 
     // #region Bloqueamos los check de aprobacion
 
-    
-if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
+
+    if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
         // Bloqueamos Check Aprobacion
         $('#cphContenido_chkFecha').prop('disabled', true);
         $('#cphContenido_chkDireccionNodo').prop('disabled', true);
@@ -6924,9 +7078,9 @@ if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
         $('#cphContenido_chkValorMedioMedida03').prop('disabled', true);
         $('#cphContenido_chkPotenciaTransmision').prop('disabled', true);
         $('#cphContenido_chkFrecuencia').prop('disabled', true);
-        $('#cphContenido_chkAnchoBandaCanal').prop('disabled', true);
-        $('#cphContenido_chkAzimuth').prop('disabled', true);
-        $('#cphContenido_chkElevacion').prop('disabled', true);
+        //$('#cphContenido_chkAnchoBandaCanal').prop('disabled', true);
+        //$('#cphContenido_chkAzimuth').prop('disabled', true);
+        //$('#cphContenido_chkElevacion').prop('disabled', true);
         $('#cphContenido_chkMedicionEnlacePropagacion').prop('disabled', true);
         $('#cphContenido_chkVerificacionConectividad').prop('disabled', true);
         $('#cphContenido_chkConectividadNodoTerminal').prop('disabled', true);
@@ -7043,9 +7197,9 @@ if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
         $('#txtValorMedioMedida03Comentario').prop('disabled', true);
         $('#txtPotenciaTransmisionComentario').prop('disabled', true);
         $('#txtFrecuenciaComentario').prop('disabled', true);
-        $('#txtAnchoBandaCanalComentario').prop('disabled', true);
-        $('#txtAzimuthComentario').prop('disabled', true);
-        $('#txtElevacionComentario').prop('disabled', true);
+        //$('#txtAnchoBandaCanalComentario').prop('disabled', true);
+        //$('#txtAzimuthComentario').prop('disabled', true);
+        //$('#txtElevacionComentario').prop('disabled', true);
         $('#txtMedicionEnlacePropagacionComentario').prop('disabled', true);
         $('#txtVerificacionConectividadComentario').prop('disabled', true);
         $('#txtConectividadNodoTerminalComentario').prop('disabled', true);
@@ -7151,10 +7305,361 @@ if (!($("#cphContenido_hfIdPerfil").val() == "000001")) {
 
     }
 
+    // #endregion
 
+    // #region Metodos
+
+    $.fn.validarTxtTiempoPromedio = function (txtTiempoPromedio) {
+        var hasErrors = false;
+        var intTiempoPromedio = 0;
+        var strTiempoPromedio = "0";
+
+        if (!(txtTiempoPromedio.val() == "")) {
+            strTiempoPromedio = txtTiempoPromedio.val().replace(",", "");
+            intTiempoPromedio = parseFloat(strTiempoPromedio);
+
+            if (intTiempoPromedio>0 && intTiempoPromedio < 15 || intTiempoPromedio > 20) {
+                hasErrors = true;
+                txtTiempoPromedio.addClass('invalid');
+                txtTiempoPromedio.attr("title", "Error");
+                txtTiempoPromedio.attr("data-content", "El número debe estar comprendido entre 15 y 20.");
+                txtTiempoPromedio.popover('show');
+                setTimeout(function () {
+                    txtTiempoPromedio.popover('hide');
+                }, 4000);
+                txtTiempoPromedio.next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                txtTiempoPromedio.removeClass('invalid');
+                txtTiempoPromedio.popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtValorMedioMedida01 = function () {
+        var hasErrors = false;
+        var dblValorMedioMedida01 = 0;
+        var strValorMedioMedida01 = "0";
+
+        if (!($("#cphContenido_txtValorMedioMedida01").val() == "")) {
+            strValorMedioMedida01 = $("#cphContenido_txtValorMedioMedida01").val().replace(",", "");
+            dblValorMedioMedida01 = parseFloat(strValorMedioMedida01);
+
+            if (dblValorMedioMedida01 < 0.1 || dblValorMedioMedida01 > 5) {
+                hasErrors = true;
+                $("#cphContenido_txtValorMedioMedida01").addClass('invalid');
+                $("#igaValorMedioMedida01Comentario").addClass('invalid');
+                $("#igabValorMedioMedida01").addClass('invalid');
+                $("#cphContenido_txtValorMedioMedida01").attr("title", "Error");
+                $("#cphContenido_txtValorMedioMedida01").attr("data-content", "El número debe estar comprendido entre 0.1 y 5.");
+                $("#cphContenido_txtValorMedioMedida01").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtValorMedioMedida01").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtValorMedioMedida01").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtValorMedioMedida01").removeClass('invalid');
+                $("#igaValorMedioMedida01Comentario").removeClass('invalid');
+                $("#igabValorMedioMedida01").removeClass('invalid');
+                $("#cphContenido_txtValorMedioMedida01").popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtValorMedioMedida02 = function () {
+        var hasErrors = false;
+        var dblValorMedioMedida02 = 0;
+        var strValorMedioMedida02 = "0";
+
+        if (!($("#cphContenido_txtValorMedioMedida02").val() == "")) {
+            strValorMedioMedida02 = $("#cphContenido_txtValorMedioMedida02").val().replace(",", "");
+            dblValorMedioMedida02 = parseFloat(strValorMedioMedida02);
+
+            if (dblValorMedioMedida02 < 0.1 || dblValorMedioMedida02 > 5) {
+                hasErrors = true;
+                $("#cphContenido_txtValorMedioMedida02").addClass('invalid');
+                $("#igaValorMedioMedida02Comentario").addClass('invalid');
+                $("#igabValorMedioMedida02").addClass('invalid');
+                $("#cphContenido_txtValorMedioMedida02").attr("title", "Error");
+                $("#cphContenido_txtValorMedioMedida02").attr("data-content", "El número debe estar comprendido entre 0.1 y 5.");
+                $("#cphContenido_txtValorMedioMedida02").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtValorMedioMedida02").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtValorMedioMedida02").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtValorMedioMedida02").removeClass('invalid');
+                $("#igaValorMedioMedida02Comentario").removeClass('invalid');
+                $("#igabValorMedioMedida02").removeClass('invalid');
+                $("#cphContenido_txtValorMedioMedida02").popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtValorMedioMedida03 = function () {
+        var hasErrors = false;
+        var dblValorMedioMedida03 = 0;
+        var strValorMedioMedida03 = "0";
+
+        if (!($("#cphContenido_txtValorMedioMedida03").val() == "")) {
+            strValorMedioMedida03 = $("#cphContenido_txtValorMedioMedida03").val().replace(",", "");
+            dblValorMedioMedida03 = parseFloat(strValorMedioMedida03);
+
+            if (dblValorMedioMedida03 < 0.1 || dblValorMedioMedida03 > 5) {
+                hasErrors = true;
+                $("#cphContenido_txtValorMedioMedida03").addClass('invalid');
+                $("#igaValorMedioMedida03Comentario").addClass('invalid');
+                $("#igabValorMedioMedida03").addClass('invalid');
+                $("#cphContenido_txtValorMedioMedida03").attr("title", "Error");
+                $("#cphContenido_txtValorMedioMedida03").attr("data-content", "El número debe estar comprendido entre 0.1 y 5.");
+                $("#cphContenido_txtValorMedioMedida03").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtValorMedioMedida03").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtValorMedioMedida03").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtValorMedioMedida03").removeClass('invalid');
+                $("#igaValorMedioMedida03Comentario").removeClass('invalid');
+                $("#igabValorMedioMedida03").removeClass('invalid');
+                $("#cphContenido_txtValorMedioMedida03").popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtMedicionSistemaPuestaTierraMedida01ValorMedio = function () {
+        var hasErrors = false;
+        var dblMedicionSistemaPuestaTierraMedida01ValorMedio = 0;
+        var strMedicionSistemaPuestaTierraMedida01ValorMedio = "0";
+
+        if (!($("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").val() == "")) {
+            strMedicionSistemaPuestaTierraMedida01ValorMedio = $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").val().replace(",", "");
+            dblMedicionSistemaPuestaTierraMedida01ValorMedio = parseFloat(strMedicionSistemaPuestaTierraMedida01ValorMedio);
+
+            if (dblMedicionSistemaPuestaTierraMedida01ValorMedio < 0.1 || dblMedicionSistemaPuestaTierraMedida01ValorMedio > 5) {
+                hasErrors = true;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").addClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraMedida01ValorMedioComentario").addClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraMedida01ValorMedio").addClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").attr("title", "Error");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").attr("data-content", "El número debe estar comprendido entre 0.1 y 5.");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").removeClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraMedida01ValorMedioComentario").removeClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraMedida01ValorMedio").removeClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio").popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtMedicionSistemaPuestaTierraMedida02ValorMedio = function () {
+        var hasErrors = false;
+        var dblMedicionSistemaPuestaTierraMedida02ValorMedio = 0;
+        var strMedicionSistemaPuestaTierraMedida02ValorMedio = "0";
+
+        if (!($("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").val() == "")) {
+            strMedicionSistemaPuestaTierraMedida02ValorMedio = $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").val().replace(",", "");
+            dblMedicionSistemaPuestaTierraMedida02ValorMedio = parseFloat(strMedicionSistemaPuestaTierraMedida02ValorMedio);
+
+            if (dblMedicionSistemaPuestaTierraMedida02ValorMedio < 0.1 || dblMedicionSistemaPuestaTierraMedida02ValorMedio > 5) {
+                hasErrors = true;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").addClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraMedida02ValorMedioComentario").addClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraMedida02ValorMedio").addClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").attr("title", "Error");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").attr("data-content", "El número debe estar comprendido entre 0.1 y 5.");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").removeClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraMedida02ValorMedioComentario").removeClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraMedida02ValorMedio").removeClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio").popover('destroy');
+            }
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtMedicionSistemaPuestaTierraMedida03ValorMedio = function () {
+        var hasErrors = false;
+        var dblMedicionSistemaPuestaTierraMedida03ValorMedio = 0;
+        var strMedicionSistemaPuestaTierraMedida03ValorMedio = "0";
+
+        if (!($("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").val() == "")) {
+            strMedicionSistemaPuestaTierraMedida03ValorMedio = $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").val().replace(",", "");
+            dblMedicionSistemaPuestaTierraMedida03ValorMedio = parseFloat(strMedicionSistemaPuestaTierraMedida03ValorMedio);
+
+            if (dblMedicionSistemaPuestaTierraMedida03ValorMedio < 0.1 || dblMedicionSistemaPuestaTierraMedida03ValorMedio > 5) {
+                hasErrors = true;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").addClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraMedida03ValorMedioComentario").addClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraMedida03ValorMedio").addClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").attr("title", "Error");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").attr("data-content", "El número debe estar comprendido entre 0.1 y 5.");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").removeClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraMedida03ValorMedioComentario").removeClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraMedida03ValorMedio").removeClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio").popover('destroy');
+            }
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio = function () {
+        var hasErrors = false;
+        var intMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio = 0;
+        var strMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio = "0";
+
+        if (!($("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").val() == "")) {
+            strMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio = $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").val().replace(",", "");
+            intMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio = parseInt(strMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio);
+
+            if (intMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio < 1 || intMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio > 10) {
+                hasErrors = true;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").addClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraPararrayosMedida01ValorMedioComentario").addClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").addClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").attr("title", "Error");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").attr("data-content", "El número debe estar comprendido entre 1 y 10.");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").removeClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraPararrayosMedida01ValorMedioComentario").removeClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").removeClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio").popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio = function () {
+        var hasErrors = false;
+        var intMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio = 0;
+        var strMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio = "0";
+
+        if (!($("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").val() == "")) {
+            strMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio = $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").val().replace(",", "");
+            intMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio = parseInt(strMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio);
+
+            if (intMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio < 1 || intMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio > 10) {
+                hasErrors = true;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").addClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraPararrayosMedida02ValorMedioComentario").addClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").addClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").attr("title", "Error");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").attr("data-content", "El número debe estar comprendido entre 1 y 10.");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").removeClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraPararrayosMedida02ValorMedioComentario").removeClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").removeClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio").popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio = function () {
+        var hasErrors = false;
+        var intMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio = 0;
+        var strMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio = "0";
+
+        if (!($("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").val() == "")) {
+            strMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio = $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").val().replace(",", "");
+            intMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio = parseInt(strMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio);
+
+            if (intMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio < 1 || intMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio > 10) {
+                hasErrors = true;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").addClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraPararrayosMedida03ValorMedioComentario").addClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").addClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").attr("title", "Error");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").attr("data-content", "El número debe estar comprendido entre 1 y 10.");
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").removeClass('invalid');
+                $("#igaMedicionSistemaPuestaTierraPararrayosMedida03ValorMedioComentario").removeClass('invalid');
+                $("#igabMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").removeClass('invalid');
+                $("#cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio").popover('destroy');
+            }
+
+        }
+
+        return hasErrors;
+    }
 
     // #endregion
 
-
+    if ($("#cphContenido_hfIdDocumento").val() == "000015") {//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
+        $("#divMedicionSistemaPuestaTierraTitulo").hide();
+        $("#divMedicionSistemaPuestaTierra").hide();
+        $("#divSistemaPuestaTierraInstitucionesTitulo").hide();
+        $("#divSistemaPuestaTierraInstituciones").hide();
+    }
 
 });

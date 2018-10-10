@@ -10,10 +10,11 @@ namespace BusinessEntity
     {
         public EntidadDetalleBE Documento { get; set; }
         public TareaBE Tarea { get; set; }
-        public String Tarea_IdTarea { get { return Tarea.IdTarea; } }
+        //public String Tarea_IdTarea { get { return Tarea.IdTarea; } }
         public String Documento_IdValor { get { return Documento.IdValor; } }
         public String Documento_ValorCadena1 { get { return Documento.ValorCadena1; } }
         public String Documento_ValorCadena2 { get { return Documento.ValorCadena2; } }
+       
         public Double PorcentajeAvance { get; set; }
         public Double PorcentajeAprobado { get; set; }
         public List<DocumentoDetalleBE> Detalles { get; set; }

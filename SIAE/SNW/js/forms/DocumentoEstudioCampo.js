@@ -3467,6 +3467,7 @@
         maxFiles: 1,
         autoStart: true,
         allowedExtensions: ['kmz'],
+        downloadFile:true,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },

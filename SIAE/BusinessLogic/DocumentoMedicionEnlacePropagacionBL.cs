@@ -51,8 +51,8 @@ namespace BusinessLogic
                         item.RSSLocal = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_RSS_LOCAL"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("NU_RSS_REMOTO")))
                         item.RSSRemoto = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_RSS_REMOTO"));
-                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("IN_TIEMPO_PROMEDIO")))
-                        item.TiempoPromedio = drDatos.GetInt32(drDatos.GetOrdinal("IN_TIEMPO_PROMEDIO"));
+                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("NU_TIEMPO_PROMEDIO")))
+                        item.TiempoPromedio = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_TIEMPO_PROMEDIO"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("NU_CAPACIDAD_SUBIDA")))
                         item.CapidadSubida = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_CAPACIDAD_SUBIDA"));
                     if (!drDatos.IsDBNull(drDatos.GetOrdinal("NU_CAPACIDAD_BAJADA")))
@@ -97,7 +97,7 @@ namespace BusinessLogic
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_NODO_IIBB_B", DocumentoMedicionEnlacePropagacion.NodoIIBBB.IdNodo, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_RSS_LOCAL", DocumentoMedicionEnlacePropagacion.RSSLocal, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_RSS_REMOTO", DocumentoMedicionEnlacePropagacion.RSSRemoto, true);
-                baseDatosDA.AsignarParametroEntero("@PIN_TIEMPO_PROMEDIO", DocumentoMedicionEnlacePropagacion.TiempoPromedio, true);
+                baseDatosDA.AsignarParametroDouble("@PNU_TIEMPO_PROMEDIO", DocumentoMedicionEnlacePropagacion.TiempoPromedio, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_CAPACIDAD_SUBIDA", DocumentoMedicionEnlacePropagacion.CapidadSubida, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_CAPACIDAD_BAJADA", DocumentoMedicionEnlacePropagacion.CapidadBajada, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_CRE", DocumentoMedicionEnlacePropagacion.UsuarioCreacion.IdUsuario, true);
@@ -139,7 +139,7 @@ namespace BusinessLogic
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_NODO_IIBB_B", DocumentoMedicionEnlacePropagacion.NodoIIBBB.IdNodo, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_RSS_LOCAL", DocumentoMedicionEnlacePropagacion.RSSLocal, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_RSS_REMOTO", DocumentoMedicionEnlacePropagacion.RSSRemoto, true);
-                baseDatosDA.AsignarParametroEntero("@PIN_TIEMPO_PROMEDIO", DocumentoMedicionEnlacePropagacion.TiempoPromedio, true);
+                baseDatosDA.AsignarParametroDouble("@PNU_TIEMPO_PROMEDIO", DocumentoMedicionEnlacePropagacion.TiempoPromedio, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_CAPACIDAD_SUBIDA", DocumentoMedicionEnlacePropagacion.CapidadSubida, true);
                 baseDatosDA.AsignarParametroDouble("@PNU_CAPACIDAD_BAJADA", DocumentoMedicionEnlacePropagacion.CapidadBajada, true);
                 baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_CRE", DocumentoMedicionEnlacePropagacion.UsuarioCreacion.IdUsuario, true);

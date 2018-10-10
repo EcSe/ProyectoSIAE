@@ -257,110 +257,120 @@
 
     // #endregion
 
-    // #region Azimut (°)
+    /*
+    // #region Agregado Carlos Ramos 28/08/2018 Ocultar los controles al ser el documento "000001 - ACTA DE INSTALACION - ACEPTACION PROTOCOLO (SECTORIAL)"
 
-    $('#cphContenido_chkAzimut').change(function () {
-        var blnActivo = $("#cphContenido_chkAzimut").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtAzimut").prop('disabled', true);
-        else
-            $('#cphContenido_txtAzimut').prop('disabled', false);
-    });
+    if (!($("#cphContenido_hfIdDocumento").val() == "000001")) {//ACTA DE INSTALACION - ACEPTACION PROTOCOLO (SECTORIAL)
+        
+        // #region Azimut (°)
 
-    poAzimutComentario = $("#spAzimutComentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocAzimutComentario').html();
-        }
-    });
-
-    poAzimutComentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poAzimutComentario.on('shown.bs.popover', function () {
-        $("#txtAzimutComentario").val($("#cphContenido_hfAzimutComentario").val());
-        $("#txtAzimutComentario").focus();
-        $("#txtAzimutComentario").keyup(function () {
-            $("#cphContenido_hfAzimutComentario").val($(this).val());
+        $('#cphContenido_chkAzimut').change(function () {
+            var blnActivo = $("#cphContenido_chkAzimut").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtAzimut").prop('disabled', true);
+            else
+                $('#cphContenido_txtAzimut').prop('disabled', false);
         });
-    });
 
-    $("#cphContenido_chkAzimut").trigger("change");
-
-    // #endregion
-
-    // #region Down Tilt (°)
-
-    $('#cphContenido_chkDownTilt').change(function () {
-        var blnActivo = $("#cphContenido_chkDownTilt").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtDownTilt").prop('disabled', true);
-        else
-            $('#cphContenido_txtDownTilt').prop('disabled', false);
-    });
-
-    poDownTiltComentario = $("#spDownTiltComentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocDownTiltComentario').html();
-        }
-    });
-
-    poDownTiltComentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poDownTiltComentario.on('shown.bs.popover', function () {
-        $("#txtDownTiltComentario").val($("#cphContenido_hfDownTiltComentario").val());
-        $("#txtDownTiltComentario").focus();
-        $("#txtDownTiltComentario").keyup(function () {
-            $("#cphContenido_hfDownTiltComentario").val($(this).val());
+        poAzimutComentario = $("#spAzimutComentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocAzimutComentario').html();
+            }
         });
-    });
 
-    $("#cphContenido_chkDownTilt").trigger("change");
-
-    // #endregion
-
-    // #region Altura Instalada (m)
-
-    $('#cphContenido_chkAlturaInstalada').change(function () {
-        var blnActivo = $("#cphContenido_chkAlturaInstalada").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtAlturaInstalada").prop('disabled', true);
-        else
-            $('#cphContenido_txtAlturaInstalada').prop('disabled', false);
-    });
-
-    poAlturaInstaladaComentario = $("#spAlturaInstaladaComentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocAlturaInstaladaComentario').html();
-        }
-    });
-
-    poAlturaInstaladaComentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poAlturaInstaladaComentario.on('shown.bs.popover', function () {
-        $("#txtAlturaInstaladaComentario").val($("#cphContenido_hfAlturaInstaladaComentario").val());
-        $("#txtAlturaInstaladaComentario").focus();
-        $("#txtAlturaInstaladaComentario").keyup(function () {
-            $("#cphContenido_hfAlturaInstaladaComentario").val($(this).val());
+        poAzimutComentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
         });
-    });
 
-    $("#cphContenido_chkAlturaInstalada").trigger("change");
+        poAzimutComentario.on('shown.bs.popover', function () {
+            $("#txtAzimutComentario").val($("#cphContenido_hfAzimutComentario").val());
+            $("#txtAzimutComentario").focus();
+            $("#txtAzimutComentario").keyup(function () {
+                $("#cphContenido_hfAzimutComentario").val($(this).val());
+            });
+        });
 
+        $("#cphContenido_chkAzimut").trigger("change");
+
+        // #endregion
+
+        // #region Down Tilt (°)
+
+        $('#cphContenido_chkDownTilt').change(function () {
+            var blnActivo = $("#cphContenido_chkDownTilt").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtDownTilt").prop('disabled', true);
+            else
+                $('#cphContenido_txtDownTilt').prop('disabled', false);
+        });
+
+        poDownTiltComentario = $("#spDownTiltComentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocDownTiltComentario').html();
+            }
+        });
+
+        poDownTiltComentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
+        });
+
+        poDownTiltComentario.on('shown.bs.popover', function () {
+            $("#txtDownTiltComentario").val($("#cphContenido_hfDownTiltComentario").val());
+            $("#txtDownTiltComentario").focus();
+            $("#txtDownTiltComentario").keyup(function () {
+                $("#cphContenido_hfDownTiltComentario").val($(this).val());
+            });
+        });
+
+        $("#cphContenido_chkDownTilt").trigger("change");
+
+        // #endregion
+
+        // #region Altura Instalada (m)
+
+        $('#cphContenido_chkAlturaInstalada').change(function () {
+            var blnActivo = $("#cphContenido_chkAlturaInstalada").prop("checked");
+            if (blnActivo)
+                $("#cphContenido_txtAlturaInstalada").prop('disabled', true);
+            else
+                $('#cphContenido_txtAlturaInstalada').prop('disabled', false);
+        });
+
+        poAlturaInstaladaComentario = $("#spAlturaInstaladaComentario").popover({
+            html: true,
+            content: function () {
+                return $('#pocAlturaInstaladaComentario').html();
+            }
+        });
+
+        poAlturaInstaladaComentario.on('show.bs.popover', function () {
+            //Devuelve el popover: $(this).data("bs.popover").tip()
+            $(this).data("bs.popover").tip().addClass('info');
+            $(this).data("bs.popover").tip().css("max-width", "600px");
+        });
+
+        poAlturaInstaladaComentario.on('shown.bs.popover', function () {
+            $("#txtAlturaInstaladaComentario").val($("#cphContenido_hfAlturaInstaladaComentario").val());
+            $("#txtAlturaInstaladaComentario").focus();
+            $("#txtAlturaInstaladaComentario").keyup(function () {
+                $("#cphContenido_hfAlturaInstaladaComentario").val($(this).val());
+            });
+        });
+
+        $("#cphContenido_chkAlturaInstalada").trigger("change");
+
+        // #endregion
+
+    }
+    
     // #endregion
+    */
 
     // #region Eficiencia Enlace
 
@@ -474,7 +484,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) {
                 //console.log("start inicio");
@@ -608,7 +618,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -678,7 +688,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -748,7 +758,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -818,7 +828,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -888,7 +898,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -958,7 +968,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1028,7 +1038,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1098,7 +1108,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1221,7 +1231,7 @@
         if (blnActivo) {
             $("#cphContenido_gvMateriales input[id^=cphContenido_gvMateriales_txtCantidad]").each(function () {
                 $(this).prop('disabled', true);
-            })
+            });
         }
         else {
             $("#cphContenido_gvMateriales input[id^=cphContenido_gvMateriales_txtCantidad]").each(function () {
@@ -1257,6 +1267,7 @@
 
     // #endregion
     
+    /*
     // #region 3 SFTP
 
     // #region B
@@ -1408,6 +1419,7 @@
     // #endregion
 
     // #endregion
+     */
 
     // #region 7 Reporte Fotográfico
 
@@ -3032,6 +3044,40 @@
 
     //$.fn.validarDdlTipoFuente();
 
+    $("#cphContenido_btnGuardar").click(function () {
+        //Validamos los campos
+        var hasErrors = false;
+        var cantError = 0;
+
+        $("#cphContenido_gvMedicionEnlacePropagacion input[id^=cphContenido_gvMedicionEnlacePropagacion_txtRSSLocal]").each(function () {
+            hasErrors = $.fn.validarTxtRSSLocal($(this));
+            if (hasErrors)
+                cantError++;
+        });
+
+        $("#cphContenido_gvMedicionEnlacePropagacion input[id^=cphContenido_gvMedicionEnlacePropagacion_txtRSSRemoto]").each(function () {
+            hasErrors = $.fn.validarTxtRSSRemoto($(this));
+            if (hasErrors)
+                cantError++;
+        });
+
+        $("#cphContenido_gvMedicionEnlacePropagacion input[id^=cphContenido_gvMedicionEnlacePropagacion_txtTiempoPromedio]").each(function () {
+            hasErrors = $.fn.validarTxtTiempoPromedio($(this));
+            if (hasErrors)
+                cantError++;
+        });
+
+        
+        if (cantError == 0)
+            return true;
+        else
+        {
+            openAlert('#divAlert', '#divAlertHeader', 'modal-header-danger', '#lblAlertTitle', 'Error', '#lblAlertBody', 'Algunos datos nos son válidos favor revisar antes de intentar guardar.', true, true);
+            return false;
+        }
+
+    });
+
     // #region Cerrar todos los popovers cuando se da click fuera de uno
 
     $("body").on('click', function (e) {
@@ -3164,5 +3210,106 @@
 
     // #endregion
 
+    // #region Metodos
 
+    $.fn.validarTxtRSSLocal = function (txtRSSLocal) {
+        var hasErrors = false;
+        var dblRSSLocal = 0;
+        var strRSSLocal = "0";
+
+        if (!(txtRSSLocal.val() == "")) {
+            strRSSLocal = txtRSSLocal.val().replace(",", "");
+            dblRSSLocal = parseFloat(strRSSLocal);
+        }
+        
+        if (dblRSSLocal < -72.00) {
+            hasErrors = true;
+            txtRSSLocal.addClass('invalid');
+            txtRSSLocal.attr("title", "Error");
+            txtRSSLocal.attr("data-content", "El número no puede ser menor a -72.");
+            txtRSSLocal.popover('show');
+            setTimeout(function () {
+                txtRSSLocal.popover('hide');
+            }, 4000);
+            txtRSSLocal.next().addClass('danger');
+        }
+        else {
+            hasErrors = false;
+            txtRSSLocal.removeClass('invalid');
+            txtRSSLocal.popover('destroy');
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtRSSRemoto = function (txtRSSRemoto) {
+        var hasErrors = false;
+        var dblRSSRemoto = 0;
+        var strRSSRemoto = "0";
+
+        if (!(txtRSSRemoto.val() == "")) {
+            strRSSRemoto = txtRSSRemoto.val().replace(",", "");
+            dblRSSRemoto = parseFloat(strRSSRemoto);
+        }
+
+        if (dblRSSRemoto < -72.00) {
+            hasErrors = true;
+            txtRSSRemoto.addClass('invalid');
+            txtRSSRemoto.attr("title", "Error");
+            txtRSSRemoto.attr("data-content", "El número no puede ser menor a -72.");
+            txtRSSRemoto.popover('show');
+            setTimeout(function () {
+                txtRSSRemoto.popover('hide');
+            }, 4000);
+            txtRSSRemoto.next().addClass('danger');
+        }
+        else {
+            hasErrors = false;
+            txtRSSRemoto.removeClass('invalid');
+            txtRSSRemoto.popover('destroy');
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtTiempoPromedio = function (txtTiempoPromedio) {
+        var hasErrors = false;
+        var intTiempoPromedio = 0;
+        var strTiempoPromedio = "0";
+
+        if (!(txtTiempoPromedio.val() == "")) {
+            strTiempoPromedio = txtTiempoPromedio.val().replace(",", "");
+            intTiempoPromedio = parseInt(strTiempoPromedio);
+
+            if (intTiempoPromedio>0 && intTiempoPromedio < 15 || intTiempoPromedio > 20) {
+                hasErrors = true;
+                txtTiempoPromedio.addClass('invalid');
+                txtTiempoPromedio.attr("title", "Error");
+                txtTiempoPromedio.attr("data-content", "El número debe estar comprendido entre 15 y 20.");
+                txtTiempoPromedio.popover('show');
+                setTimeout(function () {
+                    txtTiempoPromedio.popover('hide');
+                }, 4000);
+                txtTiempoPromedio.next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                txtTiempoPromedio.removeClass('invalid');
+                txtTiempoPromedio.popover('destroy');
+            }
+        }
+        return hasErrors;
+    }
+
+    // #endregion
+
+    // #region Agregado Carlos Ramos 28/08/2018 Ocultar los controles al ser el documento "000001 - ACTA DE INSTALACION - ACEPTACION PROTOCOLO (SECTORIAL)"
+
+    if ($("#cphContenido_hfIdDocumento").val() == "000001") {//ACTA DE INSTALACION - ACEPTACION PROTOCOLO (SECTORIAL)
+        $("#divAzimut").hide();
+        $("#divDownTilt").hide();
+        $("#divAlturaInstalada").hide();
+    }
+
+    // #endregion
 });

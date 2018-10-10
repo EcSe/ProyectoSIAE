@@ -70,7 +70,8 @@ namespace SNW.forms
                     #region Estacion A
 
                     #region Serie Antena (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000150",
+                    //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000150",
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000156",
                         imgSerieAntenaEstacionAEjemplo);
                     #endregion
 
@@ -81,7 +82,8 @@ namespace SNW.forms
                     #endregion
 
                     #region Serie ODU (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000151",
+                    //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000151",
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000157",
                         imgSerieODUEstacionAEjemplo);
                     #endregion
 
@@ -92,7 +94,8 @@ namespace SNW.forms
                     #endregion
 
                     #region Serie POE (Ejemplo)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000152",
+                    //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000152",
+                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000158",
                         imgSeriePOEEstacionAEjemplo);
                     #endregion
 
@@ -113,7 +116,8 @@ namespace SNW.forms
                     if (!lstCMM4A.Count.Equals(0))//Si tiene CMM4 pedimos los equipos necesarios
                     {
                         #region Serie CMM4 (Ejemplo)
-                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000153",
+                        //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000153",
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000159",
                         imgSerieCMM4EstacionAEjemplo);
                         #endregion
 
@@ -124,12 +128,14 @@ namespace SNW.forms
                         #endregion
 
                         #region Serie UGPS (Ejemplo)
-                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000154",
+                        //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000154",
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000160",
                             imgSerieUGPSEstacionAEjemplo);
                         #endregion
 
                         #region Serie Conversor (Ejemplo)
-                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000155",
+                        //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000155",
+                        UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000161",
                             imgSerieConversorEstacionAEjemplo);
                         #endregion
 

@@ -40,6 +40,10 @@ namespace SNW.forms
                     entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
                     Documento.Documento = entidadDetalleBE.Clone();
 
+                    //#region Agregado Carlos Ramos 28/08/2018 Ocultar los controles al ser el documento "000001 - ACTA DE INSTALACION - ACEPTACION PROTOCOLO (SECTORIAL)"
+                    //hfIdDocumento.Value = Request.QueryString["IdDocumento"];
+                    //#endregion
+
                     //h2Titulo.InnerText = entidadDetalleBE.ValorCadena3;
                     h2Titulo.InnerText = entidadDetalleBE.ValorCadena3 + " (Nodo o IIBB A: " + Tarea.NodoIIBBA.IdNodo + " || Tipo Tarea: " + Tarea.TipoTarea.ValorCadena1 + ")";
                     //this.Title = entidadDetalleBE.ValorCadena3 + " .:SIAE:.";
@@ -164,10 +168,10 @@ namespace SNW.forms
                     gvMateriales.DataBind();
                     #endregion
 
-                    #region Obtenemos el valor para la imagen de ejemplo del SFTP
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000010",
-                        imgSFTPEjemplo);
-                    #endregion
+                    //#region Obtenemos el valor para la imagen de ejemplo del SFTP
+                    //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000010",
+                    //    imgSFTPEjemplo);
+                    //#endregion
 
                     #region Obtenemos el valor para la imagen de ejemplo de Panorámica Estacion A
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000011",
@@ -292,9 +296,11 @@ namespace SNW.forms
                         MedicionEnlacePropagacion.NodoIIBBB.IdNodo = item.InstitucionBeneficiaria.IdInstitucionBeneficiaria;
                         lstMedicionEnlacePropagacion.Add(MedicionEnlacePropagacion);
                     }
-                    Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
-                    gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
-                    gvMedicionEnlacePropagacion.DataBind();
+
+                    //Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
+                    //gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
+                    //gvMedicionEnlacePropagacion.DataBind();
+
                     #endregion
 
                     #region Fotos Adicionales
@@ -401,30 +407,36 @@ namespace SNW.forms
                             Type.GetType("System.Double"));
                         #endregion
 
-                        #region Azimut
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000007").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAzimut,
-                            hfAzimutComentario, null,
-                            txtAzimut, null, null,
-                            Type.GetType("System.Int32"));
+                        //#region Agregado Carlos Ramos 28/08/2018 Ocultar los controles al ser el documento "000001 - ACTA DE INSTALACION - ACEPTACION PROTOCOLO (SECTORIAL)"
 
-                        #endregion
+                        //if (!hfIdDocumento.Value.Equals("000001"))
+                        //{
+                        //    #region Azimut
+                        //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000007").Select(dd => dd).First();
+                        //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAzimut,
+                        //        hfAzimutComentario, null,
+                        //        txtAzimut, null, null,
+                        //        Type.GetType("System.Int32"));
 
-                        #region Down Tilt
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000008").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkDownTilt,
-                            hfDownTiltComentario, null,
-                            txtDownTilt, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //    #endregion
 
-                        #region Altura Instalada
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000009").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAlturaInstalada,
-                            hfAlturaInstaladaComentario, null,
-                            txtAlturaInstalada, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //    #region Down Tilt
+                        //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000008").Select(dd => dd).First();
+                        //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkDownTilt,
+                        //        hfDownTiltComentario, null,
+                        //        txtDownTilt, null, null,
+                        //        Type.GetType("System.Int32"));
+                        //    #endregion
+
+                        //    #region Altura Instalada
+                        //    DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000009").Select(dd => dd).First();
+                        //    UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkAlturaInstalada,
+                        //        hfAlturaInstaladaComentario, null,
+                        //        txtAlturaInstalada, null, null,
+                        //        Type.GetType("System.Int32"));
+                        //    #endregion
+                        //}
+                        //#endregion
 
                         #region Eficiencia Enlace
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000011").Select(dd => dd).First();
@@ -508,7 +520,7 @@ namespace SNW.forms
                         #endregion
 
                         #region Capt 7: Pantalla Home
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000019").Select(dd => dd).First();
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000020").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkPantallaHome,
                             hfPantallaHomeComentario, null, null,
                             hfPantallaHome, strRutaFisicaTemporal,
@@ -558,36 +570,36 @@ namespace SNW.forms
 
                         #endregion
 
-                        #region 3 SFTP
+                        //#region 3 SFTP
 
-                        #region Distancia B
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000027").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkB,
-                            hfBComentario, null, txtB, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia B
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000027").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkB,
+                        //    hfBComentario, null, txtB, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia C
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000028").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkC,
-                            hfCComentario, null, txtC, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia C
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000028").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkC,
+                        //    hfCComentario, null, txtC, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia D
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000029").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkD,
-                            hfDComentario, null, txtD, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia D
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000029").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkD,
+                        //    hfDComentario, null, txtD, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia E
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000030").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkE, hfEComentario, null, txtE, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia E
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000030").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkE, hfEComentario, null, txtE, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #endregion
+                        //#endregion
 
                         #region 7 Reporte Fotográfico
 
@@ -771,10 +783,9 @@ namespace SNW.forms
                         DocumentoMedicionEnlacePropagacion.NodoA.IdNodo= Tarea.NodoIIBBA.IdNodo;
                         lstMedicionEnlacePropagacion = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacion);
 
-                        Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
-
-                        gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
-                        gvMedicionEnlacePropagacion.DataBind();
+                        //Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
+                        //gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
+                        //gvMedicionEnlacePropagacion.DataBind();
 
                         Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
 
@@ -809,6 +820,10 @@ namespace SNW.forms
                     }
                     #endregion
 
+                    Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
+                    gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
+                    gvMedicionEnlacePropagacion.DataBind();
+
                 }
                 else
                 {
@@ -829,7 +844,25 @@ namespace SNW.forms
                 e.Row.Cells[5].Attributes["data-title"] = "Capacidad Subida (Mbps)";
                 e.Row.Cells[6].Attributes["data-title"] = "Capacidad Bajada (Mbps)";
                 //e.Row.Cells[5].Attributes["data-title"] = "Acciones";
+            }
+            else if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                #region Formato Numeros
+                String strFormatoNumeros = "";
+                foreach (GridViewRow item in gvMedicionEnlacePropagacion.Rows)
+                {
+                    TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                    TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                    TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                    TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                    TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
+                    strFormatoNumeros = strFormatoNumeros + "$('#" + txtRSSLocal.ClientID + "').number(true, 2);$('#" + txtRSSLocal.ClientID + "').keyup(function () {$.fn.validarTxtRSSLocal($(this));});$('#" + txtRSSLocal.ClientID + "').focus(function () {$.fn.validarTxtRSSLocal($(this));});$('#" + txtRSSRemoto.ClientID + "').number(true, 2);$('#" + txtRSSRemoto.ClientID + "').keyup(function () {$.fn.validarTxtRSSRemoto($(this));});$('#" + txtRSSRemoto.ClientID + "').focus(function () {$.fn.validarTxtRSSRemoto($(this));});$('#" + txtTiempoPromedio.ClientID + "').number(true, 3);$('#" + txtTiempoPromedio.ClientID + "').keyup(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtTiempoPromedio.ClientID + "').focus(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtCapacidadSubida.ClientID + "').number(true, 3);$('#" + txtCapacidadBajada.ClientID + "').number(true, 3);";
+                    
+                }
+
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "formatoNumeros", strFormatoNumeros, true);
+                #endregion
             }
         }
 
@@ -944,29 +977,35 @@ namespace SNW.forms
                     Type.GetType("System.Double"));
                 #endregion
 
-                #region Azimut
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000007", chkAzimut,
-                    hfAzimutComentario, null,
-                    txtAzimut, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Agregado Carlos Ramos 28/08/2018 Ocultar los controles al ser el documento "000001 - ACTA DE INSTALACION - ACEPTACION PROTOCOLO (SECTORIAL)"
 
-                #region Down Tilt
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000008", chkDownTilt,
-                    hfDownTiltComentario, null,
-                    txtDownTilt, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //if (!hfIdDocumento.Value.Equals("000001"))
+                //{
+                //    #region Azimut
+                //    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //        Documento, "000007", chkAzimut,
+                //        hfAzimutComentario, null,
+                //        txtAzimut, null, null,
+                //        Type.GetType("System.Int32"));
+                //    #endregion
 
-                #region Altura Instalada
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000009", chkAlturaInstalada,
-                    hfAlturaInstaladaComentario, null,
-                    txtAlturaInstalada, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //    #region Down Tilt
+                //    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //        Documento, "000008", chkDownTilt,
+                //        hfDownTiltComentario, null,
+                //        txtDownTilt, null, null,
+                //        Type.GetType("System.Int32"));
+                //    #endregion
+
+                //    #region Altura Instalada
+                //    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //        Documento, "000009", chkAlturaInstalada,
+                //        hfAlturaInstaladaComentario, null,
+                //        txtAlturaInstalada, null, null,
+                //        Type.GetType("System.Int32"));
+                //    #endregion
+                //}
+                //#endregion
 
                 #region Eficiencia Enlace
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
@@ -1136,33 +1175,33 @@ namespace SNW.forms
 
                 #endregion
 
-                #region 3 SFTP
+                //#region 3 SFTP
 
-                #region Distancia B
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000027", chkB, hfBComentario, null, txtB, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia B
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000027", chkB, hfBComentario, null, txtB, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia C
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000028", chkC, hfCComentario, null, txtC, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia C
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000028", chkC, hfCComentario, null, txtC, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia D
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000029", chkD, hfDComentario, null, txtD, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia D
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000029", chkD, hfDComentario, null, txtD, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia E
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000030", chkE, hfEComentario, null, txtE, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia E
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000030", chkE, hfEComentario, null, txtE, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #endregion
+                //#endregion
 
                 #region 7 Reporte Fotográfico
 
@@ -1353,8 +1392,8 @@ namespace SNW.forms
                     TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
                     TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
-                    Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
-                    Int32 intTiempoPromedio;
+                    Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada,dblTiempoPromedio;
+                   // Int32 intTiempoPromedio;
                     if (txtRSSLocal.Text.Equals(""))
                         dblRSSLocal = 0;
                     else
@@ -1364,9 +1403,9 @@ namespace SNW.forms
                     else
                         dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
                     if (txtTiempoPromedio.Text.Equals(""))
-                        intTiempoPromedio = 0;
+                        dblTiempoPromedio = 0;
                     else
-                        intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                        dblTiempoPromedio = Convert.ToDouble(txtTiempoPromedio.Text);
                     if (txtCapacidadSubida.Text.Equals(""))
                         dblCapacidadSubida = 0;
                     else
@@ -1379,7 +1418,7 @@ namespace SNW.forms
                     {
                         s.RSSLocal = dblRSSLocal;
                         s.RSSRemoto = dblRSSRemoto;
-                        s.TiempoPromedio = intTiempoPromedio;
+                        s.TiempoPromedio = dblTiempoPromedio;
                         s.CapidadSubida = dblCapacidadSubida;
                         s.CapidadBajada = dblCapacidadBajada;
                     });

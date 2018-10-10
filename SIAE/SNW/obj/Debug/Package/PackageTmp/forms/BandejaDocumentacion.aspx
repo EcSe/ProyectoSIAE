@@ -53,7 +53,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 no-more-gridView">
-                    <asp:GridView ID="gvTareas" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvTareas_RowDataBound" DataKeyNames="IdTarea,TipoTarea_ValorCadena1,NodoIIBBA_IdNodo">
+                    <asp:GridView ID="gvTareas" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvTareas_RowDataBound" DataKeyNames="IdTarea,TipoTarea_ValorCadena1,NodoIIBBA_IdNodo,Tarea_Tipo_NodoA">
                         <Columns>
                             <asp:BoundField DataField="IdTarea" HeaderText="Tarea" />
                             <asp:BoundField DataField="IdSectorAP" HeaderText="Sector" />
@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 no-more-gridView">
-                                            <asp:GridView ID="gvDocumentos" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvDocumentos_RowDataBound" DataKeyNames="Documento_IdValor,Tarea_IdTarea,Documento_ValorCadena1,Documento_ValorCadena2">
+                                            <asp:GridView ID="gvDocumentos" runat="server" CssClass=" table-bordered table-striped table-condensed table-hover" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvDocumentos_RowDataBound" DataKeyNames="Documento_IdValor,Documento_ValorCadena1,Documento_ValorCadena2">
                                                 <Columns>
                                                     <%--<asp:BoundField DataField="Tarea.IdTarea" HeaderText="Tarea" />
                                             <asp:BoundField DataField="Tarea.IdSectorAP" HeaderText="Sector" />

@@ -35,6 +35,7 @@ namespace SNW.forms
                     entidadDetalleBE = new EntidadDetalleBE();
                     entidadDetalleBE.Entidad.IdEntidad = "DOCU";
                     //entidadDetalleBE.IdValor = Documento.Tarea.TipoTarea.IdValor.Equals("000002") ? "000015" : "000016";
+
                     entidadDetalleBE.IdValor = Request.QueryString["IdDocumento"];
                     entidadDetalleBE = EntidadDetalleBL.ListarEntidadDetalle(entidadDetalleBE)[0];
                     Documento.Documento = entidadDetalleBE.Clone();
@@ -88,9 +89,9 @@ namespace SNW.forms
                         MedicionEnlacePropagacion.NodoIIBBB.IdNodo = item.InstitucionBeneficiaria.IdInstitucionBeneficiaria;
                         lstMedicionEnlacePropagacion.Add(MedicionEnlacePropagacion);
                     }
-                    Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
-                    gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
-                    gvMedicionEnlacePropagacion.DataBind();
+                    //Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
+                    //gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
+                    //gvMedicionEnlacePropagacion.DataBind();
 
                     #endregion
 
@@ -488,9 +489,34 @@ namespace SNW.forms
                         imgMonitorMuestraConectividadNodoTerminalEjemplo);
                     #endregion
 
+                    #region Foto 11.02: Monitor Donde se Muestre Conectividad al Nodo Terminal
+                    IPPlanningPMPSectorBE IPPlanningPMPSector = new IPPlanningPMPSectorBE();
+                    IPPlanningPMPSector.IPPlanningPMP.Nodo.IdNodo = Tarea.NodoB.IdNodo;
+                    IPPlanningPMPSector.SectorNodo = 1;
+                    List<IPPlanningPMPSectorBE> lstIPPlanningPMPSector = IPPlanningPMPSectorBL.ListarIPPlanningPMPSector(IPPlanningPMPSector);
+                    if (!lstIPPlanningPMPSector.Equals(0))
+                    {
+                        IPPlanningPMPSector = lstIPPlanningPMPSector[0];
+                        lblMonitorMuestraConectividadNodoTerminal.InnerText = lblMonitorMuestraConectividadNodoTerminal.InnerText +
+                            " [" + IPPlanningPMPSector.IPNodo +"]";
+                    }
+                    #endregion
+
                     #region Foto 11.03: Monitor Donde se Muestre Conectividad al Nodo Distrital de Cabecera (Ejemplo)
                     UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000288",
                         imgMonitorMuestraConectividadNodoDistritalCabeceraEjemplo);
+                    #endregion
+
+                    #region Foto 11.03: Monitor Donde se Muestre Conectividad al Nodo Distrital de Cabecera
+                    IPPlanningPMPBE IPPlanningPMP = new IPPlanningPMPBE();
+                    IPPlanningPMP.Nodo.IdNodo = Tarea.NodoB.IdNodo;
+                    List<IPPlanningPMPBE> lstIPPlanningPMP = IPPlanningPMPBL.ListarIPPlanningPMP(IPPlanningPMP);
+                    if (!lstIPPlanningPMP.Equals(0))
+                    {
+                        IPPlanningPMP = lstIPPlanningPMP[0];
+                        lblMonitorMuestraConectividadNodoDistritalCabecera.InnerText = lblMonitorMuestraConectividadNodoDistritalCabecera.InnerText +
+                            " [" + IPPlanningPMP.DefaultGateway + "]";
+                    }
                     #endregion
 
                     #endregion
@@ -608,6 +634,10 @@ namespace SNW.forms
 
                     #region Asignacion Perfil
                     hfIdPerfil.Value = Usuario.Perfil.IdValor;
+                    #endregion
+
+                    #region Asignacion Documento y Tarea
+                    hfIdDocumento.Value = Request.QueryString["IdDocumento"];
                     #endregion
 
                     #endregion
@@ -731,36 +761,40 @@ namespace SNW.forms
 
                         #endregion
 
-                        #region 2.5. Sistema de Puesta a Tierra instituciones
+                        if (!hfIdDocumento.Value.Equals("000015")){//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
 
-                        #region Valor Medio Medida 1
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000284").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkValorMedioMedida01,
-                            hfValorMedioMedida01Comentario, null,
-                            txtValorMedioMedida01, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                            #region 2.5. Sistema de Puesta a Tierra instituciones
 
-                        #region Valor Medio Medida 2
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000285").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkValorMedioMedida02,
-                            hfValorMedioMedida02Comentario, null,
-                            txtValorMedioMedida02, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                            #region Valor Medio Medida 1
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000284").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                                chkValorMedioMedida01,
+                                hfValorMedioMedida01Comentario, null,
+                                txtValorMedioMedida01, null, null,
+                                Type.GetType("System.Double"));
+                            #endregion
 
-                        #region Valor Medio Medida 3
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000286").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkValorMedioMedida03,
-                            hfValorMedioMedida03Comentario, null,
-                            txtValorMedioMedida03, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                            #region Valor Medio Medida 2
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000285").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                                chkValorMedioMedida02,
+                                hfValorMedioMedida02Comentario, null,
+                                txtValorMedioMedida02, null, null,
+                                Type.GetType("System.Double"));
+                            #endregion
 
-                        #endregion
+                            #region Valor Medio Medida 3
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000286").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                                chkValorMedioMedida03,
+                                hfValorMedioMedida03Comentario, null,
+                                txtValorMedioMedida03, null, null,
+                                Type.GetType("System.Double"));
+                            #endregion
+
+                            #endregion
+
+                        }
 
                         #region 2.6. Característica de Propagación
 
@@ -780,32 +814,32 @@ namespace SNW.forms
                             hfFrecuenciaComentario, ddlFrecuencia, null, null);
                         #endregion
 
-                        #region Ancho de banda de canal (MHz)
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000288").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkAnchoBandaCanal,
-                            hfAnchoBandaCanalComentario, null,
-                            txtAnchoBandaCanal, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Ancho de banda de canal (MHz)
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000288").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkAnchoBandaCanal,
+                        //    hfAnchoBandaCanalComentario, null,
+                        //    txtAnchoBandaCanal, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
-                        #region Azimuth (X°)
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000007").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkAzimuth,
-                            hfAzimuthComentario, null,
-                            txtAzimuth, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Azimuth (X°)
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000007").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkAzimuth,
+                        //    hfAzimuthComentario, null,
+                        //    txtAzimuth, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
-                        #region Elevación (Y°)
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000289").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkElevacion,
-                            hfElevacionComentario, null,
-                            txtElevacion, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Elevación (Y°)
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000289").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkElevacion,
+                        //    hfElevacionComentario, null,
+                        //    txtElevacion, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
                         #endregion
 
@@ -817,49 +851,59 @@ namespace SNW.forms
                            chkMedicionEnlacePropagacion,
                             hfMedicionEnlacePropagacionComentario);
                         //List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacion2 = new List<DocumentoMedicionEnlacePropagacionBE>();
-                        lstMedicionEnlacePropagacion = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacion"];
+                        //lstMedicionEnlacePropagacion = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacion"];
 
-                        foreach (GridViewRow item in gvMedicionEnlacePropagacion.Rows)
-                        {
-                            String strIdNodo = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoA_IdNodo"].ToString();
-                            String strIdIIBB = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoIIBBB_IdNodo"].ToString();
-                            TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
-                            TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
-                            TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
-                            TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
-                            TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
+                        //foreach (GridViewRow item in gvMedicionEnlacePropagacion.Rows)
+                        //{
+                        //    String strIdNodo = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoA_IdNodo"].ToString();
+                        //    String strIdIIBB = gvMedicionEnlacePropagacion.DataKeys[item.RowIndex]["NodoIIBBB_IdNodo"].ToString();
+                        //    TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                        //    TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                        //    TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                        //    TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                        //    TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
-                            Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
-                            Int32 intTiempoPromedio;
-                            if (txtRSSLocal.Text.Equals(""))
-                                dblRSSLocal = 0;
-                            else
-                                dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
-                            if (txtRSSRemoto.Text.Equals(""))
-                                dblRSSRemoto = 0;
-                            else
-                                dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
-                            if (txtTiempoPromedio.Text.Equals(""))
-                                intTiempoPromedio = 0;
-                            else
-                                intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
-                            if (txtCapacidadSubida.Text.Equals(""))
-                                dblCapacidadSubida = 0;
-                            else
-                                dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
-                            if (txtCapacidadBajada.Text.Equals(""))
-                                dblCapacidadBajada = 0;
-                            else
-                                dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
-                            lstMedicionEnlacePropagacion.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
-                            {
-                                s.RSSLocal = dblRSSLocal;
-                                s.RSSRemoto = dblRSSRemoto;
-                                s.TiempoPromedio = intTiempoPromedio;
-                                s.CapidadSubida = dblCapacidadSubida;
-                                s.CapidadBajada = dblCapacidadBajada;
-                            });
-                        }
+                        //    Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
+                        //    Int32 intTiempoPromedio;
+                        //    if (txtRSSLocal.Text.Equals(""))
+                        //        dblRSSLocal = 0;
+                        //    else
+                        //        dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
+                        //    if (txtRSSRemoto.Text.Equals(""))
+                        //        dblRSSRemoto = 0;
+                        //    else
+                        //        dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
+                        //    if (txtTiempoPromedio.Text.Equals(""))
+                        //        intTiempoPromedio = 0;
+                        //    else
+                        //        intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                        //    if (txtCapacidadSubida.Text.Equals(""))
+                        //        dblCapacidadSubida = 0;
+                        //    else
+                        //        dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
+                        //    if (txtCapacidadBajada.Text.Equals(""))
+                        //        dblCapacidadBajada = 0;
+                        //    else
+                        //        dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
+                        //    lstMedicionEnlacePropagacion.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
+                        //    {
+                        //        s.RSSLocal = dblRSSLocal;
+                        //        s.RSSRemoto = dblRSSRemoto;
+                        //        s.TiempoPromedio = intTiempoPromedio;
+                        //        s.CapidadSubida = dblCapacidadSubida;
+                        //        s.CapidadBajada = dblCapacidadBajada;
+                        //    });
+                        //}
+
+                        //Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
+                        DocumentoMedicionEnlacePropagacionBE DocumentoMedicionEnlacePropagacion = new DocumentoMedicionEnlacePropagacionBE();
+                        DocumentoMedicionEnlacePropagacion.Documento = Documento;
+                        DocumentoMedicionEnlacePropagacion.NodoA.IdNodo = Tarea.NodoIIBBA.IdNodo;
+                        lstMedicionEnlacePropagacion = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacion);
+
+                        //Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
+                        //gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
+                        //gvMedicionEnlacePropagacion.DataBind();
 
                         Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacion;
                         #endregion
@@ -1132,36 +1176,40 @@ namespace SNW.forms
 
                         #region 4 Medición SPAT
 
-                        #region Medición del Sistema de Puesta a tierra
+                        if (!hfIdDocumento.Value.Equals("000015")){//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
 
-                        #region Medida 1 Valor Medio
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000315").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkMedicionSistemaPuestaTierraMedida01ValorMedio,
-                            hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario, null,
-                            txtMedicionSistemaPuestaTierraMedida01ValorMedio, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                            #region Medición del Sistema de Puesta a tierra
 
-                        #region Medida 2 Valor Medio
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000316").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkMedicionSistemaPuestaTierraMedida02ValorMedio,
-                            hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario, null,
-                            txtMedicionSistemaPuestaTierraMedida02ValorMedio, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                            #region Medida 1 Valor Medio
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000315").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                                chkMedicionSistemaPuestaTierraMedida01ValorMedio,
+                                hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario, null,
+                                txtMedicionSistemaPuestaTierraMedida01ValorMedio, null, null,
+                                Type.GetType("System.Double"));
+                            #endregion
 
-                        #region Medida 3 Valor Medio
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000317").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkMedicionSistemaPuestaTierraMedida03ValorMedio,
-                            hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario, null,
-                            txtMedicionSistemaPuestaTierraMedida03ValorMedio, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                            #region Medida 2 Valor Medio
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000316").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                                chkMedicionSistemaPuestaTierraMedida02ValorMedio,
+                                hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario, null,
+                                txtMedicionSistemaPuestaTierraMedida02ValorMedio, null, null,
+                                Type.GetType("System.Double"));
+                            #endregion
 
-                        #endregion
+                            #region Medida 3 Valor Medio
+                            DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000317").Select(dd => dd).First();
+                            UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                                chkMedicionSistemaPuestaTierraMedida03ValorMedio,
+                                hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario, null,
+                                txtMedicionSistemaPuestaTierraMedida03ValorMedio, null, null,
+                                Type.GetType("System.Double"));
+                            #endregion
+
+                            #endregion
+
+                        }
 
                         #region Medición del Sistema de Puesta a tierra Pararrayos
 
@@ -1221,6 +1269,7 @@ namespace SNW.forms
                             chkMateriales,
                             hfMaterialesComentario);
                         //List<DocumentoMaterialBE> lstDocumentoMaterial2 = new List<DocumentoMaterialBE>();
+
                         //lstDocumentoMaterial = (List<DocumentoMaterialBE>)Session["Materiales"];
 
                         //foreach (GridViewRow item in gvMateriales.Rows)
@@ -1235,15 +1284,20 @@ namespace SNW.forms
                         //        dblCantidad = Convert.ToDouble(txtCantidad.Text);
                         //    lstDocumentoMaterial.Where(w => w.Material.IdValor == strCodigoMaterial).ToList().ForEach(s => s.Cantidad = dblCantidad);
                         //}
-                        DocumentoMaterialBE DocumentoMaterial = new DocumentoMaterialBE();
-                        DocumentoMaterial.Documento = Documento;
-                        lstDocumentoMaterial = DocumentoMaterialBL.ListarDocumentoMaterial(DocumentoMaterial);
-                        Session["Materiales"] = lstDocumentoMaterial;
 
-                        gvMateriales.DataSource = lstDocumentoMaterial;
+                        //Documento.Materiales = lstDocumentoMaterial;
+
+                        DocumentoMaterialBE DocumentoMaterial = new DocumentoMaterialBE();
+                        List<DocumentoMaterialBE> lstDocumentoMaterial2 = new List<DocumentoMaterialBE>();
+                        DocumentoMaterial.Documento = Documento;
+                        lstDocumentoMaterial2 = DocumentoMaterialBL.ListarDocumentoMaterial(DocumentoMaterial);
+                        Session["Materiales"] = lstDocumentoMaterial2;
+
+                        gvMateriales.DataSource = lstDocumentoMaterial2;
                         gvMateriales.DataBind();
 
-                        Documento.Materiales = lstDocumentoMaterial;
+                        Documento.Materiales = lstDocumentoMaterial2;
+
                         #endregion
 
                         #endregion
@@ -1855,8 +1909,12 @@ namespace SNW.forms
                         #endregion
 
                     }
+
                     #endregion
 
+                    Session["MedicionesEnlacePropagacion"] = lstMedicionEnlacePropagacion;
+                    gvMedicionEnlacePropagacion.DataSource = lstMedicionEnlacePropagacion;
+                    gvMedicionEnlacePropagacion.DataBind();
 
                 }
                 else
@@ -1880,7 +1938,25 @@ namespace SNW.forms
                 e.Row.Cells[6].Attributes["data-title"] = "Capacidad Bajada (Mbps)";
 
             }
+            else if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                #region Formato Numeros
+                String strFormatoNumeros = "";
+                foreach (GridViewRow item in gvMedicionEnlacePropagacion.Rows)
+                {
+                    TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                    TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                    TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                    TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                    TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
+                    strFormatoNumeros = strFormatoNumeros + "$('#" + txtRSSLocal.ClientID + "').number(true, 2);$('#" + txtRSSRemoto.ClientID + "').number(true, 2);$('#" + txtTiempoPromedio.ClientID + "').number(true,3);$('#" + txtTiempoPromedio.ClientID + "').keyup(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtTiempoPromedio.ClientID + "').focus(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtCapacidadSubida.ClientID + "').number(true, 3);$('#" + txtCapacidadBajada.ClientID + "').number(true, 3);";
+
+                }
+
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "formatoNumeros", strFormatoNumeros, true);
+                #endregion
+            }
         }
 
         protected void gvEquipamientos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -2010,33 +2086,37 @@ namespace SNW.forms
 
                 #endregion
 
-                #region 2.5. Sistema de Puesta a Tierra instituciones
+                if (!hfIdDocumento.Value.Equals("000015")){//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
 
-                #region Valor Medio Medida 1
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                    #region 2.5. Sistema de Puesta a Tierra Instituciones
+
+                    #region Valor Medio Medida 1
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                     Documento, "000284", chkValorMedioMedida01,
                     hfValorMedioMedida01Comentario, null,
                     txtValorMedioMedida01, null, null,
                     Type.GetType("System.Double"));
-                #endregion
+                    #endregion
 
-                #region Valor Medio Medida 2
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000285", chkValorMedioMedida02,
-                    hfValorMedioMedida02Comentario, null,
-                    txtValorMedioMedida02, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                    #region Valor Medio Medida 2
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                        Documento, "000285", chkValorMedioMedida02,
+                        hfValorMedioMedida02Comentario, null,
+                        txtValorMedioMedida02, null, null,
+                        Type.GetType("System.Double"));
+                    #endregion
 
-                #region Valor Medio Medida 3
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000286", chkValorMedioMedida03,
-                    hfValorMedioMedida03Comentario, null,
-                    txtValorMedioMedida03, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                    #region Valor Medio Medida 3
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                        Documento, "000286", chkValorMedioMedida03,
+                        hfValorMedioMedida03Comentario, null,
+                        txtValorMedioMedida03, null, null,
+                        Type.GetType("System.Double"));
+                    #endregion
 
-                #endregion
+                    #endregion
+
+                }
 
                 #region 2.6. Característica de Propagación
 
@@ -2054,29 +2134,29 @@ namespace SNW.forms
                     hfFrecuenciaComentario, ddlFrecuencia, null, null);
                 #endregion
 
-                #region Ancho de banda de canal (MHz)
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000288", chkAnchoBandaCanal,
-                    hfAnchoBandaCanalComentario, null,
-                    txtAnchoBandaCanal, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Ancho de banda de canal (MHz)
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000288", chkAnchoBandaCanal,
+                //    hfAnchoBandaCanalComentario, null,
+                //    txtAnchoBandaCanal, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region Azimuth (X°)
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000007", chkAzimuth,
-                    hfAzimuthComentario, null,
-                    txtAzimuth, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Azimuth (X°)
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000007", chkAzimuth,
+                //    hfAzimuthComentario, null,
+                //    txtAzimuth, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region Elevación (Y°)
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000289", chkElevacion,
-                    hfElevacionComentario, null,
-                    txtElevacion, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Elevación (Y°)
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000289", chkElevacion,
+                //    hfElevacionComentario, null,
+                //    txtElevacion, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
                 #endregion
 
@@ -2099,8 +2179,8 @@ namespace SNW.forms
                     TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
                     TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
-                    Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
-                    Int32 intTiempoPromedio;
+                    Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada, dblTiempoPromedio;
+                    //Int32 intTiempoPromedio;
                     if (txtRSSLocal.Text.Equals(""))
                         dblRSSLocal = 0;
                     else
@@ -2110,9 +2190,10 @@ namespace SNW.forms
                     else
                         dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
                     if (txtTiempoPromedio.Text.Equals(""))
-                        intTiempoPromedio = 0;
+                        //intTiempoPromedio = 0;
+                        dblTiempoPromedio = 0;
                     else
-                        intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                        dblTiempoPromedio = Convert.ToDouble(txtTiempoPromedio.Text);
                     if (txtCapacidadSubida.Text.Equals(""))
                         dblCapacidadSubida = 0;
                     else
@@ -2125,7 +2206,8 @@ namespace SNW.forms
                     {
                         s.RSSLocal = dblRSSLocal;
                         s.RSSRemoto = dblRSSRemoto;
-                        s.TiempoPromedio = intTiempoPromedio;
+                        //s.TiempoPromedio = intTiempoPromedio;
+                        s.TiempoPromedio = dblTiempoPromedio;
                         s.CapidadSubida = dblCapacidadSubida;
                         s.CapidadBajada = dblCapacidadBajada;
                     });
@@ -2376,33 +2458,38 @@ namespace SNW.forms
 
                 #region 4 Medición SPAT
 
-                #region Medición del Sistema de Puesta a tierra
+                if (!hfIdDocumento.Value.Equals("000015")){//ACTA DE INSTALACION - ACEPTACION PROTOCOLO IIBB TIPO A
 
-                #region Medida 1 Valor Medio
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                    #region Medición del Sistema de Puesta a tierra
+
+                    #region Medida 1 Valor Medio
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
                     Documento, "000315", chkMedicionSistemaPuestaTierraMedida01ValorMedio,
                     hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario, null,
                     txtMedicionSistemaPuestaTierraMedida01ValorMedio, null, null,
                     Type.GetType("System.Double"));
-                #endregion
+                    #endregion
 
-                #region Medida 2 Valor Medio
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000316", chkMedicionSistemaPuestaTierraMedida02ValorMedio,
-                    hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario, null,
-                    txtMedicionSistemaPuestaTierraMedida02ValorMedio, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                    #region Medida 2 Valor Medio
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                        Documento, "000316", chkMedicionSistemaPuestaTierraMedida02ValorMedio,
+                        hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario, null,
+                        txtMedicionSistemaPuestaTierraMedida02ValorMedio, null, null,
+                        Type.GetType("System.Double"));
+                    #endregion
 
-                #region Medida 3 Valor Medio
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000317", chkMedicionSistemaPuestaTierraMedida03ValorMedio,
-                    hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario, null,
-                    txtMedicionSistemaPuestaTierraMedida03ValorMedio, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                    #region Medida 3 Valor Medio
+                    UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                        Documento, "000317", chkMedicionSistemaPuestaTierraMedida03ValorMedio,
+                        hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario, null,
+                        txtMedicionSistemaPuestaTierraMedida03ValorMedio, null, null,
+                        Type.GetType("System.Double"));
+                    #endregion
 
-                #endregion
+                    #endregion
+
+                }
+
 
                 #region Medición del Sistema de Puesta a tierra Pararrayos
 

@@ -1616,7 +1616,9 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("EQUIPAMIENTO AIO");
                 file.WriteLine("----------------");
-                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS' AND [NUMERO DE SERIE] <> '-' AND [NUMERO DE SERIE] <> ''", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS' ", conexionExcel);
+                /*AND [NUMERO DE SERIE] <> '-' AND [NUMERO DE SERIE] <> '' | (EXTRACTO QUE SIRVE PARA EVITAR  QUE SE PROCESE EQUIPOS SIN
+                SERIAL)*/
                 try
                 {
                     blnErrorTabla = false;
@@ -1653,7 +1655,7 @@ namespace BusinessLogic
                             }
 
 
-                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "NUMERO DE SERIE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "NUMERO DE SERIE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
                             if (blnErrorDatoTemp)
                                 blnErrorDato = blnErrorDatoTemp;
                             if (blnErrorCampoTemp)
@@ -1822,7 +1824,8 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("KIT CDTEL APURIMAC");
                 file.WriteLine("------------------");
-                Command = new OleDbCommand("SELECT * FROM [KIT CDTEL APURIMAC$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
+                //Command = new OleDbCommand("SELECT * FROM [KIT CDTEL APURIMAC$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [KIT CDTEL APURIMAC$] WHERE [CODIGO GILAT] = 'SWITCH-CMP-0006'", conexionExcel);
                 try
                 {
                     blnErrorTabla = false;
@@ -1922,7 +1925,8 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("CDTEL HCVA - AYA");
                 file.WriteLine("----------------");
-                Command = new OleDbCommand("SELECT * FROM [CDTEL HCVA - AYA$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
+                //Command = new OleDbCommand("SELECT * FROM [CDTEL HCVA - AYA$] WHERE [CODIGO GILAT] = 'OS6450-BP-D'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [CDTEL HCVA - AYA$] WHERE [CODIGO GILAT] = 'SWITCH-CMP-0006'", conexionExcel);
                 try
                 {
                     blnErrorTabla = false;

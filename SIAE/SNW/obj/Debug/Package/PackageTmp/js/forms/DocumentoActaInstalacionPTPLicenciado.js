@@ -363,7 +363,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionA').val(fileNames);
@@ -430,7 +430,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionB').val(fileNames);
@@ -497,7 +497,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionLANEstacionA01').val(fileNames);
@@ -564,7 +564,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionLANEstacionA02').val(fileNames);
@@ -631,7 +631,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionLANEstacionA03').val(fileNames);
@@ -698,7 +698,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionLANEstacionB01').val(fileNames);
@@ -765,7 +765,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionLANEstacionB02').val(fileNames);
@@ -832,7 +832,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionLANEstacionB03').val(fileNames);
@@ -899,7 +899,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionEthernetSwitchEstacionA01').val(fileNames);
@@ -966,7 +966,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionEthernetSwitchEstacionA02').val(fileNames);
@@ -1033,7 +1033,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionEthernetSwitchEstacionB01').val(fileNames);
@@ -1100,7 +1100,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionEthernetSwitchEstacionB02').val(fileNames);
@@ -1167,7 +1167,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionA').val(fileNames);
@@ -1234,7 +1234,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionB').val(fileNames);
@@ -1425,6 +1425,7 @@
 
     // #endregion
 
+    /*
     // #region 4 Longitud SFTP
 
     // #region Estación A
@@ -1700,6 +1701,7 @@
     // #endregion
 
     // #endregion
+    */
 
     // #region 5 Asignaciones y Observaciones
 
@@ -2021,7 +2023,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfIngenieria').val(fileNames);
@@ -2088,7 +2090,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPerfil').val(fileNames);
@@ -2159,7 +2161,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionA').val(fileNames);
@@ -2226,7 +2228,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionB').val(fileNames);

@@ -37,6 +37,16 @@
 
     $("#cphContenido_chkTiempoPrueba").trigger("change");
 
+    $("#cphContenido_txtTiempoPrueba").number(true,3);
+
+    $("#cphContenido_txtTiempoPrueba").keyup(function () {
+        $.fn.validarTxtTiempoPrueba();
+    });
+
+    $("#cphContenido_txtTiempoPrueba").focus(function () {
+        $.fn.validarTxtTiempoPrueba();
+    });
+
     // #endregion
 
     // #region Retardo Mín. (RTT) (s)
@@ -71,6 +81,8 @@
     });
 
     $("#cphContenido_chkRetardoMinimo").trigger("change");
+
+    $("#cphContenido_txtRetardoMinimo").number(true,3);
 
     // #endregion
 
@@ -107,8 +119,10 @@
 
     $("#cphContenido_chkRetardoMaximo").trigger("change");
 
+    $("#cphContenido_txtRetardoMaximo").number(true,3);
+
     // #endregion
-    
+
     // #region Retardo Prom. (RTT) (s)
 
     $('#cphContenido_chkRetardoPromedio').change(function () {
@@ -141,6 +155,16 @@
     });
 
     $("#cphContenido_chkRetardoPromedio").trigger("change");
+
+    $("#cphContenido_txtRetardoPromedio").number(true,3);
+
+    $("#cphContenido_txtRetardoPromedio").keyup(function () {
+        $.fn.validarTxtRetardoPromedio();
+    });
+
+    $("#cphContenido_txtRetardoPromedio").focus(function () {
+        $.fn.validarTxtRetardoPromedio();
+    });
 
     // #endregion
 
@@ -177,6 +201,8 @@
 
     $("#cphContenido_chkJitterPromedio").trigger("change");
 
+    $("#cphContenido_txtJitterPromedio").number(true,3);
+
     // #endregion
 
     // #region Desv. Estan. Retardo (s)
@@ -211,6 +237,8 @@
     });
 
     $("#cphContenido_chkDesviacionEstandarRetardo").trigger("change");
+
+    $("#cphContenido_txtDesviacionEstandarRetardo").number(true,3);
 
     // #endregion
 
@@ -247,6 +275,8 @@
 
     $("#cphContenido_chkBytesRecibidos").trigger("change");
 
+    $("#cphContenido_txtBytesRecibidos").number(true,3);
+
     // #endregion
 
     // #region Throughput Prom. (Kbps)
@@ -282,6 +312,16 @@
 
     $("#cphContenido_chkThroughputPromedio").trigger("change");
 
+    $("#cphContenido_txtThroughputPromedio").number(true,3);
+
+    $("#cphContenido_txtThroughputPromedio").keyup(function () {
+        $.fn.validarTxtThroughputPromedio();
+    });
+
+    $("#cphContenido_txtThroughputPromedio").focus(function () {
+        $.fn.validarTxtThroughputPromedio();
+    });
+
     // #endregion
 
     // #region Descarte Paquetes
@@ -316,6 +356,16 @@
     });
 
     $("#cphContenido_chkDescartePaquetes").trigger("change");
+
+    $("#cphContenido_txtDescartePaquetes").number(true,3);
+
+    $("#cphContenido_txtDescartePaquetes").keyup(function () {
+        $.fn.validarTxtDescartePaquetes();
+    });
+
+    $("#cphContenido_txtDescartePaquetes").focus(function () {
+        $.fn.validarTxtDescartePaquetes();
+    });
 
     // #endregion
 
@@ -363,7 +413,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 start: function (filesPending) { },
                 startFile: function (fileObj) { },
@@ -435,7 +485,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingHaciaCPEDesdeNodoA').val(fileNames);
@@ -504,7 +554,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -576,7 +626,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 start: function (filesPending) { },
                 startFile: function (fileObj) { },
@@ -649,7 +699,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda01').val(fileNames);
@@ -716,7 +766,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda02').val(fileNames);
@@ -783,7 +833,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda03').val(fileNames);
@@ -850,7 +900,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda04').val(fileNames);
@@ -917,7 +967,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda05').val(fileNames);
@@ -984,7 +1034,7 @@
             allowedExtensions: ['png', 'jpg'],
             fileType: 6,
             minWidthDimension: 1366,
-            minHeightDimension: 760,
+            minHeightDimension: 768,
             listeners: {
                 finish: function (fileNames, fileList) {
                     $('#cphContenido_hfPingTodosUsuariosSoloMicroonda06').val(fileNames);
@@ -1053,7 +1103,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1080,7 +1130,7 @@
     $("#cphContenido_chkDireccionesMAC").trigger("change");
 
     // #endregion
-    
+
     // #region Resultado Prueba DITG
 
     $('#cphContenido_chkResultadoPruebaDITG').change(function () {
@@ -1123,7 +1173,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             start: function (filesPending) { },
             startFile: function (fileObj) { },
@@ -1152,6 +1202,33 @@
     // #endregion
 
     // #endregion
+
+    $("#cphContenido_btnGuardar").click(function () {
+        //Validamos los campos
+        var hasErrors = false;
+        var cantError = 0;
+
+        var hasErrors = $.fn.validarTxtTiempoPrueba();
+        if (hasErrors)
+            cantError++;
+        var hasErrors = $.fn.validarTxtRetardoPromedio();
+        if (hasErrors)
+            cantError++;
+        var hasErrors = $.fn.validarTxtThroughputPromedio();
+        if (hasErrors)
+            cantError++;
+        var hasErrors = $.fn.validarTxtDescartePaquetes();
+        if (hasErrors)
+            cantError++;
+
+        if (cantError == 0)
+            return true;
+        else {
+            openAlert('#divAlert', '#divAlertHeader', 'modal-header-danger', '#lblAlertTitle', 'Error', '#lblAlertBody', 'Algunos datos nos son válidos favor revisar antes de intentar guardar.', true, true);
+            return false;
+        }
+
+    });
 
     // #region Cerrar todos los popovers cuando se da click fuera de uno
 
@@ -1257,6 +1334,248 @@
         $('#txtDireccionesMACComentario').prop('disabled', true);
         $('#txtResultadoPruebaDITGComentario').prop('disabled', true);
 
+    }
+
+    // #endregion
+
+    // #region Metodos
+
+    $.fn.validarTxtTiempoPrueba = function () {
+        var hasErrors = false;
+        var dblTiempoPrueba = 0;
+        var strTiempoPrueba = "0";
+
+        if (!($("#cphContenido_txtTiempoPrueba").val() == "")) {
+            strTiempoPrueba = $("#cphContenido_txtTiempoPrueba").val().replace(",", "");
+            dblTiempoPrueba = parseFloat(strTiempoPrueba);
+
+            if (dblTiempoPrueba < 599.00 || dblTiempoPrueba > 600.99) {
+                hasErrors = true;
+                $("#cphContenido_txtTiempoPrueba").addClass('invalid');
+                $("#igaTiempoPruebaComentario").addClass('invalid');
+                $("#igabTiempoPrueba").addClass('invalid');
+                $("#cphContenido_txtTiempoPrueba").attr("title", "Error");
+                $("#cphContenido_txtTiempoPrueba").attr("data-content", "El número debe estar comprendido entre 599 y 600.99.");
+                $("#cphContenido_txtTiempoPrueba").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtTiempoPrueba").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtTiempoPrueba").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtTiempoPrueba").removeClass('invalid');
+                $("#igaTiempoPruebaComentario").removeClass('invalid');
+                $("#igabTiempoPrueba").removeClass('invalid');
+                $("#cphContenido_txtTiempoPrueba").popover('destroy');
+            }
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtRetardoPromedio = function () {
+        var hasErrors = false;
+        var dblRetardoPromedio = 0;
+        var strRetardoPromedio = "0";
+
+        if (!($("#cphContenido_txtRetardoPromedio").val() == "")) {
+            strRetardoPromedio = $("#cphContenido_txtRetardoPromedio").val().replace(",", "");
+            dblRetardoPromedio = parseFloat(strRetardoPromedio);
+
+            if (($("#cphContenido_hfIdDocumento").val() == "000010")) {//ANEXO 01 PRUEBAS DE SERVICIO DITG PTP
+                if (($("#cphContenido_hfIdTipoTarea").val() == "000006")) {//NO LICENCIADO
+                    if (dblRetardoPromedio < 6 || dblRetardoPromedio > 10) {
+                        hasErrors = true;
+                        $("#cphContenido_txtRetardoPromedio").addClass('invalid');
+                        $("#igaRetardoPromedioComentario").addClass('invalid');
+                        $("#igabRetardoPromedio").addClass('invalid');
+                        $("#cphContenido_txtRetardoPromedio").attr("title", "Error");
+                        $("#cphContenido_txtRetardoPromedio").attr("data-content", "El número debe estar comprendido entre 6 y 10.");
+                        $("#cphContenido_txtRetardoPromedio").popover('show');
+                        setTimeout(function () {
+                            $("#cphContenido_txtRetardoPromedio").popover('hide');
+                        }, 4000);
+                        $("#cphContenido_txtRetardoPromedio").next().addClass('danger');
+                    }
+                    else {
+                        hasErrors = false;
+                        $("#cphContenido_txtRetardoPromedio").removeClass('invalid');
+                        $("#igaRetardoPromedioComentario").removeClass('invalid');
+                        $("#igabRetardoPromedio").removeClass('invalid');
+                        $("#cphContenido_txtRetardoPromedio").popover('destroy');
+                    }
+                }
+                else if (($("#cphContenido_hfIdTipoTarea").val() == "000004")) {//LICENCIADO
+                    console.log("validarTxtRetardoPromedio dblRetardoPromedio = " + dblRetardoPromedio);
+                    if (dblRetardoPromedio > 2.6) {
+                        hasErrors = true;
+                        $("#cphContenido_txtRetardoPromedio").addClass('invalid');
+                        $("#igaRetardoPromedioComentario").addClass('invalid');
+                        $("#igabRetardoPromedio").addClass('invalid');
+                        $("#cphContenido_txtRetardoPromedio").attr("title", "Error");
+                        $("#cphContenido_txtRetardoPromedio").attr("data-content", "El número debe ser menor o igual a 2.6.");
+                        $("#cphContenido_txtRetardoPromedio").popover('show');
+                        setTimeout(function () {
+                            $("#cphContenido_txtRetardoPromedio").popover('hide');
+                        }, 4000);
+                        $("#cphContenido_txtRetardoPromedio").next().addClass('danger');
+                    }
+                    else {
+                        hasErrors = false;
+                        $("#cphContenido_txtRetardoPromedio").removeClass('invalid');
+                        $("#igaRetardoPromedioComentario").removeClass('invalid');
+                        $("#igabRetardoPromedio").removeClass('invalid');
+                        $("#cphContenido_txtRetardoPromedio").popover('destroy');
+                    }
+                }
+
+            }
+            else if (($("#cphContenido_hfIdDocumento").val() == "000011")) {//ANEXO 01 PRUEBAS DE SERVICIO DITG PMP
+                if (dblRetardoPromedio < 15 || dblRetardoPromedio > 20) {
+                    hasErrors = true;
+                    $("#cphContenido_txtRetardoPromedio").addClass('invalid');
+                    $("#igaRetardoPromedioComentario").addClass('invalid');
+                    $("#igabRetardoPromedio").addClass('invalid');
+                    $("#cphContenido_txtRetardoPromedio").attr("title", "Error");
+                    $("#cphContenido_txtRetardoPromedio").attr("data-content", "El número debe estar comprendido entre 15 y 20.");
+                    $("#cphContenido_txtRetardoPromedio").popover('show');
+                    setTimeout(function () {
+                        $("#cphContenido_txtRetardoPromedio").popover('hide');
+                    }, 4000);
+                    $("#cphContenido_txtRetardoPromedio").next().addClass('danger');
+                }
+                else {
+                    hasErrors = false;
+                    $("#cphContenido_txtRetardoPromedio").removeClass('invalid');
+                    $("#igaRetardoPromedioComentario").removeClass('invalid');
+                    $("#igabRetardoPromedio").removeClass('invalid');
+                    $("#cphContenido_txtRetardoPromedio").popover('destroy');
+                }
+            }
+        }
+
+        return hasErrors;
+    }
+
+    $.fn.validarTxtThroughputPromedio = function () {
+        var hasErrors = false;
+        var intThroughputPromedio = 0;
+        var strThroughputPromedio = "0";
+
+        if (!($("#cphContenido_txtThroughputPromedio").val() == "")) {
+            strThroughputPromedio = $("#cphContenido_txtThroughputPromedio").val().replace(",", "");
+            intThroughputPromedio = parseInt(strThroughputPromedio);
+
+            if (($("#cphContenido_hfIdDocumento").val() == "000011")) {//ANEXO 01 PRUEBAS DE SERVICIO DITG PMP
+                if (intThroughputPromedio <= 5000) {
+                    hasErrors = true;
+                    $("#cphContenido_txtThroughputPromedio").addClass('invalid');
+                    $("#igaThroughputPromedioComentario").addClass('invalid');
+                    $("#igabThroughputPromedio").addClass('invalid');
+                    $("#cphContenido_txtThroughputPromedio").attr("title", "Error");
+                    $("#cphContenido_txtThroughputPromedio").attr("data-content", "El número debe ser mayor a 5000.");
+                    $("#cphContenido_txtThroughputPromedio").popover('show');
+                    setTimeout(function () {
+                        $("#cphContenido_txtThroughputPromedio").popover('hide');
+                    }, 4000);
+                    $("#cphContenido_txtThroughputPromedio").next().addClass('danger');
+                }
+                else {
+                    hasErrors = false;
+                    $("#cphContenido_txtThroughputPromedio").removeClass('invalid');
+                    $("#igaThroughputPromedioComentario").removeClass('invalid');
+                    $("#igabThroughputPromedio").removeClass('invalid');
+                    $("#cphContenido_txtThroughputPromedio").popover('destroy');
+                }
+            }
+        }
+        return hasErrors;
+    }
+
+    $.fn.validarTxtDescartePaquetes = function () {
+        var hasErrors = false;
+        var intDescartePaquetes = 0;
+        var strDescartePaquetes = "0";
+
+        if (!($("#cphContenido_txtDescartePaquetes").val() == "")) {
+            strDescartePaquetes = $("#cphContenido_txtDescartePaquetes").val().replace(",", "");
+            intDescartePaquetes = parseInt(strDescartePaquetes);
+        }
+
+        if (($("#cphContenido_hfIdDocumento").val() == "000010")) {//ANEXO 01 PRUEBAS DE SERVICIO DITG PTP
+            if (($("#cphContenido_hfIdTipoTarea").val() == "000006")) {//NO LICENCIADO
+                if (intDescartePaquetes > 2) {
+                    hasErrors = true;
+                    $("#cphContenido_txtDescartePaquetes").addClass('invalid');
+                    $("#igaDescartePaquetesComentario").addClass('invalid');
+                    $("#igabDescartePaquetes").addClass('invalid');
+                    $("#cphContenido_txtDescartePaquetes").attr("title", "Error");
+                    $("#cphContenido_txtDescartePaquetes").attr("data-content", "El número debe ser menor o igual a 2.");
+                    $("#cphContenido_txtDescartePaquetes").popover('show');
+                    setTimeout(function () {
+                        $("#cphContenido_txtDescartePaquetes").popover('hide');
+                    }, 4000);
+                    $("#cphContenido_txtDescartePaquetes").next().addClass('danger');
+                }
+                else {
+                    hasErrors = false;
+                    $("#cphContenido_txtDescartePaquetes").removeClass('invalid');
+                    $("#igaDescartePaquetesComentario").removeClass('invalid');
+                    $("#igabDescartePaquetes").removeClass('invalid');
+                    $("#cphContenido_txtDescartePaquetes").popover('destroy');
+                }
+            }
+            else if (($("#cphContenido_hfIdTipoTarea").val() == "000004")) {//LICENCIADO
+                if (intDescartePaquetes > 0) {
+                    hasErrors = true;
+                    $("#cphContenido_txtDescartePaquetes").addClass('invalid');
+                    $("#igaDescartePaquetesComentario").addClass('invalid');
+                    $("#igabDescartePaquetes").addClass('invalid');
+                    $("#cphContenido_txtDescartePaquetes").attr("title", "Error");
+                    $("#cphContenido_txtDescartePaquetes").attr("data-content", "El número debe ser menor o igual a 0.");
+                    $("#cphContenido_txtDescartePaquetes").popover('show');
+                    setTimeout(function () {
+                        $("#cphContenido_txtDescartePaquetes").popover('hide');
+                    }, 4000);
+                    $("#cphContenido_txtDescartePaquetes").next().addClass('danger');
+                }
+                else {
+                    hasErrors = false;
+                    $("#cphContenido_txtDescartePaquetes").removeClass('invalid');
+                    $("#igaDescartePaquetesComentario").removeClass('invalid');
+                    $("#igabDescartePaquetes").removeClass('invalid');
+                    $("#cphContenido_txtDescartePaquetes").popover('destroy');
+                }
+            }
+
+        }
+        else if (($("#cphContenido_hfIdDocumento").val() == "000011")) {//ANEXO 01 PRUEBAS DE SERVICIO DITG PMP
+            if (intDescartePaquetes > 2) {
+                hasErrors = true;
+                $("#cphContenido_txtDescartePaquetes").addClass('invalid');
+                $("#igaDescartePaquetesComentario").addClass('invalid');
+                $("#igabDescartePaquetes").addClass('invalid');
+                $("#cphContenido_txtDescartePaquetes").attr("title", "Error");
+                $("#cphContenido_txtDescartePaquetes").attr("data-content", "El número debe ser menor o igual a 3.");
+                $("#cphContenido_txtDescartePaquetes").popover('show');
+                setTimeout(function () {
+                    $("#cphContenido_txtDescartePaquetes").popover('hide');
+                }, 4000);
+                $("#cphContenido_txtDescartePaquetes").next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                $("#cphContenido_txtDescartePaquetes").removeClass('invalid');
+                $("#igaDescartePaquetesComentario").removeClass('invalid');
+                $("#igabDescartePaquetes").removeClass('invalid');
+                $("#cphContenido_txtDescartePaquetes").popover('destroy');
+            }
+        }
+
+        
+
+        return hasErrors;
     }
 
     // #endregion

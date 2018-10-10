@@ -53,7 +53,7 @@
             <br />
             <div class="row" id="divLog" runat="server" visible="false">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                    <a id="lnkLog" runat="server" class="btn btn-block btn-success" download><span class="fa fa-cloud-download"></span> Descargar log</a>
+                    <a id="lnkLog" runat="server" class="btn btn-block btn-success" target="_blank"><span class="fa fa-cloud-download"></span> Descargar log</a>
                 </div>
             </div>
             

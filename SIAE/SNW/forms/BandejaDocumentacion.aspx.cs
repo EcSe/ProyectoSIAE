@@ -19,13 +19,13 @@ namespace SNW.forms
             {
                 UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
                 #region Asignar el contratista
-                if (!Usuario.Perfil.IdValor.Equals("000001"))
+                if (!Usuario.Perfil.IdValor.Equals("000001")) //Rev aqui se cae el codigo cuando pasa mucho tiempo
                 {
                     txtContratista.ReadOnly = true;
                     //txtContratista.Text = Usuario.Contratista.NombreCompleto;
                     //hfIdContratista.Value = Usuario.Contratista.TipoDocumento.IdValor + Usuario.Contratista.NumeroDocumento;
                     txtContratista.Text = Usuario.Contratista.ValorCadena1;
-                    hfIdContratista.Value = Usuario.Contratista.IdValor;
+                    hfIdContratista.Value = Usuario.Contratista.IdValor;    
                 }
                 #endregion
 
@@ -108,7 +108,7 @@ namespace SNW.forms
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
 		 LinkButton btnExportar = (LinkButton)sender;
-            GridViewRow gvrTarea = (GridViewRow)btnExportar.NamingContainer;
+            GridViewRow gvrDocumento = (GridViewRow)btnExportar.NamingContainer;
             DocumentoBE documento = new DocumentoBE();
 
 
@@ -117,12 +117,16 @@ namespace SNW.forms
             rutaVirtualTemporalBE.IdValor = "RUTA_VIRT_TEMP";
             rutaVirtualTemporalBE = EntidadDetalleBL.ListarEntidadDetalle(rutaVirtualTemporalBE)[0];
 
-            documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Tarea_IdTarea"].ToString();
-            documento.Documento.IdValor = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_IdValor"].ToString();
-            documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrTarea.RowIndex]["Documento_ValorCadena1"].ToString();
-            // documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();  NodoIIBBA_IdNodo
-            //documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrRegistro.RowIndex]["Tarea_IdNodo"].ToString();
-            documento.Tarea.NodoIIBBA.IdNodo = gvTareas.DataKeys[gvrTarea.RowIndex]["NodoIIBBA_IdNodo"].ToString();
+            //documento.Tarea.IdTarea = gvDocumentos.DataKeys[gvrDocumento.RowIndex]["IdTarea"].ToString();
+            documento.Tarea.IdTarea = Session["Tarea.IdTarea"].ToString();
+            documento.Documento.IdValor = gvDocumentos.DataKeys[gvrDocumento.RowIndex]["Documento_IdValor"].ToString();
+            documento.Documento.ValorCadena1 = gvDocumentos.DataKeys[gvrDocumento.RowIndex]["Documento_ValorCadena1"].ToString();
+
+            //documento.Tarea.NodoIIBBA.IdNodo = gvDocumentos.DataKeys[gvrDocumento.RowIndex]["NodoIIBBA_IdNodo"].ToString();
+            documento.Tarea.NodoIIBBA.IdNodo = Session["Tarea.NodoIIBBA.IdNodo"].ToString();
+            //documento.Tarea.TipoNodoA.ValorCadena1 = gvDocumentos.DataKeys[gvrDocumento.RowIndex]["Tarea_Tipo_NodoA"].ToString();
+            documento.Tarea.TipoNodoA.ValorCadena1 = Session["Tarea.TipoNodoA.ValorCadena1"].ToString();
+
 
             ReporteDocumentosBL rd = new ReporteDocumentosBL();
 
@@ -201,14 +205,33 @@ namespace SNW.forms
 
                     break;
                 case "000013":
-                    rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadAcceso.xlsx");
-                    rd.ActaSeguridadAcceso(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                  
+
+                    if (documento.Tarea.TipoNodoA.ValorCadena1.Equals("DISTRIBUCION") ||
+                        documento.Tarea.TipoNodoA.ValorCadena1.Equals("DISTRITAL"))
+                    {
+                        rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadAccesoDistritalDistribucion.xlsx");
+                        rd.ActaSeguridadAcceso(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                    }
+                    else
+                    {
+                        rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadAccesoIntermedioTerminal.xlsx");
+                        rd.ActaSeguridadAcceso(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                    }
 
                     break;
                 case "000014":
-                    rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadDistribucion.xlsx");
-                    rd.ActaSeguridadDistribucion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
-
+                    if (documento.Tarea.TipoNodoA.ValorCadena1.Equals("DISTRIBUCION") ||
+                       documento.Tarea.TipoNodoA.ValorCadena1.Equals("DISTRITAL"))
+                    {
+                        rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadDistribucionDistritalDistribucion.xlsx");
+                        rd.ActaSeguridadDistribucion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                    }
+                    else
+                    {
+                        rutaPlantilla = Server.MapPath("~/Reportes/ActaSeguridadDistribucionIntermedioTerminal.xlsx");
+                        rd.ActaSeguridadDistribucion(documento.Tarea.NodoIIBBA.IdNodo, documento.Tarea.IdTarea, documento.Documento.ValorCadena1, rutaPlantilla);
+                    }
                     break;
                 case "000015":
                     rutaPlantilla = Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_A.xlsx");
@@ -249,6 +272,11 @@ namespace SNW.forms
             Documento.Tarea.IdTarea = gvTareas.DataKeys[gvrTarea.RowIndex]["IdTarea"].ToString();
             Documento.Tarea.TipoTarea.ValorCadena1 = gvTareas.DataKeys[gvrTarea.RowIndex]["TipoTarea_ValorCadena1"].ToString();
             Documento.Tarea.NodoIIBBA.IdNodo = gvTareas.DataKeys[gvrTarea.RowIndex]["NodoIIBBA_IdNodo"].ToString();
+
+            Session["Tarea.IdTarea"] = Documento.Tarea.IdTarea;
+            Session["Tarea.NodoIIBBA.IdNodo"] = Documento.Tarea.NodoIIBBA.IdNodo;
+            Session["Tarea.TipoNodoA.ValorCadena1"] = gvTareas.DataKeys[gvrTarea.RowIndex][3].ToString();
+
             //hfMetodo.Value = "U";//Update
             //LimpiarPopup();
             //InicializarPopup();

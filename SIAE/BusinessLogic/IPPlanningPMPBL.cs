@@ -1,16 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BusinessEntity;
 using DataAccess;
 using System.Data;
+using System.Data.Common;
 
 namespace BusinessLogic
 {
     public class IPPlanningPMPBL
     {
+        public static List<IPPlanningPMPBE> ListarIPPlanningPMP(IPPlanningPMPBE IPPlanningPMP)
+        {
+            List<IPPlanningPMPBE> lstResultadosBE = new List<IPPlanningPMPBE>();
+            DBBaseDatos baseDatosDA = new DBBaseDatos();
+            baseDatosDA.Configurar();
+            baseDatosDA.Conectar();
+            try
+            {
+                baseDatosDA.CrearComando("USP_IP_PLANNING_PMP", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "S", true);
+                if (IPPlanningPMP.Nodo.IdNodo.Equals(""))
+                    baseDatosDA.AsignarParametroNulo("@PCH_ID_NODO", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PCH_ID_NODO", IPPlanningPMP.Nodo.IdNodo, true);
+
+                DbDataReader drDatos = baseDatosDA.EjecutarConsulta();
+
+                while (drDatos.Read())
+                {
+                    IPPlanningPMPBE item = new IPPlanningPMPBE();
+
+                    item.Nodo.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO"));
+                    item.DefaultGateway = drDatos.GetString(drDatos.GetOrdinal("VC_DEF_GATEWAY"));
+
+                    lstResultadosBE.Add(item);
+                }
+
+                drDatos.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                baseDatosDA.Desconectar();
+                baseDatosDA = null;
+            }
+
+            return lstResultadosBE;
+        }
+
         public static void InsertarIPPlanningPMPProceso(IPPlanningPMPBE IPPlanningPMP, DBBaseDatos BaseDatos = null)
         {
             DBBaseDatos baseDatosDA = new DBBaseDatos();

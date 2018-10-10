@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using BusinessEntity;
 using BusinessLogic;
 using System.Web.UI.HtmlControls;
+using System.IO;
+using System.IO.Compression;
 
 namespace SNW.forms
 {
@@ -56,9 +58,19 @@ namespace SNW.forms
 
             ZipBL zip = new ZipBL();
 
+            //DESCARGA LAS IMAGENES DENTRO DE SUS CARPETAS ZIPS RESPECTIVAS
             zip.DescargarZip(documento.Tarea.NodoIIBBA.IdNodo);
 
+
+            //DESCARGA LOS EXCELS DENTRO DE LAS CARPETAS RESPECTIVAS PARA SU POSTERIOR ZIPEADO
+            // zip.DescargarExcelInZip(documento.Tarea.NodoIIBBA.IdNodo);
+
+          /*  String ruta = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\";
+
+            ZipFile.CreateFromDirectory(ruta + documento.Tarea.NodoIIBBA.IdNodo, ruta + documento.Tarea.NodoIIBBA.IdNodo + ".zip", CompressionLevel.Fastest, true);
+            */
             String nombreCarpetaZip = documento.Tarea.NodoIIBBA.IdNodo + ".zip";
+
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "impresion", "window.open('" + rutaVirtualTemporalBE.ValorCadena1 + "/" + nombreCarpetaZip + "');", true);
 
         }

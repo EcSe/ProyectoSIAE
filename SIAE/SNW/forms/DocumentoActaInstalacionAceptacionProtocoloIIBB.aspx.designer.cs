@@ -373,87 +373,6 @@ namespace SNW.forms {
         protected global::System.Web.UI.WebControls.DropDownList ddlFrecuencia;
         
         /// <summary>
-        /// Control chkAnchoBandaCanal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAnchoBandaCanal;
-        
-        /// <summary>
-        /// Control hfAnchoBandaCanalComentario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfAnchoBandaCanalComentario;
-        
-        /// <summary>
-        /// Control txtAnchoBandaCanal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnchoBandaCanal;
-        
-        /// <summary>
-        /// Control chkAzimuth.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAzimuth;
-        
-        /// <summary>
-        /// Control hfAzimuthComentario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfAzimuthComentario;
-        
-        /// <summary>
-        /// Control txtAzimuth.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAzimuth;
-        
-        /// <summary>
-        /// Control chkElevacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkElevacion;
-        
-        /// <summary>
-        /// Control hfElevacionComentario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfElevacionComentario;
-        
-        /// <summary>
-        /// Control txtElevacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtElevacion;
-        
-        /// <summary>
         /// Control chkMedicionEnlacePropagacion.
         /// </summary>
         /// <remarks>
@@ -3298,6 +3217,15 @@ namespace SNW.forms {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfMonitorMuestraConectividadNodoTerminalComentario;
         
         /// <summary>
+        /// Control lblMonitorMuestraConectividadNodoTerminal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblMonitorMuestraConectividadNodoTerminal;
+        
+        /// <summary>
         /// Control hfMonitorMuestraConectividadNodoTerminal.
         /// </summary>
         /// <remarks>
@@ -3332,6 +3260,15 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfMonitorMuestraConectividadNodoDistritalCabeceraComentario;
+        
+        /// <summary>
+        /// Control lblMonitorMuestraConectividadNodoDistritalCabecera.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblMonitorMuestraConectividadNodoDistritalCabecera;
         
         /// <summary>
         /// Control hfMonitorMuestraConectividadNodoDistritalCabecera.
@@ -3881,5 +3818,14 @@ namespace SNW.forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfRutaVirtualTemporal;
+        
+        /// <summary>
+        /// Control hfIdDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfIdDocumento;
     }
 }

@@ -1737,14 +1737,48 @@
 
                 var offset = 2;
                 var isFieldSegmentStart = function (dataView, offset) {
+                    var offset1 = (offset + 1) >= dataView.byteLength ? offset : offset + 1;
+                    var offset2 = (offset + 2) >= dataView.byteLength ? offset : offset + 2;
+                    var offset3 = (offset + 3) >= dataView.byteLength ? offset : offset + 3;
+                    var offset4 = (offset + 4) >= dataView.byteLength ? offset : offset + 4;
+                    var offset5 = (offset + 5) >= dataView.byteLength ? offset : offset + 5;
+                    //if (offset > 260000)
+                    //{
+                    //    console.log("offset = " + offset);
+                    //    console.log("dataView.byteLength = " + dataView.byteLength);
+                    //    console.log("38 = " + (dataView.getUint8(offset) === 0x38));
+                    //    console.log("42 = " + (dataView.getUint8(offset + 1) === 0x42));
+                    //    console.log("49 = " + (dataView.getUint8(offset + 2) === 0x49));
+                    //    console.log("4D = " + (dataView.getUint8(offset + 3) === 0x4D));
+                    //    console.log("04-4 = " + (dataView.getUint8(offset + 4) === 0x04));
+                    //    console.log("04-5 = " + (dataView.getUint8(offset + 5) === 0x04));
+                    //    console.log("offset1 = " + offset1);
+                    //}
+                    
+                    
+                    //Corregido Carlos Ramos 27/09/2018
+                    //Por alguna extraña razon la primera condicion al ser falsa el && sigue evaluando las demas condiciones
+                    //Por lo tanto al agregar una unidad al indice en algun momento se desborda por eso le he agregado al inicio
+                    //un aloritmo para que no se desborde el indice
+                    //Inicio
+                    //return (
+                    //    dataView.getUint8(offset) === 0x38
+                    //    && dataView.getUint8(offset + 1) === 0x42
+                    //    && dataView.getUint8(offset + 2) === 0x49
+                    //    && dataView.getUint8(offset + 3) === 0x4D
+                    //    && dataView.getUint8(offset + 4) === 0x04
+                    //    && dataView.getUint8(offset + 5) === 0x04
+                    //);
                     return (
-                        dataView.getUint8(offset) === 0x38 &&
-                        dataView.getUint8(offset + 1) === 0x42 &&
-                        dataView.getUint8(offset + 2) === 0x49 &&
-                        dataView.getUint8(offset + 3) === 0x4D &&
-                        dataView.getUint8(offset + 4) === 0x04 &&
-                        dataView.getUint8(offset + 5) === 0x04
+                        dataView.getUint8(offset) === 0x38
+                        && dataView.getUint8(offset1) === 0x42
+                        && dataView.getUint8(offset2) === 0x49
+                        && dataView.getUint8(offset3) === 0x4D
+                        && dataView.getUint8(offset4) === 0x04
+                        && dataView.getUint8(offset5) === 0x04
                     );
+                    //Fin
+
                 };
 
                 while (offset < dataView.byteLength) {
@@ -3014,7 +3048,7 @@
         //Agregamos la URL de la imagen para que se muestre en el preview
         //Inicio
         //var FileObject = function (file, fileId, AU) {
-        var FileObject = function (file, fileId, AU, imgURL) {
+        var FileObject = function (file, fileId, AU, fileURL) {
             //Fin        
             //console.log("FileObject 01");
             //console.log("file.width = " + file.width);
@@ -3056,7 +3090,7 @@
             //Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
             //Agregamos la URL de la imagen para que se muestre en el preview
             //Inicio
-            me.imgURL = imgURL;
+            me.fileURL = fileURL;
             //Fin 
 
             me.init();
@@ -3073,11 +3107,12 @@
                 //visual part
                 //console.log("init 01");
                 //alert("init 01");
+                //console.log("init me.fileURL = " + me.fileURL);
                 me.renderHtml();
                 //console.log("init 02 me.disabled = " + me.disabled);
                 //console.log("init 02");
                 //console.log("me.name = " + me.name);
-                //console.log("me.imgURL = " + me.imgURL);
+                //console.log("init me.imgURL = " + me.imgURL);
                 //console.log("(me.imgURL == undefined) = " + (me.imgURL != undefined && me.imgURL.length > 0));
 
                 //console.log("(me.imgURL == \"\") = " + (me.imgURL.length > 0));
@@ -3381,10 +3416,20 @@
              */
             setName: function (name) {
                 this.name = name;
+                var me = this;
                 //update dom
                 this.dom.container.setAttribute('title', name);
                 if (this.dom.nameContainer) {
-                    this.dom.nameContainer.innerHTML = name;
+                    //console.log("setName 01");
+                    // #region Agregado Carlos Ramos 18/08/2018 determinar si se podrá descargar el archivo adjunto
+                    //console.log("setName me.fileURL = " + me.fileURL);
+                    if (me.config.downloadFile && me.fileURL != undefined && me.fileURL.length > 0)
+                        this.dom.nameContainer.innerHTML = "<a style='color:#fff;' target='_blank' href='" + me.fileURL + "'>" + name + "</a>";
+                    else
+                        this.dom.nameContainer.innerHTML = name;
+                    // #endregion
+                    
+                    
                     this.dom.nameContainer.setAttribute('title', name);
                 }
 
@@ -3942,8 +3987,8 @@
                             //console.log("FileObject.bindFilePreview this.src04 = " + this.src);
                             //console.log("FileObject.bindFilePreview me.status05 = " + me.status);
 
-                            if (me.imgURL != undefined && me.imgURL.length > 0)
-                                me.setPreviewImage(true, me.imgURL);
+                            if (me.fileURL != undefined && me.fileURL.length > 0)
+                                me.setPreviewImage(true, me.fileURL);
                             else
                                 me.setPreviewImage(true, this.src);
                             //Fin
@@ -3980,7 +4025,7 @@
                         //Inicio
                         //img.src = URL.createObjectURL(this.file);
                         if (me.size == 0) {
-                            img.src = me.imgURL;
+                            img.src = me.fileURL;
                         }
                         else {
                             //console.log("FileObject.bindFilePreview me.imgURL05 = " + me.imgURL);
@@ -4006,8 +4051,8 @@
                         //console.log("FileObject.bindFilePreview this.src = " + this.src);
                         //console.log("FileObject.bindFilePreview me.status05 = " + me.status);
                         // #region Agregado Carlos Ramos 16/02/2018 Agregar un archivo vacio con acompañado de de una URL
-                        if (me.imgURL != undefined && me.imgURL.length > 0)
-                            me.setPreviewImage(true, me.imgURL);
+                        if (me.fileURL != undefined && me.fileURL.length > 0)
+                            me.setPreviewImage(true, me.fileURL);
                         else
                             me.setPreviewVideo(true, URL.createObjectURL(this.file));
 
@@ -4206,6 +4251,7 @@
                 //get standard params
                 var params = this.AU.getBaseParams(this);
                 params.append('ax-file-size', this.size);
+                //console.log("getParams 01");
                 params.append('ax-file-name', this.name);
                 params.append('ax-temp-name', this.tempFileName);
                 return params;
@@ -4744,6 +4790,9 @@
                     // #endregion
                     // #region Agregado Carlos Ramos 30/06/2018 Determinar el tipo de preview de imagen
                     , imagePreviewType: 9
+                    // #endregion
+                    // #region Agregado Carlos Ramos 18/08/2018 determinar si se podrá descargar el archivo adjunto
+                    , downloadFile: false                                                                      
                     // #endregion
                 }
             };
@@ -5290,9 +5339,11 @@
              * Add files to the list from select or from drop
              * @param files {array} DOM object list element
              */
-            addEmptyFile: function (imgURL, fileName) {
+            addEmptyFile: function (fileURL, fileName) {
                 //console.log("addEmptyFile01");
                 //console.log("files = " + files);
+                //console.log("addEmptyFile fileURL = " + fileURL);
+                //console.log("addEmptyFile fileName = " + fileName);
                 var selectedFiles = [];//store this just for the on select event
 
                 //add selected files to the queue
@@ -5314,7 +5365,7 @@
                 var fileId = this.generateFileId();
                 //console.log("addEmptyFile02");
                 //console.log("file = " + file);
-                this.fileList[fileId] = new FileObject(file, fileId, this, imgURL); //create the file object
+                this.fileList[fileId] = new FileObject(file, fileId, this, fileURL); //create the file object
                 //this.fileList[fileId] = new FileObject(f, fileId, this); //create the file object
                 //console.log("addEmptyFile03");
                 //store a reference to the current selected files for the onSelect callback

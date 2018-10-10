@@ -41,12 +41,36 @@
                                         <input type="hidden" id="hfFechaComentario" runat="server" />
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtFecha" class="form-control" placeholder="dd/mm/yyyy" runat="server" MaxLength="10"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
+                                            
                                             <label for="cphContenido_txtFecha">Fecha</label>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
+                                    <div class="form-group input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkAltura" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spAlturaComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocAlturaComentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtAlturaComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfAlturaComentario" runat="server" />
+                                        <span class="has-float-label">
+                                            <asp:TextBox ID="txtAltura" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
+                                            
+                                            <label for="cphContenido_txtAltura">Altura (m.s.n.m.)</label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <%--<div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -65,7 +89,7 @@
                                         <input type="hidden" id="hfHoraInicioComentario" runat="server" />
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtHoraInicio" class="form-control" placeholder="hh:mm" runat="server" MaxLength="10"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
+                                            
                                             <label for="cphContenido_txtHoraInicio">Hora Inicio</label>
                                         </span>
                                     </div>
@@ -89,7 +113,7 @@
                                         <input type="hidden" id="hfHoraFinComentario" runat="server" />
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtHoraFin" class="form-control" placeholder="hh:mm" runat="server" MaxLength="10"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
+                                            
                                             <label for="cphContenido_txtHoraFin">Hora Fin</label>
                                         </span>
                                     </div>
@@ -113,13 +137,13 @@
                                         <input type="hidden" id="hfLongitudLocalidadDesdePlazaPrincipalComentario" runat="server" />
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtLongitudLocalidadDesdePlazaPrincipal" class="form-control " placeholder=" " runat="server" MaxLength="200" autocomplete="off"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
+                                            
                                             <label for="cphContenido_txtLongitudLocalidadDesdePlazaPrincipal">Long. Loc. Plaza Princ.</label>
                                         </span>
                                     </div>
-                                </div>
+                                </div>--%>
                             </div>
-                            <div class="row">
+                            <%--<div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -139,32 +163,8 @@
                                         <input type="hidden" id="hfLatitudLocalidadDesdePlazaPrincipalComentario" runat="server" />
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtLatitudLocalidadDesdePlazaPrincipal" class="form-control " placeholder=" " runat="server" MaxLength="200" autocomplete="off"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
+                                            
                                             <label for="cphContenido_txtLatitudLocalidadDesdePlazaPrincipal">Lat. Loc. Plaza Princ.</label>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="form-group input-group">
-                                        <div class="input-group-addon-base">
-                                            <div class="checkbox checbox-switch switch-success">
-                                                <label>
-                                                    <asp:CheckBox ID="chkAltura" runat="server" />
-                                                    <span title="Aprobado"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <span class="input-group-addon"><span class="fa fa-comment" id="spAlturaComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
-                                        <div id="pocAlturaComentario" class="hide">
-                                            <div class="row">
-                                                <textarea id="txtAlturaComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" id="hfAlturaComentario" runat="server" />
-                                        <span class="has-float-label">
-                                            <asp:TextBox ID="txtAltura" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
-                                            <label for="cphContenido_txtAltura">Altura (m.s.n.m.)</label>
                                         </span>
                                     </div>
                                 </div>
@@ -187,7 +187,7 @@
                                         <input type="hidden" id="hfAreaNaturalProtegidaComentario" runat="server" />
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtAreaNaturalProtegida" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
+                                            
                                             <label for="cphContenido_txtAreaNaturalProtegida">Área Natural Protegida</label>
                                         </span>
                                     </div>
@@ -211,7 +211,7 @@
                                         <input type="hidden" id="hfNombreAreaNaturalComentario" runat="server" />
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtNombreAreaNatural" class="form-control" placeholder=" " runat="server" MaxLength="10"></asp:TextBox>
-                                            <%--<input class="form-control" id="txtUsuario2" type="text" placeholder="JVERDE" />--%>
+                                            
                                             <label for="cphContenido_txtNombreAreaNatural">Nombre Área Natural</label>
                                         </span>
                                     </div>
@@ -569,7 +569,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="row">
                             </div>
                         </div>

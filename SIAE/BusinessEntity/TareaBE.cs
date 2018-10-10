@@ -25,6 +25,8 @@ namespace BusinessEntity
         public Int32 Sector { get; set; }
         public UsuarioBE UsuarioCreacion { get; set; }
         public UsuarioBE UsuarioModificacion { get; set; }
+        //PARA EL TIPO DE NODO
+        public String Tarea_Tipo_NodoA { get { return TipoNodoA.ValorCadena1; } }
         public TareaBE()
         {
             IdTarea = String.Empty;

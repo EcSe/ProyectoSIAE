@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
-                                        <div class="input-group-addon-base">
+                                        <div class="input-group-addon-base" id="igabTiempoPrueba">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
                                                     <asp:CheckBox ID="chkTiempoPrueba" runat="server" />
@@ -29,7 +29,9 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <span class="input-group-addon"><span class="fa fa-comment" id="spTiempoPruebaComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <span class="input-group-addon" id="igaTiempoPruebaComentario">
+                                            <span class="fa fa-comment" id="spTiempoPruebaComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span>
+                                        </span>
                                         <div id="pocTiempoPruebaComentario" class="hide">
                                             <div class="row">
                                                 <textarea id="txtTiempoPruebaComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
@@ -37,7 +39,7 @@
                                         </div>
                                         <input type="hidden" id="hfTiempoPruebaComentario" runat="server"/>
                                         <span class="has-float-label">
-                                            <asp:TextBox ID="txtTiempoPrueba" class="form-control" placeholder=" " runat="server" MaxLength="20"></asp:TextBox>
+                                            <asp:TextBox ID="txtTiempoPrueba" class="form-control" placeholder=" " runat="server" MaxLength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                             <label for="cphContenido_txtTiempoPrueba">Tiempo Prueba (s)</label>
                                         </span>
                                     </div>
@@ -90,7 +92,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
-                                        <div class="input-group-addon-base">
+                                        <div class="input-group-addon-base" id="igabRetardoPromedio">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
                                                     <asp:CheckBox ID="chkRetardoPromedio" runat="server" />
@@ -98,7 +100,9 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <span class="input-group-addon"><span class="fa fa-comment" id="spRetardoPromedioComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <span class="input-group-addon" id="igaRetardoPromedioComentario">
+                                            <span class="fa fa-comment" id="spRetardoPromedioComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span>
+                                        </span>
                                         <div id="pocRetardoPromedioComentario" class="hide">
                                             <div class="row">
                                                 <textarea id="txtRetardoPromedioComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
@@ -106,7 +110,7 @@
                                         </div>
                                         <input type="hidden" id="hfRetardoPromedioComentario" runat="server"/>
                                         <span class="has-float-label">
-                                            <asp:TextBox ID="txtRetardoPromedio" class="form-control" placeholder=" " runat="server" MaxLength="20"></asp:TextBox>
+                                            <asp:TextBox ID="txtRetardoPromedio" class="form-control" placeholder=" " runat="server" MaxLength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                             <label for="cphContenido_txtRetardoPromedio">Retardo Prom. (RTT) (s)</label>
                                         </span>
                                     </div>
@@ -184,7 +188,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
-                                        <div class="input-group-addon-base">
+                                        <div class="input-group-addon-base" id="igabThroughputPromedio">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
                                                     <asp:CheckBox ID="chkThroughputPromedio" runat="server" />
@@ -192,7 +196,9 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <span class="input-group-addon"><span class="fa fa-comment" id="spThroughputPromedioComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <span class="input-group-addon" id="igaThroughputPromedioComentario">
+                                            <span class="fa fa-comment" id="spThroughputPromedioComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span>
+                                        </span>
                                         <div id="pocThroughputPromedioComentario" class="hide">
                                             <div class="row">
                                                 <textarea id="txtThroughputPromedioComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
@@ -200,7 +206,7 @@
                                         </div>
                                         <input type="hidden" id="hfThroughputPromedioComentario" runat="server"/>
                                         <span class="has-float-label">
-                                            <asp:TextBox ID="txtThroughputPromedio" class="form-control" placeholder=" " runat="server" MaxLength="20"></asp:TextBox>
+                                            <asp:TextBox ID="txtThroughputPromedio" class="form-control" placeholder=" " runat="server" MaxLength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                             <label for="cphContenido_txtThroughputPromedio">Throughput Prom. (Kbps)</label>
                                         </span>
                                     </div>
@@ -209,7 +215,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
-                                        <div class="input-group-addon-base">
+                                        <div class="input-group-addon-base" id="igabDescartePaquetes">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
                                                     <asp:CheckBox ID="chkDescartePaquetes" runat="server" />
@@ -217,7 +223,9 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <span class="input-group-addon"><span class="fa fa-comment" id="spDescartePaquetesComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <span class="input-group-addon" id="igaDescartePaquetesComentario">
+                                            <span class="fa fa-comment" id="spDescartePaquetesComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span>
+                                        </span>
                                         <div id="pocDescartePaquetesComentario" class="hide">
                                             <div class="row">
                                                 <textarea id="txtDescartePaquetesComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
@@ -225,7 +233,7 @@
                                         </div>
                                         <input type="hidden" id="hfDescartePaquetesComentario" runat="server"/>
                                         <span class="has-float-label">
-                                            <asp:TextBox ID="txtDescartePaquetes" class="form-control" placeholder=" " runat="server" MaxLength="20"></asp:TextBox>
+                                            <asp:TextBox ID="txtDescartePaquetes" class="form-control" placeholder=" " runat="server" MaxLength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                             <label for="cphContenido_txtDescartePaquetes">Descarte Paquetes</label>
                                         </span>
                                     </div>
@@ -710,6 +718,7 @@
     <input type="hidden" id="hfIdPerfil" runat="server"/>
     <input type="hidden" id="hfRutaVirtualTemporal" runat="server"/>
     <input type="hidden" id="hfIdDocumento" runat="server"/>
+    <input type="hidden" id="hfIdTipoTarea" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPie" runat="server">
     <script src="../js/forms/DocumentoPruebasServicioDITG.js"></script>

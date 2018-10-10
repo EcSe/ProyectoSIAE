@@ -2607,7 +2607,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="Cantidad">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtCantidad" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0}") %>'></asp:TextBox>
+                                                            <asp:TextBox ID="txtCantidad" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0.00000}") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>

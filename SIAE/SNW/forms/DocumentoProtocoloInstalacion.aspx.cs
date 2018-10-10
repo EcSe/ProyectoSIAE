@@ -25,7 +25,7 @@ namespace SNW.forms
                     //EntidadDetalleBE entidadDefecto = new EntidadDetalleBE();
 
                     #region Inicializamos el formulario
-                    
+
                     #region Inicializamos el Título
 
                     Tarea.IdTarea = Request.QueryString["IdTarea"];
@@ -63,7 +63,8 @@ namespace SNW.forms
                     #endregion
 
                     #region Foto 1: Omniswitch OS6450-24
-                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento, "OS6450-BP-D", 1, lblOmniswitch);
+                    //UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento, "OS6450-BP-D", 1, lblOmniswitch);
+                    UtilitarioBL.AsignarSerieLabel(lstDocumentoEquipamiento, "SWITCH-CMP-0006", 1, lblOmniswitch);
                     #endregion
 
                     #region Foto 2: Panorámica del Rack (Ejemplo)

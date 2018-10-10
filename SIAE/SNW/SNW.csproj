@@ -145,8 +145,6 @@
     <None Include="Properties\PublishProfiles\CARLOS.pubxml" />
     <Content Include="Reportes\ActaInstalacionAceptacionProtocoloOmnidireccional.xlsx" />
     <Content Include="Reportes\ActaInstalacionAceptacionProtocoloSectorial.xlsx" />
-    <Content Include="Reportes\ActaSeguridadAcceso.xlsx" />
-    <Content Include="Reportes\ActaSeguridadDistribucion.xlsx" />
     <Content Include="Reportes\Anexo2InventarioPMP.xlsx" />
     <Content Include="Reportes\Anexo2InventarioPTP.xlsx" />
     <Content Include="Reportes\EstudioCampo.xlsx" />
@@ -165,6 +163,10 @@
     <Content Include="Reportes\InstalaciondePozoaTierraTipoA.xlsx" />
     <Content Include="Reportes\InstalaciondePozoaTierraTipoB.xlsx" />
     <Content Include="Reportes\ActaInstalacionPTPLicenciado.xlsx" />
+    <Content Include="Reportes\ActaSeguridadAccesoDistritalDistribucion.xlsx" />
+    <Content Include="Reportes\ActaSeguridadAccesoIntermedioTerminal.xlsx" />
+    <Content Include="Reportes\ActaSeguridadDistribucionDistritalDistribucion.xlsx" />
+    <Content Include="Reportes\ActaSeguridadDistribucionIntermedioTerminal.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

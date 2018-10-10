@@ -241,10 +241,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <h5 class="color-primary" runat="server">2.5. Sistema de Puesta a Tierra instituciones</h5>
+                            <div class="row" id="divSistemaPuestaTierraInstitucionesTitulo">
+                                <h5 class="color-primary" runat="server">2.5. Sistema de Puesta a Tierra Instituciones</h5>
                             </div>
-                            <div class="row">
+                            <div class="row" id="divSistemaPuestaTierraInstituciones">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -366,7 +366,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <%--<div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -388,9 +388,9 @@
                                             <label for="cphContenido_txtAnchoBandaCanal">Ancho B. Canal (MHz)</label>
                                         </span>
                                     </div>
-                                </div>
+                                </div>--%>
                             </div>
-                            <div class="row">
+                            <%--<div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -437,7 +437,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="row">
                                 <h5 class="color-primary" runat="server">2.7. Mediciones de Enlaces</h5>
                             </div>
@@ -482,7 +482,7 @@
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Tiempo Promedio (ms)">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0}") %>' Style="width: 75px"></asp:TextBox>
+                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0.000}") %>' Style="width: 75px" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -1265,10 +1265,10 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tabMedicionSPAT">
-                            <div class="row">
-                                <h4 class="color-primary text-center" runat="server">Medición del Sistema de Puesta a tierra</h4>
+                            <div class="row" id="divMedicionSistemaPuestaTierraTitulo">
+                                <h4 class="color-primary text-center" runat="server">Medición del Sistema de Puesta a Tierra</h4>
                             </div>
-                            <div class="row">
+                            <div class="row" id="divMedicionSistemaPuestaTierra">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
@@ -1287,7 +1287,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionSistemaPuestaTierraMedida01ValorMedioComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtMedicionSistemaPuestaTierraMedida01ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20"></asp:textbox>
+                                            <asp:textbox id="txtMedicionSistemaPuestaTierraMedida01ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:textbox>
                                             <label for="cphContenido_txtMedicionSistemaPuestaTierraMedida01ValorMedio">Medida 1 Valor Medio</label>
                                         </span>
                                     </div>
@@ -1310,7 +1310,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionSistemaPuestaTierraMedida02ValorMedioComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtMedicionSistemaPuestaTierraMedida02ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20"></asp:textbox>
+                                            <asp:textbox id="txtMedicionSistemaPuestaTierraMedida02ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:textbox>
                                             <label for="cphContenido_txtMedicionSistemaPuestaTierraMedida02ValorMedio">Medida 2 Valor Medio</label>
                                         </span>
                                     </div>
@@ -1333,7 +1333,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionSistemaPuestaTierraMedida03ValorMedioComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtMedicionSistemaPuestaTierraMedida03ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20"></asp:textbox>
+                                            <asp:textbox id="txtMedicionSistemaPuestaTierraMedida03ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:textbox>
                                             <label for="cphContenido_txtMedicionSistemaPuestaTierraMedida03ValorMedio">Medida 3 Valor Medio</label>
                                         </span>
                                     </div>
@@ -1361,7 +1361,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionSistemaPuestaTierraPararrayosMedida01ValorMedioComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20"></asp:textbox>
+                                            <asp:textbox id="txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:textbox>
                                             <label for="cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida01ValorMedio">Medida 1 Valor Medio</label>
                                         </span>
                                     </div>
@@ -1384,7 +1384,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionSistemaPuestaTierraPararrayosMedida02ValorMedioComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20"></asp:textbox>
+                                            <asp:textbox id="txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:textbox>
                                             <label for="cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida02ValorMedio">Medida 2 Valor Medio</label>
                                         </span>
                                     </div>
@@ -1407,7 +1407,7 @@
                                         </div>
                                         <input type="hidden" id="hfMedicionSistemaPuestaTierraPararrayosMedida03ValorMedioComentario" runat="server" />
                                         <span class="has-float-label">
-                                            <asp:textbox id="txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20"></asp:textbox>
+                                            <asp:textbox id="txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio" class="form-control" placeholder=" " runat="server" maxlength="20" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:textbox>
                                             <label for="cphContenido_txtMedicionSistemaPuestaTierraPararrayosMedida03ValorMedio">Medida 3 Valor Medio</label>
                                         </span>
                                     </div>
@@ -1508,7 +1508,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="Cantidad">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtCantidad" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0}") %>'></asp:TextBox>
+                                                            <asp:TextBox ID="txtCantidad" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0.00000}") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -3573,7 +3573,7 @@
                                         <div class="has-float-label">
                                             <div id="divMonitorMuestraConectividadNodoTerminal" class="">
                                             </div>
-                                            <label for="divMonitorMuestraConectividadNodoTerminal">Foto 11.02: Monitor Donde se Muestre Conectividad al Nodo Terminal</label>
+                                            <label for="divMonitorMuestraConectividadNodoTerminal" id="lblMonitorMuestraConectividadNodoTerminal" runat="server">Foto 11.02: Monitor Donde se Muestre Conectividad al Nodo Terminal</label>
                                         </div>
                                     </div>
                                     <asp:hiddenfield id="hfMonitorMuestraConectividadNodoTerminal" runat="server" />
@@ -3611,7 +3611,7 @@
                                         <div class="has-float-label">
                                             <div id="divMonitorMuestraConectividadNodoDistritalCabecera" class="">
                                             </div>
-                                            <label for="divMonitorMuestraConectividadNodoDistritalCabecera">Foto 11.03: Monitor Donde se Muestre Conectividad al Nodo Distrital de Cabecera</label>
+                                            <label for="divMonitorMuestraConectividadNodoDistritalCabecera" id="lblMonitorMuestraConectividadNodoDistritalCabecera" runat="server">Foto 11.03: Monitor Donde se Muestre Conectividad al Nodo Distrital de Cabecera</label>
                                         </div>
                                     </div>
                                     <asp:hiddenfield id="hfMonitorMuestraConectividadNodoDistritalCabecera" runat="server" />
@@ -4059,6 +4059,7 @@
     <br />
     <input type="hidden" id="hfIdPerfil" runat="server"/>
     <input type="hidden" id="hfRutaVirtualTemporal" runat="server"/>
+    <input type="hidden" id="hfIdDocumento" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPie" runat="server">
     <script src="../js/forms/DocumentoActaInstalacionAceptacionProtocoloIIBB.js"></script>

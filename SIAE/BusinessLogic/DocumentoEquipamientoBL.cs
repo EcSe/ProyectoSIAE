@@ -51,9 +51,12 @@ namespace BusinessLogic
                     item.SerieEquipamiento = drDatos.GetString(drDatos.GetOrdinal("VC_SERIE_EQUIPAMIENTO"));
                     item.Equipamiento.IdValor = drDatos.GetString(drDatos.GetOrdinal("VC_ID_VALOR"));
                     item.Equipamiento.ValorCadena1 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA1"));
-                    item.Equipamiento.ValorCadena2 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA2"));
-                    item.Equipamiento.ValorCadena3 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA3"));
-                    item.Equipamiento.ValorCadena4 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA4"));
+                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_VALOR_CADENA2")))
+                        item.Equipamiento.ValorCadena2 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA2"));
+                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_VALOR_CADENA3")))
+                        item.Equipamiento.ValorCadena3 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA3"));
+                    if (!drDatos.IsDBNull(drDatos.GetOrdinal("VC_VALOR_CADENA4")))
+                        item.Equipamiento.ValorCadena4 = drDatos.GetString(drDatos.GetOrdinal("VC_VALOR_CADENA4"));
 
                     lstResultado.Add(item);
                 }

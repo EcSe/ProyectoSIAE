@@ -288,17 +288,14 @@ namespace SNW.forms
 
                     #endregion
 
-                    #region 4 Longitud SFTP
+                    //#region 4 Longitud SFTP
 
-                    #region SFTP (Gráfico)
-                    UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000010",
-                        imgSFTPEjemplo);
-                    #endregion
+                    //#region SFTP (Gráfico)
+                    //UtilitarioBL.AsignarEntidadDetalleImagen(entidadDetalleBE, "CAMP_EJE", "000010",
+                    //    imgSFTPEjemplo);
+                    //#endregion
 
-
-
-
-                    #endregion
+                    //#endregion
 
                     #region 6 Cálculo Propagacion
 
@@ -706,10 +703,16 @@ namespace SNW.forms
                         MedicionEnlacePropagacion.NodoA = item.PTP.NodoA;
                         MedicionEnlacePropagacion.NodoIIBBB = item.NodoB;
                         lstMedicionEnlacePropagacionA.Add(MedicionEnlacePropagacion);
+
+                        #region Agregado Carlos Ramos 15/09/2018 agregar 5 etiquetas a control "Resultados de Analisis Estación A 01"
+                        lblResultadosAnalisisEstacionA01.InnerText = lblResultadosAnalisisEstacionA01.InnerText +
+                            " [" + item.DisenoFrecuenciaNodoA + " || " + item.DisenoFrecuenciaNodoB + " || " + item.ModeloRadioNodoA + " || " + item.PotenciaTorreNodoA + " || " + item.SenalRecepcionNodoA + "]";
+                        #endregion
                     }
-                    Session["MedicionesEnlacePropagacionA"] = lstMedicionEnlacePropagacionA;
-                    gvMedicionEnlacePropagacionNodoA.DataSource = lstMedicionEnlacePropagacionA;
-                    gvMedicionEnlacePropagacionNodoA.DataBind();
+                    //Session["MedicionesEnlacePropagacionA"] = lstMedicionEnlacePropagacionA;
+                    //gvMedicionEnlacePropagacionNodoA.DataSource = lstMedicionEnlacePropagacionA;
+                    //gvMedicionEnlacePropagacionNodoA.DataBind();
+
                     #endregion
 
                     #endregion
@@ -726,9 +729,9 @@ namespace SNW.forms
                         MedicionEnlacePropagacion.NodoIIBBB = item.PTP.NodoA;
                         lstMedicionEnlacePropagacionB.Add(MedicionEnlacePropagacion);
                     }
-                    Session["MedicionesEnlacePropagacionB"] = lstMedicionEnlacePropagacionB;
-                    gvMedicionEnlacePropagacionNodoB.DataSource = lstMedicionEnlacePropagacionB;
-                    gvMedicionEnlacePropagacionNodoB.DataBind();
+                    //Session["MedicionesEnlacePropagacionB"] = lstMedicionEnlacePropagacionB;
+                    //gvMedicionEnlacePropagacionNodoB.DataSource = lstMedicionEnlacePropagacionB;
+                    //gvMedicionEnlacePropagacionNodoB.DataBind();
                     #endregion
 
                     #endregion
@@ -1059,103 +1062,103 @@ namespace SNW.forms
 
                         #endregion
 
-                        #region 4 Longitud SFTP
+                        //#region 4 Longitud SFTP
 
-                        #region Estación A
+                        //#region Estación A
 
-                        #region Distancia B
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000105").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkB_A, hfB_AComentario, null, txtB_A,
-                            null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia B
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000105").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkB_A, hfB_AComentario, null, txtB_A,
+                        //    null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia C
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000106").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkC_A, hfC_AComentario,
-                            null, txtC_A, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia C
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000106").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkC_A, hfC_AComentario,
+                        //    null, txtC_A, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia D
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000107").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkD_A, hfD_AComentario,
-                            null, txtD_A, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia D
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000107").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkD_A, hfD_AComentario,
+                        //    null, txtD_A, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia E
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000108").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkE_A, hfE_AComentario,
-                            null, txtE_A, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia E
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000108").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkE_A, hfE_AComentario,
+                        //    null, txtE_A, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #endregion
+                        //#endregion
 
-                        #region Estación B
+                        //#region Estación B
 
-                        #region Distancia B
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000109").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkB_B, hfB_BComentario,
-                            null, txtB_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia B
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000109").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkB_B, hfB_BComentario,
+                        //    null, txtB_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia C
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000110").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkC_B, hfC_BComentario,
-                            null, txtC_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia C
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000110").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkC_B, hfC_BComentario,
+                        //    null, txtC_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia D
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000111").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkD_B, hfD_BComentario,
-                            null, txtD_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia D
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000111").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkD_B, hfD_BComentario,
+                        //    null, txtD_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #region Distancia E
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000112").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkE_B, hfE_BComentario,
-                            null, txtE_B, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Distancia E
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000112").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkE_B, hfE_BComentario,
+                        //    null, txtE_B, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
-                        #endregion
+                        //#endregion
 
-                        #endregion
+                        //#endregion
 
                         #region 5 Asignaciones y Observaciones
 
                         #region Estación A
 
-                        #region Capacidad Breaker (A)
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000113").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkCapacidadBreakerEstacionA,
-                            hfCapacidadBreakerEstacionAComentario, null,
-                            txtCapacidadBreakerEstacionA, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Capacidad Breaker (A)
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000113").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkCapacidadBreakerEstacionA,
+                        //    hfCapacidadBreakerEstacionAComentario, null,
+                        //    txtCapacidadBreakerEstacionA, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
-                        #region Voltaje CD Breaker (V)
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000114").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkVoltajeCDBreakerEstacionA,
-                            hfVoltajeCDBreakerEstacionAComentario, null,
-                            txtVoltajeCDBreakerEstacionA, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Voltaje CD Breaker (V)
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000114").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkVoltajeCDBreakerEstacionA,
+                        //    hfVoltajeCDBreakerEstacionAComentario, null,
+                        //    txtVoltajeCDBreakerEstacionA, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
                         #region Posición Breaker
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000115").Select(dd => dd).First();
@@ -1179,23 +1182,23 @@ namespace SNW.forms
 
                         #region Estación B
 
-                        #region Capacidad Breaker (A)
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000117").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkCapacidadBreakerEstacionB,
-                            hfCapacidadBreakerEstacionBComentario, null,
-                            txtCapacidadBreakerEstacionB, null, null,
-                            Type.GetType("System.Int32"));
-                        #endregion
+                        //#region Capacidad Breaker (A)
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000117").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkCapacidadBreakerEstacionB,
+                        //    hfCapacidadBreakerEstacionBComentario, null,
+                        //    txtCapacidadBreakerEstacionB, null, null,
+                        //    Type.GetType("System.Int32"));
+                        //#endregion
 
-                        #region Voltaje CD Breaker (V)
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000118").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkVoltajeCDBreakerEstacionB,
-                            hfVoltajeCDBreakerEstacionBComentario, null,
-                            txtVoltajeCDBreakerEstacionB, null, null,
-                            Type.GetType("System.Double"));
-                        #endregion
+                        //#region Voltaje CD Breaker (V)
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000118").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkVoltajeCDBreakerEstacionB,
+                        //    hfVoltajeCDBreakerEstacionBComentario, null,
+                        //    txtVoltajeCDBreakerEstacionB, null, null,
+                        //    Type.GetType("System.Double"));
+                        //#endregion
 
                         #region Posición Breaker
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000119").Select(dd => dd).First();
@@ -1781,132 +1784,156 @@ namespace SNW.forms
 
                         #region 11 DATOS GENERALES NODO A
 
-                        #region # Serie PTP450i
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000189").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkSeriePTP450iNodoA,
-                            hfSeriePTP450iNodoAComentario, null,
-                            txtSeriePTP450iNodoA, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region # Serie PTP450i
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000189").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkSeriePTP450iNodoA,
+                        //    hfSeriePTP450iNodoAComentario, null,
+                        //    txtSeriePTP450iNodoA, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
                         #region Mediciones de Enlaces de Propagación
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000190").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                            chkMedicionEnlacePropagacionNodoA,
                             hfMedicionEnlacePropagacionNodoAComentario);
-                        List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacionA2 = new List<DocumentoMedicionEnlacePropagacionBE>();
-                        lstMedicionEnlacePropagacionA2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacionA"];
+                        //List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacionA2 = new List<DocumentoMedicionEnlacePropagacionBE>();
+                        //lstMedicionEnlacePropagacionA2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacionA"];
 
-                        foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoA.Rows)
-                        {
-                            String strIdNodo = item.Cells[0].Text;
-                            String strIdIIBB = item.Cells[1].Text;
-                            TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
-                            TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
-                            TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
-                            TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
-                            TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
+                        //foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoA.Rows)
+                        //{
+                        //    String strIdNodo = item.Cells[0].Text;
+                        //    String strIdIIBB = item.Cells[1].Text;
+                        //    TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                        //    TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                        //    TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                        //    TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                        //    TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
-                            Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
-                            Int32 intTiempoPromedio;
-                            if (txtRSSLocal.Text.Equals(""))
-                                dblRSSLocal = 0;
-                            else
-                                dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
-                            if (txtRSSRemoto.Text.Equals(""))
-                                dblRSSRemoto = 0;
-                            else
-                                dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
-                            if (txtTiempoPromedio.Text.Equals(""))
-                                intTiempoPromedio = 0;
-                            else
-                                intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
-                            if (txtCapacidadSubida.Text.Equals(""))
-                                dblCapacidadSubida = 0;
-                            else
-                                dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
-                            if (txtCapacidadBajada.Text.Equals(""))
-                                dblCapacidadBajada = 0;
-                            else
-                                dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
-                            lstMedicionEnlacePropagacionA2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
-                            {
-                                s.RSSLocal = dblRSSLocal;
-                                s.RSSRemoto = dblRSSRemoto;
-                                s.TiempoPromedio = intTiempoPromedio;
-                                s.CapidadSubida = dblCapacidadSubida;
-                                s.CapidadBajada = dblCapacidadBajada;
-                            });
-                        }
+                        //    Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
+                        //    Int32 intTiempoPromedio;
+                        //    if (txtRSSLocal.Text.Equals(""))
+                        //        dblRSSLocal = 0;
+                        //    else
+                        //        dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
+                        //    if (txtRSSRemoto.Text.Equals(""))
+                        //        dblRSSRemoto = 0;
+                        //    else
+                        //        dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
+                        //    if (txtTiempoPromedio.Text.Equals(""))
+                        //        intTiempoPromedio = 0;
+                        //    else
+                        //        intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                        //    if (txtCapacidadSubida.Text.Equals(""))
+                        //        dblCapacidadSubida = 0;
+                        //    else
+                        //        dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
+                        //    if (txtCapacidadBajada.Text.Equals(""))
+                        //        dblCapacidadBajada = 0;
+                        //    else
+                        //        dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
+                        //    lstMedicionEnlacePropagacionA2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
+                        //    {
+                        //        s.RSSLocal = dblRSSLocal;
+                        //        s.RSSRemoto = dblRSSRemoto;
+                        //        s.TiempoPromedio = intTiempoPromedio;
+                        //        s.CapidadSubida = dblCapacidadSubida;
+                        //        s.CapidadBajada = dblCapacidadBajada;
+                        //    });
+                        //}
 
-                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacionA2;
+                        //Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacionA2;
+                        DocumentoMedicionEnlacePropagacionBE DocumentoMedicionEnlacePropagacionA = new DocumentoMedicionEnlacePropagacionBE();
+                        DocumentoMedicionEnlacePropagacionA.Documento = Documento;
+                        DocumentoMedicionEnlacePropagacionA.NodoA.IdNodo = Tarea.NodoIIBBA.IdNodo;
+                        lstMedicionEnlacePropagacionA = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacionA);
+
+                        //Session["MedicionesEnlacePropagacionA"] = lstMedicionEnlacePropagacionA;
+                        //gvMedicionEnlacePropagacionNodoA.DataSource = lstMedicionEnlacePropagacionA;
+                        //gvMedicionEnlacePropagacionNodoA.DataBind();
+
+                        Documento.MedicionesEnlacePropagacion = lstMedicionEnlacePropagacionA;
+
                         #endregion
 
                         #endregion
 
                         #region 11 DATOS GENERALES NODO B
 
-                        #region # Serie PTP450i
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000191").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
-                            chkSeriePTP450iNodoB,
-                            hfSeriePTP450iNodoBComentario, null,
-                            txtSeriePTP450iNodoB, null, null,
-                            Type.GetType("System.String"));
-                        #endregion
+                        //#region # Serie PTP450i
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000191").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                        //    chkSeriePTP450iNodoB,
+                        //    hfSeriePTP450iNodoBComentario, null,
+                        //    txtSeriePTP450iNodoB, null, null,
+                        //    Type.GetType("System.String"));
+                        //#endregion
 
                         #region Mediciones de Enlaces de Propagación
                         DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000192").Select(dd => dd).First();
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
                            chkMedicionEnlacePropagacionNodoA,
                             hfMedicionEnlacePropagacionNodoAComentario);
-                        List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacionB2 = new List<DocumentoMedicionEnlacePropagacionBE>();
-                        lstMedicionEnlacePropagacionB2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacionB"];
+                        //List<DocumentoMedicionEnlacePropagacionBE> lstMedicionEnlacePropagacionB2 = new List<DocumentoMedicionEnlacePropagacionBE>();
+                        //lstMedicionEnlacePropagacionB2 = (List<DocumentoMedicionEnlacePropagacionBE>)Session["MedicionesEnlacePropagacionB"];
 
-                        foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoB.Rows)
-                        {
-                            String strIdNodo = item.Cells[0].Text;
-                            String strIdIIBB = item.Cells[1].Text;
-                            TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
-                            TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
-                            TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
-                            TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
-                            TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
+                        //foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoB.Rows)
+                        //{
+                        //    String strIdNodo = item.Cells[0].Text;
+                        //    String strIdIIBB = item.Cells[1].Text;
+                        //    TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                        //    TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                        //    TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                        //    TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                        //    TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
 
-                            Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
-                            Int32 intTiempoPromedio;
-                            if (txtRSSLocal.Text.Equals(""))
-                                dblRSSLocal = 0;
-                            else
-                                dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
-                            if (txtRSSRemoto.Text.Equals(""))
-                                dblRSSRemoto = 0;
-                            else
-                                dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
-                            if (txtTiempoPromedio.Text.Equals(""))
-                                intTiempoPromedio = 0;
-                            else
-                                intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
-                            if (txtCapacidadSubida.Text.Equals(""))
-                                dblCapacidadSubida = 0;
-                            else
-                                dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
-                            if (txtCapacidadBajada.Text.Equals(""))
-                                dblCapacidadBajada = 0;
-                            else
-                                dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
-                            lstMedicionEnlacePropagacionB2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
-                            {
-                                s.RSSLocal = dblRSSLocal;
-                                s.RSSRemoto = dblRSSRemoto;
-                                s.TiempoPromedio = intTiempoPromedio;
-                                s.CapidadSubida = dblCapacidadSubida;
-                                s.CapidadBajada = dblCapacidadBajada;
-                            });
-                        }
-                        //Insertar al final de la lista
-                        Documento.MedicionesEnlacePropagacion.InsertRange(Documento.MedicionesEnlacePropagacion.Count(), lstMedicionEnlacePropagacionB2);
+                        //    Double dblRSSLocal, dblRSSRemoto, dblCapacidadSubida, dblCapacidadBajada;
+                        //    Int32 intTiempoPromedio;
+                        //    if (txtRSSLocal.Text.Equals(""))
+                        //        dblRSSLocal = 0;
+                        //    else
+                        //        dblRSSLocal = Convert.ToDouble(txtRSSLocal.Text);
+                        //    if (txtRSSRemoto.Text.Equals(""))
+                        //        dblRSSRemoto = 0;
+                        //    else
+                        //        dblRSSRemoto = Convert.ToDouble(txtRSSRemoto.Text);
+                        //    if (txtTiempoPromedio.Text.Equals(""))
+                        //        intTiempoPromedio = 0;
+                        //    else
+                        //        intTiempoPromedio = Convert.ToInt32(txtTiempoPromedio.Text);
+                        //    if (txtCapacidadSubida.Text.Equals(""))
+                        //        dblCapacidadSubida = 0;
+                        //    else
+                        //        dblCapacidadSubida = Convert.ToDouble(txtCapacidadSubida.Text);
+                        //    if (txtCapacidadBajada.Text.Equals(""))
+                        //        dblCapacidadBajada = 0;
+                        //    else
+                        //        dblCapacidadBajada = Convert.ToDouble(txtCapacidadBajada.Text);
+                        //    lstMedicionEnlacePropagacionB2.Where(w => w.NodoA.IdNodo == strIdNodo && w.NodoIIBBB.IdNodo == strIdIIBB).ToList().ForEach(s =>
+                        //    {
+                        //        s.RSSLocal = dblRSSLocal;
+                        //        s.RSSRemoto = dblRSSRemoto;
+                        //        s.TiempoPromedio = intTiempoPromedio;
+                        //        s.CapidadSubida = dblCapacidadSubida;
+                        //        s.CapidadBajada = dblCapacidadBajada;
+                        //    });
+                        //}
+                        ////Insertar al final de la lista
+                        //Documento.MedicionesEnlacePropagacion.InsertRange(Documento.MedicionesEnlacePropagacion.Count(), lstMedicionEnlacePropagacionB2);
+
+                        DocumentoMedicionEnlacePropagacionBE DocumentoMedicionEnlacePropagacionB = new DocumentoMedicionEnlacePropagacionBE();
+                        DocumentoMedicionEnlacePropagacionB.Documento.Documento.IdValor = Documento.Documento.IdValor;
+                        DocumentoMedicionEnlacePropagacionB.Documento.Tarea.IdTarea = Documento.Tarea.IdTarea;
+                        DocumentoMedicionEnlacePropagacionB.NodoA.IdNodo = Documento.Tarea.NodoB.IdNodo;
+                        lstMedicionEnlacePropagacionB = DocumentoMedicionEnlacePropagacionBL.ListarDocumentoMedicionEnlacePropagacion(DocumentoMedicionEnlacePropagacionB);
+
+                        //Session["MedicionesEnlacePropagacionB"] = lstMedicionEnlacePropagacionB;
+                        //gvMedicionEnlacePropagacionNodoB.DataSource = lstMedicionEnlacePropagacionB;
+                        //gvMedicionEnlacePropagacionNodoB.DataBind();
+
+                        Documento.MedicionesEnlacePropagacion.InsertRange(Documento.MedicionesEnlacePropagacion.Count(), lstMedicionEnlacePropagacionB);
+
                         #endregion
 
                         #endregion
@@ -1917,6 +1944,14 @@ namespace SNW.forms
                     }
 
                     #endregion
+
+                    Session["MedicionesEnlacePropagacionA"] = lstMedicionEnlacePropagacionA;
+                    gvMedicionEnlacePropagacionNodoA.DataSource = lstMedicionEnlacePropagacionA;
+                    gvMedicionEnlacePropagacionNodoA.DataBind();
+
+                    Session["MedicionesEnlacePropagacionB"] = lstMedicionEnlacePropagacionB;
+                    gvMedicionEnlacePropagacionNodoB.DataSource = lstMedicionEnlacePropagacionB;
+                    gvMedicionEnlacePropagacionNodoB.DataBind();
 
                 }
                 else
@@ -1968,6 +2003,41 @@ namespace SNW.forms
             }
         }
 
+        protected void gvMedicionEnlacePropagacionNodoA_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].Attributes["data-title"] = "Local";
+                e.Row.Cells[1].Attributes["data-title"] = "Remoto";
+                e.Row.Cells[2].Attributes["data-title"] = "RSS Local (dBm)";
+                e.Row.Cells[3].Attributes["data-title"] = "RSS Remoto (dBm)";
+                e.Row.Cells[4].Attributes["data-title"] = "Tiempo Promedio (ms)";
+                e.Row.Cells[5].Attributes["data-title"] = "Capacidad Subida (Mbps)";
+                e.Row.Cells[6].Attributes["data-title"] = "Capacidad Bajada (Mbps)";
+                //e.Row.Cells[5].Attributes["data-title"] = "Acciones";
+            }
+            else if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                #region Formato Numeros
+                String strFormatoNumeros = "";
+                foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoA.Rows)
+                {
+                    TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                    TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                    TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                    TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                    TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
+
+                    strFormatoNumeros = strFormatoNumeros + "$('#" + txtRSSLocal.ClientID + "').number(true, 2);$('#" + txtRSSRemoto.ClientID + "').number(true, 2);$('#" + txtTiempoPromedio.ClientID + "').number(true, 0);$('#" + txtTiempoPromedio.ClientID + "').keyup(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtTiempoPromedio.ClientID + "').focus(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtCapacidadSubida.ClientID + "').number(true, 3);$('#" + txtCapacidadBajada.ClientID + "').number(true, 3);";
+
+                }
+
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "formatoNumerosA", strFormatoNumeros, true);
+                #endregion
+
+            }
+        }
+
         protected void gvEquipamientosB_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -2007,6 +2077,41 @@ namespace SNW.forms
                 //txtDescripcion.Enabled = item.ValorBooleano1;
                 //btnEliminar.Visible = item.ValorBooleano1;
                 #endregion
+            }
+        }
+
+        protected void gvMedicionEnlacePropagacionNodoB_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].Attributes["data-title"] = "Local";
+                e.Row.Cells[1].Attributes["data-title"] = "Remoto";
+                e.Row.Cells[2].Attributes["data-title"] = "RSS Local (dBm)";
+                e.Row.Cells[3].Attributes["data-title"] = "RSS Remoto (dBm)";
+                e.Row.Cells[4].Attributes["data-title"] = "Tiempo Promedio (ms)";
+                e.Row.Cells[5].Attributes["data-title"] = "Capacidad Subida (Mbps)";
+                e.Row.Cells[6].Attributes["data-title"] = "Capacidad Bajada (Mbps)";
+                //e.Row.Cells[5].Attributes["data-title"] = "Acciones";
+            }
+            else if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                #region Formato Numeros
+                String strFormatoNumeros = "";
+                foreach (GridViewRow item in gvMedicionEnlacePropagacionNodoB.Rows)
+                {
+                    TextBox txtRSSLocal = (TextBox)item.FindControl("txtRSSLocal");
+                    TextBox txtRSSRemoto = (TextBox)item.FindControl("txtRSSRemoto");
+                    TextBox txtTiempoPromedio = (TextBox)item.FindControl("txtTiempoPromedio");
+                    TextBox txtCapacidadSubida = (TextBox)item.FindControl("txtCapacidadSubida");
+                    TextBox txtCapacidadBajada = (TextBox)item.FindControl("txtCapacidadBajada");
+
+                    strFormatoNumeros = strFormatoNumeros + "$('#" + txtRSSLocal.ClientID + "').number(true, 2);$('#" + txtRSSRemoto.ClientID + "').number(true, 2);$('#" + txtTiempoPromedio.ClientID + "').number(true, 0);$('#" + txtTiempoPromedio.ClientID + "').keyup(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtTiempoPromedio.ClientID + "').focus(function () {$.fn.validarTxtTiempoPromedio($(this));});$('#" + txtCapacidadSubida.ClientID + "').number(true, 3);$('#" + txtCapacidadBajada.ClientID + "').number(true, 3);";
+
+                }
+
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "formatoNumerosB", strFormatoNumeros, true);
+                #endregion
+
             }
         }
 
@@ -2298,93 +2403,93 @@ namespace SNW.forms
 
                 #endregion
 
-                #region 4 Longitud SFTP
+                //#region 4 Longitud SFTP
 
-                #region Estación A
+                //#region Estación A
 
-                #region Distancia B
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000105", chkB_A, hfB_AComentario, null, txtB_A,
-                    null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia B
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000105", chkB_A, hfB_AComentario, null, txtB_A,
+                //    null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia C
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000106", chkC_A, hfC_AComentario,
-                    null, txtC_A, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia C
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000106", chkC_A, hfC_AComentario,
+                //    null, txtC_A, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia D
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000107", chkD_A, hfD_AComentario,
-                    null, txtD_A, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia D
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000107", chkD_A, hfD_AComentario,
+                //    null, txtD_A, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia E
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000108", chkE_A, hfE_AComentario,
-                    null, txtE_A, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia E
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000108", chkE_A, hfE_AComentario,
+                //    null, txtE_A, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #endregion
+                //#endregion
 
-                #region Estación B
+                //#region Estación B
 
-                #region Distancia B
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000109", chkB_B, hfB_BComentario,
-                    null, txtB_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia B
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000109", chkB_B, hfB_BComentario,
+                //    null, txtB_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia C
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000110", chkC_B, hfC_BComentario,
-                    null, txtC_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia C
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000110", chkC_B, hfC_BComentario,
+                //    null, txtC_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia D
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000111", chkD_B, hfD_BComentario,
-                    null, txtD_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia D
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000111", chkD_B, hfD_BComentario,
+                //    null, txtD_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #region Distancia E
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000112", chkE_B, hfE_BComentario,
-                    null, txtE_B, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Distancia E
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000112", chkE_B, hfE_BComentario,
+                //    null, txtE_B, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
-                #endregion
+                //#endregion
 
-                #endregion
+                //#endregion
 
                 #region 5 Asignaciones y Observaciones
 
                 #region Estación A
 
-                #region Capacidad Breaker (A)
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000113", chkCapacidadBreakerEstacionA,
-                    hfCapacidadBreakerEstacionAComentario, null,
-                    txtCapacidadBreakerEstacionA, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Capacidad Breaker (A)
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000113", chkCapacidadBreakerEstacionA,
+                //    hfCapacidadBreakerEstacionAComentario, null,
+                //    txtCapacidadBreakerEstacionA, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region Voltaje CD Breaker (V)
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000114", chkVoltajeCDBreakerEstacionA,
-                    hfVoltajeCDBreakerEstacionAComentario, null,
-                    txtVoltajeCDBreakerEstacionA, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Voltaje CD Breaker (V)
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000114", chkVoltajeCDBreakerEstacionA,
+                //    hfVoltajeCDBreakerEstacionAComentario, null,
+                //    txtVoltajeCDBreakerEstacionA, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
                 #region Posición Breaker
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
@@ -2406,21 +2511,21 @@ namespace SNW.forms
 
                 #region Estación B
 
-                #region Capacidad Breaker (A)
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000117", chkCapacidadBreakerEstacionB,
-                    hfCapacidadBreakerEstacionBComentario, null,
-                    txtCapacidadBreakerEstacionB, null, null,
-                    Type.GetType("System.Int32"));
-                #endregion
+                //#region Capacidad Breaker (A)
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000117", chkCapacidadBreakerEstacionB,
+                //    hfCapacidadBreakerEstacionBComentario, null,
+                //    txtCapacidadBreakerEstacionB, null, null,
+                //    Type.GetType("System.Int32"));
+                //#endregion
 
-                #region Voltaje CD Breaker (V)
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000118", chkVoltajeCDBreakerEstacionB,
-                    hfVoltajeCDBreakerEstacionBComentario, null,
-                    txtVoltajeCDBreakerEstacionB, null, null,
-                    Type.GetType("System.Double"));
-                #endregion
+                //#region Voltaje CD Breaker (V)
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000118", chkVoltajeCDBreakerEstacionB,
+                //    hfVoltajeCDBreakerEstacionBComentario, null,
+                //    txtVoltajeCDBreakerEstacionB, null, null,
+                //    Type.GetType("System.Double"));
+                //#endregion
 
                 #region Posición Breaker
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
@@ -2946,13 +3051,13 @@ namespace SNW.forms
 
                 #region 11 DATOS GENERALES NODO A
 
-                #region # Serie PTP450i
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000189", chkSeriePTP450iNodoA,
-                    hfSeriePTP450iNodoAComentario, null,
-                    txtSeriePTP450iNodoA, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region # Serie PTP450i
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000189", chkSeriePTP450iNodoA,
+                //    hfSeriePTP450iNodoAComentario, null,
+                //    txtSeriePTP450iNodoA, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
                 #region Mediciones de Enlaces de Propagación
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
@@ -3010,13 +3115,13 @@ namespace SNW.forms
 
                 #region 12 DATOS GENERALES NODO B
 
-                #region # Serie PTP450i
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000191", chkSeriePTP450iNodoB,
-                    hfSeriePTP450iNodoBComentario, null,
-                    txtSeriePTP450iNodoB, null, null,
-                    Type.GetType("System.String"));
-                #endregion
+                //#region # Serie PTP450i
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000191", chkSeriePTP450iNodoB,
+                //    hfSeriePTP450iNodoBComentario, null,
+                //    txtSeriePTP450iNodoB, null, null,
+                //    Type.GetType("System.String"));
+                //#endregion
 
                 #region Mediciones de Enlaces de Propagación
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,

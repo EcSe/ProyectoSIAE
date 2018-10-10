@@ -40,6 +40,12 @@ namespace BusinessLogic
 
                     item.PTP.NodoA.IdNodo= drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO_A"));
                     item.NodoB.IdNodo = drDatos.GetString(drDatos.GetOrdinal("CH_ID_NODO_B"));
+                    item.DisenoFrecuenciaNodoA = drDatos.GetString(drDatos.GetOrdinal("VC_DIS_FREC_NODO_A"));
+                    item.DisenoFrecuenciaNodoB = drDatos.GetString(drDatos.GetOrdinal("VC_DIS_FREC_NODO_B"));
+                    item.ModeloRadioNodoA = drDatos.GetString(drDatos.GetOrdinal("VC_MOD_RAD_NODO_A"));
+                    item.PotenciaTorreNodoA = drDatos.GetInt32(drDatos.GetOrdinal("IN_POT_TX_NODO_A"));
+                    item.SenalRecepcionNodoA = (Double)drDatos.GetDecimal(drDatos.GetOrdinal("NU_SEN_REC_NODO_A"));
+
                     lstResultadosBE.Add(item);
                 }
 

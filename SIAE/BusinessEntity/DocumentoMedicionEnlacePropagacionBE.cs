@@ -16,7 +16,7 @@ namespace BusinessEntity
         public String NodoIIBBB_IdNodo { get { return NodoIIBBB.IdNodo; } }
         public Double RSSLocal { get; set; }
         public Double RSSRemoto { get; set; }
-        public Int32 TiempoPromedio { get; set; }
+        public Double TiempoPromedio { get; set; } //cambiado para que acepte decimales
         public Double CapidadSubida { get; set; }
         public Double CapidadBajada { get; set; }
         public UsuarioBE UsuarioCreacion { get; set; }

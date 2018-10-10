@@ -16,7 +16,7 @@
                         <li class="active"><a href="#tabTitulo" data-toggle="tab"><span class="fa fa-file-o"></span>&nbsp;Título</a></li>
                         <li><a href="#tabConfiguracion" data-toggle="tab"><span class="fa fa-cog"></span>&nbsp;1 Configuración y Pruebas</a></li>
                         <li><a href="#tabMateriales" data-toggle="tab"><span class="fa fa-list-ol"></span>&nbsp;2 Materiales AP</a></li>
-                        <li><a href="#tabSFTP" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;3 SFTP</a></li>
+                        <%--<li><a href="#tabSFTP" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;3 SFTP</a></li>--%>
                         <li><a href="#tabReporteFotografico" data-toggle="tab"><span class="fa fa-file-image-o"></span>&nbsp;7 Reporte Fotográfico</a></li>
                         <li><a href="#tabDatosGeneralesNodo" data-toggle="tab"><span class="fa fa-cubes"></span>&nbsp;8 Datos Generales del Nodo</a></li>
                         <li><a href="#tabFotosAdicionales" data-toggle="tab"><span class="fa fa-file-image-o"></span>&nbsp;Fotos Adicionales</a></li>
@@ -173,7 +173,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <%--<div class="col-xs-12 col-sm-6 col-lg-3" id="divAzimut">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -196,7 +196,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <div class="col-xs-12 col-sm-6 col-lg-3" id="divDownTilt">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -219,7 +219,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <div class="col-xs-12 col-sm-6 col-lg-3" id="divAlturaInstalada">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -241,7 +241,7 @@
                                             <label for="cphContenido_txtAlturaInstalada">Altura Instalada (m)</label>
                                         </span>
                                     </div>
-                                </div>
+                                </div>--%>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
@@ -764,7 +764,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="Cantidad">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtCantidad" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0}") %>'></asp:TextBox>
+                                                            <asp:TextBox ID="txtCantidad" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0.00000}") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -782,7 +782,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tabSFTP">
+                        <%--<div class="tab-pane fade" id="tabSFTP">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
@@ -882,7 +882,6 @@
                                     <div class="form-group-base input-group">
                                         <div class="has-float-label">
                                             <div id="divSFTP" class="form-control" style="height: 100%;">
-                                                <%--<asp:Image ID="imgConfigurationEjemplo" runat="server" />--%>
                                                 <img id="imgSFTPEjemplo" runat="server" alt="SFTP" style="width: 40%; margin-left: auto; margin-right: auto; display: block; min-width: 362px;" />
                                             </div>
                                             <label for="divSFTP">SFTP (Gráfico)</label>
@@ -890,7 +889,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="tab-pane fade" id="tabReporteFotografico">
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
@@ -1711,19 +1710,19 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="RSS Local (dBm)">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtRSSLocal" runat="server" Text='<%# Bind("RSSLocal","{0:#,##0.00}") %>' Style="width: 75px"></asp:TextBox>
+                                                            <asp:TextBox ID="txtRSSLocal" runat="server" Text='<%# Bind("RSSLocal","{0:#,##0.00}") %>' Style="width: 75px" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="RSS Remoto (dBm)">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtRSSRemoto" runat="server" Text='<%# Bind("RSSRemoto","{0:#,##0.00}") %>' Style="width: 75px"></asp:TextBox>
+                                                            <asp:TextBox ID="txtRSSRemoto" runat="server" Text='<%# Bind("RSSRemoto","{0:#,##0.00}") %>' Style="width: 75px" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Tiempo Promedio (ms)">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0}") %>' Style="width: 75px"></asp:TextBox>
+                                                            <asp:TextBox ID="txtTiempoPromedio" runat="server" Text='<%# Bind("TiempoPromedio","{0:#,##0}") %>' Style="width: 75px" data-placement="top" title="" data-content="" data-toggle="popover" autocomplete="off" data-trigger="hover"></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -1848,6 +1847,7 @@
     <br />
     <input type="hidden" id="hfIdPerfil" runat="server"/>
     <input type="hidden" id="hfRutaVirtualTemporal" runat="server"/>
+    <input type="hidden" id="hfIdDocumento" runat="server"/>
 
     <%--Viene de https://bootsnipp.com/snippets/featured/panels-with-nav-tabs--%>
     <%--<div class="row">

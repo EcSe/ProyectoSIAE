@@ -363,7 +363,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionA').val(fileNames);
@@ -430,7 +430,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionGeneralEnlaceEstacionB').val(fileNames);
@@ -497,7 +497,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionVLANEstacionA').val(fileNames);
@@ -565,7 +565,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionVLANEstacionB').val(fileNames);
@@ -632,7 +632,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionA01').val(fileNames);
@@ -699,7 +699,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionA02').val(fileNames);
@@ -766,7 +766,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionRadioEstacionB').val(fileNames);
@@ -833,7 +833,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionA').val(fileNames);
@@ -900,7 +900,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfConfiguracionIPEstacionB').val(fileNames);
@@ -967,7 +967,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionA01').val(fileNames);
@@ -1034,7 +1034,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionA02').val(fileNames);
@@ -1101,7 +1101,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionB01').val(fileNames);
@@ -1168,7 +1168,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfResultadosAnalisisEstacionB02').val(fileNames);
@@ -1359,6 +1359,7 @@
 
     // #endregion
 
+    /*
     // #region 4 Longitud SFTP
 
     // #region Estación A
@@ -1634,11 +1635,13 @@
     // #endregion
 
     // #endregion
-
+     */
+    
     // #region 5 Asignaciones y Observaciones
 
     // #region Estación A
 
+    /*
     // #region Capacidad Breaker (A)
 
     $('#cphContenido_chkCapacidadBreakerEstacionA').change(function () {
@@ -1704,6 +1707,7 @@
     });
 
     // #endregion
+    */
 
     // #region Posición Breaker
 
@@ -1775,6 +1779,7 @@
 
     // #region Estación B
 
+    /*
     // #region Capacidad Breaker (A)
 
     $('#cphContenido_chkCapacidadBreakerEstacionB').change(function () {
@@ -1840,6 +1845,7 @@
     });
 
     // #endregion
+    */
 
     // #region Posición Breaker
 
@@ -1955,7 +1961,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfIngenieria').val(fileNames);
@@ -2022,7 +2028,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPerfil').val(fileNames);
@@ -2093,7 +2099,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionA').val(fileNames);
@@ -2160,7 +2166,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPantallaRadioEstacionB').val(fileNames);
@@ -5851,6 +5857,7 @@
 
     // #region 11 DATOS GENERALES NODO A
 
+    /*
     // #region # Serie PTP450i
 
     $('#cphContenido_chkSeriePTP450iNodoA').change(function () {
@@ -5883,6 +5890,7 @@
     });
 
     // #endregion
+    */
 
     // #region Mediciones de Enlaces de Propagación
 
@@ -5951,6 +5959,7 @@
 
     // #region 12 DATOS GENERALES NODO B
 
+    /*
     // #region # Serie PTP450i
 
     $('#cphContenido_chkSeriePTP450iNodoB').change(function () {
@@ -5983,6 +5992,7 @@
     });
 
     // #endregion
+    */
 
     // #region Mediciones de Enlaces de Propagación
 
@@ -6049,6 +6059,32 @@
 
 
     // #endregion
+
+    $("#cphContenido_btnGuardar").click(function () {
+        //Validamos los campos
+        var hasErrors = false;
+        var cantError = 0;
+        
+        $("#cphContenido_gvMedicionEnlacePropagacionNodoA input[id^=cphContenido_gvMedicionEnlacePropagacionNodoA_txtTiempoPromedio]").each(function () {
+            hasErrors = $.fn.validarTxtTiempoPromedio($(this));
+            if (hasErrors)
+                cantError++;
+        });
+
+        $("#cphContenido_gvMedicionEnlacePropagacionNodoB input[id^=cphContenido_gvMedicionEnlacePropagacionNodoB_txtTiempoPromedio]").each(function () {
+            hasErrors = $.fn.validarTxtTiempoPromedio($(this));
+            if (hasErrors)
+                cantError++;
+        });
+
+        if (cantError == 0)
+            return true;
+        else {
+            openAlert('#divAlert', '#divAlertHeader', 'modal-header-danger', '#lblAlertTitle', 'Error', '#lblAlertBody', 'Algunos datos nos son válidos favor revisar antes de intentar guardar.', true, true);
+            return false;
+        }
+
+    });
 
     // #region Cerrar todos los popovers cuando se da click fuera de uno
 
@@ -6272,7 +6308,8 @@
         $('#txtPatchCorePOESwitch01EstacionBComentario').prop('disabled', true);
         $('#txtPatchCorePOESwitch02EstacionBComentario').prop('disabled', true);
 
-        $('#txtSeriePTP450iNodoAComentario').prop('disabled', true);
+        //$('#txtSeriePTP450iNodoAComentario').prop('disabled', true);
+        //$('#txtSeriePTP450iNodoBComentario').prop('disabled', true);
         $('#txtMedicionEnlacePropagacionNodoAComentario').prop('disabled', true);
         $('#txtMedicionEnlacePropagacionNodoBComentario').prop('disabled', true);
         //#endregion
@@ -6282,4 +6319,36 @@
 
     // #endregion
 
+    // #region Metodos
+
+    $.fn.validarTxtTiempoPromedio = function (txtTiempoPromedio) {
+        var hasErrors = false;
+        var intTiempoPromedio = 0;
+        var strTiempoPromedio = "0";
+
+        if (!(txtTiempoPromedio.val() == "")) {
+            strTiempoPromedio = txtTiempoPromedio.val().replace(",", "");
+            intTiempoPromedio = parseInt(strTiempoPromedio);
+
+            if (intTiempoPromedio < 6 || intTiempoPromedio > 10) {
+                hasErrors = true;
+                txtTiempoPromedio.addClass('invalid');
+                txtTiempoPromedio.attr("title", "Error");
+                txtTiempoPromedio.attr("data-content", "El número debe estar comprendido entre 6 y 10.");
+                txtTiempoPromedio.popover('show');
+                setTimeout(function () {
+                    txtTiempoPromedio.popover('hide');
+                }, 4000);
+                txtTiempoPromedio.next().addClass('danger');
+            }
+            else {
+                hasErrors = false;
+                txtTiempoPromedio.removeClass('invalid');
+                txtTiempoPromedio.popover('destroy');
+            }
+        }
+        return hasErrors;
+    }
+
+    // #endregion
 });

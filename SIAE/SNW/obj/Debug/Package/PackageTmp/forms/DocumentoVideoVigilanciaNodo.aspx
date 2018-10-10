@@ -20,12 +20,17 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tabVideos">
                             <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="alert alert-warning" role="alert">Sólo se aceptan archivos <strong>mp4</strong> con el codec <strong>avc1</strong>. Si su archivo de video no se logra visualizar en la pantalla ingresar a <a href="https://www.files-conversion.com/video/mjpeg" target="_blank" class="alert-link">files-conversion.com</a> para convertir el archivo correctamente.</div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="form-group-base input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkVideoCamaraIndoor" runat="server" />
+                                                    <asp:CheckBox ID="chkVideoCamaraIndoor" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -43,14 +48,14 @@
                                             <label for="divVideoCamaraIndoor">Video Cámara Indoor</label>
                                         </div>
                                     </div>
-                                    <asp:hiddenfield id="hfVideoCamaraIndoor" runat="server" />
+                                    <asp:HiddenField ID="hfVideoCamaraIndoor" runat="server" />
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <div class="form-group-base input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkVideoCamaraOutdoor" runat="server" />
+                                                    <asp:CheckBox ID="chkVideoCamaraOutdoor" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -68,7 +73,7 @@
                                             <label for="divVideoCamaraOutdoor">Video Cámara Outdoor</label>
                                         </div>
                                     </div>
-                                    <asp:hiddenfield id="hfVideoCamaraOutdoor" runat="server" />
+                                    <asp:HiddenField ID="hfVideoCamaraOutdoor" runat="server" />
                                 </div>
                             </div>
                             <div class="row">
@@ -77,7 +82,7 @@
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
                                                 <label>
-                                                    <asp:checkbox id="chkVideoSirena" runat="server" />
+                                                    <asp:CheckBox ID="chkVideoSirena" runat="server" />
                                                     <span title="Aprobado"></span>
                                                 </label>
                                             </div>
@@ -95,7 +100,7 @@
                                             <label for="divVideoSirena">Video Sirena</label>
                                         </div>
                                     </div>
-                                    <asp:hiddenfield id="hfVideoSirena" runat="server" />
+                                    <asp:HiddenField ID="hfVideoSirena" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -104,7 +109,7 @@
             </div>
         </div>
     </div>
-    <asp:updatepanel id="upaGuardar" runat="server">
+    <asp:UpdatePanel ID="upaGuardar" runat="server">
         <ContentTemplate>
             <div class="row">
                 <div class="col-xs-12 col-sm-3 col-sm-offset-3">
@@ -115,7 +120,7 @@
                 </div>
             </div>
         </ContentTemplate>
-    </asp:updatepanel>
+    </asp:UpdatePanel>
     <br />
     <br />
     <input type="hidden" id="hfIdPerfil" runat="server" />

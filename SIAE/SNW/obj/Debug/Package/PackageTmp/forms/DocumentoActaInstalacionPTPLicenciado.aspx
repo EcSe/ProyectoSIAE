@@ -17,7 +17,7 @@
                         <li><a href="#tabConfiguracionMediciones" data-toggle="tab"><span class="fa fa-cog"></span>&nbsp;1 Configuración y Mediciones</a></li>
                         <li><a href="#tabMaterialesEstacionA" data-toggle="tab"><span class="fa fa-list-ol"></span>&nbsp;2 Materiales A</a></li>
                         <li><a href="#tabMaterialesEstacionB" data-toggle="tab"><span class="fa fa-list-ol"></span>&nbsp;3 Materiales B</a></li>
-                        <li><a href="#tabLongitudSFTP" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;4 Longitud SFTP</a></li>
+                        <%--<li><a href="#tabLongitudSFTP" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;4 Longitud SFTP</a></li>--%>
                         <li><a href="#tabAsignacionesObservaciones" data-toggle="tab"><span class="fa fa-search"></span>&nbsp;5 Asignaciones y Observaciones</a></li>
                         <li><a href="#tabCalculoPropagacion" data-toggle="tab"><span class="fa fa-line-chart"></span>&nbsp;6 Cálculo Propagacion</a></li>
                         <li><a href="#tabPruebasInterferencia" data-toggle="tab"><span class="fa fa-wifi"></span>&nbsp;8 Pruebas de Interferencia</a></li>
@@ -284,7 +284,7 @@
                                         <div class="has-float-label">
                                             <div id="divConfiguracionGeneralEnlaceEstacionA" class="">
                                             </div>
-                                            <label for="divConfiguracionGeneralEnlaceEstacionA">Configuración General del Enlace Estación A</label>
+                                            <label for="divConfiguracionGeneralEnlaceEstacionA" id="lblConfiguracionGeneralEnlaceEstacionA" runat="server">Configuración General del Enlace Estación A</label>
                                         </div>
                                     </div>
                                     <asp:HiddenField ID="hfConfiguracionGeneralEnlaceEstacionA" runat="server" />
@@ -879,7 +879,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="Cantidad">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtCantidadA" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0}") %>'></asp:TextBox>
+                                                            <asp:TextBox ID="txtCantidadA" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0.00000}") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -991,7 +991,7 @@
                                                     </asp:BoundField>
                                                     <asp:TemplateField HeaderText="Cantidad">
                                                         <ItemTemplate>
-                                                            <asp:TextBox ID="txtCantidadB" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0}") %>'></asp:TextBox>
+                                                            <asp:TextBox ID="txtCantidadB" runat="server" Style="width: 75px" Text='<%# Bind("Cantidad","{0:#,##0.00000}") %>'></asp:TextBox>
                                                         </ItemTemplate>
                                                         <HeaderStyle HorizontalAlign="Center" />
                                                     </asp:TemplateField>
@@ -1009,7 +1009,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tabLongitudSFTP">
+                        <%--<div class="tab-pane fade" id="tabLongitudSFTP">
                             <div class="row">
                                 <h4 class="color-primary text-center" runat="server">Estación A</h4>
                             </div>
@@ -1209,7 +1209,6 @@
                                     <div class="form-group-base input-group">
                                         <div class="has-float-label">
                                             <div id="divSFTP" class="form-control" style="height: 100%;">
-                                                <%--<asp:Image ID="imgConfigurationEjemplo" runat="server" />--%>
                                                 <img id="imgSFTPEjemplo" runat="server" alt="SFTP" style="width: 40%; margin-left: auto; margin-right: auto; display: block; min-width: 362px;" />
                                             </div>
                                             <label for="divSFTP">SFTP (Gráfico)</label>
@@ -1217,7 +1216,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="tab-pane fade" id="tabAsignacionesObservaciones">
                             <div class="row">
                                 <h4 class="color-primary text-center" runat="server">Estación A</h4>
