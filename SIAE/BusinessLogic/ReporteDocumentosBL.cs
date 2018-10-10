@@ -677,18 +677,6 @@ namespace BusinessLogic
             }
             else { FECHA = ""; }
 
-            //String POWER_CABLE_3X14AWG = ds.Tables[0].Rows[0]["POWER_CABLE_3X14AWG"].ToString();
-            //String OUTDOOR_CABLE_2X0_22SQMM_RED_BLACK = ds.Tables[0].Rows[0]["OUTDOOR_CABLE_2X0_22SQMM_RED_BLACK"].ToString();
-            //String OUTDOOR_CABLE_4X0_22SQMM = ds.Tables[0].Rows[0]["OUTDOOR_CABLE_4X0_22SQMM"].ToString();
-            //String SILICONA_TRANSPARENTE_200ML = ds.Tables[0].Rows[0]["SILICONA_TRANSPARENTE_200ML"].ToString();
-            //String TUBO_CORRUGADO_PLEGABLE_PVC_20MM = ds.Tables[0].Rows[0]["TUBO_CORRUGADO_PLEGABLE_PVC_20MM"].ToString();
-            //String SPIRAL_WRAP_12MM_WHITE = ds.Tables[0].Rows[0]["SPIRAL_WRAP_12MM_WHITE"].ToString();
-            //String STEEL_FLEXIBLE_CONDUIT_34_DFX_LT = ds.Tables[0].Rows[0]["STEEL_FLEXIBLE_CONDUIT_34_DFX_LT"].ToString();
-            //String GROUND_CABLE_AWG_10_YELLOWGREEN = ds.Tables[0].Rows[0]["GROUND_CABLE_AWG_10_YELLOWGREEN"].ToString();
-            //String DATA_CABLE_CAT5E_FOR_OUTDOOR = ds.Tables[0].Rows[0]["DATA_CABLE_CAT5E_FOR_OUTDOOR"].ToString();
-            //String LAN_CABLE_CAT5E_UTP_24AWG_LSZH_GREY = ds.Tables[0].Rows[0]["LAN_CABLE_CAT5E_UTP_24AWG_LSZH_GREY"].ToString();
-            //String PVC_TAPE_25M_X_19MM_BLACK = ds.Tables[0].Rows[0]["PVC_TAPE_25M_X_19MM_BLACK"].ToString();
-
             String fechaSQL_1 = dt.Rows[0]["EXTINGUIDOR_EXT_FECHA_EXPIRACION"].ToString();
             String EXTINGUIDOR_EXT_FECHA_EXPIRACION = "";
             if (fechaSQL_1 != "")
@@ -706,16 +694,9 @@ namespace BusinessLogic
                 EXTINGUIDOR_INT_FECHA_EXPIRACION = dtFecha.ToString("dd/MM/yyyy");
             }
             else { EXTINGUIDOR_INT_FECHA_EXPIRACION = ""; }
-
-            //String SERIAL_CAMARA_PTZ_INT = ds.Tables[0].Rows[0]["SERIAL_CAMARA_PTZ_INT"].ToString();
-            //String SERIAL_CAMARA_PTZ_EXT = ds.Tables[0].Rows[0]["SERIAL_CAMARA_PTZ_EXT"].ToString();
-            //String SERIAL_CONTROL_ALARMAS = ds.Tables[0].Rows[0]["SERIAL_CONTROL_ALARMAS"].ToString();
-            //String SERIAL_NVR = ds.Tables[0].Rows[0]["SERIAL_NVR"].ToString();
-            //String SERIAL_SWITCH_POE = ds.Tables[0].Rows[0]["SERIAL_SWITCH_POE"].ToString();
-            //String SERIAL_LECTOR_BIO = ds.Tables[0].Rows[0]["SERIAL_LECTOR_BIO"].ToString();
-            //String SERIAL_SENSOR_90_1 = ds.Tables[0].Rows[0]["SERIAL_SENSOR_90_1"].ToString();
-            //String SERIAL_SENSOR_90_2 = ds.Tables[0].Rows[0]["SERIAL_SENSOR_90_2"].ToString();
             String DEPARTAMENTO = dt.Rows[0]["DEPARTAMENTO"].ToString();
+            String SERIAL_CONTROLADOR = dt.Rows[0]["SERIAL_CONTROLADOR"].ToString();
+
 
             #endregion
 
@@ -992,6 +973,7 @@ namespace BusinessLogic
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", NOMBRE_NODO,10,"J");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_EXT_FECHA_EXPIRACION, 43, "G");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_INT_FECHA_EXPIRACION, 44, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "ATP", SERIAL_CONTROLADOR, 8,"C");
             #endregion
 
             #endregion
@@ -3220,17 +3202,8 @@ namespace BusinessLogic
                 EXTINGUIDOR_INT_FECHA_EXPIRACION = dtFecha.ToString("dd/MM/yyyy");
             }
             else { EXTINGUIDOR_INT_FECHA_EXPIRACION = ""; }
-
-            //String SERIAL_CAMARA_PTZ_INT = ds.Tables[0].Rows[0]["SERIAL_CAMARA_PTZ_INT"].ToString();
-            //String SERIAL_CAMARA_PTZ_EXT = ds.Tables[0].Rows[0]["SERIAL_CAMARA_PTZ_EXT"].ToString();
-            //String SERIAL_CONTROL_ALARMAS = ds.Tables[0].Rows[0]["SERIAL_CONTROL_ALARMAS"].ToString();
-            //String SERIAL_NVR = ds.Tables[0].Rows[0]["SERIAL_NVR"].ToString();
-            //String SERIAL_SWITCH_POE = ds.Tables[0].Rows[0]["SERIAL_SWITCH_POE"].ToString();
-            //String SERIAL_LECTOR_BIO = ds.Tables[0].Rows[0]["SERIAL_LECTOR_BIO"].ToString();
-            //String SERIAL_SENSOR_90_1 = ds.Tables[0].Rows[0]["SERIAL_SENSOR_90_1"].ToString();
-            //String SERIAL_SENSOR_90_2 = ds.Tables[0].Rows[0]["SERIAL_SENSOR_90_2"].ToString();
             String DEPARTAMENTO = dt.Rows[0]["DEPARTAMENTO"].ToString();
-
+            String SERIAL_CONTROLADOR = dt.Rows[0]["SERIAL_CONTROLADOR"].ToString();
 
             #endregion
 
@@ -3500,6 +3473,7 @@ namespace BusinessLogic
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", NOMBRE_NODO,10,"J");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_EXT_FECHA_EXPIRACION, 43, "G");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_INT_FECHA_EXPIRACION, 44, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "ATP", SERIAL_CONTROLADOR, 8, "C");
             #endregion
 
             #endregion
