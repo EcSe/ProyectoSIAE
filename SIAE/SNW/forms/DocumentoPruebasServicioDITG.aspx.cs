@@ -221,7 +221,7 @@ namespace SNW.forms
                         UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkBytesRecibidos,
                             hfBytesRecibidosComentario, null,
                             txtBytesRecibidos, null, null,
-                            Type.GetType("System.Int32"));
+                            Type.GetType("System.Double"));
                         #endregion
 
                         #region Throughput Prom. (Kbps)
@@ -436,7 +436,7 @@ namespace SNW.forms
                     Documento, "000199", chkBytesRecibidos,
                     hfBytesRecibidosComentario, null,
                     txtBytesRecibidos, null, null,
-                    Type.GetType("System.Int32"));
+                    Type.GetType("System.Double"));
                 #endregion
 
                 #region Throughput Prom. (Kbps)
