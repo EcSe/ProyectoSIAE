@@ -1616,7 +1616,7 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("EQUIPAMIENTO AIO");
                 file.WriteLine("----------------");
-                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS' ", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS'", conexionExcel);
                 /*AND [NUMERO DE SERIE] <> '-' AND [NUMERO DE SERIE] <> '' | (EXTRACTO QUE SIRVE PARA EVITAR  QUE SE PROCESE EQUIPOS SIN
                 SERIAL)*/
                 try
