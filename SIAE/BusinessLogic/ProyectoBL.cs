@@ -1225,6 +1225,7 @@ namespace BusinessLogic
                                 }
                             }
                             #endregion
+
                             intFila++;
                         }
                     }
@@ -1567,26 +1568,159 @@ namespace BusinessLogic
                                 DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
 
                             DocumentoEquipamiento.IdEmpresa = "S";//SIAE
+
+                            //Obtenemos el tipo de tarea
+                            Tarea = new TareaBE();
+                            Tarea.IdTarea = DocumentoEquipamiento.Documento.Tarea.IdTarea;
+                            try
+                            {
+                                Tarea = TareaBL.ListarTareas(Tarea,"S", baseDatosDA)[0];
+                            }
+                            catch (Exception ex)
+                            {
+                                Tarea.NodoB.IdNodo = "";
+                            }
+
                             #endregion
 
                             #region Si no hay errores de campo o de dato intentamos procesar la fila.
-                            if (!blnErrorCampo && !blnErrorDato)
+                            if (!(Tarea.TipoTarea.IdValor.Equals("000012") && DocumentoEquipamiento.Equipamiento.IdValor.Equals("D60078")))
                             {
-                                try
+                                if (!blnErrorCampo && !blnErrorDato)
                                 {
-                                    if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                    try
                                     {
-                                        DocumentoEquipamiento.UsuarioCreacion = UsuarioCreacion;
-                                        DocumentoEquipamientoBL.InsertarDocumentoEquipamientoProceso(DocumentoEquipamiento, baseDatosDA);
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoEquipamientoBL.InsertarDocumentoEquipamientoProceso(DocumentoEquipamiento, baseDatosDA);
+                                        }
                                     }
-                                }
-                                catch (Exception ex)
-                                {
-                                    blnErrorDato = true;
-                                    file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
                                 }
                             }
                             #endregion
+
+                            intFila++;
+                        }
+                    }
+                    else
+                    {
+                        file.WriteLine("La tabla EQUIPAMIENTO SIAE no tiene registros.");
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType().FullName.Equals("System.Data.OleDb.OleDbException") && ((System.Data.OleDb.OleDbException)ex).ErrorCode.Equals(-2147467259))
+                    {
+                        file.WriteLine("No existe la tabla EQUIPAMIENTO SIAE");
+                    }
+                    else
+                    {
+                        file.WriteLine(ex.Message);
+                    }
+                    blnErrorTabla = true;
+                }
+                #endregion
+
+                #region Validamos la hoja EQUIPAMIENTO SIAE ALIMENTACION
+                intFila = 2;
+                file.WriteLine("");
+                file.WriteLine("");
+                file.WriteLine("EQUIPAMIENTO SIAE ALIMENTACION");
+                file.WriteLine("------------------------------");
+                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO SIAE$] WHERE TIPO_MOV = 'OUT' AND CODIGO_SIAE = 'D60078'", conexionExcel);
+                try
+                {
+                    blnErrorTabla = false;
+                    DbDataReader reader = Command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Object objValor = null;
+                            blnErrorDato = false;
+                            blnErrorCampo = false;
+                            blnErrorDatoTemp = false;
+                            blnErrorCampoTemp = false;
+
+                            #region Validamos los campos de DocumentoEquipamiento
+                            DocumentoEquipamiento = new DocumentoEquipamientoBE();
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "CODIGO_SIAE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.Equipamiento.IdValor = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "S/N", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.SerieEquipamiento = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "LINK ID", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.Documento.Tarea.IdTarea = Convert.ToString(objValor);
+
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "SITE CODE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            if (blnErrorDatoTemp)
+                                blnErrorDato = blnErrorDatoTemp;
+                            if (blnErrorCampoTemp)
+                                blnErrorCampo = blnErrorCampoTemp;
+                            if (!blnErrorDatoTemp && !blnErrorCampoTemp)
+                                DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo = Convert.ToString(objValor);
+
+                            DocumentoEquipamiento.IdEmpresa = "S";//SIAE
+
+                            //Obtenemos el tipo de tarea
+                            Tarea = new TareaBE();
+                            Tarea.IdTarea = DocumentoEquipamiento.Documento.Tarea.IdTarea;
+                            try
+                            {
+                                Tarea = TareaBL.ListarTareas(Tarea, "S", baseDatosDA)[0];
+                            }
+                            catch (Exception ex)
+                            {
+                                Tarea.NodoB.IdNodo = "";
+                            }
+
+                            #endregion
+
+                            #region Si no hay errores de campo o de dato intentamos procesar la fila.
+                            if (Tarea.TipoTarea.IdValor.Equals("000012"))
+                            {
+                                if (!blnErrorCampo && !blnErrorDato)
+                                {
+                                    try
+                                    {
+                                        if (ddlMetodo.SelectedValue.Equals("000001"))//Insertar
+                                        {
+                                            DocumentoEquipamiento.UsuarioCreacion = UsuarioCreacion;
+                                            DocumentoEquipamientoBL.InsertarDocumentoEquipamientoAlimentacionProceso(DocumentoEquipamiento, baseDatosDA);
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        blnErrorDato = true;
+                                        file.WriteLine("Fila " + intFila.ToString() + ": " + ex.Message);
+                                    }
+                                }
+                            }
+                            #endregion
+
                             intFila++;
                         }
                     }
@@ -1616,9 +1750,7 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("EQUIPAMIENTO AIO");
                 file.WriteLine("----------------");
-                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS'", conexionExcel);
-                /*AND [NUMERO DE SERIE] <> '-' AND [NUMERO DE SERIE] <> '' | (EXTRACTO QUE SIRVE PARA EVITAR  QUE SE PROCESE EQUIPOS SIN
-                SERIAL)*/
+                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS' AND [NUMERO DE SERIE] <> '-' AND [NUMERO DE SERIE] <> ''", conexionExcel);
                 try
                 {
                     blnErrorTabla = false;
@@ -1655,7 +1787,7 @@ namespace BusinessLogic
                             }
 
 
-                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "NUMERO DE SERIE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "NUMERO DE SERIE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
                             if (blnErrorDatoTemp)
                                 blnErrorDato = blnErrorDatoTemp;
                             if (blnErrorCampoTemp)
