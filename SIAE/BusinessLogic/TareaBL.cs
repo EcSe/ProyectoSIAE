@@ -13,12 +13,20 @@ namespace BusinessLogic
 {
     public class TareaBL
     {
-        public static List<TareaBE> ListarTareas(TareaBE Tarea,String TipoTransaccion = "S")
+        public static List<TareaBE> ListarTareas(TareaBE Tarea,String TipoTransaccion = "S", DBBaseDatos BaseDatos = null)
         {
             List<TareaBE> lstResultadosBE = new List<TareaBE>();
             DBBaseDatos baseDatosDA = new DBBaseDatos();
-            baseDatosDA.Configurar();
-            baseDatosDA.Conectar();
+            if (BaseDatos == null)
+            {
+                baseDatosDA.Configurar();
+                baseDatosDA.Conectar();
+            }
+            else
+            {
+                baseDatosDA = BaseDatos;
+            }
+
             try
             {
                 baseDatosDA.CrearComando("USP_TAREA", CommandType.StoredProcedure);
@@ -96,8 +104,11 @@ namespace BusinessLogic
             }
             finally
             {
-                baseDatosDA.Desconectar();
-                baseDatosDA = null;
+                if (BaseDatos == null)
+                {
+                    baseDatosDA.Desconectar();
+                    baseDatosDA = null;
+                }
             }
 
             return lstResultadosBE;

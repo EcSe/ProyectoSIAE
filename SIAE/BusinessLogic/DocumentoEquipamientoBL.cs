@@ -203,6 +203,55 @@ namespace BusinessLogic
 
         }
 
+        public static void InsertarDocumentoEquipamientoAlimentacionProceso(DocumentoEquipamientoBE DocumentoEquipamiento, DBBaseDatos BaseDatos = null)
+        {
+            DBBaseDatos baseDatosDA = new DBBaseDatos();
+            if (BaseDatos == null)
+            {
+                baseDatosDA.Configurar();
+                baseDatosDA.Conectar();
+            }
+            else
+            {
+                baseDatosDA = BaseDatos;
+            }
+
+            try
+            {
+                baseDatosDA.CrearComando("USP_DOCUMENTO_EQUIPAMIENTO_PROC", CommandType.StoredProcedure);
+                baseDatosDA.AsignarParametroCadena("@PCH_TIPO_TRANSACCION", "A", true);
+                baseDatosDA.AsignarParametroCadena("@PVC_EMPRESA_EQUIPAMIENTO", DocumentoEquipamiento.IdEmpresa, true);
+                if (DocumentoEquipamiento.Documento.Tarea.IdTarea == null)
+                    baseDatosDA.AsignarParametroNulo("@PCH_ID_TAREA", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PCH_ID_TAREA", DocumentoEquipamiento.Documento.Tarea.IdTarea, true);
+                if (DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo == null)
+                    baseDatosDA.AsignarParametroNulo("@PVC_ID_NODO_IIBB", true);
+                else
+                    baseDatosDA.AsignarParametroCadena("@PVC_ID_NODO_IIBB", DocumentoEquipamiento.Documento.Tarea.NodoIIBBA.IdNodo, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_ID_EQUIPAMIENTO", DocumentoEquipamiento.Equipamiento.IdValor, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_SERIE_EQUIPAMIENTO", DocumentoEquipamiento.SerieEquipamiento, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_SERIE_KIT", DocumentoEquipamiento.KitSIAE.SerieKit, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_CODIGO_GILAT", DocumentoEquipamiento.KitSIAE.CodigoGilat, true);
+                baseDatosDA.AsignarParametroCadena("@PVC_ID_USUARIO_CRE", DocumentoEquipamiento.UsuarioCreacion.IdUsuario, true);
+
+                baseDatosDA.EjecutarComando();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (BaseDatos == null)
+                {
+                    baseDatosDA.Desconectar();
+                    baseDatosDA = null;
+                }
+            }
+
+        }
+
         public static void EliminarFisicoDocumentoEquipamientoProceso(DocumentoEquipamientoBE DocumentoEquipamiento, DBBaseDatos BaseDatos = null)
         {
             DBBaseDatos baseDatosDA = new DBBaseDatos();
