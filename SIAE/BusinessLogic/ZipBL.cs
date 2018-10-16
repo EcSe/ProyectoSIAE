@@ -92,9 +92,10 @@ namespace BusinessLogic
 
             foreach (DataRow dr in dt1.Rows)
             {
+                String IdDocumento = dr["CH_ID_DOCUMENTO"].ToString();
                 String Tarea = dr["CH_ID_TAREA"].ToString();
                 String NombreDocumento = dr["VC_VALOR_CADENA1"].ToString();
-                String IdDocumento = dr["CH_ID_DOCUMENTO"].ToString();
+                String TipoNodoA = dr["CH_ID_TIP_NODO_A"].ToString();
 
                 #region Valores para documentos
 
@@ -157,7 +158,7 @@ namespace BusinessLogic
                         rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/PruebasDeServicioDITGPTP.xlsx");
                         rd.PruebaServicioDITGPTP(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
 
-                      break;
+                        break;
                     case "000011":
                         rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/PruebasDeServicioDITGPMP.xlsx");
                         rd.PruebaServicioDITGPMP(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
@@ -169,13 +170,29 @@ namespace BusinessLogic
 
                         break;
                     case "000013":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadAcceso.xlsx");
-                        rd.ActaSeguridadAcceso(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
+                        if (TipoNodoA.Equals("000004") || TipoNodoA.Equals("000005"))
+                        {
+                            rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadAccesoDistritalDistribucion.xlsx");
+                            rd.ActaSeguridadAcceso(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
+                        }
+                        else
+                        {
+                            rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadAccesoIntermedioTerminal.xlsx");
+                            rd.ActaSeguridadAcceso(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
+                        }
 
                         break;
                     case "000014":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadDistribucion.xlsx");
-                        rd.ActaSeguridadDistribucion(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
+                        if (TipoNodoA.Equals("000004") || TipoNodoA.Equals("000005"))
+                        {
+                            rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadDistribucionDistritalDistribucion.xlsx");
+                            rd.ActaSeguridadDistribucion(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
+                        }
+                        else
+                        {
+                            rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadDistribucionIntermedioTerminal.xlsx");
+                            rd.ActaSeguridadDistribucion(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
+                        }
 
                         break;
                     case "000015":
@@ -206,155 +223,7 @@ namespace BusinessLogic
 
             #endregion
              ZipFile.CreateFromDirectory(ruta + IdNodo,ruta + IdNodo + ".zip", CompressionLevel.Fastest, true);
-        }
-
-        public void DescargarExcelInZip(String IdNodo)
-        {
-            baseDatosDA.Configurar();
-            baseDatosDA.Conectar();
-
-            DataTable dt = new DataTable();
-
-            try
-            {
-                baseDatosDA.CrearComando("USP_R_EXCEL_IN_ZIP", CommandType.StoredProcedure);
-                baseDatosDA.AsignarParametroCadena("@VC_ID_NODO", IdNodo, true);
-                dt = baseDatosDA.EjecutarConsultaDataTable();
-
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                baseDatosDA.Desconectar();
-                baseDatosDA = null;
-            }
-
-            String rutaPlantilla = "";
-            ReporteDocumentosBL rd = new ReporteDocumentosBL();
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                String Tarea = dr["CH_ID_TAREA"].ToString();
-                String NombreDocumento = dr["VC_VALOR_CADENA1"].ToString();
-                String IdDocumento = dr["CH_ID_DOCUMENTO"].ToString();
-
-                #region Valores para documentos
-
-                switch (IdDocumento)
-                {
-
-
-                    case "000001":  
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloSectorial.xlsx");
-
-                        rd.ActaInstalacionAceptacionProtocoloSectorial(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-
-                    case "000002":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloOmnidireccional.xlsx");
-
-                        rd.ActaInstalacionAceptacionProtocoloOmnidireccional(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-
-                    case "000003":
-                        rutaPlantilla =HttpContext.Current.Server.MapPath("~/Reportes/PruebaInterferencia.xlsx");
-
-                        rd.PruebaInterferencia(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-
-                    case "000004":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/Anexo2InventarioPMP.xlsx");
-                        rd.Anexo2InventarioPMP(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000005":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/EstudioCampo.xlsx");
-                        rd.EstudioDeCampo(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000006":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/Anexo3ReporteFotográficoCMM4.xlsx");
-                        rd.Anexo3ReporteFotograficoCMM4(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000007":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ProtocoloInstalacion.xlsx");
-                        rd.ProtocoloInstalacion(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000008":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaInstalacionPTPLicenciado.xlsx");
-                        rd.ActaInstalacionPTPLicenciado(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000009":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaInstalacionPTPNoLicenciado.xlsx");
-                        rd.ActaInstalacionPTPNoLicenciado(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000010":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/PruebasDeServicioDITGPTP.xlsx");
-                        rd.PruebaServicioDITGPTP(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000011":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/PruebasDeServicioDITGPMP.xlsx");
-                        rd.PruebaServicioDITGPMP(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000012":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/Anexo2InventarioPTP.xlsx");
-                        rd.Anexo2InventarioPTP(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000013":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadAcceso.xlsx");
-                        rd.ActaSeguridadAcceso(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000014":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaSeguridadDistribucion.xlsx");
-                        rd.ActaSeguridadDistribucion(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000015":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_A.xlsx");
-                        rd.ActaInstalacionAceptacionProtocoloIIBB_A(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000016":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/ActaInstalacionAceptacionProtocoloIIBB_B.xlsx");
-                        rd.ActaInstalacionAceptacionProtocoloIIBB_B(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000017":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoA.xlsx");
-                        rd.InstalacionPozoTierraTipoA(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-                    case "000018":
-                        rutaPlantilla = HttpContext.Current.Server.MapPath("~/Reportes/InstalaciondePozoaTierraTipoB.xlsx");
-                        rd.InstalacionPozoTierraTipoB(IdNodo, Tarea, NombreDocumento, rutaPlantilla);
-
-                        break;
-
-                }
-
-                #endregion
-            }
-
-
-        }
-
-      
+        } 
     }
 
   
