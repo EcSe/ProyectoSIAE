@@ -1750,7 +1750,8 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("EQUIPAMIENTO AIO");
                 file.WriteLine("----------------");
-                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS' AND [NUMERO DE SERIE] <> '-' AND [NUMERO DE SERIE] <> ''", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO AIO$] WHERE [SERIE DE KIT] <> 'REPUESTOS'", conexionExcel);
+                //AND [NUMERO DE SERIE] <> '-' AND [NUMERO DE SERIE] <> ''
                 try
                 {
                     blnErrorTabla = false;
@@ -1787,7 +1788,7 @@ namespace BusinessLogic
                             }
 
 
-                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, false, "NUMERO DE SERIE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
+                            objValor = UtilitarioBL.ValidarDatoReader<String>(reader, intFila, true, "NUMERO DE SERIE", out blnErrorCampoTemp, out blnErrorDatoTemp, file);
                             if (blnErrorDatoTemp)
                                 blnErrorDato = blnErrorDatoTemp;
                             if (blnErrorCampoTemp)
