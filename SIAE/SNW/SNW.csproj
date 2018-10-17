@@ -388,6 +388,10 @@
       <Project>{0482140b-db4d-4c12-9132-42cc099f15f0}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{E12CFA3A-5CC0-46D8-98EE-44B7F8081113}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UTILITARIOS\UTILITARIOS.csproj">
       <Project>{1586341d-7a8f-4e21-b29c-0e6a71487eab}</Project>
       <Name>UTILITARIOS</Name>
