@@ -2452,58 +2452,31 @@ namespace SNW.forms {
         protected global::System.Web.UI.WebControls.GridView gvMateriales;
         
         /// <summary>
-        /// Control chkExtinguidorExternoFechaExpiracion.
+        /// Control chkIpControladora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkExtinguidorExternoFechaExpiracion;
+        protected global::System.Web.UI.WebControls.CheckBox chkIpControladora;
         
         /// <summary>
-        /// Control hfExtinguidorExternoFechaExpiracionComentario.
+        /// Control hfIpControladoraComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfExtinguidorExternoFechaExpiracionComentario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfIpControladoraComentario;
         
         /// <summary>
-        /// Control txtExtinguidorExternoFechaExpiracion.
+        /// Control txtIpControladora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtExtinguidorExternoFechaExpiracion;
-        
-        /// <summary>
-        /// Control chkExtinguidorInternoFechaExpiracion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkExtinguidorInternoFechaExpiracion;
-        
-        /// <summary>
-        /// Control hfExtinguidorInternoFechaExpiracionComentario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hfExtinguidorInternoFechaExpiracionComentario;
-        
-        /// <summary>
-        /// Control txtExtinguidorInternoFechaExpiracion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtExtinguidorInternoFechaExpiracion;
+        protected global::System.Web.UI.WebControls.TextBox txtIpControladora;
         
         /// <summary>
         /// Control upaGuardar.

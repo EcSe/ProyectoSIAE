@@ -2627,7 +2627,7 @@
                         </div>
                         <div class="tab-pane fade" id="tabATP">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <%--<div class="col-xs-12 col-sm-6 col-lg-3">
                                     <div class="form-group input-group">
                                         <div class="input-group-addon-base">
                                             <div class="checkbox checbox-switch switch-success">
@@ -2670,6 +2670,29 @@
                                         <span class="has-float-label">
                                             <asp:TextBox ID="txtExtinguidorInternoFechaExpiracion" class="form-control" placeholder="dd/mm/yyyy" runat="server" MaxLength="10"></asp:TextBox>
                                             <label for="cphContenido_txtExtinguidorInternoFechaExpiracion">E. I. Fecha Expiración</label>
+                                        </span>
+                                    </div>
+                                </div>--%>
+                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                    <div class="form-group input-group">
+                                        <div class="input-group-addon-base">
+                                            <div class="checkbox checbox-switch switch-success">
+                                                <label>
+                                                    <asp:CheckBox ID="chkIpControladora" runat="server" />
+                                                    <span title="Aprobado"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <span class="input-group-addon"><span class="fa fa-comment" id="spIpControladoraComentario" data-placement="top" title="Comentario" data-content="" data-toggle="popover" data-trigger="click"></span></span>
+                                        <div id="pocIpControladoraComentario" class="hide">
+                                            <div class="row">
+                                                <textarea id="txtIpControladoraComentario" cols="50" rows="6" maxlength="2000" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="hfIpControladoraComentario" runat="server" />
+                                        <span class="has-float-label">
+                                            <asp:TextBox ID="txtIpControladora" class="form-control" placeholder=" " runat="server" MaxLength="20"></asp:TextBox>
+                                            <label for="cphContenido_txtIpControladora">IP Controladora</label>
                                         </span>
                                     </div>
                                 </div>

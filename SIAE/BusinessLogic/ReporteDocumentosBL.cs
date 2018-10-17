@@ -696,6 +696,8 @@ namespace BusinessLogic
             else { EXTINGUIDOR_INT_FECHA_EXPIRACION = ""; }
             String DEPARTAMENTO = dt.Rows[0]["DEPARTAMENTO"].ToString();
             String SERIAL_CONTROLADOR = dt.Rows[0]["SERIAL_CONTROLADOR"].ToString();
+            //IP CONTROLADOR
+            String IP_CONTROLADOR = dt.Rows[0]["IP_CONTROLADOR"].ToString();
 
 
             #endregion
@@ -974,6 +976,8 @@ namespace BusinessLogic
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_EXT_FECHA_EXPIRACION, 43, "G");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_INT_FECHA_EXPIRACION, 44, "G");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", SERIAL_CONTROLADOR, 8,"C");
+            //IP CONTROLADOR
+            ExcelToolsBL.UpdateCell(excelGenerado, "ATP", IP_CONTROLADOR, 13, "C");
             #endregion
 
             #endregion
@@ -3204,6 +3208,8 @@ namespace BusinessLogic
             else { EXTINGUIDOR_INT_FECHA_EXPIRACION = ""; }
             String DEPARTAMENTO = dt.Rows[0]["DEPARTAMENTO"].ToString();
             String SERIAL_CONTROLADOR = dt.Rows[0]["SERIAL_CONTROLADOR"].ToString();
+            //IP CONTROLADOR
+            String IP_CONTROLADOR = dt.Rows[0]["IP_CONTROLADOR"].ToString();
 
             #endregion
 
@@ -3474,6 +3480,8 @@ namespace BusinessLogic
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_EXT_FECHA_EXPIRACION, 43, "G");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", EXTINGUIDOR_INT_FECHA_EXPIRACION, 44, "G");
             ExcelToolsBL.UpdateCell(excelGenerado, "ATP", SERIAL_CONTROLADOR, 8, "C");
+            //IP CONTROLADOR
+            ExcelToolsBL.UpdateCell(excelGenerado, "ATP", IP_CONTROLADOR, 13, "C");
             #endregion
 
             #endregion
@@ -3730,10 +3738,18 @@ namespace BusinessLogic
             String POLARIZACION_B = dt.Rows[0]["POLARIZACION_B"].ToString();
             String AZIMUT_A = dt.Rows[0]["AZIMUT_A"].ToString();
             String AZIMUT_B = dt.Rows[0]["AZIMUT_B"].ToString();
-            String IP_NODO_A = dt.Rows[0]["IP_NODO_A"].ToString();
-            String IP_NODO_B = dt.Rows[0]["IP_NODO_B"].ToString();
-            String DEFAULT_GATE_A = dt.Rows[0]["DEFAULT_GATE_A"].ToString();
-            String DEFAULT_GATE_B = dt.Rows[0]["DEFAULT_GATE_B"].ToString();
+            String IP_NODO_A_1 = dt.Rows[0]["IP_NODO_A_1"].ToString();
+            String IP_NODO_A_2 = dt.Rows[0]["IP_NODO_A_2"].ToString();
+            String IP_NODO_A_3 = dt.Rows[0]["IP_NODO_A_3"].ToString();
+            String IP_NODO_A_4 = dt.Rows[0]["IP_NODO_A_4"].ToString();
+            String IP_NODO_B_1 = dt.Rows[0]["IP_NODO_B_1"].ToString();
+            String IP_NODO_B_2 = dt.Rows[0]["IP_NODO_B_2"].ToString();
+            String IP_NODO_B_3 = dt.Rows[0]["IP_NODO_B_3"].ToString();
+            String IP_NODO_B_4 = dt.Rows[0]["IP_NODO_B_4"].ToString();
+            String DEFAULT_GATE_AB_1 = dt.Rows[0]["DEFAULT_GATE_AB_1"].ToString();
+            String DEFAULT_GATE_AB_2 = dt.Rows[0]["DEFAULT_GATE_AB_2"].ToString();
+            String DEFAULT_GATE_AB_3 = dt.Rows[0]["DEFAULT_GATE_AB_3"].ToString();
+            String DEFAULT_GATE_AB_4 = dt.Rows[0]["DEFAULT_GATE_AB_4"].ToString();
             String POTENCIA_A = dt.Rows[0]["POTENCIA_A"].ToString();
             String POTENCIA_B = dt.Rows[0]["POTENCIA_B"].ToString();
             String MARGEN_DES_A = dt.Rows[0]["MARGEN_DES_A"].ToString();
@@ -4041,12 +4057,30 @@ namespace BusinessLogic
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", AZIMUT_B, 43, "j");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", "Polarizacion: " + POLARIZACION_A, 50, "E");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", "Modulación:" + MODULACION + "QAM", 50, "K");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A, 55, "E");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 55, "I");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A, 56, "E");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 56, "I");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_A, 58, "E");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_B, 58, "I");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_1, 55, "E");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_2, 55, "F");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_3, 55, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_4, 55, "H");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_1, 55, "I");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_2, 55, "J");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_3, 55, "K");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_4, 55, "L");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_1, 56, "E");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_2, 56, "F");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_3, 56, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_4, 56, "H");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_1, 56, "I");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_2, 56, "J");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_3, 56, "K");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_4, 56, "L");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_1, 58, "E");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_2, 58, "F");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_3, 58, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_4, 58, "H");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_1, 58, "I");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_2, 58, "J");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_3, 58, "K");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_4, 58, "L");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 71, "K");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_B, 71, "M");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 72, "K");
@@ -4062,20 +4096,20 @@ namespace BusinessLogic
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", PING_PTP_RADIO_A + " ms", 87, "K");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", PING_PTP_RADIO_B + " ms", 87, "M");
 
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_GEN_ENL_EST_A, "", 94, 4, 441, 291);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_GEN_ENL_EST_B, "", 109, 4, 474, 339);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_A01, "", 128, 3, 232, 278);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_A02, "", 128, 5, 232, 277);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_A03, "", 128, 10, 248, 279);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_B01, "", 144, 3, 232, 278);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_B02, "", 144, 5, 232, 277);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_B03, "", 144, 10, 248, 279);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_ETHER_SWITCH_EST_A01, "", 163, 3, 356, 301);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_ETHER_SWITCH_EST_A02, "", 163, 8, 352, 302);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_ETHER_SWITCH_EST_B01, "", 179, 3, 356, 301);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_GEN_ENL_EST_A, "", 94,3,724,300);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_GEN_ENL_EST_B, "", 109,3,725, 339);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_A01, "", 128,3,257,278);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_A02, "", 128,5,247,277);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_A03, "", 128,11,217, 278);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_B01, "", 144, 3,256,238);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_B02, "", 144, 5,254,240);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_LAN_EST_B03, "", 144,11, 212, 237);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_ETHER_SWITCH_EST_A01, "", 163, 3, 370, 301);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_ETHER_SWITCH_EST_A02, "",163,8, 352, 306);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_ETHER_SWITCH_EST_B01, "", 179, 3, 373, 301);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_ETHER_SWITCH_EST_B02, "", 179, 8, 352, 302);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_A, "", 198, 3, 709, 239);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_B, "", 214, 3, 713, 341);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_A, "", 198, 3,724, 239);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "1 Configuración y Mediciones", mCONF_IP_ESTAC_B, "", 214, 3,723, 341);
 
             #endregion
 
@@ -4224,8 +4258,8 @@ namespace BusinessLogic
 
             ExcelToolsBL.UpdateCell(excelGenerado, "8 Pruebas de Interferencia", NODO_A, 15, "E");
             ExcelToolsBL.UpdateCell(excelGenerado, "8 Pruebas de Interferencia", NODO_B, 15, "F");
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "8 Pruebas de Interferencia", mPANT_RADIO_ESTAC_A, "", 20, 3, 700, 268);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "8 Pruebas de Interferencia", mPANT_RADIO_ESTAC_B, "", 38, 3, 698, 269);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "8 Pruebas de Interferencia", mPANT_RADIO_ESTAC_A, "", 20, 3,723,341);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "8 Pruebas de Interferencia", mPANT_RADIO_ESTAC_B, "", 38, 3, 698,324);
 
             #endregion
 
@@ -4571,9 +4605,18 @@ namespace BusinessLogic
             String POLARIZACION_B = dt.Rows[0]["POLARIZACION_B"].ToString();
             String AZIMUT_A = dt.Rows[0]["AZIMUT_A"].ToString();
             String AZIMUT_B = dt.Rows[0]["AZIMUT_B"].ToString();
-            String IP_NODO_A = dt.Rows[0]["IP_NODO_A"].ToString();
-            String IP_NODO_B = dt.Rows[0]["IP_NODO_B"].ToString();
-            String DEFAULT_GATE_A_B = dt.Rows[0]["DEFAULT_GATE_A_B"].ToString();
+            String IP_NODO_A_1 = dt.Rows[0]["IP_NODO_A_1"].ToString();
+            String IP_NODO_A_2 = dt.Rows[0]["IP_NODO_A_2"].ToString();
+            String IP_NODO_A_3 = dt.Rows[0]["IP_NODO_A_3"].ToString();
+            String IP_NODO_A_4 = dt.Rows[0]["IP_NODO_A_4"].ToString();
+            String IP_NODO_B_1 = dt.Rows[0]["IP_NODO_B_1"].ToString();
+            String IP_NODO_B_2 = dt.Rows[0]["IP_NODO_B_2"].ToString();
+            String IP_NODO_B_3 = dt.Rows[0]["IP_NODO_B_3"].ToString();
+            String IP_NODO_B_4 = dt.Rows[0]["IP_NODO_B_4"].ToString();
+            String DEFAULT_GATE_AB_1 = dt.Rows[0]["DEFAULT_GATE_AB_1"].ToString();
+            String DEFAULT_GATE_AB_2 = dt.Rows[0]["DEFAULT_GATE_AB_2"].ToString();
+            String DEFAULT_GATE_AB_3 = dt.Rows[0]["DEFAULT_GATE_AB_3"].ToString();
+            String DEFAULT_GATE_AB_4 = dt.Rows[0]["DEFAULT_GATE_AB_4"].ToString();
             String POTENCIA_A = dt.Rows[0]["POTENCIA_A"].ToString();
             String POTENCIA_B = dt.Rows[0]["POTENCIA_B"].ToString();
             String MARGEN_DES_A = dt.Rows[0]["MARGEN_DES_A"].ToString();
@@ -4870,11 +4913,30 @@ namespace BusinessLogic
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", AZIMUT_A, 43, "E");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", AZIMUT_B, 43, "j");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", "Modulación:" + MODULACION + "QAM", 50, "K");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A, 55, "E");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 55, "I");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A, 56, "E");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B, 56, "I");
-            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_A_B, 58, "E");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_1, 55, "E");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_2, 55, "F");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_3, 55, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_4, 55, "H");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_1, 55, "I");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_2, 55, "J");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_3, 55, "K");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_4, 55, "L");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_1, 56, "E");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_2, 56, "F");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_3, 56, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_A_4, 56, "H");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_1, 56, "I");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_2, 56, "J");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_3, 56, "K");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", IP_NODO_B_4, 56, "L");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_1, 58, "E");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_2, 58, "F");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_3, 58, "G");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_4, 58, "H");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_1, 58, "I");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_2, 58, "J");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_3, 58, "K");
+            ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", DEFAULT_GATE_AB_4, 58, "L");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 71, "K");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_B, 71, "M");
             ExcelToolsBL.UpdateCell(excelGenerado, "1 Configuración y Mediciones", POTENCIA_A, 72, "K");
@@ -5099,28 +5161,27 @@ namespace BusinessLogic
 
             #region Estacion A
 
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO1_PAN_ESTAC_A, "", 12, 3, 401, 368);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO2_POS_ANT_INST_TORRE_A, "", 12, 14, 415, 378);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO3_FOTO_ANTENA_PTP_ESTAC_A, "", 29, 3, 397, 239);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO4_ETIQ_PUERTO_ANT_ESTAC_A, "", 29, 16, 189, 250);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_A, "", 46, 3, 362, 278);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO6_SILC_CONECT_ESTAC_A, "", 46, 14, 189, 250);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_ATERRAM_ODU_TORRE_ESTAC_A, "", 62, 3, 396, 448);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_A, "", 62, 14, 393, 423);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1__SFTP_OUT_1_ESTAC_A, "", 79, 4, 244, 176);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_A, "", 90, 5, 244, 176);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO10_SALAN_OUT_ETIQ_ESTAC_A, "", 79, 15, 295, 327);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO11_ATERRAM_SALAN_ESTAC_A, "", 101, 3, 399, 245);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_1_SFTP_IN_1_ESTAC_A, "", 120, 14, 405, 185);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_2_SFTP_IN_2_ESTAC_A, "", 131, 14, 406, 157);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO17_FOTO_PAN_RACK_ESTAC_A, "", 152, 3, 377, 338);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_1_ATERRAM_POE_ESTAC_A, "", 152, 15, 334, 179);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_2_ATERRAM_POE_ESTAC_A, "", 163, 15, 264, 166);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_2_ATERRAM_POE_ESTAC_A, "", 163, 15, 264, 166);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_1_ENERG_POE_ETIQ_ESTAC_A, "", 169, 3, 345, 175);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_2_ENERG_POE_ETIQ_ESTAC_A, "", 180, 3, 385, 183);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_1_PATCH_POE_ESTAC_A, "", 169, 15, 296, 178);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_2_PATCH_POE_ESTAC_A, "", 180, 14, 323, 162);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO1_PAN_ESTAC_A, "",12,3, 408,383);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO2_POS_ANT_INST_TORRE_A,"", 12, 14,408, 383);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO3_FOTO_ANTENA_PTP_ESTAC_A, "", 29,3,407, 256);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO4_ETIQ_PUERTO_ANT_ESTAC_A, "", 29,14,408, 256);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_A, "",46,3,407,289);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO6_SILC_CONECT_ESTAC_A, "", 46,14,408,291);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_ATERRAM_ODU_TORRE_ESTAC_A, "", 62,3,407, 467);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_A, "",62,14,406,469);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1__SFTP_OUT_1_ESTAC_A, "",79,3,408,188);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_A, "", 90,3,408,164);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO10_SALAN_OUT_ETIQ_ESTAC_A, "",79,14,406, 350);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO11_ATERRAM_SALAN_ESTAC_A, "",101,3,408, 250);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_1_SFTP_IN_1_ESTAC_A, "",120,14,407, 188);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO14_2_SFTP_IN_2_ESTAC_A, "",131,14,407, 165);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO17_FOTO_PAN_RACK_ESTAC_A, "",152,3,410, 349);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_1_ATERRAM_POE_ESTAC_A, "",152,14,406, 184);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO18_2_ATERRAM_POE_ESTAC_A, "",163,14,406, 166);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_1_ENERG_POE_ETIQ_ESTAC_A, "",169,3,407, 187);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO19_2_ENERG_POE_ETIQ_ESTAC_A,"",180,3,409, 190);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_1_PATCH_POE_ESTAC_A, "", 169,14,407, 187);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO20_2_PATCH_POE_ESTAC_A,"",180,14,406,187);
 
             #endregion
 

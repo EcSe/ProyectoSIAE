@@ -1115,20 +1115,29 @@ namespace SNW.forms
 
                         #region ATP
 
-                        #region Extinguidor Externo Fecha Expiración
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000278").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkExtinguidorExternoFechaExpiracion,
-                            hfExtinguidorExternoFechaExpiracionComentario, null,
-                            txtExtinguidorExternoFechaExpiracion, null, null,
-                            Type.GetType("System.DateTime"));
-                        #endregion
+                        //#region Extinguidor Externo Fecha Expiración
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000278").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkExtinguidorExternoFechaExpiracion,
+                        //    hfExtinguidorExternoFechaExpiracionComentario, null,
+                        //    txtExtinguidorExternoFechaExpiracion, null, null,
+                        //    Type.GetType("System.DateTime"));
+                        //#endregion
 
-                        #region Extinguidor Interno Fecha Expiración
-                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000279").Select(dd => dd).First();
-                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkExtinguidorInternoFechaExpiracion,
-                            hfExtinguidorInternoFechaExpiracionComentario, null,
-                            txtExtinguidorInternoFechaExpiracion, null, null,
-                            Type.GetType("System.DateTime"));
+                        //#region Extinguidor Interno Fecha Expiración
+                        //DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000279").Select(dd => dd).First();
+                        //UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle, chkExtinguidorInternoFechaExpiracion,
+                        //    hfExtinguidorInternoFechaExpiracionComentario, null,
+                        //    txtExtinguidorInternoFechaExpiracion, null, null,
+                        //    Type.GetType("System.DateTime"));
+                        //#endregion
+
+                        #region Ip Controladora
+                        DocumentoDetalle = lstDetalles.Where(dd => dd.Campo.IdValor == "000507").Select(dd => dd).First();
+                        UtilitarioBL.ObtenerDocumentoDetalle(DocumentoDetalle,
+                            chkIpControladora,
+                            hfIpControladoraComentario,
+                            null, txtIpControladora, null, null,
+                            Type.GetType("System.String"));
                         #endregion
 
                         #endregion
@@ -1797,20 +1806,28 @@ namespace SNW.forms
 
                 #region ATP
 
-                #region Extinguidor Externo Fecha Expiración
-                UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000278", chkExtinguidorExternoFechaExpiracion,
-                    hfExtinguidorExternoFechaExpiracionComentario, null,
-                    txtExtinguidorExternoFechaExpiracion, null, null,
-                    Type.GetType("System.DateTime"));
-                #endregion
+                //#region Extinguidor Externo Fecha Expiración
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000278", chkExtinguidorExternoFechaExpiracion,
+                //    hfExtinguidorExternoFechaExpiracionComentario, null,
+                //    txtExtinguidorExternoFechaExpiracion, null, null,
+                //    Type.GetType("System.DateTime"));
+                //#endregion
 
-                #region Extinguidor Interno Fecha Expiración
+                //#region Extinguidor Interno Fecha Expiración
+                //UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
+                //    Documento, "000279", chkExtinguidorInternoFechaExpiracion,
+                //    hfExtinguidorInternoFechaExpiracionComentario, null,
+                //    txtExtinguidorInternoFechaExpiracion, null, null,
+                //    Type.GetType("System.DateTime"));
+                //#endregion
+
+                #region Ip Controladora
                 UtilitarioBL.AsignarDocumentoDetalle(DocumentoDetalle,
-                    Documento, "000279", chkExtinguidorInternoFechaExpiracion,
-                    hfExtinguidorInternoFechaExpiracionComentario, null,
-                    txtExtinguidorInternoFechaExpiracion, null, null,
-                    Type.GetType("System.DateTime"));
+                    Documento, "000507", chkIpControladora,
+                    hfIpControladoraComentario,
+                    null, txtIpControladora, null, null,
+                    Type.GetType("System.String"));
                 #endregion
 
                 #endregion
