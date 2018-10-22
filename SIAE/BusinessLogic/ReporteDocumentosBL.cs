@@ -4318,11 +4318,11 @@ namespace BusinessLogic
             // ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_A, "", 29, 16, 189, 250);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_A, "", 46, 3, 435, 333);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO6_SILC_CONECT_ESTAC_A, "", 46, 14, 433, 337);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_1_ATERR_ODU_TORRE_ESTAC_A, "", 62, 3, 435, 266);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_2_ATERR_ODU_TORRE_ESTAC_A, "", 73, 3, 454, 285);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_A, "", 62, 14, 430, 529);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1__SFTP_OUT_1_ESTAC_A, "", 79, 3, 434, 220);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_A, "", 90, 3, 457, 298);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_1_ATERR_ODU_TORRE_ESTAC_A, "", 62, 3, 435, 184);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_2_ATERR_ODU_TORRE_ESTAC_A, "",73,3,435, 343);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_A, "", 62,14, 432, 529);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1__SFTP_OUT_1_ESTAC_A, "",79,3,434, 222);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_A,"",90,3,435,274);
 
 
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO21__EITQU_POE_CMM4_ESTAC_A, "", 179, 3, 431, 343);
@@ -4331,36 +4331,36 @@ namespace BusinessLogic
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO23_2_ATERRAM_POE_ESTAC_A, "", 207, 3, 436, 290);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO24_1_ENERG_POE_ETIQ_ESTAC_A, "", 196, 14, 432, 265);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO24_2_ENERG_POE_ETIQ_ESTAC_A, "", 207, 14, 431, 292);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_1_PATCH_POE_ESTAC_A, "", 213, 3, 435, 283);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_2_PATCH_POE_ESTAC_A, "", 224, 3, 434, 308);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_1_PATCH_POE_ESTAC_A,"",213,3,435,259);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_2_PATCH_POE_ESTAC_A,"",224,3,434,311);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO27_POE_CMM4_ESTAC_A, "", 229, 3, 435, 330);
 
             #endregion
 
             #region Estacion B
 
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO1_PAN_ESTAC_B, "", 265, 3, 435, 593);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO2_POS_ANT_INST_TORRE_B, "", 265, 14, 435, 590);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO1_PAN_ESTAC_B,"",265,3,435,602);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO2_POS_ANT_INST_TORRE_B, "", 265, 14, 435,602);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO3_FOTO_BNTENA_ODU_ESTAC_B, "", 282, 3, 435, 348);
             // ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_B, "", 29, 16, 189, 250);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO5_ENGRAS_PERNOS_ESTAC_B, "", 299, 3, 435, 333);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO6_SILC_CONECT_ESTAC_B, "", 299, 14, 433, 337);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_1_ATERR_ODU_TORRE_ESTAC_B, "", 315, 3, 435, 266);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_2_ATERR_ODU_TORRE_ESTAC_B, "", 326, 3, 454, 285);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_B, "", 315, 14, 430, 529);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1_SFTP_OUT_1_ESTAC_B, "", 332, 3, 434, 220);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_B, "", 343, 3, 457, 298);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_1_ATERR_ODU_TORRE_ESTAC_B,"",315,3,435, 188);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO7_2_ATERR_ODU_TORRE_ESTAC_B,"",326,3,435, 331);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO8_RECORRI_SFTP_ESTAC_B,"",315,14,434,521);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_1_SFTP_OUT_1_ESTAC_B,"",332,3,436,188);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO9_2_SFTP_OUT_2_ESTAC_B,"",343,3,435,162);
 
 
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO21__EITQU_POE_CMM4_ESTAC_B, "", 432, 3, 431, 343);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO22_PAN_RACK_ESTAC_B, "", 432, 14, 436, 344);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO23_1_ATERRAM_POE_ESTAC_B, "", 449, 3, 436, 263);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO23_2_ATERRAM_POE_ESTAC_B, "", 460, 3, 436, 290);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO21__EITQU_POE_CMM4_ESTAC_B,"",432,3,435,349);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO22_PAN_RACK_ESTAC_B,"",432,14,433,350);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO23_1_ATERRAM_POE_ESTAC_B,"",449,3,434,248);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO23_2_ATERRAM_POE_ESTAC_B,"",460,3,431,262);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO24_1_ENERG_POE_ETIQ_ESTAC_B, "", 449, 14, 432, 265);
             ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO24_2_ENERG_POE_ETIQ_ESTAC_B, "", 460, 14, 431, 292);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_1_PATCH_POE_ESTAC_B, "", 466, 3, 435, 283);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_2_PATCH_POE_ESTAC_B, "", 477, 3, 434, 308);
-            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO27_POE_CMM4_ESTAC_B, "", 482, 3, 435, 330);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_1_PATCH_POE_ESTAC_B,"",466,3,435,266);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO25_2_PATCH_POE_ESTAC_B,"",477,3,434,245);
+            ExcelToolsBL.AddImageDocument(false, excelGenerado, "10 Reporte Fotográfico", mFOTO27_POE_CMM4_ESTAC_B,"",482,3,435,349);
 
             #endregion
 
