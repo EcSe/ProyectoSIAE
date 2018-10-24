@@ -32,7 +32,6 @@ namespace BusinessLogic
             DataTable dt1 = new DataTable();
             try
             {
-                // baseDatosDA.CrearComando("USP_R_RUTA_ZIP",CommandType.StoredProcedure);
                 baseDatosDA.CrearComando("USP_R_ZIP_PRUEBA", CommandType.StoredProcedure);
                 baseDatosDA.AsignarParametroCadena("@VC_ID_NODO", IdNodo, true);
                 dt = baseDatosDA.EjecutarConsultaDataTable();
@@ -222,7 +221,7 @@ namespace BusinessLogic
             }
 
             #endregion
-             ZipFile.CreateFromDirectory(ruta + IdNodo,ruta + IdNodo + ".zip", CompressionLevel.Fastest, true);
+            ZipFile.CreateFromDirectory(ruta + IdNodo,ruta + IdNodo + ".zip", CompressionLevel.Fastest, true);
         } 
     }
 

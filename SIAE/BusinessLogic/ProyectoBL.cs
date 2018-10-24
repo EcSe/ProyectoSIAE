@@ -1634,7 +1634,7 @@ namespace BusinessLogic
                 file.WriteLine("");
                 file.WriteLine("EQUIPAMIENTO SIAE ALIMENTACION");
                 file.WriteLine("------------------------------");
-                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO SIAE$] WHERE TIPO_MOV = 'OUT' AND CODIGO_SIAE = 'D60078'", conexionExcel);
+                Command = new OleDbCommand("SELECT * FROM [EQUIPAMIENTO SIAE$] WHERE TIPO_MOV = 'OUT' AND CODIGO_SIAE IN ('D60078','D60077','ICA0071') ", conexionExcel);
                 try
                 {
                     blnErrorTabla = false;

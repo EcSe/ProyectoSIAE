@@ -26,6 +26,7 @@ namespace SNW.forms
             //List<DocumentoBE> lstDocumentos = new List<DocumentoBE>();
             List<NodoBE> lstNodos = new List<NodoBE>();
             Nodo.IdNodo = txtIdNodo.Text;
+            UsuarioBE Usuario = (UsuarioBE)Session["Usuario"];
             //if (!txtContratista.Text.Equals(""))
             //    Tarea.Contratista.IdValor = hfIdContratista.Value;
 
@@ -55,13 +56,13 @@ namespace SNW.forms
             rutaVirtualTemporalBE = EntidadDetalleBL.ListarEntidadDetalle(rutaVirtualTemporalBE)[0];
 
             documento.Tarea.NodoIIBBA.IdNodo = gvNodos.DataKeys[gvrNodos.RowIndex]["IdNodo"].ToString();
+            //documento.Tarea.NodoIIBBA.IdNodo =
+            //    Session["Tarea.NodoIIBBA.IdNodo"].ToString();
 
             ZipBL zip = new ZipBL();
 
             //DESCARGA LAS IMAGENES DENTRO DE SUS CARPETAS ZIPS RESPECTIVAS
             zip.DescargarZip(documento.Tarea.NodoIIBBA.IdNodo);
-
-
             //DESCARGA LOS EXCELS DENTRO DE LAS CARPETAS RESPECTIVAS PARA SU POSTERIOR ZIPEADO
             // zip.DescargarExcelInZip(documento.Tarea.NodoIIBBA.IdNodo);
 
