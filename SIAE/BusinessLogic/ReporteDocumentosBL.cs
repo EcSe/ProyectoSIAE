@@ -57,11 +57,20 @@ namespace BusinessLogic
 
                 #region Ruta para el Zip
                 String rutaNodo = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo;
+            String rutaCarpeta = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + "\\ACCESO\\PMP";
                 if (Directory.Exists(rutaNodo))
                 {
-
+                if (!Directory.Exists(rutaCarpeta))
+                {
+                    Directory.CreateDirectory(rutaCarpeta);
                     String rutaAlterna = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + "\\ACCESO\\PMP\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
                     File.Copy(excelGenerado, rutaAlterna, true);
+                }
+                else
+                {
+                    String rutaAlterna = "C:\\inetpub\\wwwroot\\SIAE_ARCHIVOS\\TEMPORAL\\" + IdNodo + "\\ACCESO\\PMP\\" + IdNodo + " " + valorCadena1 + " " + IdTarea + ".xlsx";
+                    File.Copy(excelGenerado, rutaAlterna, true);
+                }
                 }
                 #endregion
           
