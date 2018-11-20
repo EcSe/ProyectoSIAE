@@ -142,7 +142,7 @@ namespace DataAccess
         /// <param name="TipoComando">El Tipo del comando: TIPO StoredProcedure o Text</param>
         /// <param name="traerParametros">Determina si se van a traer de forma automatica los parametros en caso sea un procedimento</param>
         /// <param name="commandTimeout">Determina la cantidad de tiempo de espera de la ejecución del comando (segundos)</param>
-        public void CrearComando(string sentenciaSQL, CommandType TipoComando, Boolean traerParametros = false,Int32 commandTimeout = 30)
+        public void CrearComando(string sentenciaSQL, CommandType TipoComando, Boolean traerParametros = false,Int32 commandTimeout = 900)
         {
             this._Comando = _Factory.CreateCommand();
             this._Comando.Connection = this._Conexion;

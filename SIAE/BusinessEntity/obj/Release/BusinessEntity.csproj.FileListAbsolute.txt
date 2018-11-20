@@ -8,3 +8,8 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\bin\Re
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Release\BusinessEntity.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Release\BusinessEntity.pdb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessEntity\obj\Release\BusinessEntity.csprojResolveAssemblyReference.cache
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessEntity\bin\Release\BusinessEntity.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessEntity\bin\Release\BusinessEntity.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessEntity\bin\Release\EXIFextractor.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessEntity\obj\Release\BusinessEntity.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessEntity\obj\Release\BusinessEntity.pdb

@@ -214,3 +214,17 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\bin\DataAccess.pd
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.csprojResolveAssemblyReference.cache
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\ADM\obj\Debug\ADM.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\ADM.dll.config
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\ADM.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\ADM.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\BusinessEntity.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\BusinessLogic.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\DataAccess.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\DocumentFormat.OpenXml.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\EXIFextractor.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\BusinessEntity.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\BusinessLogic.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\bin\DataAccess.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\obj\Debug\ADM.csprojResolveAssemblyReference.cache
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\obj\Debug\ADM.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\ADM\obj\Debug\ADM.pdb

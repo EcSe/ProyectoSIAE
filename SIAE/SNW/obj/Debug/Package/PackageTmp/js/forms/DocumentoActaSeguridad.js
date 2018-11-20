@@ -2794,7 +2794,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion01').val(fileNames);
@@ -2861,7 +2861,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraExteriorModoNormalPosicion02').val(fileNames);
@@ -2928,7 +2928,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoNormal').val(fileNames);
@@ -2995,7 +2995,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfCamaraInteriorModoInfrarojo').val(fileNames);
@@ -3066,7 +3066,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaPrincipalAbierta').val(fileNames);
@@ -3133,7 +3133,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaPuertaSalaEquiposAbierta').val(fileNames);
@@ -3200,7 +3200,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraInterna').val(fileNames);
@@ -3267,7 +3267,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaCamaraExterna').val(fileNames);
@@ -3334,7 +3334,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorAniego').val(fileNames);
@@ -3401,7 +3401,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaSensorHumo').val(fileNames);
@@ -3468,7 +3468,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9001').val(fileNames);
@@ -3535,7 +3535,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9001').val(fileNames);
@@ -3602,7 +3602,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9001').val(fileNames);
@@ -3669,7 +3669,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor9002').val(fileNames);
@@ -3736,7 +3736,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor9002').val(fileNames);
@@ -3803,7 +3803,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMaskingSensor9002').val(fileNames);
@@ -3870,7 +3870,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaTamperSensor360').val(fileNames);
@@ -3937,7 +3937,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfTechnicianProgramAlarmaMovimientoSensor360').val(fileNames);
@@ -4008,7 +4008,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara01Indoor').val(fileNames);
@@ -4075,7 +4075,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingCamara02Outdoor').val(fileNames);
@@ -4142,7 +4142,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingControlador').val(fileNames);
@@ -4209,7 +4209,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingGateway').val(fileNames);
@@ -4276,7 +4276,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingNVR').val(fileNames);
@@ -4343,7 +4343,7 @@
         allowedExtensions: ['png', 'jpg'],
         fileType: 6,
         minWidthDimension: 1366,
-        minHeightDimension: 760,
+        minHeightDimension: 768,
         listeners: {
             finish: function (fileNames, fileList) {
                 $('#cphContenido_hfPingBiometrico').val(fileNames);
@@ -4444,89 +4444,123 @@
 
     // #region ATP
 
-    // #region E. E. Fecha Expiración
+    //// #region E. E. Fecha Expiración
 
-    var pckExtinguidorExternoFechaExpiracion = $("#cphContenido_txtExtinguidorExternoFechaExpiracion").pickadate({
-        firstDay: true,
-        format: 'dd/mm/yyyy',
-        selectYears: true,
-        selectMonths: true
-    });
+    //var pckExtinguidorExternoFechaExpiracion = $("#cphContenido_txtExtinguidorExternoFechaExpiracion").pickadate({
+    //    firstDay: true,
+    //    format: 'dd/mm/yyyy',
+    //    selectYears: true,
+    //    selectMonths: true
+    //});
 
-    $('#cphContenido_chkExtinguidorExternoFechaExpiracion').change(function () {
-        var blnActivo = $("#cphContenido_chkExtinguidorExternoFechaExpiracion").prop("checked");
+    //$('#cphContenido_chkExtinguidorExternoFechaExpiracion').change(function () {
+    //    var blnActivo = $("#cphContenido_chkExtinguidorExternoFechaExpiracion").prop("checked");
+    //    if (blnActivo)
+    //        $("#cphContenido_txtExtinguidorExternoFechaExpiracion").prop('disabled', true);
+    //    else
+    //        $('#cphContenido_txtExtinguidorExternoFechaExpiracion').prop('disabled', false);
+    //});
+
+    //poExtinguidorExternoFechaExpiracionComentario = $("#spExtinguidorExternoFechaExpiracionComentario").popover({
+    //    html: true,
+    //    content: function () {
+    //        return $('#pocExtinguidorExternoFechaExpiracionComentario').html();
+    //    }
+    //});
+
+    //poExtinguidorExternoFechaExpiracionComentario.on('show.bs.popover', function () {
+    //    //Devuelve el popover: $(this).data("bs.popover").tip()
+    //    $(this).data("bs.popover").tip().addClass('info');
+    //    $(this).data("bs.popover").tip().css("max-width", "600px");
+    //});
+
+    //poExtinguidorExternoFechaExpiracionComentario.on('shown.bs.popover', function () {
+    //    $("#txtExtinguidorExternoFechaExpiracionComentario").val($("#cphContenido_hfExtinguidorExternoFechaExpiracionComentario").val());
+    //    $("#txtExtinguidorExternoFechaExpiracionComentario").focus();
+    //    $("#txtExtinguidorExternoFechaExpiracionComentario").keyup(function () {
+    //        $("#cphContenido_hfExtinguidorExternoFechaExpiracionComentario").val($(this).val());
+    //        //console.log($(this).val());
+    //    });
+    //});
+
+    //$("#cphContenido_chkExtinguidorExternoFechaExpiracion").trigger("change");
+
+    //// #endregion  
+
+    //// #region E. I. Fecha Expiración
+
+    //var pckExtinguidorInternoFechaExpiracion = $("#cphContenido_txtExtinguidorInternoFechaExpiracion").pickadate({
+    //    firstDay: true,
+    //    format: 'dd/mm/yyyy',
+    //    selectYears: true,
+    //    selectMonths: true
+    //});
+
+    //$('#cphContenido_chkExtinguidorInternoFechaExpiracion').change(function () {
+    //    var blnActivo = $("#cphContenido_chkExtinguidorInternoFechaExpiracion").prop("checked");
+    //    if (blnActivo)
+    //        $("#cphContenido_txtExtinguidorInternoFechaExpiracion").prop('disabled', true);
+    //    else
+    //        $('#cphContenido_txtExtinguidorInternoFechaExpiracion').prop('disabled', false);
+    //});
+
+    //poExtinguidorInternoFechaExpiracionComentario = $("#spExtinguidorInternoFechaExpiracionComentario").popover({
+    //    html: true,
+    //    content: function () {
+    //        return $('#pocExtinguidorInternoFechaExpiracionComentario').html();
+    //    }
+    //});
+
+    //poExtinguidorInternoFechaExpiracionComentario.on('show.bs.popover', function () {
+    //    //Devuelve el popover: $(this).data("bs.popover").tip()
+    //    $(this).data("bs.popover").tip().addClass('info');
+    //    $(this).data("bs.popover").tip().css("max-width", "600px");
+    //});
+
+    //poExtinguidorInternoFechaExpiracionComentario.on('shown.bs.popover', function () {
+    //    $("#txtExtinguidorInternoFechaExpiracionComentario").val($("#cphContenido_hfExtinguidorInternoFechaExpiracionComentario").val());
+    //    $("#txtExtinguidorInternoFechaExpiracionComentario").focus();
+    //    $("#txtExtinguidorInternoFechaExpiracionComentario").keyup(function () {
+    //        $("#cphContenido_hfExtinguidorInternoFechaExpiracionComentario").val($(this).val());
+    //        //console.log($(this).val());
+    //    });
+    //});
+
+    //$("#cphContenido_chkExtinguidorInternoFechaExpiracion").trigger("change");
+
+    //// #endregion
+
+    // #region Ip Controladora
+
+    $('#cphContenido_chkIpControladora').change(function () {
+        var blnActivo = $("#cphContenido_chkIpControladora").prop("checked");
         if (blnActivo)
-            $("#cphContenido_txtExtinguidorExternoFechaExpiracion").prop('disabled', true);
+            $("#cphContenido_txtIpControladora").prop('disabled', true);
         else
-            $('#cphContenido_txtExtinguidorExternoFechaExpiracion').prop('disabled', false);
+            $('#cphContenido_txtIpControladora').prop('disabled', false);
     });
 
-    poExtinguidorExternoFechaExpiracionComentario = $("#spExtinguidorExternoFechaExpiracionComentario").popover({
+    poIpControladoraComentario = $("#spIpControladoraComentario").popover({
         html: true,
         content: function () {
-            return $('#pocExtinguidorExternoFechaExpiracionComentario').html();
+            return $('#pocIpControladoraComentario').html();
         }
     });
 
-    poExtinguidorExternoFechaExpiracionComentario.on('show.bs.popover', function () {
+    poIpControladoraComentario.on('show.bs.popover', function () {
         //Devuelve el popover: $(this).data("bs.popover").tip()
         $(this).data("bs.popover").tip().addClass('info');
         $(this).data("bs.popover").tip().css("max-width", "600px");
     });
 
-    poExtinguidorExternoFechaExpiracionComentario.on('shown.bs.popover', function () {
-        $("#txtExtinguidorExternoFechaExpiracionComentario").val($("#cphContenido_hfExtinguidorExternoFechaExpiracionComentario").val());
-        $("#txtExtinguidorExternoFechaExpiracionComentario").focus();
-        $("#txtExtinguidorExternoFechaExpiracionComentario").keyup(function () {
-            $("#cphContenido_hfExtinguidorExternoFechaExpiracionComentario").val($(this).val());
+    poIpControladoraComentario.on('shown.bs.popover', function () {
+        $("#txtIpControladoraComentario").val($("#cphContenido_hfIpControladoraComentario").val());
+        $("#txtIpControladoraComentario").focus();
+        $("#txtIpControladoraComentario").keyup(function () {
+            $("#cphContenido_hfIpControladoraComentario").val($(this).val());
             //console.log($(this).val());
         });
     });
-
-    $("#cphContenido_chkExtinguidorExternoFechaExpiracion").trigger("change");
-
-    // #endregion  
-
-    // #region E. I. Fecha Expiración
-
-    var pckExtinguidorInternoFechaExpiracion = $("#cphContenido_txtExtinguidorInternoFechaExpiracion").pickadate({
-        firstDay: true,
-        format: 'dd/mm/yyyy',
-        selectYears: true,
-        selectMonths: true
-    });
-
-    $('#cphContenido_chkExtinguidorInternoFechaExpiracion').change(function () {
-        var blnActivo = $("#cphContenido_chkExtinguidorInternoFechaExpiracion").prop("checked");
-        if (blnActivo)
-            $("#cphContenido_txtExtinguidorInternoFechaExpiracion").prop('disabled', true);
-        else
-            $('#cphContenido_txtExtinguidorInternoFechaExpiracion').prop('disabled', false);
-    });
-
-    poExtinguidorInternoFechaExpiracionComentario = $("#spExtinguidorInternoFechaExpiracionComentario").popover({
-        html: true,
-        content: function () {
-            return $('#pocExtinguidorInternoFechaExpiracionComentario').html();
-        }
-    });
-
-    poExtinguidorInternoFechaExpiracionComentario.on('show.bs.popover', function () {
-        //Devuelve el popover: $(this).data("bs.popover").tip()
-        $(this).data("bs.popover").tip().addClass('info');
-        $(this).data("bs.popover").tip().css("max-width", "600px");
-    });
-
-    poExtinguidorInternoFechaExpiracionComentario.on('shown.bs.popover', function () {
-        $("#txtExtinguidorInternoFechaExpiracionComentario").val($("#cphContenido_hfExtinguidorInternoFechaExpiracionComentario").val());
-        $("#txtExtinguidorInternoFechaExpiracionComentario").focus();
-        $("#txtExtinguidorInternoFechaExpiracionComentario").keyup(function () {
-            $("#cphContenido_hfExtinguidorInternoFechaExpiracionComentario").val($(this).val());
-            //console.log($(this).val());
-        });
-    });
-
-    $("#cphContenido_chkExtinguidorInternoFechaExpiracion").trigger("change");
 
     // #endregion
 

@@ -73,3 +73,16 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\bin\Deb
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\EXIFextractor.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\BusinessEntity.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\DataAccess.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\bin\Debug\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\BusinessLogic\obj\Debug\BusinessLogic.pdb

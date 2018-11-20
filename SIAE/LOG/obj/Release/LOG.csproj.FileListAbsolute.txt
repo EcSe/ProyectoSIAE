@@ -88,3 +88,17 @@ C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\roslyn\VBCSCo
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Elvin Salinas\Desktop\Proyectos\ProyectoSIAE\SIAE\LOG\bin\EXIFextractor.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\LOG.dll.config
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\LOG.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\LOG.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\BusinessEntity.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\BusinessLogic.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\DataAccess.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\DocumentFormat.OpenXml.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\EXIFextractor.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\BusinessEntity.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\BusinessLogic.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\bin\DataAccess.pdb
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\obj\Release\LOG.csprojResolveAssemblyReference.cache
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\obj\Release\LOG.dll
+C:\Users\ELVIN\Desktop\Proyectos\Visual Studio\SIAE\SIAE\LOG\obj\Release\LOG.pdb
